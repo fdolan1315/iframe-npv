@@ -1,0 +1,108 @@
+{
+  "headline": "Roughly half of US children who have Tourette syndrome have never been formally diagnosed — the diagnosed pool is the market today, but a large latent, under-identified population sits behind it.",
+  "stats": [
+    {
+      "value": "~1 in 333",
+      "label": "US children 3-17 with diagnosed TS (~0.3%)",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "~174,000",
+      "label": "diagnosed US children (2016-2019)",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "~1 in 162",
+      "label": "true prevalence incl. undiagnosed (~0.6%)",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "~50%",
+      "label": "of children with TS are undiagnosed",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "~3:1",
+      "label": "male-to-female predominance",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "10-12 yrs",
+      "label": "age of peak tic severity",
+      "source": "treatment_review_pmc"
+    }
+  ],
+  "funnel": {
+    "title": "Diagnosed-patient funnel (illustrative; each stage cited)",
+    "note": "Directional funnel from all US children to the drug-eligible pool. Stage rates are literature-anchored, not claims-derived. Treatment-warranting share reflects the moderate-to-severe / impairing minority per AAN.",
+    "stages": [
+      {
+        "label": "US children 3-17",
+        "basis": "denominator",
+        "source": "cdc_ts_data"
+      },
+      {
+        "label": "Have TS (true prevalence ~0.6%)",
+        "rate_of_total": 0.006,
+        "source": "cdc_ts_data"
+      },
+      {
+        "label": "Diagnosed with TS (~0.3%)",
+        "rate_of_total": 0.003,
+        "source": "cdc_ts_data"
+      },
+      {
+        "label": "Moderate-to-severe / impairing (drug-warranting minority)",
+        "note": "~10-30% of TS per natural-history distribution",
+        "source": "aan_2019"
+      },
+      {
+        "label": "Reach a tic-treating specialist",
+        "note": "diagnostic + referral bottleneck; ~4 clinicians consulted before dx",
+        "source": "treatment_review_pmc"
+      }
+    ]
+  },
+  "comorbidity": {
+    "title": "TS is rarely isolated — comorbidity drives who owns the patient",
+    "note": "~86% of children with TS have >=1 psychiatric comorbidity; only ~10-15% have 'pure' TS. ADHD/OCD/anxiety often pull the patient toward child psychiatry / developmental-behavioral pediatrics, while the tic disorder pulls toward pediatric neurology.",
+    "items": [
+      {
+        "label": "Any psychiatric comorbidity",
+        "pct": 86,
+        "source": "comorbid_pmc"
+      },
+      {
+        "label": "OCD and/or ADHD",
+        "pct": 72,
+        "source": "comorbid_pmc"
+      },
+      {
+        "label": "OCD",
+        "pct": 50,
+        "source": "comorbid_pmc"
+      },
+      {
+        "label": "Anxiety",
+        "pct": 54,
+        "source": "comorbid_anx_dep"
+      },
+      {
+        "label": "ADHD",
+        "pct": 54,
+        "source": "comorbid_pmc"
+      },
+      {
+        "label": "Depression",
+        "pct": 36,
+        "source": "comorbid_anx_dep"
+      },
+      {
+        "label": "'Pure' TS (tics only)",
+        "pct": 13,
+        "source": "comorbid_pmc"
+      }
+    ]
+  },
+  "regional_caveat": "Published region-by-region TS prevalence is thin; do NOT assert a raw regional biology gradient. Defensible framing: DIAGNOSED prevalence concentrates around specialist access and the Center-of-Excellence footprint (see Channel & Sites)."
+}

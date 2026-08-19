@@ -1,0 +1,189 @@
+{
+  "headline": "An interactive launch-scenario planner that reshapes the TS epidemiology funnel and the specialist channel footprint. Every output is expressed in patients and channel/access coverage only — never dollars, revenue, market penetration, or claims.",
+  "disclaimer": "Neutral commercial-intelligence model spec. Outputs are directional, literature- and registry-anchored, and reported in patients and channel/access terms only. No pricing, revenue, penetration %, dollars, or claims-level modeling. Every base rate cites a primary source; verify the live source before external use. Not medical advice or promotional material.",
+  "base_rates": [
+    {
+      "key": "true_ts_prevalence",
+      "label": "True TS prevalence incl. undiagnosed (~1 in 162)",
+      "value": "~0.6%",
+      "source": "cdc_ts_data",
+      "note": "Community-screening prevalence when diagnosed + undiagnosed cases are both counted."
+    },
+    {
+      "key": "diagnosed_ts_prevalence",
+      "label": "Diagnosed TS prevalence (~1 in 333)",
+      "value": "~0.3%",
+      "source": "cdc_ts_data",
+      "note": "Parent-reported NSCH diagnosed prevalence; the market visible today."
+    },
+    {
+      "key": "diagnosed_children",
+      "label": "Diagnosed US children with TS (2016-2019)",
+      "value": "~174,000",
+      "source": "cdc_ts_data",
+      "note": "Empirical anchor for the diagnosed pool; all downstream patient outputs build from this count, not from a raw denominator multiply."
+    },
+    {
+      "key": "true_ts_children",
+      "label": "Children with TS incl. undiagnosed — model estimate (~2x diagnosed)",
+      "value": "~348,000",
+      "source": "cdc_ts_data",
+      "note": "Model estimate: about twice the ~174,000 diagnosed, reflecting that ~half of children with TS are undiagnosed. This is the diagnosis-lift ceiling. (Distinct from CDC's published all-ages figure of 350,000-450,000 children AND adults.)"
+    },
+    {
+      "key": "undiagnosed_share",
+      "label": "Share of children with TS who are undiagnosed",
+      "value": "~50%",
+      "source": "cdc_ts_data",
+      "note": "Roughly half of children who have TS have never been formally diagnosed; the gap the diagnosis-lift lever closes."
+    },
+    {
+      "key": "drug_warranting_share",
+      "label": "Moderate-to-severe / drug-warranting minority of diagnosed TS",
+      "value": "~20% (range 10-30%)",
+      "source": "aan_2019",
+      "note": "Most tics are mild, wax-and-wane, and managed by watchful waiting or CBIT; only a moderate-to-severe minority warrants pharmacotherapy per the AAN natural-history framing. 20% used as the base-case point estimate."
+    },
+    {
+      "key": "cbit_responder_rate",
+      "label": "CBIT much/very-much improved (vs 18.5% control; NNT=3)",
+      "value": "~52.5%",
+      "source": "cbit_piacentini",
+      "note": "First-line behavioral response rate; frames the CBIT gate that sits ahead of a pharmacotherapy decision. Access, not efficacy, is the binding constraint in practice."
+    },
+    {
+      "key": "coe_count",
+      "label": "TAA Centers of Excellence (as of Feb 2025)",
+      "value": "~28",
+      "source": "taa_coe",
+      "note": "National count of designated Centers of Excellence; the channel anchor and the CoE-only reach floor. Confirm the live roster before external use."
+    },
+    {
+      "key": "medicaid_chip_share",
+      "label": "US children insured by Medicaid/CHIP",
+      "value": "~49%",
+      "source": "aap_medicaid",
+      "note": "Pediatric = heavy public-payer exposure; access is won state Medicaid program by state Medicaid program, which conditions the step-therapy lever."
+    },
+    {
+      "key": "clinicians_before_dx",
+      "label": "Professional types consulted before TS diagnosis",
+      "value": "~4",
+      "source": "treatment_review_pmc",
+      "note": "Referral churn and diagnostic delay sit ahead of specialist reach; part of why the diagnosed pool trails true prevalence."
+    }
+  ],
+  "levers": [
+    {
+      "id": "diagnosis_rate_lift",
+      "label": "Diagnosis-rate lift (closing the undiagnosed gap)",
+      "description": "Fraction of the currently-undiagnosed TS pool that gets formally identified over the planning horizon. Scales the diagnosed pool up from today's ~50% of true prevalence toward 100%. At 0% the diagnosed pool stays at ~174,000 children; at 100% it approaches the full ~348,000 true-prevalence pool. Moves patients from the latent pool into the diagnosed, drug-warranting pool — no dollar effect implied.",
+      "unit": "% of undiagnosed gap closed",
+      "min": 0,
+      "max": 100,
+      "default": 10,
+      "affects": "Scales diagnosed_children up toward true_ts_children; feeds diagnosed_dw_pool (up) and latent_dw_pool (down).",
+      "source": "cdc_ts_data",
+      "baseline": 0
+    },
+    {
+      "id": "cbit_access_constraint",
+      "label": "CBIT-access constraint",
+      "description": "Share of drug-warranting patients who can actually access guideline-first CBIT. AAN places CBIT first-line; where it is unavailable (therapist shortage) patients route toward pharmacotherapy sooner, and where it is available patients are held at the behavioral gate first. Modeled purely as patient sequencing/routing — never as substitution economics or cost offset.",
+      "unit": "% of drug-warranting patients with CBIT access",
+      "min": 0,
+      "max": 100,
+      "default": 30,
+      "affects": "Sets cbit_first_gated (share routed through behavioral therapy before a pharmacotherapy decision); does not remove patients from the pool, only sequences them.",
+      "source": "cbit_piacentini",
+      "baseline": 30
+    },
+    {
+      "id": "step_therapy_stringency",
+      "label": "Step-therapy stringency (generics to fail first)",
+      "description": "Number of generic agents (alpha-2 agonists such as guanfacine/clonidine, and generic antipsychotics) a payer requires a patient to fail before a novel branded agent is reachable. Each required step attrites the near-term addressable pool. 0 = open access; 3 = fail three generics first. Given ~49% pediatric Medicaid/CHIP exposure, stringency is set state Medicaid program by state Medicaid program.",
+      "unit": "generics required to fail (count)",
+      "min": 0,
+      "max": 3,
+      "default": 2,
+      "affects": "Attrites diagnosed_dw_pool per required step to produce branded_reachable_pool (patients only).",
+      "source": "aan_2019",
+      "baseline": 2
+    },
+    {
+      "id": "coe_vs_community_reach",
+      "label": "CoE-first vs community reach",
+      "description": "Channel-breadth dial from CoE-concentrated (narrow, high-conviction — the ~28 TAA Centers of Excellence) to broad community pediatric-neurology and child-psychiatry reach. Higher = a wider specialist footprint beyond the CoE core, expanding the specialist-reachable share of the drug-warranting pool. At 0 only the CoE floor is reachable.",
+      "unit": "reach breadth (0 = CoE-only, 100 = full community specialist footprint)",
+      "min": 0,
+      "max": 100,
+      "default": 40,
+      "affects": "Sets specialist_reachable_share (breadth) and the coe_covered_share floor.",
+      "source": "taa_coe",
+      "baseline": 40
+    },
+    {
+      "id": "field_coordination_sov",
+      "label": "Austedo-field coordination / share-of-voice",
+      "description": "Degree to which Teva's existing movement-disorder / neuroscience field organization (built around Austedo, which failed the ARTISTS trials and carries no TS indication) is coordinated onto tic-treating specialists. A share-of-voice / call-point-coverage dial that scales how much of the reachable specialist footprint is actively covered. Strategic routing only — no dollars, share-of-market, or revenue overlap is modeled; the internal tension is share-of-voice, not revenue.",
+      "unit": "specialist call-point coverage (%)",
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "affects": "Coverage multiplier applied within specialist_reachable_share (how much of the reachable footprint is actually called on).",
+      "source": "artists_fail",
+      "baseline": 50
+    },
+    {
+      "id": "pediatric_label_timing",
+      "label": "Pediatric-label timing / launch phase-in",
+      "description": "Commercial-availability phase-in of the pediatric label. The NDA was submitted June 18, 2026 with Orphan + Fast Track designations; no PDUFA target action date is public yet, so timing is a scenario dial rather than a verified date. 0 = not yet available (addressable pool = 0); 100 = fully launched, so the diagnosed drug-warranting pool is addressable. Phases the funnel in over time without asserting a specific approval date.",
+      "unit": "launch phase-in (% of pool addressable)",
+      "min": 0,
+      "max": 100,
+      "default": 100,
+      "affects": "Phase-in fraction applied to all downstream addressable pools (diagnosed_dw_pool, branded_reachable_pool, specialist_reachable_share).",
+      "source": "teva_nda",
+      "baseline": 0
+    }
+  ],
+  "outputs": [
+    {
+      "id": "diagnosed_dw_pool",
+      "label": "Diagnosed drug-warranting pediatric pool",
+      "unit": "children",
+      "formula_note": "diagnosed_children lifted by diagnosis_rate_lift toward true_ts_children, times drug_warranting_share (~20% base case). Base case ≈ 174,000 x ~20% ≈ ~35,000 children before access filters. Patients only — no dollars, penetration, or claims."
+    },
+    {
+      "id": "latent_dw_pool",
+      "label": "Latent (undiagnosed) drug-warranting pool",
+      "unit": "children",
+      "formula_note": "(true_ts_children - diagnosed_children) x (1 - diagnosis_rate_lift/100) x drug_warranting_share. The still-undiagnosed, drug-warranting children the diagnosis lever has not yet unlocked (~348,000 - ~174,000 = ~174,000 latent TS x ~20% ≈ ~35,000 at 0% lift). Patients only."
+    },
+    {
+      "id": "cbit_first_gated",
+      "label": "Held at the CBIT-first behavioral gate",
+      "unit": "children (share of drug-warranting pool)",
+      "formula_note": "diagnosed_dw_pool x cbit_access_constraint. Patients routed through first-line CBIT before a pharmacotherapy decision. A sequencing gate, not a lost pool — counted in patients, never as cost offset."
+    },
+    {
+      "id": "specialist_reachable_share",
+      "label": "Specialist-reachable share of the drug-warranting pool",
+      "unit": "% (and implied children)",
+      "formula_note": "coe_vs_community_reach breadth x field_coordination_sov coverage, applied to diagnosed_dw_pool and phased by pediatric_label_timing. Channel reach in patients/percent only — no revenue or market-share meaning."
+    },
+    {
+      "id": "coe_covered_share",
+      "label": "CoE-covered share",
+      "unit": "% (and implied children)",
+      "formula_note": "Portion of the specialist-reachable pool anchored at the ~28 TAA Centers of Excellence; equals the reach floor when coe_vs_community_reach = 0 and dilutes as community breadth widens. Coverage accounting in patients/percent, not dollars."
+    },
+    {
+      "id": "branded_reachable_pool",
+      "label": "Branded-reachable pool after step-therapy",
+      "unit": "children",
+      "formula_note": "diagnosed_dw_pool attrited by step_therapy_stringency (each required generic-failure step removes a share) and gated by pediatric_label_timing phase-in. Access/channel accounting expressed strictly in patients — never revenue, penetration %, price, or claims."
+    }
+  ],
+  "guardrail": "Outputs are expressed ONLY in patients and channel/access-coverage terms. This planner never models pricing, revenue, market penetration %, dollars, or claims-level data. The sliders reshape the epidemiology funnel (diagnosis, severity, behavioral-gate sequencing) and the specialist channel footprint (CoE vs community reach, field coverage, step-therapy attrition, launch phase-in) and nothing more. Base rates are literature/registry-anchored and cited to primary sources. Any dollar, price, or share-of-market figure is out of scope by design (Principle 1)."
+}

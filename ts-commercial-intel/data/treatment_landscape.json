@@ -1,0 +1,133 @@
+{
+  "headline": "Ecopipam enters a generic-dominated market as the first novel mechanism in over a decade — but the real competition is therapeutic conservatism and cheap generics, not a branded rival.",
+  "algorithm": {
+    "title": "AAN 2019 treatment ladder",
+    "source": "aan_2019",
+    "rungs": [
+      {
+        "tier": 0,
+        "label": "Watchful waiting",
+        "for": "Non-impairing tics",
+        "note": "The largest de facto 'competitor' — most tics are mild, wax-and-wane, and improve with age."
+      },
+      {
+        "tier": 1,
+        "label": "CBIT (behavioral)",
+        "for": "Impairing tics — first-line",
+        "note": "Guideline-preferred; ~52.5% respond vs 18.5% control, but access is throttled by a therapist shortage.",
+        "source": "cbit_piacentini"
+      },
+      {
+        "tier": 2,
+        "label": "Alpha-2 agonists (guanfacine, clonidine)",
+        "for": "Mild-moderate tics, esp. with comorbid ADHD",
+        "note": "Off-label first-line pharmacotherapy; cheap generics; treat both tics and ADHD. AAN Level B."
+      },
+      {
+        "tier": 3,
+        "label": "Antipsychotics (D2 blockers)",
+        "for": "Inadequate response, risk-gated",
+        "note": "The only 3 FDA-approved TS drugs; pushed down the ladder for EPS/TD/metabolic liabilities — the opening ecopipam exploits."
+      },
+      {
+        "tier": 4,
+        "label": "Refractory / device",
+        "for": "Severe, treatment-refractory",
+        "note": "VMAT2 off-label (failed controlled TS trials); DBS for severe adult cases; emerging neuromodulation devices."
+      }
+    ],
+    "ecopipam_slot": "A non-antipsychotic, weight-neutral D1 antagonist positioned above the antipsychotics (and competing with alpha-2 agonists in moderate-to-severe tics) once guidelines update."
+  },
+  "competitors": [
+    {
+      "name": "Aripiprazole (Abilify)",
+      "class": "Atypical antipsychotic (D2/5-HT1A partial agonist)",
+      "ts_status": "FDA-approved TS 2014 (6-18)",
+      "liabilities": "+1.5 kg weight gain vs placebo; akathisia; EPS/TD class risk",
+      "cost": "Generic (~$10/mo)",
+      "threat": "Moderate-High",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "name": "Guanfacine ER (Intuniv)",
+      "class": "Alpha-2 agonist",
+      "ts_status": "Off-label; ADHD-approved",
+      "liabilities": "Sedation, hypotension, rebound HTN",
+      "cost": "Generic (~$16/mo)",
+      "threat": "High",
+      "source": "aan_2019"
+    },
+    {
+      "name": "Clonidine ER (Kapvay)",
+      "class": "Alpha-2 agonist",
+      "ts_status": "Off-label; ADHD-approved",
+      "liabilities": "Sedation, hypotension",
+      "cost": "Generic (~$25/mo)",
+      "threat": "High",
+      "source": "aan_2019"
+    },
+    {
+      "name": "Haloperidol (Haldol)",
+      "class": "Typical antipsychotic (D2)",
+      "ts_status": "FDA-approved TS 1969",
+      "liabilities": "EPS, TD, sedation, weight gain",
+      "cost": "Generic",
+      "threat": "Low",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "name": "Pimozide (Orap)",
+      "class": "Typical antipsychotic (D2)",
+      "ts_status": "FDA-approved TS 1984",
+      "liabilities": "QT prolongation, EPS, TD",
+      "cost": "Generic",
+      "threat": "Low",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "name": "Deutetrabenazine (Austedo — Teva)",
+      "class": "VMAT2 inhibitor",
+      "ts_status": "Failed ARTISTS 1&2; no TS indication",
+      "liabilities": "No TS efficacy shown",
+      "cost": "Branded (TD/HD only)",
+      "threat": "Low / complementary",
+      "source": "artists_fail"
+    },
+    {
+      "name": "CBIT",
+      "class": "Behavioral therapy",
+      "ts_status": "First-line (AAN)",
+      "liabilities": "~half respond; therapist-access shortage",
+      "cost": "Therapist time",
+      "threat": "High (gatekeeper)",
+      "source": "cbit_piacentini"
+    },
+    {
+      "name": "Neupulse",
+      "class": "Median-nerve stimulation device",
+      "ts_status": "UK 'wellness' launch; no FDA clearance",
+      "liabilities": "Daily wear; regulatory status unsettled",
+      "cost": "~£500 + £20/mo",
+      "threat": "Emerging / watch",
+      "source": "neupulse_rct"
+    }
+  ],
+  "ecopipam": {
+    "name": "Ecopipam",
+    "class": "First-in-class selective dopamine D1 antagonist (non-antipsychotic)",
+    "ts_status": "NDA submitted June 18, 2026; Orphan + Fast Track",
+    "efficacy": "Phase 3 D1AMOND (n=216, randomized-withdrawal): pediatric relapse HR ~0.5, P=.008",
+    "tolerability": "Weight-neutral; no significant metabolic or EPS signals. AEs: somnolence ~11%, anxiety/headache ~10%, insomnia ~9%.",
+    "sources": [
+      "jamaneuro_ph3",
+      "teva_nda",
+      "peds_ph2b",
+      "mdcp_ext"
+    ]
+  },
+  "austedo_dynamic": {
+    "title": "The Teva internal portfolio question — complementary, not cannibalistic",
+    "note": "Austedo (~$1.6B in 2024) is adult tardive dyskinesia / Huntington's chorea, has no TS indication, and failed the ARTISTS trials designed to earn one. Ecopipam fills the gap Austedo left and reuses the same neuroscience/movement-disorder commercial infrastructure. Main internal tension is share-of-voice, not revenue overlap.",
+    "source": "artists_fail"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "positioning": "Tourette syndrome is a large, under-diagnosed pediatric neuro-psychiatric market where the only approved drugs are decades-old antipsychotics — and ecopipam is the first novel mechanism, and first non-antipsychotic, to reach the FDA in more than a decade.",
+  "big_stats": [
+    {
+      "value": "~174,000",
+      "label": "US children diagnosed with TS (~1 in 333); about half of all cases go undiagnosed",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "~1 in 162",
+      "label": "children truly have TS (~0.6%) once undiagnosed cases are counted",
+      "source": "cdc_ts_data"
+    },
+    {
+      "value": "3",
+      "label": "FDA-approved TS drugs — all antipsychotics (newest 2014)",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "value": ">10 yrs",
+      "label": "since any new mechanism was approved for TS",
+      "source": "teva_nda"
+    },
+    {
+      "value": "First-in-class",
+      "label": "ecopipam — selective D1 antagonist, non-antipsychotic",
+      "source": "jamaneuro_ph3"
+    },
+    {
+      "value": "~$700M+",
+      "label": "Teva upfront to acquire ecopipam (Emalex)",
+      "source": "teva_emalex_close"
+    }
+  ],
+  "sections": [
+    {
+      "key": "market",
+      "title": "The market today",
+      "body": "About 174,000 US children are diagnosed with Tourette syndrome (~1 in 333, 0.3%), but roughly half of all cases go undiagnosed — implying ~1 in 162 children (0.6%) are truly affected. It is a large, under-identified pediatric population managed today with decades-old generic antipsychotics and off-label alpha-2 agonists.",
+      "sources": [
+        "cdc_ts_data",
+        "treatment_review_pmc"
+      ]
+    },
+    {
+      "key": "journey",
+      "title": "The patient journey",
+      "body": "Families consult about four different clinicians over years before diagnosis; care concentrates in pediatric neurology and child psychiatry and is mediated by caregivers and schools. The bottleneck is diagnosis and specialist access — not treatment capacity.",
+      "sources": [
+        "treatment_review_pmc",
+        "comorbid_pmc"
+      ]
+    },
+    {
+      "key": "treaters",
+      "title": "Who treats it — and how",
+      "body": "Only three drugs are FDA-approved for tics (haloperidol, pimozide, aripiprazole — all D2 antipsychotics with EPS and metabolic liabilities), while real-world first-line care leans on behavioral therapy (CBIT) and off-label generic alpha-2 agonists. Everything effective today is either old, off-label, or hard to access.",
+      "sources": [
+        "aan_2019",
+        "treatment_review_pmc"
+      ]
+    },
+    {
+      "key": "economics",
+      "title": "The economic opportunity",
+      "body": "Third-party analysts size the TS treatment market at roughly $2.0–2.7B, a base that is largely generic today; a differentiated, on-label branded entrant is the value-creation opportunity, with sell-side peak-sales estimates for ecopipam of up to ~$1B. (External estimates — this tool does not model revenue.)",
+      "sources": [
+        "grandview_market",
+        "jefferies_peak"
+      ]
+    },
+    {
+      "key": "unmet",
+      "title": "What's missing — why it's worth pursuing",
+      "body": "The guideline ladder pushes antipsychotics down for tolerability, first-line CBIT is throttled by a therapist shortage, and no new mechanism has arrived in over a decade — leaving experts, patients, and caregivers with options that are effective-but-toxic or effective-but-inaccessible. A weight-neutral, non-antipsychotic mechanism with positive Phase 3 data is the first credible answer to that gap.",
+      "sources": [
+        "aan_2019",
+        "cbit_piacentini",
+        "jamaneuro_ph3"
+      ]
+    }
+  ],
+  "one_liner": "A large, under-served pediatric market with no modern mechanism — and a first-in-class, non-antipsychotic asset with positive Phase 3 data positioned to define it."
+}

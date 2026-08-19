@@ -1,0 +1,194 @@
+{
+  "_comment": "Neutral company dossiers for the TS competitive field. Every figure cites a source id in sources.json (Principle 2). Framing = each company's own investor-voice framing of its TS role, not an ecopipam-as-hero scorecard (Principle 3). No pricing/penetration/revenue modeling for ecopipam (Principle 1); company-level public facts (portfolio, strategy, publicly reported brand revenue) are cited factual datapoints, not models.",
+  "as_of": "2026-07-07",
+  "companies": [
+    {
+      "name": "Teva Pharmaceutical Industries",
+      "ticker": "NYSE: TEVA",
+      "role_in_ts": "Owner of ecopipam via the June 2026 Emalex acquisition; the only large-cap in the field with a filed, novel-mechanism pediatric TS asset (NDA submitted June 18, 2026).",
+      "framing": "Teva frames ecopipam as a capital-efficient bolt-on to its existing branded neuroscience franchise (Austedo, Uzedy, Ajovy) and as an embodiment of the innovation pillar of its 'Pivot to Growth' strategy: a first-in-class, non-antipsychotic movement-disorder asset that reuses the same specialty commercial infrastructure without cannibalizing Austedo, which has no TS indication. Investor narrative emphasizes durable growth from innovative brands and pipeline optionality rather than TS as a standalone franchise.",
+      "neuroscience_portfolio": [
+        {
+          "name": "Austedo / Austedo XR (deutetrabenazine)",
+          "moa": "VMAT2 inhibitor",
+          "indication": "Tardive dyskinesia; chorea associated with Huntington's disease",
+          "ts_relevance": "Failed ARTISTS 1 & 2 in pediatric TS; no TS indication. Publicly reported FY2025 global revenue ~$2.26B (+34% YoY, local currency).",
+          "sources": [
+            "artists_fail",
+            "teva_fy2025_results"
+          ]
+        },
+        {
+          "name": "Uzedy (risperidone extended-release injectable)",
+          "moa": "Atypical antipsychotic (long-acting injectable)",
+          "indication": "Schizophrenia; bipolar I disorder (adults)",
+          "ts_relevance": "No TS indication; antipsychotic class sits low on the AAN ladder for tics. FY2025 revenue ~$191M (+63% YoY).",
+          "sources": [
+            "teva_fy2025_results"
+          ]
+        },
+        {
+          "name": "Ajovy (fremanezumab)",
+          "moa": "Anti-CGRP monoclonal antibody",
+          "indication": "Migraine prevention (incl. pediatric episodic migraine)",
+          "ts_relevance": "No TS role; core migraine brand illustrating Teva's specialty-neuroscience commercial reach. FY2025 revenue ~$673M (+30% YoY).",
+          "sources": [
+            "teva_fy2025_results"
+          ]
+        },
+        {
+          "name": "Ecopipam (EBS-101)",
+          "moa": "Selective dopamine D1 receptor antagonist (non-antipsychotic)",
+          "indication": "Pediatric Tourette syndrome (NDA under review)",
+          "ts_relevance": "Lead TS asset. NDA submitted June 18, 2026 (Orphan + Fast Track); acquired via Emalex ($700M upfront + up to $200M milestones, closed June 10, 2026).",
+          "sources": [
+            "teva_nda",
+            "teva_emalex_close",
+            "jamaneuro_ph3"
+          ]
+        }
+      ],
+      "source": "teva_fy2025_results"
+    },
+    {
+      "name": "Neurocrine Biosciences",
+      "ticker": "NASDAQ: NBIX",
+      "role_in_ts": "Former TS developer, not a current TS competitor: the valbenazine (VMAT2) Tourette program was wound down after repeated Phase 2 failures.",
+      "framing": "Neurocrine frames itself around Ingrezza (valbenazine) as a durable VMAT2 franchise in tardive dyskinesia and Huntington's chorea, with forward guidance built on psychiatry and endocrine pipeline assets. Tourette is presented as a de-prioritized, closed indication after controlled pediatric trials failed to replicate early signals, and does not feature in current growth narrative.",
+      "neuroscience_portfolio": [
+        {
+          "name": "Ingrezza (valbenazine)",
+          "moa": "VMAT2 inhibitor",
+          "indication": "Tardive dyskinesia (FDA 2017); chorea associated with Huntington's disease (FDA Aug 2023)",
+          "ts_relevance": "Same drug/class was investigated in TS; the TS indication was not pursued to approval.",
+          "sources": [
+            "neurocrine_ingrezza_hd"
+          ]
+        },
+        {
+          "name": "Valbenazine — Tourette program (discontinued)",
+          "moa": "VMAT2 inhibitor",
+          "indication": "Investigational pediatric/adult Tourette syndrome (T-Force program)",
+          "ts_relevance": "Wound down after Phase 2b T-Force GOLD missed the YGTSS primary endpoint in children/adolescents (topline Dec 2018); multiple TS studies failed to establish efficacy.",
+          "sources": [
+            "neurocrine_tforce_gold"
+          ]
+        }
+      ],
+      "source": "neurocrine_tforce_gold"
+    },
+    {
+      "name": "Noema Pharma",
+      "ticker": null,
+      "role_in_ts": "Private clinical-stage challenger; gemlapodect (NOE-105), a PDE10A inhibitor, is a mid-stage, novel-mechanism TS candidate.",
+      "framing": "Noema frames gemlapodect as a first-in-class PDE10A inhibitor delivering tic control through a non-dopamine-receptor-blockade mechanism with a metabolically clean profile (no weight gain, hyperlipidemia or diabetes signal), positioning it as a differentiated, tolerability-first option. Corporately, Noema presents itself as a Sofinnova-founded, Roche-originated orphan-CNS platform - a de-risked, VC-backed portfolio of mid-stage neuroscience assets for value creation.",
+      "neuroscience_portfolio": [
+        {
+          "name": "Gemlapodect (NOE-105)",
+          "moa": "PDE10A inhibitor (first-in-class)",
+          "indication": "Tourette syndrome",
+          "ts_relevance": "Lead TS asset. Phase 2a ALLEVIA-1 (n=15, 12-week open-label) met its primary and all key secondary endpoints (Oct 2024); Phase 2b initiated. Reported as weight-neutral with no metabolic side-effect signal.",
+          "sources": [
+            "noema_gemlapodect_ph2a"
+          ]
+        },
+        {
+          "name": "Roche-in-licensed CNS pipeline",
+          "moa": "Various (orphan neurological targets)",
+          "indication": "Trigeminal neuralgia, tuberous sclerosis complex, vasomotor symptoms (Phase 2)",
+          "ts_relevance": "No direct TS role; context for Noema's platform - clinical CNS assets in-licensed from Roche, funded through a CHF103M Series B (2023) extended to CHF130M (Dec 2024).",
+          "sources": [
+            "noema_gemlapodect_ph2a",
+            "noema_founding"
+          ]
+        }
+      ],
+      "source": "noema_gemlapodect_ph2a"
+    },
+    {
+      "name": "SciSparc",
+      "ticker": "NASDAQ: SPRC",
+      "role_in_ts": "Micro-cap developer of SCI-110, a proprietary cannabinoid combination in Phase 2b for adult Tourette syndrome.",
+      "framing": "SciSparc frames SCI-110 as a proprietary combination of dronabinol (synthetic THC) and the endocannabinoid palmitoylethanolamide (PEA) engineered to boost THC efficacy while lowering dose and side effects, offering a non-dopaminergic, tolerability-first approach to adult TS. The company positions itself as a small-cap developer advancing a differentiated, endocannabinoid-system program through a controlled Phase 2b crossover trial.",
+      "neuroscience_portfolio": [
+        {
+          "name": "SCI-110 (dronabinol + PEA)",
+          "moa": "Cannabinoid (THC) plus endocannabinoid (palmitoylethanolamide) combination",
+          "indication": "Tourette syndrome (Phase 2b); also studied in Alzheimer's disease agitation",
+          "ts_relevance": "Lead TS asset. Phase 2b is a multinational, double-blind, placebo-controlled crossover in adults 18-65 (NCT05126888). Company-reported open-label Phase 2a signaled ~21% tic reduction (YGTSS) in a small uncontrolled adult cohort.",
+          "sources": [
+            "scisparc_sci110_nct",
+            "scisparc_ph2a"
+          ]
+        }
+      ],
+      "source": "scisparc_sci110_nct"
+    },
+    {
+      "name": "Axsome Therapeutics",
+      "ticker": "NASDAQ: AXSM",
+      "role_in_ts": "Commercial-stage CNS company; balipodect (PDE10A, acquired from Takeda) carries Tourette syndrome as a secondary indication behind a schizophrenia-led plan.",
+      "framing": "Axsome frames balipodect as an in-licensed, late-stage-ready PDE10A asset that extends its marketed CNS franchise (Auvelity, Sunosi, Symbravo) into schizophrenia and, secondarily, Tourette syndrome. Investor narrative treats TS as pipeline optionality layered on top of a schizophrenia-first development plan and an existing commercial and R&D infrastructure, rather than a dedicated TS program.",
+      "neuroscience_portfolio": [
+        {
+          "name": "Auvelity (dextromethorphan-bupropion)",
+          "moa": "NMDA receptor antagonist / sigma-1 agonist",
+          "indication": "Major depressive disorder (FDA 2022); Alzheimer's disease agitation (2026)",
+          "ts_relevance": "No TS role; commercial anchor of the CNS franchise.",
+          "sources": [
+            "axsome_q1_2026"
+          ]
+        },
+        {
+          "name": "Sunosi (solriamfetol)",
+          "moa": "Dopamine-norepinephrine reuptake inhibitor (DNRI)",
+          "indication": "Excessive daytime sleepiness in narcolepsy or obstructive sleep apnea",
+          "ts_relevance": "No TS role.",
+          "sources": [
+            "axsome_q1_2026"
+          ]
+        },
+        {
+          "name": "Symbravo (meloxicam-rizatriptan)",
+          "moa": "COX-2-preferential inhibitor + 5-HT1B/1D agonist",
+          "indication": "Acute treatment of migraine",
+          "ts_relevance": "No TS role.",
+          "sources": [
+            "axsome_q1_2026"
+          ]
+        },
+        {
+          "name": "Balipodect (TAK-063)",
+          "moa": "Selective PDE10A inhibitor",
+          "indication": "Schizophrenia and Tourette syndrome (development)",
+          "ts_relevance": "TS-relevant pipeline asset. Global rights acquired from Takeda (April 1, 2026); completed a 164-patient proof-of-concept Phase 2 in schizophrenia; safety data in 360+ individuals; Phase 3-enabling activities in schizophrenia planned for 2026, with TS as a second indication.",
+          "sources": [
+            "axsome_balipodect"
+          ]
+        }
+      ],
+      "source": "axsome_balipodect"
+    },
+    {
+      "name": "Emalex Biosciences",
+      "ticker": null,
+      "role_in_ts": "Originator of ecopipam; acquired by Teva (closed June 10, 2026) and now a Teva subsidiary rather than an independent competitor.",
+      "framing": "Emalex framed ecopipam as the first novel-mechanism (selective dopamine D1 antagonist), non-antipsychotic, weight-neutral therapy to succeed in a pivotal pediatric Tourette trial (D1AMOND) after more than a decade without a new mechanism in TS. As a Paragon Biosciences-incubated, essentially single-asset company focused on CNS movement and fluency disorders, its investor story was a late-stage, de-risked TS asset that culminated in the June 2026 Teva acquisition.",
+      "neuroscience_portfolio": [
+        {
+          "name": "Ecopipam",
+          "moa": "Selective dopamine D1 receptor antagonist (non-antipsychotic)",
+          "indication": "Pediatric Tourette syndrome (lead); also explored in fluency/stuttering disorders",
+          "ts_relevance": "Sole lead asset. Phase 3 D1AMOND met its primary and secondary efficacy endpoints (topline Feb 2025); Phase 2b (Pediatrics 2023) and 12-month open-label extension support durability and weight-neutrality. Basis for the Teva acquisition and NDA.",
+          "sources": [
+            "jamaneuro_ph3",
+            "peds_ph2b",
+            "mdcp_ext",
+            "emalex_paragon"
+          ]
+        }
+      ],
+      "source": "emalex_paragon"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "_comment": "Adult-learning education briefs for the TS commercial-intelligence app. Neutral, factual, cited. Every factual number/claim is backed by a source id in the briefing's sources[] array (Principle 2). No pricing/revenue/penetration/claims modeling (Principle 1). Each company is presented in its own investor framing, not ecopipam-as-hero (Principle 3).",
+  "as_of": "2026-07-07",
+  "briefings": [
+    {
+      "id": "brief-ts-overview",
+      "title": "Tourette Syndrome: Disease Overview & Epidemiology",
+      "summary": "What TS is, how common it is, why roughly half of affected children go undiagnosed, and why comorbidity — not tics alone — defines who owns the patient.",
+      "body_md": "**Tourette syndrome (TS)** is a childhood-onset neurodevelopmental disorder defined by multiple motor tics plus at least one vocal tic persisting more than a year. Tics typically begin at **4-6 years**, peak in severity around **10-12 years**, and show a roughly **3:1 male predominance**.\n\n**How common is it?** CDC parent-reported data put diagnosed prevalence at about **1 in 333** US children ages 3-17 (~0.3%, roughly **174,000** children). But community screening that counts undiagnosed cases finds a true prevalence closer to **1 in 162** (~0.6%) — implying that **about half of children with TS are never formally diagnosed**. All-ages US estimates are roughly **350,000-450,000** people with TS and about **1 million** with a persistent (chronic) tic disorder.\n\n**Natural history is largely favorable.** Most tics are mild, wax and wane, and improve through adolescence; only a moderate-to-severe minority warrants medication.\n\n**TS is rarely isolated.** In the large TSAICG cohort, about **86%** of people with TS had at least one psychiatric comorbidity — OCD and/or ADHD ~**72%**, ADHD ~**54%**, anxiety ~**54%**, depression ~**36%** — and only about **13%** had \"pure\" TS. Commercially, this means the diagnosed pool is the market visible today while a large, latent, under-identified population sits behind it, and comorbidity often decides which specialty (neurology vs. psychiatry) manages the child.",
+      "cross_links": [
+        "landscape",
+        "journey"
+      ],
+      "sources": [
+        "cdc_ts_data",
+        "psychres_2022",
+        "nsch_prev_bmc",
+        "treatment_review_pmc",
+        "comorbid_pmc",
+        "comorbid_anx_dep"
+      ],
+      "visual": "prevalence"
+    },
+    {
+      "id": "brief-mechanism",
+      "title": "The Mechanism Story: D1 Antagonism vs D2 Antipsychotics vs Alpha-2 Agonists",
+      "summary": "Three ways to modulate the same dopamine circuit — and why a selective D1 antagonist is a genuinely different pharmacologic bet than the D2 antipsychotics and alpha-2 agonists that dominate today.",
+      "body_md": "Tics arise from dysregulated cortico-striato-thalamo-cortical **dopamine** signaling, so each drug class modulates that circuit differently.\n\n**D2 antipsychotics (the approved incumbents).** All three FDA-approved TS drugs — haloperidol (1969), pimozide (1984), and aripiprazole (2014) — are antipsychotics acting mainly by blocking or partially agonizing the dopamine **D2** receptor. They work, but carry the class's liabilities: extrapyramidal symptoms, tardive dyskinesia, sedation, hyperprolactinemia, and metabolic/weight effects (aripiprazole adds roughly **1.5 kg** vs placebo). That risk profile is why the AAN 2019 guideline risk-gates antipsychotics below behavioral therapy.\n\n**Alpha-2 adrenergic agonists (guanfacine, clonidine).** These act outside the dopamine receptor entirely — reducing noradrenergic firing in the locus coeruleus and indirectly modulating dopamine. They are cheap generics, also treat comorbid ADHD, and hold AAN **Level B** evidence, but cause sedation and hypotension and have modest anti-tic effect.\n\n**D1 antagonism (the new mechanism).** Ecopipam is a **selective dopamine D1 receptor antagonist** and is non-antipsychotic (no meaningful D2 blockade). In the Phase 3 D1AMOND randomized-withdrawal trial (JAMA Neurology; n=216), continued ecopipam roughly **halved relapse risk** in children (HR 0.5, P=.008) with no clinically meaningful weight, metabolic, or drug-induced movement-disorder effects; a 12-month extension showed durable benefit without tachyphylaxis. The mechanistic thesis: act on the dopamine pathway without the D2 antipsychotic burden — the first novel TS mechanism to reach filing in over a decade.",
+      "cross_links": [
+        "treatment",
+        "pipeline",
+        "landscape"
+      ],
+      "sources": [
+        "treatment_review_pmc",
+        "aan_2019",
+        "jamaneuro_ph3",
+        "peds_ph2b",
+        "mdcp_ext"
+      ],
+      "visual": "mechanism"
+    },
+    {
+      "id": "brief-journey-ecosystem",
+      "title": "The Patient Journey & the Caregiver/School Ecosystem",
+      "summary": "TS is a caregiver-mediated, school-involved, diagnosis-to-specialist funnel — not an infusion journey — and the school-accommodation lane is part of the treatment ecosystem.",
+      "body_md": "Unlike an adult specialty launch, the TS journey is **caregiver-mediated and school-involved**.\n\n**Onset and delay.** Symptoms usually begin with motor tics at **4-6 years**, often mistaken for allergies, vision problems, or misbehavior. Because TS is a clinical diagnosis with no confirmatory test — and comorbid ADHD/OCD/anxiety frequently surface first and steer the workup — families consult on average about **four** different professional types, often over years, before diagnosis.\n\n**The decisive call-point.** Diagnosis and tic-specific pharmacotherapy typically start with a **pediatric neurologist or movement-disorder specialist** (secondarily child psychiatry), who confirms TS, stages severity (YGTSS), and applies the AAN ladder: watchful waiting for non-impairing tics; CBIT and/or medication for impairing tics.\n\n**A wider decision unit.** Parents/caregivers and schools shape the choice. Under federal law, a student with TS can qualify for an **IEP under IDEA** — usually classified as **Other Health Impairment** (deliberately replacing the older \"emotional disturbance\" label) — when specialized instruction is needed, or a **504 Plan** under Section 504/ADA for accommodations such as extended test time, movement breaks, and preferential seating. The Tourette Association of America publishes the IEP/504 educator toolkits families actually use, and documented school impairment often triggers specialist referral.\n\n**Leak points:** ~50% undiagnosed, multi-year diagnostic delay, comorbidity capture ahead of the tic conversation, and constrained first-line CBIT access.",
+      "cross_links": [
+        "journey",
+        "policy",
+        "channel"
+      ],
+      "sources": [
+        "treatment_review_pmc",
+        "comorbid_pmc",
+        "aan_2019",
+        "cbit_piacentini",
+        "cdc_ts_data",
+        "idea_ed",
+        "ed_section504",
+        "taa_iep_504"
+      ],
+      "visual": "journey"
+    },
+    {
+      "id": "brief-access-channel",
+      "title": "Access & Channel: Launching a Pediatric Orphan Therapy",
+      "summary": "In TS the binding constraints are specialist access, the diagnostic bottleneck, and payer step-through — not infusion capacity — and pediatrics means heavy Medicaid/CHIP exposure. Directional, patients-and-access only.",
+      "body_md": "For a pediatric orphan launch, **\"capacity\" is not chair-time**: there is no REMS or infusion-slot constraint in TS. The binding variables are **specialist access, the diagnostic bottleneck, and payer step-through**.\n\n**Where patients concentrate.** Diagnosed prevalence clusters around specialist access, so the channel anchor is the Tourette Association of America's **Centers of Excellence** (~28 as of Feb 2025) plus high-volume children's hospitals, then community pediatric neurology and child psychiatry — referral geography, not raw population, is the real map.\n\n**Payer mix skews public.** Roughly **49%** of US children (~37M) are covered by **Medicaid or CHIP**, so access is won state Medicaid program by state Medicaid program. Preferred drug lists, **prior authorization**, and **step therapy** are the primary Medicaid utilization tools (MACPAC). With cheap generic alpha-2 agonists and aripiprazole already established, a branded first-in-class D1 antagonist is a probable PA/step-through target on both Medicaid and commercial formularies — and the AAN 2019 ladder (watchful waiting -> CBIT -> generics -> antipsychotics) hands payers a ready-made step-therapy rationale.\n\n**The orphan offset.** Orphan-drug designation (publicly confirmed for ecopipam) confers **7-year marketing exclusivity** plus a PDUFA user-fee waiver and tax credit — the core moat against generic and fast-follower entry in the TS indication. An oral orphan pediatric therapy would plausibly route through specialty pharmacy with a manufacturer support hub, though the sponsor has not disclosed a channel design.\n\nDirectional only — expressed in patients and access, never dollars or claims.",
+      "cross_links": [
+        "channel",
+        "policy",
+        "scenario"
+      ],
+      "sources": [
+        "taa_coe",
+        "aap_medicaid",
+        "macpac_prior_auth",
+        "aan_2019",
+        "fda_orphan_designation",
+        "teva_nda"
+      ],
+      "visual": "access"
+    },
+    {
+      "id": "brief-competitive-field",
+      "title": "The Competitive Field & Order of Entry",
+      "summary": "A generic-dominated field where the real competition is therapeutic conservatism — with a first-in-class D1 entrant, a decade of abandoned VMAT2 attempts, and an emerging PDE10A follower cluster.",
+      "body_md": "The TS field is **generic-dominated**, and the real competition is therapeutic conservatism, not a branded rival. Incumbents are the three FDA-approved antipsychotics and off-label generic alpha-2 agonists; guideline-preferred **CBIT** is the first-line gatekeeper. Order of entry is now sorting along mechanism lines.\n\n**First mover (novel mechanism).** Ecopipam (Teva, via its Emalex acquisition) is a selective **D1 antagonist**, first to file an NDA (June 2026) on positive Phase 3 D1AMOND data.\n\n**The abandoned mechanism (VMAT2).** Both deutetrabenazine (Teva's ARTISTS 1 & 2) and valbenazine (Neurocrine's T-Force GOLD, negative Dec 2018) failed controlled pediatric TS trials; neither carries a TS indication.\n\n**The follower cluster (PDE10A, striatal dopamine modulators).** Noema Pharma's **gemlapodect** met its Phase 2a primary and all key secondary endpoints (Oct 2024) and is in Phase 2b; Axsome's **balipodect** (acquired from Takeda, April 2026) is schizophrenia-led with TS as a second indication; EuMentis's **EM-221** completed Phase 1 (PDE10A PET occupancy up to 92.8%).\n\n**Adult-only and non-drug entrants.** SciSparc's **SCI-110** cannabinoid combination is in Phase 2b in adults; the **Neupulse** wrist-worn median-nerve stimulation device is on a UK consumer track with no FDA clearance (sham-controlled RCT, n=135).\n\nNeutral read: ecopipam holds a first-in-class, first-to-file lead with orphan exclusivity, while a PDE10A cohort forms the next competitive wave — each sponsor advancing its own program in its own framing.",
+      "cross_links": [
+        "companies",
+        "pipeline",
+        "landscape"
+      ],
+      "sources": [
+        "treatment_review_pmc",
+        "teva_nda",
+        "jamaneuro_ph3",
+        "artists_fail",
+        "neurocrine_tforce_gold",
+        "noema_gemlapodect_ph2a",
+        "axsome_balipodect",
+        "eumentis_em221_cells",
+        "scisparc_sci110_nct",
+        "neupulse_rct"
+      ],
+      "visual": "orderofentry"
+    },
+    {
+      "id": "brief-regulatory-advocacy",
+      "title": "The Regulatory & Advocacy Landscape",
+      "summary": "Supply-side FDA orphan/pediatric incentives and demand-side TAA advocacy and school-accommodation infrastructure — the two forces that shape the treated-patient funnel for the whole field.",
+      "body_md": "For a pediatric TS asset, the policy terrain is **supply-side FDA incentives** and **demand-side advocacy/education infrastructure** — not scheduling or access-reform fights.\n\n**Regulatory incentives.** Ecopipam publicly holds **Orphan Drug** and **Fast Track** designations (per the sponsor). Orphan status is the gateway to **7-year marketing exclusivity** on approval, plus a PDUFA user-fee waiver and orphan tax credit — the principal moat in a generic field. A structural but, for this asset, **unconfirmed** upside is the **Rare Pediatric Disease** designation and its transferable **Priority Review Voucher**; that program was reauthorized through **Sept 30, 2029** via the Give Kids a Chance Act in the Consolidated Appropriations Act, 2026. The sponsor discloses only Orphan and Fast Track, so RPD/PRV should be treated as unverified here.\n\n**Advocacy backbone.** The Tourette Association of America designates the **~28 Centers of Excellence** that map where diagnosed patients concentrate, runs a provider-referral directory, and operates the **Behavior Therapy Institute (TS-BTI)** — a train-the-trainer program that expands the supply of CBIT-certified therapists to relieve the first-line access bottleneck (CBIT's pivotal RCT: **52.5%** much/very-much improved vs **18.5%**, NNT=3).\n\n**Education lane.** IDEA (IEP / Other Health Impairment) and Section 504 accommodations complete the picture, with TAA educator toolkits as the practical playbook.\n\nNeutral read: these forces shape the whole treated-patient funnel, not any single product.",
+      "cross_links": [
+        "policy",
+        "companies",
+        "channel"
+      ],
+      "sources": [
+        "teva_nda",
+        "fda_orphan_designation",
+        "fda_rpd_prv",
+        "taa_coe",
+        "taa_bti_cbit",
+        "cbit_piacentini",
+        "idea_ed",
+        "ed_section504"
+      ],
+      "visual": "regulatory"
+    }
+  ]
+}

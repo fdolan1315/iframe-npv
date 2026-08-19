@@ -1,0 +1,263 @@
+{
+  "_comment": "Citation registry. Every displayed number references a source id here (Principle 2: verify-and-cite). Add/verify entries before showing new figures.",
+  "sources": {
+    "cdc_ts_data": {
+      "label": "CDC — Data & Statistics on Tourette Syndrome",
+      "publisher": "CDC",
+      "url": "https://www.cdc.gov/tourette-syndrome/data/index.html",
+      "note": "Diagnosed prevalence ~1 in 333 (0.3%) US children 3-17; parent-reported NSCH."
+    },
+    "nsch_prev_bmc": {
+      "label": "Prevalence of TS among US children and adolescents, 2016-2022",
+      "publisher": "BMC Public Health (2024)",
+      "url": "https://link.springer.com/article/10.1186/s12889-024-20216-2",
+      "note": "NSCH-based diagnosed-prevalence trend."
+    },
+    "psychres_2022": {
+      "label": "Estimating the number of people with TS and persistent tic disorder in the US",
+      "publisher": "Psychiatry Research (2022)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35724469/",
+      "note": "~350k-450k all-ages TS; ~1,000,000 persistent tic disorder."
+    },
+    "comorbid_pmc": {
+      "label": "Lifetime prevalence of psychiatric comorbidity in TS",
+      "publisher": "PMC (large multi-site cohort)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4446055/",
+      "note": "~86% any comorbidity; ~72% OCD and/or ADHD; only ~10-15% 'pure' TS."
+    },
+    "comorbid_anx_dep": {
+      "label": "Depression & anxiety in TS: systematic review & meta-analysis",
+      "publisher": "PMC",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10693074/",
+      "note": "Anxiety ~53.5%; depression ~36.4%."
+    },
+    "aan_2019": {
+      "label": "AAN 2019 Practice Guideline: Treatment of Tics in TS and Chronic Tic Disorders",
+      "publisher": "Neurology (AAN)",
+      "url": "https://www.neurology.org/doi/10.1212/WNL.0000000000007466",
+      "note": "Watchful waiting; CBIT first-line; alpha-2 agonists Level B; antipsychotics risk-gated."
+    },
+    "treatment_review_pmc": {
+      "label": "A Review of the Current Treatment of Tourette Syndrome",
+      "publisher": "PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7337131/",
+      "note": "FDA-approved TS drugs (haloperidol, pimozide, aripiprazole) and class liabilities."
+    },
+    "jamaneuro_ph3": {
+      "label": "Efficacy and Safety of Ecopipam for TS: Phase 3 (D1AMOND)",
+      "publisher": "JAMA Neurology (2026)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42189524/",
+      "note": "n=216, randomized-withdrawal; pediatric relapse HR ~0.5, P=.008; weight-neutral."
+    },
+    "peds_ph2b": {
+      "label": "Ecopipam for Tourette Syndrome: A Randomized Trial (Phase 2b)",
+      "publisher": "Pediatrics / AAP (2023)",
+      "url": "https://publications.aap.org/pediatrics/article/151/2/e2022059574/190459/",
+      "note": ">150 children; ~30% YGTSS-TTS reduction vs placebo, P=.01."
+    },
+    "mdcp_ext": {
+      "label": "Safety & effect of 12-month ecopipam treatment in pediatric TS",
+      "publisher": "Movement Disorders Clinical Practice (2025)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12371453/",
+      "note": "Durable tic reduction; no adverse BMI/lipid/HbA1c trends; no tachyphylaxis."
+    },
+    "teva_nda": {
+      "label": "Teva Submits NDA for Ecopipam (pediatric TS)",
+      "publisher": "Teva (IR)",
+      "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/Teva-Submits-NDA-for-Ecopipam-a-First-in-Class-Investigational-Therapy-for-Pediatric-Tourette-Syndrome/default.aspx",
+      "note": "NDA submitted June 18, 2026; Orphan + Fast Track."
+    },
+    "teva_emalex_close": {
+      "label": "Teva Closes Acquisition of Emalex Biosciences",
+      "publisher": "Teva / GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/06/10/3309960/0/en/Teva-Closes-Acquisition-of-Emalex-Biosciences-Strengthening-Late-Stage-Neuroscience-Pipeline-and-Advancing-Pivot-to-Growth-Strategy.html",
+      "note": "$700M upfront + up to $200M milestones; closed June 10, 2026."
+    },
+    "taa_coe": {
+      "label": "Tourette Association of America — Centers of Excellence",
+      "publisher": "TAA",
+      "url": "https://tourette.org/about-tourette/overview/centers-of-excellence/",
+      "note": "~28 designated Centers of Excellence as of Feb 2025. Confirm live roster."
+    },
+    "aap_medicaid": {
+      "label": "AAP analysis: 49% of children insured by Medicaid or CHIP",
+      "publisher": "AAP News / CMS",
+      "url": "https://publications.aap.org/aapnews/news/31491/AAP-analysis-49-of-children-insured-by-Medicaid-or",
+      "note": "~49% of US children (~37M) on Medicaid/CHIP (Oct 2024)."
+    },
+    "cbit_piacentini": {
+      "label": "Behavior therapy for children with TS (CBIT pivotal RCT)",
+      "publisher": "JAMA (Piacentini 2010) / PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2993317/",
+      "note": "52.5% CBIT vs 18.5% control much/very much improved; NNT=3."
+    },
+    "artists_fail": {
+      "label": "Deutetrabenazine in pediatric TS (ARTISTS 1) — negative",
+      "publisher": "JAMA Network Open",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2784765",
+      "note": "YGTSS-TTS diff -0.7, P=0.69; ARTISTS 2 also negative. No TS indication."
+    },
+    "neupulse_rct": {
+      "label": "Median nerve stimulation for tics (Neupulse) — sham-controlled RCT",
+      "publisher": "Journal of Neuropsychology (2023)",
+      "url": "https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/jnp.12313",
+      "note": "n=135; ~35% YGTSS-TTS reduction (secondary); primary endpoint was tic frequency."
+    },
+    "noema_gemlapodect_ph2b": {
+      "label": "Noema Pharma — First Patients Dosed in Phase 2b Study of Gemlapodect (NOE-105) for Tourette Syndrome",
+      "publisher": "Noema Pharma / GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2024/10/30/2971630/0/en/Noema-Pharma-Announces-First-Patients-Dosed-in-Phase-2b-Study-with-Gemlapodect-NOE-105-a-First-In-Class-Investigational-Therapy-for-Tourette-Syndrome.html",
+      "note": "Phase 2b NOE-TTS-201 (NCT06315751): 12-wk, randomized, double-blind, placebo-controlled, n=140, adults + adolescents; up to 15 mg QD; primary endpoint YGTSS-TTS; primary completion ~June 2026. Phase 2a (ALLEVIA-1) met primary and all key secondary endpoints."
+    },
+    "scisparc_sci110_ph2b": {
+      "label": "SciSparc Receives FDA Approval to Initiate Phase IIb Clinical Trial of SCI-110 for Tourette Syndrome",
+      "publisher": "SciSparc / GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2024/09/23/2951371/0/en/SciSparc-Receives-FDA-Approval-to-Initiate-Phase-IIb-Clinical-Trial-for-Tourette-Syndrome-Treatment.html",
+      "note": "SCI-110 (dronabinol/THC + PEA) Phase 2b (NCT05126888): adults 18-65, double-blind placebo-controlled crossover (endpoints wk 12 & 26); sites include Yale, Hannover, Tel Aviv Sourasky. Prior Phase 2a: ~21% tic reduction."
+    },
+    "axsome_balipodect": {
+      "label": "Axsome Therapeutics acquires global rights to Takeda's balipodect (PDE10A)",
+      "publisher": "Axsome Therapeutics / GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/04/01/3266474/33090/en/Axsome-Therapeutics-Acquires-Selective-PDE10A-Inhibitor-Balipodect-for-the-Treatment-of-Schizophrenia-and-Other-Neuropsychiatric-Conditions.html",
+      "note": "Apr 1, 2026; balipodect (TAK-063) selective PDE10A inhibitor; 164-patient Phase 2 proof-of-concept in schizophrenia, safety in 360+ individuals; schizophrenia-lead plan with Tourette syndrome as a second indication."
+    },
+    "eumentis_em221_cells": {
+      "label": "A Novel PDE10A Inhibitor (EM-221 / MR-1916) for Tourette Syndrome and Other Movement Disorders — Phase 1",
+      "publisher": "Cells (MDPI, 2024)",
+      "url": "https://www.mdpi.com/2073-4409/13/14/1230",
+      "note": "Peer-reviewed Phase 1: MTD 15 mg, PDE10A PET enzyme occupancy up to 92.8%, ~24 h half-life; Phase 2 in TS planned (company guidance, not a registered study)."
+    },
+    "neupulse_uk_launch": {
+      "label": "Neupulse Launches Wearable Median-Nerve Stimulation Device for Tourette Syndrome (UK)",
+      "publisher": "Neupulse / Neurotherapeutics Ltd (Clinical Research News Online)",
+      "url": "https://www.clinicalresearchnewsonline.com/news/2025/12/16/neupulse-launches-first-of-its-kind-wearable-with-the-support-of-ensera-design-to-help-people-living-with-tourette-syndrome",
+      "note": "Wrist-worn rhythmic 10-Hz median-nerve stimulation; UK pre-orders live, delivery ~June 2026 subject to UK regulatory processes; no FDA clearance. University of Nottingham spin-out; positioned as a UK consumer wearable."
+    },
+    "neurocrine_tforce_gold": {
+      "label": "Neurocrine: Phase 2b T-Force GOLD topline — valbenazine missed primary endpoint in pediatric TS",
+      "publisher": "Neurocrine Biosciences (IR)",
+      "url": "https://neurocrine.gcs-web.com/news-releases/news-release-details/neurocrine-biosciences-announces-topline-data-phase-iib-t-force",
+      "note": "Dec 12, 2018: valbenazine did not meet the YGTSS-TTS primary endpoint at week 12 in children/adolescents; TS program not pursued to approval. Second major VMAT2 failure in TS alongside deutetrabenazine."
+    },
+    "teva_fy2025_results": {
+      "label": "Teva Q4 & FY2025 Results — Pivot to Growth Delivers Third Consecutive Year of Growth",
+      "publisher": "Teva (IR)",
+      "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/Teva-Innovative-Portfolio-and-Consistent-Execution-of-Pivot-to-Growth-Strategy-Deliver-Third-Consecutive-Year-of-Growth-Pipeline-Positioned-to-Unlock-Significant-Value-Potential/default.aspx",
+      "note": "FY2025 global revenue: Austedo ~$2.26B (+34%), Ajovy $673M (+30%), Uzedy $191M (+63%), all local currency; 'Pivot to Growth' four-pillar strategy with Austedo/Ajovy/Uzedy as innovative-brand engines. WebFetch 403 (site bot-block); verified via search summary of this release."
+    },
+    "neurocrine_ingrezza_hd": {
+      "label": "Neurocrine — FDA Approval of INGREZZA (valbenazine) for Chorea Associated With Huntington's Disease",
+      "publisher": "Neurocrine Biosciences / PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-announces-fda-approval-of-ingrezza-valbenazine-capsules-for-the-treatment-of-chorea-associated-with-huntingtons-disease-301904823.html",
+      "note": "Ingrezza approved for HD chorea Aug 2023; first FDA-approved treatment for tardive dyskinesia in April 2017. VMAT2 inhibitor."
+    },
+    "noema_gemlapodect_ph2a": {
+      "label": "Noema Pharma: gemlapodect (NOE-105) Phase 2a ALLEVIA-1 met primary and all key secondary endpoints in TS",
+      "publisher": "Noema Pharma",
+      "url": "https://noemapharma.com/2024/10/17/noema-pharma-announces-noe-105-gemlapodect-phase-2a-study-in-tourette-syndrome-met-primary-and-all-key-secondary-endpoints/",
+      "note": "Oct 17, 2024; first-in-class PDE10A inhibitor; n=15, 12-week open-label; ~60% responders overall (88% at target dose); reported weight-neutral. Phase 2b initiated."
+    },
+    "noema_founding": {
+      "label": "Noema Pharma, Founded by Sofinnova Partners, Raises CHF 103M Series B",
+      "publisher": "Sofinnova Partners",
+      "url": "https://sofinnovapartners.com/news/noema-pharma-founded-by-sofinnova-partners-raises-chf-103-million-usd112million-in-series-b-financing",
+      "note": "Swiss orphan-CNS company co-founded 2019/2020 by Sofinnova Partners; clinical assets in-licensed from Roche; Series B CHF103M (2023), extended to CHF130M (Dec 2024)."
+    },
+    "scisparc_sci110_nct": {
+      "label": "SCI-110 (dronabinol + PEA) Phase 2b crossover in adult Tourette syndrome (NCT05126888)",
+      "publisher": "ClinicalTrials.gov / SciSparc",
+      "url": "https://clinicaltrials.gov/study/NCT05126888",
+      "note": "Multinational, double-blind, placebo-controlled crossover in adults 18-65; proprietary cannabinoid (THC) + palmitoylethanolamide combination; adult-only program."
+    },
+    "scisparc_ph2a": {
+      "label": "SciSparc — SCI-110 Phase 2a signal in adult Tourette syndrome (company-reported)",
+      "publisher": "NeurologyLive / SciSparc",
+      "url": "https://www.neurologylive.com/view/scisparc-submit-ind-for-phase-2b-trial-cannabis-derived-therapy-tourette-syndrome",
+      "note": "Company-reported open-label Phase 2a: ~21% tic reduction (YGTSS) in a small uncontrolled adult cohort; supported IND for the Phase 2b crossover. Uncontrolled/early-stage — treat as directional."
+    },
+    "axsome_q1_2026": {
+      "label": "Axsome Therapeutics Reports First Quarter 2026 Financial Results and Provides Business Update",
+      "publisher": "Axsome Therapeutics / GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/05/04/3286568/33090/en/axsome-therapeutics-reports-first-quarter-2026-financial-results-and-provides-business-update.html",
+      "note": "Commercial CNS portfolio: Auvelity (MDD; Alzheimer's disease agitation, 2026), Sunosi/solriamfetol (excessive daytime sleepiness), Symbravo/meloxicam-rizatriptan (acute migraine)."
+    },
+    "emalex_paragon": {
+      "label": "Emalex Biosciences (Paragon Biosciences) — Ecopipam Meets Primary and Secondary Endpoints in Phase 3 TS Study",
+      "publisher": "Paragon Biosciences",
+      "url": "https://paragonbiosci.com/2025/02/27/emalex-biosciences-lead-candidate-meets-primary-and-secondary-endpoints-in-phase-3-tourette-syndrome-study/",
+      "note": "Emalex founded 2018 by Paragon Biosciences (Jeffrey Aronin); originator of ecopipam (selective D1 antagonist); focus on CNS movement and fluency disorders; Phase 3 D1AMOND met primary + secondary endpoints (topline Feb 2025)."
+    },
+    "fda_orphan_designation": {
+      "label": "FDA — Designating an Orphan Product: Drugs and Biological Products",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/industry/medical-products-rare-diseases-and-conditions/designating-orphan-product-drugs-and-biological-products",
+      "note": "Orphan designation incentives: 7-year marketing exclusivity on approval (same drug/same indication cannot be approved for another sponsor), PDUFA user-fee waiver, and orphan tax credit."
+    },
+    "fda_rpd_prv": {
+      "label": "Give Kids a Chance Act — Rare Pediatric Disease Priority Review Voucher reauthorization (H.R.1262 / CAA 2026)",
+      "publisher": "U.S. Congress (Congress.gov)",
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/1262",
+      "note": "RPD designation / transferable Priority Review Voucher program reauthorized through Sept 30, 2029 via the Consolidated Appropriations Act, 2026 (Mikaela Naylon Give Kids a Chance Act). Structurally available but NOT publicly confirmed for ecopipam."
+    },
+    "fda_pediatric_exclusivity": {
+      "label": "Qualifying for Pediatric Exclusivity Under Section 505A of the FD&C Act (FAQ)",
+      "publisher": "FDA",
+      "url": "https://www.fda.gov/drugs/development-resources/qualifying-pediatric-exclusivity-under-section-505a-federal-food-drug-and-cosmetic-act-frequently",
+      "note": "6-month pediatric exclusivity earned by satisfying an FDA Written Request under BPCA; pediatric study results must be incorporated into labeling (BPCA/PREA). Stacks on existing exclusivity/patent term."
+    },
+    "idea_ed": {
+      "label": "IDEA — Individuals with Disabilities Education Act (official ED site)",
+      "publisher": "U.S. Department of Education",
+      "url": "https://sites.ed.gov/idea/",
+      "note": "IEP eligibility for students needing specialized instruction; students with TS are typically classified under Other Health Impairment (OHI)."
+    },
+    "ed_section504": {
+      "label": "Section 504 of the Rehabilitation Act — U.S. Department of Education",
+      "publisher": "U.S. Department of Education, Office for Civil Rights",
+      "url": "https://www.ed.gov/laws-and-policy/individuals-disabilities/section-504",
+      "note": "Civil-rights statute barring disability discrimination in federally funded programs; basis for 504 accommodation plans (extended time, movement breaks, preferential seating)."
+    },
+    "taa_iep_504": {
+      "label": "Tourette Association of America — IEP/504 Accommodations & Education Rights",
+      "publisher": "Tourette Association of America",
+      "url": "https://tourette.org/resources/overview/tools-for-educators/accommodations-education-rights/iep-504-accommodations/",
+      "note": "TAA educator toolkit on IEP (OHI) vs 504 plans and TS-specific accommodations; documents the deliberate move away from the older 'emotional disturbance' classification."
+    },
+    "taa_provider_directory": {
+      "label": "Find A Provider",
+      "publisher": "Tourette Association of America",
+      "url": "https://tourette.org/find-a-provider/",
+      "note": "Searchable TAA provider directory filterable by location, patient age group, and clinical expertise including CBIT — the de facto referral rail to specialists and behavior therapists."
+    },
+    "taa_bti_cbit": {
+      "label": "Tourette Association of America — Behavior Therapy Institute (TS-BTI) CBIT trainings",
+      "publisher": "Tourette Association of America",
+      "url": "https://tourette.org/research-medical/behavioral-therapy-institute-cbit-trainings/",
+      "note": "Train-the-trainer program (2-day training plus consultation, ending in a TS-BTI certificate and listing on the CBIT referral list) to expand the supply of CBIT-trained therapists."
+    },
+    "macpac_prior_auth": {
+      "label": "MACPAC — Prior Authorization in Medicaid",
+      "publisher": "MACPAC (Medicaid and CHIP Payment and Access Commission)",
+      "url": "https://www.macpac.gov/publication/prior-authorization-in-medicaid-2/",
+      "note": "Prior authorization, step therapy, and preferred drug lists are the primary Medicaid outpatient-drug utilization-management tools; states set stringency program by program."
+    },
+    "grandview_market": {
+      "label": "Tourette Syndrome Treatment Market — size & growth",
+      "publisher": "Grand View Research",
+      "url": "https://www.grandviewresearch.com/industry-analysis/tourette-syndrome-treatment-market-report",
+      "note": "~$2.07B (2022), ~6.96% CAGR; base is largely generic/off-label. Third-party market estimate."
+    },
+    "jefferies_peak": {
+      "label": "Teva/Emalex deal analysis — ecopipam peak-sales estimate",
+      "publisher": "pharmaphorum (Jefferies note)",
+      "url": "https://pharmaphorum.com/news/teva-makes-its-first-ma-play-years-buying-emalex",
+      "note": "Sell-side estimate of up to ~$1B US peak sales; refractory/post-antipsychotic positioning. Third-party estimate."
+    },
+    "census_pep": {
+      "label": "US Census Bureau — Population Estimates (state population by age)",
+      "publisher": "US Census Bureau (via public mirror)",
+      "url": "https://www.census.gov/programs-surveys/popest.html",
+      "note": "State under-18 age-share (2013) scaled to 2025 totals; used for directional per-state child population."
+    }
+  }
+}

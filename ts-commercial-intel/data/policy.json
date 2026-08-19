@@ -1,0 +1,103 @@
+{
+  "headline": "The policy terrain for a pediatric TS launch is orphan/pediatric FDA incentives on the supply side and the IEP/504 school-accommodation lane on the demand side — not scheduling or access-reform fights. Reimbursement is a state-by-state Medicaid/CHIP problem layered over commercial prior authorization, and is treated here directionally only: patients and access, never claims-level dollars.",
+  "as_of": "2026-07-07",
+  "note": "Directional policy/access map. Per Principle 1, nothing here models pricing, rebates, revenue, or claims-level dollars — reimbursement items describe payer mechanics and payer mix only. Regulatory items distinguish designations ecopipam is publicly confirmed to hold (Orphan Drug, Fast Track) from incentives that are structurally available but unconfirmed for this asset (Rare Pediatric Disease designation / Priority Review Voucher).",
+  "regulatory": [
+    {
+      "label": "Orphan Drug designation — CONFIRMED for ecopipam",
+      "detail": "Teva/Emalex publicly state ecopipam holds FDA Orphan Drug and Fast Track designations for pediatric Tourette syndrome. Orphan status is the gateway to the incentive stack below (7-year exclusivity, tax credit, user-fee waiver, PREA exemption). TS is well within the <200,000 US-prevalence orphan threshold.",
+      "source": "teva_nda"
+    },
+    {
+      "label": "Seven-year orphan market exclusivity",
+      "detail": "On approval for a designated orphan indication, FDA grants 7 years of marketing exclusivity during which it will not approve another sponsor's application for the same drug for the same disease — longer than the standard 5-year new-chemical-entity exclusivity. For a first-in-class D1 antagonist entering a generic-dominated field, this is the core moat against fast-follower and generic entry in the TS indication.",
+      "source": "fda_orphan_designation"
+    },
+    {
+      "label": "Orphan tax credit, PDUFA fee waiver, and PREA exemption",
+      "detail": "Orphan designation carries a federal tax credit of 25% of qualified US clinical-testing expenses (reduced from 50% by the 2017 tax law), a waiver of the FDA prescription-drug user (PDUFA) application fee, and an exemption from the Pediatric Research Equity Act (PREA) pediatric-assessment requirement. The PREA exemption is a notable nuance here: ecopipam is pediatric-first by design, so Teva ran the pediatric program voluntarily rather than under a PREA mandate.",
+      "source": "fda_orphan_designation"
+    },
+    {
+      "label": "Fast Track designation — CONFIRMED for ecopipam",
+      "detail": "Fast Track (also publicly confirmed) supports more frequent FDA interaction and eligibility for rolling review of the NDA. It signals FDA's recognition of unmet need in pediatric TS, where the only three FDA-approved drugs are older antipsychotics with EPS/metabolic liabilities.",
+      "source": "teva_nda"
+    },
+    {
+      "label": "Pediatric labeling and 6-month pediatric exclusivity (BPCA §505A)",
+      "detail": "Because the indication is pediatric, the pivotal data are incorporated directly into labeling. Separately, a sponsor that satisfies an FDA Written Request for pediatric studies under the Best Pharmaceuticals for Children Act can earn an additional 6 months of pediatric exclusivity that attaches to existing exclusivity/patent protection. For an orphan pediatric asset this would stack on top of the 7-year orphan term rather than replace it — potential incremental upside, contingent on a Written Request.",
+      "source": "fda_pediatric_exclusivity"
+    },
+    {
+      "label": "Rare Pediatric Disease designation / Priority Review Voucher — UNCONFIRMED; potential upside",
+      "detail": "The Rare Pediatric Disease (RPD) designation and Priority Review Voucher (PRV) program was reauthorized and is authorized through September 30, 2029 (Consolidated Appropriations Act, 2026, incorporating the Give Kids a Chance Act). An RPD approval yields a transferable voucher that can be used or sold. There is NO public confirmation that ecopipam holds RPD designation or would receive a PRV — Teva's disclosures cite only Orphan Drug and Fast Track. Treat this strictly as a structural, unverified upside for this asset, not a held designation.",
+      "source": "fda_rpd_prv"
+    }
+  ],
+  "school_lane": [
+    {
+      "label": "The TS policy lane is school accommodation — not scheduling reform",
+      "detail": "For pediatric TS, the operative federal policy fight is educational access under two civil-rights/education statutes — the Individuals with Disabilities Education Act (IDEA) and Section 504 of the Rehabilitation Act / ADA Title II — not drug scheduling, psychedelic reform, or access-expansion legislation. Documentation of impairment in the school setting is frequently what drives families toward specialist referral and treatment initiation.",
+      "source": "taa_iep_504"
+    },
+    {
+      "label": "IEP under IDEA (Other Health Impairment category)",
+      "detail": "Students with TS who need specialized instruction — not just accommodations — can qualify for an Individualized Education Program (IEP) under IDEA, typically classified as Other Health Impairment (OHI). IDEA is administered by the U.S. Department of Education; an IEP is built around a student's unique needs (e.g., executive-function, organizational, or social-skills support).",
+      "source": "idea_ed"
+    },
+    {
+      "label": "504 Plan under Section 504 / ADA Title II",
+      "detail": "A 504 Plan flows from Section 504 of the Rehabilitation Act — a civil-rights statute barring disability discrimination in federally funded programs — and provides accommodations for equal access (extended test time, movement breaks, preferential seating, reduced/modified homework, assistive tech). ADA Title II extends the same non-discrimination duty to public schools regardless of federal funding. A 504 is appropriate when a student needs accommodations rather than specialized instruction.",
+      "source": "ed_section504"
+    },
+    {
+      "label": "TS-specific classification nuance and TAA educator tools",
+      "detail": "Placing TS under OHI (rather than the older 'emotional disturbance' label) was deliberate — it corrects the misperception of tics as a behavioral or conduct disorder. Because symptoms wax, wane, and cycle, accommodations require flexibility. The Tourette Association of America publishes IEP/504 accommodation guidance and educator toolkits that function as the practical playbook families and schools use.",
+      "source": "taa_iep_504"
+    }
+  ],
+  "advocacy": [
+    {
+      "label": "TAA Centers of Excellence — the channel anchor",
+      "detail": "The Tourette Association of America designates a national network of Centers of Excellence (~28 as of Feb 2025), concentrating interdisciplinary pediatric TS expertise and KOLs. For a specialist-access-limited orphan launch, this network — not raw population — maps where diagnosed, treatment-ready patients concentrate.",
+      "source": "taa_coe"
+    },
+    {
+      "label": "TAA 'Find A Provider' directory",
+      "detail": "TAA maintains a searchable provider directory (filterable by location, patient age, and clinical expertise including CBIT). It is the de facto referral rail connecting families to tic-treating specialists and behavior therapists — a demand-routing asset outside any single manufacturer's control.",
+      "source": "taa_provider_directory"
+    },
+    {
+      "label": "TAA Behavior Therapy Institute (TS-BTI) — CBIT capacity building",
+      "detail": "TAA runs the Tourette Syndrome Behavior Therapy Institute, a train-the-trainer program (2-day training plus consultation, ending in a certificate and listing on the CBIT referral list) open to psychologists, physicians, social workers, OTs, nurses, and other licensed clinicians. Its explicit purpose is to expand the supply of CBIT-trained therapists — directly addressing the first-line access bottleneck.",
+      "source": "taa_bti_cbit"
+    },
+    {
+      "label": "Why the CBIT gatekeeper matters commercially",
+      "detail": "CBIT is the guideline-preferred first-line therapy (pivotal RCT: 52.5% much/very-much improved vs 18.5% control; NNT=3), but its reach is throttled by a trained-therapist shortage — the exact gap TS-BTI targets. Whether CBIT capacity expands shapes how many patients advance to pharmacotherapy, making advocacy-driven therapist supply a structural determinant of the treated-patient funnel. Neutral read: this affects the whole field, not one drug.",
+      "source": "cbit_piacentini"
+    }
+  ],
+  "reimbursement": [
+    {
+      "label": "Pediatric payer mix skews to Medicaid/CHIP",
+      "detail": "A pediatric orphan launch is a blended commercial + public-payer exercise: roughly 49% of US children (~37M) are covered by Medicaid or CHIP. Public-payer access is won state Medicaid program by state Medicaid program, so geography and state preferred-drug-list dynamics matter as much as the national label. Directional only — no claims-level dollar modeling.",
+      "source": "aap_medicaid"
+    },
+    {
+      "label": "Prior authorization and step therapy are the expected access hurdle",
+      "detail": "Nearly all state Medicaid programs use prior authorization to manage drug utilization, and step therapy — requiring a lower-cost/generic first, then progression only if medically necessary — is a common variant. With cheap generic alpha-2 agonists and aripiprazole already established, a branded first-in-class D1 antagonist is a probable PA/step-through target on both Medicaid PDLs and commercial formularies. Directional expectation, not a confirmed coverage policy.",
+      "source": "macpac_prior_auth"
+    },
+    {
+      "label": "The AAN clinical ladder hands payers a ready-made step-therapy rationale",
+      "detail": "The AAN 2019 treatment ladder (watchful waiting → CBIT → generic alpha-2 agonists → antipsychotics) mirrors payer step-edit logic almost exactly. Payers can point to it to require documented failure of cheaper rungs before a branded agent. Ecopipam's positioning above the antipsychotics — and the eventual guideline update — is therefore as much a coverage-criteria question as a clinical one.",
+      "source": "aan_2019"
+    },
+    {
+      "label": "Specialty distribution — directional expectation, undisclosed",
+      "detail": "As an oral, first-in-class orphan pediatric therapy, ecopipam would plausibly be distributed through specialty pharmacy with manufacturer hub/patient-support wrap (benefits verification, PA support, copay/patient-assistance for commercial lives). Teva has not publicly disclosed a distribution or access model, so this is an analytical expectation anchored to the orphan/first-in-class profile — not a confirmed channel design, and explicitly not a pricing or gross-to-net model.",
+      "source": "teva_nda"
+    }
+  ]
+}
