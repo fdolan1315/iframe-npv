@@ -1,0 +1,29 @@
+# Secrets & runtime artifacts — never commit these
+.env
+auth.db
+auth.db-wal
+auth.db-shm
+*.db
+*.sqlite
+*.log
+
+# Generated single-file build
+preview.html
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.tgz
