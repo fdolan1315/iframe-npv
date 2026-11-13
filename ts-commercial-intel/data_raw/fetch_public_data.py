@@ -65,7 +65,7 @@ SDUD_PREFIXES = {
     "guanfacine": ["GUANFAC", "INTUNIV", "TENEX"],
     "clonidine": ["CLONIDIN", "KAPVAY", "CATAPRES", "NEXICLON", "ONYDA", "DURACLON"],
     "haloperidol": ["HALOPERI", "HALDOL"],
-    "pimozide": ["PIMOZ", "ORAP"],
+    "pimozide": ["PIMOZ", "ORAP "],  # trailing space: bare ORAP also matches ORAPRED (prednisolone)
     "aripiprazole": ["ARIPIPRA", "ABILIFY", "ARISTADA"],
     "risperidone": ["RISPERID", "RISPERDAL", "PERSERIS", "UZEDY", "RYKINDO"],
     "fluphenazine": ["FLUPHENA"],
@@ -549,8 +549,10 @@ def fetch_sdud():
             print("  sdud:", year, agent, len(by_state), len(by_prod), err or "")
 
     def pack(k, v):
+        hidden = v["suppressed_rows"] == v["ndc_rows"]  # every row suppressed: unknown, not zero
         return {"agent": k[0], "state": k[1], "year": k[2], "quarter": k[3],
-                "number_of_prescriptions": num(v["rx"]), "units_reimbursed": num(v["units"]),
+                "number_of_prescriptions": None if hidden else num(v["rx"]),
+                "units_reimbursed": None if hidden else num(v["units"]),
                 "ndc_rows": v["ndc_rows"], "suppressed_rows_excluded": v["suppressed_rows"]}
     state_rows = [pack(k, v) for k, v in sorted(rows.items()) if k[1] != "XX"]
     xx_rows = [pack(k, v) for k, v in sorted(rows.items()) if k[1] == "XX"]
@@ -586,6 +588,8 @@ def fetch_sdud():
             "have no counts and are EXCLUDED from the sums, so true volume is higher, especially for "
             "low-volume drugs and small states. 'suppressed_rows_excluded' out of 'ndc_rows' shows how "
             "much of each cell was hidden.",
+            "A cell where every row was suppressed has number_of_prescriptions and units_reimbursed "
+            "set to null (unknown), never 0.",
             "Products are matched by PREFIX on SDUD's 10-character product_name field (long names are "
             "truncated, e.g. ARIPIPRAZO). Names entered by labelers vary; see 'product_breakdown' for "
             "exactly which names were captured. Products whose SDUD name does not start with a listed "
