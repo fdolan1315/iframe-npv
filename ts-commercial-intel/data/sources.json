@@ -342,6 +342,12 @@
       "publisher": "Medicaid.gov (CMS)",
       "url": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
       "note": "Prescription counts by state, quarter and product, 2022 to Q1 2026. Medicaid only; all indications; rows under 11 prescriptions suppressed. Spending columns not used."
+    },
+    "sec_edgar": {
+      "label": "Teva Pharmaceutical Industries — SEC filings",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000818686&type=&dateb=&owner=include&count=40",
+      "note": "Filing index from the SEC submissions API. Document links follow the standard EDGAR path and were not individually opened."
     }
   }
 }

@@ -226,6 +226,24 @@ def build_specialists():
     return {"fetched_at": raw["fetched_at"], "specialties": out}
 
 
+# SEC Form 8-K item numbers -> plain descriptions (SEC's own item titles, shortened)
+ITEMS_8K = {
+    "1.01": "Material agreement", "1.02": "Agreement terminated", "2.01": "Acquisition or disposal completed",
+    "2.02": "Quarterly results", "2.03": "New financial obligation", "2.05": "Restructuring costs",
+    "2.06": "Impairment", "3.03": "Change to security holders' rights", "5.02": "Director or officer change",
+    "5.03": "Charter or bylaw change", "5.07": "Shareholder vote results", "7.01": "Investor disclosure (Reg FD)",
+    "8.01": "Other event",
+}
+PERIODIC = {"10-K": "Annual report", "10-Q": "Quarterly report"}
+
+
+def sec_what(f):
+    if f["form"] in PERIODIC:
+        return PERIODIC[f["form"]]
+    items = [i.strip() for i in str(f.get("items") or "").split(",") if i.strip() and i.strip() != "9.01"]
+    return "; ".join(ITEMS_8K.get(i, "Item " + i) for i in items) or "Current report"
+
+
 def main():
     agents, medicaid = build_agents()
     trials = build_trials()
@@ -250,9 +268,12 @@ def main():
         "specialists": specialists,
         "pubmed_by_year": [{"year": int(y), "n": n} for y, n in
                            sorted((pubmed.get("tourette_mesh_records_by_year") or {}).items())],
-        "sec_reports": [{"form": f["form"], "date": f["filing_date"], "period": f.get("report_date"),
-                         "items": f.get("items"), "url": f["primary_document_url"]}
-                        for f in (sec.get("recent_periodic_and_current_reports") or [])[:8]],
+        "sec": {
+            "company": sec.get("company"), "cik": sec.get("cik"), "fetched_at": sec.get("fetched_at"),
+            "reports": [{"form": f["form"], "date": f["filing_date"], "period": f.get("report_date"),
+                         "what": sec_what(f), "url": f["primary_document_url"]}
+                        for f in (sec.get("recent_periodic_and_current_reports") or [])[:16]],
+        },
         "has_medicaid": bool(medicaid),
     }
     with open(os.path.join(DATA, "public_data.json"), "w", encoding="utf-8") as fh:

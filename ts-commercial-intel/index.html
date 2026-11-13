@@ -1338,9 +1338,18 @@ async function renderPipeline(main){
   h+=disc(); main.innerHTML=h;
   wireOpenTrials(pubd);
 }
+function secPanel(sec){
+  const ok=u=>/^https:\/\/www\.sec\.gov\/Archives\/edgar\/data\//.test(u);
+  return '<h4 style="margin:20px 0 6px">Recent SEC filings '+cite('sec_edgar')+'</h4>'
+    +'<p class="note" style="margin:0 0 8px">Annual, quarterly and current reports, newest first. The list shows what was filed, not whether a filing discusses ecopipam; open the document to check.</p>'
+    +'<table><thead><tr><th>Filed</th><th>Form</th><th>What it is</th><th>Period</th><th>Document</th></tr></thead><tbody>'
+    +sec.reports.map(r=>'<tr><td style="white-space:nowrap">'+esc(fmtDate(r.date))+'</td><td>'+esc(r.form)+'</td><td>'+esc(r.what)+'</td><td style="white-space:nowrap">'+esc(r.period?fmtDate(r.period):'—')+'</td><td>'+(ok(r.url)?'<a href="'+esc(r.url)+'" target="_blank" rel="noopener">Open on SEC.gov</a>':'—')+'</td></tr>').join('')
+    +'</tbody></table><div class="cite" style="margin-top:6px">Pulled '+esc(fmtDate((sec.fetched_at||'').slice(0,10)))+'</div>';
+}
 async function renderCompanies(main){
   const d=await getData('companies');
   const pl=await getData('pipeline'); S._pipe={assets:pl.assets,phases:pl.phases};
+  const sec=(await getData('public_data')).sec;
   let h='<div class="vhead"><h2>Companies</h2><div class="lead">Neutral dossiers — each company in its own investor framing. As of '+esc(d.as_of)+'.</div></div>';
   h+='<div class="panel"><h3>Who is still standing in Tourette syndrome</h3><p class="note">Every company’s TS program by furthest phase and fate. Two of the biggest names (Teva’s Austedo, Neurocrine’s Ingrezza) took VMAT2 into pediatric TS and failed — shown in red.</p>'+landscapeMatrix(pl.assets,pl.phases)+'</div>';
   d.companies.forEach(c=>{
@@ -1350,7 +1359,8 @@ async function renderCompanies(main){
       +'<table><thead><tr><th>Asset</th><th>MoA</th><th>Indication</th><th>TS relevance</th></tr></thead><tbody>'
       + c.neuroscience_portfolio.map(p=>{ const f=inferFate(p.ts_relevance+' '+p.indication);
           return '<tr><td><b>'+esc(p.name)+'</b>'+(f?' '+fateBadge(f):'')+'</td><td>'+esc(p.moa)+'</td><td>'+esc(p.indication)+'</td><td>'+esc(p.ts_relevance)+' '+(p.sources||[]).map(cite).join(' ')+'</td></tr>'; }).join('')
-      +'</tbody></table><div class="cite" style="margin-top:6px">'+cite(c.source)+'</div></div>';
+      +'</tbody></table><div class="cite" style="margin-top:6px">'+cite(c.source)+'</div>'
+      +((sec&&sec.reports&&sec.reports.length&&/teva/i.test(c.name))?secPanel(sec):'')+'</div>';
   });
   h+=disc(); main.innerHTML=h;
 }
