@@ -50,19 +50,19 @@
   },
   {
    "fact": "Ulixacaltamide pricing",
-   "value": "Annual WAC corridor $50,000-$100,000; peak-sales math uses ~2M ET patients seeking treatment x penetration x $50K annual NET price",
+   "value": "Annual WAC corridor $50,000-$100,000. Illustrative peak sales = 2M ET patients seeking treatment x penetration x $50K annual net price: 1% = $1B; 10% = $10B (average sell-side analyst model); 36% = $36B (mean share of patients physicians said they would prescribe to, N=2,303). Benchmarks shown at current list price: Austedo and Ingrezza about $110K, Nuplazid about $62K, Juvmo about $60K, Rezdiffra about $52K.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium",
-   "note": "WAC corridor reported by Panabee summary (https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40) and consistent with Q2-2026 call commentary; $50K net price from deck extraction. Final price not disclosed."
+   "confidence": "high",
+   "note": "WAC corridor reported by Panabee summary (https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40) and consistent with Q2-2026 call commentary; $50K net price from deck extraction. Final price not disclosed. Confirmed against the posted investor-day deck (slides 46-48)."
   },
   {
    "fact": "Relutrigine pricing",
-   "value": "Annual WAC corridor $400,000-$600,000 per year, benchmarked to rare-disease therapies",
+   "value": "Annual WAC corridor $400,000-$600,000. Benchmarked to rare-disease analogs at current list price: Strensiq about $1.8M, Sephience about $622K, Evrysdi about $430K, Skyclarys about $415K. The sponsor calls other branded DEE drugs 'significantly underpriced' and not the most relevant comparators.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium",
-   "note": "CONFLICT: Goldman Sachs conference summary (mid-2026, https://quartr.com/events/praxis-precision-medicines-inc-prax-goldman-sachs-47th-annual-global-healthcare-conference-_oS61ioRv) cited $450K-$650K per patient per year. Investor Day figure is the more recent company statement. Final price not disclosed."
+   "confidence": "high",
+   "note": "CONFLICT: Goldman Sachs conference summary (mid-2026, https://quartr.com/events/praxis-precision-medicines-inc-prax-goldman-sachs-47th-annual-global-healthcare-conference-_oS61ioRv) cited $450K-$650K per patient per year. Investor Day figure is the more recent company statement. Final price not disclosed. Confirmed against the posted investor-day deck (slide 79)."
   },
   {
    "fact": "Ulixacaltamide field force",
@@ -70,37 +70,39 @@
    "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
    "date": "2026-11-12",
    "confidence": "high",
-   "note": "Also in deck extraction (https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm) and TipRanks (https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day)."
+   "note": "Also in deck extraction (https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm) and TipRanks (https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day). Confirmed against the posted investor-day deck (slide 51)."
   },
   {
    "fact": "Ulixacaltamide HCP targets",
    "value": "~19,000 HCPs: 13,000-15,000 neurologists (incl. movement disorder specialists) + 4,500-5,500 high-volume primary care physicians",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "high"
+   "confidence": "high",
+   "note": "Confirmed against the posted investor-day deck (slide 51)."
   },
   {
    "fact": "ET prevalence / addressable population",
-   "value": "Updated U.S. ET prevalence ~9M (deck also phrases '~7-9M living with ET'); ~2M actively managed/seeking treatment = initial commercial focus",
+   "value": "About 9 million Americans live with ET in 2026: the 2012 estimate of about 7 million (Louis & Ottman) with its age-specific rates held fixed and applied to the 2026 population (+0.6M population growth, +1.3M ageing); about 11 million projected for 2040. About 2 million are actively managed.",
    "source_url": "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
    "date": "2026-11-12",
    "confidence": "high",
-   "note": "Earlier company materials cited ~7M U.S. ET patients (https://finance.yahoo.com/healthcare/articles/praxis-precision-medicines-inc-q2-123000187.html); Investor Day raised estimate to ~9M."
+   "note": "Read directly from the posted investor-day deck (slides 20, 22, 23, 93). The 9M figure is a sponsor projection of a peer-reviewed estimate, not a new study."
   },
   {
    "fact": "ET physician market research",
    "value": "March 2026 observational study of 2,303 U.S. physicians treating ET (~44% neurology, ~44% primary care); dissatisfaction drivers include contraindications and inconsistent efficacy of current therapies",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium"
+   "confidence": "high",
+   "note": "Confirmed against the posted investor-day deck (slides 24, 39-40)."
   },
   {
    "fact": "Ulixacaltamide payer access expectations",
-   "value": "Goal: broad coverage aligned to anticipated label. Payer mix ~65% Medicare Part D (formulary exception requests available at launch) and ~30% commercial (some plans apply new-to-market exclusions until P&T review). Expected utilization management: prior authorization (diagnosis confirmation, specialist consultation) and possible step therapy with propranolol first.",
+   "value": "Objective: broad coverage aligned with the anticipated label. Payer mix about 65% Medicare Part D and about 30% commercial. Part D: formulary exception requests available at launch, approvals depend on clinical justification. Commercial: some plans apply new-to-market exclusions until P&T review. Policies expected to develop over 3-6 months. Expected requirements: prior authorization (diagnosis confirmation and specialist consultation); step therapy (a propranolol first step may be required).",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium",
-   "note": "Percentages interpreted as payer mix of ET patients; exact slide wording not directly verified."
+   "confidence": "high",
+   "note": "Percentages interpreted as payer mix of ET patients; exact slide wording not directly verified. Confirmed against the posted investor-day deck (slide 54)."
   },
   {
    "fact": "Ulixacaltamide distribution",
@@ -140,10 +142,11 @@
   },
   {
    "fact": "Ulixacaltamide long-term data",
-   "value": "Essential3 long-term safety study early analysis: n=68 assessed to date, average ~95 weeks on study; durable and improving ADL response; ~5 points gained in ADL at first assessment; ~1 in 5 patients improved >=12 TETRAS-ADL points; benefit held through Day 84 and 95 weeks and lost on switch to placebo",
+   "value": "Essential3 long-term safety study: n=68 assessed to date, average 95 weeks on study; mean ADL change from baseline -3.0 at week 12 and -6.0 at week 95 (observed, open-label). ADL collection was added by protocol amendment.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium"
+   "confidence": "high",
+   "note": "Read directly from the posted investor-day deck (slide 32)."
   },
   {
    "fact": "Ulixacaltamide label expansion",
@@ -164,28 +167,32 @@
    "value": "10K+ prevalent; ~5K diagnosed; ~1.9K visible in genetic and claims data; field profiling has found more patients than genetic/claims data show",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "high"
+   "confidence": "high",
+   "note": "Confirmed against the posted investor-day deck (slide 81)."
   },
   {
    "fact": "Relutrigine account concentration",
    "value": "Top 200 accounts hold ~65% of known & diagnosed patients (claims data); 60-70% of patients managed at academic centers",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "high"
+   "confidence": "high",
+   "note": "Confirmed against the posted investor-day deck (slides 75, 85)."
   },
   {
    "fact": "Relutrigine peak-sales illustration",
-   "value": "2,500 SCN2A/8A patients (25% penetration of ~10K prevalent) = ~$1B; broad DEE (>300K patients) is the further opportunity underpinning $5B guidance",
+   "value": "Illustrative, at an assumed $400K net annual price: 2,500 SCN2A/8A patients (25% of about 10K prevalent) = $1B; 10,000 broad-DEE patients (3.3% of more than 300K) = $4B; combined $5B at 12,500 patients.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium"
+   "confidence": "high",
+   "note": "Confirmed against the posted investor-day deck (slides 82-83)."
   },
   {
    "fact": "Relutrigine payer mix / access",
-   "value": "~45% Medicaid, ~50% commercial; patients arrive 'pre-qualified' for prior authorization (expected PA criteria: prescriber specialty involvement, prior ASM trials)",
+   "value": "About 45% Medicaid and about 50% commercial. Expected prior-authorization criteria: prescribed by a specialist, trial of prior anti-seizure medicines, diagnosis confirmation, reauthorization criteria. The sponsor says patients arrive 'pre-qualified' because specialist confirmation and a prior medicine trial are usually complete before a prescription is written.",
    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
    "date": "2026-11-12",
-   "confidence": "medium"
+   "confidence": "high",
+   "note": "Confirmed against the posted investor-day deck (slide 89)."
   },
   {
    "fact": "Relutrigine patient support / hub, specialty pharmacy, genetic testing program",
@@ -203,10 +210,11 @@
   },
   {
    "fact": "Relutrigine EMBOLD OLE update",
-   "value": "86% reduction in seizures from baseline through 18 months in EMBOLD open-label extension (n not disclosed in material retrieved)",
+   "value": "86% reduction in motor seizures from baseline at 18 months in the EMBOLD open-label extension; data cutoff 14 Aug 2026. Contributing patients fall from 67 at month 5 to 10 at month 18. 98% of eligible patients continued into the extension.",
    "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
    "date": "2026-11-12",
-   "confidence": "high"
+   "confidence": "high",
+   "note": "Read directly from the posted investor-day deck (slide 62)."
   },
   {
    "fact": "New pipeline: PRAX-215",
@@ -1110,13 +1118,11 @@
   }
  ],
  "open_questions": [
-  "The August 2026 corporate deck has been read directly. The 12 November 2026 investor-day deck and press release have not: the patient funnel (10K / 5K / 1.9K), price corridors, field-force size, target-prescriber counts, payer mix and the 9 million ET figure still rest on search-result extractions.",
-  "Full verbatim text of the 2026-11-12 press release and the slide deck could not be fetched (globenewswire.com, sec.gov, stocktitan.net blocked); all Investor Day facts come from search-engine extractions. Verify against https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+  "Both sponsor decks (August 2026 corporate deck; 12 November 2026 investor-day deck as posted, ET, DEE and platform sections) have been read directly. The patient funnel, price corridors, field force, target prescribers, payer mixes and the 9 million ET figure are confirmed at source.",
+  "Still not confirmed against a primary document: the ulixacaltamide discontinuation rates (27% drug-related, 36-38% overall; the investor-day deck gives no safety rates), the EMBOLD cohort 1 result (46%), and the vormatrigine POWER1 result. These need the Essential3 topline release or the AAN 2026 poster.",
   "Relutrigine field team headcount, number of regions, and Tier 1/Tier 2 HCP counts - not found.",
   "Relutrigine hub/patient-support brand, specialty pharmacy partners, sponsored genetic testing program - not found.",
-  "Relutrigine price: $400-600K WAC (Investor Day) vs $450-650K (Goldman conference) - which is current, and net price?",
   "Ulixacaltamide: is the ~300 figure sales reps only or total field (sales + MSL + access)? Structure by region not found.",
-  "Ulixacaltamide payer percentages (65% Part D / 30% commercial) - confirm these are patient payer mix; gross-to-net not disclosed.",
   "Ulixacaltamide telehealth plans, copay program, ET patient segmentation beyond 9M / 2M - not found.",
   "Peak-sales slide deltas (+$2.3B etc.) - confirm baseline is consensus-assuming-approval.",
   "POWER1 quantitative results (effect size, p-values, n) and the redesigned POWER2 dose/design/timing - not retrieved.",
@@ -1164,6 +1170,73 @@
   {
    "fact": "Vormatrigine programme",
    "value": "RADIANT: 11% seizure-free within the treatment period, more than 30% seizure-free for any 28-day period; POWER2 re-initiating and POWER3 (monotherapy) initiating in Q4 2026 (slides 26-27)",
+   "confidence": "high"
+  }
+ ],
+ "deck_investor_day_2026": [
+  {
+   "fact": "ET burden",
+   "value": "More than 85% report functional disability; about 50% have a contraindication to propranolol (cardiac disorders, asthma, older age); 50-70% of cases are familial (slides 20, 23)",
+   "confidence": "high"
+  },
+  {
+   "fact": "ET physician study",
+   "value": "N=2,303 US physicians: 44% neurology, 44% primary care, 12% other; more than 43,000 ET patients under care, mean 66 per physician. Unmet needs cited: limited options 66%, inconsistent efficacy 66%, insufficient gain in daily function 57%, contraindications 37%. 88% rate the product profile favorable; 85% are comfortable counseling on titration and tolerability (slides 24, 39, 40)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Essential3 design",
+   "value": "711 enrolled 2:1, blinded to study. Study 1: 473 randomized 1:1, 12 weeks, primary endpoint at day 56. Study 2: 238 in an 8-week blinded lead-in; stable responders (3-point mADL11 gain) randomized to stay on drug or switch to placebo for 4 weeks (40 per arm) (slides 26, 28)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Essential3 responder and sensitivity analyses",
+   "value": "Combined studies (N=474 on drug): 62% improved by 2 or more TETRAS-ADL points, 46% by 4 or more, 19% by 12 or more at day 56. Minimum clinically important difference 1.25 mADL11 points. Observed-data treatment difference 2.57 points (95% CI 1.53-3.62); placebo-based imputation 2.12 (1.16-3.08); baseline carried forward 1.41 (0.52-2.29) (slides 30, 33, 35)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Ulixacaltamide safety in the investor-day deck",
+   "value": "The deck gives no adverse-event or discontinuation rates for ulixacaltamide. It says offices will be prepared for 'possible common side effects' and that neurologists 'routinely manage tolerability with titrated CNS drugs' (slides 43, 52, 53)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Ulixacaltamide field targets",
+   "value": "About 300 field team; about 19K target prescribers = 13-15K neurologists (including movement-disorder specialists) + 4.5-5.5K high-volume primary care physicians (slide 51)",
+   "confidence": "high"
+  },
+  {
+   "fact": "EMBOLD design and results",
+   "value": "Cohort 1 (0.5 mg/kg/day): 8 relutrigine, 8 placebo. Cohort 2 (1 mg/kg/day): 28 relutrigine, 25 placebo; 16 weeks double-blind. Median about 55 motor seizures a month at baseline; about two-thirds on 3-6 anti-seizure medicines. Primary: 53% placebo-adjusted reduction in motor seizures, p<0.0002 (interim boundary 0.04). Key secondary: 66% more motor seizure-free days (17.3 vs 10.4 per 28 days), p=0.034. NCT05818553 (slides 60-63)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Relutrigine tolerability",
+   "value": "No drug-related serious adverse events; mostly mild to moderate; no dose reductions required; 79% of patients on sodium-channel blockers. Most common events per 100 patient-months, relutrigine vs placebo: pyrexia 11.7 vs 13.4, upper respiratory infection 9.8 vs 4.5, somnolence 9.1 vs 13.4 (slide 65)",
+   "confidence": "high"
+  },
+  {
+   "fact": "EMERALD baseline",
+   "value": "Median age 13; median 58 motor seizures per 28 days; 56% with onset before age 1; median 3 anti-seizure medicines; 51% unable to walk independently; etiology 58% genetic, 36% other or unknown, 6% structural; more than 50 genetically defined etiologies. Topline expected Q4 2026 (slides 68, 72)",
+   "confidence": "high"
+  },
+  {
+   "fact": "SCN2A/SCN8A patient journey (sponsor claims analysis)",
+   "value": "About 50% are seen by a neurologist within 2 months of symptom onset; about 45% have a genetic diagnosis within 6 months; formal diagnosis usually within the first 18 months; 60-70% are managed at academic centers. Patients average 2.6 anti-seizure medicines and 78% are not seizure-free (HCP market research) (slides 75, 76)",
+   "confidence": "high"
+  },
+  {
+   "fact": "SCN2A/SCN8A patient counts",
+   "value": "10K+ prevalent (diagnosis rate from Musante et al., Genes 2022); about 5K diagnosed (Sederman et al., AES 2022); about 1.9K visible in genetic testing data linked to claims. More than 300K people with DEE overall (Poke et al., Neurology 2023) (slides 81, 82)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Rare-epilepsy prescribers and accounts",
+   "value": "Top 200 accounts hold about 65% of known and diagnosed patients. Pediatric neurologists write 52% of first anti-seizure prescriptions and about 75% of claims for the four branded DEE drugs. In a survey of 128 DEE treaters, 98% expect to use the product (slides 77, 85, 86)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Line extensions",
+   "value": "Ulixacaltamide studies planned in Parkinson's disease (about 1M US), restless legs syndrome (5-8M) and autism spectrum disorder (about 8M); readouts 2028-2030. Two next-generation T-type molecules and a transdermal patch are in development (slides 93, 102, 110)",
    "confidence": "high"
   }
  ]
