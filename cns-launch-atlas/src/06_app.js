@@ -8,6 +8,7 @@ function render() {
   $("#brandSub").textContent = cur().name;
   for (const k in TABLES) delete TABLES[k];
   try { $("#main").innerHTML = VIEWS[state.tab](); } catch (e) { $("#main").innerHTML = `<div class="callout">This section could not be drawn: ${esc(e.message)}</div>`; console.error(e); }
+  setTimeout(() => $$(".scroll").forEach(e => e.classList.toggle("is-wide", e.scrollWidth > e.clientWidth + 4)), 80);
   const a = $("#tabs a[aria-current]"); if (a && a.scrollIntoView) a.scrollIntoView({ block: "nearest", inline: "nearest" });
 }
 window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });

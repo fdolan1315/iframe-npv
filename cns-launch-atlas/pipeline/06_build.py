@@ -185,6 +185,8 @@ bundle = {
   "sdud_years": {p: {y: {"rx": sum(v["rx"] for v in ys.values()), "amt": sum(v["amt"] for v in ys.values()), "q": max([v.get("q", 0) for v in ys.values()] or [0])} for y, ys in yy.items()} for p, yy in sdud.items()},
 }
 os.makedirs(os.path.join(ROOT, "dist"), exist_ok=True)
+_md = os.path.join(ROOT, "dist", "media")
+bundle["media"] = {f[:-len(".captions.json")]: json.load(open(os.path.join(_md, f))) for f in sorted(os.listdir(_md)) if f.endswith(".captions.json")} if os.path.isdir(_md) else {}
 save("bundle.json", bundle)
 src = os.path.join(ROOT, "src")
 if os.path.exists(os.path.join(src, "app.html")):

@@ -5,7 +5,8 @@ Unbranded market-intelligence and launch-planning app for two CNS markets: rare 
 - `dist/index.html` — the app. One self-contained file (data inlined); open it in a browser.
 - `src/` — HTML, CSS and JS sources. Visuals follow the BIOS Brand Kit v1.3.0 (palette, Instrument Sans + Inter, supplied wordmark); `025_figures.js` holds the explanatory figures.
 - `design/` — design consultation, the review page and the BIOS wordmark file.
-- `media/` — Higgsfield SDK example (`main.py`, Seedance 2.5 text-to-video). Copy `.env.local.example` to `.env.local` and set `HF_KEY`.
+- `media/` — Higgsfield SDK example (`main.py`, Seedance 2.5 text-to-video), the stills generator (`stills.py`) and the code-rendered films (`films/film.html` + `films/render.js`, needs Playwright and ffmpeg). Copy `.env.local.example` to `.env.local` and set `HF_KEY`.
+- `dist/media/` — films, posters and stills served beside `dist/index.html`; keep the folder next to the page.
 - `pipeline/` — numbered scripts that pull the public data, then `06_build.py` assembles `dist/index.html`.
 - `data/` — pipeline outputs (ClinicalTrials.gov, PubMed, CMS Part D / procedures / spend / enrollment, Medicaid SDUD, NPPES, openFDA, map geometry, Census age bands).
 - `research/` — sourced desk-research fact bases (company disclosures, each market, payer/policy/analogs). Every fact has a URL and a confidence flag.

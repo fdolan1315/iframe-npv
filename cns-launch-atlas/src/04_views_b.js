@@ -126,6 +126,7 @@ function viewSources() {
     ["NPPES NPI Registry", `${N(sumSt(s => s.child_neuro))} child neurologists, ${N(sumSt(s => s.epileptologists))} epilepsy-taxonomy clinicians, ${N(sumSt(s => s.geneticists))} clinical geneticists`, "Self-reported taxonomy; includes any listed taxonomy, practice-location state", "https://npiregistry.cms.hhs.gov/api-page"],
     ["openFDA (labels, Drugs@FDA, FAERS)", `${Object.keys(D.fda).length} marketed comparators`, "FAERS counts are spontaneous reports, not incidence", "https://open.fda.gov/apis/"],
     ["US Census Bureau population estimates", "State population by 5-year age band", "2018 vintage; used only for relative allocation weights", "https://www.census.gov/programs-surveys/popest.html"],
+    ["Films and images", "Two explainer films rendered in code from the same drawings as the figures; five illustrative photographs generated with an image model (hands and settings only)", "Images are illustrative, not documentary. Films show mechanism, not clinical results", ""],
     ["Desk research (web search, Nov 2026)", `${cnt("company")} + ${cnt("dee")} + ${cnt("et")} + ${cnt("payer")} cited URLs across four fact bases`, "Search-result level verification; company filings and press-release hosts could not be opened directly. Each fact carries a confidence flag", ""]];
   const lists = [["Company and asset disclosures", "company"], ["Rare epilepsy market", "dee"], ["Essential tremor market", "et"], ["Payer, policy and launch analogs", "payer"]];
   const gaps = [...((RC.open_questions) || [])];

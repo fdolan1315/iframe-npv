@@ -1,0 +1,111 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Atlas film</title>
+<style>
+/* Code-rendered explainer films. BIOS kit: Clear White ground, Deep Slate marks, Authority Cobalt for the subject, crimson only for harm with icon + label. */
+@font-face{font-family:"Inter";font-weight:400;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-weight:600;src:url(fonts/instrument-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-weight:700;src:url(fonts/instrument-sans-latin-700-normal.woff2) format("woff2")}
+*{box-sizing:border-box}
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#F8FAFC;color:#111827;font-family:"Inter",Arial,sans-serif}
+#eyebrow{position:absolute;left:64px;top:40px;font-size:17px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:#42526E}
+#status{position:absolute;right:64px;top:30px;font-size:22px;font-weight:600;padding:9px 18px;border-radius:8px;background:#EEF1F5;color:#42526E}
+#status.good{background:#E7F4EE;color:#0B6B50}#status.adverse{background:#FBEAEC;color:#B4233C}#status.info{background:#EAF0FD;color:#2457D6}
+#stage{position:absolute;left:0;top:92px;width:1280px;height:480px}
+#stage text{font-family:"Inter",Arial,sans-serif;fill:#111827}
+#cap{position:absolute;left:64px;right:64px;top:584px;height:96px;display:flex;align-items:center;font-size:31px;line-height:1.3;font-weight:500;letter-spacing:-.005em}
+#bar{position:absolute;left:0;bottom:0;height:6px;background:#2457D6}
+.card{position:absolute;inset:0;background:#F8FAFC;display:flex;flex-direction:column;justify-content:center;padding:0 110px;gap:22px}
+.card h1{font-family:"Instrument Sans","Inter",Arial,sans-serif;font-weight:700;font-size:66px;line-height:1.06;letter-spacing:-.015em;margin:0;max-width:980px}
+.card p{font-size:28px;color:#42526E;margin:0;max-width:940px;line-height:1.35}
+.card small{font-size:19px;color:#42526E}
+.logo{width:230px;height:104px;overflow:hidden}.logo img{width:361.5px;max-width:none;margin:-65.7px 0 0 -66px;display:block}
+</style></head>
+<body>
+<div id="eyebrow"></div><div id="status"></div>
+<svg id="stage" viewBox="0 0 1280 480"></svg>
+<div id="cap"></div>
+<div class="card" id="title"><p id="tEyebrow" style="font-size:19px;letter-spacing:.09em;text-transform:uppercase;font-weight:600"></p><h1 id="tHead"></h1><p id="tSub"></p></div>
+<div class="card" id="end"><h1 id="eHead" style="font-size:54px"></h1><p id="eSub"></p><small id="eSrc"></small><div class="logo"><img src="../../design/brand/bios-logo-primary.svg" alt="BIOS"></div></div>
+<div id="bar"></div>
+<script>
+"use strict";
+const $ = s => document.querySelector(s), clamp = (v, a, b) => Math.max(a, Math.min(b, v)), sm = x => { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }, lerp = (a, b, u) => a + (b - a) * u;
+const film = new URLSearchParams(location.search).get("f") || "channel";
+
+/* scene list: [start, params, status text, status kind, caption]; params interpolate over TR seconds at each boundary */
+const TR = 0.9;
+function sceneAt(S, t) { let i = 0; while (i < S.length - 1 && t >= S[i + 1][0]) i++; const cur = S[i], prev = S[Math.max(0, i - 1)], u = i ? sm((t - cur[0]) / TR) : 1, p = {}; for (const k in cur[1]) p[k] = lerp(prev[1][k], cur[1][k], u); return { i, p, cur, u, local: t - cur[0] }; }
+function cards(T, t) { const tIn = T.titleEnd, eIn = T.endStart; $("#title").style.opacity = t < tIn - .5 ? 1 : clamp((tIn - t) / .5, 0, 1); $("#title").style.display = t < tIn ? "flex" : "none"; $("#end").style.display = t >= eIn - .5 ? "flex" : "none"; $("#end").style.opacity = clamp((t - (eIn - .5)) / .5, 0, 1); $("#bar").style.width = (t / T.dur * 1280) + "px"; }
+function chrome(sc, t, T) { $("#status").textContent = sc.cur[2]; $("#status").className = sc.cur[3] || ""; const c = $("#cap"); c.textContent = sc.cur[4]; const end = (T.S[sc.i + 1] ? T.S[sc.i + 1][0] : T.endStart) - t; c.style.opacity = Math.min(clamp(sc.local / .45, 0, 1), clamp(end / .3, 0, 1)); $("#status").style.opacity = clamp(sc.local / .35, 0, 1); }
+
+/* ================= film 1: gain vs loss ================= */
+const CH = { titleEnd: 2.8, endStart: 28.2, dur: 31.5, eyebrow: "Rare genetic epilepsy · mechanism",
+  title: ["Disease 101 · 30 seconds", "Same gene, opposite problems", "Why the genetic test comes before the drug choice"],
+  end: ["The genetic result decides whether this drug class helps or harms.", "Gain of function: sodium-channel blockers are first-line. Loss of function: avoid them.", "Schematic, not to scale; firing is illustrative. Sources: Wolff et al., Brain 2017; international SCN8A consensus, 2024."],
+  S: [[2.8, { gap: 18, peak: 60, tail: 2, rate: 2.2, plug: 0, harm: 0 }, "Typical channel", "", "A sodium channel opens briefly, lets sodium in, then shuts."],
+      [8.6, { gap: 34, peak: 60, tail: 24, rate: 6.2, plug: 0, harm: 0 }, "Gain of function", "", "Gain of function: the channel stays partly open, and the neuron over-fires."],
+      [14.6, { gap: 19, peak: 50, tail: 5, rate: 2.5, plug: 1, harm: 0 }, "✓ Blocker helps", "good", "A sodium-channel blocker trims the excess. Firing calms toward typical."],
+      [19.4, { gap: 7, peak: 22, tail: 1, rate: 0.9, plug: 0, harm: 0 }, "Loss of function", "", "Loss of function: too little sodium gets in."],
+      [23.0, { gap: 3, peak: 9, tail: 0, rate: 0, plug: 1, harm: 1 }, "⚠ Blocker worsens", "adverse", "The same blocker removes what little current remains. Seizures can worsen."]] };
+const spikes = (() => { const out = []; let ph = 0, last = 0; for (let t = 0; t < CH.dur; t += 1 / 240) { ph += sceneAt(CH.S, t).p.rate / 240; if (Math.floor(ph) > last) { last = Math.floor(ph); out.push(t); } } return out; })();
+function drawChannel(t) {
+  const sc = sceneAt(CH.S, Math.max(t, CH.S[0][0])), p = sc.p, cx = 340, col = p.harm > .5 ? "#B4233C" : "#111827"; let g = "";
+  g += `<rect x="60" y="150" width="560" height="52" fill="#EEF1F5"/><line x1="60" x2="620" y1="150" y2="150" stroke="#111827" stroke-width="2.5"/><line x1="60" x2="620" y1="202" y2="202" stroke="#111827" stroke-width="2.5"/><text x="66" y="134" font-size="19" style="fill:#42526E">Outside the neuron</text><text x="66" y="232" font-size="19" style="fill:#42526E">Inside</text>`;
+  g += `<rect x="${cx - p.gap / 2}" y="151.5" width="${p.gap}" height="49" fill="#F8FAFC"/><rect x="${cx - p.gap / 2 - 22}" y="134" width="22" height="84" rx="6" fill="#2457D6"/><rect x="${cx + p.gap / 2}" y="134" width="22" height="84" rx="6" fill="#2457D6"/>`;
+  const n = 9, flow = clamp((p.gap - 2) / 30, 0, 1) * (1 - .25 * p.plug);
+  for (let i = 0; i < n; i++) { const u = (t * .55 + i / n) % 1, y = 40 + u * 290, jit = Math.sin(i * 7.3) * Math.min(12, p.gap / 2 - 4), pass = i / n < flow, yy = pass ? y : Math.min(y, 122 + (i % 3) * -14), xx = cx + (pass ? jit * (1 - Math.abs(u - .5) * 1.2) : Math.sin(i * 3.1) * 46); g += `<circle cx="${xx}" cy="${yy}" r="7" fill="#111827" opacity="${pass ? clamp(u * 6, 0, 1) * clamp((1 - u) * 5, 0, 1) : .55}"/>`; }
+  g += `<text x="${cx + 62}" y="76" font-size="21" font-weight="600">Sodium (Na⁺)</text><line x1="${cx + 56}" x2="${cx + 16}" y1="70" y2="70" stroke="#42526E"/>`;
+  g += `<line x1="${cx + p.gap / 2 + 24}" x2="${cx + 120}" y1="190" y2="190" stroke="#42526E"/><circle cx="${cx + p.gap / 2 + 24}" cy="190" r="3.5" fill="#F8FAFC" stroke="#42526E"/><text x="${cx + 128}" y="197" font-size="21">Sodium channel</text>`;
+  if (p.plug > .02) g += `<g opacity="${p.plug}"><rect x="${cx - p.gap / 2 - 4}" y="${140 - (1 - p.plug) * 40}" width="${p.gap + 8}" height="13" rx="5" fill="#111827"/><line x1="${cx - p.gap / 2 - 10}" x2="${cx - 120}" y1="146" y2="110" stroke="#42526E"/><text x="${cx - 128}" y="108" font-size="21" text-anchor="end">Blocker</text></g>`;
+  /* current trace */
+  const x0 = 720, y0 = 110, pk = p.peak * 1.25, tl = p.tail * 1.5;
+  g += `<text x="${x0}" y="78" font-size="21" font-weight="600">Sodium current</text><line x1="${x0}" x2="1210" y1="${y0}" y2="${y0}" stroke="rgba(17,24,39,.45)" stroke-dasharray="5 5"/><path d="M${x0} ${y0} H${x0 + 70} L${x0 + 90} ${y0 + pk} L${x0 + 140} ${y0 + tl + (pk - tl) * .12} Q${x0 + 185} ${y0 + tl} ${x0 + 230} ${y0 + tl} H${x0 + 400} L${x0 + 418} ${y0} H1210" fill="none" stroke="#111827" stroke-width="3.5" stroke-linejoin="round"/>`;
+  if (tl > 14) g += `<g opacity="${clamp((tl - 14) / 12, 0, 1)}"><line x1="${x0 + 320}" x2="${x0 + 334}" y1="${y0 + tl + 6}" y2="${y0 + 84}" stroke="#42526E"/><text x="${x0 + 250}" y="${y0 + 108}" font-size="21">Persistent current</text></g>`;
+  /* firing strip */
+  const fy = 420, speed = 150, R = 1210;
+  g += `<text x="${x0}" y="296" font-size="21" font-weight="600">Neuron firing</text><line x1="${x0}" x2="${R}" y1="${fy}" y2="${fy}" stroke="${col}" stroke-width="3"/>`;
+  for (const ts of spikes) { const x = R - (t - ts) * speed; if (ts <= t && x > x0) g += `<line x1="${x}" x2="${x}" y1="${fy}" y2="${fy - 86}" stroke="${col}" stroke-width="3.5" opacity="${clamp((x - x0) / 50, 0, 1)}"/>`; }
+  if (p.rate < .25) g += `<text x="${R - 8}" y="${fy - 36}" font-size="22" font-weight="600" text-anchor="end" style="fill:#B4233C" opacity="${clamp(1 - p.rate * 4, 0, 1) * clamp((sc.local - 2) / .6, 0, 1)}">⚠ almost silent</text>`;
+  $("#stage").innerHTML = g; chrome(sc, t, CH);
+}
+
+/* ================= film 2: the tremor loop ================= */
+const LP = { titleEnd: 2.8, endStart: 33.4, dur: 36.8, eyebrow: "Essential tremor · mechanism",
+  title: ["Disease 101 · 35 seconds", "A rhythm stuck in a loop", "Where each treatment for essential tremor acts"],
+  end: ["Every treatment targets a point on the loop.", "Medicines work for about half of patients. Procedures are reserved for tremor that medicines do not control.", "Schematic, not to scale. Which structure starts the rhythm is still debated. Investigational products are not approved."],
+  S: [[2.8, { amp: 1, tt: 0, dbs: 0, fus: 0 }, "The tremor loop", "", "A 4–12 Hz rhythm circulates between brainstem, cerebellum, thalamus and motor cortex, and drives the arm."],
+      [9.6, { amp: 1, tt: 0, dbs: 0, fus: 0 }, "First-line medicines", "", "Propranolol and primidone help about half of patients. Where they act on this loop is not established."],
+      [15.2, { amp: 1, tt: 1, dbs: 0, fus: 0 }, "Investigational · T-type blocker", "info", "T-type calcium channels pace the rhythm at these sites. A blocker aims to damp it at the source."],
+      [21.6, { amp: .42, tt: 0, dbs: 1, fus: 0 }, "Deep brain stimulation", "", "Deep brain stimulation: an electrode in the thalamus interrupts the relay. Adjustable and reversible."],
+      [27.6, { amp: .42, tt: 0, dbs: 0, fus: 1 }, "Focused ultrasound", "", "Focused ultrasound: sound beams make a small permanent lesion at the same spot. No incision."]] };
+const ND = { cortex: [330, 100, "Motor cortex", -1], thal: [408, 208, "Thalamus (Vim)", 1], cer: [566, 316, "Cerebellum", 0], olive: [458, 360, "Inferior olive", -1] };
+const SEG = [[ND.olive, [512, 372], ND.cer], [ND.cer, [512, 232], ND.thal], [ND.thal, [366, 158], ND.cortex], [ND.cortex, [300, 262], ND.olive]];
+const qp = (a, c, b, u) => [(1 - u) * (1 - u) * a[0] + 2 * (1 - u) * u * c[0] + u * u * b[0], (1 - u) * (1 - u) * a[1] + 2 * (1 - u) * u * c[1] + u * u * b[1]];
+const loopD = "M" + SEG.map(s => `${s[0][0]} ${s[0][1]} Q${s[1][0]} ${s[1][1]} ${s[2][0]} ${s[2][1]}`).join(" M");
+function drawLoop(t) {
+  const sc = sceneAt(LP.S, Math.max(t, LP.S[0][0])), p = sc.p; let g = "";
+  g += `<ellipse cx="408" cy="188" rx="248" ry="138" fill="none" stroke="#111827" stroke-width="2.5"/><ellipse cx="566" cy="316" rx="90" ry="56" fill="#F8FAFC" stroke="#111827" stroke-width="2.5"/><path d="M430 306 Q424 364 442 428 M488 320 Q488 370 480 428" fill="none" stroke="#111827" stroke-width="2.5"/>`;
+  g += `<path d="${loopD}" fill="none" stroke="#42526E" stroke-width="2.5" stroke-dasharray="7 6"/>`;
+  const u = (t * .42) % 1, si = Math.floor(u * 4), pt = qp(SEG[si][0], SEG[si][1], SEG[si][2], u * 4 - si); g += `<circle cx="${pt[0]}" cy="${pt[1]}" r="9" fill="#111827"/><circle cx="${pt[0]}" cy="${pt[1]}" r="${12 + 6 * Math.abs(Math.sin(t * 28))}" fill="none" stroke="#111827" stroke-width="1.5" opacity=".5"/>`;
+  if (p.dbs > .02) { const y1 = 6 + (ND.thal[1] - 6) * sm(p.dbs); g += `<line x1="392" y1="6" x2="${392 + (ND.thal[0] - 392) * sm(p.dbs)}" y2="${y1}" stroke="#2457D6" stroke-width="5" stroke-linecap="round"/><text x="404" y="30" font-size="21" font-weight="600" style="fill:#2457D6" opacity="${p.dbs}">Electrode</text>`; }
+  if (p.fus > .02) g += [[130, 40], [250, 6], [560, 6], [690, 50]].map(([x, y]) => `<line x1="${x}" y1="${y}" x2="${x + (ND.thal[0] - x) * sm(p.fus)}" y2="${y + (ND.thal[1] - y) * sm(p.fus)}" stroke="#2457D6" stroke-width="2.5" stroke-dasharray="4 6"/>`).join("") + `<text x="596" y="24" font-size="21" font-weight="600" style="fill:#2457D6" opacity="${p.fus}">Ultrasound beams</text>`;
+  for (const [id, [x, y, l, side]] of Object.entries(ND)) { const on = (id === "thal" ? Math.max(p.tt, p.dbs, p.fus) : id === "cortex" ? 0 : p.tt), r = 13 + 5 * on, fill = on > .5 ? "#2457D6" : "#F8FAFC", st = on > .5 ? "#2457D6" : "#111827";
+    g += `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${st}" stroke-width="2.5"/><text x="${side === 0 ? x : x + side * 26}" y="${side === 0 ? y + 42 : y + 7}" font-size="${side === 0 ? 19 : 21}" font-weight="${on > .5 ? 600 : 400}" text-anchor="${side === 0 ? "middle" : side < 0 ? "end" : "start"}" style="fill:${st}">${l}</text>`; }
+  /* arm + hand trace */
+  g += `<path d="M462 430 Q560 470 742 300" fill="none" stroke="#111827" stroke-width="2.5"/><path d="M728 300 l16 -3 l-3 16" fill="none" stroke="#111827" stroke-width="2.5"/>`;
+  const x0 = 780, x1 = 1216, y0 = 250; let d = ""; for (let x = x0; x <= x1; x += 3) { const env = clamp((x - x0) / 40, 0, 1) * clamp((x1 - x) / 40, 0, 1); d += (x === x0 ? "M" : "L") + x + " " + (y0 + env * p.amp * 62 * Math.sin(t * 30 - x / 9) * (1 + .18 * Math.sin(x / 47 + t * 3))).toFixed(1); }
+  g += `<text x="${x0}" y="128" font-size="21" font-weight="600">Hand tremor</text><text x="${x0}" y="156" font-size="18" style="fill:#42526E">illustrative trace</text><line x1="${x0}" x2="${x1}" y1="${y0}" y2="${y0}" stroke="rgba(17,24,39,.12)" stroke-width="2"/><path d="${d}" fill="none" stroke="#111827" stroke-width="3.5" stroke-linejoin="round"/>`;
+  if (sc.i === 1) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">Site of action: not established</text>`;
+  if (sc.i === 2) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">Mechanism shown, not a clinical result</text>`;
+  if (sc.i >= 3) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">For tremor that medicines do not control</text>`;
+  $("#stage").innerHTML = g; chrome(sc, t, LP);
+}
+
+const T = film === "loop" ? LP : CH, draw = film === "loop" ? drawLoop : drawChannel;
+$("#eyebrow").textContent = T.eyebrow; $("#tEyebrow").textContent = T.title[0]; $("#tHead").textContent = T.title[1]; $("#tSub").textContent = T.title[2]; $("#eHead").textContent = T.end[0]; $("#eSub").textContent = T.end[1]; $("#eSrc").textContent = T.end[2];
+window.DURATION = T.dur; window.CAPTIONS = [T.title[1], ...T.S.map(s => s[4]), T.end[0]];
+window.renderFrame = t => { draw(t); cards(T, t); };
+window.renderFrame(new URLSearchParams(location.search).get("t") ? +new URLSearchParams(location.search).get("t") : 0);
+</script></body></html>

@@ -127,5 +127,8 @@ function factList(items, o = {}) {
     return `<div class="fact"><div class="ft">${o.pre && f[o.pre] ? `<span class="eyebrow">${esc(f[o.pre])}</span><br>` : ""}${esc(title)}</div><div class="fm">${conf(f.confidence)}${srcLink(f.source_url || (f.sources || [])[0])}</div>${val ? `<div class="fv">${esc(val)}</div>` : ""}${extra ? `<div class="fv sub">${esc(extra)}</div>` : ""}</div>`;
   }).join("")}</div>`;
 }
+/* media published beside the page */
+const photo = (name, alt, o = {}) => `<figure class="photo" style="${o.style || ""}"><img src="media/${name}.jpg" alt="${esc(alt)}" loading="lazy"><figcaption>Illustrative image</figcaption></figure>`;
+const filmBlock = (name, label) => { const caps = (D.media || {})[name] || []; return `<div class="film"><video controls preload="none" playsinline poster="media/${name}.png" aria-label="${esc(label)}"><source src="media/${name}.mp4" type="video/mp4"></video><details class="acc"><summary><span>Read it instead: ${caps.length} captions</span></summary><div class="ab"><ol class="tight">${caps.map(c => `<li>${esc(c)}</li>`).join("")}</ol></div></details></div>`; };
 const panel = (title, body, o = {}) => `<section class="panel ${o.cls || ""}"><header><h3>${esc(title)}</h3>${o.sub ? `<span class="sub">${o.sub}</span>` : ""}</header>${body}</section>`;
 const kpi = (v, l, s) => `<div class="kpi"><b>${v}</b><span>${esc(l)}</span>${s ? `<small>${s}</small>` : ""}</div>`;
