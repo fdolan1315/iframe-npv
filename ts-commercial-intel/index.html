@@ -406,6 +406,30 @@
   .od.up,.od.down,.od.flat{color:var(--text)} .od.up:before{content:"\25B2\00a0";font-size:.8em} .od.down:before{content:"\25BC\00a0";font-size:.8em}
   @media(max-width:767px){body{font-size:17px;line-height:1.55}}
   /* Respect users who prefer less motion — keep the color/depth, drop the movement. */
+  .fnl{display:grid;gap:8px}
+  .fnlrow{display:flex;align-items:center;gap:14px;min-width:0}
+  .fnlbar{flex:0 0 auto;height:44px;background:var(--accent);border-radius:0 8px 8px 0;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;min-width:44px;box-sizing:border-box}
+  .fnlbar span{color:#fff;font-weight:700;font-size:13px}
+  .fnllab{min-width:0;font-size:14px;line-height:1.35}
+  /* tabs + accordions */
+  .tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;margin-bottom:-1px;font:inherit;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;border-radius:8px 8px 0 0}
+  .tab:hover{color:var(--text)}
+  .tab.on{color:var(--accent);border-bottom-color:var(--accent)}
+  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .tabn{font-weight:500;font-size:12px;color:var(--muted);margin-left:4px}
+  .polbar{display:flex;justify-content:flex-end;margin:8px 0 4px}
+  .acc{border-bottom:1px solid var(--line)}
+  .acc:last-child{border-bottom:0}
+  .acc summary{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:14px 4px;cursor:pointer;list-style:none}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary::before{content:"+";flex:0 0 16px;font-weight:600;color:var(--muted)}
+  .acc[open] summary::before{content:"–"}
+  .acc summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
+  .acct{flex:1 1 auto;font-weight:600;min-width:0}
+  .accb{padding:0 4px 16px 30px;color:var(--text);max-width:80ch;line-height:1.6}
+  .pill.st-conf{color:var(--good);border-color:color-mix(in srgb,var(--good) 40%,transparent);white-space:nowrap}
+  .pill.st-unc{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent);white-space:nowrap}
   /* current-treatment view */
   .hbars{display:grid;gap:6px}
   .hb{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 62px;gap:10px;align-items:center;font-size:13px}
@@ -598,17 +622,13 @@ function wrapTables(root){
 
 /* ---- SVG helpers ---- */
 function funnelSVG(stages){
-  const W=680, rh=52, gap=10, H=stages.length*(rh+gap);
-  let y=0, out='<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="max-width:'+W+'px">';
-  const maxW=W, minW=W*0.34;
-  stages.forEach((s,i)=>{
-    const w = maxW - (maxW-minW)*(i/(stages.length-1||1));
-    const x=(W-w)/2;
-    out+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+rh+'" rx="8" fill="var(--accent)" opacity="'+(0.92-i*0.12)+'"/>';
-    out+='<text x="'+(W/2)+'" y="'+(y+rh/2+5)+'" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">'+esc(s.label)+'</text>';
-    y+=rh+gap;
-  });
-  return out+'</svg>';
+  // narrowing bars with the label beside each one, so long labels never clip
+  const n=stages.length, maxW=46, minW=14;
+  return '<div class="fnl">'+stages.map((s,i)=>{
+    const w=maxW-(maxW-minW)*(i/(n-1||1));
+    return '<div class="fnlrow"><div class="fnlbar" style="width:'+w.toFixed(1)+'%"><span>'+(i+1)+'</span></div>'
+      +'<div class="fnllab"><b>'+esc(s.label)+'</b>'+(s.note?'<div class="cite">'+esc(s.note)+'</div>':'')+'</div></div>';
+  }).join('')+'</div>';
 }
 function hbars(items){
   const max=Math.max.apply(null, items.map(i=>i.pct));
@@ -681,7 +701,7 @@ async function renderTreatment(main){
   main.innerHTML = h;
 }
 /* ---- Current treatment (public-record view of agents in use today) ---- */
-function hbars(items, unit){
+function rbars(items, unit){
   const max=Math.max.apply(null, items.map(i=>i.n).concat([1]));
   return '<div class="hbars">'+items.map(i=>'<div class="hb"><div class="hbl" title="'+esc(i.term)+'">'+esc(i.term)+'</div>'
     +'<div class="hbt"><div class="hbf" style="width:'+Math.max(1,Math.round(i.n/max*100))+'%"></div></div>'
@@ -800,11 +820,11 @@ async function renderCurrent(main){
     let right='<h4 style="margin:0 0 6px">Most-reported reactions</h4>'
       +'<div class="legend" id="ageTgl" style="margin-bottom:10px">'
       +[['under_18','Under 18'],['all_ages','All ages']].map(o=>'<span class="lgd tgl'+(o[0]===ageKey?' on':'')+'" data-a="'+o[0]+'" tabindex="0" role="button">'+o[1]+(fa[o[0]]?' · '+fa[o[0]].total.toLocaleString()+' reports':'')+'</span>').join('')+'</div>'
-      +(blk&&blk.top.length? hbars(blk.top,'Reports listing the agent in any role. A report can list several reactions. Not a rate.') : '<p class="note">No reports returned for this group.</p>');
+      +(blk&&blk.top.length? rbars(blk.top,'Reports listing the agent in any role. A report can list several reactions. Not a rate.') : '<p class="note">No reports returned for this group.</p>');
     right+='<h4 style="margin:18px 0 6px">Evidence base</h4><p class="note" style="margin:0 0 8px">'+(pm.total||0).toLocaleString()+' Tourette papers mention this agent, including '+(pm.rct||0)+' tagged as randomized trials and '+(pm.reviews||0)+' as meta-analyses or systematic reviews.</p>'
       +((pm.recent||[]).length?'<ul class="note" style="margin:0;padding-left:18px">'+pm.recent.filter(x=>/^\d+$/.test(String(x.pmid))).map(x=>'<li><a href="https://pubmed.ncbi.nlm.nih.gov/'+x.pmid+'/" target="_blank" rel="noopener">'+esc(x.title)+'</a> <span class="cite">'+esc(x.journal)+', '+esc(x.year)+'</span></li>').join('')+'</ul>':'');
     if(p.medicaid && p.medicaid.by_year.length){
-      right+='<h4 style="margin:18px 0 6px">Medicaid prescriptions, all uses</h4>'+hbars(p.medicaid.by_year.map(y=>({term:y.year+(y.complete?'':' (partial)'),n:y.rx})),'State Medicaid programs, every use of the medicine, all formulations pooled.'+(p.medicaid.suppressed_share!=null?' CMS hides product-level rows under 11 prescriptions; '+Math.round(p.medicaid.suppressed_share*100)+'% of rows were hidden in '+p.medicaid.latest_full_year+', so true volume is higher.':''))
+      right+='<h4 style="margin:18px 0 6px">Medicaid prescriptions, all uses</h4>'+rbars(p.medicaid.by_year.map(y=>({term:y.year+(y.complete?'':' (partial)'),n:y.rx})),'State Medicaid programs, every use of the medicine, all formulations pooled.'+(p.medicaid.suppressed_share!=null?' CMS hides product-level rows under 11 prescriptions; '+Math.round(p.medicaid.suppressed_share*100)+'% of rows were hidden in '+p.medicaid.latest_full_year+', so true volume is higher.':''))
         +(function(){ const rt=p.medicaid.rate_by_state; if(!rt||!Object.keys(rt).length) return '';
             const st=Object.entries(rt).sort((x,y)=>y[1]-x[1]), f=x=>esc(x[0])+' '+x[1].toLocaleString();
             return '<h4 style="margin:18px 0 6px">Medicaid prescriptions per 1,000 enrollees, '+p.medicaid.latest_full_year+'</h4>'
@@ -1342,27 +1362,39 @@ const BRIEF_VIS={ prevalence:visPrevalence, mechanism:visMechanism, journey:visJ
 
 async function renderPipeline(main){
   const d = await getData('pipeline');
+  const pubd = await getData('public_data');
   let h='<div class="vhead"><h2>Pipeline</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   h+='<div class="panel"><h3>Tourette programs by furthest phase &amp; fate</h3><p class="note">Where each asset sits — and who has failed. The VMAT2 washouts are in red.</p>'+landscapeMatrix(d.assets,d.phases)+'</div>';
-  h+='<div class="cite" style="margin:12px 0 0">As of '+esc(d.as_of)+' · verified against ClinicalTrials.gov and company disclosures</div>';
-  d.assets.forEach(a=>{
-    const failed=a.fate==='failed';
-    h+='<div class="panel'+(failed?' failed':'')+'" style="margin-top:12px">'
-      +'<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0'+(failed?';text-decoration:line-through;color:var(--bad)':'')+'">'+esc(a.name)+' <span class="cite">· '+esc(a.sponsor)+'</span></h3>'
-      +'<div style="display:flex;gap:6px;align-items:center">'+fateBadge(a.fate)+'<span class="pill">'+esc(a.phase)+'</span></div></div>'
-      +'<table style="margin-top:8px"><tbody>'
-      +'<tr><td style="width:120px;color:var(--muted)">MoA</td><td>'+esc(a.moa)+'</td></tr>'
-      +'<tr><td style="color:var(--muted)">TS status</td><td>'+esc(a.ts_status)+'</td></tr>'
-      +'<tr><td style="color:var(--muted)">Next milestone</td><td>'+esc(a.next_milestone)+'</td></tr>'
-      +(a.nct?'<tr><td style="color:var(--muted)">Trial</td><td><a href="https://clinicaltrials.gov/study/'+esc(a.nct)+'" target="_blank" rel="noopener">'+esc(a.nct)+'</a></td></tr>':'')
-      +'</tbody></table>'
-      +(a.note?'<p class="note" style="margin:8px 0 0">'+esc(a.note)+'</p>':'')
-      +(a.updated?'<div class="cite" style="margin-top:6px">Last checked '+esc(fmtDate(a.updated))+'</div>':'')
-      +'<div class="cite" style="margin-top:6px">'+cite(a.source)+'</div></div>';
-  });
-  const pubd = await getData('public_data');
+  h+='<div class="panel"><h3>Compare programs</h3><p class="note">Select a program for its detail. As of '+esc(fmtDate(d.as_of))+', checked against ClinicalTrials.gov and company disclosures.</p>'
+    +'<div class="legend" id="plChips" style="margin-bottom:12px"></div>'
+    +'<table id="plTable"><thead><tr><th>Program</th><th>Sponsor</th><th>Mechanism</th><th>Stage</th><th>Next milestone</th></tr></thead><tbody></tbody></table></div>';
+  h+='<div class="panel" id="plDetail"></div>';
   h+=openTrialsPanel(pubd);
   h+=disc(); main.innerHTML=h;
+  const GROUPS=[['all','All'],['active','In development'],['failed','Failed'],['device','Device']];
+  const inGroup=(a,g)=>g==='all'||(g==='failed'?a.fate==='failed':g==='device'?a.fate==='device':(a.fate!=='failed'&&a.fate!=='device'));
+  let grp='all', sel=d.assets[0].name;
+  const short=(t,n)=>{t=String(t||''); return t.length>n? t.slice(0,n).replace(/\s+\S*$/,'')+'…' : t;};
+  function draw(){
+    const list=d.assets.filter(a=>inGroup(a,grp));
+    if(!list.some(a=>a.name===sel)&&list.length) sel=list[0].name;
+    document.getElementById('plChips').innerHTML=GROUPS.map(g=>'<span class="lgd tgl'+(g[0]===grp?' on':'')+'" data-g="'+g[0]+'" tabindex="0" role="button">'+g[1]+' · '+d.assets.filter(a=>inGroup(a,g[0])).length+'</span>').join('');
+    document.querySelector('#plTable tbody').innerHTML=list.map(a=>'<tr class="agrow'+(a.name===sel?' sel':'')+'" data-n="'+esc(a.name)+'" tabindex="0">'
+      +'<td><b>'+esc(a.name)+'</b></td><td>'+esc(a.sponsor)+'</td><td>'+esc(short(a.moa,70))+'</td>'
+      +'<td>'+fateBadge(a.fate)+'<div class="cite" style="margin-top:4px">'+esc(short(a.phase,60))+'</div></td><td>'+esc(short(a.next_milestone,110))+'</td></tr>').join('');
+    const a=d.assets.filter(x=>x.name===sel)[0], el=document.getElementById('plDetail');
+    if(a){ const kv=(k,v)=>'<tr><td style="width:150px;color:var(--muted)">'+k+'</td><td>'+v+'</td></tr>';
+      el.className='panel'+(a.fate==='failed'?' failed':'');
+      el.innerHTML='<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0">'+esc(a.name)+' <span class="cite">· '+esc(a.sponsor)+'</span></h3>'
+        +'<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">'+fateBadge(a.fate)+'<span class="pill">'+esc(a.phase)+'</span></div></div>'
+        +'<table style="margin-top:10px"><tbody>'+kv('Mechanism',esc(a.moa))+kv('Tourette status',esc(a.ts_status))+kv('Next milestone',esc(a.next_milestone))
+        +(a.nct&&/^NCT\d{8}$/.test(a.nct)?kv('Trial','<a href="https://clinicaltrials.gov/study/'+a.nct+'" target="_blank" rel="noopener">'+a.nct+'</a>'):'')
+        +(a.note?kv('Detail',esc(a.note)):'')+'</tbody></table>'
+        +'<div class="cite" style="margin-top:8px">'+(a.updated?'Last checked '+esc(fmtDate(a.updated))+' · ':'')+cite(a.source)+'</div>'; }
+    document.querySelectorAll('#plChips .tgl').forEach(c=>{ const go=()=>{grp=c.getAttribute('data-g'); draw();}; c.onclick=go; c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+    document.querySelectorAll('#plTable .agrow').forEach(r=>{ const go=()=>{sel=r.getAttribute('data-n'); draw();}; r.onclick=go; r.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  draw();
   wireOpenTrials(pubd);
 }
 function secPanel(sec){
@@ -1393,15 +1425,27 @@ async function renderCompanies(main){
 }
 async function renderPolicy(main){
   const d=await getData('policy');
+  const SECS=[['regulatory','Regulatory & exclusivity'],['school_lane','School accommodation'],['advocacy','Advocacy & channel'],['reimbursement','Reimbursement & access']].filter(x=>d[x[0]]);
+  // status words written into the item labels become badges
+  const STAT=[[/\bUNCONFIRMED\b/,'Unconfirmed','unc'],[/\bCONFIRMED\b/,'Confirmed','conf'],[/\bGRANTED\b/,'Granted','conf']];
+  const parse=lab=>{ let st=null, t=String(lab); for(const x of STAT){ if(x[0].test(t)){ st=x; break; } }
+    t=t.replace(/\s*—\s*(UNCONFIRMED|CONFIRMED|GRANTED)\b/,'').replace(/\s{2,}/g,' ').trim(); return {title:t, st:st}; };
+  let tab=SECS[0][0];
   let h='<div class="vhead"><h2>Policy &amp; advocacy</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   if(d.note) h+='<div class="banner">'+esc(d.note)+'</div>';
-  [['regulatory','Regulatory &amp; exclusivity'],['school_lane','School-accommodation lane'],['advocacy','Advocacy &amp; channel'],['reimbursement','Reimbursement &amp; access']].forEach(([k,title])=>{
-    if(!d[k]) return;
-    h+='<div class="panel"><h3>'+title+'</h3><table><tbody>'
-      + d[k].map(it=>'<tr><td style="width:34%"><b>'+esc(it.label)+'</b></td><td>'+esc(it.detail)+' '+cite(it.source)+'</td></tr>').join('')
-      +'</tbody></table></div>';
-  });
+  h+='<div class="panel"><div class="tabs" id="polTabs" role="tablist"></div><div id="polBody"></div></div>';
   h+=disc(); main.innerHTML=h;
+  function draw(){
+    document.getElementById('polTabs').innerHTML=SECS.map(x=>'<button class="tab'+(x[0]===tab?' on':'')+'" role="tab" aria-selected="'+(x[0]===tab)+'" data-t="'+x[0]+'">'+esc(x[1])+' <span class="tabn">'+d[x[0]].length+'</span></button>').join('');
+    document.getElementById('polBody').innerHTML='<div class="polbar"><button class="btn ghost sm" id="polAll">Expand all</button></div>'
+      +d[tab].map((it,i)=>{ const p=parse(it.label), src=[].concat(it.sources||[], it.source?[it.source]:[]);
+        return '<details class="acc"'+(i===0?' open':'')+'><summary><span class="acct">'+esc(p.title)+'</span>'+(p.st?'<span class="pill st-'+p.st[2]+'">'+(p.st[2]==='conf'?'● ':'○ ')+p.st[1]+'</span>':'')+'</summary>'
+          +'<div class="accb">'+esc(it.detail)+'<div class="cite" style="margin-top:6px">'+src.map(cite).join(' · ')+'</div></div></details>'; }).join('');
+    document.querySelectorAll('#polTabs .tab').forEach(b=>b.onclick=()=>{tab=b.getAttribute('data-t'); draw();});
+    const all=document.getElementById('polAll');
+    all.onclick=()=>{ const ds=[...document.querySelectorAll('#polBody details')], open=ds.some(x=>!x.open); ds.forEach(x=>x.open=open); all.textContent=open?'Collapse all':'Expand all'; };
+  }
+  draw();
 }
 function mdToHtml(md){
   let s=esc(md).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
