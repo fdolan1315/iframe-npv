@@ -143,11 +143,13 @@ button.tile{cursor:pointer} button.tile:hover{border-color:var(--accent)}
 /* journey hero */
 .jhero{position:relative;border-radius:var(--r);overflow:hidden;background:#111827;color:#F8FAFC;min-height:380px;display:grid;align-items:end}
 .jhero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.jhero::after{content:"";position:absolute;inset:0;background:rgba(17,24,39,.55)}
+.jhero::after{content:"";position:absolute;inset:0;background:rgba(17,24,39,.66)}
 .jhero-in{position:relative;z-index:1;padding:44px clamp(20px,4vw,52px) 40px;display:grid;gap:14px}
 .jhero .eyebrow{color:#C9D6F7} .jhero h1{max-width:18em} .jhero p{color:#E8EEFC;font-size:19px;line-height:1.5;max-width:58ch}
 .jhero .bigs{margin-top:14px;border-top:1px solid rgba(248,250,252,.3);padding-top:20px}
 .jcap{position:absolute;z-index:1;right:14px;top:12px;font-size:12px;color:#C9D6F7}
+.picto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 10px}
+.picto div{display:grid;gap:4px;justify-items:start;font-size:14px;line-height:1.25;color:var(--ink)}
 .tension{border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:6px;align-content:start}
 .tension p{font-size:15px;color:var(--ink-2)}
 

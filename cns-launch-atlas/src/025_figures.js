@@ -167,14 +167,26 @@ function figDifferential() {
 }
 
 /* ---------- ET: daily living + age ---------- */
+const peopleRow = (full, part, col, pcol, lab) => `<svg class="fig" viewBox="0 0 280 46" role="img" aria-label="${esc(lab)}">${Array.from({ length: 10 }, (_, i) => `<g transform="translate(${i * 28},0)" fill="${i < full ? col : i < full + part ? pcol : "#E8EEFC"}"><circle cx="11" cy="8" r="6.5"/><path d="M1 46 v-16 a10 10 0 0 1 20 0 v16 z"/></g>`).join("")}</svg>`;
 function figDaily() {
   const I = { pen: "M6 30 L26 10 l4 4 L10 34 l-6 2 z", glass: "M10 6 h20 l-3 28 h-14 z M12 18 h16", fork: "M14 4 v12 a6 6 0 0 0 12 0 v-12 M20 4 v32", shirt: "M14 6 l-10 6 l4 8 l4 -2 v16 h16 v-16 l4 2 l4 -8 l-10 -6 a6 6 0 0 1 -12 0", tap: "M8 14 h14 a8 8 0 0 1 8 8 v4 M22 26 h12 M15 14 v-8 M10 6 h10 M28 32 v4", key: "M14 20 a6 6 0 1 1 0.1 0 M19 22 l14 12 M27 29 l4 -4" };
   const T = [["pen", "Handwriting"], ["glass", "Drinking from a glass"], ["fork", "Using utensils"], ["shirt", "Dressing"], ["tap", "Hygiene"], ["key", "Small objects"]];
-  const a = epi("et", /Diagnosed prevalence by age/);
-  return figure("Impact", "What patients are scored on is what they cannot do", "Regulators accepted a function-based measure as the primary endpoint. These are the tasks it counts.",
-    `<div class="fig2"><div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">${T.map(([k, l]) => `<div class="tile"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="${I[k]}" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>${l}</span></div>`).join("")}</div>
-     <div class="side"><h4>Diagnosed prevalence rises 27-fold with age</h4>${hbar([{ label: "Ages 18–40", value: .06 }, { label: "Ages 75+", value: 1.61, color: "var(--s1)" }], { fmt: v => v + "%", labelW: 100 })}<p class="note">Most patients are of Medicare age, which sets the payer mix.</p></div></div>`,
-    prov([...edSrc("et", 7).slice(1, 2), a.source_url].filter(Boolean), { note: "Tasks from the TETRAS activities-of-daily-living subscale. Prevalence from US claims.", conf: "high", quality: "observed" }));
+  const age = epi("et", /Diagnosed prevalence by age/), tf0 = ((R.et.treatment_flow || [])[0] || {}).sources || [];
+  const ageSvg = `<svg class="fig" viewBox="0 0 300 92" role="img" aria-label="Diagnosed prevalence: 0.06 percent at ages 18 to 40, 1.61 percent at 75 and over"><text x="0" y="16" font-size="14">Ages 18–40</text><rect x="0" y="24" width="8" height="14" rx="3" fill="#111827"/><text x="16" y="36" font-size="14" font-weight="700">0.06%</text><text x="0" y="62" font-size="14">Ages 75 and over</text><rect x="0" y="70" width="216" height="14" rx="3" fill="#2457D6"/><text x="224" y="82" font-size="14" font-weight="700" style="fill:#2457D6">1.61%</text></svg>`;
+  const X = v => 8 + v / 60 * 284, durSvg = `<svg class="fig" viewBox="0 0 300 70" role="img" aria-label="Years living with tremor: average 14.5, range 1 to 55"><line x1="8" x2="292" y1="40" y2="40" stroke="#94A3B8" stroke-width="2"/>${[0, 20, 40, 60].map(t => `<line x1="${X(t)}" x2="${X(t)}" y1="34" y2="46" stroke="#94A3B8" stroke-width="2"/><text x="${X(t)}" y="64" font-size="13" text-anchor="${t === 0 ? "start" : t === 60 ? "end" : "middle"}" style="fill:#42526E">${t}${t === 60 ? " yr" : ""}</text>`).join("")}<line x1="${X(1)}" x2="${X(55)}" y1="40" y2="40" stroke="#111827" stroke-width="3"/><circle cx="${X(14.5)}" cy="40" r="8" fill="#2457D6"/><text x="${X(14.5)}" y="20" font-size="15" font-weight="700" text-anchor="middle" style="fill:#2457D6">14.5</text></svg>`;
+  return figure("Impact", "The endpoint counts everyday tasks, and first-line medicines fail about half of patients", "Regulators accepted a function-based measure as the primary endpoint. This is what it measures, who lives with it, and what treatment delivers today.",
+    `<div class="info">
+      <div><h3>The tasks</h3>
+        <div class="picto">${T.map(([k, l]) => `<div><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="${I[k]}" fill="none" stroke="#2457D6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${l}</div>`).join("")}</div>
+        <div class="stat"><b>11 items</b><p>on the daily-function scale used as the primary endpoint.</p><small>These six kinds of task drive the score</small></div></div>
+      <div><h3>Who lives with it</h3>
+        <div class="stat">${ageSvg}<b>27×</b><p>higher diagnosed prevalence at 75 and over than at 18 to 40.</p><small>US claims; most patients are of Medicare age</small></div>
+        <div class="stat">${durSvg}<b>14.5 years</b><p>average time living with tremor in one clinic cohort.</p><small>Range 1 to 55 years</small></div></div>
+      <div><h3>What treatment delivers</h3>
+        <div class="stat">${peopleRow(4, 2, "#2457D6", "#94ADEE", "4 to 6 of 10 figures highlighted")}<b>4 to 6 in 10</b><p>respond to propranolol or primidone.</p><small>37–56% across real-world series; lighter figures show the range</small></div>
+        <div class="stat">${peopleRow(4, 1, "#111827", "#94A3B8", "4 to 5 of 10 figures highlighted")}<b style="color:var(--ink)">4 to 5 in 10</b><p>stop first-line treatment within two years.</p><small>40% on propranolol, 47% on primidone, US claims</small></div></div>
+    </div>`,
+    prov([...edSrc("et", 7).slice(1, 2), age.source_url, ...edSrc("et", 6).slice(0, 1), ...tf0.slice(0, 2)].filter(Boolean), { note: "Tasks from the TETRAS activities-of-daily-living subscale.", conf: "high", quality: "observed" }));
 }
 
 /* ---------- stepped funnel (proportional) ---------- */
