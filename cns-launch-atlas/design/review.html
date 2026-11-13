@@ -1,0 +1,277 @@
+<title>Atlas Design Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Sans:wght@600;700&display=swap">
+<style>
+/* Layout: HBR-style spread. One finding headline + one figure per band, annotations on the figure, light theme only (BIOS kit v1.3.0). */
+:root{
+  --slate:#111827; --white:#F8FAFC; --cobalt:#2457D6; --silver:#94A3B8; --steel:#42526E;
+  --line:rgba(17,24,39,.12); --ref:rgba(17,24,39,.45);
+  --adverse:#B4233C; --adverse-bg:#FBEAEC; --good:#0B6B50; --good-bg:#E7F4EE; --info-bg:#EAF0FD; --neutral-bg:#EEF1F5; --watch:#8A5A00; --watch-bg:#FFF4D6;
+  --q1:#E8EEFC; --q2:#C9D6F7; --q3:#94ADEE;
+  --display:"Instrument Sans","Inter",Arial,sans-serif; --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--white);color:var(--slate);font-family:var(--body);font-size:18px;line-height:1.6;font-feature-settings:"tnum" 1,"lnum" 1}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+@media (min-width:1100px){.wrap{padding-left:max(64px,env(safe-area-inset-left,0px));padding-right:max(64px,env(safe-area-inset-right,0px))}}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(32px,4.6vw,52px);font-weight:700;line-height:1.08}
+h2{font-size:clamp(24px,2.8vw,32px);font-weight:700;line-height:1.15}
+h3{font-size:19px;font-weight:600}
+p{margin:0;max-width:68ch} a{color:var(--cobalt)}
+.meta{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);font-weight:600}
+.deck{color:var(--steel);max-width:62ch}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:20px}
+.logo-box{width:190px;height:86px;overflow:hidden;flex:none}.logo-box img{width:298.6px;max-width:none;height:auto;margin:-54.3px 0 0 -54.5px;display:block}
+.product{font-family:var(--display);font-weight:600;font-size:17px;color:var(--steel)}
+.hero{background:linear-gradient(135deg,#111827 0%,#2457D6 100%);color:var(--white)}
+.hero .wrap{padding-block:56px 60px;display:grid;gap:22px}
+.hero .meta{color:#C9D6F7}.hero p{color:#E8EEFC;font-size:20px;max-width:60ch}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;margin-top:10px}
+.big b{font-family:var(--display);font-size:clamp(44px,6vw,68px);font-weight:700;line-height:1;display:block}
+.big span{font-size:16px;color:#E8EEFC;display:block;margin-top:6px;max-width:26ch}
+section.band{padding-block:64px;border-bottom:1px solid var(--line)}
+.band>.wrap{display:grid;gap:24px}
+.band>.wrap>*,.two>*,.plan>*,.grid3>*{min-width:0}
+.fig{width:100%;height:auto;display:block;overflow:visible}
+.fig text{font-family:var(--body);fill:var(--slate)}
+.prov{font-size:14px;color:var(--steel);border-top:1px solid var(--line);padding-top:10px;max-width:none}
+.two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:900px){.two{grid-template-columns:1fr;gap:24px}}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button,.btn{font:inherit;font-size:16px;font-weight:500;border:0;background:var(--white);color:var(--steel);padding:9px 14px;cursor:pointer;min-height:44px}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--cobalt);color:var(--white)}
+.switch{display:inline-flex;gap:10px;align-items:center;font-size:16px;font-weight:500;cursor:pointer;min-height:44px}
+.switch input{width:20px;height:20px;accent-color:var(--cobalt)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.ctrls{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center}
+.status{display:inline-flex;gap:8px;align-items:center;font-size:16px;font-weight:600;padding:6px 12px;border-radius:8px;background:var(--neutral-bg);color:var(--steel)}
+.status.adverse{background:var(--adverse-bg);color:var(--adverse)}.status.good{background:var(--good-bg);color:var(--good)}
+.note{font-size:17px;color:var(--slate);min-height:3.3em}
+.card{border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:12px;align-content:start}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;padding:3px 10px;border-radius:8px;background:var(--neutral-bg);color:var(--steel);white-space:nowrap}
+.chip.c{background:var(--info-bg);color:var(--cobalt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tabs button{font:inherit;font-size:16px;font-weight:500;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--steel);padding:8px 13px;cursor:pointer;min-height:44px}
+.tabs button[aria-pressed="true"]{background:var(--slate);color:var(--white);border-color:var(--slate)}
+.plan{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px}
+@media (max-width:900px){.plan{grid-template-columns:1fr}}
+.plan h3{margin-bottom:8px}
+.figs{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.figs li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font-size:17px}
+.figs li i{width:28px;height:28px;border-radius:8px;background:var(--info-bg);color:var(--cobalt);display:grid;place-items:center;font-style:normal;font-weight:600;font-size:14px}
+.cut{color:var(--steel);font-size:17px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.phase b{font-family:var(--display);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--steel)}
+.phase.first{border:2px solid var(--cobalt)}
+ul.t{margin:0;padding-left:20px;display:grid;gap:6px;font-size:17px}
+.no li::marker{content:"✕  ";color:var(--adverse)}
+.dec{display:grid;gap:0}
+.dec>div{display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:start}
+.dec>div>b{font-family:var(--display);font-size:22px;color:var(--cobalt)}
+.dec .rec{color:var(--steel);font-size:17px}
+@media (max-width:760px){.dec>div{grid-template-columns:30px minmax(0,1fr)}.dec .rec{grid-column:2}}
+.range{width:100%;accent-color:var(--cobalt);height:44px}
+footer .wrap{padding-block:28px 44px;font-size:14px;color:var(--steel)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap top">
+  <div class="logo-box"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOmMycGE9Imh0dHA6Ly9jMnBhLm9yZy9tYW5pZmVzdCIgdmVyc2lvbj0iMS4xIiBzdHlsZT0iZGlzcGxheTogYmxvY2s7IiB2aWV3Qm94PSIwIDAgMjA0OCAxMzMxIiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI4MzIiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxtZXRhZGF0YT48YzJwYTptYW5pZmVzdD5BQUFNWjJwMWJXSUFBQUFlYW5WdFpHTXljR0VBRVFBUWdBQUFxZ0E0bTNFRFl6SndZUUFBQUF4QmFuVnRZZ0FBQUVkcWRXMWtZekp0WVFBUkFCQ0FBQUNxQURpYmNRTjFjbTQ2WXpKd1lUb3pZalprTkRJMU5DMDFaRGhsTFRRME5EVXRZVEpqWlMwelptUm1ObUptTTJZMk1qRUFBQUFCNG1wMWJXSUFBQUFwYW5WdFpHTXlZWE1BRVFBUWdBQUFxZ0E0bTNFRFl6SndZUzVoYzNObGNuUnBiMjV6QUFBQUFPMXFkVzFpQUFBQVFXcDFiV1JqWW05eUFCRUFFSUFBQUtvQU9KdHhFMk15Y0dFdVlXTjBhVzl1Y3k1Mk1nQUFBQUFZWXpKemFKaE9saWlqVWdGcC9vTHBiaVVXeG5JQUFBQ2tZMkp2Y3FGbllXTjBhVzl1YzRHalptRmpkR2x2Ym14ak1uQmhMbU55WldGMFpXUnhaR2xuYVhSaGJGTnZkWEpqWlZSNWNHVjRSbWgwZEhBNkx5OWpkaTVwY0hSakxtOXlaeTl1WlhkelkyOWtaWE12WkdsbmFYUmhiSE52ZFhKalpYUjVjR1V2ZEhKaGFXNWxaRUZzWjI5eWFYUm9iV2xqVFdWa2FXRnJaR1Z6WTNKcGNIUnBiMjUyUTNKbFlYUmxaQ0JpZVNCU1pXTnlZV1owSUVGSkxnQUFBTVJxZFcxaUFBQUFRR3AxYldSalltOXlBQkVBRUlBQUFLb0FPSnR4RTJNeWNHRXVhR0Z6YUM1a1lYUmhBQUFBQUJoak1uTm9Fb016Um9KeFpCSkNmYnAxNTh3M2hBQUFBSHhqWW05eXBXcGxlR05zZFhOcGIyNXpnYUpsYzNSaGNuUVkybVpzWlc1bmRHZ1pFSXhrYm1GdFpXNXFkVzFpWmlCdFlXNXBabVZ6ZEdOaGJHZG1jMmhoTWpVMlpHaGhjMmhZSUh6dkJEeVBiUStrKzMvSytKUTJSZVZuK05UV2xwb1BGaW01MFlNd0srVmNZM0JoWkVrQUFBQUFBQUFBQUFBQUFBSTBhblZ0WWdBQUFDZHFkVzFrWXpKamJBQVJBQkNBQUFDcUFEaWJjUU5qTW5CaExtTnNZV2x0TG5ZeUFBQUFBZ1ZqWW05eXBtcHBibk4wWVc1alpVbEVlQ3g0YlhBNmFXbGtPbUkxTmpjeFpEaGlMVEV6TldJdE5ETm1OeTA1TWpNeExUWTNNelJrTWpRM1lqbG1NblJqYkdGcGJWOW5aVzVsY21GMGIzSmZhVzVtYjZOa2JtRnRaV3B5WldOeVlXWjBMbUZwWjNabGNuTnBiMjU0S0RneFkyVTRNbVV5WXpWak0yTmlabUpsT0dNMlptSmxNVGM1WkRWbU9HUTVNV00wTURsalpURjNiM0puTG1OdmJuUmxiblJoZFhSb0xtTXljR0ZmY25ObU1DNDVNQzQzYVhOcFoyNWhkSFZ5WlhoTmMyVnNaaU5xZFcxaVpqMHZZekp3WVM5MWNtNDZZekp3WVRvellqWmtOREkxTkMwMVpEaGxMVFEwTkRVdFlUSmpaUzB6Wm1SbU5tSm1NMlkyTWpFdll6SndZUzV6YVdkdVlYUjFjbVZ5WTNKbFlYUmxaRjloYzNObGNuUnBiMjV6Z3FKamRYSnNlQ3B6Wld4bUkycDFiV0ptUFdNeWNHRXVZWE56WlhKMGFXOXVjeTlqTW5CaExtRmpkR2x2Ym5NdWRqSmthR0Z6YUZnZ3FQZUF4dDRwWGR2V3cyNHZicGp1Y1dQM3dkaHdKVklxa08zZFhaTm92WWlpWTNWeWJIZ3BjMlZzWmlOcWRXMWlaajFqTW5CaExtRnpjMlZ5ZEdsdmJuTXZZekp3WVM1b1lYTm9MbVJoZEdGa2FHRnphRmdncTFYcVg2ZDNFeVRWMmFCcVJaRGpwb1JyS0tVK2FNS3UvNVdiUXR0ZkJLMW9aR002ZEdsMGJHVjRHbEpsWTNKaFpuUWdRVWtnUjJWdVpYSmhkR1ZrSUVsdFlXZGxZMkZzWjJaemFHRXlOVFlBQUFmY2FuVnRZZ0FBQUNocWRXMWtZekpqY3dBUkFCQ0FBQUNxQURpYmNRTmpNbkJoTG5OcFoyNWhkSFZ5WlFBQUFBZXNZMkp2Y3RLRVdRT3dvZ0VtR0NHQ1dRSG5NSUlCNHpDQ0FZbWdBd0lCQWdJSkFMZmVXbU5EVVc1Nk1Bb0dDQ3FHU000OUJBTUNNRUF4SHpBZEJnTlZCQU1NRmxKbFkzSmhablFnVTNSaFoybHVaeUJFWlhZZ1EwRXhFREFPQmdOVkJBb01CMUpsWTNKaFpuUXhDekFKQmdOVkJBWVRBbFZUTUI0WERUSTJNRFl4TWpFNU5ETTFNRm9YRFRJM01EWXhNakU1TkRNMU1Gb3dOekVMTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFvVENsSmxZM0poWm5RZ1FVa3hFekFSQmdOVkJBTVRDbkpsWTNKaFpuUXVZV2t3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJLYVRWYkFDc2cvRGVHM0xlT3hZZElEL1ZBNkVGRzczRTZPa25iK0tJaUNGSnlnUlV6NHVlTjJ6L3QycVliNkNJVXZTOFJ2Z09paUNsZm9xc1l0dzgxbzNVd2N6QU1CZ05WSFJNQkFmOEVBakFBTUE0R0ExVWREd0VCL3dRRUF3SUd3REFUQmdOVkhTVUVEREFLQmdnckJnRUZCUWNEQkRBZEJnTlZIUTRFRmdRVUx6SHBCZW45NlNMMXk0SVBIYThNa01zaFhmMHdId1lEVlIwakJCZ3dGb0FVQWdzcU9CcktxcGRLLy9tL2t4Wm83WlI0ZWJjd0NnWUlLb1pJemowRUF3SURTQUF3UlFJZ1U4aEtXMGFYdnZrOFNRZ1ZGTmtheDY5WW05YWU4R3NUMlJaVFF3K0I1MUFDSVFDMEQ0QmtFb1JENE4wcjJaUmtOeTBIWmFXM1dJQ3kvUVpHTjk1aWxGNHl6RmtCdlRDQ0Fia3dnZ0Zmb0FNQ0FRSUNDUUNjK1dnN1Q2QVRiekFLQmdncWhrak9QUVFEQWpCQU1SOHdIUVlEVlFRRERCWlNaV055WVdaMElGTjBZV2RwYm1jZ1JHVjJJRU5CTVJBd0RnWURWUVFLREFkU1pXTnlZV1owTVFzd0NRWURWUVFHRXdKVlV6QWVGdzB5TmpBMk1USXhPVFF3TVRaYUZ3MHlPREEyTVRFeE9UUXdNVFphTUVBeEh6QWRCZ05WQkFNTUZsSmxZM0poWm5RZ1UzUmhaMmx1WnlCRVpYWWdRMEV4RURBT0JnTlZCQW9NQjFKbFkzSmhablF4Q3pBSkJnTlZCQVlUQWxWVE1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVE5SVFCbGNWYkthS1BZclFTZk9oTC8wMHM3eFVEQzdSaW5JdUxPL0kxazk5eTl5aDZvV0Y5a1B4YVArdHgxdjFQZU9MM3lyVnF1SjczMEgwWkdpRHlxTkNNRUF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFPQmdOVkhROEJBZjhFQkFNQ0FZWXdIUVlEVlIwT0JCWUVGQUlMS2pnYXlxcVhTdi81djVNV2FPMlVlSG0zTUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUZRd05JbUxsWURlUWhqZ0YrWmlxVGJnY3V6U3FtT0p3M1EybFEvaHU4M0ZBaUVBOU84Y0xtL3hmb1ZMcUI0anRkYnVIemkzV0wrcDJSTitEUkdrd3BZc3dWdWhZM0JoWkZrRHBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBOWxoQXZDUDNMeFRUVitMdmtWSkhqQytOYnROVjRVM2JOYmg4OW9jVURRVkdJYm1SR2tBNjhLc1p3THVUWGhOVk1jMDFhSVVoM05heTdzSzVoVWpYcTQ1ckVBPT08L2MycGE6bWFuaWZlc3Q+PC9tZXRhZGF0YT4KPGRlZnM+PG1hc2sgaWQ9ImJpb3MtY291bnRlci1rbm9ja291dHMiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjEzMzEiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMDQ4IiBoZWlnaHQ9IjEzMzEiIGZpbGw9IiNGRkZGRkYiIC8+PHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgZmlsbD0iIzAwMDAwMCIgZD0iTSAxMDg4LjY3IDU2My41MTIgQyAxMTQ1LjEyIDU1Ni4zMDMgMTE5Ni43NiA1OTYuMTQ3IDEyMDQuMTEgNjUyLjU4NiBDIDEyMTEuNDYgNzA5LjAyNSAxMTcxLjc1IDc2MC43NjUgMTExNS4zMyA3NjguMjU0IEMgMTA1OC43MSA3NzUuNzcgMTAwNi43NCA3MzUuODg0IDk5OS4zNjkgNjc5LjI0NiBDIDk5MS45OTQgNjIyLjYwOCAxMDMyLjAxIDU3MC43NDYgMTA4OC42NyA1NjMuNTEyIHoiIC8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9IiMwMDAwMDAiIGQ9Ik0gNTY4LjY5NiA2OTguMjM0IEwgNjM5Ljk2MyA2OTguMDYyIEMgNjYyLjU1NSA2OTguMDI4IDY5Ny4zMDIgNjkzLjY2NiA3MDguNDY3IDcxNy43NDMgQyA3MTUuMyA3MzIuNDc2IDcxMC44NDUgNzQ2LjQ2OCA3MDAuMjI0IDc1Ny40MDEgQyA2ODEuNjkxIDc3MS4wMjMgNjU4Ljg1MSA3NjcuNTk0IDYzNi44MDQgNzY3LjQ0OCBMIDU2OC41OTQgNzY2Ljk2MSBDIDU2OC41MDcgNzQ0LjA1MiA1NjguNTQxIDcyMS4xNDMgNTY4LjY5NiA2OTguMjM0IHoiIC8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9IiMwMDAwMDAiIGQ9Ik0gNTY4LjEwNyA1NjIuMDc3IEwgNjI2LjM1MSA1NjIuMDA1IEMgNjQwLjExNiA1NjEuOTUyIDY1NC43NTMgNTYwLjg1NyA2NjguNTYzIDU2My4zNTggQyA3MDMuNTA1IDU2OS42ODcgNzA0LjE5MiA2MTguNzgzIDY3MC4yNzkgNjI2LjM1MyBDIDY1OC43OTQgNjI4LjkxNiA2NDEuMzg4IDYyNy44MzYgNjI5LjEyNiA2MjcuNzkgQyA2MDguNDI0IDYyNy43ODIgNTg3LjcyMyA2MjcuNjE2IDU2Ny4wMjQgNjI3LjI5MyBMIDU2Ny4wMDYgNTYzLjg0MSBMIDU2OC4xMDcgNTYyLjA3NyB6IiAvPgo8L21hc2s+PC9kZWZzPjxnIG1hc2s9InVybCgjYmlvcy1jb3VudGVyLWtub2Nrb3V0cykiPjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9Im5vbmUiIGQ9Ik0gMCAwIEwgMjA0OCAwIEwgMjA0OCAxMzMxIEwgMCAxMzMxIEwgMCAwIHoiIC8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9InJnYigxNywyNCwzOSkiIGQ9Ik0gMTA5Ny4yMyA0ODQuNDM3IEwgMTA5OC40NSA0ODQuMzU4IEMgMTE0My4zMiA0ODEuOTAyIDExOTMuMjQgNTA0LjI3MiAxMjI2LjIyIDUzMy41NjggQyAxMzI0LjUxIDYyMC44OTUgMTI5NC41IDc5Mi4wNCAxMTY4LjUxIDgzNS43IEMgMTE0NC45NyA4NDMuODU4IDExMzAuODkgODQ1LjQ2NyAxMTA1Ljg0IDg0Ni44ODEgQyAxMDM0LjYgODQ0LjU4NyA5NzQuODE1IDgxNS45NzEgOTM4LjMyIDc1Mi4zNTkgQyA5MjAuNTYzIDcyMS40MSA5MTcuNjIgNjk0LjY5OSA5MTYuMTA3IDY1OS40MTMgQyA5NDAuNjY0IDYyOS42OTQgOTc0Ljk3NyA1OTUuOTU1IDEwMDEuMjEgNTY3LjAwOSBDIDEwMjQuMiA1NDEuNjQ1IDEwNTEuNzIgNTA5LjcwMiAxMDc1LjY0IDQ4Ni4wODMgQyAxMDgyLjQ4IDQ4NS4yNSAxMDkwLjI5IDQ4NC45MDQgMTA5Ny4yMyA0ODQuNDM3IHoiIC8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9InJnYigxNywyNCwzOSkiIGQ9Ik0gNjI3Ljg0IDQ5MS4yNTggQyA2NjguMjYxIDQ5MS4zODggNzE5LjYxIDQ4NS41NSA3NTAuMjY4IDUxNi44NDEgQyA3NjYuNjc5IDUzMy41OTEgNzc3LjA1NCA1NjEuMDEzIDc3Ni43NjYgNTg0LjQ3MiBDIDc3Ni41MTYgNjA2LjYzOCA3NjcuNDUxIDYyNy43OTMgNzUxLjU3NCA2NDMuMjY0IEMgNzQ0LjQ3OSA2NTAuMTM4IDczOC45ODUgNjUzLjQ5MyA3MzAuNDIxIDY1OC4wNjkgQyA3NTIuMzM2IDY2My4xMTMgNzcwLjI0MSA2NzMuMzU2IDc4Mi4xNjcgNjkzLjE1MSBDIDc5NS45NDMgNzE2LjAxNyA3OTkuMjggNzQ3Ljg2MSA3OTMuMzczIDc3My43MzUgQyA3ODQuMTg0IDgxMy45ODIgNzM4LjIxNSA4NDIuODQ5IDY5OC4yNzIgODQzLjg3MyBDIDY3Ni4yMDUgODQ0LjQzOCA2NTMuNjUxIDg0NC4xMzIgNjMxLjU0OCA4NDQuMTA3IEwgNDg0Ljg3MSA4NDMuOTgzIEMgNDg0LjgzOSA3ODAuNjY1IDQ4Ni4zNDEgNzEwLjcyIDQ4NC42NTYgNjQ3Ljk4IEMgNTExLjUxNiA2MTkuNTIxIDUzOC4xNDIgNTkwLjg0MyA1NjQuNTMyIDU2MS45NDggTCA1NjcuNDMgNTU4Ljg5NiBDIDU3OS4wMDggNTQ1LjczOSA1OTAuNzk4IDUzMi43NjkgNjAyLjc5MyA1MTkuOTkyIEMgNjEwLjQzNyA1MTEuNzQ4IDYyMS42ODQgNTAwLjIwNiA2MjcuODQgNDkxLjI1OCB6IiAvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDApIiBmaWxsPSJyZ2IoMTcsMjQsMzkpIiBkPSJNIDE0MzQuMjYgNDg1LjIwNyBDIDE0MzUuNzcgNDg1LjE4OCAxNDM3LjI4IDQ4NS4xODIgMTQzOC43OSA0ODUuMTg5IEMgMTQ4My44OCA0ODUuMzggMTUyOC41IDUwMi41MjUgMTU2MC40MyA1MzQuNzEyIEMgMTU0My43NyA1NTQuMjkzIDE1MjYuOTIgNTcyLjkwMyAxNTA5LjkgNTkyLjEzMSBDIDE0ODguMjcgNTc0LjYzMiAxNDYzLjE2IDU2MC42MzIgMTQzNS4wNCA1NTkuMzEzIEMgMTQxOC4yOSA1NTguODY3IDEzOTkuNDIgNTU4LjA0NyAxMzg2LjE5IDU3MC4wMDkgQyAxMzc0LjY5IDU3OS41NzIgMTM3MC43NyA1OTcuNyAxMzgzLjgzIDYwOC4wODUgQyAxMzk2LjIgNjE3Ljg0MSAxNDEyLjY4IDYyMS43NzIgMTQyNy41OSA2MjUuOTY4IEMgMTQ2Ni41NCA2MzYuOTIzIDE1MTIuNDQgNjQxLjMwNCAxNTQxLjAxIDY3My4yIEMgMTU1OC43MyA2OTIuOTY5IDE1NjYuNTYgNzIwLjAxOCAxNTY0LjcyIDc0Ni4xNjkgQyAxNTYyLjY4IDc3My4yMzIgMTU0OS43NSA3OTguMzExIDE1MjguODggODE1LjY2NSBDIDE0OTYuMDEgODQzLjUxNyAxNDQ3LjkxIDg0OS41NyAxNDA2LjQxIDg0Ni4xOTkgQyAxMzU5LjA2IDg0My4yNTggMTMxNi41MSA4MjEuOTQ1IDEyODAuODkgNzkxLjM4NCBDIDEyOTIuOTcgNzc1LjcyNiAxMzE4LjQ5IDc0Ny41ODIgMTMzMi4yNiA3MzIuMjExIEMgMTM0My40NiA3NDIuODgzIDEzNjEuMDkgNzU1LjExOSAxMzc1LjgxIDc2MS42NiBDIDE0MDIuNTYgNzczLjg2MyAxNDY2LjI5IDc4Ny4wOTkgMTQ4MC45IDc1Mi43MDkgQyAxNDk0Ljk2IDcxNy41OTQgMTQ0Ny40IDcxMS4wNjEgMTQyNS4wNSA3MDQuNDUyIEMgMTM3Ny4xNiA2OTAuMjg5IDEzMjIuMzMgNjgzLjY5NSAxMzAxLjQ5IDYzMS4zMjUgTCAxNDM0LjI2IDQ4NS4yMDcgeiIgLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgZmlsbD0icmdiKDE3LDI0LDM5KSIgZD0iTSA4OTUuNjgyIDU3Ni43ODYgQyA4OTcuOTI5IDU3OS42NjUgODk3LjAzMyA2MzAuOTcyIDg5Ny4wMyA2MzcuODMyIEwgODk2Ljg1NiA4NDMuOTMyIEwgODE3LjMxNSA4NDMuNzU0IEMgODE1Ljc0MSA4NDEuNDA3IDgxNi4wMTcgNjgwLjU0NCA4MTUuOTM5IDY2My4xNzkgTCA4OTUuNjgyIDU3Ni43ODYgeiIgLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgZmlsbD0icmdiKDAsMzMsMjU0KSIgZD0iTSA4MTkuMDQxIDQ5MC44ODcgTCA4OTQuOTc0IDQ5MC44NjcgTCA4OTQuOTk4IDU1OS4xOTYgQyA4ODIuODE1IDU3My41NzIgODY5Ljk4MiA1ODcuMjYgODU3LjIwMSA2MDEuMTAzIEwgODE5LjAxOCA2NDEuOTI2IEwgODE5LjA0MSA0OTAuODg3IHoiIC8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9InJnYigwLDMzLDI1NCkiIGQ9Ik0gNDk2LjIxOCA0OTAuOCBMIDYxMy4yOTEgNDkwLjgwNyBDIDU5Mi44MzkgNTEyLjg3NiA1NzIuNTY0IDUzNS40OTEgNTUxLjU3OCA1NTcuMDE1IEMgNTM0LjIxOSA1NzYuMTgzIDUxNC42MzIgNTk4Ljc1IDQ5Ni42MDQgNjE2LjkwNCBDIDQ5Ni4wNDEgNjAzLjEyIDQ5Ni41NDMgNTg3LjA1NiA0OTYuNTE4IDU3MyBMIDQ5Ni4yMTggNDkwLjggeiIgLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwwKSIgZmlsbD0icmdiKDAsMzMsMjU0KSIgZD0iTSAxMDU1Ljc4IDQ4Ni4zNjkgTCAxMDU3LjgzIDQ4Ni4zNTMgTCAxMDU3Ljk3IDQ4Ny42MTcgQyAxMDQzLjMxIDUwMS44MzQgMTAyNC41MyA1MjMuNzg3IDEwMTAuMTggNTM5LjM4NyBDIDk4Mi41NSA1NjguODE3IDk1NS4xNzUgNTk4LjQ4MSA5MjguMDU0IDYyOC4zNzcgTCA5MjYuNDQgNjI4LjcxOSBDIDkyNS41NDMgNjI1LjQ5MiA5MjcuMTMgNjE3LjkxOCA5MjcuNjgxIDYxNC4zNTEgQyA5MzEuODQ0IDU4Ny4zOTggOTQyLjI5OCA1NjMuOTA1IDk1OC45MTYgNTQyLjI5NyBDIDk4Mi40OTQgNTExLjUyNyAxMDE3LjM1IDQ5MS40MDUgMTA1NS43OCA0ODYuMzY5IHoiIC8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsMCkiIGZpbGw9InJnYigwLDMzLDI1NCkiIGQ9Ik0gMTQwNy43MiA0ODcuMzUxIEMgMTQxMC42MyA0ODYuOTU5IDE0MTEuMTUgNDg3LjA0OSAxNDE0LjEgNDg3LjM1MyBMIDE0MTQuMjEgNDg4LjM4MiBDIDEzNzcuOTggNTI5LjA4NyAxMzQwLjcxIDU2OC42NTIgMTMwNC4zNiA2MDkuMTU5IEMgMTMwMi4wNSA2MTEuNDI0IDEzMDIuNzEgNjExLjUxNCAxMzAwLjE0IDYxMS44NjQgQyAxMjk5LjU2IDYxMC43MDUgMTI5OC45NiA2MDkuMTQ2IDEyOTguODcgNjA3Ljg1MSBDIDEyOTQuNDIgNTQwLjkwNyAxMzQ0LjQ5IDQ5Ni4wNyAxNDA3LjcyIDQ4Ny4zNTEgeiIgLz4KPC9nPjwvc3ZnPg==" alt="BIOS"></div>
+  <div class="product">CNS Launch Atlas · design review</div>
+</div>
+
+<div class="hero"><div class="wrap">
+  <span class="meta">Independent design consultation · 13 Nov 2026</span>
+  <h1>Draw the argument. Then let the text support it.</h1>
+  <p>The Atlas has the data but no pictures. The fix is ten drawn, interactive figures and one layout rule, inside the BIOS visual system.</p>
+  <div class="big">
+    <div><b>0</b><span>explanatory diagrams or images in the app today</span></div>
+    <div><b>47%</b><span>less visible text, with nothing deleted from the data</span></div>
+    <div><b>10</b><span>hero figures to build, one per screen</span></div>
+  </div>
+</div></div>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Diagnosis</span>
+  <h2>Payers &amp; access alone carries more text than four other screens combined</h2>
+  <p class="deck">Visible words per screen today, and after relocating detail one click away. Every screen uses the same three parts: accordion, table, fact list.</p>
+  <div id="diet"></div>
+  <p class="prov">Source: rendered word counts of the current build (rare-epilepsy market; journey shown as the two-market midpoint). Targets from the consultation. Data quality: observed (now), estimated (target).</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Prototype 1 · Disease 101, rare epilepsy</span>
+  <h2>Same gene, opposite problems: one figure replaces four text primers</h2>
+  <div class="two">
+    <div>
+      <div class="ctrls" style="margin-bottom:14px">
+        <div class="seg" id="chState" role="group" aria-label="Channel variant"><button data-s="typ" aria-pressed="true">Typical</button><button data-s="gof" aria-pressed="false">Gain of function</button><button data-s="lof" aria-pressed="false">Loss of function</button></div>
+        <label class="switch"><input type="checkbox" id="chBlock"> Add a sodium-channel blocker</label>
+      </div>
+      <div id="chFig"></div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <span class="status" id="chStatus"></span>
+      <p class="note" id="chNote"></p>
+      <p class="deck" style="font-size:17px">Why it matters commercially: the genetic test, and the variant's functional class, decide whether this drug class helps or harms. That is the whole diagnostic story in one control.</p>
+    </div>
+  </div>
+  <p class="prov">Schematic, not to scale; firing counts are illustrative. Concept: Wolff et al., Brain 2017 (SCN2A genotype–phenotype and treatment response); international SCN8A consensus 2024. Confidence: high. Data quality: conceptual.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Prototype 2 · Disease 101, essential tremor</span>
+  <h2>Let the reader feel what "about half better" means</h2>
+  <div class="two">
+    <div id="spFig"></div>
+    <div style="display:grid;gap:14px">
+      <label for="spSev" style="font-weight:600">Tremor severity: <span id="spLab"></span></label>
+      <input class="range" type="range" id="spSev" min="0" max="4" step="1" value="3">
+      <label class="switch"><input type="checkbox" id="spRx"> Apply a typical first-line response</label>
+      <p class="note" id="spNote"></p>
+    </div>
+  </div>
+  <p class="prov">Illustrative spiral generated in code on a 0–4 scale in the style of clinical spiral ratings. First-line benchmark: mean tremor amplitude reduction about 50% with propranolol or primidone (AAN practice parameter, 2011). Confidence: high. Data quality: modeled drawing, observed benchmark.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Prototype 3 · Overview</span>
+  <h2>8,100 of 10,000 patients are not yet visible in data</h2>
+  <p class="deck">The launch thesis has a shape. Today it is four equal-width bars and a twelve-row list of dates.</p>
+  <div id="funnel"></div>
+  <p class="prov">Source: sponsor investor-day disclosure, 12 Nov 2026 (prevalent, diagnosed, visible in genetic and claims data); FDA action dates as disclosed. Confidence: medium. Data quality: estimated by sponsor.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Screen-by-screen plan</span>
+  <h2>What gets cut, and what gets drawn in its place</h2>
+  <div class="tabs" id="secTabs" role="group" aria-label="Section"></div>
+  <div class="plan" id="secBody"></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Visual system</span>
+  <h2>The BIOS kit and the HBR approach point the same way: fewer, larger, flatter figures</h2>
+  <div class="grid3">
+    <div class="card"><h3>Colour means one thing each</h3>
+      <div class="chips"><span class="chip" style="background:#111827;color:#F8FAFC">Slate · default mark</span><span class="chip" style="background:#2457D6;color:#F8FAFC">Cobalt · the subject</span><span class="chip" style="background:#42526E;color:#F8FAFC">Steel · context</span></div>
+      <div class="chips"><span class="chip" style="background:var(--adverse-bg);color:var(--adverse)">⚠ Adverse</span><span class="chip" style="background:var(--good-bg);color:var(--good)">✓ Favorable</span><span class="chip" style="background:var(--watch-bg);color:var(--watch)">△ Watch</span></div>
+      <p class="cut">Semantic colour always carries an icon and a label. A falling line is slate, not red.</p></div>
+    <div class="card"><h3>Two typefaces, larger</h3>
+      <div style="font-family:var(--display);font-weight:700;font-size:30px;line-height:1.1">Headline states the finding</div>
+      <div>Inter 18px for reading, tabular numerals for data: 1,900 · 47%</div>
+      <p class="cut">The current third (mono) face and 12.5–14px text go.</p></div>
+    <div class="card"><h3>One rule for every screen</h3>
+      <ul class="t"><li>One hero figure, set on the page</li><li>Up to five notes on the figure</li><li>Under 60 words of running text</li><li>Visible source line beneath</li><li>Tables one click away</li></ul></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Media</span>
+  <h2>Make three short films from the same drawings, and almost no generated imagery</h2>
+  <div class="grid3">
+    <div class="card"><h3>Films, code-rendered</h3><ul class="t"><li><b>Gain vs loss</b> · 30 s</li><li><b>The tremor loop</b> · 40 s</li><li><b>The odyssey / the leaky pipeline</b> · 30 s, optional</li></ul><p class="cut">Captions on screen, no numbers baked in, under 5 MB each. Remotion and Hyperframes both run in this environment.</p></div>
+    <div class="card"><h3>Stills, generated</h3><ul class="t"><li>Older hands steadying a cup</li><li>A hand signing a form</li><li>A parent's hand holding an infant's</li><li>A seizure diary on a counter</li></ul><p class="cut">Six to eight, documentary style, no faces, captioned "Illustrative image". Blocked today: the image service has 0 credits.</p></div>
+    <div class="card"><h3>Never generate</h3><ul class="t no"><li>Ion channels, neurons, brain anatomy</li><li>Scans, EEG, charts, maps</li><li>Pills, packaging, any drug product</li><li>Faces, children, a seizure</li><li>Anything containing text</li></ul><p class="cut">Mechanisms are drawn in code so they stay correct.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="meta">Roadmap</span>
+  <h2>One build pass gets the four screens where the "text-heavy" verdict is formed</h2>
+  <div class="grid3">
+    <div class="card phase first"><b>Pass 1 · recommended next</b><h3>Brand, rules and four hero screens</h3><ul class="t"><li>BIOS tokens, type, wordmark</li><li>Source line and source chip</li><li>Finding headlines on every chart</li><li>Disease 101: both explainer sets</li><li>Journey: odyssey and leaky pipeline</li><li>Overview: funnel and timeline</li></ul></div>
+    <div class="card phase"><b>Pass 2</b><h3>The heavy screens</h3><ul class="t"><li>Payers: payment flow, waterfall, criteria matrix</li><li>Landscape: pipeline matrix, trial dot plots</li><li>Simulator: scenario fan, tornado, patient flow</li><li>Geography, Trials, KOLs figures</li></ul></div>
+    <div class="card phase"><b>Pass 3</b><h3>Premium media</h3><ul class="t"><li>Two to three films</li><li>Six to eight stills, once credits exist</li><li>Mobile variants of wide figures</li><li>Clinician sign-off on mechanisms</li></ul></div>
+  </div>
+</div></section>
+
+<section class="band" style="border-bottom:0"><div class="wrap">
+  <span class="meta">Your call</span>
+  <h2>Five decisions before the build</h2>
+  <div class="dec">
+    <div><b>1</b><div>May mechanism schematics be drawn, given the kit bans "molecule diagrams"?</div><div class="rec">Recommend yes: flat, labelled, slate line drawings are instruction, not brand imagery.</div></div>
+    <div><b>2</b><div>May table cells and compact metadata drop to 14px?</div><div class="rec">Recommend yes. At the kit's 16–18px, tables run 30–40% longer.</div></div>
+    <div><b>3</b><div>Is documentary photography of hands and homes right for BIOS?</div><div class="rec">Optional. The app works without it; it needs image credits either way.</div></div>
+    <div><b>4</b><div>Light theme only, with the product title as plain text beside the wordmark?</div><div class="rec">Recommend yes to both. Cobalt on slate fails text contrast.</div></div>
+    <div><b>5</b><div>Who signs off the science in the mechanism figures?</div><div class="rec">A neurologist or medical lead should review before anything is shown externally.</div></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Visuals follow BIOS Brand Kit v1.3.0 (revision 6): approved palette, Instrument Sans and Inter, supplied wordmark. BIOS messaging is not applied. Investigational products are not approved; prototypes are schematic.</div></footer>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s), N=v=>v.toLocaleString("en-US");
+/* ---- text diet dumbbell ---- */
+(()=>{const d=[["Payers & access",3760,1300],["Competitive landscape",2140,950],["KOLs & prescribers",1340,900],["Disease 101",1220,520],["Journey & treatment",1150,550],["Trials",1030,720],["Geography",830,520],["Sources & methods",800,800],["Launch simulator",660,470],["Overview",635,330]];
+const W=1100,lw=230,rh=44,H=d.length*rh+50,X=v=>lw+v/4000*(W-lw-90);let g="";
+for(let t=0;t<=4000;t+=1000)g+=`<line x1="${X(t)}" x2="${X(t)}" y1="26" y2="${H-18}" stroke="rgba(17,24,39,.12)"/><text x="${X(t)}" y="16" font-size="14" fill="#42526E" text-anchor="middle">${N(t)}</text>`;
+d.forEach(([l,a,b],i)=>{const y=48+i*rh;g+=`<text x="${lw-16}" y="${y+5}" font-size="16" text-anchor="end">${l}</text><line x1="${X(b)}" x2="${X(a)}" y1="${y}" y2="${y}" stroke="#94A3B8" stroke-width="3"/><circle cx="${X(a)}" cy="${y}" r="8" fill="#111827"/><circle cx="${X(b)}" cy="${y}" r="8" fill="#2457D6" stroke="#F8FAFC" stroke-width="2"/><text x="${X(a)+14}" y="${y+5}" font-size="15" font-weight="600">${N(a)}</text>${a!==b?`<text x="${X(b)-14}" y="${y+5}" font-size="15" fill="#2457D6" font-weight="600" text-anchor="end">${N(b)}</text>`:""}`;});
+g+=`<circle cx="${lw+8}" cy="${H-4}" r="6" fill="#111827"/><text x="${lw+20}" y="${H}" font-size="14" fill="#42526E">words visible now</text><circle cx="${lw+178}" cy="${H-4}" r="6" fill="#2457D6"/><text x="${lw+190}" y="${H}" font-size="14" fill="#42526E">target</text>`;
+$("#diet").innerHTML=`<div style="overflow-x:auto"><svg class="fig" style="min-width:680px" viewBox="0 0 ${W} ${H+6}" role="img" aria-label="Visible words per screen now and target">${g}</svg></div>`;})();
+
+/* ---- channel explainer ---- */
+(()=>{let s="typ",blk=false;
+const P={typ:{gap:18,peak:62,tail:2,fire:5},gof:{gap:30,peak:62,tail:20,fire:12},lof:{gap:7,peak:24,tail:1,fire:2}}, FB={typ:4,gof:5,lof:0};
+const T={typ:["Typical channel","The channel opens briefly, lets sodium in, then shuts. The neuron fires in a controlled rhythm."],gof:["Over-active channel","The channel stays partly open. A persistent current keeps the neuron firing: early-onset seizures."],lof:["Under-active channel","Too little sodium gets in. Firing is reduced: later-onset seizures, autism and intellectual disability."]};
+const TB={typ:["Blocker added","Firing is slightly damped."],gof:["Calms toward typical","The blocker trims the persistent current. This is why sodium-channel blockers are first-line here."],lof:["Worsens","The same blocker removes what little current remains. Seizures can get worse."]};
+function draw(){const p=P[s],gap=blk?p.gap*.55:p.gap,peak=blk?p.peak*.8:p.peak,tail=blk?p.tail*.25:p.tail,fire=blk?FB[s]:p.fire,harm=blk&&s==="lof",ok=blk&&s==="gof";
+let g=`<rect x="20" y="62" width="680" height="44" fill="#EEF1F5"/><line x1="20" x2="700" y1="62" y2="62" stroke="#111827" stroke-width="2"/><line x1="20" x2="700" y1="106" y2="106" stroke="#111827" stroke-width="2"/><text x="28" y="54" font-size="14" fill="#42526E">Outside the neuron</text><text x="28" y="126" font-size="14" fill="#42526E">Inside</text>`;
+const cx=360;g+=`<rect x="${cx-gap/2-16}" y="50" width="16" height="68" rx="4" fill="#2457D6"/><rect x="${cx+gap/2}" y="50" width="16" height="68" rx="4" fill="#2457D6"/><rect x="${cx-gap/2}" y="62" width="${gap}" height="44" fill="#F8FAFC"/>`;
+const fw=Math.max(1.5,gap/3.2);g+=`<line x1="${cx}" x2="${cx}" y1="22" y2="${140}" stroke="#111827" stroke-width="${fw}"/><path d="M${cx-7} 134 L${cx} 148 L${cx+7} 134 z" fill="#111827"/><text x="${cx+26}" y="34" font-size="15" font-weight="600">Na⁺ flowing in</text>`;
+if(blk)g+=`<rect x="${cx-gap/2-2}" y="56" width="${gap+4}" height="9" rx="3" fill="#111827"/><line x1="${cx-40}" x2="${cx-110}" y1="60" y2="34" stroke="#42526E"/><circle cx="${cx-40}" cy="60" r="3" fill="none" stroke="#42526E"/><text x="${cx-116}" y="30" font-size="15" text-anchor="end">Blocker</text>`;
+g+=`<line x1="${cx+gap/2+16}" x2="${cx+120}" y1="98" y2="98" stroke="#42526E"/><circle cx="${cx+gap/2+19}" cy="98" r="3" fill="none" stroke="#42526E"/><text x="${cx+126}" y="103" font-size="15">Sodium channel</text>`;
+/* current trace */
+const x0=40,y0=200;g+=`<text x="${x0}" y="184" font-size="15" font-weight="600">Sodium current</text><line x1="${x0}" x2="320" y1="${y0}" y2="${y0}" stroke="rgba(17,24,39,.45)" stroke-dasharray="4 4"/><path d="M${x0} ${y0} H${x0+50} L${x0+62} ${y0+peak} L${x0+92} ${y0+tail+ (peak-tail)*.12} Q${x0+120} ${y0+tail} ${x0+150} ${y0+tail} H${x0+250} L${x0+262} ${y0} H320" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>`;
+if(tail>8)g+=`<line x1="${x0+200}" x2="${x0+214}" y1="${y0+tail+4}" y2="${y0+48}" stroke="#42526E"/><text x="${x0+150}" y="${y0+66}" font-size="15">Persistent current</text>`;
+/* firing */
+const fx=400,fy=268,col=harm?"#B4233C":"#111827";g+=`<text x="${fx}" y="184" font-size="15" font-weight="600">Neuron firing</text><line x1="${fx}" x2="690" y1="${fy}" y2="${fy}" stroke="${col}" stroke-width="2"/>`;
+for(let i=0;i<fire;i++){const x=fx+14+i*(262/Math.max(fire,1));g+=`<line x1="${x}" x2="${x}" y1="${fy}" y2="${fy-58}" stroke="${col}" stroke-width="2.5"/>`;}
+if(!fire)g+=`<text x="${fx+8}" y="${fy-22}" font-size="15" fill="#B4233C" font-weight="600">⚠ almost silent</text>`;
+$("#chFig").innerHTML=`<svg class="fig" viewBox="0 0 720 290" role="img" aria-label="Sodium channel schematic: ${T[s][0]}${blk?", with blocker":""}">${g}</svg>`;
+const st=$("#chStatus");st.className="status"+(harm?" adverse":ok?" good":"");st.textContent=(harm?"⚠ ":ok?"✓ ":"")+(blk?TB[s][0]:T[s][0]);$("#chNote").textContent=blk?TB[s][1]:T[s][1];}
+document.querySelectorAll("#chState button").forEach(b=>b.onclick=()=>{s=b.dataset.s;document.querySelectorAll("#chState button").forEach(x=>x.setAttribute("aria-pressed",x===b));draw();});
+$("#chBlock").onchange=e=>{blk=e.target.checked;draw();};draw();})();
+
+/* ---- spiral ---- */
+(()=>{const L=["0 · none","1 · slight","2 · mild","3 · moderate","4 · severe"],D=["A smooth spiral.","Barely visible wobble.","Obvious tremor; the figure is still clean.","Lines cross and waver; writing and pouring are hard.","The figure is barely recognisable; many daily tasks need help."];
+function draw(){const sev=+$("#spSev").value,rx=$("#spRx").checked,A=sev*5.2*(rx?.5:1);let d="";for(let i=0;i<=900;i++){const th=i/900*7*Math.PI,grow=.35+.65*i/900,r=8+7.4*th+A*grow*Math.sin(th*8.3+Math.sin(th*1.7)),x=210+r*Math.cos(th),y=210+r*Math.sin(th);d+=(i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1);}
+let hw="M40 0";for(let i=0;i<=300;i++){const x=40+i*1.15,y=20*Math.sin(i/9)*.9+A*.55*Math.sin(i*1.9);hw+=`L${x.toFixed(1)} ${y.toFixed(1)}`;}
+$("#spFig").innerHTML=`<svg class="fig" viewBox="0 0 420 500" role="img" aria-label="Spiral drawing at severity ${sev}${rx?" with first-line response":""}" style="max-width:440px"><path d="${d}" fill="none" stroke="${rx?"#2457D6":"#111827"}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><g transform="translate(0,455)"><path d="${hw}" fill="none" stroke="${rx?"#2457D6":"#111827"}" stroke-width="2.2" stroke-linejoin="round"/></g><text x="40" y="492" font-size="14" fill="#42526E">Spiral drawing and a line of handwriting</text></svg>`;
+$("#spLab").textContent=L[sev];$("#spNote").textContent=rx?(sev?"About half the amplitude remains. Better, but for moderate and severe tremor still visibly impaired, which is why 40–47% stop within two years.":"Nothing to treat."):D[sev];}
+$("#spSev").oninput=draw;$("#spRx").onchange=draw;draw();})();
+
+/* ---- funnel + timeline ---- */
+(()=>{const W=1100,mx=10000,bw=v=>v/mx*760;const rows=[["Prevalent in the US",10000,"#C9D6F7"],["Genetically diagnosed",5000,"#94ADEE"],["Visible in genetic and claims data",1900,"#2457D6"]];let g="";
+rows.forEach(([l,v,c],i)=>{const y=10+i*62;g+=`<rect x="0" y="${y}" width="${bw(v)}" height="48" rx="4" fill="${c}"/><text x="${bw(v)+14}" y="${y+22}" font-size="26" font-weight="700" font-family="Instrument Sans,Inter,Arial">${N(v)}</text><text x="${bw(v)+14}" y="${y+42}" font-size="15" fill="#42526E">${l}</text>`;});
+g+=`<line x1="${bw(1900)}" x2="${bw(10000)}" y1="196" y2="196" stroke="#42526E"/><line x1="${bw(1900)}" x2="${bw(1900)}" y1="190" y2="202" stroke="#42526E"/><line x1="${bw(10000)}" x2="${bw(10000)}" y1="190" y2="202" stroke="#42526E"/><text x="${(bw(1900)+bw(10000))/2}" y="222" font-size="16" text-anchor="middle">8,100 still to be found: testing and referral are the launch</text>`;
+/* timeline */
+const t0=Date.UTC(2026,0,1),t1=Date.UTC(2027,11,31),TX=d=>20+(d-t0)/(t1-t0)*(W-60),ty=356;const ev=[[Date.UTC(2026,2,30),"NDA accepted",0],[Date.UTC(2026,5,29),"Review extended",0],[Date.UTC(2026,10,13),"Today",2],[Date.UTC(2026,11,27),"FDA action date, rare epilepsy",1],[Date.UTC(2027,0,29),"FDA action date, tremor",1],[Date.UTC(2027,8,15),"Broad-label filing, if data support",1]];
+g+=`<line x1="20" x2="${W-40}" y1="${ty}" y2="${ty}" stroke="#111827" stroke-width="2"/>`;
+for(let q=0;q<8;q++){const d=Date.UTC(2026+Math.floor(q/4),(q%4)*3,1);g+=`<line x1="${TX(d)}" x2="${TX(d)}" y1="${ty-5}" y2="${ty+5}" stroke="#111827"/><text x="${TX(d)+4}" y="${ty+24}" font-size="14" fill="#42526E">Q${q%4+1} ${2026+Math.floor(q/4)}</text>`;}
+ev.forEach(([d,l,k],i)=>{const x=TX(d),up=[40,70,100,72,42,100][i],end=k===2||x>W-320,c=k===1?"#2457D6":k===2?"#111827":"#94A3B8";g+=`<line x1="${x}" x2="${x}" y1="${ty}" y2="${ty-up}" stroke="${k?c:"#42526E"}" ${k===2?'stroke-dasharray="4 4"':""}/><circle cx="${x}" cy="${ty}" r="${k===1?8:6}" fill="${c}" stroke="#F8FAFC" stroke-width="2"/><text x="${end?x-8:x+8}" y="${ty-up+5}" font-size="15" ${k?'font-weight="600"':""} fill="${k===1?"#2457D6":"#111827"}" text-anchor="${end?"end":"start"}">${l}</text>`;});
+$("#funnel").innerHTML=`<div style="overflow-x:auto"><svg class="fig" style="min-width:760px" viewBox="0 0 ${W} 396" role="img" aria-label="Patient funnel and catalyst timeline">${g}</svg></div>`;})();
+
+/* ---- section plan ---- */
+(()=>{const S=[
+["Disease 101","−57%","L","High","Primer accordions become figure captions. Epidemiology table and glossary move to a drawer.",["Gain vs loss channel toggle, with blocker switch","Age-of-onset timeline by syndrome","Incidence icon array with source ranges","Tremor loop: where drug, DBS and ultrasound act","Spiral and handwriting severity slider","Tremor vs Parkinson's comparison matrix"]],
+["Journey & treatment","−50%","L","High","Tab strip, guideline accordion and the unmet-needs wall go behind pins on the figure.",["Rare epilepsy: diagnostic odyssey swimlane with delay segments","Tremor: leaky-pipeline drop-off from 7M to treated","Treatment ladder: evidence, effect and drop-out as aligned marks","Two-sided tension cards for live debates"]],
+["Overview","−50%","M","High","Six accordions become six one-line findings attached to visuals.",["Proportional funnel with the gap annotated","Catalyst timeline with a today marker","Three KPIs, not six","Pipeline phase strip"]],
+["Payers & access","−65%","L","High","Nineteen fact rows and three fact lists move to an evidence drawer per figure.",["How a prescription gets paid: flow with time-to-coverage clocks","Gross-to-net waterfall with statutory steps","Prior-authorization criteria matrix, 16 policies","State tile map of public-payer use"]],
+["Competitive landscape","−55%","M","High","Label-value asset profiles and the long pipeline table leave the default view.",["Pipeline matrix: mechanism by stage, one dot per asset","Trial-result dot plots with design caveats","Brand spend as small multiples","Fixed asset card: status, three numbers, next catalyst"]],
+["Launch simulator","−29%","M","High","Year-by-year table becomes a toggle; twenty sliders group into five drivers.",["Scenario fan with analog ramps behind","Tornado: which assumption moves peak most","Patient-flow strip that moves with the sliders"]],
+["Geography","−37%","M","Medium","The 51-row table becomes a table view toggle.",["Finding headline above the map","Why-this-score breakdown on state select","Small-multiple tile maps to compare layers","Patients vs specialists scatter"]],
+["Trials","−30%","S–M","Medium","Explorer collapses to ten rows beneath the figure.",["Study timeline: dot per trial by year and phase","Institution dot plot linked to the map"]],
+["KOLs & prescribers","−33%","M","Medium","Advocacy paragraphs become name tiles; score formula becomes a disclosure.",["Influence scatter with named experts labelled","Prescriber concentration curve","No network hairballs"]],
+["Sources & methods","0%","S","Protective","Keep the text; this is where rigour lives.",["Provenance diagram: sources into sections","Landing target for every source chip","All known gaps collected here"]]];
+const tabs=$("#secTabs"),body=$("#secBody");
+function show(i){const s=S[i];[...tabs.children].forEach((b,j)=>b.setAttribute("aria-pressed",i===j));
+body.innerHTML=`<div style="display:grid;gap:14px;align-content:start"><div><div style="font-family:var(--display);font-weight:700;font-size:64px;line-height:1;color:var(--cobalt)">${s[1]}</div><div class="cut">visible text</div></div><div class="chips"><span class="chip">Effort ${s[2]}</span><span class="chip c">Impact ${s[3]}</span></div><div><h3>Cut or move</h3><p class="cut">${s[4]}</p></div></div><div><h3>Draw instead</h3><ul class="figs">${s[5].map((f,j)=>`<li><i>${j+1}</i><span>${f}</span></li>`).join("")}</ul></div>`;}
+S.forEach((s,i)=>{const b=document.createElement("button");b.textContent=s[0];b.onclick=()=>show(i);tabs.appendChild(b);});show(0);})();
+</script>
