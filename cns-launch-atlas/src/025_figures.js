@@ -99,9 +99,22 @@ function figIncidence() {
 
 /* ---------- DEE: burden ---------- */
 function figBurden() {
-  const T = [["35–45%", "of families had a caregiver leave employment", "Dravet, LGS and TSC studies"], ["71%", "of caregivers report depression symptoms, at the high end", "Up to 70.7% across studies"], ["$24K–$81K", "direct medical cost per patient per year", "Range of study means"], ["5.3%", "mortality among 190 published SCN8A patients", "1.6% definite or probable SUDEP"], ["9.3", "SUDEP deaths per 1,000 patient-years in Dravet", "One cohort; another reports 4.4"]];
-  return figure("Beyond seizures", "The disease takes a parent out of work as often as not", "Seizure counts are the trial endpoint. The burden families and payers carry is wider.",
-    `<div class="fig2" style="grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)"><div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr))">${T.map(t => `<div class="tile"><b>${t[0]}</b><span>${esc(t[1])}</span><small>${esc(t[2])}</small></div>`).join("")}</div>${photo("dee-counter", "A notebook, pen and baby bottle on a kitchen counter in early light")}</div><p class="note">No US cost-of-illness study specific to SCN2A or SCN8A is available; figures are from related syndromes.</p>`,
+  const people = (k, lab) => `<svg class="fig" viewBox="0 0 280 46" role="img" aria-label="${esc(lab)}">${Array.from({ length: 10 }, (_, i) => `<g transform="translate(${i * 28},0)" fill="${i < k ? "#2457D6" : "#C9D6F7"}"><circle cx="11" cy="8" r="6.5"/><path d="M1 46 v-16 a10 10 0 0 1 20 0 v16 z"/></g>`).join("")}</svg>`;
+  const X = v => 8 + v / 100 * 284, cost = `<svg class="fig" viewBox="0 0 300 78" role="img" aria-label="Direct medical cost per patient per year, 24 to 81 thousand dollars"><line x1="8" x2="292" y1="46" y2="46" stroke="#94A3B8" stroke-width="2"/>${[0, 50, 100].map(t => `<line x1="${X(t)}" x2="${X(t)}" y1="40" y2="52" stroke="#94A3B8" stroke-width="2"/><text x="${X(t)}" y="70" font-size="13" text-anchor="${t === 0 ? "start" : t === 100 ? "end" : "middle"}" style="fill:#42526E">$${t}K</text>`).join("")}<line x1="${X(24)}" x2="${X(81)}" y1="46" y2="46" stroke="#2457D6" stroke-width="16" stroke-linecap="round"/><text x="${X(24)}" y="24" font-size="15" font-weight="700" text-anchor="middle" style="fill:#2457D6">$24K</text><text x="${X(81)}" y="24" font-size="15" font-weight="700" text-anchor="middle" style="fill:#2457D6">$81K</text></svg>`;
+  let dots = ""; for (let i = 0; i < 190; i++) { const c = i % 19, r = Math.floor(i / 19); dots += `<circle cx="${7 + c * 15}" cy="${7 + r * 15}" r="5" fill="${i < 3 ? "#B4233C" : i < 10 ? "#111827" : "#C9D6F7"}"/>`; }
+  const R2 = v => 8 + v / 10 * 284, rate = `<svg class="fig" viewBox="0 0 300 70" role="img" aria-label="SUDEP rate per 1,000 patient-years in Dravet syndrome: 4.4 and 9.3 in two cohorts"><line x1="8" x2="292" y1="40" y2="40" stroke="#94A3B8" stroke-width="2"/>${[0, 5, 10].map(t => `<line x1="${R2(t)}" x2="${R2(t)}" y1="34" y2="46" stroke="#94A3B8" stroke-width="2"/><text x="${R2(t)}" y="64" font-size="13" text-anchor="${t === 0 ? "start" : t === 10 ? "end" : "middle"}" style="fill:#42526E">${t}</text>`).join("")}<line x1="${R2(4.4)}" x2="${R2(9.3)}" y1="40" y2="40" stroke="#111827" stroke-width="3"/>${[4.4, 9.3].map(v => `<circle cx="${R2(v)}" cy="40" r="8" fill="#111827"/><text x="${R2(v)}" y="20" font-size="15" font-weight="700" text-anchor="middle">${v}</text>`).join("")}</svg>`;
+  return figure("Beyond seizures", "About four in ten families lose a working parent to caregiving", "Seizure counts are the trial endpoint. The burden families and payers carry is wider.",
+    `<div class="info">
+      <div><h3>The family</h3>
+        <div class="stat">${people(4, "4 of 10 figures highlighted")}<b>4 in 10</b><p>families had a caregiver leave employment.</p><small>35–45% across Dravet, LGS and TSC studies</small></div>
+        <div class="stat">${people(7, "7 of 10 figures highlighted")}<b>7 in 10</b><p>caregivers report symptoms of depression, at the high end.</p><small>Up to 70.7% across studies</small></div></div>
+      <div><h3>The cost</h3>
+        <div class="stat">${cost}<b>$24K–$81K</b><p>direct medical cost per patient, per year.</p><small>Range of study means; home and inpatient care drive it</small></div>
+        <div class="stat"><p style="color:var(--ink-2)">No US cost-of-illness study specific to SCN2A or SCN8A is available. These figures come from related syndromes.</p></div></div>
+      <div><h3>The risk</h3>
+        <div class="stat"><svg class="fig" viewBox="0 0 284 150" role="img" aria-label="190 published SCN8A patients: 10 died, 3 of them from sudden unexpected death in epilepsy">${dots}</svg><b>10 of 190</b><p>published SCN8A patients had died at the time of report.</p><small><span style="color:var(--crit);font-weight:600">⚠ 3 sudden unexpected deaths (SUDEP)</span> · 7 other causes</small></div>
+        <div class="stat">${rate}<p>SUDEP deaths per 1,000 patient-years in Dravet syndrome, in two cohorts.</p></div></div>
+    </div>`,
     prov([...edSrc("dee", 7), ...edSrc("dee", 6).slice(0, 2)], { conf: "medium", quality: "observed" }));
 }
 
@@ -188,6 +201,15 @@ function timelineFig(events) {
     g += `<line x1="${e.x}" x2="${e.x}" y1="${ty}" y2="${e.fut ? y + 18 : y - 12}" stroke="${c}"/><circle cx="${e.x}" cy="${ty}" r="${e.fut ? 7 : 5}" fill="${e.fut ? "#2457D6" : "#94A3B8"}" stroke="#F8FAFC" stroke-width="2"/><g data-tip="${esc(`<b>${esc(e.when)}</b><br>${esc(e.l)}`)}"><text x="${tx}" y="${y}" font-size="13" fill="${c}" font-weight="600" text-anchor="${an}">${esc(e.when)}</text><text x="${tx}" y="${y + 16}" font-size="14" text-anchor="${an}" ${e.fut ? 'font-weight="600"' : ""}>${esc(e.short)}</text></g>`; });
   g += `<line x1="${X(now)}" x2="${X(now)}" y1="${ty - 18}" y2="${ty + 18}" stroke="#111827" stroke-width="2"/><rect x="${X(now) - 26}" y="${ty - 9}" width="52" height="18" rx="4" fill="#111827"/><text x="${X(now)}" y="${ty + 4}" font-size="12" font-weight="600" text-anchor="middle" style="fill:#F8FAFC">Today</text>`;
   return `<div class="scroll"><svg class="fig" style="min-width:900px" viewBox="0 0 ${W} ${ty + dn * lh + 26}" role="img" aria-label="Catalyst timeline">${g}</svg></div>`;
+}
+
+/* ---------- catalysts: countdown + milestone track (sequence, not time-proportional) ---------- */
+function catalystFig(events, pdufa, days) {
+  const now = Date.parse(D.built), ev = events.map(e => { const p = parseWhen(e.date); return p ? { t: p[0], when: p[1], l: e.event, fut: p[0] >= now || /expected/i.test(e.date) } : null; }).filter(Boolean).sort((x, y) => x.t - y.t);
+  const past = ev.filter(e => !e.fut).slice(-3), fut = ev.filter(e => e.fut), pd = parseWhen(pdufa);
+  const li = (e, cls, tag) => `<li class="${cls}"><time>${tag ? `<span class="pill acc">${tag}</span>` : ""}${esc(e.when)}</time><i></i><p>${esc(e.l)}</p></li>`;
+  return `<div class="cat"><div class="cat-count"><b>${days > 0 ? days : 0}</b><div><span>days to the FDA decision</span><small>${esc(pd ? pd[1] : pdufa)} · target action date</small></div></div>
+    <div class="scroll"><ol class="track" style="min-width:${(past.length + fut.length + 1) * 112}px">${past.map(e => li(e, "past")).join("")}<li class="today"><time></time><i>Today</i><p></p></li>${fut.map((e, i) => li(e, "fut" + (i === 0 ? " next" : ""), i === 0 ? "Next" : "")).join("")}</ol></div></div>`;
 }
 
 /* ---------- pipeline phase strip ---------- */

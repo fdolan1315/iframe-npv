@@ -36,9 +36,9 @@ function viewSimulator() {
       <div class="chips" id="simPresets">${Object.keys(s.presets).map(k => `<button class="chip" data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>
       <div id="simCtl"></div></section>
     <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
-      <section class="figure" style="padding-bottom:16px"><span class="eyebrow">Forecast</span><h2 id="simHead"></h2><div class="kpis" id="simKpi"></div><div id="simChart"></div><div class="prov"><span id="simRef"></span><span class="pill">modeled</span><span>Analog revenue from company reports.</span></div></section>
-      <section class="figure" style="padding-bottom:16px"><span class="eyebrow">Sensitivity</span><h2 id="simTorHead"></h2><p class="deck">Peak net revenue when one assumption moves and the rest hold.</p><div id="simTornado"></div></section>
-      <section class="figure" style="padding-bottom:16px"><span class="eyebrow">Patient flow at peak</span><h2 id="simFlowHead"></h2><div id="simFlow"></div></section>
+      <section class="figure">${exh("Forecast")}<h2 id="simHead"></h2><div class="kpis" id="simKpi"></div><div id="simChart"></div><div class="prov"><span id="simRef"></span><span class="pill">modeled</span><span>Analog revenue from company reports.</span></div></section>
+      <section class="figure">${exh("Sensitivity")}<h2 id="simTorHead"></h2><p class="deck">Peak net revenue when one assumption moves and the rest hold.</p><div id="simTornado"></div></section>
+      <section class="figure">${exh("Patient flow at peak")}<h2 id="simFlowHead"></h2><div id="simFlow"></div></section>
       <div class="grid"><section class="panel c6"><header><h3 id="simStHead">Where the revenue sits at peak</h3><span class="sub">Modeled state allocation</span></header><div id="simStates"></div></section>
       <section class="panel c6"><header><h3>Field force sizing</h3><span class="sub">Call-capacity arithmetic</span></header><div id="simField"></div></section></div>
       <section class="panel"><header><h3>Scenarios</h3><div class="tbar"><input type="text" id="simName" placeholder="Scenario name" aria-label="Scenario name" style="width:160px"><button class="btn pri" id="simSave">Save scenario</button></div></header><div id="simSaved"></div>

@@ -62,8 +62,12 @@ td:first-child{min-width:92px}
 .kpi span{font-size:14px;color:var(--ink)} .kpi small{font-size:13px;color:var(--ink-2)}
 
 /* figure: the unit of every redesigned screen */
-.figure{display:grid;gap:16px;padding-block:8px 32px;border-bottom:1px solid var(--line);min-width:0}
-.figure:last-of-type{border-bottom:0}
+.figure{display:grid;gap:16px;padding-block:0 12px;border-top:3px solid var(--ink);margin-top:44px;min-width:0}
+.sim .figure{margin-top:8px}
+.exh{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.exh-n{font-family:var(--f-head);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#F8FAFC;background:var(--ink);padding:5px 12px 7px;border-radius:0 0 8px 8px}
+.exh-t{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-2)}
+.figure>h2{font-size:clamp(24px,2.7vw,34px);max-width:26em}
 .figure>*{min-width:0}
 .figure .deck{color:var(--ink-2);font-size:18px;line-height:1.5;max-width:66ch}
 .figure .body{display:grid;gap:16px;min-width:0}
@@ -109,6 +113,44 @@ button.tile{cursor:pointer} button.tile:hover{border-color:var(--accent)}
 .vsteps button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
 .vsteps b{width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:14px}.vsteps button[aria-pressed="true"] b{background:var(--accent);border-color:var(--accent);color:#F8FAFC}
 .vsteps small{color:var(--crit);font-weight:600;font-size:13px}.vsteps em{font-style:normal;font-size:12.5px;color:var(--ink-2);display:block}
+/* catalysts */
+.cat{display:grid;gap:26px}
+.cat-count{display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap}
+.cat-count b{display:block;font-family:var(--f-head);font-weight:700;font-size:clamp(84px,10vw,132px);line-height:.86;color:var(--accent);letter-spacing:-.04em}
+.cat-count span{display:block;font-family:var(--f-head);font-weight:600;font-size:24px;line-height:1.2}
+.cat-count small{display:block;font-size:14px;color:var(--ink-2);margin-top:6px}
+.track{list-style:none;margin:0;padding:4px 0 8px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(112px,1fr)}
+.track li{display:grid;grid-template-rows:52px 26px auto;position:relative;padding-right:16px}
+.track li::before{content:"";position:absolute;left:0;right:0;top:64px;height:2px;background:var(--silver)}
+.track li:last-child::before{right:40%}
+.track time{align-self:end;font-size:13px;font-weight:600;color:var(--ink-2);padding-bottom:8px;display:grid;gap:3px;justify-items:start}
+.track i{align-self:center;width:14px;height:14px;border-radius:50%;background:var(--silver);position:relative;z-index:1;font-style:normal}
+.track p{font-size:14.5px;line-height:1.35;padding-top:10px;color:var(--ink-2)}
+.track li.fut::before{background:var(--accent)}
+.track li.fut i{background:var(--bg);border:3px solid var(--accent)}
+.track li.fut time{color:var(--accent)} .track li.fut p{color:var(--ink)}
+.track li.next i{width:22px;height:22px;background:var(--accent);border:0;outline:6px solid var(--accent-soft)}
+.track li.next p{font-weight:600}
+.track li.today i{width:auto;height:auto;border-radius:6px;background:var(--ink);color:#F8FAFC;font-size:12px;font-weight:600;padding:3px 9px;justify-self:start}
+/* infographic */
+.info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line)}
+.info>div{padding:26px 30px;display:grid;gap:22px;align-content:start;border-left:1px solid var(--line);min-width:0}
+.info>div:first-child{border-left:0;padding-left:0} .info>div:last-child{padding-right:0}
+@media (max-width:900px){.info{grid-template-columns:1fr}.info>div{border-left:0;border-top:1px solid var(--line);padding:22px 0}.info>div:first-child{border-top:0}}
+.info h3{font-family:var(--f-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+.info .stat{display:grid;gap:8px}
+.info .stat b{font-family:var(--f-head);font-weight:700;font-size:30px;line-height:1.05;color:var(--accent)}
+.info .stat p{font-size:15.5px;line-height:1.4;color:var(--ink);max-width:34ch}
+.info .stat small{font-size:13px;color:var(--ink-2)}
+.info svg{max-width:340px}
+/* journey hero */
+.jhero{position:relative;border-radius:var(--r);overflow:hidden;background:#111827;color:#F8FAFC;min-height:380px;display:grid;align-items:end}
+.jhero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jhero::after{content:"";position:absolute;inset:0;background:rgba(17,24,39,.55)}
+.jhero-in{position:relative;z-index:1;padding:44px clamp(20px,4vw,52px) 40px;display:grid;gap:14px}
+.jhero .eyebrow{color:#C9D6F7} .jhero h1{max-width:18em} .jhero p{color:#E8EEFC;font-size:19px;line-height:1.5;max-width:58ch}
+.jhero .bigs{margin-top:14px;border-top:1px solid rgba(248,250,252,.3);padding-top:20px}
+.jcap{position:absolute;z-index:1;right:14px;top:12px;font-size:12px;color:#C9D6F7}
 .tension{border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:6px;align-content:start}
 .tension p{font-size:15px;color:var(--ink-2)}
 
@@ -218,7 +260,9 @@ const srcLinks = a => (a || []).slice(0, 4).map(srcLink).join(" ");
 const conf = c => { if (!c) return ""; const k = String(c).toLowerCase().split(/[^a-z]/)[0]; return ["high", "medium", "low"].includes(k) ? `<span class="pill conf ${k}" title="Research confidence: ${k}"><i></i>${k}</span>` : ""; };
 /* figure = finding headline + deck + drawing + visible provenance line */
 const prov = (srcs, o = {}) => `<div class="prov">${o.note ? `<span>${esc(o.note)}</span>` : ""}${o.conf ? conf(o.conf) : ""}${o.quality ? `<span class="pill">${esc(o.quality)}</span>` : ""}${(srcs || []).slice(0, 5).map(srcLink).join(" ")}${o.asOf ? `<span>As of ${esc(o.asOf)}</span>` : ""}</div>`;
-const figure = (meta, title, deck, body, pv) => `<section class="figure"><span class="eyebrow">${esc(meta)}</span><h2>${esc(title)}</h2>${deck ? `<p class="deck">${esc(deck)}</p>` : ""}<div class="body">${body}</div>${pv || ""}</section>`;
+let _exN = 0;
+const exh = meta => `<header class="exh"><span class="exh-n">Exhibit ${++_exN}</span><span class="exh-t">${esc(meta)}</span></header>`;
+const figure = (meta, title, deck, body, pv) => `<section class="figure">${exh(meta)}<h2>${esc(title)}</h2>${deck ? `<p class="deck">${esc(deck)}</p>` : ""}<div class="body">${body}</div>${pv || ""}</section>`;
 const listify = v => Array.isArray(v) ? v : v == null || v === "" ? [] : [v];
 const ul = a => { a = listify(a); return a.length ? `<ul class="tight">${a.map(x => `<li>${esc(typeof x === "string" ? x : (x.fact ? x.fact + (x.value ? ": " + x.value : "") : JSON.stringify(x)))}</li>`).join("")}</ul>` : ""; };
 
@@ -439,9 +483,22 @@ function figIncidence() {
 
 /* ---------- DEE: burden ---------- */
 function figBurden() {
-  const T = [["35–45%", "of families had a caregiver leave employment", "Dravet, LGS and TSC studies"], ["71%", "of caregivers report depression symptoms, at the high end", "Up to 70.7% across studies"], ["$24K–$81K", "direct medical cost per patient per year", "Range of study means"], ["5.3%", "mortality among 190 published SCN8A patients", "1.6% definite or probable SUDEP"], ["9.3", "SUDEP deaths per 1,000 patient-years in Dravet", "One cohort; another reports 4.4"]];
-  return figure("Beyond seizures", "The disease takes a parent out of work as often as not", "Seizure counts are the trial endpoint. The burden families and payers carry is wider.",
-    `<div class="fig2" style="grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)"><div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr))">${T.map(t => `<div class="tile"><b>${t[0]}</b><span>${esc(t[1])}</span><small>${esc(t[2])}</small></div>`).join("")}</div>${photo("dee-counter", "A notebook, pen and baby bottle on a kitchen counter in early light")}</div><p class="note">No US cost-of-illness study specific to SCN2A or SCN8A is available; figures are from related syndromes.</p>`,
+  const people = (k, lab) => `<svg class="fig" viewBox="0 0 280 46" role="img" aria-label="${esc(lab)}">${Array.from({ length: 10 }, (_, i) => `<g transform="translate(${i * 28},0)" fill="${i < k ? "#2457D6" : "#C9D6F7"}"><circle cx="11" cy="8" r="6.5"/><path d="M1 46 v-16 a10 10 0 0 1 20 0 v16 z"/></g>`).join("")}</svg>`;
+  const X = v => 8 + v / 100 * 284, cost = `<svg class="fig" viewBox="0 0 300 78" role="img" aria-label="Direct medical cost per patient per year, 24 to 81 thousand dollars"><line x1="8" x2="292" y1="46" y2="46" stroke="#94A3B8" stroke-width="2"/>${[0, 50, 100].map(t => `<line x1="${X(t)}" x2="${X(t)}" y1="40" y2="52" stroke="#94A3B8" stroke-width="2"/><text x="${X(t)}" y="70" font-size="13" text-anchor="${t === 0 ? "start" : t === 100 ? "end" : "middle"}" style="fill:#42526E">$${t}K</text>`).join("")}<line x1="${X(24)}" x2="${X(81)}" y1="46" y2="46" stroke="#2457D6" stroke-width="16" stroke-linecap="round"/><text x="${X(24)}" y="24" font-size="15" font-weight="700" text-anchor="middle" style="fill:#2457D6">$24K</text><text x="${X(81)}" y="24" font-size="15" font-weight="700" text-anchor="middle" style="fill:#2457D6">$81K</text></svg>`;
+  let dots = ""; for (let i = 0; i < 190; i++) { const c = i % 19, r = Math.floor(i / 19); dots += `<circle cx="${7 + c * 15}" cy="${7 + r * 15}" r="5" fill="${i < 3 ? "#B4233C" : i < 10 ? "#111827" : "#C9D6F7"}"/>`; }
+  const R2 = v => 8 + v / 10 * 284, rate = `<svg class="fig" viewBox="0 0 300 70" role="img" aria-label="SUDEP rate per 1,000 patient-years in Dravet syndrome: 4.4 and 9.3 in two cohorts"><line x1="8" x2="292" y1="40" y2="40" stroke="#94A3B8" stroke-width="2"/>${[0, 5, 10].map(t => `<line x1="${R2(t)}" x2="${R2(t)}" y1="34" y2="46" stroke="#94A3B8" stroke-width="2"/><text x="${R2(t)}" y="64" font-size="13" text-anchor="${t === 0 ? "start" : t === 10 ? "end" : "middle"}" style="fill:#42526E">${t}</text>`).join("")}<line x1="${R2(4.4)}" x2="${R2(9.3)}" y1="40" y2="40" stroke="#111827" stroke-width="3"/>${[4.4, 9.3].map(v => `<circle cx="${R2(v)}" cy="40" r="8" fill="#111827"/><text x="${R2(v)}" y="20" font-size="15" font-weight="700" text-anchor="middle">${v}</text>`).join("")}</svg>`;
+  return figure("Beyond seizures", "About four in ten families lose a working parent to caregiving", "Seizure counts are the trial endpoint. The burden families and payers carry is wider.",
+    `<div class="info">
+      <div><h3>The family</h3>
+        <div class="stat">${people(4, "4 of 10 figures highlighted")}<b>4 in 10</b><p>families had a caregiver leave employment.</p><small>35–45% across Dravet, LGS and TSC studies</small></div>
+        <div class="stat">${people(7, "7 of 10 figures highlighted")}<b>7 in 10</b><p>caregivers report symptoms of depression, at the high end.</p><small>Up to 70.7% across studies</small></div></div>
+      <div><h3>The cost</h3>
+        <div class="stat">${cost}<b>$24K–$81K</b><p>direct medical cost per patient, per year.</p><small>Range of study means; home and inpatient care drive it</small></div>
+        <div class="stat"><p style="color:var(--ink-2)">No US cost-of-illness study specific to SCN2A or SCN8A is available. These figures come from related syndromes.</p></div></div>
+      <div><h3>The risk</h3>
+        <div class="stat"><svg class="fig" viewBox="0 0 284 150" role="img" aria-label="190 published SCN8A patients: 10 died, 3 of them from sudden unexpected death in epilepsy">${dots}</svg><b>10 of 190</b><p>published SCN8A patients had died at the time of report.</p><small><span style="color:var(--crit);font-weight:600">⚠ 3 sudden unexpected deaths (SUDEP)</span> · 7 other causes</small></div>
+        <div class="stat">${rate}<p>SUDEP deaths per 1,000 patient-years in Dravet syndrome, in two cohorts.</p></div></div>
+    </div>`,
     prov([...edSrc("dee", 7), ...edSrc("dee", 6).slice(0, 2)], { conf: "medium", quality: "observed" }));
 }
 
@@ -528,6 +585,15 @@ function timelineFig(events) {
     g += `<line x1="${e.x}" x2="${e.x}" y1="${ty}" y2="${e.fut ? y + 18 : y - 12}" stroke="${c}"/><circle cx="${e.x}" cy="${ty}" r="${e.fut ? 7 : 5}" fill="${e.fut ? "#2457D6" : "#94A3B8"}" stroke="#F8FAFC" stroke-width="2"/><g data-tip="${esc(`<b>${esc(e.when)}</b><br>${esc(e.l)}`)}"><text x="${tx}" y="${y}" font-size="13" fill="${c}" font-weight="600" text-anchor="${an}">${esc(e.when)}</text><text x="${tx}" y="${y + 16}" font-size="14" text-anchor="${an}" ${e.fut ? 'font-weight="600"' : ""}>${esc(e.short)}</text></g>`; });
   g += `<line x1="${X(now)}" x2="${X(now)}" y1="${ty - 18}" y2="${ty + 18}" stroke="#111827" stroke-width="2"/><rect x="${X(now) - 26}" y="${ty - 9}" width="52" height="18" rx="4" fill="#111827"/><text x="${X(now)}" y="${ty + 4}" font-size="12" font-weight="600" text-anchor="middle" style="fill:#F8FAFC">Today</text>`;
   return `<div class="scroll"><svg class="fig" style="min-width:900px" viewBox="0 0 ${W} ${ty + dn * lh + 26}" role="img" aria-label="Catalyst timeline">${g}</svg></div>`;
+}
+
+/* ---------- catalysts: countdown + milestone track (sequence, not time-proportional) ---------- */
+function catalystFig(events, pdufa, days) {
+  const now = Date.parse(D.built), ev = events.map(e => { const p = parseWhen(e.date); return p ? { t: p[0], when: p[1], l: e.event, fut: p[0] >= now || /expected/i.test(e.date) } : null; }).filter(Boolean).sort((x, y) => x.t - y.t);
+  const past = ev.filter(e => !e.fut).slice(-3), fut = ev.filter(e => e.fut), pd = parseWhen(pdufa);
+  const li = (e, cls, tag) => `<li class="${cls}"><time>${tag ? `<span class="pill acc">${tag}</span>` : ""}${esc(e.when)}</time><i></i><p>${esc(e.l)}</p></li>`;
+  return `<div class="cat"><div class="cat-count"><b>${days > 0 ? days : 0}</b><div><span>days to the FDA decision</span><small>${esc(pd ? pd[1] : pdufa)} · target action date</small></div></div>
+    <div class="scroll"><ol class="track" style="min-width:${(past.length + fut.length + 1) * 112}px">${past.map(e => li(e, "past")).join("")}<li class="today"><time></time><i>Today</i><p></p></li>${fut.map((e, i) => li(e, "fut" + (i === 0 ? " next" : ""), i === 0 ? "Next" : "")).join("")}</ol></div></div>`;
 }
 
 /* ---------- pipeline phase strip ---------- */
@@ -880,7 +946,7 @@ function viewOverview() {
   return `<div class="herogrid"><div class="hero"><div style="padding:36px clamp(20px,4vw,44px) 40px;display:grid;gap:14px"><span class="eyebrow">${esc(c.tag)}</span><h1>${esc(c.name)}</h1><p>${esc(c.intro.split(". ").slice(0, 2).join(". ").replace(/\.?$/, "."))}</p>
     <div class="bigs">${big.map(b => `<div><b>${b[0]}</b><span>${esc(b[1])}</span><small>${esc(b[2])}</small></div>`).join("")}</div></div></div>${ta === "dee" ? photo("dee-hand", "An adult's hand holding a child's hand on a knitted blanket") : photo("et-cup", "An older adult steadying a cup with both hands")}</div>
   ${fun}
-  ${figure("Catalysts", days > 0 ? `The FDA decision is ${days} days away` : "The FDA action date has passed", "Past events in grey, upcoming in blue.", timelineFig([...tl.filter(e => !isFuture(e.date)).slice(-5), ...tl.filter(e => isFuture(e.date))]), prov([...new Set(tl.map(e => e.source_url))].slice(0, 4), { conf: "high", quality: "company disclosure" }))}
+  ${figure("Catalysts", `${tl.filter(e => isFuture(e.date)).length} dated catalysts ahead, and the FDA decision gates the rest`, "Recent milestones in grey, upcoming in blue. Spaced by sequence, not by time.", catalystFig(tl, pdufa, days), prov([...new Set(tl.map(e => e.source_url))].slice(0, 4), { conf: "high", quality: "company disclosure" }))}
   ${figure("Pipeline", (n => `${n} program${n === 1 ? " is" : "s are"} in Phase 3 or filed; ${by.Stopped || 0} have been stopped`)((by["Phase 3"] || 0) + (by.Filed || 0)), "Select a program for mechanism, data and next catalyst.", phaseStrip(pipe, c.assets), `<div class="prov"><span>Stage as stated by sponsors.</span><a class="src" href="#landscape">Full landscape →</a></div>`)}
   ${figure("Briefing", "Six things to know before the meeting", "", `<div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">${c.matters.map((m, i) => `<button class="tile" onclick="_matter(${i})"><span class="n">${i + 1}</span><span style="font-family:var(--f-head);font-weight:600;font-size:17px">${esc(m[0])}</span><small>Read the reasoning →</small></button>`).join("")}</div>`)}`;
 }
@@ -898,8 +964,9 @@ function viewLearn() {
     if (k === "gloss") drawer(`<h2>Glossary</h2><dl class="kv">${c.glossary.map(([t, d]) => `<dt>${esc(t)}</dt><dd>${esc(d)}</dd>`).join("")}</dl>`);
     if (k === "measures") drawer(`<h2>Outcome measures</h2>${(m.outcome_measures || []).map(o => `<details class="acc"><summary><span>${esc(o.name)}</span></summary><div class="ab"><p>${esc(o.description)}</p><p><b>Regulatory use:</b> ${esc(o.regulatory_use)}</p><div>${srcLinks(o.sources)}</div></div></details>`).join("")}`);
     if (k === "epi") drawer(`<h2>Epidemiology evidence</h2><p class="note">Ranges are shown where sources disagree. Gaps are kept visible as "not available".</p>${dataTable({ rows: epiRows, pageSize: 40, searchText: r => [r.syndrome, r.metric, r.value, r.note].join(" "), cols: [...(ta === "dee" ? [{ h: "Syndrome", val: r => r.syndrome }] : []), { h: "Metric", val: r => r.metric }, { h: "Value", val: r => r.value, cell: r => `<b>${esc(r.value)}</b>` }, { h: "Conf.", val: r => r.confidence, cell: r => conf(r.confidence) }, { h: "Source", cell: r => srcLink(r.source_url) }] })}`); };
+  const filmFig = figure("Watch first", ta === "dee" ? "The core idea in 30 seconds" : "The core idea in 35 seconds", "Silent, captioned. The same drawings as the figures below.", ta === "dee" ? filmBlock("gain-vs-loss", "Film: same gene, opposite problems") : filmBlock("tremor-loop", "Film: a rhythm stuck in a loop"), `<div class="prov"><span>Schematic motion graphic rendered in code. Investigational products are not approved.</span></div>`);
   const figs = ta === "dee" ? [figChannel(), figOnset(), figIncidence(), figBurden(), figPipelineActs()] : [figLoop(), figSpiral(), figDifferential(), figDaily()];
-  return head("Disease 101", ta === "dee" ? "A sodium channel that is stuck open, or barely opens" : "A rhythm the brain cannot switch off", ta === "dee" ? "Five figures cover the biology, the timing, the numbers and where treatments act." : "Four figures cover the circuit, the symptom, the diagnosis and the daily impact.") + figure("Watch first", ta === "dee" ? "The core idea in 30 seconds" : "The core idea in 35 seconds", "Silent, captioned. The same drawings as the figures below.", ta === "dee" ? filmBlock("gain-vs-loss", "Film: same gene, opposite problems") : filmBlock("tremor-loop", "Film: a rhythm stuck in a loop"), `<div class="prov"><span>Schematic motion graphic rendered in code. Investigational products are not approved.</span></div>`) + figs.join("") +
+  return head("Disease 101", ta === "dee" ? "A sodium channel that is stuck open, or barely opens" : "A rhythm the brain cannot switch off", ta === "dee" ? "Five figures cover the biology, the timing, the numbers and where treatments act." : "Four figures cover the circuit, the symptom, the diagnosis and the daily impact.") + filmFig + figs.join("") +
     figure("Check yourself", "Six questions a commercial lead should be able to answer", "", quizBlock(c)) +
     `<div class="chips"><button class="chip" onclick="_lrn('primers')">Read the ${(m.disease_education || []).length} full primers</button><button class="chip" onclick="_lrn('epi')">Epidemiology evidence table (${epiRows.length} rows)</button><button class="chip" onclick="_lrn('gloss')">Glossary (${c.glossary.length} terms)</button>${m.outcome_measures ? `<button class="chip" onclick="_lrn('measures')">Outcome measures (${m.outcome_measures.length})</button>` : ""}</div>`;
 }
@@ -913,7 +980,7 @@ function viewJourney() {
   const tx = ta === "dee" ? figure("Treatment", "The genetic result picks the drug, and for four diagnoses nothing is approved", "Select a diagnosis for the full sequence of therapy.", genoFig(), prov([...edSrc("dee", 3), ...((m.treatment_flow || {}).Dravet || {}).sources || []].slice(0, 4), { note: "Investigational products are not approved.", conf: "medium", quality: "observed" }))
     : figure("Drop-off", "Of seven million people with tremor, about 680,000 are still on a first-line medicine", "Each step loses patients for a different reason.", stepFunnel([["Have essential tremor", 7000000], ["Carry a diagnosis in claims", 2200000], ["Received any tremor medicine", 1630000], ["Are still on propranolol or primidone", 680000]], { losses: ["4.8M undiagnosed or not coded", "26% of diagnosed patients get no treatment", "About 56% of those who tried a first-line medicine stopped"] }) + `<p class="note">Procedures reach few: about ${N(D.proc.national["0398T"].svcs)} focused ultrasound treatments and ${N(D.proc.national["61863"].svcs + D.proc.national["61867"].svcs)} DBS lead implants a year in Medicare fee-for-service.</p>`, prov([epi("et", /US prevalence, all ET/).source_url, epi("et", /Compile claims/).source_url, epi("et", /any possible ET/).source_url, epi("et", /Discontinuation of propranolol or primidone/).source_url].filter(Boolean), { note: "Last two bars are derived from published shares.", conf: "medium", quality: "observed and modeled" })) +
       figure("Treatment ladder", "Every rung trades effect against the chance a patient stops", "Select a row for evidence, efficacy and limits.", ladderFig(), prov([...new Set((m.treatment_flow || []).flatMap(l => (l.sources || []).slice(0, 1)))].slice(0, 5), { note: "Ranges across published studies; scales differ where stated. Investigational products are not approved.", conf: "medium", quality: "observed" }));
-  return `<div class="lede">${head("Journey & treatment", ta === "dee" ? "From first seizure to a genetic answer" : "From a shaky hand to a treatment plan", ta === "dee" ? "Most families pass through an emergency room, a neurologist and a genetics lab before anyone can name the cause." : "Most people live with tremor for years before asking for help, and many who start treatment give it up.")}${ta === "dee" ? photo("dee-corridor", "An empty hospital corridor at night") : photo("et-pen", "An older adult's hand holding a pen over a blank page")}</div>` + jr + tx +
+  return `<div class="jhero"><img src="media/${ta === "dee" ? "dee-corridor" : "et-pen"}.jpg" alt="${ta === "dee" ? "An empty hospital corridor at night" : "An older adult's hand holding a pen over a blank page"}"><div class="jhero-in"><span class="eyebrow">Journey &amp; treatment</span><h1>${ta === "dee" ? "From first seizure to a genetic answer" : "From a shaky hand to a treatment plan"}</h1><p>${ta === "dee" ? "Most families pass through an emergency room, a neurologist and a genetics lab before anyone can name the cause." : "Most people live with tremor for years before asking for help, and many who start treatment give it up."}</p><div class="bigs">${(ta === "dee" ? [[pj.length, "stages", "First seizure to adult care"], [pains, "friction points", "Where families get stuck"], ["≈5 weeks", "to a rapid genome result", "Routine panels take longer"]] : [[pj.length, "stages", "First symptom to procedure"], [pains, "friction points", "Where patients drop out"], ["47%", "stop primidone", "Within two years of starting"]]).map(x => `<div><b>${x[0]}</b><span>${x[1]}</span><small>${x[2]}</small></div>`).join("")}</div></div><span class="jcap">Illustrative image</span></div>` + jr + tx +
     figure("Live debates", "Open questions that could change the forecast", "", tensionCards(ta)) +
     `<div class="chips"><button class="chip" onclick="_jr('guide')">Guidelines and consensus (${(m.guidelines || []).length})</button><button class="chip" onclick="_jr('unmet')">Unmet needs with sources</button></div>`;
 }
@@ -1160,9 +1227,9 @@ function viewSimulator() {
       <div class="chips" id="simPresets">${Object.keys(s.presets).map(k => `<button class="chip" data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>
       <div id="simCtl"></div></section>
     <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
-      <section class="figure" style="padding-bottom:16px"><span class="eyebrow">Forecast</span><h2 id="simHead"></h2><div class="kpis" id="simKpi"></div><div id="simChart"></div><div class="prov"><span id="simRef"></span><span class="pill">modeled</span><span>Analog revenue from company reports.</span></div></section>
-      <section class="figure" style="padding-bottom:16px"><span class="eyebrow">Sensitivity</span><h2 id="simTorHead"></h2><p class="deck">Peak net revenue when one assumption moves and the rest hold.</p><div id="simTornado"></div></section>
-      <section class="figure" style="padding-bottom:16px"><span class="eyebrow">Patient flow at peak</span><h2 id="simFlowHead"></h2><div id="simFlow"></div></section>
+      <section class="figure">${exh("Forecast")}<h2 id="simHead"></h2><div class="kpis" id="simKpi"></div><div id="simChart"></div><div class="prov"><span id="simRef"></span><span class="pill">modeled</span><span>Analog revenue from company reports.</span></div></section>
+      <section class="figure">${exh("Sensitivity")}<h2 id="simTorHead"></h2><p class="deck">Peak net revenue when one assumption moves and the rest hold.</p><div id="simTornado"></div></section>
+      <section class="figure">${exh("Patient flow at peak")}<h2 id="simFlowHead"></h2><div id="simFlow"></div></section>
       <div class="grid"><section class="panel c6"><header><h3 id="simStHead">Where the revenue sits at peak</h3><span class="sub">Modeled state allocation</span></header><div id="simStates"></div></section>
       <section class="panel c6"><header><h3>Field force sizing</h3><span class="sub">Call-capacity arithmetic</span></header><div id="simField"></div></section></div>
       <section class="panel"><header><h3>Scenarios</h3><div class="tbar"><input type="text" id="simName" placeholder="Scenario name" aria-label="Scenario name" style="width:160px"><button class="btn pri" id="simSave">Save scenario</button></div></header><div id="simSaved"></div>
@@ -1219,6 +1286,7 @@ function render() {
   $("#tabs").innerHTML = TABS.map(([k, l]) => `<a href="#${k}" ${k === state.tab ? 'aria-current="page"' : ""}>${esc(l)}</a>`).join("");
   $("#brandSub").textContent = cur().name;
   for (const k in TABLES) delete TABLES[k];
+  _exN = 0;
   try { $("#main").innerHTML = VIEWS[state.tab](); } catch (e) { $("#main").innerHTML = `<div class="callout">This section could not be drawn: ${esc(e.message)}</div>`; console.error(e); }
   setTimeout(() => $$(".scroll").forEach(e => e.classList.toggle("is-wide", e.scrollWidth > e.clientWidth + 4)), 80);
   const a = $("#tabs a[aria-current]"); if (a && a.scrollIntoView) a.scrollIntoView({ block: "nearest", inline: "nearest" });

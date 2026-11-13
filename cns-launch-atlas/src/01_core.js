@@ -13,7 +13,9 @@ const srcLinks = a => (a || []).slice(0, 4).map(srcLink).join(" ");
 const conf = c => { if (!c) return ""; const k = String(c).toLowerCase().split(/[^a-z]/)[0]; return ["high", "medium", "low"].includes(k) ? `<span class="pill conf ${k}" title="Research confidence: ${k}"><i></i>${k}</span>` : ""; };
 /* figure = finding headline + deck + drawing + visible provenance line */
 const prov = (srcs, o = {}) => `<div class="prov">${o.note ? `<span>${esc(o.note)}</span>` : ""}${o.conf ? conf(o.conf) : ""}${o.quality ? `<span class="pill">${esc(o.quality)}</span>` : ""}${(srcs || []).slice(0, 5).map(srcLink).join(" ")}${o.asOf ? `<span>As of ${esc(o.asOf)}</span>` : ""}</div>`;
-const figure = (meta, title, deck, body, pv) => `<section class="figure"><span class="eyebrow">${esc(meta)}</span><h2>${esc(title)}</h2>${deck ? `<p class="deck">${esc(deck)}</p>` : ""}<div class="body">${body}</div>${pv || ""}</section>`;
+let _exN = 0;
+const exh = meta => `<header class="exh"><span class="exh-n">Exhibit ${++_exN}</span><span class="exh-t">${esc(meta)}</span></header>`;
+const figure = (meta, title, deck, body, pv) => `<section class="figure">${exh(meta)}<h2>${esc(title)}</h2>${deck ? `<p class="deck">${esc(deck)}</p>` : ""}<div class="body">${body}</div>${pv || ""}</section>`;
 const listify = v => Array.isArray(v) ? v : v == null || v === "" ? [] : [v];
 const ul = a => { a = listify(a); return a.length ? `<ul class="tight">${a.map(x => `<li>${esc(typeof x === "string" ? x : (x.fact ? x.fact + (x.value ? ": " + x.value : "") : JSON.stringify(x)))}</li>`).join("")}</ul>` : ""; };
 
