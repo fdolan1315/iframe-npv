@@ -6,7 +6,7 @@ Standard library only. Writes one JSON file per source next to this script.
     python3 fetch_public_data.py            # everything
     python3 fetch_public_data.py faers sec  # only the named sources
 
-Sources: ctgov labels shortages faers sdud pubmed sec nppes
+Sources: ctgov labels shortages faers sdud pubmed sec nppes enrollment dur
 
 Rules baked in:
   * No dollar amounts are requested or stored (Medicaid reimbursement columns
@@ -810,9 +810,274 @@ def fetch_nppes():
     })
 
 
+# ------------------------------------------------- 9. Medicaid/CHIP enrollment
+MEDICAID_CATALOG = "https://data.medicaid.gov/api/1/metastore/schemas/dataset/items?show-reference-ids=false"
+MEDICAID_QUERY = "https://data.medicaid.gov/api/1/datastore/query/%s/0"
+ENROLL_TITLE = "State Medicaid and CHIP Applications, Eligibility Determinations, and Enrollment Data"
+ENROLL_YEAR = 2025
+ENROLL_MEASURES = ["total_medicaid_and_chip_enrollment", "total_medicaid_enrollment",
+                   "total_chip_enrollment", "medicaid_and_chip_child_enrollment"]
+ENROLL_KEYS = ["state_abbreviation", "state_name", "reporting_period", "state_expanded_medicaid",
+               "preliminary_or_updated", "final_report"]
+
+
+def fetch_enrollment():
+    ds = [x for x in http_json(MEDICAID_CATALOG) if x.get("title") == ENROLL_TITLE]
+    if len(ds) != 1:
+        raise RuntimeError("expected exactly one catalog dataset titled %r, found %d" % (ENROLL_TITLE, len(ds)))
+    ds = ds[0]
+    dist = ds["distribution"][0]
+    dist = dist.get("data", dist)
+    dd_url = dist.get("describedBy")
+    dd = http_json(dd_url)
+    dd = dd.get("data", dd)
+    fields = {f["name"]: f for f in dd.get("fields", [])}
+    cols = ENROLL_KEYS + ENROLL_MEASURES + [m + "__footnotes" for m in ENROLL_MEASURES]
+    url = MEDICAID_QUERY % ds["identifier"]
+    raw, offset = [], 0
+    while True:
+        body = {"properties": cols,
+                "conditions": [{"property": "reporting_period", "value": "%d%%" % ENROLL_YEAR, "operator": "like"}],
+                "sorts": [{"property": "state_abbreviation", "order": "asc"},
+                          {"property": "reporting_period", "order": "asc"},
+                          {"property": "final_report", "order": "asc"}],
+                "limit": 500, "offset": offset, "schema": False, "keys": True, "count": False}
+        res = http_json(url, body=body, timeout=240).get("results", [])
+        raw += res
+        offset += 500
+        if len(res) < 500:
+            break
+    months = ["%d%02d" % (ENROLL_YEAR, m) for m in range(1, 13)]
+    by = collections.defaultdict(dict)  # (state, month) -> {"Y": row, "N": row}
+    names = {}
+    for r in raw:
+        by[(r["state_abbreviation"], str(r["reporting_period"]))][r["final_report"]] = r
+        names[r["state_abbreviation"]] = (r["state_name"], r["state_expanded_medicaid"])
+
+    def val(r, m):
+        """Reported count, or None. Blank and 0 are both 'not reported' (CMS sets unreported cells to 0)."""
+        v = r.get(m)
+        if v is None or v == "":
+            return None, "blank"
+        n = num(v)
+        if not n:
+            return None, "reported_as_zero"
+        return n, None
+
+    rows, states, used = [], [], collections.Counter()
+    missing_months, child_gaps, other_gaps = [], [], []
+    for st in sorted(names):
+        per = {m: [] for m in ENROLL_MEASURES}
+        absent = []
+        for mo in months:
+            pair = by.get((st, mo))
+            if not pair:
+                absent.append(mo)
+                continue
+            r = pair.get("Y") or pair.get("N")
+            report = "final_updated" if r["final_report"] == "Y" else "preliminary"
+            used[report] += 1
+            out = {"state": st, "reporting_period": mo, "report_used": report,
+                   "preliminary_or_updated": r["preliminary_or_updated"], "final_report": r["final_report"],
+                   "both_reports_present": len(pair) == 2}
+            notes, not_reported = {}, {}
+            for m in ENROLL_MEASURES:
+                v, why = val(r, m)
+                out[m] = v
+                if v is None:
+                    not_reported[m] = why
+                else:
+                    per[m].append(v)
+                if r.get(m + "__footnotes"):
+                    notes[m] = r[m + "__footnotes"]
+            out["footnotes"] = notes
+            out["not_reported"] = not_reported
+            rows.append(out)
+        srec = {"state": st, "state_name": names[st][0], "state_expanded_medicaid": names[st][1],
+                "months_present": 12 - len(absent), "months_absent": absent}
+        for m in ENROLL_MEASURES:
+            n = len(per[m])
+            srec["avg_monthly_" + m] = round(sum(per[m]) / n, 1) if n else None
+            srec["months_used_" + m] = n
+            if n < 12:
+                gap = {"state": st, "measure": m, "months_with_value": n,
+                       "months_without_value": [r["reporting_period"] for r in rows
+                                                if r["state"] == st and r[m] is None] + absent}
+                (child_gaps if m == "medicaid_and_chip_child_enrollment" else other_gaps).append(gap)
+        if absent:
+            missing_months.append({"state": st, "months_absent": absent})
+        states.append(srec)
+    expected = [s for s in US_STATES if s != "PR"]
+    save("medicaid_enrollment.json", {
+        "fetched_at": now(),
+        "source_urls": [MEDICAID_CATALOG, dd_url,
+                        "POST " + url + " (rows where reporting_period LIKE '%d%%'; only the columns "
+                        "listed in columns_used were requested)" % ENROLL_YEAR],
+        "dataset": {"id": ds["identifier"], "title": ds["title"], "modified": ds.get("modified"),
+                    "release_file": dist.get("downloadURL"),
+                    "data_dictionary_id": dd_url.rsplit("/", 1)[-1], "data_dictionary_title": dd.get("title")},
+        "calendar_year": ENROLL_YEAR,
+        "columns_used": [{"name": c, "title": fields.get(c, {}).get("title"),
+                          "official_definition": fields.get(c, {}).get("description")} for c in cols],
+        "report_selection_rule": "One row per state and month. Where both a preliminary (final_report=N, "
+                                 "preliminary_or_updated=P) and a final/updated (final_report=Y, "
+                                 "preliminary_or_updated=U) report exist, the final/updated one is kept. "
+                                 "'report_used' on every row says which.",
+        "reports_used_counts": dict(used),
+        "caveats": [
+            "No dollar amounts exist in or were taken from this dataset.",
+            "Counts are point-in-time enrolment on the last day of the month, comprehensive-benefit "
+            "enrollees only, as defined by CMS (see columns_used). Per-row footnotes show where a state "
+            "departs from that (counts anyone enrolled at any time in the month, includes retroactive "
+            "enrolments, or includes limited-benefit enrollees). States are therefore not measured "
+            "identically.",
+            "Blank cells and cells reported as 0 are treated as NOT REPORTED and stored as null, never 0. "
+            "CMS's own definition sets the child measure to 0 when its components are not reported. "
+            "'not_reported' on the row says which case applied.",
+            "avg_monthly_* is the arithmetic mean of the months that have a value (months_used_* says how "
+            "many), rounded to one decimal. It is a calculation on CMS figures, not a CMS-published figure.",
+            "'Medicaid and CHIP Child Enrollment' is children in Medicaid plus EVERYONE in CHIP; CMS notes "
+            "that some states cover adults in CHIP, so it is not strictly a child count.",
+            "Total Medicaid Enrollment excludes CHIP. The Medicaid drug utilisation file "
+            "(medicaid_sdud.json) can include prescriptions for Medicaid-expansion CHIP children, and it "
+            "counts all ages and all benefit types, so a prescriptions-per-1,000-enrollees rate is an "
+            "approximation whichever denominator is used.",
+            "50 states and DC only. The dataset has no rows for Puerto Rico or other territories, although "
+            "medicaid_sdud.json does carry PR.",
+            "Monthly figures are revised by states; values reflect the release named in dataset.release_file.",
+        ],
+        "errors": [],
+        "jurisdictions_expected": len(expected),
+        "jurisdictions_found": len(states),
+        "jurisdictions_missing_entirely": sorted(set(expected) - set(names)),
+        "states_with_missing_months": missing_months,
+        "states_not_reporting_child_enrollment_all_12_months": child_gaps,
+        "states_with_gaps_in_other_measures": other_gaps,
+        "raw_api_rows_read": len(raw),
+        "row_count": len(rows),
+        "states": states,
+        "rows": rows,
+    })
+
+
+# ----------------------------------------- 10. Medicaid DUR survey (search only)
+DUR_PATTERNS = [("drug utilization review", r"drug utili[sz]ation review"), ("DUR", r"\bDUR\b"),
+                ("antipsychotic", r"antipsychotic"), ("psychotropic", r"psychotropic"),
+                ("stimulant", r"stimulant"), ("foster", r"foster"), ("survey", r"survey")]
+DUR_FULLTEXT = ["drug utilization review", "DUR survey", "antipsychotic", "psychotropic", "stimulant",
+                "foster"]
+RELEASES_TITLE = "Division of Pharmacy Releases Index dataset"
+
+
+def fetch_dur():
+    """The DUR annual survey responses are not published as data on an allowed host.
+
+    This runs the same catalogue searches every time and records what they return. If a real
+    DUR survey dataset ever appears, the title matches below will show it and extraction can be
+    written against it; nothing is extracted or inferred here.
+    """
+    import re
+    searched, candidates = [], []
+
+    def text(x):
+        kw = " ".join(k if isinstance(k, str) else str(k.get("data", "")) for k in (x.get("keyword") or []))
+        return "%s %s %s" % (x.get("title", ""), x.get("description") or "", kw)
+
+    cat = http_json(MEDICAID_CATALOG)
+    for label, pat in DUR_PATTERNS:
+        hits = sorted({x.get("title", "") for x in cat if re.search(pat, text(x), re.I)
+                       and not x.get("title", "").startswith("State Drug Utilization Data ")})
+        searched.append({"host": "data.medicaid.gov", "method": "regex over title, description and keywords "
+                         "of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+                         "query": pat, "datasets_in_catalogue": len(cat), "matches": len(hits),
+                         "matching_titles": hits[:25]})
+        if label in ("drug utilization review", "DUR"):
+            candidates += hits
+    for term in DUR_FULLTEXT:
+        res = http_json("https://data.medicaid.gov/api/1/search?" + q({"fulltext": term, "page-size": 50}))
+        r = res.get("results") or {}
+        titles = sorted(v.get("title", "") for v in (r.values() if isinstance(r, dict) else r))
+        searched.append({"host": "data.medicaid.gov", "method": "catalogue search API (/api/1/search, fulltext)",
+                         "query": term, "matches": int(res.get("total") or 0), "matching_titles": titles[:25]})
+    rel = [x for x in cat if x.get("title") == RELEASES_TITLE]
+    if rel:
+        url, rows, offset = MEDICAID_QUERY % rel[0]["identifier"], [], 0
+        while True:
+            res = http_json(url + "?" + q({"limit": 500, "offset": offset, "count": "false", "schema": "false"}))
+            res = res.get("results", [])
+            rows += res
+            offset += 500
+            if len(res) < 500:
+                break
+        pat = r"\bDUR\b|utili[sz]ation review|antipsychotic|psychotropic|stimulant|foster"
+        hits = [x for x in rows if re.search(pat, json.dumps(x), re.I)]
+        searched.append({"host": "data.medicaid.gov", "method": "row scan of '%s' (%s), the index of CMS "
+                         "pharmacy programme releases" % (RELEASES_TITLE, rel[0]["identifier"]),
+                         "query": pat, "rows_scanned": len(rows), "matches": len(hits),
+                         "matching_titles": sorted({x.get("description", "")[:160] for x in hits})[:25]})
+    try:
+        cms = http_json("https://data.cms.gov/data.json", timeout=240).get("dataset", [])
+        for label, pat in DUR_PATTERNS[:6]:
+            hits = sorted({x.get("title", "") for x in cms if re.search(pat, text(x), re.I)})
+            searched.append({"host": "data.cms.gov", "method": "regex over title, description and keywords "
+                             "of every dataset in data.json", "query": pat, "datasets_in_catalogue": len(cms),
+                             "matches": len(hits), "matching_titles": hits[:25]})
+            if label in ("drug utilization review", "DUR"):
+                candidates += hits
+    except (RuntimeError, NotFound) as e:
+        searched.append({"host": "data.cms.gov", "method": "data.json", "error": str(e)})
+    quality = sorted((x.get("title", "") for x in cat
+                      if re.search(r"^\d{4} Child and Adult Health Care Quality Measures", x.get("title", ""))),
+                     reverse=True)
+    if candidates:
+        err = ("Catalogue titles now mention drug utilization review (%s) but this script has no extraction "
+               "for them; nothing was extracted. Inspect them by hand." % "; ".join(sorted(set(candidates))))
+    else:
+        err = ("Not available as data on an allowed host. No dataset on data.medicaid.gov or data.cms.gov "
+               "contains the Medicaid Drug Utilization Review (DUR) annual survey responses (fee-for-service "
+               "or managed care). CMS publishes those state responses as report documents on "
+               "www.medicaid.gov, which is outside the allowed hosts and was not contacted. No state answer "
+               "about antipsychotic or stimulant oversight in children was fetched, and none is recorded or "
+               "inferred here.")
+    save("medicaid_dur_antipsychotics.json", {
+        "fetched_at": now(),
+        "source_urls": [MEDICAID_CATALOG, "https://data.medicaid.gov/api/1/search?fulltext=<term>",
+                        MEDICAID_QUERY % "<releases index id>", "https://data.cms.gov/data.json"],
+        "error": err,
+        "caveats": [
+            "This file contains NO state responses. 'states' is empty on purpose; do not show any state as "
+            "having or lacking an antipsychotic or stimulant monitoring programme on the basis of this file.",
+            "The catalogue search API matches substrings: its hits for 'DUR survey' and 'foster' are "
+            "unrelated datasets (listed under 'searched' so that can be checked).",
+            "'related_but_not_equivalent' names CMS datasets that measure outcomes of antipsychotic "
+            "prescribing in children. They are quality rates, not a record of state oversight policy, and "
+            "were not extracted.",
+        ],
+        "survey_year": None,
+        "programs": [],
+        "states": [],
+        "searched": searched,
+        "closest_datasets_found": [
+            {"title": RELEASES_TITLE, "why_not": "Index of CMS pharmacy releases to states and "
+             "manufacturers; no row mentions DUR, antipsychotics, stimulants or foster care."},
+            {"title": "State Drug Utilization Data <year>", "why_not": "Prescription counts by drug, state "
+             "and quarter (already used for medicaid_sdud.json). Despite the name it is not the DUR survey."},
+            {"title": "Managed Care Features By Enrollment Population", "why_not": "Only hit for 'foster'; "
+             "lists which populations managed care programmes enrol, nothing about prescribing oversight."},
+        ],
+        "related_but_not_equivalent": [
+            {"titles": quality[:3], "host": "data.medicaid.gov",
+             "note": "Child Core Set measures APM-CH (Metabolic Monitoring for Children and Adolescents on "
+                     "Antipsychotics) and APP-CH (Use of First-Line Psychosocial Care for Children and "
+                     "Adolescents on Antipsychotics) are reported by state in these datasets. Seen in the "
+                     "catalogue; not extracted because the brief asked for DUR survey responses."}],
+    })
+
+
 SOURCES = [("ctgov", fetch_ctgov), ("labels", fetch_labels), ("shortages", fetch_shortages),
            ("faers", fetch_faers), ("pubmed", fetch_pubmed), ("sec", fetch_sec),
-           ("sdud", fetch_sdud), ("nppes", fetch_nppes)]
+           ("sdud", fetch_sdud), ("nppes", fetch_nppes),
+           ("enrollment", fetch_enrollment), ("dur", fetch_dur)]
 
 if __name__ == "__main__":
     want = sys.argv[1:] or [n for n, _ in SOURCES]
@@ -832,7 +1097,9 @@ if __name__ == "__main__":
             fname = {"ctgov": "ctgov_trials.json", "labels": "openfda_labels.json",
                      "shortages": "openfda_shortages.json", "faers": "openfda_faers.json",
                      "sdud": "medicaid_sdud.json", "pubmed": "pubmed_evidence.json",
-                     "sec": "sec_teva_filings.json", "nppes": "nppes_specialists.json"}[name]
+                     "sec": "sec_teva_filings.json", "nppes": "nppes_specialists.json",
+                     "enrollment": "medicaid_enrollment.json",
+                     "dur": "medicaid_dur_antipsychotics.json"}[name]
             save(fname, {"fetched_at": now(), "source_urls": [], "caveats": [],
                          "error": "Fetch failed: %r" % (e,)})
     print("[%s] done, %d requests, failed: %s" % (now(), REQUEST_COUNT, failed or "none"))

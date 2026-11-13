@@ -2,7 +2,7 @@
 
 Public data pulled on **2026-11-13 (UTC)** by `fetch_public_data.py` (Python 3, standard
 library only). Re-run everything with `python3 fetch_public_data.py`, or one source with
-e.g. `python3 fetch_public_data.py sdud` (names: `ctgov labels shortages faers pubmed sec sdud nppes`).
+e.g. `python3 fetch_public_data.py sdud` (names: `ctgov labels shortages faers pubmed sec sdud nppes enrollment dur`).
 A full run is about 450 requests and roughly 15 minutes; Medicaid is the slow part.
 
 Every JSON file has `fetched_at`, `source_urls` and `caveats` at the top level. Read the
@@ -11,8 +11,10 @@ caveats before putting any figure on screen.
 **No dollar amounts anywhere.** The Medicaid reimbursement columns were never requested.
 `units_reimbursed` is a quantity of drug units (tablets, mL, patches), not money.
 
-Nothing here is estimated. All eight sources were fetched; none returned an error. The
-limits and surprises are listed per file below.
+Nothing here is estimated. The first nine sources were fetched without error. The tenth,
+`medicaid_dur_antipsychotics.json`, **is an `"error"` file with no state data**: the DUR survey
+responses are not published as data on any allowed host (section 10). The limits and
+surprises are listed per file below.
 
 Request identity: `User-Agent: research-client/1.0`, no contact details, 0.4 s pause between
 calls, exponential backoff on 429/5xx.
@@ -202,6 +204,79 @@ calls, exponential backoff on 429/5xx.
 - NPI taxonomy is self-reported, is not board certification, and records linger after people
   retire or move. Treat as an upper-ish indicator of where specialists are, not a workforce census.
 
+## 9. `medicaid_enrollment.json` — data.medicaid.gov Performance Indicator enrollment
+
+- Dataset `6165f45b-ca93-5bb5-9d06-db29c692a360`, "State Medicaid and CHIP Applications,
+  Eligibility Determinations, and Enrollment Data" (found by exact title in the metastore
+  catalog; catalog `modified` 2026-10-30, October 2026 release). Column definitions come from
+  its data dictionary `7d80cfd8-3266-4c55-8436-948b7c55b9dd` and are copied verbatim into
+  `columns_used`.
+- **Calendar 2025, complete**: 51 jurisdictions (50 states + DC) × 12 months = **612 rows**,
+  from 1,224 API rows read. Every state-month had both a preliminary and a final/updated
+  report; **the final/updated one was kept in all 612** (`report_used` on each row,
+  `reports_used_counts` at the top). 2 requests plus the catalog.
+- Columns: `total_medicaid_and_chip_enrollment`, `total_medicaid_enrollment`,
+  `total_chip_enrollment`, `medicaid_and_chip_child_enrollment`, plus each one's footnote.
+- `states`: per state, `avg_monthly_<measure>` (mean of months with a value, one decimal) and
+  `months_used_<measure>`. All four measures have 12 of 12 months in every state.
+- **Gaps: none.** `states_with_missing_months`, `states_not_reporting_child_enrollment_all_12_months`,
+  `states_with_gaps_in_other_measures` and `jurisdictions_missing_entirely` are all empty lists.
+  They are computed, not hard-coded, so they will fill in if a later release has holes.
+- Checks run: total = Medicaid + CHIP in all 612 rows; child never exceeds total. Sum of state
+  averages: Medicaid + CHIP 78.05M, Medicaid 70.74M, CHIP 7.32M, child 37.12M. Medicaid +
+  CHIP fell from 79.39M (Jan) to 76.23M (Dec). Largest Medicaid averages CA 12.04M, NY 5.91M,
+  TX 3.83M; smallest WY 56k.
+- **Surprises and limits**
+  - **No Puerto Rico.** `medicaid_sdud.json` has PR; this file cannot give it a denominator.
+  - **States do not count the same way.** Footnotes on the final rows: CA includes
+    limited-benefit enrollees; CO, HI, NH, SC include retroactive enrolments; MT, OH, WV count
+    anyone enrolled at any time in the month rather than on the last day. Footnotes are kept
+    per row in `footnotes`.
+  - **"Child enrollment" is not strictly children**: CMS defines it as children in Medicaid
+    plus everyone in CHIP, and some states cover adults in CHIP.
+  - **Denominator mismatch for a prescriptions-per-1,000 rate.** `total_medicaid_enrollment`
+    excludes CHIP and counts comprehensive-benefit enrollees only, while SDUD counts every
+    Medicaid-paid prescription (all ages, and Medicaid-expansion CHIP children can be in it).
+    The rate is a fair comparison between states, not an exact utilisation rate. Rough scale:
+    aripiprazole, 2025, 50 states + DC = about 72 prescriptions per 1,000 Medicaid enrollees.
+  - A blank or a 0 is stored as `null` with a `not_reported` reason, never as 0 (CMS sets
+    unreported cells to 0; one preliminary Rhode Island row did exactly that). No final 2025
+    row needed it.
+  - Preliminary values are not kept. They ran lower than final (e.g. CA January 13.38M
+    preliminary vs 13.51M final).
+
+## 10. `medicaid_dur_antipsychotics.json` — **NOT AVAILABLE, error file**
+
+- **No state responses were obtained.** The file has `"error"`, `"states": []` and a full
+  record of what was searched. Nothing about any state's antipsychotic or stimulant oversight
+  is recorded or inferred. Do not build a state map from it.
+- Why: the Medicaid DUR annual survey responses (FFS and MCO) are not a dataset on
+  data.medicaid.gov or data.cms.gov. CMS publishes them as report documents on
+  `www.medicaid.gov`, which is outside the allowed hosts and was not contacted.
+- What was searched (all in `searched`, with match counts and titles):
+  - data.medicaid.gov metastore catalog, 562 datasets, regex over title + description +
+    keywords: `drug utili[sz]ation review` 0, `\bDUR\b` 0, `antipsychotic` 0, `psychotropic` 0,
+    `stimulant` 0, `foster` 1 (Managed Care Features By Enrollment Population), `survey` 1
+    (NAM CAHPS 2014 Public Use).
+  - data.medicaid.gov search API, full text: "drug utilization review" 0, "antipsychotic" 0,
+    "psychotropic" 0, "stimulant" 0, "DUR survey" 1 and "foster" 1 (the same two unrelated
+    datasets).
+  - "Division of Pharmacy Releases Index dataset" (`0d425780-16be-4ded-8420-69def8f4ee29`),
+    all 2,416 rows: 0 mention DUR, utilization review, antipsychotics, stimulants or foster care.
+  - data.cms.gov `data.json`, 3,528 datasets: 0 for every term except one unrelated `foster` hit.
+- Closest titles, and why they are not it: "State Drug Utilization Data <year>" (prescription
+  counts, already in file 5 — not the DUR survey despite the name); the pharmacy releases
+  index; "Managed Care Features By Enrollment Population".
+- **A usable substitute exists but was not pulled** (outside the brief): the Child Core Set
+  measures **APM-CH** (metabolic monitoring for children on antipsychotics) and **APP-CH**
+  (first-line psychosocial care for children on antipsychotics) are reported by state in the
+  "<year> Child and Adult Health Care Quality Measures Quality" datasets on data.medicaid.gov
+  (2023, 2024 and 2025 are in the catalog). Those are outcome rates, not a record of what
+  oversight a state has in place.
+- `python3 fetch_public_data.py dur` repeats the searches (about 15 requests, one of them the
+  18 MB data.cms.gov catalog). If a DUR dataset ever shows up in a catalog, the error text
+  changes to name it; extraction would still have to be written.
+
 ---
 
 ## Not done / open items
@@ -211,4 +286,9 @@ calls, exponential backoff on 429/5xx.
 - Medicaid state rows are not split by formulation; add `product_name` to the state grouping
   if the app needs ER-vs-IR or oral-vs-injectable by state (it multiplies query time).
 - SEC document URLs unverified.
-- `data.cms.gov` was on the allowed list but nothing in the brief required it; not used.
+- **DUR survey state responses (antipsychotic and stimulant oversight in children): not
+  obtained.** Needs the survey report documents from `www.medicaid.gov` (blocked here), read
+  by hand or with that host allowed. APM-CH / APP-CH from the Core Set datasets are the
+  nearest thing reachable from the allowed hosts.
+- Puerto Rico has no enrollment denominator.
+- `data.cms.gov` was used only for the DUR catalog search; no data taken from it.
