@@ -718,6 +718,14 @@ async function renderCurrent(main){
       .map(c=>'<th class="srt" data-k="'+c[0]+'" tabindex="0" role="button">'+c[1]+'<span class="car"></span></th>').join('')
     +'</tr></thead><tbody></tbody></table></div>';
   h+='<div class="panel" id="agDetail"></div>';
+  if(cur.guidelines){ const g=cur.guidelines, ER={'Preferred':3,'Can be considered':2,'Treatment-resistant cases':1,'Not named':0};
+    const gl=cur.agents.slice().sort((x,y)=>(ER[y.essts.position]-ER[x.essts.position])||((CONF_RANK[y.aan_confidence]||0)-(CONF_RANK[x.aan_confidence]||0))||x.generic.localeCompare(y.generic));
+    h+='<div class="panel"><h3>What the guidelines say</h3><p class="note">'+esc(g.intro)+'</p>'
+      +'<table><thead><tr><th>Agent</th><th>'+esc(g.aan.label)+' '+cite(g.aan.source)+'<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Evidence confidence</span></th><th>'+esc(g.essts.label)+' '+cite(g.essts.source)+'<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Place in practice</span></th></tr></thead><tbody>'
+      +gl.map(a=>'<tr><td><b>'+esc(a.generic.charAt(0).toUpperCase()+a.generic.slice(1))+'</b></td><td>'+esc(a.aan_confidence)+'</td><td>'+(a.essts.position==='Not named'?'<span style="color:var(--muted)">Not named</span>':'<b>'+esc(a.essts.position)+'</b><div class="cite">'+esc(a.essts.note)+'</div>')+'</td></tr>').join('')
+      +'</tbody></table><div class="cite" style="margin-top:8px">'+esc(g.essts.note)+'</div>'
+      +'<h4 style="margin:16px 0 6px">Reading across the two</h4><ul class="note" style="margin:0;padding-left:18px">'+g.takeaways.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>'
+      +'<p class="note" style="margin:12px 0 0">'+esc(g.also.text)+' '+cite(g.also.source)+'</p></div>'; }
   h+='<div class="panel"><h3>Research output on Tourette syndrome '+cite('pubmed')+'</h3><p class="note">PubMed records indexed to Tourette syndrome, by publication year. '+(new Date().getFullYear())+' is a partial year and recent years are undercounted while indexing catches up.</p><div id="pubChart"></div></div>';
   h+='<div class="panel"><h3>How to read this</h3><ul class="note" style="margin:0;padding-left:18px">'
     +'<li>None of these sources is specific to Tourette syndrome. Most of these medicines are used far more for other conditions, so volumes describe the medicine, not the treated Tourette population.</li>'
@@ -769,7 +777,8 @@ async function renderCurrent(main){
     const kv=(k,v)=>'<tr><td style="width:150px;color:var(--muted)">'+k+'</td><td>'+v+'</td></tr>';
     let left='<table><tbody>'
       +kv('Class',esc(r.cls))+kv('Mechanism',esc(r.a.mechanism))+kv('Role today',esc(r.a.role))
-      +kv('Evidence',esc(r.a.aan_confidence)+' confidence '+cite(cur.evidence_source))
+      +kv('Evidence (US)',esc(r.a.aan_confidence)+' confidence '+cite(cur.evidence_source))
+      +(r.a.essts?kv('Guideline (Europe)',esc(r.a.essts.note)+' '+cite('essts_2022')):'')
       +kv('Label reviewed', l.product? esc(l.product)+(l.is_reference_brand?'':' (generic label; brand label not in openFDA)')+(l.effective?', effective '+esc(fmtDate(l.effective)):'')
           +(l.set_id&&/^[0-9a-f-]{36}$/.test(l.set_id)?' · <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid='+l.set_id+'" target="_blank" rel="noopener">full label</a>':'') : '—')
       +kv('Tourette indication', l.tourette_indication?'Named in the label\'s indications':'Not named in the label\'s indications (use is off-label)')

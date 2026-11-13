@@ -11,7 +11,11 @@
       "class": "Alpha-2 agonist",
       "mechanism": "Alpha-2A adrenergic agonist",
       "aan_confidence": "Low",
-      "role": "Common first medication, especially with co-occurring ADHD"
+      "role": "Common first medication, especially with co-occurring ADHD",
+      "essts": {
+        "position": "Can be considered",
+        "note": "Named as an option, particularly where ADHD co-exists"
+      }
     },
     {
       "generic": "clonidine",
@@ -22,7 +26,11 @@
       "class": "Alpha-2 agonist",
       "mechanism": "Alpha-2 adrenergic agonist",
       "aan_confidence": "Moderate",
-      "role": "Common first medication, especially with co-occurring ADHD"
+      "role": "Common first medication, especially with co-occurring ADHD",
+      "essts": {
+        "position": "Can be considered",
+        "note": "Named as an option, particularly where ADHD co-exists"
+      }
     },
     {
       "generic": "aripiprazole",
@@ -32,7 +40,11 @@
       "class": "Atypical antipsychotic",
       "mechanism": "Dopamine D2 / serotonin 5-HT1A partial agonist",
       "aan_confidence": "Moderate",
-      "role": "Used when alpha-2 agonists are inadequate or tics are more severe"
+      "role": "Used when alpha-2 agonists are inadequate or tics are more severe",
+      "essts": {
+        "position": "Preferred",
+        "note": "Preferred dopamine-blocking agent, for its more favorable adverse-event profile; first choice in a survey of ESSTS members"
+      }
     },
     {
       "generic": "risperidone",
@@ -42,7 +54,11 @@
       "class": "Atypical antipsychotic",
       "mechanism": "Dopamine D2 / serotonin 5-HT2A antagonist",
       "aan_confidence": "Moderate",
-      "role": "Off-label alternative antipsychotic"
+      "role": "Off-label alternative antipsychotic",
+      "essts": {
+        "position": "Can be considered",
+        "note": "Named as an agent that can be considered"
+      }
     },
     {
       "generic": "haloperidol",
@@ -52,7 +68,11 @@
       "class": "Typical antipsychotic",
       "mechanism": "Dopamine D2 antagonist",
       "aan_confidence": "Moderate",
-      "role": "Older option, limited by movement side effects"
+      "role": "Older option, limited by movement side effects",
+      "essts": {
+        "position": "Treatment-resistant cases",
+        "note": "Might be considered in treatment-resistant cases; limited by movement side effects"
+      }
     },
     {
       "generic": "pimozide",
@@ -62,7 +82,11 @@
       "class": "Typical antipsychotic",
       "mechanism": "Dopamine D2 antagonist",
       "aan_confidence": "Low",
-      "role": "Older option, limited by cardiac (QT) monitoring"
+      "role": "Older option, limited by cardiac (QT) monitoring",
+      "essts": {
+        "position": "Treatment-resistant cases",
+        "note": "Might be considered in treatment-resistant cases; limited by movement side effects"
+      }
     },
     {
       "generic": "fluphenazine",
@@ -70,7 +94,11 @@
       "class": "Typical antipsychotic",
       "mechanism": "Dopamine D1/D2 antagonist",
       "aan_confidence": "Not rated",
-      "role": "Specialist off-label use"
+      "role": "Specialist off-label use",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
     },
     {
       "generic": "ziprasidone",
@@ -80,7 +108,11 @@
       "class": "Atypical antipsychotic",
       "mechanism": "Dopamine D2 / serotonin 5-HT2A antagonist",
       "aan_confidence": "Low",
-      "role": "Occasional off-label alternative"
+      "role": "Occasional off-label alternative",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
     },
     {
       "generic": "topiramate",
@@ -90,7 +122,11 @@
       "class": "Anticonvulsant",
       "mechanism": "Multiple (GABA-A, AMPA/kainate, sodium channels)",
       "aan_confidence": "Low",
-      "role": "Off-label non-antipsychotic alternative"
+      "role": "Off-label non-antipsychotic alternative",
+      "essts": {
+        "position": "Treatment-resistant cases",
+        "note": "Might be considered in treatment-resistant cases; limited evidence base"
+      }
     },
     {
       "generic": "tetrabenazine",
@@ -100,7 +136,11 @@
       "class": "VMAT2 inhibitor",
       "mechanism": "Vesicular monoamine transporter 2 inhibitor",
       "aan_confidence": "Not rated",
-      "role": "Specialist off-label use"
+      "role": "Specialist off-label use",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
     },
     {
       "generic": "deutetrabenazine",
@@ -110,7 +150,11 @@
       "class": "VMAT2 inhibitor",
       "mechanism": "Vesicular monoamine transporter 2 inhibitor",
       "aan_confidence": "Not rated",
-      "role": "Did not meet primary endpoints in pediatric Tourette trials (ARTISTS 1 and 2)"
+      "role": "Did not meet primary endpoints in pediatric Tourette trials (ARTISTS 1 and 2)",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
     },
     {
       "generic": "valbenazine",
@@ -120,7 +164,33 @@
       "class": "VMAT2 inhibitor",
       "mechanism": "Vesicular monoamine transporter 2 inhibitor",
       "aan_confidence": "Not rated",
-      "role": "No Tourette indication"
+      "role": "No Tourette indication",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
     }
-  ]
+  ],
+  "guidelines": {
+    "intro": "Two expert bodies, read side by side. The US review grades how confident the evidence is that an agent beats placebo; the European guideline says where an agent belongs in practice, weighing side effects as well as efficacy.",
+    "aan": {
+      "label": "AAN 2019 (US)",
+      "source": "aan_2019_sr"
+    },
+    "essts": {
+      "label": "ESSTS 2022 (Europe)",
+      "source": "essts_2022",
+      "note": "'Not named' means the agent does not appear in the guideline's summary recommendations; it is not a recommendation against use. Tiapride, also named by ESSTS, is not marketed in the US."
+    },
+    "takeaways": [
+      "Aripiprazole is the point of agreement: moderate-confidence evidence in the US review and the preferred agent in Europe.",
+      "Haloperidol shows the gap between efficacy and tolerability: moderate-confidence evidence, yet Europe reserves it for treatment-resistant cases because of movement side effects.",
+      "Guanfacine is widely used first but rests on low-confidence evidence; both bodies tie the alpha-2 agonists most closely to patients who also have ADHD.",
+      "None of the VMAT2 inhibitors is rated or named by either body."
+    ],
+    "also": {
+      "text": "The AACAP practice parameter (2013) recommends a stepped, multimodal approach for children and adolescents. Its agent-by-agent positions are not shown because only secondary summaries of it could be checked.",
+      "source": "aacap_2013"
+    }
+  }
 }

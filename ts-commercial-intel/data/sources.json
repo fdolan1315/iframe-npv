@@ -348,6 +348,18 @@
       "publisher": "SEC EDGAR",
       "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000818686&type=&dateb=&owner=include&count=40",
       "note": "Filing index from the SEC submissions API. Document links follow the standard EDGAR path and were not individually opened."
+    },
+    "essts_2022": {
+      "label": "European clinical guidelines for Tourette syndrome and other tic disorders, version 2.0. Part III: pharmacological treatment",
+      "publisher": "Eur Child Adolesc Psychiatry 2022;31:425-441 (ESSTS)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8940878/",
+      "note": "Aripiprazole preferred among dopamine-blocking agents; tiapride, risperidone, and clonidine/guanfacine (especially with ADHD) can be considered; pimozide, haloperidol, topiramate, cannabis-based agents and botulinum toxin in treatment-resistant cases. Verified from the abstract; full text not read."
+    },
+    "aacap_2013": {
+      "label": "Practice parameter for the assessment and treatment of children and adolescents with tic disorders",
+      "publisher": "J Am Acad Child Adolesc Psychiatry 2013;52(12):1341-1359 (AACAP)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24290467/",
+      "note": "Recommends comprehensive evaluation including comorbid disorders and a hierarchical approach to multimodal interventions. Agent-level positions not verified against the primary text."
     }
   }
 }
