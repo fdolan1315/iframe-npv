@@ -1,0 +1,947 @@
+{
+ "fetched_at": "2026-11-13T01:21:21Z",
+ "source_urls": [
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=guanfacine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=guanfacine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=guanfacine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=40489853%2C34757514%2C34286606%2C31588606%2C31413891&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=clonidine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=clonidine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=clonidine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=40489853%2C40392363%2C39258554%2C36528030%2C34757514&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=haloperidol+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=haloperidol+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=haloperidol+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39880518%2C36528030%2C34757514%2C34364945%2C34286606&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=pimozide+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=pimozide+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=pimozide+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=39880518%2C41070469%2C36528030%2C34757514%2C34286606&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=aripiprazole+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=aripiprazole+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=aripiprazole+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=40796996%2C42020560%2C41633739%2C41201540%2C40954436&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=risperidone+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=risperidone+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=risperidone+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=41633739%2C36528030%2C37303178%2C34757514%2C34286606&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=fluphenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=fluphenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=fluphenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=32856174%2C28807495%2C24978639%2C24150997%2C24295625&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ziprasidone+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ziprasidone+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ziprasidone+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=32856174%2C31061209%2C30439755%2C28807495%2C25034359&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=topiramate+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=topiramate+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=topiramate+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=41633739%2C40489853%2C39034647%2C34757514%2C33252554&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=tetrabenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=tetrabenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=tetrabenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42267238%2C40796996%2C41070469%2C37301806%2C34661664&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=deutetrabenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=deutetrabenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=deutetrabenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42267238%2C40489853%2C37301806%2C34661664%2C34609495&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=valbenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=valbenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=valbenazine+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=40796996%2C37301806%2C34305006%2C33682568%2C31356288&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ecopipam+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D&retmode=json&retmax=5&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ecopipam+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+Randomized+Controlled+Trial%5BPublication+Type%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=ecopipam+AND+%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+%28Meta-Analysis%5BPublication+Type%5D+OR+Systematic+Review%5BPublication+Type%5D%29&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=42189524%2C41779259%2C40272969%2C40748111%2C40353708&retmode=json",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2010%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2011%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2012%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2013%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2014%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2015%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2016%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2017%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2018%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2019%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2020%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2021%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2022%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2023%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2024%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2025%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date",
+  "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22Tourette+Syndrome%22%5BMeSH+Terms%5D+AND+2026%5Bpdat%5D&retmode=json&retmax=0&sort=pub_date"
+ ],
+ "caveats": [
+  "Counts are PubMed records matching the query, not a quality-weighted evidence grade. A record matching '<agent> AND Tourette Syndrome[MeSH]' may only mention the agent in passing (PubMed expands the agent name to MeSH, substance name and all-fields text).",
+  "MeSH indexing lags publication by weeks to months, so the newest papers and the most recent years (and newer agents such as ecopipam) are undercounted.",
+  "Publication-type filters depend on NLM indexing; some trials and reviews are not tagged.",
+  "'most_recent' is PubMed's publication-date sort, newest first.",
+  "The 2026 yearly count is a partial year as of fetched_at.",
+  "Yearly counts use the [pdat] publication date field."
+ ],
+ "tourette_mesh_records_by_year": {
+  "2010": 159,
+  "2011": 138,
+  "2012": 158,
+  "2013": 188,
+  "2014": 163,
+  "2015": 182,
+  "2016": 160,
+  "2017": 167,
+  "2018": 132,
+  "2019": 148,
+  "2020": 157,
+  "2021": 185,
+  "2022": 160,
+  "2023": 158,
+  "2024": 150,
+  "2025": 140,
+  "2026": 100
+ },
+ "agents": {
+  "guanfacine": {
+   "query": "guanfacine AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 30,
+   "randomized_controlled_trials": 1,
+   "meta_analyses_or_systematic_reviews": 6,
+   "most_recent": [
+    {
+     "pmid": "40489853",
+     "title": "A narrative review of Phase III and IV clinical trials for the pharmacological treatment of Tourette's syndrome in children, adults, and older adults.",
+     "journal": "Medicine",
+     "year": "2025",
+     "pubdate": "2025 Jun 6",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34757514",
+     "title": "European clinical guidelines for Tourette syndrome and other tic disorders-version 2.0. Part III: pharmacological treatment.",
+     "journal": "European child & adolescent psychiatry",
+     "year": "2022",
+     "pubdate": "2022 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34286606",
+     "title": "Pharmacological treatment for Tourette syndrome in children and adults: What is the quality of the evidence? A systematic review.",
+     "journal": "Journal of psychopharmacology (Oxford, England)",
+     "year": "2021",
+     "pubdate": "2021 Sep",
+     "pubtypes": [
+      "Comparative Study",
+      "Journal Article",
+      "Systematic Review"
+     ]
+    },
+    {
+     "pmid": "31588606",
+     "title": "Combination treatment with guanfacine extended release and blonanserin for Tourette's syndrome comorbid with attention deficit hyperactivity disorder.",
+     "journal": "Psychiatry and clinical neurosciences",
+     "year": "2019",
+     "pubdate": "2019 Dec",
+     "pubtypes": [
+      "Case Reports",
+      "Letter"
+     ]
+    },
+    {
+     "pmid": "31413891",
+     "title": "Prescriptions for Alpha Agonists and Antipsychotics in Children and Youth with Tic Disorders: A Pharmacoepidemiologic Study.",
+     "journal": "Tremor and other hyperkinetic movements (New York, N.Y.)",
+     "year": "2019",
+     "pubdate": "2019",
+     "pubtypes": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+     ]
+    }
+   ]
+  },
+  "clonidine": {
+   "query": "clonidine AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 168,
+   "randomized_controlled_trials": 8,
+   "meta_analyses_or_systematic_reviews": 9,
+   "most_recent": [
+    {
+     "pmid": "40489853",
+     "title": "A narrative review of Phase III and IV clinical trials for the pharmacological treatment of Tourette's syndrome in children, adults, and older adults.",
+     "journal": "Medicine",
+     "year": "2025",
+     "pubdate": "2025 Jun 6",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "40392363",
+     "title": "Clonidine Ameliorates Neuroinflammation in the Rat Model of Tourette Syndrome.",
+     "journal": "Journal of neuroimmune pharmacology : the official journal of the Society on NeuroImmune Pharmacology",
+     "year": "2025",
+     "pubdate": "2025 May 20",
+     "pubtypes": [
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "39258554",
+     "title": "Efficacy of Clonidine Adhesive Patch for Patients With Tourette Syndrome: A Randomized, Double-blind, Placebo-Controlled, Multicenter Clinical Trial.",
+     "journal": "Clinical neuropharmacology",
+     "year": "2024",
+     "pubdate": "2024 Sep-Oct 01",
+     "pubtypes": [
+      "Journal Article",
+      "Multicenter Study",
+      "Randomized Controlled Trial",
+      "Clinical Trial, Phase IV"
+     ]
+    },
+    {
+     "pmid": "36528030",
+     "title": "Comparative efficacy, tolerability, and acceptability of pharmacological interventions for the treatment of children, adolescents, and young adults with Tourette's syndrome: a systematic review and network meta-analysis.",
+     "journal": "The Lancet. Child & adolescent health",
+     "year": "2023",
+     "pubdate": "2023 Feb",
+     "pubtypes": [
+      "Systematic Review",
+      "Journal Article",
+      "Network Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "34757514",
+     "title": "European clinical guidelines for Tourette syndrome and other tic disorders-version 2.0. Part III: pharmacological treatment.",
+     "journal": "European child & adolescent psychiatry",
+     "year": "2022",
+     "pubdate": "2022 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    }
+   ]
+  },
+  "haloperidol": {
+   "query": "haloperidol AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 412,
+   "randomized_controlled_trials": 14,
+   "meta_analyses_or_systematic_reviews": 10,
+   "most_recent": [
+    {
+     "pmid": "39880518",
+     "title": "Pharmacotherapy for Tourette Syndrome.",
+     "journal": "The Psychiatric clinics of North America",
+     "year": "2025",
+     "pubdate": "2025 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "36528030",
+     "title": "Comparative efficacy, tolerability, and acceptability of pharmacological interventions for the treatment of children, adolescents, and young adults with Tourette's syndrome: a systematic review and network meta-analysis.",
+     "journal": "The Lancet. Child & adolescent health",
+     "year": "2023",
+     "pubdate": "2023 Feb",
+     "pubtypes": [
+      "Systematic Review",
+      "Journal Article",
+      "Network Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "34757514",
+     "title": "European clinical guidelines for Tourette syndrome and other tic disorders-version 2.0. Part III: pharmacological treatment.",
+     "journal": "European child & adolescent psychiatry",
+     "year": "2022",
+     "pubdate": "2022 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34364945",
+     "title": "The female Tourette patient: Sex differences in Tourette Disorder.",
+     "journal": "Neuroscience and biobehavioral reviews",
+     "year": "2021",
+     "pubdate": "2021 Oct",
+     "pubtypes": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34286606",
+     "title": "Pharmacological treatment for Tourette syndrome in children and adults: What is the quality of the evidence? A systematic review.",
+     "journal": "Journal of psychopharmacology (Oxford, England)",
+     "year": "2021",
+     "pubdate": "2021 Sep",
+     "pubtypes": [
+      "Comparative Study",
+      "Journal Article",
+      "Systematic Review"
+     ]
+    }
+   ]
+  },
+  "pimozide": {
+   "query": "pimozide AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 118,
+   "randomized_controlled_trials": 10,
+   "meta_analyses_or_systematic_reviews": 6,
+   "most_recent": [
+    {
+     "pmid": "39880518",
+     "title": "Pharmacotherapy for Tourette Syndrome.",
+     "journal": "The Psychiatric clinics of North America",
+     "year": "2025",
+     "pubdate": "2025 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "41070469",
+     "title": "Effectiveness of 40-Session Repetitive Transcranial Magnetic Stimulation in Tourette Syndrome: A 6-Month Follow-Up Case Report.",
+     "journal": "Turk psikiyatri dergisi = Turkish journal of psychiatry",
+     "year": "2025",
+     "pubdate": "2025",
+     "pubtypes": [
+      "Case Reports",
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "36528030",
+     "title": "Comparative efficacy, tolerability, and acceptability of pharmacological interventions for the treatment of children, adolescents, and young adults with Tourette's syndrome: a systematic review and network meta-analysis.",
+     "journal": "The Lancet. Child & adolescent health",
+     "year": "2023",
+     "pubdate": "2023 Feb",
+     "pubtypes": [
+      "Systematic Review",
+      "Journal Article",
+      "Network Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "34757514",
+     "title": "European clinical guidelines for Tourette syndrome and other tic disorders-version 2.0. Part III: pharmacological treatment.",
+     "journal": "European child & adolescent psychiatry",
+     "year": "2022",
+     "pubdate": "2022 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34286606",
+     "title": "Pharmacological treatment for Tourette syndrome in children and adults: What is the quality of the evidence? A systematic review.",
+     "journal": "Journal of psychopharmacology (Oxford, England)",
+     "year": "2021",
+     "pubdate": "2021 Sep",
+     "pubtypes": [
+      "Comparative Study",
+      "Journal Article",
+      "Systematic Review"
+     ]
+    }
+   ]
+  },
+  "aripiprazole": {
+   "query": "aripiprazole AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 101,
+   "randomized_controlled_trials": 3,
+   "meta_analyses_or_systematic_reviews": 10,
+   "most_recent": [
+    {
+     "pmid": "40796996",
+     "title": "Efficacy of aripiprazole and valbenazine in the treatment of tourette syndrome: a systematic review and meta-analysis of randomized controlled trials.",
+     "journal": "Acta neurologica Belgica",
+     "year": "2026",
+     "pubdate": "2026 Jun",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "42020560",
+     "title": "Oculogyric crisis in two patients treated with aripiprazole for chronic tics.",
+     "journal": "Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",
+     "year": "2026",
+     "pubdate": "2026 Apr 23",
+     "pubtypes": [
+      "Journal Article",
+      "Case Reports"
+     ]
+    },
+    {
+     "pmid": "41633739",
+     "title": "Pharmacologic treatment of tics and Gilles de la Tourette syndrome.",
+     "journal": "Handbook of clinical neurology",
+     "year": "2026",
+     "pubdate": "2026",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "41201540",
+     "title": "[Update on tic disorders and Tourette syndrome].",
+     "journal": "Der Nervenarzt",
+     "year": "2025",
+     "pubdate": "2025 Dec",
+     "pubtypes": [
+      "Journal Article",
+      "Review",
+      "English Abstract"
+     ]
+    },
+    {
+     "pmid": "40954436",
+     "title": "Aripiprazole-induced reversible myopia in a patient with tourette syndrome.",
+     "journal": "Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",
+     "year": "2025",
+     "pubdate": "2025 Nov",
+     "pubtypes": [
+      "Case Reports",
+      "Journal Article"
+     ]
+    }
+   ]
+  },
+  "risperidone": {
+   "query": "risperidone AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 82,
+   "randomized_controlled_trials": 6,
+   "meta_analyses_or_systematic_reviews": 8,
+   "most_recent": [
+    {
+     "pmid": "41633739",
+     "title": "Pharmacologic treatment of tics and Gilles de la Tourette syndrome.",
+     "journal": "Handbook of clinical neurology",
+     "year": "2026",
+     "pubdate": "2026",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "36528030",
+     "title": "Comparative efficacy, tolerability, and acceptability of pharmacological interventions for the treatment of children, adolescents, and young adults with Tourette's syndrome: a systematic review and network meta-analysis.",
+     "journal": "The Lancet. Child & adolescent health",
+     "year": "2023",
+     "pubdate": "2023 Feb",
+     "pubtypes": [
+      "Systematic Review",
+      "Journal Article",
+      "Network Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "37303178",
+     "title": "Investigating the Effects and Side Effects of Two Antipsychotic Drugs in the Treatment of Children and Adolescents with Tourette Syndrome: A Semi-experimental Research.",
+     "journal": "Current drug discovery technologies",
+     "year": "2023",
+     "pubdate": "2023",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Comparative Study"
+     ]
+    },
+    {
+     "pmid": "34757514",
+     "title": "European clinical guidelines for Tourette syndrome and other tic disorders-version 2.0. Part III: pharmacological treatment.",
+     "journal": "European child & adolescent psychiatry",
+     "year": "2022",
+     "pubdate": "2022 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34286606",
+     "title": "Pharmacological treatment for Tourette syndrome in children and adults: What is the quality of the evidence? A systematic review.",
+     "journal": "Journal of psychopharmacology (Oxford, England)",
+     "year": "2021",
+     "pubdate": "2021 Sep",
+     "pubtypes": [
+      "Comparative Study",
+      "Journal Article",
+      "Systematic Review"
+     ]
+    }
+   ]
+  },
+  "fluphenazine": {
+   "query": "fluphenazine AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 22,
+   "randomized_controlled_trials": 0,
+   "meta_analyses_or_systematic_reviews": 2,
+   "most_recent": [
+    {
+     "pmid": "32856174",
+     "title": "Current Management of Tics and Tourette Syndrome: Behavioral, Pharmacologic, and Surgical Treatments.",
+     "journal": "Neurotherapeutics : the journal of the American Society for Experimental NeuroTherapeutics",
+     "year": "2020",
+     "pubdate": "2020 Oct",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "28807495",
+     "title": "The colorful spectrum of Tourette syndrome and its medical, surgical and behavioral therapies.",
+     "journal": "Parkinsonism & related disorders",
+     "year": "2018",
+     "pubdate": "2018 Jan",
+     "pubtypes": [
+      "Historical Article",
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "24978639",
+     "title": "Neurobehavioral aspects, pathophysiology, and management of Tourette syndrome.",
+     "journal": "Current opinion in neurology",
+     "year": "2014",
+     "pubdate": "2014 Aug",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "24150997",
+     "title": "Long-term efficacy and safety of fluphenazine in patients with Tourette syndrome.",
+     "journal": "Movement disorders : official journal of the Movement Disorder Society",
+     "year": "2014",
+     "pubdate": "2014 Jan",
+     "pubtypes": [
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "24295625",
+     "title": "Clinical pharmacology of dopamine-modulating agents in Tourette's syndrome.",
+     "journal": "International review of neurobiology",
+     "year": "2013",
+     "pubdate": "2013",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review"
+     ]
+    }
+   ]
+  },
+  "ziprasidone": {
+   "query": "ziprasidone AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 21,
+   "randomized_controlled_trials": 1,
+   "meta_analyses_or_systematic_reviews": 3,
+   "most_recent": [
+    {
+     "pmid": "32856174",
+     "title": "Current Management of Tics and Tourette Syndrome: Behavioral, Pharmacologic, and Surgical Treatments.",
+     "journal": "Neurotherapeutics : the journal of the American Society for Experimental NeuroTherapeutics",
+     "year": "2020",
+     "pubdate": "2020 Oct",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "31061209",
+     "title": "Comprehensive systematic review summary: Treatment of tics in people with Tourette syndrome and chronic tic disorders.",
+     "journal": "Neurology",
+     "year": "2019",
+     "pubdate": "2019 May 7",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review"
+     ]
+    },
+    {
+     "pmid": "30439755",
+     "title": "Toxic Myopathy due to Antidopaminergic Medication Without Neuroleptic Malignant Syndrome.",
+     "journal": "Journal of clinical neuromuscular disease",
+     "year": "2018",
+     "pubdate": "2018 Dec",
+     "pubtypes": [
+      "Case Reports",
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "28807495",
+     "title": "The colorful spectrum of Tourette syndrome and its medical, surgical and behavioral therapies.",
+     "journal": "Parkinsonism & related disorders",
+     "year": "2018",
+     "pubdate": "2018 Jan",
+     "pubtypes": [
+      "Historical Article",
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "25034359",
+     "title": "The role of atypical antipsychotics for treatment of Tourette's syndrome: an overview.",
+     "journal": "Drugs",
+     "year": "2014",
+     "pubdate": "2014 Jul",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    }
+   ]
+  },
+  "topiramate": {
+   "query": "topiramate AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 26,
+   "randomized_controlled_trials": 1,
+   "meta_analyses_or_systematic_reviews": 3,
+   "most_recent": [
+    {
+     "pmid": "41633739",
+     "title": "Pharmacologic treatment of tics and Gilles de la Tourette syndrome.",
+     "journal": "Handbook of clinical neurology",
+     "year": "2026",
+     "pubdate": "2026",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "40489853",
+     "title": "A narrative review of Phase III and IV clinical trials for the pharmacological treatment of Tourette's syndrome in children, adults, and older adults.",
+     "journal": "Medicine",
+     "year": "2025",
+     "pubdate": "2025 Jun 6",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "39034647",
+     "title": "An update on the pharmacological management of Tourette syndrome and emerging treatment paradigms.",
+     "journal": "Expert review of neurotherapeutics",
+     "year": "2024",
+     "pubdate": "2024 Oct",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "34757514",
+     "title": "European clinical guidelines for Tourette syndrome and other tic disorders-version 2.0. Part III: pharmacological treatment.",
+     "journal": "European child & adolescent psychiatry",
+     "year": "2022",
+     "pubdate": "2022 Mar",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "33252554",
+     "title": "Recurrent Suicidal Ideation With Topiramate in Tourette Syndrome.",
+     "journal": "Journal of clinical psychopharmacology",
+     "year": "2021",
+     "pubdate": "2021 Jan/Feb 01",
+     "pubtypes": [
+      "Case Reports",
+      "Letter"
+     ]
+    }
+   ]
+  },
+  "tetrabenazine": {
+   "query": "tetrabenazine AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 47,
+   "randomized_controlled_trials": 2,
+   "meta_analyses_or_systematic_reviews": 4,
+   "most_recent": [
+    {
+     "pmid": "42267238",
+     "title": "Efficacy and Safety of Deutetrabenazine in Tourette Syndrome: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+     "journal": "Psychopharmacology bulletin",
+     "year": "2026",
+     "pubdate": "2026 Jun 5",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "40796996",
+     "title": "Efficacy of aripiprazole and valbenazine in the treatment of tourette syndrome: a systematic review and meta-analysis of randomized controlled trials.",
+     "journal": "Acta neurologica Belgica",
+     "year": "2026",
+     "pubdate": "2026 Jun",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "41070469",
+     "title": "Effectiveness of 40-Session Repetitive Transcranial Magnetic Stimulation in Tourette Syndrome: A 6-Month Follow-Up Case Report.",
+     "journal": "Turk psikiyatri dergisi = Turkish journal of psychiatry",
+     "year": "2025",
+     "pubdate": "2025",
+     "pubtypes": [
+      "Case Reports",
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "37301806",
+     "title": "Real-world experience with VMAT2 inhibitors in Tourette syndrome.",
+     "journal": "Journal of neurology",
+     "year": "2023",
+     "pubdate": "2023 Sep",
+     "pubtypes": [
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "34661664",
+     "title": "Efficacy and Safety of Fixed-Dose Deutetrabenazine in Children and Adolescents for Tics Associated With Tourette Syndrome: A Randomized Clinical Trial.",
+     "journal": "JAMA network open",
+     "year": "2021",
+     "pubdate": "2021 Oct 1",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Research Support, Non-U.S. Gov't"
+     ]
+    }
+   ]
+  },
+  "deutetrabenazine": {
+   "query": "deutetrabenazine AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 12,
+   "randomized_controlled_trials": 2,
+   "meta_analyses_or_systematic_reviews": 1,
+   "most_recent": [
+    {
+     "pmid": "42267238",
+     "title": "Efficacy and Safety of Deutetrabenazine in Tourette Syndrome: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+     "journal": "Psychopharmacology bulletin",
+     "year": "2026",
+     "pubdate": "2026 Jun 5",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "40489853",
+     "title": "A narrative review of Phase III and IV clinical trials for the pharmacological treatment of Tourette's syndrome in children, adults, and older adults.",
+     "journal": "Medicine",
+     "year": "2025",
+     "pubdate": "2025 Jun 6",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "37301806",
+     "title": "Real-world experience with VMAT2 inhibitors in Tourette syndrome.",
+     "journal": "Journal of neurology",
+     "year": "2023",
+     "pubdate": "2023 Sep",
+     "pubtypes": [
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "34661664",
+     "title": "Efficacy and Safety of Fixed-Dose Deutetrabenazine in Children and Adolescents for Tics Associated With Tourette Syndrome: A Randomized Clinical Trial.",
+     "journal": "JAMA network open",
+     "year": "2021",
+     "pubdate": "2021 Oct 1",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Research Support, Non-U.S. Gov't"
+     ]
+    },
+    {
+     "pmid": "34609495",
+     "title": "Safety and Efficacy of Flexible-Dose Deutetrabenazine in Children and Adolescents With Tourette Syndrome: A Randomized Clinical Trial.",
+     "journal": "JAMA network open",
+     "year": "2021",
+     "pubdate": "2021 Oct 1",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Research Support, Non-U.S. Gov't"
+     ]
+    }
+   ]
+  },
+  "valbenazine": {
+   "query": "valbenazine AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 9,
+   "randomized_controlled_trials": 0,
+   "meta_analyses_or_systematic_reviews": 1,
+   "most_recent": [
+    {
+     "pmid": "40796996",
+     "title": "Efficacy of aripiprazole and valbenazine in the treatment of tourette syndrome: a systematic review and meta-analysis of randomized controlled trials.",
+     "journal": "Acta neurologica Belgica",
+     "year": "2026",
+     "pubdate": "2026 Jun",
+     "pubtypes": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ]
+    },
+    {
+     "pmid": "37301806",
+     "title": "Real-world experience with VMAT2 inhibitors in Tourette syndrome.",
+     "journal": "Journal of neurology",
+     "year": "2023",
+     "pubdate": "2023 Sep",
+     "pubtypes": [
+      "Journal Article"
+     ]
+    },
+    {
+     "pmid": "34305006",
+     "title": "Tourette syndrome in children: An update.",
+     "journal": "Current problems in pediatric and adolescent health care",
+     "year": "2021",
+     "pubdate": "2021 Jul",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "33682568",
+     "title": "Clinical development of valbenazine for tics associated with Tourette syndrome.",
+     "journal": "Expert review of neurotherapeutics",
+     "year": "2021",
+     "pubdate": "2021 Apr",
+     "pubtypes": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "31356288",
+     "title": "Tics and Tourette Syndrome.",
+     "journal": "Continuum (Minneapolis, Minn.)",
+     "year": "2019",
+     "pubdate": "2019 Aug",
+     "pubtypes": [
+      "Case Reports",
+      "Journal Article",
+      "Review"
+     ]
+    }
+   ]
+  },
+  "ecopipam": {
+   "query": "ecopipam AND \"Tourette Syndrome\"[MeSH Terms]",
+   "total": 18,
+   "randomized_controlled_trials": 5,
+   "meta_analyses_or_systematic_reviews": 2,
+   "most_recent": [
+    {
+     "pmid": "42189524",
+     "title": "Efficacy and Safety of Ecopipam for Tourette Syndrome: A Phase 3 Randomized Clinical Trial.",
+     "journal": "JAMA neurology",
+     "year": "2026",
+     "pubdate": "2026 Jul 1",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Clinical Trial, Phase III",
+      "Multicenter Study"
+     ]
+    },
+    {
+     "pmid": "41779259",
+     "title": "Update on the Pathophysiology and Management of Tics.",
+     "journal": "Current neurology and neuroscience reports",
+     "year": "2026",
+     "pubdate": "2026 Mar 4",
+     "pubtypes": [
+      "Journal Article",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "40272969",
+     "title": "Determining Clinically Meaningful Improvement in Children and Adolescents with Tourette Syndrome Receiving Pharmacotherapy.",
+     "journal": "Journal of child and adolescent psychopharmacology",
+     "year": "2025",
+     "pubdate": "2025 Oct",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Research Support, Non-U.S. Gov't"
+     ]
+    },
+    {
+     "pmid": "40748111",
+     "title": "Tourette Syndrome and Tic Disorders.",
+     "journal": "Continuum (Minneapolis, Minn.)",
+     "year": "2025",
+     "pubdate": "2025 Aug",
+     "pubtypes": [
+      "Journal Article",
+      "Case Reports",
+      "Review"
+     ]
+    },
+    {
+     "pmid": "40353708",
+     "title": "Safety and Effect of 12-Month Ecopipam Treatment in Pediatric Patients with Tourette Syndrome.",
+     "journal": "Movement disorders clinical practice",
+     "year": "2025",
+     "pubdate": "2025 Aug",
+     "pubtypes": [
+      "Journal Article",
+      "Randomized Controlled Trial",
+      "Clinical Trial, Phase II"
+     ]
+    }
+   ]
+  }
+ }
+}

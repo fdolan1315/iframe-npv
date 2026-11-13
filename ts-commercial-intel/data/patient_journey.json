@@ -1,0 +1,76 @@
+{
+  "headline": "The TS journey is a diagnosis-to-specialist-to-treatment funnel — caregiver-mediated, school-involved, and slowed by underdiagnosis — not an infusion journey.",
+  "stages": [
+    {
+      "step": 1,
+      "title": "Symptom onset",
+      "who": "Child (onset ~4-6 yrs), parents",
+      "detail": "First symptoms usually motor tics (~56%), often mistaken for allergies, vision problems, or behavior. Onset preschool (~40%) or early primary school (~36%).",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "step": 2,
+      "title": "First contact",
+      "who": "Primary-care pediatrician / GP",
+      "detail": "Clear-cut cases may be recognized here; many are not. Comorbid ADHD/OCD/anxiety frequently surface first and steer the workup.",
+      "source": "comorbid_pmc"
+    },
+    {
+      "step": 3,
+      "title": "Referral churn & diagnostic delay",
+      "who": "Psychologist, developmental-behavioral peds, child psychiatry",
+      "detail": "Parents consult ~4 different types of professional before diagnosis; delay often runs years. TS is a clinical diagnosis (no confirmatory test) — once the right specialist is reached, diagnosis is usually quick.",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "step": 4,
+      "title": "Specialist diagnosis",
+      "who": "Pediatric neurology / movement-disorder specialist (secondarily child psychiatry)",
+      "detail": "Confirmation, severity staging (YGTSS), and the point where tic-specific pharmacotherapy is initiated. This is the commercial call-point that matters most.",
+      "source": "aan_2019"
+    },
+    {
+      "step": 5,
+      "title": "Treatment decision",
+      "who": "Specialist + caregiver + school",
+      "detail": "Watchful waiting for non-impairing tics; CBIT and/or pharmacotherapy for impairing tics. Caregivers, IEP/504 school supports, and comorbidity management all shape the choice.",
+      "source": "aan_2019"
+    }
+  ],
+  "leak_points": [
+    {
+      "label": "Underdiagnosis",
+      "detail": "~half of children with TS are never formally diagnosed.",
+      "source": "cdc_ts_data"
+    },
+    {
+      "label": "Diagnostic delay",
+      "detail": "~4 clinicians and often years before diagnosis.",
+      "source": "treatment_review_pmc"
+    },
+    {
+      "label": "Comorbidity capture",
+      "detail": "ADHD/OCD/anxiety often treated first; the tic conversation happens in a crowded context.",
+      "source": "comorbid_pmc"
+    },
+    {
+      "label": "CBIT access",
+      "detail": "First-line CBIT is frequently unavailable in practice (therapist shortage).",
+      "source": "cbit_piacentini"
+    }
+  ],
+  "ecosystem": {
+    "title": "A caregiver- and school-mediated condition",
+    "note": "Unlike an adult specialty launch, the TS decision unit includes parents/caregivers, schools (IEP/504 accommodations under IDEA/ADA), and often counselors — all motivated for the child to do well. Advocacy is TAA-centric.",
+    "actors": [
+      "Child/patient",
+      "Parents / caregivers",
+      "School (IEP/504)",
+      "Pediatric neurologist",
+      "Child psychiatrist",
+      "Developmental-behavioral pediatrician",
+      "Primary-care pediatrician",
+      "TAA advocacy community"
+    ]
+  }
+}

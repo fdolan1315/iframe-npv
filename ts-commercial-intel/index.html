@@ -1,0 +1,1588 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TS Commercial Intelligence</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<style>
+  /* ============================================================
+     BIOS brand system v1.3.0 (revision 6) — tokens.
+     Core: Deep Slate #111827 · Clear White #F8FAFC · Authority Cobalt #2457D6.
+     Flat color by default; no gradients in data; no ornamental shadows.
+     BIOS Electric #0021FE is reserved for the supplied logo artwork only.
+     Dark surfaces are Deep Slate with Clear White at low opacity.
+     ============================================================ */
+  @font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+  @font-face{font-family:"Instrument Sans";src:url(assets/fonts/instrument-sans-latin-wght-normal.woff2) format("woff2");font-weight:400 700;font-display:swap}
+  :root{
+    --bg:#111827; --panel:#111827; --panel-2:color-mix(in srgb,#f8fafc 7%,#111827); --panel-3:color-mix(in srgb,#f8fafc 12%,#111827);
+    --line:rgba(248,250,252,.16); --line-strong:rgba(248,250,252,.30);
+    --text:#f8fafc; --muted:#94a3b8; --faint:#94a3b8;
+    --accent:#5d82e3; --accent-2:#7a3e9d; --accent-ink:#111827;
+    --accent-soft:rgba(93,130,227,.18); --accent-line:rgba(93,130,227,.55);
+    --good:#4c9b75; --warn:#fff4d6; --bad:#d66b7d;
+    --shadow:0 0 0 0 transparent; --shadow-sm:0 0 0 0 transparent;
+    --bevel:0 0 0 0 transparent; --elev-1:0 0 0 0 transparent; --elev-2:0 0 0 0 transparent;
+    --ease:ease;
+    --panel-grad:var(--panel); --panel2-grad:var(--panel-2); --glass:var(--bg); --hero-wash:none;
+    --radius:12px; --radius-sm:8px; --radius-lg:12px;
+    --display:"Instrument Sans","Inter",Arial,sans-serif;
+    --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    /* Sequential cobalt (approved ramp); on the dark field the low end recedes toward Deep Slate. */
+    --seq0:color-mix(in srgb,#173e9e 40%,#111827); --seq1:#173e9e; --seq2:#2457d6; --seq3:#5d82e3; --seq4:#94adee; --seq5:#c9d6f7;
+    --seq-nodata:color-mix(in srgb,#f8fafc 7%,#111827);
+  }
+  :root[data-theme="light"]{
+    --bg:#f8fafc; --panel:#f8fafc; --panel-2:#eef1f5; --panel-3:#e5e7eb;
+    --line:rgba(17,24,39,.12); --line-strong:rgba(17,24,39,.26);
+    --text:#111827; --muted:#42526e; --faint:#667085;
+    --accent:#2457d6; --accent-2:#7a3e9d; --accent-ink:#f8fafc;
+    --accent-soft:#eaf0fd; --accent-line:rgba(36,87,214,.40);
+    --good:#0b6b50; --warn:#8a5a00; --bad:#b4233c;
+    --hero-wash:linear-gradient(180deg,rgba(36,87,214,.12) 0%,rgba(248,250,252,0) 100%);
+    --seq0:#e8eefc; --seq1:#c9d6f7; --seq2:#94adee; --seq3:#5d82e3; --seq4:#2457d6; --seq5:#173e9e;
+    --seq-nodata:#f1f3f6;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:
+      radial-gradient(1100px 620px at 12% -6%, color-mix(in srgb,var(--accent) 8%, transparent), transparent 58%),
+      radial-gradient(900px 560px at 104% -2%, color-mix(in srgb,var(--accent-2) 6%, transparent), transparent 54%),
+      var(--bg);
+    background-attachment:fixed;color:var(--text);
+    font:15px/1.55 var(--font);
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    font-feature-settings:"cv11","ss01";text-rendering:optimizeLegibility}
+  h1,h2,h3,h4{letter-spacing:-.017em;font-weight:650}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:2px}
+  .hidden{display:none!important}
+  ::selection{background:var(--accent-soft)}
+
+  /* Login */
+  #logoutBtn{display:none}
+  #login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow)}
+  #login .card{width:100%;max-width:380px;padding:32px}
+  #login h1{font-size:20px;margin:0 0 4px}
+  #login p.sub{color:var(--muted);margin:0 0 22px;font-size:13px}
+  label{display:block;font-size:11px;color:var(--muted);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.05em;font-weight:550}
+  input,select{width:100%;padding:10px 12px;background:var(--panel-2);border:1px solid var(--line);
+    border-radius:var(--radius-sm);color:var(--text);font-size:14px;font-family:inherit;
+    transition:border-color .15s ease, box-shadow .15s ease, background .15s ease}
+  input:hover,select:hover{border-color:var(--line-strong)}
+  input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  input::placeholder{color:var(--faint)}
+  button{cursor:pointer;font:inherit}
+  /* Buttons — physical, pressable keys. Raised with a lit top edge; sink on :active. */
+  .btn{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 90%,#fff),var(--accent));
+    color:var(--accent-ink);border:1px solid transparent;border-radius:var(--radius-sm);
+    padding:10px 15px;font-weight:600;font-size:14px;letter-spacing:-.006em;
+    box-shadow:0 1px 2px rgba(0,0,0,.2), 0 2px 6px -2px var(--accent-line), inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 0 rgba(0,0,0,.14);
+    transition:transform .1s var(--ease), box-shadow .18s var(--ease), filter .18s var(--ease)}
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.04);
+    box-shadow:0 2px 4px rgba(0,0,0,.22), 0 10px 20px -6px var(--accent-line), inset 0 1px 0 rgba(255,255,255,.34), inset 0 -1px 0 rgba(0,0,0,.14)}
+  .btn:active{transform:translateY(1px);filter:brightness(.97);
+    box-shadow:0 1px 1px rgba(0,0,0,.2), inset 0 2px 5px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.06)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 3px var(--accent-soft), inset 0 1px 0 rgba(255,255,255,.3)}
+  .btn.ghost{background:linear-gradient(180deg,var(--panel-2),color-mix(in srgb,var(--panel-2) 84%,#000));
+    color:var(--text);border-color:var(--line);box-shadow:var(--elev-1), var(--bevel)}
+  .btn.ghost:hover{transform:translateY(-1px);filter:none;border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .btn.ghost:active{transform:translateY(1px);box-shadow:inset 0 2px 5px rgba(0,0,0,.26)}
+  .btn.sm{padding:6px 11px;font-size:13px;border-radius:var(--radius-sm)}
+  .err{color:var(--bad);font-size:13px;margin-top:12px;min-height:16px}
+
+  /* App shell */
+  #app{display:grid;grid-template-columns:248px minmax(0,1fr);min-height:100vh}
+  main svg{max-width:100%;height:auto}
+  #side{background:var(--glass);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);
+    border-right:1px solid var(--line);box-shadow:inset -1px 0 0 rgba(255,255,255,.04);padding:20px 14px;
+    display:flex;flex-direction:column;position:sticky;top:0;height:100vh;z-index:20}
+  .brand{font-weight:650;font-size:14.5px;letter-spacing:-.01em;padding:6px 8px 2px;display:flex;align-items:center;gap:9px}
+  .brand:before{content:"";width:23px;height:23px;border-radius:7px;flex:none;
+    background:radial-gradient(130% 130% at 30% 18%, rgba(255,255,255,.6), rgba(255,255,255,0) 46%), linear-gradient(150deg,var(--accent),var(--accent-2));
+    box-shadow:0 1px 3px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.5), inset 0 0 0 1px rgba(255,255,255,.08)}
+  .brand span{display:flex;flex-direction:column}
+  .brand small{display:block;color:var(--muted);font-weight:450;font-size:11px;letter-spacing:0;margin-top:1px}
+  nav{margin-top:20px;display:flex;flex-direction:column;gap:1px;overflow:auto}
+  nav a{color:var(--muted);padding:8px 10px;border-radius:var(--radius-sm);font-size:13.5px;display:flex;
+    align-items:center;justify-content:space-between;gap:8px;font-weight:500;
+    transition:background .13s ease, color .13s ease}
+  nav a:hover{background:var(--panel-2);color:var(--text);text-decoration:none}
+  nav a.active{background:var(--accent-soft);color:var(--text);font-weight:600;box-shadow:inset 0 0 0 1px var(--accent-line)}
+  nav a.active .tag{color:var(--accent);border-color:var(--accent-line)}
+  .tag{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;
+    border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+  .tag.soon{opacity:.7}
+  .side-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);
+    display:flex;flex-direction:column;gap:10px;font-size:13px}
+  .userchip{display:flex;align-items:center;gap:8px;color:var(--muted)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 22%,transparent)}
+  .side-actions{display:flex;gap:8px}
+
+  main{padding:40px 44px;max-width:1120px}
+  .vhead{margin-bottom:26px}
+  .vhead h2{margin:0 0 7px;font-size:clamp(21px,2.5vw,26px);letter-spacing:-.022em;font-weight:680}
+  .vhead .lead{color:var(--muted);font-size:clamp(14px,1.4vw,15px);max-width:760px;line-height:1.5}
+  .grid{display:grid;gap:14px}
+  .stats{grid-template-columns:repeat(auto-fit,minmax(158px,1fr))}
+  /* Interactive tiles — lit from above at rest, lift toward the cursor on hover */
+  .lift{box-shadow:var(--elev-1), var(--bevel);transition:transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .lift:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .stat{background:var(--panel-grad);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+    box-shadow:var(--elev-1), var(--bevel);transition:transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .stat:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .stat .v{font-size:25px;font-weight:680;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat .l{color:var(--muted);font-size:12.5px;margin-top:5px}
+  .panel{background:var(--panel-grad);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:16px;box-shadow:var(--elev-1), var(--bevel)}
+  .panel h3{margin:0 0 5px;font-size:15.5px;letter-spacing:-.014em;font-weight:640}
+  .panel .note{color:var(--muted);font-size:13px;margin:0 0 16px;line-height:1.5}
+  .cite{font-size:11px;color:var(--muted)}
+  .cite a{color:var(--muted);border-bottom:1px dotted var(--muted)}
+  .cite a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+
+  .tscroll{overflow-x:auto;overflow-y:hidden;max-width:100%;-webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+  .tscroll::-webkit-scrollbar{height:8px}
+  .tscroll::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:8px}
+  .tscroll table{margin:0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{border-bottom-color:var(--line-strong)}
+  th{color:var(--faint);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  tbody tr{transition:background .12s ease}
+  tbody tr:hover{background:var(--panel-2)}
+  tbody tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;font-size:11px;font-weight:550;padding:2px 9px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--muted)}
+  .pill.high{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,transparent);background:color-mix(in srgb,var(--bad) 11%,transparent)}
+  .pill.med{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent);background:color-mix(in srgb,var(--warn) 11%,transparent)}
+  .pill.low{color:var(--muted)}
+
+  .ladder{display:flex;flex-direction:column;gap:8px}
+  .rung{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:stretch}
+  .rung .bar{border-radius:var(--radius-sm);padding:8px 10px;background:var(--accent-soft);border:1px solid var(--accent-line);
+    color:var(--accent);font-weight:650;font-size:12px;display:flex;align-items:center;justify-content:center;text-align:center}
+  .rung .body{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 13px}
+  .rung .body b{font-size:14px}
+  .rung .body .for{color:var(--muted);font-size:12px}
+  .rung .body .rn{font-size:12.5px;margin-top:4px}
+
+  .disc{margin-top:26px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--line);padding-top:14px}
+  .soon{color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius);
+    padding:40px;text-align:center;margin-top:10px}
+  .lever{margin:14px 0}
+  .lever .lh{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .lever .lh b{font-size:14px}
+  .lever .lh .lv{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent);font-size:14px}
+  .lever .ld{color:var(--muted);font-size:12px;margin:3px 0 6px}
+  input[type=range]{width:100%;accent-color:var(--accent);height:22px;padding:0;background:transparent}
+  .otile{background:var(--panel2-grad);border:1px solid var(--line);border-radius:var(--radius);padding:14px 15px;
+    box-shadow:var(--elev-1), var(--bevel);transition:transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .otile:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .otile .ov{font-size:22px;font-weight:680;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .otile .ol{color:var(--muted);font-size:12px;margin-top:3px}
+  .otile .op{color:var(--accent);font-size:12px;font-weight:600}
+  .banner{background:var(--panel-2);border:1px solid var(--line);border-left:2px solid var(--warn);
+    border-radius:var(--radius-sm);padding:11px 14px;font-size:12.5px;color:var(--muted);margin:10px 0}
+  .brief details{border:1px solid var(--line);border-radius:var(--radius);padding:0;margin-top:10px;background:var(--panel);transition:border-color .15s ease}
+  .brief details[open]{border-color:var(--line-strong)}
+  .brief summary{cursor:pointer;padding:15px 17px;font-weight:600;list-style:none;letter-spacing:-.01em}
+  .brief summary::-webkit-details-marker{display:none}
+  .brief summary .bs{display:block;color:var(--muted);font-weight:400;font-size:13px;margin-top:4px;letter-spacing:0}
+  .brief .bc{padding:0 17px 17px}
+  .brief .bc p{margin:10px 0}
+  .chiprow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .lchip{font-size:11px;font-weight:550;padding:3px 10px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--muted);cursor:pointer;transition:transform .1s var(--ease), color .13s ease, border-color .13s ease, background .13s ease}
+  .lchip:hover{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft);transform:translateY(-1px)}
+  .lchip:active{transform:translateY(0)}
+  /* Scenario planner — levers (primary column) + sticky live-output rail */
+  .scen-layout{display:grid;grid-template-columns:minmax(0,1fr) 344px;gap:18px;align-items:start;margin-top:16px}
+  .scen-main>.panel:first-child{margin-top:0}
+  .scen-rail{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;
+    scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+  .scen-rail::-webkit-scrollbar{width:8px}
+  .scen-rail::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:8px}
+  .scen-out-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
+  .scen-out-head .sub{color:var(--muted);font-size:12px}
+  .scen-outs{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+  .scen-rail .otile{padding:12px 14px}
+  .scen-rail .otile .ov{font-size:20px}
+  @media(max-width:1000px){.scen-layout{grid-template-columns:1fr}
+    .scen-rail{position:static;max-height:none;overflow:visible;order:-1}
+    .scen-outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}}
+  .otile .od{font-size:11px;margin-top:3px;font-weight:600}
+  .od.up{color:var(--good)} .od.down{color:var(--bad)} .od.flat{color:var(--muted)}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+  .lgd{display:inline-flex;align-items:center;gap:6px}
+  .fate{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 7px;border-radius:5px;color:var(--accent-ink);white-space:nowrap}
+  .fate.failed{background:var(--bad)} .fate.filed{background:var(--accent)} .fate.active{background:var(--good)}
+  .fate.device{background:var(--accent-2)} .fate.approved{background:var(--good)}
+  .panel.failed{border-left:2px solid var(--bad)}
+  .bvis{margin:2px 0 14px;padding:16px;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto}
+  .mcmp{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .mcard{border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px;background:var(--panel);
+    box-shadow:var(--elev-1), var(--bevel);transition:transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .mcard:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .mcard.hl{border-color:var(--accent-line);box-shadow:inset 0 0 0 1px var(--accent-line)}
+  .mcard.hl:hover{border-color:var(--accent)}
+  .mcard ul{margin:8px 0 0;padding-left:15px;font-size:12.5px} .mcard li{margin:3px 0}
+  .jflow{display:flex;align-items:stretch;flex-wrap:wrap;gap:2px}
+  .resetbtn{background:var(--panel-2);border:1px solid var(--line);color:var(--text);border-radius:var(--radius-sm);padding:6px 12px;font-size:13px;cursor:pointer;transition:all .13s ease}
+  .resetbtn:hover{border-color:var(--line-strong);background:var(--panel-3)}
+  @media(max-width:700px){.mcmp{grid-template-columns:1fr}}
+  .exhero{background:
+      radial-gradient(120% 140% at 92% -20%, color-mix(in srgb,var(--accent) 16%, transparent), transparent 46%),
+      linear-gradient(180deg,color-mix(in srgb,var(--panel) 95%,var(--accent)),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(20px,3vw,30px);margin-bottom:14px;position:relative;overflow:hidden;box-shadow:var(--elev-1), var(--bevel)}
+  .exhero:before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,var(--accent-line) 30%,var(--accent-line) 70%,transparent)}
+  .exhero .lead2{font-size:clamp(17px,2vw,21px);line-height:1.42;font-weight:600;letter-spacing:-.017em;max-width:920px;position:relative}
+  .exstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px}
+  .exstat{background:var(--panel-grad);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+    box-shadow:var(--elev-1), var(--bevel);transition:transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .exstat:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .exstat .v{font-size:27px;font-weight:700;color:var(--text);line-height:1.05;letter-spacing:-.026em;font-variant-numeric:tabular-nums}
+  .exstat .l{font-size:12px;color:var(--muted);margin-top:7px}
+  .tlhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px 16px;flex-wrap:wrap;margin-bottom:16px}
+  .tlcount{font-size:12.5px;color:var(--muted)} .tlcount b{color:var(--accent);font-size:17px;font-variant-numeric:tabular-nums;margin-right:3px}
+  .tl{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(118px,1fr);gap:0;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:thin}
+  .tlstep{position:relative;padding:22px 10px 0 0;font-size:12px;min-width:0}
+  .tlstep:before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--line-strong)}
+  .tlstep.fut:before{background:repeating-linear-gradient(90deg,var(--accent-line) 0 6px,transparent 6px 11px)}
+  .tldot{position:absolute;left:0;top:1px;width:14px;height:14px;border-radius:50%;background:var(--muted);border:3px solid var(--panel);box-shadow:0 0 0 1px var(--line-strong)}
+  .tlstep.regulatory .tldot,.tlkey.regulatory{background:var(--accent)} .tlstep.clinical .tldot,.tlkey.clinical{background:var(--good)} .tlstep.deal .tldot,.tlkey.deal{background:var(--accent-2)}
+  .tlstep.fut .tldot,.tlkey.fut{background:var(--panel);box-shadow:0 0 0 2px var(--accent)}
+  .tlkey{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .tldate{color:var(--faint);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .tllabel{font-weight:600;font-size:12.5px;margin:3px 0 2px;line-height:1.3} .tlstep.fut .tllabel{color:var(--accent)}
+  .wn{display:flex;gap:12px;align-items:flex-start;padding:11px 8px;border-top:1px solid var(--line);font-size:13.5px;cursor:pointer;border-radius:var(--radius-sm);transition:background .12s}
+  .wn:hover,.wn:focus-visible{background:var(--panel-2);outline:none} .wn:focus-visible{box-shadow:0 0 0 2px var(--accent-line)}
+  .wnbody{flex:1;min-width:0} .wngo{color:var(--faint);transform:rotate(-90deg);margin-top:2px}
+  .wntag{flex:none;width:92px;text-align:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 0;border-radius:6px;border:1px solid var(--line);color:var(--muted);background:var(--panel-2)}
+  .wntag.regulatory{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft)}
+  .wntag.clinical{color:var(--good);border-color:color-mix(in srgb,var(--good) 40%,transparent)}
+  .wntag.competitor,.wntag.device{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+  @media(max-width:560px){.wntag{width:74px}.wngo{display:none}}
+  .twocol{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+  @media(max-width:680px){.twocol{grid-template-columns:1fr}}
+  .excards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+  .excard{background:var(--panel-grad);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+    box-shadow:var(--elev-1), var(--bevel);transition:transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .excard:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
+  .excard h4{margin:0 0 6px;font-size:14px;letter-spacing:-.012em}
+  .excard p{margin:0;font-size:13.5px}
+  .excard.exunmet{border-left:2px solid var(--accent)}
+  .exone{margin-top:16px;padding:20px 24px;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--text);border-radius:var(--radius-lg);font-size:16px;font-weight:600;line-height:1.45;letter-spacing:-.012em}
+  @media(max-width:720px){.excards{grid-template-columns:1fr}}
+  .mapwrap{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel);margin-top:4px}
+  .mapwrap svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+  .mapwrap svg.grab{cursor:grabbing}
+  .mapctl{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}
+  .mapctl button{width:33px;height:33px;border:1px solid var(--line);background:color-mix(in srgb,var(--panel) 78%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--text);border-radius:var(--radius-sm);font-size:17px;line-height:1;cursor:pointer;
+    box-shadow:var(--elev-1), var(--bevel);transition:transform .1s var(--ease), box-shadow .16s var(--ease), border-color .16s var(--ease)}
+  .mapctl button:hover{border-color:var(--line-strong);transform:translateY(-1px);box-shadow:var(--elev-2), var(--bevel)}
+  .mapctl button:active{transform:translateY(1px);box-shadow:inset 0 2px 4px rgba(0,0,0,.26)}
+  .maptip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:7px 10px;font-size:12px;box-shadow:var(--shadow);z-index:5;max-width:230px;display:none}
+  .maplegend{position:absolute;left:10px;bottom:10px;background:color-mix(in srgb,var(--panel) 90%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--radius);padding:9px 12px;font-size:11px;color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:flex-start;max-width:min(340px,72%);box-shadow:var(--shadow-sm)}
+  .maplegend .lgttl{color:var(--text);font-weight:600;font-size:11.5px}
+  .maplegend .lgnote{opacity:.75}
+  .seqbar{display:flex;align-items:stretch;height:12px;border-radius:3px;overflow:hidden;border:1px solid var(--line);width:100%;min-width:210px}
+  .seqbar>span{flex:1 1 0}
+  .seqticks{display:flex;justify-content:space-between;width:100%;font-variant-numeric:tabular-nums;font-size:9.5px;opacity:.9;letter-spacing:.01em;line-height:1}
+  .seqticks>span{white-space:nowrap}
+  .maplegend .lgrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .maptoggles{display:flex;gap:12px 18px;flex-wrap:wrap;align-items:center;margin:12px 0 8px}
+  .maptoggles label{display:inline-flex;align-items:center;gap:7px;text-transform:none;letter-spacing:0;color:var(--text);font-size:13px;margin:0;white-space:nowrap}
+  .maptoggles input[type=checkbox]{width:16px;height:16px;flex:none;margin:0;padding:0;accent-color:var(--accent)}
+  .maptoggles .tgset{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .maptoggles .tgsep{width:1px;align-self:stretch;background:var(--line);margin:2px 0}
+  @media (max-width:760px){.maptoggles .tgsep{display:none}
+    .maptoggles .tgset{flex:1 1 100%}
+    .maptoggles label{flex:1 1 auto;flex-wrap:wrap}
+    .maptoggles label select{min-width:0!important;max-width:100%;flex:1 1 140px}}
+  .mapdetail{border:1px solid var(--accent-line);border-radius:var(--radius);padding:16px;margin-top:12px;background:var(--panel);box-shadow:inset 0 0 0 1px var(--accent-soft)}
+  path.st{stroke:var(--line);stroke-width:.6;cursor:pointer;transition:fill .12s}
+  path.st:hover{stroke:var(--accent);stroke-width:1.2}
+  path.st.sel{stroke:var(--accent);stroke-width:1.8}
+  /* Icons + coordinated-view controls (map ↔ table brushing & linking) */
+  .icn{width:15px;height:15px;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .iconbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px;border:1px solid var(--line);
+    background:linear-gradient(180deg,var(--panel-2),color-mix(in srgb,var(--panel-2) 84%,#000));color:var(--muted);
+    border-radius:var(--radius-sm);cursor:pointer;box-shadow:var(--elev-1), var(--bevel);
+    transition:transform .1s var(--ease), box-shadow .16s var(--ease), color .13s ease, border-color .13s ease}
+  .iconbtn:hover{color:var(--text);border-color:var(--line-strong);transform:translateY(-1px);box-shadow:var(--elev-2), var(--bevel)}
+  .iconbtn:active{transform:translateY(1px);box-shadow:inset 0 2px 5px rgba(0,0,0,.26)}
+  .iconbtn.on{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:30px}
+  .chips .chlabel{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:4px 5px 4px 11px;border-radius:999px;
+    border:1px solid var(--accent-line);background:var(--accent-soft);color:var(--text);box-shadow:var(--bevel)}
+  .chip b{color:var(--muted);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.05em;margin-right:1px}
+  .chip .x{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border:none;background:transparent;
+    color:var(--muted);cursor:pointer;border-radius:50%;line-height:0;padding:0}
+  .chip .x:hover{background:var(--panel);color:var(--text)}
+  .chip .x .icn{width:11px;height:11px;stroke-width:2.4}
+  th.srt{cursor:pointer;user-select:none;white-space:nowrap}
+  th.srt:hover{color:var(--text)}
+  th.srt .car{display:inline-block;width:9px;margin-left:4px;opacity:.35;transition:opacity .12s}
+  th.srt.act .car{opacity:1;color:var(--accent)}
+  .cbrow{cursor:pointer;border-radius:6px;transition:background .12s}
+  .cbrow:hover{background:var(--panel-2)}
+  .cbrow.on .cblab{color:var(--accent);font-weight:600}
+  .lgd.tgl{cursor:pointer;padding:2px 7px;border-radius:999px;border:1px solid transparent;transition:all .12s}
+  .lgd.tgl:hover{border-color:var(--line)}
+  .lgd.tgl.on{border-color:var(--accent-line);background:var(--accent-soft);color:var(--text)}
+  .lgd.tgl.dim{opacity:.4}
+  .scopetag{font-size:11px;color:var(--accent);font-weight:600}
+  .toggle{background:var(--panel-2);border:1px solid var(--line);color:var(--muted);border-radius:var(--radius-sm);padding:6px 10px;transition:all .13s ease}
+  .toggle:hover{border-color:var(--line-strong);color:var(--text)}
+  .copywrap{display:flex;gap:8px;margin-top:6px}
+  .copywrap input{font-family:var(--mono);font-size:13px}
+  code{font-family:var(--mono);font-size:.92em;background:var(--panel-2);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+  textarea{width:100%;min-height:90px;background:var(--panel-2);border:1px solid var(--line);
+    border-radius:var(--radius-sm);color:var(--text);padding:11px 12px;font-size:13px;font-family:inherit;
+    transition:border-color .15s ease, box-shadow .15s ease}
+  textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  /* Responsive scale — desktop-first, graceful down to tablet, usable on phones */
+  @media(max-width:1200px){main{padding:38px 36px}}
+  @media(max-width:1040px){#app{grid-template-columns:220px minmax(0,1fr)}main{padding:32px 28px}}
+  @media(max-width:820px){#app{grid-template-columns:minmax(0,1fr)}
+    #side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 14px;
+      border-right:none;border-bottom:1px solid var(--line);box-shadow:inset 0 -1px 0 rgba(255,255,255,.04);padding:12px 16px}
+    #side nav{flex-direction:row;flex-wrap:wrap;margin-top:0;gap:4px;flex:1 1 100%}
+    #side nav a{justify-content:flex-start;padding:6px 10px}
+    #side .side-foot{margin-top:0;padding-top:0;border-top:none;flex-direction:row;align-items:center;flex:1 1 100%;justify-content:space-between}
+    main{padding:22px 18px}}
+  @media(max-width:560px){main{padding:18px 14px}.panel{padding:18px}.exstat .v{font-size:22px}}
+  /* Mobile-first-use notice — this is a desktop/tablet workspace */
+  #mobileNote{display:none}
+  @media(max-width:720px){
+    #mobileNote{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:200;gap:12px;align-items:center;justify-content:space-between;
+      background:var(--glass);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);
+      border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px 14px;box-shadow:var(--shadow), var(--bevel);
+      font-size:12.5px;color:var(--muted);line-height:1.4}
+    #mobileNote b{color:var(--text)}
+    #mobileNote.hide{display:none}
+    #mobileNote button{flex:none}
+  }
+
+  /* ---------- BIOS brand layer: typography, flat surfaces, no ornament ---------- */
+  body{background:var(--bg);font:18px/1.6 var(--font);font-synthesis:none}
+  h1,h2,h3,h4,.exhero .lead2,.exone,.exstat .v,.stat .v,.otile .ov{font-family:var(--display)}
+  h1,h2,h3,h4{font-weight:700;line-height:1.15;letter-spacing:-.02em}
+  .vhead h2{font-size:clamp(26px,3vw,34px);font-weight:700}
+  .vhead .lead{font-size:clamp(16px,1.5vw,18px);line-height:1.6;max-width:68ch}
+  .panel h3{font-size:19px;font-weight:700}
+  .panel .note,.excard p,.brief .bc p,.wn{font-size:16px;line-height:1.55}
+  .excard h4{font-size:17px} table{font-size:15px} nav a{font-size:15px} .lever .ld{font-size:14px}
+  .exstat .v,.stat .v,.otile .ov{font-weight:700}
+  a{text-decoration-thickness:.08em;text-underline-offset:.16em}
+  main{max-width:1240px}
+  #side{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .brand{flex-direction:column;align-items:flex-start;gap:2px;font-family:var(--display);font-weight:600;font-size:15px}
+  .brand:before{display:none}
+  .pdot{stroke:var(--bg);stroke-width:.5}
+  .bioslogo{display:block;width:208px;min-width:120px;height:auto;object-fit:contain}
+  .bioslogo.lg-light{display:none} :root[data-theme="light"] .bioslogo.lg-light{display:block} :root[data-theme="light"] .bioslogo.lg-dark{display:none}
+  #login .bioslogo{width:200px;margin:0 auto 4px}
+  nav a.active{background:var(--accent-soft);color:var(--accent);box-shadow:none}
+  .btn{background:var(--accent);box-shadow:none;font-family:var(--font)}
+  .btn:hover{transform:none;filter:none;box-shadow:none;background:color-mix(in srgb,var(--accent) 86%,var(--text))}
+  .btn:active{transform:none;filter:none;box-shadow:none}
+  .btn.ghost,.iconbtn,.resetbtn,.toggle{background:var(--panel);box-shadow:none}
+  .btn.ghost:hover,.iconbtn:hover,.resetbtn:hover{background:var(--panel-2);transform:none;box-shadow:none}
+  .btn.ghost:active,.iconbtn:active{transform:none;box-shadow:none;background:var(--panel-3)}
+  .mapctl button{background:var(--panel);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .mapctl button:hover,.mapctl button:active{transform:none;box-shadow:none;background:var(--panel-2)}
+  .stat:hover,.otile:hover,.exstat:hover,.excard:hover,.mcard:hover,.lift:hover,.lchip:hover{transform:none;box-shadow:none}
+  .exhero{background:var(--hero-wash),var(--panel)} .exhero:before{display:none}
+  .maplegend,#mobileNote{background:var(--panel);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .maptip{background:var(--panel);box-shadow:0 2px 8px rgba(17,24,39,.14)}
+  .dot{box-shadow:none}
+  .tlstep.fut:before{background:none;height:0;border-top:2px dashed var(--accent-line)}
+  /* Direction is not sentiment: scenario deltas show a signed value and arrow, never a good/bad color. */
+  .od.up,.od.down,.od.flat{color:var(--text)} .od.up:before{content:"\25B2\00a0";font-size:.8em} .od.down:before{content:"\25BC\00a0";font-size:.8em}
+  @media(max-width:767px){body{font-size:17px;line-height:1.55}}
+  /* Respect users who prefer less motion — keep the color/depth, drop the movement. */
+  .fnl{display:grid;gap:8px}
+  .fnlrow{display:flex;align-items:center;gap:14px;min-width:0}
+  .fnlbar{flex:0 0 auto;height:44px;background:var(--accent);border-radius:0 8px 8px 0;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;min-width:44px;box-sizing:border-box}
+  .fnlbar span{color:#fff;font-weight:700;font-size:13px}
+  .fnllab{min-width:0;font-size:14px;line-height:1.35}
+  /* tabs + accordions */
+  .tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:10px 12px;margin-bottom:-1px;font:inherit;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;border-radius:8px 8px 0 0}
+  .tab:hover{color:var(--text)}
+  .tab.on{color:var(--accent);border-bottom-color:var(--accent)}
+  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .tabn{font-weight:500;font-size:12px;color:var(--muted);margin-left:4px}
+  .polbar{display:flex;justify-content:flex-end;margin:8px 0 4px}
+  .acc{border-bottom:1px solid var(--line)}
+  .acc:last-child{border-bottom:0}
+  .acc summary{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:14px 4px;cursor:pointer;list-style:none}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary::before{content:"+";flex:0 0 16px;font-weight:600;color:var(--muted)}
+  .acc[open] summary::before{content:"–"}
+  .acc summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
+  .acct{flex:1 1 auto;font-weight:600;min-width:0}
+  .accb{padding:0 4px 16px 30px;color:var(--text);max-width:80ch;line-height:1.6}
+  .pill.st-conf{color:var(--good);border-color:color-mix(in srgb,var(--good) 40%,transparent);white-space:nowrap}
+  .pill.st-unc{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent);white-space:nowrap}
+  /* current-treatment view */
+  .hbars{display:grid;gap:6px}
+  .hb{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 62px;gap:10px;align-items:center;font-size:13px}
+  .hbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hbt{background:var(--panel-2);border-radius:4px;height:12px;overflow:hidden}
+  .hbf{height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+  .hbv{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+  #clsChips,#ageTgl,#trKinds{display:flex;flex-wrap:wrap;gap:6px}
+  #agDetail .twocol>div{min-width:0}
+  .tgset{max-width:100%;min-width:0}
+  .tgset label{max-width:100%;min-width:0}
+  .tgset select{max-width:100%;min-width:0!important;flex:1 1 auto}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .yn{white-space:nowrap}.yn.n{color:var(--muted)}
+  tr.agrow{cursor:pointer}
+  tr.agrow:hover td{background:var(--panel-2)}
+  tr.agrow.sel td{background:var(--accent-soft)}
+  tr.agrow:focus-visible,th.srt:focus-visible,.lgd.tgl:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  @media(max-width:680px){.hb{grid-template-columns:minmax(0,120px) minmax(0,1fr) 54px}}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+    .btn:hover,.btn:active,.btn.ghost:hover,.btn.ghost:active,.stat:hover,.otile:hover,.exstat:hover,.excard:hover,.mcard:hover,.lift:hover,.lchip:hover,.mapctl button:hover,.mapctl button:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="mobileNote">
+  <div>📐 <b>Best viewed on desktop or tablet.</b> This is a data-dense analytics workspace — wide tables and the map are built for larger screens; some content scrolls sideways on a phone.</div>
+  <button class="btn ghost sm" id="mnClose" type="button">Got it</button>
+</div>
+
+<div id="login" class="hidden">
+  <form class="card" id="loginForm" autocomplete="on">
+    <img class="bioslogo lg-light" src="assets/bios-logo-primary.svg" alt="BIOS" width="176" height="114"><img class="bioslogo lg-dark" src="assets/bios-logo-reverse-transparent.svg" alt="BIOS" width="176" height="114">
+    <h1>TS commercial intelligence</h1>
+    <p class="sub">Private access. Sign in to continue.</p>
+    <label for="u">Username</label>
+    <input id="u" name="username" autocomplete="username" autofocus>
+    <label for="p">Password</label>
+    <input id="p" name="password" type="password" autocomplete="current-password">
+    <div style="margin-top:18px"><button class="btn" style="width:100%" type="submit">Sign in</button></div>
+    <div class="err" id="loginErr"></div>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <aside id="side">
+    <div class="brand"><img class="bioslogo lg-light" src="assets/bios-logo-primary.svg" alt="BIOS" width="176" height="114"><img class="bioslogo lg-dark" src="assets/bios-logo-reverse-transparent.svg" alt="BIOS" width="176" height="114"><span>TS&nbsp;commercial&nbsp;intelligence<small id="brandSub">ecopipam / Teva · launch scenario planning</small></span></div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <div class="userchip"><span class="dot"></span><span id="who">—</span></div>
+      <div class="cite" id="asof"></div>
+      <div class="side-actions">
+        <button class="toggle" id="themeBtn" title="Toggle theme">◑ Theme</button>
+        <button class="btn ghost sm" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<script nonce="__CSP_NONCE__">
+"use strict";
+const S = { me:null, config:null, cache:{} };
+
+async function api(path, opts){
+  const r = await fetch(path, Object.assign({cache:'no-store', headers:{'Content-Type':'application/json'}}, opts||{}));
+  let data = {}; try{ data = await r.json(); }catch(e){}
+  if(r.status===401 && S.me && path!=='/api/login' && path!=='/api/me') sessionExpired();
+  return { ok:r.ok, status:r.status, data };
+}
+// A 401 mid-session means the session expired or was revoked: go back to sign-in.
+function sessionExpired(){
+  if(!S.me) return;
+  S.me=null; S.cache={}; showLogin();
+  const e=document.getElementById('loginErr'); if(e) e.textContent='Your session expired — please sign in again.';
+}
+async function getData(name){
+  if(S.cache[name]) return S.cache[name];
+  const r = await fetch('/data/'+name+'.json', {cache:'no-store'});
+  if(r.status===401){ sessionExpired(); throw new Error('session expired'); }
+  if(!r.ok) throw new Error('load '+name);
+  const j = await r.json(); S.cache[name]=j; return j;
+}
+function el(html){ const t=document.createElement('template'); t.innerHTML=html.trim(); return t.content.firstElementChild; }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+/* Inline stroke icons (crisp, theme-aware via currentColor) */
+const ICONS={
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  minus:'<path d="M5 12h14"/>',
+  fit:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',
+  reset:'<path d="M3 12a9 9 0 1 0 2.6-6.3"/><path d="M3 4v5h5"/>',
+  jump:'<path d="M12 4v13M6 11l6 6 6-6"/><path d="M5 21h14"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  loc:'<path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>'
+};
+function ic(name){ return '<svg class="icn" viewBox="0 0 24 24" aria-hidden="true">'+(ICONS[name]||'')+'</svg>'; }
+
+/* ---- citations ---- */
+let SRC = null;
+async function sources(){ if(!SRC){ SRC = (await getData('sources')).sources; } return SRC; }
+function cite(id){
+  if(!id) return '';
+  const s = SRC && SRC[id];
+  if(!s) return '<span class="cite">['+esc(id)+']</span>';
+  return '<span class="cite">— <a href="'+esc(s.url)+'" target="_blank" rel="noopener" title="'+esc(s.note||'')+'">'+esc(s.publisher||s.label)+'</a></span>';
+}
+
+/* ---- boot / auth ---- */
+async function boot(){
+  const me = await api('/api/me');
+  if(me.data && me.data.authenticated){ S.me = me.data.user; await showApp(); }
+  else showLogin();
+}
+function showLogin(){
+  document.getElementById('app').classList.add('hidden');
+  document.getElementById('login').classList.remove('hidden');
+  document.getElementById('u').focus();
+}
+document.getElementById('loginForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const err = document.getElementById('loginErr'); err.textContent='';
+  const username = document.getElementById('u').value.trim();
+  const password = document.getElementById('p').value;
+  const r = await api('/api/login', {method:'POST', body:JSON.stringify({username,password})});
+  if(r.ok){ S.me = r.data.user; document.getElementById('login').classList.add('hidden'); await showApp(); }
+  else { err.textContent = (r.data && r.data.error) || 'Sign-in failed.'; }
+});
+document.getElementById('logoutBtn').addEventListener('click', async ()=>{
+  await api('/api/logout', {method:'POST'}); S.me=null; S.cache={}; location.hash=''; showLogin();
+});
+
+/* ---- theme ---- */
+function initTheme(){
+  let saved='light'; try{ saved = localStorage.getItem('tsci_theme2') || 'light'; }catch(e){}
+  document.documentElement.setAttribute('data-theme', saved);
+}
+document.getElementById('themeBtn').addEventListener('click', ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const nxt = cur==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme', nxt);
+  try{ localStorage.setItem('tsci_theme2', nxt); }catch(e){}
+});
+(function(){ const n=document.getElementById('mobileNote'); if(!n) return;
+  try{ if(localStorage.getItem('tsci_mobilenote')==='dismissed') n.classList.add('hide'); }catch(e){}
+  const c=document.getElementById('mnClose'); if(c) c.addEventListener('click',()=>{ n.classList.add('hide'); try{localStorage.setItem('tsci_mobilenote','dismissed');}catch(e){} });
+})();
+
+/* ---- app frame ---- */
+async function showApp(){
+  document.getElementById('login').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  S.config = await getData('config');
+  await sources();
+  document.getElementById('who').textContent = S.me.display_name + (S.me.role==='admin'?' · admin':'');
+  if(S.config.subtitle) document.getElementById('brandSub').textContent = S.config.anchor_molecule+' / '+S.config.anchor_sponsor+' · launch scenario planning';
+  if(S.config.data_as_of){ const a=document.getElementById('asof'); if(a) a.textContent='Data verified '+fmtDate(S.config.data_as_of); }
+  buildNav();
+  if(!location.hash) location.hash = '#/executive';
+  route();
+}
+function buildNav(){
+  const nav = document.getElementById('nav'); nav.innerHTML='';
+  S.config.views.forEach(v=>{
+    const tag = v.status==='live' ? '' : '<span class="tag '+(v.status==='preview'?'':'soon')+'">'+v.status+'</span>';
+    nav.appendChild(el('<a href="#/'+v.id+'" data-view="'+v.id+'">'+esc(v.label)+tag+'</a>'));
+  });
+  if(S.me.role==='admin') nav.appendChild(el('<a href="#/admin" data-view="admin">Admin<span class="tag">admin</span></a>'));
+}
+window.addEventListener('hashchange', route);
+(function(){ const m=document.getElementById('main');
+  if(m && window.MutationObserver) new MutationObserver(()=>wrapTables(m)).observe(m,{childList:true,subtree:true}); })();
+function route(){
+  const id = (location.hash.replace('#/','')||'executive');
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('active', a.getAttribute('data-view')===id));
+  const main = document.getElementById('main'); main.scrollTop=0;
+  const fn = VIEWS[id] || (()=>renderSoon(id));
+  Promise.resolve(fn(main)).then(()=>wrapTables(main)).catch(e=>{ main.innerHTML='<div class="soon">Could not load this view.<br><span class="cite">'+esc(e.message)+'</span></div>'; });
+}
+// Wrap every table in a horizontal-scroll container so wide tables scroll within
+// their panel on narrow screens instead of forcing the whole page to overflow.
+function wrapTables(root){
+  root.querySelectorAll('table').forEach(t=>{
+    if(t.parentElement && t.parentElement.classList.contains('tscroll')) return;
+    const w=document.createElement('div'); w.className='tscroll';
+    t.parentNode.insertBefore(w,t); w.appendChild(t);
+  });
+}
+
+/* ---- SVG helpers ---- */
+function funnelSVG(stages){
+  // narrowing bars with the label beside each one, so long labels never clip
+  const n=stages.length, maxW=46, minW=14;
+  return '<div class="fnl">'+stages.map((s,i)=>{
+    const w=maxW-(maxW-minW)*(i/(n-1||1));
+    return '<div class="fnlrow"><div class="fnlbar" style="width:'+w.toFixed(1)+'%"><span>'+(i+1)+'</span></div>'
+      +'<div class="fnllab"><b>'+esc(s.label)+'</b>'+(s.note?'<div class="cite">'+esc(s.note)+'</div>':'')+'</div></div>';
+  }).join('')+'</div>';
+}
+function hbars(items){
+  const max=Math.max.apply(null, items.map(i=>i.pct));
+  let out='<div class="grid" style="gap:8px">';
+  items.forEach(i=>{
+    const w=Math.round(i.pct/max*100);
+    out+='<div style="display:grid;grid-template-columns:170px 1fr 46px;gap:10px;align-items:center">'
+      +'<div style="font-size:13px">'+esc(i.label)+'</div>'
+      +'<div style="background:var(--panel-2);border-radius:6px;overflow:hidden;height:14px"><div style="width:'+w+'%;height:100%;background:var(--accent)"></div></div>'
+      +'<div style="font-size:13px;font-weight:600;text-align:right">'+i.pct+'%</div></div>';
+  });
+  return out+'</div>';
+}
+function fmtDate(iso){ const p=String(iso).split('-'), M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return p.length<2?iso:(M[+p[1]-1]+(p[2]?' '+(+p[2])+',':'')+' '+p[0]); }
+function disc(){ return '<div class="disc">'+esc(S.config.disclaimer)+'</div>'; }
+
+/* ---- views ---- */
+async function renderLandscape(main){
+  const d = await getData('epidemiology');
+  let h = '<div class="vhead"><h2>Market landscape</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  h += '<div class="grid stats">'+d.stats.map(s=>'<div class="stat"><div class="v">'+esc(s.value)+'</div><div class="l">'+esc(s.label)+' '+cite(s.source)+'</div></div>').join('')+'</div>';
+  h += '<div class="panel"><h3>'+esc(d.funnel.title)+'</h3><p class="note">'+esc(d.funnel.note)+'</p>'+funnelSVG(d.funnel.stages)
+     + '<div class="cite" style="margin-top:10px">Stages: '+d.funnel.stages.map(s=>esc(s.label)+' '+cite(s.source)).join(' · ')+'</div></div>';
+  h += '<div class="panel"><h3>'+esc(d.comorbidity.title)+'</h3><p class="note">'+esc(d.comorbidity.note)+'</p>'+hbars(d.comorbidity.items)
+     + '<div class="cite" style="margin-top:10px">'+d.comorbidity.items.map(i=>esc(i.label)+' '+cite(i.source)).join(' · ')+'</div></div>';
+  h += '<div class="panel"><h3>Regional read</h3><p class="note" style="margin:0">'+esc(d.regional_caveat)+'</p></div>';
+  h += disc();
+  main.innerHTML = h;
+}
+async function renderJourney(main){
+  const d = await getData('patient_journey');
+  let h = '<div class="vhead"><h2>Patient journey</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  h += '<div class="panel"><h3>Diagnosis → specialist → treatment</h3><div class="ladder">';
+  d.stages.forEach(s=>{
+    h += '<div class="rung"><div class="bar">Step '+s.step+'</div><div class="body"><b>'+esc(s.title)+'</b> <span class="for">· '+esc(s.who)+'</span><div class="rn">'+esc(s.detail)+' '+cite(s.source)+'</div></div></div>';
+  });
+  h += '</div></div>';
+  h += '<div class="panel"><h3>Where patients leak out of the funnel</h3><table><thead><tr><th>Leak point</th><th>Detail</th></tr></thead><tbody>'
+     + d.leak_points.map(l=>'<tr><td><b>'+esc(l.label)+'</b></td><td>'+esc(l.detail)+' '+cite(l.source)+'</td></tr>').join('')+'</tbody></table></div>';
+  h += '<div class="panel"><h3>'+esc(d.ecosystem.title)+'</h3><p class="note">'+esc(d.ecosystem.note)+'</p>'
+     + '<div>'+d.ecosystem.actors.map(a=>'<span class="pill" style="margin:3px 4px 3px 0">'+esc(a)+'</span>').join('')+'</div></div>';
+  h += disc();
+  main.innerHTML = h;
+}
+async function renderTreatment(main){
+  const d = await getData('treatment_landscape');
+  let h = '<div class="vhead"><h2>Treatment algorithm</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  h += '<div class="panel"><h3>'+esc(d.algorithm.title)+' '+cite(d.algorithm.source)+'</h3><div class="ladder">';
+  d.algorithm.rungs.forEach(r=>{
+    h += '<div class="rung"><div class="bar">Tier '+r.tier+'</div><div class="body"><b>'+esc(r.label)+'</b> <span class="for">· '+esc(r.for)+'</span><div class="rn">'+esc(r.note)+(r.source?' '+cite(r.source):'')+'</div></div></div>';
+  });
+  h += '</div><p class="note" style="margin-top:12px"><b>Ecopipam slot:</b> '+esc(d.algorithm.ecopipam_slot)+'</p></div>';
+  h += '<div class="panel"><h3>Competitive field</h3><table><thead><tr><th>Agent</th><th>Class</th><th>TS status</th><th>Key liabilities</th><th>Availability</th><th>Threat</th></tr></thead><tbody>';
+  d.competitors.forEach(c=>{
+    const th = /high/i.test(c.threat)?'high':(/mod/i.test(c.threat)?'med':'low');
+    h += '<tr><td><b>'+esc(c.name)+'</b> '+cite(c.source)+'</td><td>'+esc(c.class)+'</td><td>'+esc(c.ts_status)+'</td><td>'+esc(c.liabilities)+'</td><td>'+esc(c.cost)+'</td><td><span class="pill '+th+'">'+esc(c.threat)+'</span></td></tr>';
+  });
+  h += '</tbody></table></div>';
+  const e=d.ecopipam;
+  h += '<div class="panel" style="border-color:var(--accent)"><h3>'+esc(e.name)+' — the anchor</h3>'
+     + '<table><tbody>'
+     + '<tr><td style="width:120px;color:var(--muted)">Class</td><td>'+esc(e.class)+'</td></tr>'
+     + '<tr><td style="color:var(--muted)">Status</td><td>'+esc(e.ts_status)+'</td></tr>'
+     + '<tr><td style="color:var(--muted)">Efficacy</td><td>'+esc(e.efficacy)+'</td></tr>'
+     + '<tr><td style="color:var(--muted)">Tolerability</td><td>'+esc(e.tolerability)+'</td></tr>'
+     + '</tbody></table><div class="cite" style="margin-top:8px">'+(e.sources||[]).map(cite).join(' · ')+'</div></div>';
+  h += '<div class="panel"><h3>'+esc(d.austedo_dynamic.title)+'</h3><p class="note" style="margin:0">'+esc(d.austedo_dynamic.note)+' '+cite(d.austedo_dynamic.source)+'</p></div>';
+  h += disc();
+  main.innerHTML = h;
+}
+/* ---- Current treatment (public-record view of agents in use today) ---- */
+function rbars(items, unit){
+  const max=Math.max.apply(null, items.map(i=>i.n).concat([1]));
+  return '<div class="hbars">'+items.map(i=>'<div class="hb"><div class="hbl" title="'+esc(i.term)+'">'+esc(i.term)+'</div>'
+    +'<div class="hbt"><div class="hbf" style="width:'+Math.max(1,Math.round(i.n/max*100))+'%"></div></div>'
+    +'<div class="hbv">'+Number(i.n).toLocaleString()+'</div></div>').join('')+'</div>'
+    +(unit?'<div class="cite" style="margin-top:6px">'+esc(unit)+'</div>':'');
+}
+function yn(v, yes, no){ return v==null?'—':(v?'<span class="yn y">● '+esc(yes||'Yes')+'</span>':'<span class="yn n">○ '+esc(no||'No')+'</span>'); }
+async function renderCurrent(main){
+  const cur = await getData('current_treatment');
+  const pd = await getData('public_data');
+  const CONF_RANK={'Moderate':2,'Low':1,'Not rated':0};
+  const rows = cur.agents.map(a=>{
+    const p = pd.agents[a.generic]||{}, l=p.label||{};
+    return {a:a, p:p, generic:a.generic, cls:a.class, onlabel:l.tourette_indication?1:0, conf:CONF_RANK[a.aan_confidence]||0,
+      boxed:l.boxed_warning?1:0, makers:p.approved_sponsors, supply:(p.supply||{}).records||0,
+      papers:(p.pubmed||{}).total||0, reports:((p.faers||{}).under_18||{}).total||0,
+      rx:(p.medicaid&&p.medicaid.latest_full_year)?p.medicaid.by_year.filter(y=>y.year===p.medicaid.latest_full_year)[0].rx:null};
+  });
+  const hasRx = !!pd.has_medicaid && rows.some(r=>r.rx!=null);
+  const CLASSES=['All'].concat(Array.from(new Set(rows.map(r=>r.cls))));
+  let cls='All', sortKey='conf', sortDir=-1, sel=rows[0].generic, ageKey='under_18';
+  const nLabel=rows.filter(r=>r.onlabel).length, nBoxed=rows.filter(r=>r.boxed).length, nSupply=rows.filter(r=>r.supply>0).length;
+  const f=pd.fetched||{};
+  let h='<div class="vhead"><h2>Current treatment</h2><div class="lead">Tourette syndrome is treated today, mostly with older generic medicines used off-label. This view shows what the public record says about each agent in use.</div></div>';
+  h+='<div class="grid stats">'
+    +'<div class="stat"><div class="v">'+nLabel+' of '+rows.length+'</div><div class="l">agents carry a Tourette indication on the FDA label '+cite('openfda')+'</div></div>'
+    +'<div class="stat"><div class="v">'+nBoxed+' of '+rows.length+'</div><div class="l">carry a boxed warning on the label reviewed '+cite('openfda')+'</div></div>'
+    +'<div class="stat"><div class="v">'+nSupply+'</div><div class="l">agents with FDA supply or discontinuation notices '+cite('openfda')+'</div></div>'
+    +'<div class="stat"><div class="v">'+(pd.trials?pd.trials.open_count:'—')+'</div><div class="l">registered studies open now <a href="#/pipeline">see pipeline</a> '+cite('ctgov')+'</div></div>'
+    +'</div>';
+  h+='<div class="panel"><h3>Agents in use</h3>'
+    +'<p class="note">Select a row for detail. Evidence is the 2019 AAN systematic review\'s confidence that the agent reduces tics more than placebo '+cite(cur.evidence_source)+'. '+esc(cur.confidence_note)+'</p>'
+    +'<div class="legend" id="clsChips" style="margin-bottom:12px"></div>'
+    +'<table id="agTable"><thead><tr>'
+    +[['generic','Agent'],['cls','Class'],['onlabel','On label'],['conf','Evidence'],['boxed','Boxed warning'],['makers','Makers'],['supply','Supply'],['papers','Papers']]
+      .concat(hasRx?[['rx','Medicaid Rx']]:[])
+      .map(c=>'<th class="srt" data-k="'+c[0]+'" tabindex="0" role="button">'+c[1]+'<span class="car"></span></th>').join('')
+    +'</tr></thead><tbody></tbody></table></div>';
+  h+='<div class="panel" id="agDetail"></div>';
+  if(cur.guidelines){ const g=cur.guidelines, ER={'Preferred':3,'Can be considered':2,'Treatment-resistant cases':1,'Not named':0};
+    const gl=cur.agents.slice().sort((x,y)=>(ER[y.essts.position]-ER[x.essts.position])||((CONF_RANK[y.aan_confidence]||0)-(CONF_RANK[x.aan_confidence]||0))||x.generic.localeCompare(y.generic));
+    h+='<div class="panel"><h3>What the guidelines say</h3><p class="note">'+esc(g.intro)+'</p>'
+      +'<table><thead><tr><th>Agent</th><th>'+esc(g.aan.label)+' '+cite(g.aan.source)+'<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Evidence confidence</span></th><th>'+esc(g.essts.label)+' '+cite(g.essts.source)+'<br><span style="font-weight:400;text-transform:none;letter-spacing:0">Place in practice</span></th></tr></thead><tbody>'
+      +gl.map(a=>'<tr><td><b>'+esc(a.generic.charAt(0).toUpperCase()+a.generic.slice(1))+'</b></td><td>'+esc(a.aan_confidence)+'</td><td>'+(a.essts.position==='Not named'?'<span style="color:var(--muted)">Not named</span>':'<b>'+esc(a.essts.position)+'</b><div class="cite">'+esc(a.essts.note)+'</div>')+'</td></tr>').join('')
+      +'</tbody></table><div class="cite" style="margin-top:8px">'+esc(g.essts.note)+'</div>'
+      +'<h4 style="margin:16px 0 6px">Reading across the two</h4><ul class="note" style="margin:0;padding-left:18px">'+g.takeaways.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>'
+      +'<p class="note" style="margin:12px 0 0">'+esc(g.also.text)+' '+cite(g.also.source)+'</p></div>'; }
+  if(cur.oversight){ const o=cur.oversight;
+    h+='<div class="panel"><h3>'+esc(o.title)+'</h3><p class="note">'+esc(o.intro)+'</p>'
+      +'<table><tbody>'+o.facts.map(f=>'<tr><td style="width:150px;color:var(--muted);white-space:nowrap">'+esc(f.when)+'</td><td>'+esc(f.text)+' '+cite(f.source)+'</td></tr>').join('')+'</tbody></table>'
+      +'<p class="note" style="margin:12px 0 0"><b style="color:var(--text)">Why it matters:</b> '+esc(o.why)+'</p>'
+      +'<p class="note" style="margin:8px 0 0"><b style="color:var(--text)">What is missing:</b> '+esc(o.gap)+'</p></div>'; }
+  h+='<div class="panel"><h3>Research output on Tourette syndrome '+cite('pubmed')+'</h3><p class="note">PubMed records indexed to Tourette syndrome, by publication year. '+(new Date().getFullYear())+' is a partial year and recent years are undercounted while indexing catches up.</p><div id="pubChart"></div></div>';
+  h+='<div class="panel"><h3>How to read this</h3><ul class="note" style="margin:0;padding-left:18px">'
+    +'<li>None of these sources is specific to Tourette syndrome. Most of these medicines are used far more for other conditions, so volumes describe the medicine, not the treated Tourette population.</li>'
+    +'<li>"On label" checks whether Tourette syndrome is named in the indications of one representative current label per agent; other formulations can differ.</li>'
+    +'<li>"Makers" counts sponsors with a non-discontinued FDA application. It is a proxy for generic availability, not products on the shelf.</li>'
+    +'<li>"Supply" counts records in FDA\'s shortage and discontinuation database; "Papers" counts PubMed records on Tourette syndrome that mention the agent.</li><li>"Medicaid Rx" is prescriptions paid by state Medicaid programs in the latest full year '+cite('medicaid_sdud')+'. It covers Medicaid only and every use of the medicine, and it is a count of prescriptions, not patients.</li><li>Adverse event counts are spontaneous reports to FDA. They are not rates, do not show the medicine caused the event, and cannot be used to compare safety between medicines.</li>'
+    +'</ul><div class="cite" style="margin-top:10px">Pulled '+esc(fmtDate((f.labels||'').slice(0,10)))+' · adverse event data through '+esc(fmtDate(f.faers_data_through||''))+'</div></div>';
+  h+=disc();
+  main.innerHTML=h;
+
+  function drawChips(){
+    document.getElementById('clsChips').innerHTML=CLASSES.map(c=>'<span class="lgd tgl'+(c===cls?' on':'')+'" data-c="'+esc(c)+'" tabindex="0" role="button">'+esc(c)+'</span>').join('');
+    document.querySelectorAll('#clsChips .tgl').forEach(el=>{ const go=()=>{cls=el.getAttribute('data-c'); drawChips(); drawTable();};
+      el.onclick=go; el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  function drawTable(){
+    const list=rows.filter(r=>cls==='All'||r.cls===cls).sort((x,y)=>{
+      const a=x[sortKey], b=y[sortKey];
+      if(a==null&&b==null) return 0; if(a==null) return 1; if(b==null) return -1;
+      return (typeof a==='string'? a.localeCompare(b) : a-b)*sortDir || x.generic.localeCompare(y.generic);
+    });
+    if(!list.some(r=>r.generic===sel) && list.length) sel=list[0].generic;
+    document.querySelector('#agTable tbody').innerHTML=list.map(r=>{
+      const l=r.p.label||{};
+      return '<tr class="agrow'+(r.generic===sel?' sel':'')+'" data-g="'+esc(r.generic)+'" tabindex="0">'
+        +'<td><b>'+esc(r.generic.charAt(0).toUpperCase()+r.generic.slice(1))+'</b>'+(r.a.brands.length?' <span class="cite">'+esc(r.a.brands.join(', '))+'</span>':'')+'</td>'
+        +'<td>'+esc(r.cls)+'</td>'
+        +'<td>'+yn(l.tourette_indication,'Yes','No')+'</td>'
+        +'<td>'+esc(r.a.aan_confidence)+'</td>'
+        +'<td>'+yn(l.boxed_warning,'Yes','No')+'</td>'
+        +'<td class="num">'+(r.makers!=null?r.makers:'—')+'</td>'
+        +'<td class="num">'+(r.supply||'None')+'</td>'
+        +'<td class="num">'+r.papers.toLocaleString()+'</td>'
+        +(hasRx?'<td class="num">'+(r.rx!=null?r.rx.toLocaleString():'—')+'</td>':'')
+        +'</tr>';
+    }).join('');
+    document.querySelectorAll('#agTable th.srt').forEach(th=>{ const k=th.getAttribute('data-k'); const on=k===sortKey;
+      th.classList.toggle('act',on); th.setAttribute('aria-sort', on?(sortDir>0?'ascending':'descending'):'none');
+      th.querySelector('.car').textContent=on?(sortDir>0?'▲':'▼'):'↕'; });
+    document.querySelectorAll('#agTable .agrow').forEach(tr=>{ const go=()=>{sel=tr.getAttribute('data-g'); drawTable();};
+      tr.onclick=go; tr.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+    drawDetail();
+  }
+  function drawDetail(){
+    const r=rows.filter(x=>x.generic===sel)[0], el=document.getElementById('agDetail');
+    if(!r){ el.innerHTML=''; return; }
+    const p=r.p, l=p.label||{}, fa=p.faers||{}, pm=p.pubmed||{}, sup=p.supply||{items:[]};
+    const name=r.generic.charAt(0).toUpperCase()+r.generic.slice(1);
+    const kv=(k,v)=>'<tr><td style="width:150px;color:var(--muted)">'+k+'</td><td>'+v+'</td></tr>';
+    let left='<table><tbody>'
+      +kv('Class',esc(r.cls))+kv('Mechanism',esc(r.a.mechanism))+kv('Role today',esc(r.a.role))
+      +kv('Evidence (US)',esc(r.a.aan_confidence)+' confidence '+cite(cur.evidence_source))
+      +(r.a.essts?kv('Guideline (Europe)',esc(r.a.essts.note)+' '+cite('essts_2022')):'')
+      +kv('Label reviewed', l.product? esc(l.product)+(l.is_reference_brand?'':' (generic label; brand label not in openFDA)')+(l.effective?', effective '+esc(fmtDate(l.effective)):'')
+          +(l.set_id&&/^[0-9a-f-]{36}$/.test(l.set_id)?' · <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid='+l.set_id+'" target="_blank" rel="noopener">full label</a>':'') : '—')
+      +kv('Tourette indication', l.tourette_indication?'Named in the label\'s indications':'Not named in the label\'s indications (use is off-label)')
+      +kv('Boxed warning', l.boxed_warning? esc(l.boxed_warning_text||'Yes') : 'None on the label reviewed')
+      +kv('Approved makers', p.approved_sponsors!=null? p.approved_sponsors+' sponsors across '+p.approved_applications+' applications':'—')
+      +'</tbody></table>';
+    left+='<h4 style="margin:16px 0 6px">Supply notices</h4>'+(sup.items&&sup.items.length?
+      '<table><thead><tr><th>Presentation</th><th>Status</th><th>Company</th><th>Updated</th></tr></thead><tbody>'+sup.items.map(s=>'<tr><td>'+esc(s.presentation)+'</td><td>'+esc(s.status)+'</td><td>'+esc(s.company)+'</td><td>'+esc(s.updated)+'</td></tr>').join('')+'</tbody></table>'
+      :'<p class="note" style="margin:0">No records in FDA\'s shortage database on the pull date. That is not a statement that supply is unconstrained.</p>');
+    const blk=fa[ageKey];
+    let right='<h4 style="margin:0 0 6px">Most-reported reactions</h4>'
+      +'<div class="legend" id="ageTgl" style="margin-bottom:10px">'
+      +[['under_18','Under 18'],['all_ages','All ages']].map(o=>'<span class="lgd tgl'+(o[0]===ageKey?' on':'')+'" data-a="'+o[0]+'" tabindex="0" role="button">'+o[1]+(fa[o[0]]?' · '+fa[o[0]].total.toLocaleString()+' reports':'')+'</span>').join('')+'</div>'
+      +(blk&&blk.top.length? rbars(blk.top,'Reports listing the agent in any role. A report can list several reactions. Not a rate.') : '<p class="note">No reports returned for this group.</p>');
+    right+='<h4 style="margin:18px 0 6px">Evidence base</h4><p class="note" style="margin:0 0 8px">'+(pm.total||0).toLocaleString()+' Tourette papers mention this agent, including '+(pm.rct||0)+' tagged as randomized trials and '+(pm.reviews||0)+' as meta-analyses or systematic reviews.</p>'
+      +((pm.recent||[]).length?'<ul class="note" style="margin:0;padding-left:18px">'+pm.recent.filter(x=>/^\d+$/.test(String(x.pmid))).map(x=>'<li><a href="https://pubmed.ncbi.nlm.nih.gov/'+x.pmid+'/" target="_blank" rel="noopener">'+esc(x.title)+'</a> <span class="cite">'+esc(x.journal)+', '+esc(x.year)+'</span></li>').join('')+'</ul>':'');
+    if(p.medicaid && p.medicaid.by_year.length){
+      right+='<h4 style="margin:18px 0 6px">Medicaid prescriptions, all uses</h4>'+rbars(p.medicaid.by_year.map(y=>({term:y.year+(y.complete?'':' (partial)'),n:y.rx})),'State Medicaid programs, every use of the medicine, all formulations pooled.'+(p.medicaid.suppressed_share!=null?' CMS hides product-level rows under 11 prescriptions; '+Math.round(p.medicaid.suppressed_share*100)+'% of rows were hidden in '+p.medicaid.latest_full_year+', so true volume is higher.':''))
+        +(function(){ const rt=p.medicaid.rate_by_state; if(!rt||!Object.keys(rt).length) return '';
+            const st=Object.entries(rt).sort((x,y)=>y[1]-x[1]), f=x=>esc(x[0])+' '+x[1].toLocaleString();
+            return '<h4 style="margin:18px 0 6px">Medicaid prescriptions per 1,000 enrollees, '+p.medicaid.latest_full_year+'</h4>'
+              +'<table><tbody><tr><td style="width:150px;color:var(--muted)">National</td><td>'+p.medicaid.rate_national.toLocaleString()+'</td></tr>'
+              +'<tr><td style="color:var(--muted)">Highest states</td><td>'+st.slice(0,5).map(f).join(' · ')+'</td></tr>'
+              +'<tr><td style="color:var(--muted)">Lowest states</td><td>'+st.slice(-5).reverse().map(f).join(' · ')+'</td></tr></tbody></table>'
+              +'<div class="cite" style="margin-top:6px">Prescriptions for every use and every age, divided by average monthly Medicaid and CHIP enrollment '+cite('medicaid_enroll')+'. States count enrollment differently and hidden rows lower the count more in small states, so treat gaps between states as directional.</div>'; })();
+    }
+    el.innerHTML='<h3>'+esc(name)+(r.a.brands.length?' <span class="cite">'+esc(r.a.brands.join(', '))+'</span>':'')+'</h3><div class="twocol"><div>'+left+'</div><div>'+right+'</div></div>';
+    el.querySelectorAll('#ageTgl .tgl').forEach(t=>{ const go=()=>{ageKey=t.getAttribute('data-a'); drawDetail();};
+      t.onclick=go; t.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  document.querySelectorAll('#agTable th.srt').forEach(th=>{ const go=()=>{const k=th.getAttribute('data-k'); if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir=(k==='generic'||k==='cls')?1:-1;} drawTable();};
+    th.onclick=go; th.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  // publications by year: single series, value on hover and at the ends
+  (function(){
+    const ys=pd.pubmed_by_year||[]; if(!ys.length) return;
+    const W=720,H=180,L=34,B=24,T=14, max=Math.max.apply(null,ys.map(y=>y.n)), bw=(W-L-6)/ys.length;
+    const thisYear=new Date().getFullYear();
+    let s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:'+W+'px;height:auto" role="img" aria-label="PubMed records on Tourette syndrome by year">';
+    [0,.5,1].forEach(t=>{const y=T+(H-T-B)*(1-t); s+='<line x1="'+L+'" x2="'+W+'" y1="'+y+'" y2="'+y+'" stroke="var(--line)" stroke-width="1"/><text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="var(--muted)">'+Math.round(max*t)+'</text>';});
+    ys.forEach((y,i)=>{ const bh=(H-T-B)*y.n/max, x=L+i*bw+2, partial=y.year>=thisYear;
+      s+='<rect x="'+x.toFixed(1)+'" y="'+(H-B-bh).toFixed(1)+'" width="'+(bw-4).toFixed(1)+'" height="'+bh.toFixed(1)+'" rx="3" fill="var(--accent)"'+(partial?' fill-opacity=".45"':'')+'><title>'+y.year+(partial?' (partial)':'')+': '+y.n+' records</title></rect>';
+      if(i%2===0||i===ys.length-1) s+='<text x="'+(x+(bw-4)/2).toFixed(1)+'" y="'+(H-7)+'" text-anchor="middle" font-size="11" fill="var(--muted)">'+y.year+'</text>'; });
+    s+='</svg>';
+    document.getElementById('pubChart').innerHTML=s;
+  })();
+  drawChips(); drawTable();
+}
+/* registered open studies, appended to the Pipeline view */
+function openTrialsPanel(pd){
+  const t=pd.trials; if(!t) return '';
+  return '<div class="panel" id="trialsPanel"><h3>Registered studies open now '+cite('ctgov')+'</h3>'
+    +'<p class="note">'+t.open_count+' studies listing Tourette syndrome or a tic disorder are recruiting, about to recruit, or active, out of '+t.total_registered+' ever registered. Sponsor-reported; registry records can lag announcements.</p>'
+    +'<div class="legend" id="trKinds" style="margin-bottom:12px"></div><div id="trTable"></div></div>';
+}
+function wireOpenTrials(pd){
+  const t=pd.trials; if(!t||!document.getElementById('trKinds')) return;
+  const KINDS=[['ALL','All'],['DRUG','Drug'],['BEHAVIORAL','Behavioral'],['DEVICE','Device'],['US','US sites']];
+  const STAT={RECRUITING:'Recruiting',NOT_YET_RECRUITING:'Not yet recruiting',ACTIVE_NOT_RECRUITING:'Active, not recruiting',ENROLLING_BY_INVITATION:'By invitation'};
+  let kind='DRUG';
+  function draw(){
+    const list=t.open.filter(s=>kind==='ALL'||(kind==='US'?s.us_states.length>0:s.kinds.indexOf(kind)>=0));
+    document.getElementById('trKinds').innerHTML=KINDS.map(k=>{const n=t.open.filter(s=>k[0]==='ALL'||(k[0]==='US'?s.us_states.length>0:s.kinds.indexOf(k[0])>=0)).length;
+      return '<span class="lgd tgl'+(k[0]===kind?' on':'')+'" data-k="'+k[0]+'" tabindex="0" role="button">'+k[1]+' · '+n+'</span>';}).join('');
+    document.getElementById('trTable').innerHTML='<table><thead><tr><th>Study</th><th>Sponsor</th><th>Intervention</th><th>Phase</th><th>Status</th><th>US states</th><th>Primary completion</th></tr></thead><tbody>'
+      +list.map(s=>'<tr><td>'+(/^NCT\d{8}$/.test(s.nct)?'<a href="https://clinicaltrials.gov/study/'+s.nct+'" target="_blank" rel="noopener">'+esc(s.title)+'</a>':esc(s.title))+' <span class="cite">'+esc(s.nct)+'</span></td>'
+        +'<td>'+esc(s.sponsor)+'</td><td>'+esc(s.interventions.join(', '))+'</td><td>'+esc(s.phase)+'</td><td>'+esc(STAT[s.status]||s.status)+'</td>'
+        +'<td class="num" title="'+esc(s.us_states.join(', '))+'">'+(s.us_states.length||'—')+'</td><td>'+esc(s.primary_completion||'—')+'</td></tr>').join('')
+      +'</tbody></table>';
+    document.querySelectorAll('#trKinds .tgl').forEach(el=>{ const go=()=>{kind=el.getAttribute('data-k'); draw();};
+      el.onclick=go; el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  draw();
+}
+function cbars(items){
+  const max=Math.max.apply(null, items.map(i=>i.value))||1;
+  return '<div class="grid" style="gap:6px">'+items.map(i=>'<div style="display:grid;grid-template-columns:150px 1fr 46px;gap:10px;align-items:center">'
+    +'<div style="font-size:13px">'+esc(i.label)+'</div>'
+    +'<div style="background:var(--panel-2);border-radius:6px;overflow:hidden;height:14px"><div style="width:'+Math.round(i.value/max*100)+'%;height:100%;background:var(--accent)"></div></div>'
+    +'<div style="font-size:13px;font-weight:600;text-align:right">'+i.value+'</div></div>').join('')+'</div>';
+}
+const TYPE_COLORS={'Physician':'#2457D6','Clinic/Center':'#0B6B50','Psychologist':'#7A3E9D','Social worker':'#9A4D00','Occupational therapist':'#006B75','Counselor':'#B4233C','Other':'#42526E','BCBA':'#6B5E00'};
+const ST_REGION={CT:'Northeast',ME:'Northeast',MA:'Northeast',NH:'Northeast',RI:'Northeast',VT:'Northeast',NJ:'Northeast',NY:'Northeast',PA:'Northeast',IL:'Midwest',IN:'Midwest',MI:'Midwest',OH:'Midwest',WI:'Midwest',IA:'Midwest',KS:'Midwest',MN:'Midwest',MO:'Midwest',NE:'Midwest',ND:'Midwest',SD:'Midwest',DE:'South',FL:'South',GA:'South',MD:'South',NC:'South',SC:'South',VA:'South',DC:'South',WV:'South',AL:'South',KY:'South',MS:'South',TN:'South',AR:'South',LA:'South',OK:'South',TX:'South',AZ:'West',CO:'West',ID:'West',MT:'West',NV:'West',NM:'West',UT:'West',WY:'West',AK:'West',CA:'West',HI:'West',OR:'West',WA:'West'};
+async function renderChannel(main){
+  const d = await getData('channel_sites');
+  const dir = await getData('channel_directory');
+  const geo = await getData('geo_map');
+  const provs = geo.providers;
+  const META = geo.state_metric_meta||{};
+  const METRICS=[
+    {k:'providers',label:'Providers (count)',note:'TAA providers in the directory',fmt:v=>v},
+    {k:'child_u18',label:'Children under 18',note:'Census-based child population',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'est_pool',label:'Est. diagnosed TS pool',note:'CDC ~174k allocated by child population',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'per_100k',label:'Providers per 100k children',note:'higher = better served',fmt:v=>v!=null?v:'—'},
+    {k:'ppp',label:'Est. patients per provider (access gap)',note:'higher = more underserved',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'open_trials',label:'Open Tourette studies with a site',note:'ClinicalTrials.gov, open studies with a site in the state',fmt:v=>v!=null?v:'—'},
+    {k:'child_neuro',label:'Child neurologists (count)',note:'NPI Registry, self-reported taxonomy',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'neuro_per_100k',label:'Child neurologists per 100k children',note:'higher = better served',fmt:v=>v!=null?v:'—'},
+    {k:'alpha2_rx_per_1k',label:'Alpha-2 agonist Medicaid Rx per 1,000 enrollees',note:'Guanfacine + clonidine, 2025, every use and age; directional',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'medicaid_child',label:'Children in Medicaid and CHIP',note:'2025 average monthly; includes all CHIP enrollees',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'child_psych',label:'Child & adolescent psychiatrists (count)',note:'NPI Registry; CA and NY exceed the registry query cap and show no data',fmt:v=>v!=null?v.toLocaleString():'—'}
+  ];
+  let metricIdx=0, filterState='', scaleMode='quantile', sortKey='name', sortDir=1;
+  let h = '<div class="vhead"><h2>Channel &amp; sites</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  h += '<div class="panel"><h3>Channel model</h3><p class="note">'+esc(d.channel_model.note)+'</p>'
+     + '<table><thead><tr><th>Prescriber</th><th>NPI taxonomy</th><th>Role</th></tr></thead><tbody>'
+     + d.channel_model.prescriber_taxonomies.map(t=>'<tr><td><b>'+esc(t.label)+'</b></td><td><code>'+esc(t.npi_taxonomy)+'</code></td><td>'+esc(t.role)+'</td></tr>').join('')
+     + '</tbody></table><div class="cite" style="margin-top:8px">'+esc(d.channel_model.npi_pull_status)+'</div></div>';
+  const VB=geo.viewBox.split(' ').map(Number);
+  let svg='<svg id="usmap" viewBox="'+geo.viewBox+'">';
+  svg+='<g id="gStates">'+geo.states.map(s=>'<path class="st" data-code="'+s.code+'" d="'+s.path+'" fill="var(--seq0)" fill-opacity="1"></path>').join('')+'</g>';
+  svg+='<g id="gProv">'+provs.map((p,i)=>'<circle class="pdot" data-pi="'+i+'" cx="'+p.x+'" cy="'+p.y+'" r="2.3" fill="'+(TYPE_COLORS[p.ptype]||'#42526E')+'" fill-opacity=".78"/>').join('')+'</g>';
+  svg+='<g id="gCoe">'+geo.coes.map((c,i)=>'<g class="coeMk" data-ci="'+i+'"><circle cx="'+c.x+'" cy="'+c.y+'" r="4.6" fill="var(--warn)" stroke="#fff" stroke-width="1"/></g>').join('')+'</g>';
+  svg+='<g id="gMetro" style="display:none">'+(geo.metros||[]).map((m,i)=>'<circle class="metroMk" data-mi="'+i+'" cx="'+m.x+'" cy="'+m.y+'" r="'+(3+Math.sqrt(m.providers)*1.3).toFixed(1)+'" fill="var(--accent)" fill-opacity=".1" stroke="var(--accent)" stroke-width="1.4"/>').join('')+'</g>';
+  svg+='</svg>';
+  const typeLegend=geo.type_counts.map(t=>'<span class="lgd tgl" data-type="'+esc(t.type)+'" title="Filter to '+esc(t.type)+'"><span style="width:10px;height:10px;border-radius:50%;background:'+(TYPE_COLORS[t.type]||'#42526E')+';display:inline-block"></span>'+esc(t.type)+'</span>').join('');
+  h += '<div class="panel"><h3>Provider &amp; market map '+cite(dir.source)+'</h3>'
+     + '<p class="note">Shade the states by any metric, color providers by type, and click a state or point to dive into the detail. Scroll or drag to zoom.</p>'
+     + '<div class="grid stats" style="margin-bottom:8px">'
+     + '<div class="stat"><div class="v">'+dir.count.toLocaleString()+'</div><div class="l">providers in the directory</div></div>'
+     + '<div class="stat"><div class="v">'+dir.east_total.toLocaleString()+'</div><div class="l">in the East (Northeast + South)</div></div>'
+     + '<div class="stat"><div class="v">'+dir.by_state.length+'</div><div class="l">states + DC covered</div></div>'
+     + '<div class="stat"><div class="v">'+provs.filter(p=>p.email).length+'</div><div class="l">with a listed email</div></div>'
+     + '</div>'
+     + '<div class="maptoggles">'
+     + '<span class="tgset">'
+     + '<label style="gap:8px">Color states by <select id="mMetric" style="width:auto;min-width:200px">'+METRICS.map((m,i)=>'<option value="'+i+'">'+esc(m.label)+'</option>').join('')+'</select></label>'
+     + '<label style="gap:8px">Scale <select id="mScale" style="width:auto;min-width:150px"><option value="quantile">Quantile (even spread)</option><option value="equal">Equal interval</option></select></label>'
+     + '</span><span class="tgsep"></span><span class="tgset">'
+     + '<label><input type="checkbox" id="tgProv" checked> Providers ('+provs.length+')</label>'
+     + '<label><input type="checkbox" id="tgCoe" checked> Centers of Excellence ('+geo.coes.length+')</label>'
+     + '<label><input type="checkbox" id="tgMetro"> Metros ('+(geo.metros||[]).length+')</label>'
+     + '</span>'
+     + '<span id="selState" class="cite"></span></div>'
+     + '<div class="mapwrap">'+svg
+     + '<div class="mapctl"><button class="iconbtn" id="zin" title="Zoom in" aria-label="Zoom in">'+ic('plus')+'</button><button class="iconbtn" id="zout" title="Zoom out" aria-label="Zoom out">'+ic('minus')+'</button><button class="iconbtn" id="zreset" title="Fit to nation" aria-label="Fit to nation">'+ic('fit')+'</button></div>'
+     + '<div class="maptip" id="maptip"></div>'
+     + '<div class="maplegend" id="mLegend"></div>'
+     + '</div>'
+     + '<div class="legend" style="margin-top:8px"><span style="color:var(--muted)">Provider type:</span>'+typeLegend+'</div>'
+     + '<div id="mapDetail"></div>'
+     + '<div class="twocol" style="gap:18px;margin-top:16px">'
+     + '<div><div style="font-size:12px;color:var(--muted);margin:0 0 8px;display:flex;gap:6px;align-items:baseline">Providers by type <span class="scopetag" id="scopeType"></span></div><div id="chartType"></div></div>'
+     + '<div><div style="font-size:12px;color:var(--muted);margin:0 0 8px;display:flex;gap:6px;align-items:baseline">Providers by region <span class="scopetag" id="scopeRegion"></span></div><div id="chartRegion"></div></div>'
+     + '</div>'
+     + '<div style="margin-top:18px">'
+     + '<div class="chips" id="filterChips" style="margin-bottom:12px"></div>'
+     + '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:center">'
+     + '<input id="provSearch" placeholder="Search name, organization, or city…" style="flex:1;min-width:200px">'
+     + '<select id="provRegion" style="width:auto;min-width:140px"><option value="">All regions</option><option>Northeast</option><option>South</option><option>Midwest</option><option>West</option></select>'
+     + '<select id="provType" style="width:auto;min-width:150px"><option value="">All types</option>'+geo.type_counts.map(t=>'<option>'+esc(t.type)+'</option>').join('')+'</select>'
+     + '<button class="iconbtn" id="resetAll" title="Reset all filters &amp; view" aria-label="Reset all filters and view">'+ic('reset')+'</button>'
+     + '</div><div id="provCount" class="cite" style="margin-bottom:8px"></div><div id="provTable"></div></div>'
+     + '<div class="cite" style="margin-top:10px">Map coverage: '+geo.coverage.city_geocoded+' geocoded to city, '+geo.coverage.state_fallback+' at state center, '+geo.coverage.offmap_akhi+' in AK/HI not shown. '+esc(META.child_note||'')+' <b>Est. TS pool</b> = national CDC ~174,000 diagnosed count allocated by state child-population share — a population-normalized baseline that assumes <i>equal diagnosed prevalence per child</i>. Real diagnosed prevalence is access-driven, so this likely under-counts high-specialist-access hubs and over-counts low-access states; pair it with specialist/CoE density for targeting, don\'t use it alone. Provider type is derived from listed credentials (heuristic). The <b>CMS NPI prescriber overlay</b> (pediatric neurology / child psychiatry) needs the NPI registry API, which is blocked by this environment\'s network policy — it can be layered in from an NPI export (upload) or at deployment.</div>';
+  h += '<div class="panel" style="margin-top:16px"><h3>Top metros by provider concentration</h3>'
+     + '<p class="note">'+esc((geo.metro_meta||{}).note||'')+' '+(geo.metros||[]).length+' metros have &ge;2 providers; '+((geo.metro_meta||{}).outside||0)+' providers sit outside 50 mi of a top-1000 metro. Toggle "Metros" on the map to see them as bubbles.</p>'
+     + '<table><thead><tr><th>Metro (anchor city)</th><th>Region</th><th>Providers</th><th>CoEs</th><th>Core-city pop</th></tr></thead><tbody>'
+     + (geo.metros||[]).slice(0,20).map(m=>'<tr><td><b>'+esc(m.city)+', '+esc(m.state)+'</b></td><td>'+esc(m.region)+'</td><td>'+m.providers+'</td><td>'+(m.coes||'—')+'</td><td>'+m.core_pop.toLocaleString()+'</td></tr>').join('')
+     + '</tbody></table></div>';
+  h += '<div class="panel" style="margin-top:16px"><h3>Curated Centers of Excellence '+cite(d.coe_source)+'</h3><p class="note">'+esc(d.coe_note)+'</p>'
+     + '<table><thead><tr><th>Institution</th><th>City</th><th>State</th><th>Region</th><th>Designation</th></tr></thead><tbody>'
+     + d.centers.map(c=>'<tr><td><b>'+esc(c.name)+'</b>'+(c.note?' <span class="cite">'+esc(c.note)+'</span>':'')+'</td><td>'+esc(c.city)+'</td><td>'+esc(c.state)+'</td><td>'+esc(c.region)+'</td><td>'+(c.coe?'<span class="pill" style="color:var(--good);border-color:var(--good)">CoE</span>':'<span class="pill low">high-vol</span>')+'</td></tr>').join('')
+     + '</tbody></table></div>';
+  h += '</div>';
+  h += '<div class="panel"><h3>Access note</h3><p class="note" style="margin:0">'+esc(d.access_note)+' '+cite(d.access_source)+'</p></div>';
+  h += disc();
+  main.innerHTML = h;
+
+  const svgEl=document.getElementById('usmap'), tip=document.getElementById('maptip');
+  const wrap=svgEl.parentElement, gProv=document.getElementById('gProv'), gCoe=document.getElementById('gCoe');
+  let vb={x:VB[0],y:VB[1],w:VB[2],h:VB[3]};
+  const applyVB=()=>svgEl.setAttribute('viewBox',vb.x+' '+vb.y+' '+vb.w+' '+vb.h);
+  const clampVB=()=>{ if(vb.w>VB[2])vb.w=VB[2]; if(vb.h>VB[3])vb.h=VB[3];
+    vb.x=Math.max(VB[0],Math.min(vb.x,VB[0]+VB[2]-vb.w)); vb.y=Math.max(VB[1],Math.min(vb.y,VB[1]+VB[3]-vb.h)); };
+  const sp=e=>{const r=svgEl.getBoundingClientRect();return{x:vb.x+(e.clientX-r.left)/r.width*vb.w,y:vb.y+(e.clientY-r.top)/r.height*vb.h};};
+  function zoomAt(cx,cy,f){const nw=vb.w*f,nh=vb.h*f;vb.x=cx-(cx-vb.x)*(nw/vb.w);vb.y=cy-(cy-vb.y)*(nh/vb.h);vb.w=nw;vb.h=nh;clampVB();applyVB();}
+  document.getElementById('zin').onclick=()=>zoomAt(vb.x+vb.w/2,vb.y+vb.h/2,0.7);
+  document.getElementById('zout').onclick=()=>zoomAt(vb.x+vb.w/2,vb.y+vb.h/2,1/0.7);
+  const REDUCED=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let vbAnim=null;
+  function animateVB(tg){
+    tg.w=Math.min(tg.w,VB[2]); tg.h=Math.min(tg.h,VB[3]);
+    tg.x=Math.max(VB[0],Math.min(tg.x,VB[0]+VB[2]-tg.w)); tg.y=Math.max(VB[1],Math.min(tg.y,VB[1]+VB[3]-tg.h));
+    if(REDUCED){ vb={x:tg.x,y:tg.y,w:tg.w,h:tg.h}; applyVB(); return; }
+    const s={x:vb.x,y:vb.y,w:vb.w,h:vb.h}, t0=performance.now(), dur=400;
+    if(vbAnim)cancelAnimationFrame(vbAnim);
+    (function step(now){ const k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,3);
+      vb.x=s.x+(tg.x-s.x)*e; vb.y=s.y+(tg.y-s.y)*e; vb.w=s.w+(tg.w-s.w)*e; vb.h=s.h+(tg.h-s.h)*e; applyVB();
+      if(k<1) vbAnim=requestAnimationFrame(step); else vbAnim=null;
+    })(t0);
+  }
+  function resetView(){ animateVB({x:VB[0],y:VB[1],w:VB[2],h:VB[3]}); }
+  function zoomToState(code){
+    const el=document.querySelector('path.st[data-code="'+code+'"]'); if(!el)return;
+    let bb; try{ bb=el.getBBox(); }catch(_){ return; }
+    if(!bb||!bb.width) return;
+    const pad=Math.max(bb.width,bb.height)*0.35+18; let nw=bb.width+pad*2, nh=bb.height+pad*2;
+    const ar=VB[2]/VB[3]; if(nw/nh<ar) nw=nh*ar; else nh=nw/ar;
+    animateVB({x:bb.x+bb.width/2-nw/2, y:bb.y+bb.height/2-nh/2, w:nw, h:nh});
+  }
+  document.getElementById('zreset').onclick=resetView;
+  svgEl.addEventListener('wheel',e=>{e.preventDefault();const p=sp(e);zoomAt(p.x,p.y,e.deltaY<0?0.85:1/0.85);},{passive:false});
+  let drag=null;
+  svgEl.addEventListener('pointerdown',e=>{drag={x:e.clientX,y:e.clientY,vx:vb.x,vy:vb.y,moved:false};svgEl.classList.add('grab');try{svgEl.setPointerCapture(e.pointerId);}catch(_){}});
+  svgEl.addEventListener('pointermove',e=>{
+    if(drag){const r=svgEl.getBoundingClientRect();if(Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y)>3)drag.moved=true;
+      vb.x=drag.vx-(e.clientX-drag.x)/r.width*vb.w;vb.y=drag.vy-(e.clientY-drag.y)/r.height*vb.h;clampVB();applyVB();return;}
+    const t=e.target,r=wrap.getBoundingClientRect();let txt='';
+    if(t.classList.contains('pdot')){const p=provs[+t.getAttribute('data-pi')];txt='<b>'+esc(p.name)+'</b><br>'+esc(p.ptype)+' · '+esc(p.city)+', '+esc(p.state);}
+    else if(t.closest&&t.closest('.coeMk')){const c=geo.coes[+t.closest('.coeMk').getAttribute('data-ci')];txt='★ <b>'+esc(c.name)+'</b><br>'+esc(c.city)+', '+esc(c.state);}
+    else if(t.classList.contains('metroMk')){const m=geo.metros[+t.getAttribute('data-mi')];txt='◎ <b>'+esc(m.city)+', '+esc(m.state)+'</b><br>'+m.providers+' providers · '+m.coes+' CoE';}
+    else if(t.classList.contains('st')){const s=geo.states.find(x=>x.code===t.getAttribute('data-code'));const m=METRICS[metricIdx];txt='<b>'+esc(s.name)+'</b><br>'+esc(m.label)+': '+m.fmt(s[m.k])+'<br>'+s.providers+' providers · est. pool '+(s.est_pool!=null?s.est_pool.toLocaleString():'—');}
+    if(txt){tip.innerHTML=txt;tip.style.display='block';tip.style.left=(e.clientX-r.left+12)+'px';tip.style.top=(e.clientY-r.top+12)+'px';}else tip.style.display='none';
+  });
+  svgEl.addEventListener('pointerup',e=>{
+    // Pointer capture (set on pointerdown for panning) retargets e.target to the SVG,
+    // so resolve the real element under the cursor for click detection.
+    if(drag&&!drag.moved){ const el=document.elementFromPoint(e.clientX,e.clientY)||e.target; handleClick(el); }
+    drag=null;svgEl.classList.remove('grab');});
+  svgEl.addEventListener('pointerleave',()=>{tip.style.display='none';drag=null;svgEl.classList.remove('grab');});
+  const SEQN=6;
+  function abbr(v){
+    if(v==null||!isFinite(v))return '—';
+    const a=Math.abs(v);
+    if(a>=1e6)return (v/1e6).toFixed(a>=1e7?0:1)+'M';
+    if(a>=1e3)return (v/1e3).toFixed(a>=1e4?0:1)+'k';
+    if(a>=10)return Math.round(v).toString();
+    return (Math.round(v*10)/10).toString();
+  }
+  function seqEdges(vals){
+    // returns SEQN-1 interior thresholds separating SEQN bins
+    const sorted=vals.slice().sort((a,b)=>a-b), n=SEQN, e=[];
+    if(sorted.length<2){for(let i=1;i<n;i++)e.push(sorted[0]||0);return e;}
+    if(scaleMode==='equal'){
+      const mn=sorted[0],mx=sorted[sorted.length-1];
+      for(let i=1;i<n;i++)e.push(mn+(mx-mn)*i/n);
+    }else{ // quantile — interpolated percentiles, ~equal count per bin
+      for(let i=1;i<n;i++){const pos=(i/n)*(sorted.length-1),lo=Math.floor(pos),hi=Math.ceil(pos);
+        e.push(sorted[lo]+(sorted[hi]-sorted[lo])*(pos-lo));}
+    }
+    return e;
+  }
+  function seqBin(v,e){let b=0;for(let i=0;i<e.length;i++){if(v>e[i])b=i+1;}return b;}
+  function colorStates(){
+    const met=METRICS[metricIdx],m=met.k;
+    const vals=geo.states.map(s=>s[m]).filter(v=>v!=null&&isFinite(v));
+    const edges=seqEdges(vals);
+    const mn=vals.length?Math.min.apply(null,vals):0, mx=vals.length?Math.max.apply(null,vals):0;
+    geo.states.forEach(s=>{const el=document.querySelector('path.st[data-code="'+s.code+'"]');const v=s[m];
+      if(v==null||!isFinite(v)){el.setAttribute('fill','var(--seq-nodata)');}
+      else{el.setAttribute('fill','var(--seq'+seqBin(v,edges)+')');}
+      el.setAttribute('fill-opacity','1');});
+    // stepped legend: swatch bar + boundary ticks (min | thresholds | max)
+    let bar='';for(let i=0;i<SEQN;i++)bar+='<span style="background:var(--seq'+i+')"></span>';
+    const ticks=[mn].concat(edges).concat([mx]).map(abbr);
+    // show only min, mid thresholds and max to avoid crowding: keep endpoints + interior edges
+    let tickHtml='<span>'+ticks[0]+'</span>';
+    for(let i=1;i<ticks.length-1;i++)tickHtml+='<span>'+ticks[i]+'</span>';
+    tickHtml+='<span>'+ticks[ticks.length-1]+'</span>';
+    document.getElementById('mLegend').innerHTML=
+      '<div class="lgttl">'+esc(met.label)+'</div>'
+      +'<div class="seqbar" title="low → high">'+bar+'</div>'
+      +'<div class="seqticks">'+tickHtml+'</div>'
+      +'<div class="lgnote">'+esc(met.note)+' · '+(scaleMode==='equal'?'equal-interval':'quantile')+' bins</div>'
+      +'<div class="lgrow"><span class="lgd"><span style="width:9px;height:9px;border-radius:50%;background:var(--warn);display:inline-block"></span>Center of Excellence</span></div>';
+  }
+  document.getElementById('mMetric').onchange=e=>{metricIdx=+e.target.value;colorStates();};
+  document.getElementById('mScale').onchange=e=>{scaleMode=e.target.value;colorStates();};
+  function handleClick(t){
+    if(t.classList.contains('pdot'))showPoint('provider',provs[+t.getAttribute('data-pi')]);
+    else if(t.closest&&t.closest('.coeMk'))showPoint('coe',geo.coes[+t.closest('.coeMk').getAttribute('data-ci')]);
+    else if(t.classList.contains('metroMk'))showMetro(geo.metros[+t.getAttribute('data-mi')]);
+    else if(t.classList.contains('st'))selState(t.getAttribute('data-code'));
+  }
+  function selState(code){
+    filterState=(filterState===code?'':code);
+    document.querySelectorAll('path.st').forEach(p=>p.classList.toggle('sel',!!filterState&&p.getAttribute('data-code')===filterState));
+    if(filterState){ showStateDetail(geo.states.find(x=>x.code===filterState)); zoomToState(filterState); }
+    else { document.getElementById('mapDetail').innerHTML=''; resetView(); }
+    applyFilters();
+  }
+  function detailShell(title,rows,extra){
+    return '<div class="mapdetail"><div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline"><h3 style="margin:0">'+title+'</h3><button class="btn ghost sm" id="clrDet" aria-label="Close">'+ic('x')+'</button></div><table style="margin-top:8px"><tbody>'+rows+'</tbody></table>'+(extra||'')+'</div>';
+  }
+  function bind(el){document.getElementById('clrDet').onclick=()=>{el.innerHTML='';};el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  // Compact colored bar list; clickable when dim is 'typ'/'reg' (cross-filter), static otherwise.
+  function barlist(items,activeVal,dim){
+    const max=Math.max.apply(null,items.map(i=>i.value).concat([1])), click=(dim==='typ'||dim==='reg');
+    return items.map(i=>'<div class="'+(click?'cbrow':'')+(activeVal===i.label?' on':'')+'"'+(click?' data-dim="'+dim+'" data-val="'+esc(i.label)+'"':'')+' style="display:grid;grid-template-columns:minmax(0,150px) 1fr 40px;gap:10px;align-items:center;padding:3px 5px">'
+      +'<div class="cblab" style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(i.label)+'</div>'
+      +'<div style="background:var(--panel-2);border-radius:6px;overflow:hidden;height:13px"><div style="width:'+Math.round(i.value/max*100)+'%;height:100%;background:'+(dim==='typ'?(TYPE_COLORS[i.label]||'var(--accent)'):'var(--accent)')+'"></div></div>'
+      +'<div style="font-size:13px;font-weight:600;text-align:right">'+i.value+'</div></div>').join('');
+  }
+  function groupBy(list,key){ const m={}; list.forEach(p=>{const k=p[key]||'Other'; m[k]=(m[k]||0)+1;}); return m; }
+  function showStateDetail(s){
+    const el=document.getElementById('mapDetail');
+    const inState=provs.filter(p=>p.state===s.code), tc=groupBy(inState,'ptype');
+    const items=geo.type_counts.map(t=>({label:t.type,value:tc[t.type]||0})).filter(i=>i.value>0);
+    const rows='<tr><td style="width:210px;color:var(--muted)">Region</td><td>'+esc(ST_REGION[s.code]||'')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">TAA providers</td><td>'+s.providers+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Children under 18</td><td>'+(s.child_u18!=null?s.child_u18.toLocaleString():'—')+' '+cite('census_pep')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Est. diagnosed pediatric TS</td><td>'+(s.est_pool!=null?s.est_pool.toLocaleString():'—')+' <span class="cite">(model est. — national count allocated by child pop.)</span> '+cite('cdc_ts_data')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Providers per 100k children</td><td>'+(s.per_100k!=null?s.per_100k:'—')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Est. patients per provider</td><td>'+(s.ppp!=null?s.ppp.toLocaleString():'—')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Child neurologists</td><td>'+(s.child_neuro!=null?s.child_neuro.toLocaleString()+(s.neuro_per_100k!=null?' ('+s.neuro_per_100k+' per 100k children)':''):'—')+' '+cite('nppes')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Child &amp; adolescent psychiatrists</td><td>'+(s.child_psych!=null?s.child_psych.toLocaleString():'Not available (exceeds registry query cap)')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Children in Medicaid and CHIP</td><td>'+(s.medicaid_child!=null?s.medicaid_child.toLocaleString():'—')+' '+cite('medicaid_enroll')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Guanfacine + clonidine Medicaid Rx per 1,000 enrollees</td><td>'+(s.alpha2_rx_per_1k!=null?s.alpha2_rx_per_1k.toLocaleString():'—')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Open Tourette studies with a site</td><td>'+(s.open_trials!=null?s.open_trials:'—')+' '+cite('ctgov')+'</td></tr>';
+    const brk = items.length ? '<div style="margin-top:12px"><div style="font-size:11px;color:var(--muted);margin-bottom:6px">Provider mix in '+esc(s.name)+'</div>'+barlist(items,'','')+'</div>' : '';
+    const actions = '<div style="display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap">'
+      +'<button class="btn ghost sm" id="jumpList" title="Jump to the provider list, filtered to '+esc(s.name)+'">'+ic('jump')+' '+inState.length+' providers</button>'
+      +'<span class="cite">Access gap = est. TS patients ÷ providers. Population figures directional.</span></div>';
+    el.innerHTML=detailShell(esc(s.name),rows,actions+brk);
+    bind(el);
+    const jl=document.getElementById('jumpList'); if(jl) jl.onclick=()=>{ document.getElementById('provTable').scrollIntoView({behavior:'smooth',block:'start'}); };
+  }
+  function showPoint(type,rec){
+    const el=document.getElementById('mapDetail');
+    if(type==='provider'){
+      const rows='<tr><td style="width:110px;color:var(--muted)">Type</td><td><span class="fate" style="background:'+(TYPE_COLORS[rec.ptype]||'#42526E')+'">'+esc(rec.ptype)+'</span></td></tr>'
+        +(rec.org?'<tr><td style="color:var(--muted)">Organization</td><td>'+esc(rec.org)+'</td></tr>':'')
+        +'<tr><td style="color:var(--muted)">Location</td><td>'+esc(rec.city)+', '+esc(rec.state)+' ('+esc(rec.region)+')</td></tr>'
+        +(rec.email?'<tr><td style="color:var(--muted)">Email</td><td><a href="mailto:'+esc(rec.email)+'">'+esc(rec.email)+'</a></td></tr>':'')
+        +'<tr><td style="color:var(--muted)">TAA profile</td><td><a href="'+esc(rec.url)+'" target="_blank" rel="noopener">open ↗</a></td></tr>'
+        +(rec.approx?'<tr><td style="color:var(--muted)">Note</td><td class="cite">Plotted at state center</td></tr>':'');
+      el.innerHTML=detailShell(esc(rec.name),rows); bind(el);
+    } else {
+      const rows='<tr><td style="width:110px;color:var(--muted)">Location</td><td>'+esc(rec.city)+', '+esc(rec.state)+' ('+esc(rec.region)+')</td></tr>'
+        +'<tr><td style="color:var(--muted)">Designation</td><td>'+(rec.coe?'TAA Center of Excellence':'High-volume site')+'</td></tr>'
+        +(rec.note?'<tr><td style="color:var(--muted)">Note</td><td>'+esc(rec.note)+'</td></tr>':'');
+      el.innerHTML=detailShell('★ '+esc(rec.name),rows,'<div class="cite" style="margin-top:8px">Tip: click the state to see its market context (child population, est. TS pool, access gap).</div>'); bind(el);
+    }
+  }
+  const $ps=document.getElementById('provSearch'), $pr=document.getElementById('provRegion'), $pt=document.getElementById('provType'), $tg=document.getElementById('tgProv');
+  // One filter state; every view (map dots, table, charts, chips, legend) reads from it.
+  function fstate(){ return {q:($ps.value||'').toLowerCase().trim(), reg:$pr.value, typ:$pt.value, st:filterState}; }
+  function matchP(p,f,skip){
+    return (skip==='st'||!f.st||p.state===f.st)
+      &&(skip==='reg'||!f.reg||p.region===f.reg)
+      &&(skip==='typ'||!f.typ||p.ptype===f.typ)
+      &&(!f.q||((p.name+' '+(p.org||'')+' '+p.city).toLowerCase().indexOf(f.q)>-1));
+  }
+  const COLS=[['name','Provider'],['ptype','Type'],['city','City'],['state','State']];
+  function cmp(a,b){ let x=(a[sortKey]||'').toString().toLowerCase(), y=(b[sortKey]||'').toString().toLowerCase(); return (x<y?-1:x>y?1:0)*sortDir; }
+  function applyFilters(){
+    const f=fstate(), showDots=$tg.checked;
+    document.querySelectorAll('#gProv circle').forEach(c=>{const p=provs[+c.getAttribute('data-pi')];c.style.display=(showDots&&matchP(p,f,null))?'':'none';});
+    const rows=provs.filter(p=>matchP(p,f,null)); rows.sort(cmp);
+    const cap=150, shown=rows.slice(0,cap);
+    document.getElementById('provCount').textContent='Showing '+shown.length+' of '+rows.length+' providers'+(rows.length>cap?' — refine to narrow':'');
+    const head=COLS.map(([k,lab])=>'<th class="srt'+(sortKey===k?' act':'')+'" data-k="'+k+'">'+lab+'<span class="car">'+(sortKey===k?(sortDir>0?'▲':'▼'):'▲')+'</span></th>').join('')+'<th>Contact</th>';
+    document.getElementById('provTable').innerHTML='<table><thead><tr>'+head+'</tr></thead><tbody>'
+      + shown.map(p=>'<tr><td><a href="'+esc(p.url)+'" target="_blank" rel="noopener">'+esc(p.name)+'</a>'+(p.org?' <span class="cite">'+esc(p.org)+'</span>':'')+'</td><td>'+esc(p.ptype)+'</td><td>'+esc(p.city)+'</td><td>'+esc(p.state)+'</td><td>'+(p.email?'<a href="mailto:'+esc(p.email)+'">email</a>':'<span class="cite">—</span>')+'</td></tr>').join('')
+      + '</tbody></table>';
+    document.querySelectorAll('#provTable th.srt').forEach(th=>th.onclick=()=>{const k=th.getAttribute('data-k'); if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=1;} applyFilters();});
+    renderChips(f); updateCharts(f); updateLegend(f);
+  }
+  function chip(dim,label,val){ return '<span class="chip"><b>'+label+'</b>'+esc(val)+'<button class="x" data-dim="'+dim+'" aria-label="Clear '+label+' filter">'+ic('x')+'</button></span>'; }
+  function renderChips(f){
+    const box=document.getElementById('filterChips'); let c=[];
+    if(f.st){const s=geo.states.find(x=>x.code===f.st); c.push(chip('st','State',s?s.name:f.st));}
+    if(f.reg) c.push(chip('reg','Region',f.reg));
+    if(f.typ) c.push(chip('typ','Type',f.typ));
+    if(f.q) c.push(chip('q','Search','“'+f.q+'”'));
+    box.innerHTML = c.length ? '<span class="chlabel">Filters</span>'+c.join('') : '<span class="chlabel">Showing all providers · nationwide</span>';
+    box.querySelectorAll('.x').forEach(b=>b.onclick=()=>clearDim(b.getAttribute('data-dim')));
+  }
+  function clearDim(dim){
+    if(dim==='st'){ if(filterState) selState(filterState); return; }
+    if(dim==='reg') $pr.value=''; if(dim==='typ') $pt.value=''; if(dim==='q') $ps.value='';
+    applyFilters();
+  }
+  function updateCharts(f){
+    const tItems=geo.type_counts.map(t=>({label:t.type,value:groupBy(provs.filter(p=>matchP(p,f,'typ')),'ptype')[t.type]||0})).filter(i=>i.value>0);
+    document.getElementById('chartType').innerHTML=barlist(tItems,f.typ,'typ');
+    const rc=groupBy(provs.filter(p=>matchP(p,f,'reg')),'region');
+    const rItems=['Northeast','South','Midwest','West'].map(r=>({label:r,value:rc[r]||0})).filter(i=>i.value>0);
+    document.getElementById('chartRegion').innerHTML=barlist(rItems,f.reg,'reg');
+    const stName=f.st?((geo.states.find(x=>x.code===f.st)||{}).name||f.st):null;
+    document.getElementById('scopeType').textContent='· '+(stName||f.reg||'nationwide');
+    document.getElementById('scopeRegion').textContent='· '+(stName||'nationwide');
+    document.querySelectorAll('#chartType .cbrow,#chartRegion .cbrow').forEach(row=>row.onclick=()=>{
+      const dim=row.getAttribute('data-dim'), val=row.getAttribute('data-val');
+      if(dim==='typ') $pt.value=($pt.value===val?'':val);
+      if(dim==='reg') $pr.value=($pr.value===val?'':val);
+      applyFilters();
+    });
+  }
+  function updateLegend(f){
+    document.querySelectorAll('.legend .lgd.tgl').forEach(el=>{const t=el.getAttribute('data-type');
+      el.classList.toggle('on', f.typ===t); el.classList.toggle('dim', !!f.typ && f.typ!==t);});
+  }
+  document.querySelectorAll('.legend .lgd.tgl').forEach(el=>el.onclick=()=>{const t=el.getAttribute('data-type'); $pt.value=($pt.value===t?'':t); applyFilters();});
+  document.getElementById('resetAll').onclick=()=>{
+    $ps.value=''; $pr.value=''; $pt.value='';
+    if(filterState){ filterState=''; document.querySelectorAll('path.st').forEach(p=>p.classList.remove('sel')); document.getElementById('mapDetail').innerHTML=''; }
+    resetView(); applyFilters();
+  };
+  document.getElementById('tgProv').onchange=applyFilters;
+  document.getElementById('tgCoe').onchange=e=>{gCoe.style.display=e.target.checked?'':'none';};
+  document.getElementById('tgMetro').onchange=e=>{document.getElementById('gMetro').style.display=e.target.checked?'':'none';};
+  function showMetro(m){
+    const el=document.getElementById('mapDetail');
+    const rows='<tr><td style="width:210px;color:var(--muted)">Region</td><td>'+esc(m.region)+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">TAA providers (within 50 mi)</td><td>'+m.providers+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Centers of Excellence</td><td>'+m.coes+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Anchor-city population</td><td>'+m.core_pop.toLocaleString()+' <span class="cite">(core city, not full MSA)</span></td></tr>';
+    el.innerHTML=detailShell('◎ '+esc(m.city)+', '+esc(m.state)+' metro',rows,'<div class="cite" style="margin-top:8px">Providers clustered to the nearest major-city anchor within 50 mi. Official MSA population/boundaries pending authoritative data.</div>');
+    bind(el);
+  }
+  $ps.addEventListener('input',applyFilters);
+  $pr.addEventListener('change',applyFilters);
+  $pt.addEventListener('change',applyFilters);
+  applyVB(); colorStates(); applyFilters();
+}
+function renderSoon(id){
+  const v = (S.config.views.find(x=>x.id===id));
+  const label = v?v.label:id;
+  document.getElementById('main').innerHTML =
+    '<div class="vhead"><h2>'+esc(label)+'</h2></div><div class="soon"><b>Coming in a later phase.</b><br>'
+    + esc({pipeline:'Live ClinicalTrials.gov TS pipeline with a horizon timeline.',companies:'Neutral sponsor dossiers with FMP financials and hiring-velocity proxy.',scenario:'The interactive scenario planner — pull levers, see effect in patients & channel coverage (never dollars).',policy:'Pediatric orphan/exclusivity dynamics and school-accommodation policy lane.',briefings:'Adult-learning education modules, cross-linked.'}[id]||'')+'</div>';
+}
+
+/* ---- admin ---- */
+async function renderAdmin(main){
+  if(S.me.role!=='admin'){ main.innerHTML='<div class="soon">Admin only.</div>'; return; }
+  let h = '<div class="vhead"><h2>Admin</h2><div class="lead">Add colleagues, review usage and failed logins. No public registration.</div></div>';
+  h += '<div class="panel"><h3>Add a colleague</h3>'
+     + '<div class="twocol" style="gap:12px">'
+     + '<div><label>Username</label><input id="nu" placeholder="jsmith"></div>'
+     + '<div><label>Display name</label><input id="nn" placeholder="Jane Smith"></div>'
+     + '<div><label>Role</label><select id="nr"><option value="member">member</option><option value="admin">admin</option></select></div>'
+     + '<div><label>Password</label><div class="copywrap"><input id="np" placeholder="generate →"><button class="btn ghost sm" id="genpw" type="button">Generate</button></div></div>'
+     + '</div><div style="margin-top:14px"><button class="btn" id="createU">Create user</button> <span class="err" id="adminErr" style="display:inline"></span></div>'
+     + '<div id="invite" class="hidden" style="margin-top:14px"><label>Copyable invite message</label><textarea id="inviteMsg" readonly></textarea><button class="btn ghost sm" id="copyInvite" type="button" style="margin-top:6px">Copy</button></div>'
+     + '</div>';
+  h += '<div class="panel"><h3>Users</h3><div id="usersT" class="cite">loading…</div></div>';
+  h += '<div class="panel"><h3>Recent activity</h3><div id="eventsT" class="cite">loading…</div></div>';
+  h += '<div class="panel"><h3>Failed logins</h3><div id="failsT" class="cite">loading…</div></div>';
+  main.innerHTML = h;
+
+  document.getElementById('genpw').onclick = async ()=>{ const r=await api('/api/admin/genpw',{method:'POST'}); if(r.ok) document.getElementById('np').value=r.data.password; };
+  document.getElementById('createU').onclick = async ()=>{
+    const err=document.getElementById('adminErr'); err.textContent='';
+    const username=document.getElementById('nu').value.trim();
+    const display_name=document.getElementById('nn').value.trim()||username;
+    const role=document.getElementById('nr').value;
+    const password=document.getElementById('np').value;
+    const r = await api('/api/admin/users',{method:'POST',body:JSON.stringify({username,password,display_name,role})});
+    if(r.ok){
+      const msg='You have access to the TS Commercial Intelligence platform.\n\nURL: '+location.origin+'\nUsername: '+username+'\nTemporary password: '+password+'\n\nPlease sign in and keep this private.';
+      document.getElementById('inviteMsg').value=msg;
+      document.getElementById('invite').classList.remove('hidden');
+      loadUsers();
+    } else err.textContent=(r.data&&r.data.error)||'Failed.';
+  };
+  document.getElementById('copyInvite').onclick = ()=>{ const t=document.getElementById('inviteMsg'); t.select(); try{document.execCommand('copy');}catch(e){} };
+
+  async function loadUsers(){
+    const r=await api('/api/admin/users'); if(!r.ok)return;
+    document.getElementById('usersT').innerHTML = tbl(r.data.users,[['username','User'],['display_name','Name'],['role','Role'],['created_by','Added by']], r.data.users.map(u=>[u.username,u.display_name,u.role,u.created_by||'—']));
+  }
+  async function loadEvents(){
+    const r=await api('/api/admin/events'); if(!r.ok)return;
+    document.getElementById('eventsT').innerHTML = tbl(null,[['','When'],['','User'],['','Event'],['','Detail'],['','IP']], r.data.events.map(e=>[ts(e.ts),e.username||'—',e.kind,e.detail||'',e.ip||'']));
+  }
+  async function loadFails(){
+    const r=await api('/api/admin/login-fails'); if(!r.ok)return;
+    document.getElementById('failsT').innerHTML = tbl(null,[['','When'],['','Username tried'],['','IP']], r.data.fails.map(f=>[ts(f.ts),f.username||'—',f.ip||'']));
+  }
+  loadUsers(); loadEvents(); loadFails();
+}
+function ts(t){ try{return new Date(t*1000).toLocaleString();}catch(e){return t;} }
+function tbl(_x, cols, rows){
+  if(!rows||!rows.length) return '<span class="cite">none yet</span>';
+  let h='<table><thead><tr>'+cols.map(c=>'<th>'+esc(c[1])+'</th>').join('')+'</tr></thead><tbody>';
+  h+=rows.map(r=>'<tr>'+r.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join('');
+  return h+'</tbody></table>';
+}
+
+/* ===== shared visual helpers ===== */
+const FATE_COLOR={active:'var(--good)',filed:'var(--accent)',failed:'var(--bad)',device:'var(--accent-2)',approved:'var(--good)'};
+const FATE_LABEL={active:'Active',filed:'Filed / NDA',failed:'Failed',device:'Device',approved:'Approved'};
+function fateBadge(f){ return '<span class="fate '+f+'">'+(FATE_LABEL[f]||f)+'</span>'; }
+function inferFate(txt){
+  if(/fail|negative|discontinu|wound down|no TS indication|missed the primary/i.test(txt)) return 'failed';
+  if(/NDA|submitted|under review|\bfiled\b/i.test(txt)) return 'filed';
+  return null;
+}
+function landscapeMatrix(assets, phases){
+  const order={filed:0,approved:1,active:2,device:3,failed:4};
+  const rows=assets.filter(a=>a.phase_index!=null).slice()
+    .sort((a,b)=>(order[a.fate]-order[b.fate])||(b.phase_index-a.phase_index));
+  const W=760,padL=210,padR=16,top=30,rh=30,colW=(W-padL-padR)/phases.length,H=top+rows.length*rh+8;
+  let s='<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="max-width:'+W+'px">';
+  phases.forEach((p,i)=>{ const x=padL+colW*i+colW/2;
+    s+='<text x="'+x+'" y="18" text-anchor="middle" font-size="11" fill="var(--muted)">'+esc(p)+'</text>';
+    s+='<line x1="'+x+'" y1="24" x2="'+x+'" y2="'+(H-4)+'" stroke="var(--line)" stroke-dasharray="2 4"/>'; });
+  rows.forEach((a,r)=>{
+    const y=top+r*rh+rh/2, failed=a.fate==='failed';
+    const nm=a.name.length>30?a.name.slice(0,29)+'…':a.name;
+    s+='<text x="0" y="'+(y+4)+'" font-size="12" fill="'+(failed?'var(--bad)':'var(--text)')+'"'+(failed?' text-decoration="line-through"':'')+'>'+esc(nm)+'</text>';
+    const cx=padL+colW*a.phase_index+colW/2;
+    s+='<line x1="'+(padL+colW/2)+'" y1="'+y+'" x2="'+cx+'" y2="'+y+'" stroke="'+FATE_COLOR[a.fate]+'" stroke-width="3" opacity=".45"/>';
+    s+='<circle cx="'+cx+'" cy="'+y+'" r="8" fill="'+FATE_COLOR[a.fate]+'"/>';
+    if(failed) s+='<text x="'+cx+'" y="'+(y+4)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">&#10005;</text>';
+    else if(a.fate==='filed') s+='<text x="'+cx+'" y="'+(y+4)+'" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">&#9654;</text>';
+  });
+  s+='</svg>';
+  const legend='<div class="legend">'+['filed','active','device','failed'].map(f=>'<span class="lgd"><span style="width:11px;height:11px;border-radius:50%;background:'+FATE_COLOR[f]+';display:inline-block"></span>'+FATE_LABEL[f]+'</span>').join('')+'</div>';
+  return s+legend;
+}
+function personIcon(x,fill,stroke){
+  return '<g transform="translate('+x+',6)"><circle cx="15" cy="8" r="6" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.5"/><path d="M2 40 Q2 19 15 19 Q28 19 28 40 Z" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.5"/></g>';
+}
+function visPrevalence(){
+  let s='<div style="font-size:13px;font-weight:600;margin-bottom:6px">~half of children with Tourette syndrome are undiagnosed</div>';
+  s+='<svg viewBox="0 0 520 54" width="100%" style="max-width:520px">';
+  for(let i=0;i<10;i++){ const diag=i<5; s+=personIcon(8+i*50, diag?'var(--accent)':'transparent', diag?'var(--accent)':'var(--muted)'); }
+  s+='</svg><div class="legend"><span class="lgd"><span style="width:11px;height:11px;background:var(--accent);border-radius:2px;display:inline-block"></span>Diagnosed (~174k)</span><span class="lgd"><span style="width:11px;height:11px;border:1.5px solid var(--muted);border-radius:2px;display:inline-block"></span>Undiagnosed (~174k)</span></div>';
+  s+='<div style="margin-top:12px;font-size:12px;color:var(--muted);margin-bottom:6px">Comorbidity is the rule, not the exception:</div>'+hbars([{label:'Any psychiatric comorbidity',pct:86},{label:'OCD and/or ADHD',pct:72},{label:'“Pure” TS (tics only)',pct:13}]);
+  return s;
+}
+function visMechanism(){
+  const cols=[
+    {t:'D2 antipsychotics',s:'haloperidol · pimozide · aripiprazole',tag:'Approved incumbents',pts:['Block dopamine D2 receptor','Effective tic suppression','EPS, tardive dyskinesia, weight/metabolic']},
+    {t:'Alpha-2 agonists',s:'guanfacine · clonidine',tag:'Off-label first-line',pts:['Act outside the dopamine receptor','Cheap generics; also treat ADHD','Modest effect; sedation, hypotension']},
+    {t:'D1 antagonism — ecopipam',s:'first-in-class, non-antipsychotic',tag:'New mechanism',pts:['Selective D1 blockade','Relapse risk ~halved (Phase 3)','Weight-neutral; no EPS/metabolic'],hl:true},
+  ];
+  return '<div class="mcmp">'+cols.map(c=>'<div class="mcard'+(c.hl?' hl':'')+'"><div style="font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:'+(c.hl?'var(--accent)':'var(--muted)')+'">'+c.tag+'</div><b>'+c.t+'</b><div class="cite">'+c.s+'</div><ul>'+c.pts.map(p=>'<li>'+p+'</li>').join('')+'</ul></div>').join('')+'</div>';
+}
+function visJourney(){
+  const steps=[['Onset','~4–6 yrs; motor tics first'],['Pediatrician','first contact'],['Referral churn','~4 clinicians, often years'],['Specialist','diagnosis + YGTSS staging'],['Treatment','CBIT and/or medication']];
+  return '<div class="jflow">'+steps.map((st,i)=>'<div style="flex:1;min-width:118px;display:flex;align-items:center">'
+    +'<div style="flex:1;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center"><b style="font-size:12.5px">'+st[0]+'</b><div class="cite">'+st[1]+'</div></div>'
+    +(i<steps.length-1?'<div style="color:var(--accent);padding:0 3px;font-size:17px">&#8594;</div>':'')+'</div>').join('')+'</div>'
+    +'<div class="banner" style="border-left-color:var(--bad);margin:8px 0 0">Leak points: ~50% never diagnosed · comorbidity (ADHD/OCD) often treated first · first-line CBIT frequently unavailable</div>';
+}
+function visAccess(){
+  const stages=[{label:'Diagnosed TS (~174k children)'},{label:'Drug-warranting minority'},{label:'Reach a tic-treating specialist'},{label:'Past payer step-therapy'}];
+  return funnelSVG(stages)+'<div class="banner" style="border-left-color:var(--warn);margin:8px 0 0">Pediatric = ~49% Medicaid/CHIP · prior authorization &amp; step-therapy gate · specialty distribution · won state-by-state</div>';
+}
+function visRegulatory(){
+  const blocks=[['7-year orphan market exclusivity','confirmed'],['PDUFA user-fee waiver','confirmed'],['Orphan tax credit (25%)','confirmed'],['+6-mo pediatric exclusivity (BPCA)','conditional'],['Rare Pediatric Disease PRV','unconfirmed']];
+  return '<div style="display:flex;flex-direction:column;gap:6px">'+blocks.map(b=>{
+    const col=b[1]==='confirmed'?'var(--good)':(b[1]==='unconfirmed'?'var(--muted)':'var(--warn)');
+    const dashed=b[1]!=='confirmed';
+    return '<div style="display:flex;align-items:center;gap:10px"><div style="flex:1;padding:9px 12px;border-radius:8px;border:1px '+(dashed?'dashed':'solid')+' '+col+';background:var(--panel)"><b style="font-size:13px">'+b[0]+'</b></div><span class="fate" style="background:'+col+'">'+b[1]+'</span></div>';
+  }).join('')+'</div>';
+}
+const BRIEF_VIS={ prevalence:visPrevalence, mechanism:visMechanism, journey:visJourney, access:visAccess, regulatory:visRegulatory,
+  orderofentry:()=> (S._pipe?landscapeMatrix(S._pipe.assets,S._pipe.phases):'') };
+
+async function renderPipeline(main){
+  const d = await getData('pipeline');
+  const pubd = await getData('public_data');
+  let h='<div class="vhead"><h2>Pipeline</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  h+='<div class="panel"><h3>Tourette programs by furthest phase &amp; fate</h3><p class="note">Where each asset sits — and who has failed. The VMAT2 washouts are in red.</p>'+landscapeMatrix(d.assets,d.phases)+'</div>';
+  h+='<div class="panel"><h3>Compare programs</h3><p class="note">Select a program for its detail. As of '+esc(fmtDate(d.as_of))+', checked against ClinicalTrials.gov and company disclosures.</p>'
+    +'<div class="legend" id="plChips" style="margin-bottom:12px"></div>'
+    +'<table id="plTable"><thead><tr><th>Program</th><th>Sponsor</th><th>Mechanism</th><th>Stage</th><th>Next milestone</th></tr></thead><tbody></tbody></table></div>';
+  h+='<div class="panel" id="plDetail"></div>';
+  h+=openTrialsPanel(pubd);
+  h+=disc(); main.innerHTML=h;
+  const GROUPS=[['all','All'],['active','In development'],['failed','Failed'],['device','Device']];
+  const inGroup=(a,g)=>g==='all'||(g==='failed'?a.fate==='failed':g==='device'?a.fate==='device':(a.fate!=='failed'&&a.fate!=='device'));
+  let grp='all', sel=d.assets[0].name;
+  const short=(t,n)=>{t=String(t||''); return t.length>n? t.slice(0,n).replace(/\s+\S*$/,'')+'…' : t;};
+  function draw(){
+    const list=d.assets.filter(a=>inGroup(a,grp));
+    if(!list.some(a=>a.name===sel)&&list.length) sel=list[0].name;
+    document.getElementById('plChips').innerHTML=GROUPS.map(g=>'<span class="lgd tgl'+(g[0]===grp?' on':'')+'" data-g="'+g[0]+'" tabindex="0" role="button">'+g[1]+' · '+d.assets.filter(a=>inGroup(a,g[0])).length+'</span>').join('');
+    document.querySelector('#plTable tbody').innerHTML=list.map(a=>'<tr class="agrow'+(a.name===sel?' sel':'')+'" data-n="'+esc(a.name)+'" tabindex="0">'
+      +'<td><b>'+esc(a.name)+'</b></td><td>'+esc(a.sponsor)+'</td><td>'+esc(short(a.moa,70))+'</td>'
+      +'<td>'+fateBadge(a.fate)+'<div class="cite" style="margin-top:4px">'+esc(short(a.phase,60))+'</div></td><td>'+esc(short(a.next_milestone,110))+'</td></tr>').join('');
+    const a=d.assets.filter(x=>x.name===sel)[0], el=document.getElementById('plDetail');
+    if(a){ const kv=(k,v)=>'<tr><td style="width:150px;color:var(--muted)">'+k+'</td><td>'+v+'</td></tr>';
+      el.className='panel'+(a.fate==='failed'?' failed':'');
+      el.innerHTML='<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0">'+esc(a.name)+' <span class="cite">· '+esc(a.sponsor)+'</span></h3>'
+        +'<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">'+fateBadge(a.fate)+'<span class="pill">'+esc(a.phase)+'</span></div></div>'
+        +'<table style="margin-top:10px"><tbody>'+kv('Mechanism',esc(a.moa))+kv('Tourette status',esc(a.ts_status))+kv('Next milestone',esc(a.next_milestone))
+        +(a.nct&&/^NCT\d{8}$/.test(a.nct)?kv('Trial','<a href="https://clinicaltrials.gov/study/'+a.nct+'" target="_blank" rel="noopener">'+a.nct+'</a>'):'')
+        +(a.note?kv('Detail',esc(a.note)):'')+'</tbody></table>'
+        +'<div class="cite" style="margin-top:8px">'+(a.updated?'Last checked '+esc(fmtDate(a.updated))+' · ':'')+cite(a.source)+'</div>'; }
+    document.querySelectorAll('#plChips .tgl').forEach(c=>{ const go=()=>{grp=c.getAttribute('data-g'); draw();}; c.onclick=go; c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+    document.querySelectorAll('#plTable .agrow').forEach(r=>{ const go=()=>{sel=r.getAttribute('data-n'); draw();}; r.onclick=go; r.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  draw();
+  wireOpenTrials(pubd);
+}
+function secPanel(sec){
+  const ok=u=>/^https:\/\/www\.sec\.gov\/Archives\/edgar\/data\//.test(u);
+  return '<h4 style="margin:20px 0 6px">Recent SEC filings '+cite('sec_edgar')+'</h4>'
+    +'<p class="note" style="margin:0 0 8px">Annual, quarterly and current reports, newest first. The list shows what was filed, not whether a filing discusses ecopipam; open the document to check.</p>'
+    +'<table><thead><tr><th>Filed</th><th>Form</th><th>What it is</th><th>Period</th><th>Document</th></tr></thead><tbody>'
+    +sec.reports.map(r=>'<tr><td style="white-space:nowrap">'+esc(fmtDate(r.date))+'</td><td>'+esc(r.form)+'</td><td>'+esc(r.what)+'</td><td style="white-space:nowrap">'+esc(r.period?fmtDate(r.period):'—')+'</td><td>'+(ok(r.url)?'<a href="'+esc(r.url)+'" target="_blank" rel="noopener">Open on SEC.gov</a>':'—')+'</td></tr>').join('')
+    +'</tbody></table><div class="cite" style="margin-top:6px">Pulled '+esc(fmtDate((sec.fetched_at||'').slice(0,10)))+'</div>';
+}
+async function renderCompanies(main){
+  const d=await getData('companies');
+  const pl=await getData('pipeline'); S._pipe={assets:pl.assets,phases:pl.phases};
+  const sec=(await getData('public_data')).sec;
+  let h='<div class="vhead"><h2>Companies</h2><div class="lead">Neutral dossiers — each company in its own investor framing. As of '+esc(d.as_of)+'.</div></div>';
+  h+='<div class="panel"><h3>Who is still standing in Tourette syndrome</h3><p class="note">Every company’s TS program by furthest phase and fate. Two of the biggest names (Teva’s Austedo, Neurocrine’s Ingrezza) took VMAT2 into pediatric TS and failed — shown in red.</p>'+landscapeMatrix(pl.assets,pl.phases)+'</div>';
+  d.companies.forEach(c=>{
+    h+='<div class="panel" style="margin-top:14px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0">'+esc(c.name)+'</h3>'+(c.ticker?'<span class="pill">'+esc(c.ticker)+'</span>':'')+'</div>'
+      +'<p class="note" style="margin:8px 0 4px"><b style="color:var(--text)">Role in TS:</b> '+esc(c.role_in_ts)+'</p>'
+      +'<p class="note" style="margin:4px 0 10px"><b style="color:var(--text)">Framing:</b> '+esc(c.framing)+'</p>'
+      +'<table><thead><tr><th>Asset</th><th>MoA</th><th>Indication</th><th>TS relevance</th></tr></thead><tbody>'
+      + c.neuroscience_portfolio.map(p=>{ const f=inferFate(p.ts_relevance+' '+p.indication);
+          return '<tr><td><b>'+esc(p.name)+'</b>'+(f?' '+fateBadge(f):'')+'</td><td>'+esc(p.moa)+'</td><td>'+esc(p.indication)+'</td><td>'+esc(p.ts_relevance)+' '+(p.sources||[]).map(cite).join(' ')+'</td></tr>'; }).join('')
+      +'</tbody></table><div class="cite" style="margin-top:6px">'+cite(c.source)+'</div>'
+      +((sec&&sec.reports&&sec.reports.length&&/teva/i.test(c.name))?secPanel(sec):'')+'</div>';
+  });
+  h+=disc(); main.innerHTML=h;
+}
+async function renderPolicy(main){
+  const d=await getData('policy');
+  const SECS=[['regulatory','Regulatory & exclusivity'],['school_lane','School accommodation'],['advocacy','Advocacy & channel'],['reimbursement','Reimbursement & access']].filter(x=>d[x[0]]);
+  // status words written into the item labels become badges
+  const STAT=[[/\bUNCONFIRMED\b/,'Unconfirmed','unc'],[/\bCONFIRMED\b/,'Confirmed','conf'],[/\bGRANTED\b/,'Granted','conf']];
+  const parse=lab=>{ let st=null, t=String(lab); for(const x of STAT){ if(x[0].test(t)){ st=x; break; } }
+    t=t.replace(/\s*—\s*(UNCONFIRMED|CONFIRMED|GRANTED)\b/,'').replace(/\s{2,}/g,' ').trim(); return {title:t, st:st}; };
+  let tab=SECS[0][0];
+  let h='<div class="vhead"><h2>Policy &amp; advocacy</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  if(d.note) h+='<div class="banner">'+esc(d.note)+'</div>';
+  h+='<div class="panel"><div class="tabs" id="polTabs" role="tablist"></div><div id="polBody"></div></div>';
+  h+=disc(); main.innerHTML=h;
+  function draw(){
+    document.getElementById('polTabs').innerHTML=SECS.map(x=>'<button class="tab'+(x[0]===tab?' on':'')+'" role="tab" aria-selected="'+(x[0]===tab)+'" data-t="'+x[0]+'">'+esc(x[1])+' <span class="tabn">'+d[x[0]].length+'</span></button>').join('');
+    document.getElementById('polBody').innerHTML='<div class="polbar"><button class="btn ghost sm" id="polAll">Expand all</button></div>'
+      +d[tab].map((it,i)=>{ const p=parse(it.label), src=[].concat(it.sources||[], it.source?[it.source]:[]);
+        return '<details class="acc"'+(i===0?' open':'')+'><summary><span class="acct">'+esc(p.title)+'</span>'+(p.st?'<span class="pill st-'+p.st[2]+'">'+(p.st[2]==='conf'?'● ':'○ ')+p.st[1]+'</span>':'')+'</summary>'
+          +'<div class="accb">'+esc(it.detail)+'<div class="cite" style="margin-top:6px">'+src.map(cite).join(' · ')+'</div></div></details>'; }).join('');
+    document.querySelectorAll('#polTabs .tab').forEach(b=>b.onclick=()=>{tab=b.getAttribute('data-t'); draw();});
+    const all=document.getElementById('polAll');
+    all.onclick=()=>{ const ds=[...document.querySelectorAll('#polBody details')], open=ds.some(x=>!x.open); ds.forEach(x=>x.open=open); all.textContent=open?'Collapse all':'Expand all'; };
+  }
+  draw();
+}
+function mdToHtml(md){
+  let s=esc(md).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  return s.split(/\n\n+/).map(p=>'<p>'+p.replace(/\n/g,'<br>')+'</p>').join('');
+}
+async function renderBriefings(main){
+  const d=await getData('briefings');
+  const pl=await getData('pipeline'); S._pipe={assets:pl.assets,phases:pl.phases};
+  let h='<div class="vhead"><h2>Briefings</h2><div class="lead">Cited education modules — each opens with a visual, then the detail. Click to expand; use the chips to jump to a related view.</div></div><div class="brief">';
+  d.briefings.forEach((b,i)=>{
+    const vis=(b.visual&&BRIEF_VIS[b.visual])?'<div class="bvis">'+BRIEF_VIS[b.visual]()+'</div>':'';
+    h+='<details'+(i===0?' open':'')+'><summary>'+esc(b.title)+'<span class="bs">'+esc(b.summary)+'</span></summary><div class="bc">'
+      + vis
+      + mdToHtml(b.body_md)
+      + '<div class="chiprow">'+(b.cross_links||[]).map(v=>'<span class="lchip" data-goto="'+esc(v)+'">&#8594; '+esc(v)+'</span>').join('')+'</div>'
+      + '<div class="cite" style="margin-top:8px">Sources: '+(b.sources||[]).map(cite).join(' · ')+'</div></div></details>';
+  });
+  h+='</div>'+disc(); main.innerHTML=h;
+  main.querySelectorAll('.lchip[data-goto]').forEach(c=>c.onclick=()=>{location.hash='#/'+c.getAttribute('data-goto');});
+}
+async function renderScenario(main){
+  const d=await getData('scenario_model');
+  const A={DIAGNOSED:174000,TRUE_TS:348000,DW:0.20,STEP_RETENTION:0.70,COE_FLOOR:0.15};
+  A.LATENT=A.TRUE_TS-A.DIAGNOSED;
+  const L={}; d.levers.forEach(l=>L[l.id]=l);
+  function calc(g){
+    const diag=A.DIAGNOSED+A.LATENT*(g('diagnosis_rate_lift')/100);
+    const ddw=diag*A.DW;
+    const ldw=A.LATENT*(1-g('diagnosis_rate_lift')/100)*A.DW;
+    const cbit=ddw*(g('cbit_access_constraint')/100);
+    const phase=g('pediatric_label_timing')/100;
+    const breadth=A.COE_FLOOR+(1-A.COE_FLOOR)*(g('coe_vs_community_reach')/100);
+    const cov=g('field_coordination_sov')/100;
+    const spec=ddw*breadth*cov*phase;
+    const coe=breadth>0?spec*(A.COE_FLOOR/breadth):0;
+    const branded=ddw*Math.pow(A.STEP_RETENTION,g('step_therapy_stringency'))*phase;
+    return {ddw,ldw,cbit,spec,coe,branded};
+  }
+  const BASE=calc(id=>L[id].baseline);
+  let h='<div class="vhead"><h2>Scenario planner</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  h+='<div class="scen-layout"><div class="scen-main">';
+  h+='<div class="panel"><h3>Levers</h3><p class="note" style="margin-top:0">Defaults open at a launched base case; “Reset to today” returns every lever to its current-state baseline.</p>';
+  d.levers.forEach(l=>{
+    h+='<div class="lever"><div class="lh"><b>'+esc(l.label)+'</b><span class="lv" id="lvv_'+l.id+'"></span></div>'
+      +'<div class="ld">'+esc(l.description)+'</div>'
+      +'<input type="range" id="lev_'+l.id+'" min="'+l.min+'" max="'+l.max+'" value="'+l.default+'" step="1"></div>';
+  });
+  h+='</div>';
+  h+='<div class="panel"><h3>Base rates (cited)</h3><table><tbody>'
+    + d.base_rates.map(b=>'<tr><td style="width:38%"><b>'+esc(b.label)+'</b></td><td>'+esc(b.value)+' '+cite(b.source)+'</td></tr>').join('')
+    + '</tbody></table></div>';
+  h+='<div class="banner">'+esc(d.guardrail)+'</div>';
+  h+='</div>'; // /scen-main
+  // Live-output rail — sticky, stays in view while the levers are worked.
+  h+='<aside class="scen-rail"><div class="panel" style="margin:0">'
+    +'<div class="scen-out-head"><h3 style="margin:0">Outputs</h3><span class="sub">patients &amp; channel coverage</span></div>'
+    +'<div class="scen-outs" id="scenOut"></div>'
+    +'<button class="btn ghost sm" id="scenReset" type="button" style="width:100%;margin-top:14px">&#8635;&nbsp; Reset levers to today</button>'
+    +'<div class="cite" style="margin-top:10px">“vs today” compares to the baseline (pre-launch) state. Illustrative model — patients/coverage only, never dollars.</div>'
+    +'</div></aside>';
+  h+='</div>'; // /scen-layout
+  h+=disc(); main.innerHTML=h;
+  const P=n=>Math.max(0,Math.round(n/500)*500).toLocaleString();
+  const val=id=>+document.getElementById('lev_'+id).value;
+  function tile(cur,base,label,pct){
+    const r=Math.round((cur-base)/500)*500, cls=r>0?'up':(r<0?'down':'flat');
+    const dl='<div class="od '+cls+'">'+(r===0?'— vs today':(r>0?'+':'')+r.toLocaleString()+' vs today')+'</div>';
+    return '<div class="otile"><div class="ov">~'+P(cur)+'</div><div class="ol">'+label+'</div>'+(pct!=null?'<div class="op">'+pct+'</div>':'')+dl+'</div>';
+  }
+  function compute(){
+    d.levers.forEach(l=>{ document.getElementById('lvv_'+l.id).textContent = val(l.id)+(l.max<=3?'':'%'); });
+    const o=calc(val);
+    const pct=x=>o.ddw>0?Math.round(x/o.ddw*100)+'% of DW pool':'';
+    document.getElementById('scenOut').innerHTML=
+      tile(o.ddw,BASE.ddw,'Diagnosed drug-warranting pool',null)
+     +tile(o.ldw,BASE.ldw,'Latent (undiagnosed) DW pool',null)
+     +tile(o.cbit,BASE.cbit,'Held at CBIT-first gate',pct(o.cbit))
+     +tile(o.spec,BASE.spec,'Specialist-reachable',pct(o.spec))
+     +tile(o.coe,BASE.coe,'CoE-covered',pct(o.coe))
+     +tile(o.branded,BASE.branded,'Branded-reachable (post step-therapy)',pct(o.branded));
+  }
+  d.levers.forEach(l=>document.getElementById('lev_'+l.id).addEventListener('input',compute));
+  document.getElementById('scenReset').addEventListener('click',()=>{
+    d.levers.forEach(l=>{ document.getElementById('lev_'+l.id).value=l.baseline; });
+    compute();
+  });
+  compute();
+}
+
+async function renderExecutive(main){
+  const d=await getData('executive_summary');
+  let h='<div class="vhead"><h2>Executive summary</h2><div class="lead">The one-screen read for a JPM-hallway conversation — the market, the gap, and the opportunity, in a few sentences and a few numbers.</div></div>';
+  h+='<div class="exhero"><div class="lead2">'+esc(d.positioning)+'</div></div>';
+  if(d.timeline && d.timeline.length){
+    const fut=d.timeline.find(t=>t.future), days=fut?Math.ceil((new Date(2027,2,31)-new Date())/864e5):null;
+    h+='<div class="panel tlpanel" style="margin-top:0;margin-bottom:14px"><div class="tlhead"><h3 style="margin:0">Ecopipam catalyst path</h3>'
+      +(days!=null&&days>0?'<span class="tlcount"><b>'+days+'</b> days to the end of the FDA decision window</span>':'')+'</div>'
+      +'<div class="tl">'+d.timeline.map(t=>'<div class="tlstep '+esc(t.kind)+(t.future?' fut':'')+'"><span class="tldot"></span>'
+        +'<div class="tldate">'+esc(fmtDate(t.date))+'</div><div class="tllabel">'+esc(t.label)+'</div><div>'+cite(t.source)+'</div></div>').join('')+'</div>'
+      +'<div class="legend" style="margin-top:12px"><span class="lgd"><span class="tlkey regulatory"></span>Regulatory</span><span class="lgd"><span class="tlkey clinical"></span>Clinical</span><span class="lgd"><span class="tlkey deal"></span>Deal</span><span class="lgd"><span class="tlkey fut"></span>Upcoming — not yet decided</span></div></div>';
+  }
+  if(d.whats_new && d.whats_new.length){
+    h+='<div class="panel" style="margin-top:0;margin-bottom:14px"><h3>What changed since the last review</h3><p class="note">Re-verified '+esc(fmtDate(d.as_of||''))+'. Select a row to open the related view.</p>'
+      +d.whats_new.map(w=>'<div class="wn" data-goto="'+esc(w.goto||'')+'" tabindex="0" role="link"><span class="wntag '+esc(String(w.tag).toLowerCase())+'">'+esc(w.tag)+'</span>'
+        +'<div class="wnbody"><div>'+esc(w.text)+'</div><div class="cite" style="margin-top:3px">'+esc(w.date)+' '+cite(w.source)+'</div></div><span class="wngo" aria-hidden="true">'+ic('jump')+'</span></div>').join('')+'</div>';
+  }
+  try{ const cur=await getData('current_treatment'), pd=await getData('public_data');
+    const A=cur.agents.map(a=>pd.agents[a.generic]||{}), n=A.length;
+    const onl=A.filter(a=>a.label&&a.label.tourette_indication).length, bw=A.filter(a=>a.label&&a.label.boxed_warning).length;
+    const tr=g=>{const m=(pd.agents[g]||{}).medicaid; if(!m) return null; const f=m.by_year.filter(y=>y.complete); if(f.length<2) return null;
+      const a=f[0], b=f[f.length-1]; return {from:a.year,to:b.year,rx:b.rx,pct:Math.round((b.rx-a.rx)/a.rx*100)}; };
+    const g=tr('guanfacine'), pz=tr('pimozide'), sup=cur.agents.filter(a=>((pd.agents[a.generic]||{}).supply||{}).records>0).map(a=>a.generic);
+    const drug=pd.trials?pd.trials.open.filter(t=>t.kinds.indexOf('DRUG')>=0).length:null;
+    const li=[];
+    li.push('<b>'+onl+' of '+n+'</b> medicines in use name Tourette syndrome on the FDA label; the rest are off-label. <b>'+bw+' of '+n+'</b> carry a boxed warning. '+cite('openfda'));
+    if(g) li.push('Guanfacine, the common first medicine, reached <b>'+(g.rx/1e6).toFixed(1)+' million</b> Medicaid prescriptions in '+g.to+' ('+(g.pct>=0?'up ':'down ')+Math.abs(g.pct)+'% since '+g.from+', all uses) while resting on low-confidence evidence for tics. '+cite('medicaid_sdud'));
+    if(pz) li.push('Pimozide, the one medicine used almost only for Tourette syndrome, was '+(pz.pct>=0?'up ':'down ')+'<b>'+Math.abs(pz.pct)+'%</b> over the same period, to about '+(Math.round(pz.rx/100)*100).toLocaleString()+' reported Medicaid prescriptions. Small counts are hidden in this data, so the true fall is likely smaller. '+cite('medicaid_sdud'));
+    if(sup.length) li.push('FDA lists supply or discontinuation notices for <b>'+esc(sup.join(' and '))+'</b>. '+cite('openfda'));
+    if(drug!=null) li.push('<b>'+drug+'</b> drug studies are open among '+pd.trials.open_count+' registered Tourette studies. '+cite('ctgov'));
+    h+='<div class="panel" style="margin-top:0;margin-bottom:14px"><h3>How it is treated today</h3><p class="note">From public FDA, Medicaid and trial-registry records. Volumes cover every use of each medicine, not Tourette syndrome alone.</p>'
+      +'<ul style="margin:0;padding-left:18px;line-height:1.6">'+li.map(x=>'<li style="margin-bottom:6px">'+x+'</li>').join('')+'</ul>'
+      +'<div style="margin-top:12px"><a class="btn ghost sm" href="#/current">Open current treatment</a></div></div>';
+  }catch(e){ if(String(e&&e.message)==='session expired') throw e; }
+  h+='<div class="exstats">'+d.big_stats.map(s=>'<div class="exstat"><div class="v">'+esc(s.value)+'</div><div class="l">'+esc(s.label)+' '+cite(s.source)+'</div></div>').join('')+'</div>';
+  h+='<div class="excards">'+d.sections.map(s=>'<div class="excard'+(s.key==='unmet'?' exunmet':'')+'"><h4>'+esc(s.title)+'</h4><p>'+esc(s.body)+'</p><div class="cite" style="margin-top:8px">'+(s.sources||[]).map(cite).join(' · ')+'</div></div>').join('')+'</div>';
+  h+='<div class="exone">'+esc(d.one_liner)+'</div>';
+  h+=disc(); main.innerHTML=h;
+  main.querySelectorAll('.wn[data-goto]').forEach(n=>{ const go=e=>{ if(e.target.closest('a'))return; const v=n.getAttribute('data-goto'); if(v) location.hash='#/'+v; };
+    n.onclick=go; n.onkeydown=e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(e); } }; });
+}
+
+const VIEWS = { executive:renderExecutive, landscape:renderLandscape, journey:renderJourney, treatment:renderTreatment, current:renderCurrent,
+  pipeline:renderPipeline, channel:renderChannel, companies:renderCompanies,
+  scenario:renderScenario, policy:renderPolicy, briefings:renderBriefings, admin:renderAdmin };
+
+initTheme();
+boot();
+</script>
+</body>
+</html>

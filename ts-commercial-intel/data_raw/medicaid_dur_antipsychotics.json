@@ -1,0 +1,209 @@
+{
+ "fetched_at": "2026-11-13T01:53:43Z",
+ "source_urls": [
+  "https://data.medicaid.gov/api/1/metastore/schemas/dataset/items?show-reference-ids=false",
+  "https://data.medicaid.gov/api/1/search?fulltext=<term>",
+  "https://data.medicaid.gov/api/1/datastore/query/<releases index id>/0",
+  "https://data.cms.gov/data.json"
+ ],
+ "error": "Not available as data on an allowed host. No dataset on data.medicaid.gov or data.cms.gov contains the Medicaid Drug Utilization Review (DUR) annual survey responses (fee-for-service or managed care). CMS publishes those state responses as report documents on www.medicaid.gov, which is outside the allowed hosts and was not contacted. No state answer about antipsychotic or stimulant oversight in children was fetched, and none is recorded or inferred here.",
+ "caveats": [
+  "This file contains NO state responses. 'states' is empty on purpose; do not show any state as having or lacking an antipsychotic or stimulant monitoring programme on the basis of this file.",
+  "The catalogue search API matches substrings: its hits for 'DUR survey' and 'foster' are unrelated datasets (listed under 'searched' so that can be checked).",
+  "'related_but_not_equivalent' names CMS datasets that measure outcomes of antipsychotic prescribing in children. They are quality rates, not a record of state oversight policy, and were not extracted."
+ ],
+ "survey_year": null,
+ "programs": [],
+ "states": [],
+ "searched": [
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "drug utili[sz]ation review",
+   "datasets_in_catalogue": 562,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "\\bDUR\\b",
+   "datasets_in_catalogue": 562,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "antipsychotic",
+   "datasets_in_catalogue": 562,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "psychotropic",
+   "datasets_in_catalogue": 562,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "stimulant",
+   "datasets_in_catalogue": 562,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "foster",
+   "datasets_in_catalogue": 562,
+   "matches": 1,
+   "matching_titles": [
+    "Managed Care Features By Enrollment Population"
+   ]
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "regex over title, description and keywords of every catalogue dataset (yearly 'State Drug Utilization Data' tables excluded)",
+   "query": "survey",
+   "datasets_in_catalogue": 562,
+   "matches": 1,
+   "matching_titles": [
+    "NAM CAHPS 2014 Public Use"
+   ]
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "catalogue search API (/api/1/search, fulltext)",
+   "query": "drug utilization review",
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "catalogue search API (/api/1/search, fulltext)",
+   "query": "DUR survey",
+   "matches": 1,
+   "matching_titles": [
+    "NAM CAHPS 2014 Public Use"
+   ]
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "catalogue search API (/api/1/search, fulltext)",
+   "query": "antipsychotic",
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "catalogue search API (/api/1/search, fulltext)",
+   "query": "psychotropic",
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "catalogue search API (/api/1/search, fulltext)",
+   "query": "stimulant",
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "catalogue search API (/api/1/search, fulltext)",
+   "query": "foster",
+   "matches": 1,
+   "matching_titles": [
+    "Managed Care Features By Enrollment Population"
+   ]
+  },
+  {
+   "host": "data.medicaid.gov",
+   "method": "row scan of 'Division of Pharmacy Releases Index dataset' (0d425780-16be-4ded-8420-69def8f4ee29), the index of CMS pharmacy programme releases",
+   "query": "\\bDUR\\b|utili[sz]ation review|antipsychotic|psychotropic|stimulant|foster",
+   "rows_scanned": 2416,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.cms.gov",
+   "method": "regex over title, description and keywords of every dataset in data.json",
+   "query": "drug utili[sz]ation review",
+   "datasets_in_catalogue": 3528,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.cms.gov",
+   "method": "regex over title, description and keywords of every dataset in data.json",
+   "query": "\\bDUR\\b",
+   "datasets_in_catalogue": 3528,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.cms.gov",
+   "method": "regex over title, description and keywords of every dataset in data.json",
+   "query": "antipsychotic",
+   "datasets_in_catalogue": 3528,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.cms.gov",
+   "method": "regex over title, description and keywords of every dataset in data.json",
+   "query": "psychotropic",
+   "datasets_in_catalogue": 3528,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.cms.gov",
+   "method": "regex over title, description and keywords of every dataset in data.json",
+   "query": "stimulant",
+   "datasets_in_catalogue": 3528,
+   "matches": 0,
+   "matching_titles": []
+  },
+  {
+   "host": "data.cms.gov",
+   "method": "regex over title, description and keywords of every dataset in data.json",
+   "query": "foster",
+   "datasets_in_catalogue": 3528,
+   "matches": 1,
+   "matching_titles": [
+    "CPC Initiative - Participating Primary Care Practices : 2017-09-25"
+   ]
+  }
+ ],
+ "closest_datasets_found": [
+  {
+   "title": "Division of Pharmacy Releases Index dataset",
+   "why_not": "Index of CMS pharmacy releases to states and manufacturers; no row mentions DUR, antipsychotics, stimulants or foster care."
+  },
+  {
+   "title": "State Drug Utilization Data <year>",
+   "why_not": "Prescription counts by drug, state and quarter (already used for medicaid_sdud.json). Despite the name it is not the DUR survey."
+  },
+  {
+   "title": "Managed Care Features By Enrollment Population",
+   "why_not": "Only hit for 'foster'; lists which populations managed care programmes enrol, nothing about prescribing oversight."
+  }
+ ],
+ "related_but_not_equivalent": [
+  {
+   "titles": [
+    "2025 Child and Adult Health Care Quality Measures Quality",
+    "2024 Child and Adult Health Care Quality Measures Quality",
+    "2023 Child and Adult Health Care Quality Measures Quality"
+   ],
+   "host": "data.medicaid.gov",
+   "note": "Child Core Set measures APM-CH (Metabolic Monitoring for Children and Adolescents on Antipsychotics) and APP-CH (Use of First-Line Psychosocial Care for Children and Adolescents on Antipsychotics) are reported by state in these datasets. Seen in the catalogue; not extracted because the brief asked for DUR survey responses."
+  }
+ ]
+}

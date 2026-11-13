@@ -1,0 +1,117 @@
+{
+  "headline": "The TS pipeline is now defined by one dated regulatory event — ecopipam's FDA decision, due late Q1 2027 under Priority Review — with a cluster of PDE10A dopamine-modulators and non-invasive neuromodulation behind it, all set against a decade of repeated VMAT2 failures.",
+  "as_of": "2026-11-13",
+  "assets": [
+    {
+      "name": "Ecopipam",
+      "sponsor": "Teva (via Emalex Biosciences)",
+      "moa": "Selective dopamine D1 receptor antagonist (non-antipsychotic)",
+      "phase": "NDA accepted — FDA Priority Review",
+      "ts_status": "Lead indication — pediatric TS only; Priority Review + Orphan Drug + Fast Track",
+      "next_milestone": "FDA target action date: late Q1 2027 (NDA accepted Aug 19, 2026). Not yet approved.",
+      "nct": "NCT05615220",
+      "source": "teva_nda_accept",
+      "note": "Teva agreed to acquire Emalex Apr 29, 2026, closed June 10, submitted the NDA June 18; FDA accepted it with Priority Review Aug 19, 2026. D1AMOND (JAMA Neurology): pediatric relapse HR 0.5, P=.008. New Oct 2026 MDS data: ~70% with clinically meaningful tic reduction within 8 weeks (post hoc); 45.6% mean tic-severity reduction at 18 months in the open-label extension, no new safety signals.",
+      "phase_index": 4,
+      "fate": "filed",
+      "updated": "2026-10"
+    },
+    {
+      "name": "Gemlapodect (NOE-105)",
+      "sponsor": "Noema Pharma",
+      "moa": "PDE10A inhibitor (striatal dopamine modulator)",
+      "phase": "Phase 2b",
+      "ts_status": "Active development — adults and adolescents",
+      "next_milestone": "Phase 2b ALLEVIA-2 (NOE-TTS-201) topline — OVERDUE. 12-wk, randomized, placebo-controlled, n=140, up to 15 mg QD; registry primary completion was estimated June 2026.",
+      "nct": "NCT06315751",
+      "source": "noema_gemlapodect_ph2b",
+      "note": "Phase 2a (ALLEVIA-1, open-label): 7.8-point YGTSS-TTS reduction in 14 evaluable patients; met primary and key secondary endpoints. No Phase 2b topline had been located as of Nov 13, 2026 — the readout is the next competitive catalyst and its silence is itself worth watching.",
+      "phase_index": 2,
+      "fate": "active",
+      "updated": "2026-11"
+    },
+    {
+      "name": "SCI-110 (THC + PEA/CannAmide)",
+      "sponsor": "SciSparc (NeuroThera Labs subsidiary)",
+      "moa": "Cannabinoid combination — dronabinol (THC) plus palmitoylethanolamide (PEA)",
+      "phase": "Phase 2b",
+      "ts_status": "Active development — adults (18-65)",
+      "next_milestone": "Phase 2b dosing/enrollment — crossover design with endpoints at weeks 12 and 26; target enrollment 164. Sites: Yale, Hannover Medical School, Tel Aviv Sourasky.",
+      "nct": "NCT05126888",
+      "source": "scisparc_ph2b_sites_2026",
+      "note": "Sites activated in 2026: Hannover (Jul 15), Yale (Aug 5); European drug-batch release reported Oct 2026 with all three sites initiated. Adults 18-65 only. Prior Phase 2a ~21% tic reduction (uncontrolled). Updates are company-sourced.",
+      "phase_index": 2,
+      "fate": "active",
+      "updated": "2026-10"
+    },
+    {
+      "name": "Balipodect (TAK-063)",
+      "sponsor": "Axsome Therapeutics (acquired from Takeda)",
+      "moa": "PDE10A inhibitor (striatal dopamine modulator)",
+      "phase": "Phase 2 complete in schizophrenia; not yet in clinic for TS",
+      "ts_status": "Planned TS indication — no TS trial started",
+      "next_milestone": "Axsome guiding to Phase 3-enabling activities in schizophrenia in 2026; Tourette named as an additional target indication (no TS study registered)",
+      "source": "axsome_balipodect",
+      "note": "Acquired by Axsome from Takeda (announced April 1, 2026). Completed a 164-patient Phase 2 proof-of-concept in schizophrenia (2016); the 'TS secondary to schizophrenia' framing reflects that schizophrenia is the lead program. TS development stage is preclinical/planning as of the as_of date.",
+      "phase_index": 0,
+      "fate": "active"
+    },
+    {
+      "name": "EM-221 (formerly MR-1916)",
+      "sponsor": "EuMentis Therapeutics",
+      "moa": "Highly selective PDE10A inhibitor (picomolar potency)",
+      "phase": "Phase 1 complete; Phase 2-ready",
+      "ts_status": "Lead indication — TS and movement disorders",
+      "next_milestone": "Phase 2 TS trial (company has guided to Phase 2 initiation); Phase 1 MTD 15 mg, PDE10A PET occupancy up to 92.8%, ~24 h half-life",
+      "source": "eumentis_em221_cells",
+      "note": "Drug identity and Phase 1 data are from the peer-reviewed Cells (2024) report. Exact Phase 2 start/registration not independently confirmed live as of the as_of date; treat Phase 2 timing as company guidance, not a registered study.",
+      "phase_index": 1,
+      "fate": "active"
+    },
+    {
+      "name": "Neupulse",
+      "sponsor": "Neurotherapeutics Ltd / Neupulse (University of Nottingham spin-out)",
+      "moa": "Wrist-worn rhythmic 10-Hz median-nerve stimulation (non-invasive neuromodulation device)",
+      "phase": "Sham-controlled RCT complete; UK wellness device launched",
+      "ts_status": "Marketed-track (device) — not an FDA-cleared therapeutic",
+      "next_milestone": "Medical-device version under regulatory development; no FDA clearance or US launch",
+      "source": "neupulse_wellness_2026",
+      "note": "Launched as a UK 'wellness' wrist device (Neupulse C) in 2026 rather than a regulated medical device. Sham-controlled RCT (n=135) showed reduced tic frequency; see neupulse_rct.",
+      "phase_index": 3,
+      "fate": "device",
+      "updated": "2026-10"
+    },
+    {
+      "name": "Deutetrabenazine (Austedo)",
+      "sponsor": "Teva",
+      "moa": "VMAT2 inhibitor",
+      "phase": "Phase 3 (ARTISTS 1 & 2) — negative; program discontinued for TS",
+      "ts_status": "Failed / no TS indication",
+      "next_milestone": "None for TS — ARTISTS 1 & 2 missed the primary YGTSS endpoint; marketed only for tardive dyskinesia and Huntington's chorea",
+      "source": "artists_fail",
+      "note": "Included to document the VMAT2 class failures in TS (context for ecopipam's D1 approach).",
+      "phase_index": 3,
+      "fate": "failed"
+    },
+    {
+      "name": "Valbenazine (Ingrezza)",
+      "sponsor": "Neurocrine Biosciences",
+      "moa": "VMAT2 inhibitor",
+      "phase": "Phase 2b (T-Force GOLD) — negative; TS program not pursued",
+      "ts_status": "Failed / no TS indication",
+      "next_milestone": "None for TS — T-Force GOLD (pediatric) missed the primary YGTSS endpoint (topline Dec 12, 2018); marketed for tardive dyskinesia and Huntington's chorea",
+      "source": "neurocrine_tforce_gold",
+      "note": "Second major VMAT2 failure in TS alongside deutetrabenazine's ARTISTS trials.",
+      "phase_index": 2,
+      "fate": "failed"
+    }
+  ],
+  "phases": [
+    "Preclinical",
+    "Phase 1",
+    "Phase 2",
+    "Phase 3",
+    "Filed",
+    "Approved"
+  ]
+}

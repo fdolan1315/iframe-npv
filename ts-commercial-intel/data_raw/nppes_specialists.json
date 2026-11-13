@@ -1,0 +1,758 @@
+{
+ "fetched_at": "2026-11-13T01:25:24Z",
+ "source_urls": [
+  "https://npiregistry.cms.hhs.gov/api/?version=2.1&enumeration_type=NPI-1&state=<ST>&taxonomy_description=<desc>&limit=200&skip=<0..1000>"
+ ],
+ "caveats": [
+  "The NPI Registry API returns at most 1,200 records per query (limit 200, skip up to 1000). States that hit the cap are marked capped:true and carry NO count.",
+  "The API has no taxonomy-code filter; queries use the taxonomy description and results are then filtered to providers that actually list the exact code.",
+  "The API's state filter matches any address on the record (mailing or practice). 'providers_practice_location_in_state' keeps only those whose practice LOCATION address is in the state and is the recommended figure; 'providers_with_taxonomy_code' is the wider count.",
+  "A provider with addresses in two states can be counted in both.",
+  "NPI taxonomy is self-reported and is not board certification. Records are rarely removed when clinicians retire or move, so counts overstate the active workforce. Trainees and clinicians who list the code as a secondary taxonomy are included unless the 'primary_taxonomy' figure is used.",
+  "Individual providers only (NPI-1). Includes DC and Puerto Rico."
+ ],
+ "errors": [],
+ "specialties": {
+  "child_neurology": {
+   "code": "2084N0402X",
+   "taxonomy_description": "Neurology with Special Qualifications in Child Neurology",
+   "states": {
+    "AL": {
+     "capped": false,
+     "records_returned": 42,
+     "providers_with_taxonomy_code": 42,
+     "providers_practice_location_in_state": 32,
+     "providers_primary_taxonomy_and_practice_in_state": 32
+    },
+    "AK": {
+     "capped": false,
+     "records_returned": 7,
+     "providers_with_taxonomy_code": 7,
+     "providers_practice_location_in_state": 4,
+     "providers_primary_taxonomy_and_practice_in_state": 2
+    },
+    "AZ": {
+     "capped": false,
+     "records_returned": 82,
+     "providers_with_taxonomy_code": 82,
+     "providers_practice_location_in_state": 65,
+     "providers_primary_taxonomy_and_practice_in_state": 59
+    },
+    "AR": {
+     "capped": false,
+     "records_returned": 25,
+     "providers_with_taxonomy_code": 25,
+     "providers_practice_location_in_state": 19,
+     "providers_primary_taxonomy_and_practice_in_state": 17
+    },
+    "CA": {
+     "capped": false,
+     "records_returned": 354,
+     "providers_with_taxonomy_code": 354,
+     "providers_practice_location_in_state": 332,
+     "providers_primary_taxonomy_and_practice_in_state": 281
+    },
+    "CO": {
+     "capped": false,
+     "records_returned": 101,
+     "providers_with_taxonomy_code": 101,
+     "providers_practice_location_in_state": 83,
+     "providers_primary_taxonomy_and_practice_in_state": 64
+    },
+    "CT": {
+     "capped": false,
+     "records_returned": 43,
+     "providers_with_taxonomy_code": 43,
+     "providers_practice_location_in_state": 40,
+     "providers_primary_taxonomy_and_practice_in_state": 40
+    },
+    "DE": {
+     "capped": false,
+     "records_returned": 23,
+     "providers_with_taxonomy_code": 23,
+     "providers_practice_location_in_state": 13,
+     "providers_primary_taxonomy_and_practice_in_state": 9
+    },
+    "DC": {
+     "capped": false,
+     "records_returned": 61,
+     "providers_with_taxonomy_code": 61,
+     "providers_practice_location_in_state": 49,
+     "providers_primary_taxonomy_and_practice_in_state": 45
+    },
+    "FL": {
+     "capped": false,
+     "records_returned": 196,
+     "providers_with_taxonomy_code": 196,
+     "providers_practice_location_in_state": 174,
+     "providers_primary_taxonomy_and_practice_in_state": 151
+    },
+    "GA": {
+     "capped": false,
+     "records_returned": 94,
+     "providers_with_taxonomy_code": 94,
+     "providers_practice_location_in_state": 59,
+     "providers_primary_taxonomy_and_practice_in_state": 51
+    },
+    "HI": {
+     "capped": false,
+     "records_returned": 10,
+     "providers_with_taxonomy_code": 10,
+     "providers_practice_location_in_state": 7,
+     "providers_primary_taxonomy_and_practice_in_state": 7
+    },
+    "ID": {
+     "capped": false,
+     "records_returned": 5,
+     "providers_with_taxonomy_code": 5,
+     "providers_practice_location_in_state": 3,
+     "providers_primary_taxonomy_and_practice_in_state": 3
+    },
+    "IL": {
+     "capped": false,
+     "records_returned": 175,
+     "providers_with_taxonomy_code": 175,
+     "providers_practice_location_in_state": 94,
+     "providers_primary_taxonomy_and_practice_in_state": 79
+    },
+    "IN": {
+     "capped": false,
+     "records_returned": 55,
+     "providers_with_taxonomy_code": 55,
+     "providers_practice_location_in_state": 43,
+     "providers_primary_taxonomy_and_practice_in_state": 31
+    },
+    "IA": {
+     "capped": false,
+     "records_returned": 38,
+     "providers_with_taxonomy_code": 38,
+     "providers_practice_location_in_state": 32,
+     "providers_primary_taxonomy_and_practice_in_state": 21
+    },
+    "KS": {
+     "capped": false,
+     "records_returned": 22,
+     "providers_with_taxonomy_code": 22,
+     "providers_practice_location_in_state": 12,
+     "providers_primary_taxonomy_and_practice_in_state": 7
+    },
+    "KY": {
+     "capped": false,
+     "records_returned": 52,
+     "providers_with_taxonomy_code": 52,
+     "providers_practice_location_in_state": 44,
+     "providers_primary_taxonomy_and_practice_in_state": 36
+    },
+    "LA": {
+     "capped": false,
+     "records_returned": 45,
+     "providers_with_taxonomy_code": 45,
+     "providers_practice_location_in_state": 36,
+     "providers_primary_taxonomy_and_practice_in_state": 35
+    },
+    "ME": {
+     "capped": false,
+     "records_returned": 9,
+     "providers_with_taxonomy_code": 9,
+     "providers_practice_location_in_state": 9,
+     "providers_primary_taxonomy_and_practice_in_state": 9
+    },
+    "MD": {
+     "capped": false,
+     "records_returned": 92,
+     "providers_with_taxonomy_code": 92,
+     "providers_practice_location_in_state": 61,
+     "providers_primary_taxonomy_and_practice_in_state": 55
+    },
+    "MA": {
+     "capped": false,
+     "records_returned": 214,
+     "providers_with_taxonomy_code": 214,
+     "providers_practice_location_in_state": 185,
+     "providers_primary_taxonomy_and_practice_in_state": 163
+    },
+    "MI": {
+     "capped": false,
+     "records_returned": 117,
+     "providers_with_taxonomy_code": 117,
+     "providers_practice_location_in_state": 106,
+     "providers_primary_taxonomy_and_practice_in_state": 82
+    },
+    "MN": {
+     "capped": false,
+     "records_returned": 84,
+     "providers_with_taxonomy_code": 84,
+     "providers_practice_location_in_state": 71,
+     "providers_primary_taxonomy_and_practice_in_state": 55
+    },
+    "MS": {
+     "capped": false,
+     "records_returned": 16,
+     "providers_with_taxonomy_code": 16,
+     "providers_practice_location_in_state": 12,
+     "providers_primary_taxonomy_and_practice_in_state": 8
+    },
+    "MO": {
+     "capped": false,
+     "records_returned": 141,
+     "providers_with_taxonomy_code": 141,
+     "providers_practice_location_in_state": 104,
+     "providers_primary_taxonomy_and_practice_in_state": 85
+    },
+    "MT": {
+     "capped": false,
+     "records_returned": 10,
+     "providers_with_taxonomy_code": 10,
+     "providers_practice_location_in_state": 5,
+     "providers_primary_taxonomy_and_practice_in_state": 4
+    },
+    "NE": {
+     "capped": false,
+     "records_returned": 22,
+     "providers_with_taxonomy_code": 22,
+     "providers_practice_location_in_state": 19,
+     "providers_primary_taxonomy_and_practice_in_state": 17
+    },
+    "NV": {
+     "capped": false,
+     "records_returned": 14,
+     "providers_with_taxonomy_code": 14,
+     "providers_practice_location_in_state": 13,
+     "providers_primary_taxonomy_and_practice_in_state": 11
+    },
+    "NH": {
+     "capped": false,
+     "records_returned": 24,
+     "providers_with_taxonomy_code": 24,
+     "providers_practice_location_in_state": 18,
+     "providers_primary_taxonomy_and_practice_in_state": 14
+    },
+    "NJ": {
+     "capped": false,
+     "records_returned": 114,
+     "providers_with_taxonomy_code": 114,
+     "providers_practice_location_in_state": 94,
+     "providers_primary_taxonomy_and_practice_in_state": 83
+    },
+    "NM": {
+     "capped": false,
+     "records_returned": 19,
+     "providers_with_taxonomy_code": 19,
+     "providers_practice_location_in_state": 15,
+     "providers_primary_taxonomy_and_practice_in_state": 14
+    },
+    "NY": {
+     "capped": false,
+     "records_returned": 275,
+     "providers_with_taxonomy_code": 275,
+     "providers_practice_location_in_state": 238,
+     "providers_primary_taxonomy_and_practice_in_state": 217
+    },
+    "NC": {
+     "capped": false,
+     "records_returned": 105,
+     "providers_with_taxonomy_code": 105,
+     "providers_practice_location_in_state": 72,
+     "providers_primary_taxonomy_and_practice_in_state": 57
+    },
+    "ND": {
+     "capped": false,
+     "records_returned": 5,
+     "providers_with_taxonomy_code": 5,
+     "providers_practice_location_in_state": 2,
+     "providers_primary_taxonomy_and_practice_in_state": 1
+    },
+    "OH": {
+     "capped": false,
+     "records_returned": 217,
+     "providers_with_taxonomy_code": 217,
+     "providers_practice_location_in_state": 175,
+     "providers_primary_taxonomy_and_practice_in_state": 153
+    },
+    "OK": {
+     "capped": false,
+     "records_returned": 23,
+     "providers_with_taxonomy_code": 23,
+     "providers_practice_location_in_state": 18,
+     "providers_primary_taxonomy_and_practice_in_state": 14
+    },
+    "OR": {
+     "capped": false,
+     "records_returned": 38,
+     "providers_with_taxonomy_code": 38,
+     "providers_practice_location_in_state": 32,
+     "providers_primary_taxonomy_and_practice_in_state": 24
+    },
+    "PA": {
+     "capped": false,
+     "records_returned": 198,
+     "providers_with_taxonomy_code": 198,
+     "providers_practice_location_in_state": 147,
+     "providers_primary_taxonomy_and_practice_in_state": 129
+    },
+    "RI": {
+     "capped": false,
+     "records_returned": 16,
+     "providers_with_taxonomy_code": 16,
+     "providers_practice_location_in_state": 13,
+     "providers_primary_taxonomy_and_practice_in_state": 13
+    },
+    "SC": {
+     "capped": false,
+     "records_returned": 38,
+     "providers_with_taxonomy_code": 38,
+     "providers_practice_location_in_state": 32,
+     "providers_primary_taxonomy_and_practice_in_state": 27
+    },
+    "SD": {
+     "capped": false,
+     "records_returned": 8,
+     "providers_with_taxonomy_code": 8,
+     "providers_practice_location_in_state": 7,
+     "providers_primary_taxonomy_and_practice_in_state": 6
+    },
+    "TN": {
+     "capped": false,
+     "records_returned": 99,
+     "providers_with_taxonomy_code": 99,
+     "providers_practice_location_in_state": 68,
+     "providers_primary_taxonomy_and_practice_in_state": 59
+    },
+    "TX": {
+     "capped": false,
+     "records_returned": 338,
+     "providers_with_taxonomy_code": 338,
+     "providers_practice_location_in_state": 306,
+     "providers_primary_taxonomy_and_practice_in_state": 232
+    },
+    "UT": {
+     "capped": false,
+     "records_returned": 40,
+     "providers_with_taxonomy_code": 40,
+     "providers_practice_location_in_state": 33,
+     "providers_primary_taxonomy_and_practice_in_state": 27
+    },
+    "VT": {
+     "capped": false,
+     "records_returned": 9,
+     "providers_with_taxonomy_code": 9,
+     "providers_practice_location_in_state": 8,
+     "providers_primary_taxonomy_and_practice_in_state": 8
+    },
+    "VA": {
+     "capped": false,
+     "records_returned": 63,
+     "providers_with_taxonomy_code": 63,
+     "providers_practice_location_in_state": 38,
+     "providers_primary_taxonomy_and_practice_in_state": 32
+    },
+    "WA": {
+     "capped": false,
+     "records_returned": 86,
+     "providers_with_taxonomy_code": 86,
+     "providers_practice_location_in_state": 75,
+     "providers_primary_taxonomy_and_practice_in_state": 66
+    },
+    "WV": {
+     "capped": false,
+     "records_returned": 24,
+     "providers_with_taxonomy_code": 24,
+     "providers_practice_location_in_state": 10,
+     "providers_primary_taxonomy_and_practice_in_state": 9
+    },
+    "WI": {
+     "capped": false,
+     "records_returned": 92,
+     "providers_with_taxonomy_code": 92,
+     "providers_practice_location_in_state": 79,
+     "providers_primary_taxonomy_and_practice_in_state": 46
+    },
+    "WY": {
+     "capped": false,
+     "records_returned": 1,
+     "providers_with_taxonomy_code": 1,
+     "providers_practice_location_in_state": 0,
+     "providers_primary_taxonomy_and_practice_in_state": 0
+    },
+    "PR": {
+     "capped": false,
+     "records_returned": 36,
+     "providers_with_taxonomy_code": 36,
+     "providers_practice_location_in_state": 32,
+     "providers_primary_taxonomy_and_practice_in_state": 30
+    }
+   },
+   "capped_states": []
+  },
+  "child_adolescent_psychiatry": {
+   "code": "2084P0804X",
+   "taxonomy_description": "Child & Adolescent Psychiatry",
+   "states": {
+    "AL": {
+     "capped": false,
+     "records_returned": 84,
+     "providers_with_taxonomy_code": 84,
+     "providers_practice_location_in_state": 73,
+     "providers_primary_taxonomy_and_practice_in_state": 55
+    },
+    "AK": {
+     "capped": false,
+     "records_returned": 40,
+     "providers_with_taxonomy_code": 40,
+     "providers_practice_location_in_state": 31,
+     "providers_primary_taxonomy_and_practice_in_state": 25
+    },
+    "AZ": {
+     "capped": false,
+     "records_returned": 189,
+     "providers_with_taxonomy_code": 189,
+     "providers_practice_location_in_state": 161,
+     "providers_primary_taxonomy_and_practice_in_state": 122
+    },
+    "AR": {
+     "capped": false,
+     "records_returned": 64,
+     "providers_with_taxonomy_code": 64,
+     "providers_practice_location_in_state": 60,
+     "providers_primary_taxonomy_and_practice_in_state": 43
+    },
+    "CA": {
+     "capped": true,
+     "records_returned": 1200,
+     "note": "API cap reached (1,200 records). True count is at least 1200 and unknown; no count is reported."
+    },
+    "CO": {
+     "capped": false,
+     "records_returned": 310,
+     "providers_with_taxonomy_code": 310,
+     "providers_practice_location_in_state": 269,
+     "providers_primary_taxonomy_and_practice_in_state": 194
+    },
+    "CT": {
+     "capped": false,
+     "records_returned": 331,
+     "providers_with_taxonomy_code": 331,
+     "providers_practice_location_in_state": 281,
+     "providers_primary_taxonomy_and_practice_in_state": 229
+    },
+    "DE": {
+     "capped": false,
+     "records_returned": 45,
+     "providers_with_taxonomy_code": 45,
+     "providers_practice_location_in_state": 27,
+     "providers_primary_taxonomy_and_practice_in_state": 18
+    },
+    "DC": {
+     "capped": false,
+     "records_returned": 114,
+     "providers_with_taxonomy_code": 114,
+     "providers_practice_location_in_state": 94,
+     "providers_primary_taxonomy_and_practice_in_state": 71
+    },
+    "FL": {
+     "capped": false,
+     "records_returned": 587,
+     "providers_with_taxonomy_code": 587,
+     "providers_practice_location_in_state": 515,
+     "providers_primary_taxonomy_and_practice_in_state": 296
+    },
+    "GA": {
+     "capped": false,
+     "records_returned": 302,
+     "providers_with_taxonomy_code": 302,
+     "providers_practice_location_in_state": 242,
+     "providers_primary_taxonomy_and_practice_in_state": 142
+    },
+    "HI": {
+     "capped": false,
+     "records_returned": 112,
+     "providers_with_taxonomy_code": 112,
+     "providers_practice_location_in_state": 95,
+     "providers_primary_taxonomy_and_practice_in_state": 58
+    },
+    "ID": {
+     "capped": false,
+     "records_returned": 32,
+     "providers_with_taxonomy_code": 32,
+     "providers_practice_location_in_state": 26,
+     "providers_primary_taxonomy_and_practice_in_state": 18
+    },
+    "IL": {
+     "capped": false,
+     "records_returned": 472,
+     "providers_with_taxonomy_code": 472,
+     "providers_practice_location_in_state": 361,
+     "providers_primary_taxonomy_and_practice_in_state": 265
+    },
+    "IN": {
+     "capped": false,
+     "records_returned": 164,
+     "providers_with_taxonomy_code": 164,
+     "providers_practice_location_in_state": 130,
+     "providers_primary_taxonomy_and_practice_in_state": 83
+    },
+    "IA": {
+     "capped": false,
+     "records_returned": 77,
+     "providers_with_taxonomy_code": 77,
+     "providers_practice_location_in_state": 73,
+     "providers_primary_taxonomy_and_practice_in_state": 50
+    },
+    "KS": {
+     "capped": false,
+     "records_returned": 68,
+     "providers_with_taxonomy_code": 68,
+     "providers_practice_location_in_state": 49,
+     "providers_primary_taxonomy_and_practice_in_state": 38
+    },
+    "KY": {
+     "capped": false,
+     "records_returned": 143,
+     "providers_with_taxonomy_code": 143,
+     "providers_practice_location_in_state": 117,
+     "providers_primary_taxonomy_and_practice_in_state": 78
+    },
+    "LA": {
+     "capped": false,
+     "records_returned": 154,
+     "providers_with_taxonomy_code": 154,
+     "providers_practice_location_in_state": 127,
+     "providers_primary_taxonomy_and_practice_in_state": 88
+    },
+    "ME": {
+     "capped": false,
+     "records_returned": 85,
+     "providers_with_taxonomy_code": 85,
+     "providers_practice_location_in_state": 75,
+     "providers_primary_taxonomy_and_practice_in_state": 58
+    },
+    "MD": {
+     "capped": false,
+     "records_returned": 401,
+     "providers_with_taxonomy_code": 401,
+     "providers_practice_location_in_state": 345,
+     "providers_primary_taxonomy_and_practice_in_state": 258
+    },
+    "MA": {
+     "capped": false,
+     "records_returned": 529,
+     "providers_with_taxonomy_code": 529,
+     "providers_practice_location_in_state": 462,
+     "providers_primary_taxonomy_and_practice_in_state": 336
+    },
+    "MI": {
+     "capped": false,
+     "records_returned": 306,
+     "providers_with_taxonomy_code": 306,
+     "providers_practice_location_in_state": 256,
+     "providers_primary_taxonomy_and_practice_in_state": 153
+    },
+    "MN": {
+     "capped": false,
+     "records_returned": 179,
+     "providers_with_taxonomy_code": 179,
+     "providers_practice_location_in_state": 147,
+     "providers_primary_taxonomy_and_practice_in_state": 98
+    },
+    "MS": {
+     "capped": false,
+     "records_returned": 49,
+     "providers_with_taxonomy_code": 49,
+     "providers_practice_location_in_state": 36,
+     "providers_primary_taxonomy_and_practice_in_state": 25
+    },
+    "MO": {
+     "capped": false,
+     "records_returned": 246,
+     "providers_with_taxonomy_code": 246,
+     "providers_practice_location_in_state": 195,
+     "providers_primary_taxonomy_and_practice_in_state": 158
+    },
+    "MT": {
+     "capped": false,
+     "records_returned": 37,
+     "providers_with_taxonomy_code": 37,
+     "providers_practice_location_in_state": 32,
+     "providers_primary_taxonomy_and_practice_in_state": 17
+    },
+    "NE": {
+     "capped": false,
+     "records_returned": 47,
+     "providers_with_taxonomy_code": 47,
+     "providers_practice_location_in_state": 40,
+     "providers_primary_taxonomy_and_practice_in_state": 24
+    },
+    "NV": {
+     "capped": false,
+     "records_returned": 64,
+     "providers_with_taxonomy_code": 64,
+     "providers_practice_location_in_state": 47,
+     "providers_primary_taxonomy_and_practice_in_state": 31
+    },
+    "NH": {
+     "capped": false,
+     "records_returned": 64,
+     "providers_with_taxonomy_code": 64,
+     "providers_practice_location_in_state": 45,
+     "providers_primary_taxonomy_and_practice_in_state": 30
+    },
+    "NJ": {
+     "capped": false,
+     "records_returned": 380,
+     "providers_with_taxonomy_code": 380,
+     "providers_practice_location_in_state": 318,
+     "providers_primary_taxonomy_and_practice_in_state": 219
+    },
+    "NM": {
+     "capped": false,
+     "records_returned": 77,
+     "providers_with_taxonomy_code": 77,
+     "providers_practice_location_in_state": 64,
+     "providers_primary_taxonomy_and_practice_in_state": 51
+    },
+    "NY": {
+     "capped": true,
+     "records_returned": 1200,
+     "note": "API cap reached (1,200 records). True count is at least 1200 and unknown; no count is reported."
+    },
+    "NC": {
+     "capped": false,
+     "records_returned": 352,
+     "providers_with_taxonomy_code": 352,
+     "providers_practice_location_in_state": 308,
+     "providers_primary_taxonomy_and_practice_in_state": 176
+    },
+    "ND": {
+     "capped": false,
+     "records_returned": 29,
+     "providers_with_taxonomy_code": 29,
+     "providers_practice_location_in_state": 22,
+     "providers_primary_taxonomy_and_practice_in_state": 18
+    },
+    "OH": {
+     "capped": false,
+     "records_returned": 433,
+     "providers_with_taxonomy_code": 433,
+     "providers_practice_location_in_state": 378,
+     "providers_primary_taxonomy_and_practice_in_state": 301
+    },
+    "OK": {
+     "capped": false,
+     "records_returned": 85,
+     "providers_with_taxonomy_code": 85,
+     "providers_practice_location_in_state": 75,
+     "providers_primary_taxonomy_and_practice_in_state": 60
+    },
+    "OR": {
+     "capped": false,
+     "records_returned": 189,
+     "providers_with_taxonomy_code": 189,
+     "providers_practice_location_in_state": 158,
+     "providers_primary_taxonomy_and_practice_in_state": 119
+    },
+    "PA": {
+     "capped": false,
+     "records_returned": 615,
+     "providers_with_taxonomy_code": 615,
+     "providers_practice_location_in_state": 519,
+     "providers_primary_taxonomy_and_practice_in_state": 403
+    },
+    "RI": {
+     "capped": false,
+     "records_returned": 137,
+     "providers_with_taxonomy_code": 137,
+     "providers_practice_location_in_state": 116,
+     "providers_primary_taxonomy_and_practice_in_state": 94
+    },
+    "SC": {
+     "capped": false,
+     "records_returned": 146,
+     "providers_with_taxonomy_code": 146,
+     "providers_practice_location_in_state": 120,
+     "providers_primary_taxonomy_and_practice_in_state": 95
+    },
+    "SD": {
+     "capped": false,
+     "records_returned": 30,
+     "providers_with_taxonomy_code": 30,
+     "providers_practice_location_in_state": 21,
+     "providers_primary_taxonomy_and_practice_in_state": 16
+    },
+    "TN": {
+     "capped": false,
+     "records_returned": 170,
+     "providers_with_taxonomy_code": 170,
+     "providers_practice_location_in_state": 125,
+     "providers_primary_taxonomy_and_practice_in_state": 79
+    },
+    "TX": {
+     "capped": false,
+     "records_returned": 844,
+     "providers_with_taxonomy_code": 844,
+     "providers_practice_location_in_state": 777,
+     "providers_primary_taxonomy_and_practice_in_state": 482
+    },
+    "UT": {
+     "capped": false,
+     "records_returned": 142,
+     "providers_with_taxonomy_code": 142,
+     "providers_practice_location_in_state": 125,
+     "providers_primary_taxonomy_and_practice_in_state": 86
+    },
+    "VT": {
+     "capped": false,
+     "records_returned": 51,
+     "providers_with_taxonomy_code": 51,
+     "providers_practice_location_in_state": 38,
+     "providers_primary_taxonomy_and_practice_in_state": 28
+    },
+    "VA": {
+     "capped": false,
+     "records_returned": 366,
+     "providers_with_taxonomy_code": 366,
+     "providers_practice_location_in_state": 290,
+     "providers_primary_taxonomy_and_practice_in_state": 221
+    },
+    "WA": {
+     "capped": false,
+     "records_returned": 220,
+     "providers_with_taxonomy_code": 220,
+     "providers_practice_location_in_state": 185,
+     "providers_primary_taxonomy_and_practice_in_state": 128
+    },
+    "WV": {
+     "capped": false,
+     "records_returned": 43,
+     "providers_with_taxonomy_code": 43,
+     "providers_practice_location_in_state": 28,
+     "providers_primary_taxonomy_and_practice_in_state": 15
+    },
+    "WI": {
+     "capped": false,
+     "records_returned": 224,
+     "providers_with_taxonomy_code": 224,
+     "providers_practice_location_in_state": 188,
+     "providers_primary_taxonomy_and_practice_in_state": 137
+    },
+    "WY": {
+     "capped": false,
+     "records_returned": 8,
+     "providers_with_taxonomy_code": 8,
+     "providers_practice_location_in_state": 4,
+     "providers_primary_taxonomy_and_practice_in_state": 4
+    },
+    "PR": {
+     "capped": false,
+     "records_returned": 121,
+     "providers_with_taxonomy_code": 121,
+     "providers_practice_location_in_state": 111,
+     "providers_primary_taxonomy_and_practice_in_state": 82
+    }
+   },
+   "capped_states": [
+    "CA",
+    "NY"
+   ]
+  }
+ }
+}

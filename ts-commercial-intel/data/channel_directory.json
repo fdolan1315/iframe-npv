@@ -1,0 +1,279 @@
+{
+  "headline": "The TAA 'Find a Provider' network — the real referral rail of Tourette's clinicians, behavior therapists (CBIT), and clinics across the US.",
+  "source": "taa_provider_directory",
+  "as_of": "2026-07-07",
+  "count": 769,
+  "note": "Scraped from the Tourette Association of America provider directory (tourette.org). Mostly behavioral-therapy (CBIT) providers and specialty clinics — the referral/access network, distinct from the academic Centers of Excellence overlay. De-duplicated; US entries only.",
+  "by_region": [
+    {
+      "region": "South",
+      "count": 273
+    },
+    {
+      "region": "West",
+      "count": 185
+    },
+    {
+      "region": "Northeast",
+      "count": 185
+    },
+    {
+      "region": "Midwest",
+      "count": 126
+    }
+  ],
+  "east_total": 458,
+  "by_state": [
+    {
+      "state": "CA",
+      "region": "West",
+      "count": 94
+    },
+    {
+      "state": "NY",
+      "region": "Northeast",
+      "count": 79
+    },
+    {
+      "state": "FL",
+      "region": "South",
+      "count": 71
+    },
+    {
+      "state": "TX",
+      "region": "South",
+      "count": 48
+    },
+    {
+      "state": "PA",
+      "region": "Northeast",
+      "count": 37
+    },
+    {
+      "state": "MD",
+      "region": "South",
+      "count": 36
+    },
+    {
+      "state": "IL",
+      "region": "Midwest",
+      "count": 32
+    },
+    {
+      "state": "CO",
+      "region": "West",
+      "count": 26
+    },
+    {
+      "state": "NJ",
+      "region": "Northeast",
+      "count": 25
+    },
+    {
+      "state": "NC",
+      "region": "South",
+      "count": 22
+    },
+    {
+      "state": "OH",
+      "region": "Midwest",
+      "count": 22
+    },
+    {
+      "state": "VA",
+      "region": "South",
+      "count": 19
+    },
+    {
+      "state": "CT",
+      "region": "Northeast",
+      "count": 17
+    },
+    {
+      "state": "MI",
+      "region": "Midwest",
+      "count": 16
+    },
+    {
+      "state": "WA",
+      "region": "West",
+      "count": 16
+    },
+    {
+      "state": "AZ",
+      "region": "West",
+      "count": 15
+    },
+    {
+      "state": "UT",
+      "region": "West",
+      "count": 15
+    },
+    {
+      "state": "TN",
+      "region": "South",
+      "count": 14
+    },
+    {
+      "state": "MA",
+      "region": "Northeast",
+      "count": 13
+    },
+    {
+      "state": "KY",
+      "region": "South",
+      "count": 11
+    },
+    {
+      "state": "MN",
+      "region": "Midwest",
+      "count": 10
+    },
+    {
+      "state": "MO",
+      "region": "Midwest",
+      "count": 10
+    },
+    {
+      "state": "WI",
+      "region": "Midwest",
+      "count": 10
+    },
+    {
+      "state": "AL",
+      "region": "South",
+      "count": 9
+    },
+    {
+      "state": "GA",
+      "region": "South",
+      "count": 9
+    },
+    {
+      "state": "IN",
+      "region": "Midwest",
+      "count": 9
+    },
+    {
+      "state": "SC",
+      "region": "South",
+      "count": 8
+    },
+    {
+      "state": "DC",
+      "region": "South",
+      "count": 7
+    },
+    {
+      "state": "OR",
+      "region": "West",
+      "count": 7
+    },
+    {
+      "state": "NE",
+      "region": "Midwest",
+      "count": 6
+    },
+    {
+      "state": "AR",
+      "region": "South",
+      "count": 5
+    },
+    {
+      "state": "ME",
+      "region": "Northeast",
+      "count": 5
+    },
+    {
+      "state": "NH",
+      "region": "Northeast",
+      "count": 5
+    },
+    {
+      "state": "OK",
+      "region": "South",
+      "count": 5
+    },
+    {
+      "state": "IA",
+      "region": "Midwest",
+      "count": 4
+    },
+    {
+      "state": "LA",
+      "region": "South",
+      "count": 4
+    },
+    {
+      "state": "NM",
+      "region": "West",
+      "count": 4
+    },
+    {
+      "state": "KS",
+      "region": "Midwest",
+      "count": 3
+    },
+    {
+      "state": "MS",
+      "region": "South",
+      "count": 3
+    },
+    {
+      "state": "ND",
+      "region": "Midwest",
+      "count": 3
+    },
+    {
+      "state": "AK",
+      "region": "West",
+      "count": 2
+    },
+    {
+      "state": "ID",
+      "region": "West",
+      "count": 2
+    },
+    {
+      "state": "MT",
+      "region": "West",
+      "count": 2
+    },
+    {
+      "state": "RI",
+      "region": "Northeast",
+      "count": 2
+    },
+    {
+      "state": "VT",
+      "region": "Northeast",
+      "count": 2
+    },
+    {
+      "state": "DE",
+      "region": "South",
+      "count": 1
+    },
+    {
+      "state": "HI",
+      "region": "West",
+      "count": 1
+    },
+    {
+      "state": "NV",
+      "region": "West",
+      "count": 1
+    },
+    {
+      "state": "SD",
+      "region": "Midwest",
+      "count": 1
+    },
+    {
+      "state": "WV",
+      "region": "South",
+      "count": 1
+    }
+  ],
+  "as_of_checked": "2026-11-13"
+}

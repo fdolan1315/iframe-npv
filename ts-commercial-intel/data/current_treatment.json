@@ -1,0 +1,224 @@
+{
+  "_comment": "Curated backbone for the Current treatment view. Label status, shortages, adverse-event reports, Medicaid volume and publication counts are joined at build time from data_raw/ (public APIs), not hand-entered here.",
+  "evidence_source": "aan_2019_sr",
+  "confidence_note": "Confidence that the agent is more likely than placebo to reduce tics, per the 2019 AAN systematic review. 'Not rated' means the agent is not among those listed at moderate or low confidence in the review summary; it is not a finding of no effect.",
+  "agents": [
+    {
+      "generic": "guanfacine",
+      "brands": [
+        "Intuniv"
+      ],
+      "class": "Alpha-2 agonist",
+      "mechanism": "Alpha-2A adrenergic agonist",
+      "aan_confidence": "Low",
+      "role": "Common first medication, especially with co-occurring ADHD",
+      "essts": {
+        "position": "Can be considered",
+        "note": "Named as an option, particularly where ADHD co-exists"
+      }
+    },
+    {
+      "generic": "clonidine",
+      "brands": [
+        "Kapvay",
+        "Catapres"
+      ],
+      "class": "Alpha-2 agonist",
+      "mechanism": "Alpha-2 adrenergic agonist",
+      "aan_confidence": "Moderate",
+      "role": "Common first medication, especially with co-occurring ADHD",
+      "essts": {
+        "position": "Can be considered",
+        "note": "Named as an option, particularly where ADHD co-exists"
+      }
+    },
+    {
+      "generic": "aripiprazole",
+      "brands": [
+        "Abilify"
+      ],
+      "class": "Atypical antipsychotic",
+      "mechanism": "Dopamine D2 / serotonin 5-HT1A partial agonist",
+      "aan_confidence": "Moderate",
+      "role": "Used when alpha-2 agonists are inadequate or tics are more severe",
+      "essts": {
+        "position": "Preferred",
+        "note": "Preferred dopamine-blocking agent, for its more favorable adverse-event profile; first choice in a survey of ESSTS members"
+      }
+    },
+    {
+      "generic": "risperidone",
+      "brands": [
+        "Risperdal"
+      ],
+      "class": "Atypical antipsychotic",
+      "mechanism": "Dopamine D2 / serotonin 5-HT2A antagonist",
+      "aan_confidence": "Moderate",
+      "role": "Off-label alternative antipsychotic",
+      "essts": {
+        "position": "Can be considered",
+        "note": "Named as an agent that can be considered"
+      }
+    },
+    {
+      "generic": "haloperidol",
+      "brands": [
+        "Haldol"
+      ],
+      "class": "Typical antipsychotic",
+      "mechanism": "Dopamine D2 antagonist",
+      "aan_confidence": "Moderate",
+      "role": "Older option, limited by movement side effects",
+      "essts": {
+        "position": "Treatment-resistant cases",
+        "note": "Might be considered in treatment-resistant cases; limited by movement side effects"
+      }
+    },
+    {
+      "generic": "pimozide",
+      "brands": [
+        "Orap"
+      ],
+      "class": "Typical antipsychotic",
+      "mechanism": "Dopamine D2 antagonist",
+      "aan_confidence": "Low",
+      "role": "Older option, limited by cardiac (QT) monitoring",
+      "essts": {
+        "position": "Treatment-resistant cases",
+        "note": "Might be considered in treatment-resistant cases; limited by movement side effects"
+      }
+    },
+    {
+      "generic": "fluphenazine",
+      "brands": [],
+      "class": "Typical antipsychotic",
+      "mechanism": "Dopamine D1/D2 antagonist",
+      "aan_confidence": "Not rated",
+      "role": "Specialist off-label use",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
+    },
+    {
+      "generic": "ziprasidone",
+      "brands": [
+        "Geodon"
+      ],
+      "class": "Atypical antipsychotic",
+      "mechanism": "Dopamine D2 / serotonin 5-HT2A antagonist",
+      "aan_confidence": "Low",
+      "role": "Occasional off-label alternative",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
+    },
+    {
+      "generic": "topiramate",
+      "brands": [
+        "Topamax"
+      ],
+      "class": "Anticonvulsant",
+      "mechanism": "Multiple (GABA-A, AMPA/kainate, sodium channels)",
+      "aan_confidence": "Low",
+      "role": "Off-label non-antipsychotic alternative",
+      "essts": {
+        "position": "Treatment-resistant cases",
+        "note": "Might be considered in treatment-resistant cases; limited evidence base"
+      }
+    },
+    {
+      "generic": "tetrabenazine",
+      "brands": [
+        "Xenazine"
+      ],
+      "class": "VMAT2 inhibitor",
+      "mechanism": "Vesicular monoamine transporter 2 inhibitor",
+      "aan_confidence": "Not rated",
+      "role": "Specialist off-label use",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
+    },
+    {
+      "generic": "deutetrabenazine",
+      "brands": [
+        "Austedo"
+      ],
+      "class": "VMAT2 inhibitor",
+      "mechanism": "Vesicular monoamine transporter 2 inhibitor",
+      "aan_confidence": "Not rated",
+      "role": "Did not meet primary endpoints in pediatric Tourette trials (ARTISTS 1 and 2)",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
+    },
+    {
+      "generic": "valbenazine",
+      "brands": [
+        "Ingrezza"
+      ],
+      "class": "VMAT2 inhibitor",
+      "mechanism": "Vesicular monoamine transporter 2 inhibitor",
+      "aan_confidence": "Not rated",
+      "role": "No Tourette indication",
+      "essts": {
+        "position": "Not named",
+        "note": "Not named in the guideline summary"
+      }
+    }
+  ],
+  "guidelines": {
+    "intro": "Two expert bodies, read side by side. The US review grades how confident the evidence is that an agent beats placebo; the European guideline says where an agent belongs in practice, weighing side effects as well as efficacy.",
+    "aan": {
+      "label": "AAN 2019 (US)",
+      "source": "aan_2019_sr"
+    },
+    "essts": {
+      "label": "ESSTS 2022 (Europe)",
+      "source": "essts_2022",
+      "note": "'Not named' means the agent does not appear in the guideline's summary recommendations; it is not a recommendation against use. Tiapride, also named by ESSTS, is not marketed in the US."
+    },
+    "takeaways": [
+      "Aripiprazole is the point of agreement: moderate-confidence evidence in the US review and the preferred agent in Europe.",
+      "Haloperidol shows the gap between efficacy and tolerability: moderate-confidence evidence, yet Europe reserves it for treatment-resistant cases because of movement side effects.",
+      "Guanfacine is widely used first but rests on low-confidence evidence; both bodies tie the alpha-2 agonists most closely to patients who also have ADHD.",
+      "None of the VMAT2 inhibitors is rated or named by either body."
+    ],
+    "also": {
+      "text": "The AACAP practice parameter (2013) recommends a stepped, multimodal approach for children and adolescents. Its agent-by-agent positions are not shown because only secondary summaries of it could be checked.",
+      "source": "aacap_2013"
+    }
+  },
+  "oversight": {
+    "title": "Medicaid oversight of antipsychotics in children",
+    "intro": "Most current Tourette medicines with the strongest evidence are antipsychotics, and state Medicaid programs apply extra controls when these are prescribed to children.",
+    "facts": [
+      {
+        "when": "2013 to 2014",
+        "text": "A 50-state review found 31 state Medicaid programs required prior authorization for atypical antipsychotics in children. Only 7 applied it through age 18; most stopped at ages 5 to 7. Fifteen included peer review by a physician.",
+        "source": "zito_2015"
+      },
+      {
+        "when": "2018",
+        "text": "The SUPPORT Act (section 1004) required every state to run a program to monitor and manage antipsychotic use in children enrolled in Medicaid, including children in foster care, and to report on it each year.",
+        "source": "macpac_dur"
+      },
+      {
+        "when": "Fiscal 2018",
+        "text": "48 states reported managing or monitoring antipsychotic use in children.",
+        "source": "macpac_dur"
+      },
+      {
+        "when": "Fiscal 2023",
+        "text": "CMS's national summary reports that all states have such a program in place.",
+        "source": "cms_dur_2023"
+      }
+    ],
+    "why": "Oversight is now universal, so the question for any state is how its program works: which ages, which checks, and whether a prescriber review is required. Whether a new non-antipsychotic medicine falls inside or outside these programs is decided state by state.",
+    "gap": "A current state-by-state record of these rules could not be obtained. CMS publishes the state answers as report documents, not as data, and the last published 50-state comparison describes 2013 to 2014. No state is shown as having or lacking a specific rule."
+  }
+}

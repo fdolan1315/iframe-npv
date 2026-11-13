@@ -1,0 +1,996 @@
+{
+ "fetched_at": "2026-11-13T01:24:29Z",
+ "source_urls": [
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Intuniv\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"GUANFACINE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Kapvay\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Catapres\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/label.json?search=openfda.generic_name:\"clonidine\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"%20AND%20indications_and_usage:\"attention%20deficit\"&sort=effective_time:desc&limit=25",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"CLONIDINE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Haldol\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/label.json?search=openfda.generic_name:\"haloperidol\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=25",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"HALOPERIDOL\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Orap\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/label.json?search=openfda.generic_name:\"pimozide\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=25",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"PIMOZIDE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Abilify\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"ARIPIPRAZOLE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Risperdal\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"RISPERIDONE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.generic_name:\"fluphenazine\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=25",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"FLUPHENAZINE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Geodon\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"ZIPRASIDONE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Topamax\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"TOPIRAMATE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Xenazine\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"TETRABENAZINE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Austedo\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"DEUTETRABENAZINE\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/label.json?search=openfda.brand_name:\"Ingrezza\"%20AND%20openfda.product_type:\"HUMAN%20PRESCRIPTION%20DRUG\"&sort=effective_time:desc&limit=50",
+  "https://api.fda.gov/drug/drugsfda.json?search=products.active_ingredients.name:\"VALBENAZINE\"&limit=100&skip=0"
+ ],
+ "caveats": [
+  "One label per agent is a representative, not the only label. Other formulations of the same molecule (e.g. immediate vs extended release, injectables) can carry different indications and boxed warnings.",
+  "mentions_tourette is a literal case-insensitive search for 'tourette' in the indications_and_usage text of the selected label only.",
+  "Where openFDA holds no label for the reference brand, the newest generic label is shown and 'selection' says so.",
+  "Drugs@FDA counts are application records with a matching active ingredient name. 'not_discontinued' means at least one product in the application has a marketing status other than Discontinued (includes Prescription, Over-the-counter and tentative statuses). It is a proxy for generic availability, not a count of products actually on the market.",
+  "Sponsor names are as recorded by FDA; the same company can appear under several spellings."
+ ],
+ "agents": {
+  "guanfacine": {
+   "label": {
+    "selection": "reference brand 'Intuniv' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "Intuniv"
+    ],
+    "generic_name": [
+     "GUANFACINE"
+    ],
+    "manufacturer": [
+     "Takeda Pharmaceuticals America, Inc."
+    ],
+    "application_number": [
+     "NDA022037"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "b972af81-3a37-40be-9fe1-3ddf59852528",
+    "spl_version": "44",
+    "effective_time": "20250623",
+    "indications_and_usage": "1 INDICATIONS AND USAGE INTUNIV ® is indicated for the treatment of Attention Deficit Hyperactivity Disorder (ADHD) as monotherapy and as adjunctive therapy to stimulant medications [see Clinical Studies (14) ]. INTUNIV is a central alpha 2A -adrenergic receptor agonist indicated for the treatment of Attention Deficit Hyperactivity Disorder (ADHD) as monotherapy and as adjunctive therapy to stimulant medications ( 1 , 14 ).",
+    "has_boxed_warning": false,
+    "boxed_warning": null,
+    "mentions_tourette": false,
+    "labels_matching_query": 1
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"GUANFACINE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 27,
+     "sponsors": 24,
+     "by_application_type": {
+      "ANDA": 25,
+      "NDA": 2
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 27,
+     "sponsors": 24,
+     "by_application_type": {
+      "ANDA": 25,
+      "NDA": 2
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 22,
+     "sponsors": 20,
+     "by_application_type": {
+      "ANDA": 21,
+      "NDA": 1
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "ACTAVIS ELIZABETH",
+     "AIPING PHARM INC",
+     "AJANTA PHARMA LTD",
+     "ALEMBIC",
+     "AMNEAL PHARM",
+     "APOTEX",
+     "ASCENT PHARMS INC",
+     "AUROBINDO PHARMA USA",
+     "EPIC PHARMA LLC",
+     "FOSUN WANBANG",
+     "PHARMAZONE",
+     "RUBICON RESEARCH",
+     "SANDOZ",
+     "TAKEDA PHARMS USA",
+     "TEVA PHARMS USA",
+     "TWI PHARMS",
+     "UNICHEM",
+     "WATSON LABS",
+     "XIROMED",
+     "YICHANG HUMANWELL"
+    ]
+   }
+  },
+  "clonidine": {
+   "label": {
+    "selection": "no reference-brand label in openFDA; newest generic label whose indications mention 'attention deficit' (the extended-release, Kapvay-equivalent product; immediate-release clonidine tablets and patches are labelled for hypertension only)",
+    "brand_name": [
+     "Clonidine hydrochloride"
+    ],
+    "generic_name": [
+     "CLONIDINE HYDROCHLORIDE"
+    ],
+    "manufacturer": [
+     "American Health Packaging"
+    ],
+    "application_number": [
+     "ANDA209686"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "95b390cc-0578-4cb0-9c08-4853388b2ec9",
+    "spl_version": "5",
+    "effective_time": "20261014",
+    "indications_and_usage": "1 INDICATIONS AND USAGE Clonidine hydrochloride extended-release is indicated for the treatment of attention deficit hyperactivity disorder (ADHD) as monotherapy and as adjunctive therapy to stimulant medications [ see Clinical Studies (14) ]. Clonidine hydrochloride extended-release tablets are a centrally acting alpha 2 -adrenergic agonist indicated for the treatment of attention deficit hyperactivity disorder (ADHD) as monotherapy or as adjunctive therapy to stimulant medications. ( 1 )",
+    "has_boxed_warning": false,
+    "boxed_warning": null,
+    "mentions_tourette": false,
+    "labels_matching_query": 11
+   },
+   "label_note": "Reference brand label(s) ['Kapvay', 'Catapres'] not found in openFDA under that exact brand name; a generic manufacturer's label is shown.",
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"CLONIDINE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 72,
+     "sponsors": 45,
+     "by_application_type": {
+      "NDA": 10,
+      "ANDA": 62
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 67,
+     "sponsors": 44,
+     "by_application_type": {
+      "NDA": 9,
+      "ANDA": 58
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 31,
+     "sponsors": 28,
+     "by_application_type": {
+      "NDA": 6,
+      "ANDA": 25
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "ACTAVIS ELIZABETH",
+     "ACTAVIS LABS UT INC",
+     "AJANTA PHARMA LTD",
+     "ALEMBIC PHARMS LTD",
+     "AUROBINDO PHARMA LTD",
+     "AZURITY",
+     "CHARTWELL MOLECULES",
+     "CHARTWELL RX",
+     "CMP DEV LLC",
+     "DR REDDYS LABS SA",
+     "FRESENIUS KABI USA",
+     "HIKMA FARMACEUTICA",
+     "IMPAX LABS",
+     "JUBILANT GENERICS",
+     "LAVIPHARM",
+     "MYLAN INSTITUTIONAL",
+     "MYLAN TECHNOLOGIES",
+     "NOVAST LABS",
+     "PRINSTON",
+     "ROSEMONT",
+     "SOMERSET THERAPS LLC",
+     "TP ANDA HOLDINGS",
+     "TRIS PHARMA INC",
+     "UNICHEM",
+     "XGEN PHARMS",
+     "XIAMEN LP PHARM CO",
+     "YUNG SHIN PHARM",
+     "ZYDUS PHARMS"
+    ]
+   }
+  },
+  "haloperidol": {
+   "label": {
+    "selection": "no reference-brand label in openFDA; newest single-ingredient (oral preferred) generic label",
+    "brand_name": [
+     "Haloperidol"
+    ],
+    "generic_name": [
+     "HALOPERIDOL"
+    ],
+    "manufacturer": [
+     "Cardinal Health 107, LLC"
+    ],
+    "application_number": [
+     "ANDA070278"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "8ca14b79-6671-4e44-aa34-6564a92aa197",
+    "spl_version": "9",
+    "effective_time": "20261015",
+    "indications_and_usage": "INDICATIONS AND USAGE Haloperidol tablets are indicated for use in the management of manifestations of psychotic disorders. Haloperidol tablets are indicated for the control of tics and vocal utterances of Tourette’s Disorder in children and adults. Haloperidol tablets are effective for the treatment of severe behavior problems in children of combative, explosive hyperexcitability (which cannot be accounted for by immediate provocation). Haloperidol tablets are also effective in the short-term treatment of hyperactive children who show excessive motor activity with accompanying conduct disorders consisting of some or all of the following symptoms: impulsivity, difficulty sustaining attention, aggressivity, mood lability, and poor frustration tolerance. Haloperidol tablets should be reserved for these two groups of children only after failure to respond to psychotherapy or medications other than antipsychotics.",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING Increased Mortality in Elderly Patients with Dementia-Related Psychosis Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. Analyses of seventeen placebo-controlled trials (modal duration of 10 weeks), largely in patients taking atypical antipsychotic drugs, revealed a risk of death in drug-treated patients of between 1.6 to 1.7 times the risk of death in placebo-treated patients. Over the course of a typical 10-week controlled trial, the rate of death in drug-treated patients was about 4.5%, compared to a rate of about 2.6% in the placebo group. Although the causes of death were varied, most of the deaths appeared to be either cardiovascular (e.g., heart failure, sudden death) or infectious (e.g., pneumonia) in nature. Observational studies suggest that, similar to atypical antipsychotic drugs, treatment with conventional antipsychotic drugs may increase mortality. The extent to which the findings of increased mortality in observational studies may be attributed to the antipsychotic drug as opposed to some characteristic(s) of the patients is not clear. Haloperidol is not approved for the treatment of patients with dementia-related psychosis (see WARNINGS ).\nModerate Symptomatology - 0.5 mg to 2 mg b.i.d. or t.i.d. Severe Symptomatology - 3 mg to 5 mg b.i.d. or t.i.d.\nGeriatric or Debilitated Patients - 0.5 mg to 2 mg b.i.d. or t.i.d. Chronic or Resistant Patients - 3 mg to 5 mg b.i.d. or t.i.d. Patients who remain severely disturbed or inadequately controlled may require dosage adjustment. Daily dosages up to 100 mg may be necessary in some cases to achieve an optimal response. Infrequently, haloperidol has been used in doses above 100 mg for severely resistant patients; however, the limited clinical usage has not demonstrated the safety of prolonged administration of such doses.\nPsychotic Disorders - 0.05 mg/kg/day to 0.15 mg/kg/day Nonpsychotic Behavior Disorders and Tourette’s Disorder - 0.05 mg/kg/day to 0.075 mg/kg/day Severely disturbed psychotic children may require higher doses. In severely disturbed, non-psychotic children or in hyperactive children with accompanying conduct disorders, who have failed to respond to psychotherapy or medications other than antipsychotics, it should be noted that since these behaviors may be short lived, short term administration of haloperidol may suffice. There is no evidence establishing a maximum effective dosage. There is little evidence that behavior improvement is further enhanced in dosages beyond 6 mg per day.",
+    "mentions_tourette": true,
+    "labels_matching_query": 111
+   },
+   "label_note": "Reference brand label(s) ['Haldol'] not found in openFDA under that exact brand name; a generic manufacturer's label is shown.",
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"HALOPERIDOL\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 125,
+     "sponsors": 55,
+     "by_application_type": {
+      "ANDA": 119,
+      "NDA": 6
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 125,
+     "sponsors": 55,
+     "by_application_type": {
+      "ANDA": 119,
+      "NDA": 6
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 34,
+     "sponsors": 25,
+     "by_application_type": {
+      "ANDA": 33,
+      "NDA": 1
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "AIPING PHARM INC",
+     "AJANTA PHARMA LTD",
+     "ALEMBIC",
+     "APPCO",
+     "AUROBINDO PHARMA LTD",
+     "CAPLIN",
+     "CHARTWELL RX",
+     "CREEKWOOD PHARMS",
+     "FRESENIUS KABI USA",
+     "GLAND",
+     "HIKMA",
+     "LANNETT CO INC",
+     "MANKIND PHARMA",
+     "MEITHEAL",
+     "MSN",
+     "MYLAN",
+     "MYLAN LABS LTD",
+     "PHARM ASSOC",
+     "RUBICON RESEARCH",
+     "SAGENT PHARMS",
+     "SANDOZ",
+     "SCIEGEN PHARMS",
+     "SOMERSET THERAPS LLC",
+     "ZYDUS PHARMS",
+     "ZYDUS PHARMS USA"
+    ]
+   }
+  },
+  "pimozide": {
+   "label": {
+    "selection": "no reference-brand label in openFDA; newest single-ingredient (oral preferred) generic label",
+    "brand_name": [
+     "Pimozide"
+    ],
+    "generic_name": [
+     "PIMOZIDE"
+    ],
+    "manufacturer": [
+     "Par Health USA, LLC"
+    ],
+    "application_number": [
+     "ANDA204521"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "70b079e2-a1f7-4a93-8685-d60a4d7c1280",
+    "spl_version": "5",
+    "effective_time": "20260812",
+    "indications_and_usage": "INDICATIONS AND USAGE Pimozide tablets, USP are indicated for the suppression of motor and phonic tics in patients with Tourette’s Disorder who have failed to respond satisfactorily to standard treatment. Pimozide tablets, USP are not intended as a treatment of first choice nor is it intended for the treatment of tics that are merely annoying or cosmetically troublesome. Pimozide tablets, USP should be reserved for use in Tourette’s Disorder patients whose development and/or daily life function is severely compromised by the presence of motor and phonic tics. Evidence supporting approval of pimozide tablets, USP for use in Tourette’s Disorder was obtained in two controlled clinical investigations which enrolled patients between the ages of 8 and 53 years. Most subjects in the two trials were 12 or older.",
+    "has_boxed_warning": false,
+    "boxed_warning": null,
+    "mentions_tourette": true,
+    "labels_matching_query": 2
+   },
+   "label_note": "Reference brand label(s) ['Orap'] not found in openFDA under that exact brand name; a generic manufacturer's label is shown.",
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"PIMOZIDE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 3,
+     "sponsors": 3,
+     "by_application_type": {
+      "ANDA": 2,
+      "NDA": 1
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 3,
+     "sponsors": 3,
+     "by_application_type": {
+      "ANDA": 2,
+      "NDA": 1
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 2,
+     "sponsors": 2,
+     "by_application_type": {
+      "ANDA": 2
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "NOVITIUM PHARMA",
+     "PH HEALTH"
+    ]
+   }
+  },
+  "aripiprazole": {
+   "label": {
+    "selection": "reference brand 'Abilify' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "ABILIFY"
+    ],
+    "generic_name": [
+     "ARIPIPRAZOLE"
+    ],
+    "manufacturer": [
+     "Otsuka America Pharmaceutical, Inc."
+    ],
+    "application_number": [
+     "NDA021436"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "c040bd1d-45b7-49f2-93ea-aed7220b30ac",
+    "spl_version": "73",
+    "effective_time": "20250129",
+    "indications_and_usage": "1 INDICATIONS AND USAGE ABILIFY (aripiprazole) Tablets are indicated for the treatment of: Schizophrenia Acute Treatment of Manic and Mixed Episodes associated with Bipolar I Disorder Adjunctive Treatment of Major Depressive Disorder Irritability Associated with Autistic Disorder Treatment of Tourette's Disorder ABILIFY is an atypical antipsychotic. ABILIFY is indicated for: Schizophrenia ( 14.1 ) Acute Treatment of Manic and Mixed Episodes associated with Bipolar I Disorder ( 14.2 ) Adjunctive Treatment of Major Depressive Disorder ( 14.3 ) Irritability Associated with Autistic Disorder ( 14.4 ) Treatment of Tourette's Disorder ( 14.5 )",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING: INCREASED MORTALITY IN ELDERLY PATIENTS WITH DEMENTIA-RELATED PSYCHOSIS and SUICIDAL THOUGHTS AND BEHAVIORS WITH ANTIDEPRESSANT DRUGS Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. ABILIFY is not approved for the treatment of patients with dementia-related psychosis [see Warnings and Precautions (5.1) ] . Antidepressants increased the risk of suicidal thoughts and behavior in children, adolescents, and young adults in short-term studies. These studies did not show an increase in the risk of suicidal thoughts and behavior with antidepressant use in patients over age 24 years; there was a reduction in risk with antidepressant use in patients aged 65 years and older [see Warnings and Precautions (5.3) ] . In patients of all ages who are started on antidepressant therapy, monitor closely for worsening, and for emergence of suicidal thoughts and behaviors. Advise families and caregivers of the need for close observation and communication with the prescriber [see Warnings and Precautions (5.3) ] . WARNING: INCREASED MORTALITY IN ELDERLY PATIENTS WITH DEMENTIA-RELATED PSYCHOSIS and SUICIDAL THOUGHTS AND BEHAVIORS WITH ANTIDEPRESSANT DRUGS See full prescribing information for complete boxed warning. Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. ABILIFY is not approved for the treatment of patients with dementia-related psychosis. ( 5.1 ) Increased risk of suicidal thinking and behavior in children, adolescents, and young adults taking antidepressants. Monitor for worsening and emergence of suicidal thoughts and behaviors. ( 5.3 )",
+    "mentions_tourette": true,
+    "labels_matching_query": 3
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"ARIPIPRAZOLE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 53,
+     "sponsors": 37,
+     "by_application_type": {
+      "NDA": 11,
+      "ANDA": 42
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 53,
+     "sponsors": 37,
+     "by_application_type": {
+      "NDA": 11,
+      "ANDA": 42
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 38,
+     "sponsors": 30,
+     "by_application_type": {
+      "ANDA": 32,
+      "NDA": 6
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "ACCORD HLTHCARE",
+     "AJANTA PHARMA LTD",
+     "ALEMBIC",
+     "ALKEM LABS LTD",
+     "ALKERMES INC",
+     "AMNEAL PHARMS",
+     "APOTEX",
+     "AUROBINDO PHARMA",
+     "AUROBINDO PHARMA LTD",
+     "BARR LABS INC",
+     "CHARTWELL RX",
+     "HETERO LABS LTD III",
+     "HETERO LABS LTD V",
+     "LANNETT CO INC",
+     "MACLEODS PHARMS",
+     "ORBION PHARMS",
+     "OTSUKA",
+     "OTSUKA PHARM CO LTD",
+     "PHARMTAK INC",
+     "PRINSTON",
+     "QUAGEN",
+     "RUBICON RESEARCH",
+     "SCIEGEN PHARMS",
+     "SQUARE PHARMS",
+     "SUN PHARMA GLOBAL",
+     "SUNSHINE",
+     "TORRENT",
+     "UNICHEM",
+     "VISTAPHARM LLC",
+     "XIAMEN LP PHARM CO"
+    ]
+   }
+  },
+  "risperidone": {
+   "label": {
+    "selection": "reference brand 'Risperdal' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "RISPERDAL",
+     "RISPERDAL M-TAB"
+    ],
+    "generic_name": [
+     "RISPERIDONE"
+    ],
+    "manufacturer": [
+     "Janssen Pharmaceuticals, Inc."
+    ],
+    "application_number": [
+     "NDA020272",
+     "NDA020588",
+     "NDA021444"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "7e117c7e-02fc-4343-92a1-230061dfc5e0",
+    "spl_version": "46",
+    "effective_time": "20261023",
+    "indications_and_usage": "1 INDICATIONS AND USAGE RISPERDAL is an atypical antipsychotic indicated for: Treatment of schizophrenia ( 1.1 ) As monotherapy or adjunctive therapy with lithium or valproate, for the treatment of acute manic or mixed episodes associated with Bipolar I Disorder ( 1.2 ) Treatment of irritability associated with autistic disorder ( 1.3 ) 1.1 Schizophrenia RISPERDAL (risperidone) is indicated for the treatment of schizophrenia. Efficacy was established in 4 short-term trials in adults, 2 short-term trials in adolescents (ages 13 to 17 years), and one long-term maintenance trial in adults [see Clinical Studies (14.1) ] . 1.2 Bipolar Mania Monotherapy RISPERDAL is indicated for the treatment of acute manic or mixed episodes associated with Bipolar I Disorder. Efficacy was established in 2 short-term trials in adults and one short-term trial in children and adolescents (ages 10 to 17 years) [see Clinical Studies (14.2) ] . Adjunctive Therapy RISPERDAL adjunctive therapy with lithium or valproate is indicated for the treatment of acute manic or mixed episodes associated with Bipolar I Disorder. Efficacy was established in one short-term trial in adults [see Clinical Studies (14.3) ] . 1.3 Irritability Associated with Autistic Disorder RISPERDAL is indicated for the treatment of irritability associated with autistic disorder, including symptoms of aggression towards others, deliberate self-injuriousness, temper tantrums, and quickly changing moods. Efficacy was established in 3 short-term trials in children and adolescents (ages 5 to 17 years) [see Clinical Studies (14.4) ] .",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING: INCREASED MORTALITY IN ELDERLY PATIENTS WITH DEMENTIA-RELATED PSYCHOSIS Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. RISPERDAL is not approved for the treatment of patients with dementia-related psychosis. [see Warnings and Precautions (5.1) ] WARNING: INCREASED MORTALITY IN ELDERLY PATIENTS WITH DEMENTIA-RELATED PSYCHOSIS See full prescribing information for complete boxed warning. Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. RISPERDAL is not approved for use in patients with dementia-related psychosis. ( 5.1 )",
+    "mentions_tourette": false,
+    "labels_matching_query": 2
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"RISPERIDONE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 57,
+     "sponsors": 46,
+     "by_application_type": {
+      "ANDA": 49,
+      "NDA": 8
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 57,
+     "sponsors": 46,
+     "by_application_type": {
+      "ANDA": 49,
+      "NDA": 8
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 34,
+     "sponsors": 28,
+     "by_application_type": {
+      "ANDA": 29,
+      "NDA": 5
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "AJANTA PHARMA LTD",
+     "AMNEAL",
+     "AMNEAL PHARMS",
+     "ANI PHARMS",
+     "AUROBINDO PHARMA LTD",
+     "CHARTWELL MOLECULAR",
+     "DR REDDYS LABS LTD",
+     "IPCA LABS LTD",
+     "JANSSEN PHARMS",
+     "JUBILANT CADISTA",
+     "JUBILANT GENERICS",
+     "NANOMI",
+     "NOVITIUM PHARMA",
+     "PH HEALTH",
+     "PHARMAZONE",
+     "PRINSTON INC",
+     "RANBAXY",
+     "RENATA",
+     "RISING",
+     "SANDOZ",
+     "SHANDONG LUYE",
+     "SUN PHARM INDS LTD",
+     "TEVA",
+     "TEVA PHARMS USA INC",
+     "TORRENT PHARMS",
+     "TRIS PHARMA INC",
+     "ZYDUS PHARMS USA",
+     "ZYDUS PHARMS USA INC"
+    ]
+   }
+  },
+  "fluphenazine": {
+   "label": {
+    "selection": "no reference-brand label in openFDA; newest single-ingredient (oral preferred) generic label",
+    "brand_name": [
+     "FLUPHENAZINE HYDROCHLORIDE"
+    ],
+    "generic_name": [
+     "FLUPHENAZINE HYDROCHLORIDE"
+    ],
+    "manufacturer": [
+     "Marlex Pharmaceuticals, Inc."
+    ],
+    "application_number": [
+     "ANDA214674"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "c69f07b1-660c-db03-e053-2995a90a5464",
+    "spl_version": "5",
+    "effective_time": "20261105",
+    "indications_and_usage": "INDICATIONS & USAGE Fluphenazine hydrochloride tablets are indicated in the management of manifestations of psychotic disorders. Fluphenazine hydrochloride has not been shown effective in the management of behavioral complications in patients with mental retardation.",
+    "has_boxed_warning": true,
+    "boxed_warning": "Boxed WARNING Warning Increased Mortality in Elderly Patients with Dementia-Related Psychosis: Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. Analyses of seventeen placebo-controlled trials (modal duration of 10 weeks), largely in patients taking atypical antipsychotic drugs, revealed a risk of death in drug-treated patients of between 1.6 to 1.7 times the risk of death in placebo-treated patients. Over the course of a typical 10-week controlled trial, the rate of death in drug- treated patients was about 4.5%, compared to a rate of about 2.6% in the placebo group. Although the causes of death were varied, most of the deaths appeared to be either cardiovascular (e.g., heart failure, sudden death) or infectious (e.g., pneumonia) in nature. Observational studies suggest that, similar to atypical antipsychotic drugs, treatment with conventional antipsychotic drugs may increase mortality. The extent to which the findings of increased mortality in observational studies may be attributed to the antipsychotic drug as opposed to some characteristic(s) of the patients is not clear. Fluphenazine hydrochloride is not approved for the treatment of patients with dementia-related psychosis (see WARNINGS ).",
+    "mentions_tourette": false,
+    "labels_matching_query": 44
+   },
+   "label_note": "Reference brand label(s) (no brand marketed) not found in openFDA under that exact brand name; a generic manufacturer's label is shown.",
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"FLUPHENAZINE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 53,
+     "sponsors": 37,
+     "by_application_type": {
+      "NDA": 7,
+      "ANDA": 46
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 53,
+     "sponsors": 37,
+     "by_application_type": {
+      "NDA": 7,
+      "ANDA": 46
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 29,
+     "sponsors": 24,
+     "by_application_type": {
+      "ANDA": 29
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "AJANTA PHARMA LTD",
+     "ALEMBIC",
+     "AMNEAL",
+     "AUROBINDO PHARMA LTD",
+     "CHARTWELL RX",
+     "DR REDDYS",
+     "EUGIA PHARMA",
+     "FRESENIUS KABI USA",
+     "GLAND",
+     "GLENMARK PHARMS LTD",
+     "HETERO LABS LTD III",
+     "HIKMA",
+     "LANNETT",
+     "LANNETT CO INC",
+     "MSN",
+     "MYLAN LABS LTD",
+     "NOVITIUM PHARMA",
+     "PH HEALTH",
+     "PHARM ASSOC",
+     "RISING",
+     "SANDOZ",
+     "TARO",
+     "UPSHER SMITH LABS",
+     "ZYDUS LIFESCIENCES"
+    ]
+   }
+  },
+  "ziprasidone": {
+   "label": {
+    "selection": "reference brand 'Geodon' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "Geodon"
+    ],
+    "generic_name": [
+     "ZIPRASIDONE",
+     "ZIPRASIDONE MESYLATE"
+    ],
+    "manufacturer": [
+     "Viatris Specialty LLC"
+    ],
+    "application_number": [
+     "NDA020825",
+     "NDA020919"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL",
+     "INTRAMUSCULAR"
+    ],
+    "set_id": "a2b4cc65-6a6d-49c4-adfc-a4458562a167",
+    "spl_version": "4",
+    "effective_time": "20250115",
+    "indications_and_usage": "1 INDICATIONS AND USAGE GEODON is indicated for the treatment of schizophrenia, as monotherapy for the acute treatment of bipolar manic or mixed episodes, and as an adjunct to lithium or valproate for the maintenance treatment of bipolar disorder. GEODON intramuscular is indicated for acute agitation in schizophrenic patients. When deciding among the alternative treatments available for the condition needing treatment, the prescriber should consider the finding of ziprasidone’s greater capacity to prolong the QT/QTc interval compared to several other antipsychotic drugs [see Warnings and Precautions (5.3) ] . Prolongation of the QTc interval is associated in some other drugs with the ability to cause torsade de pointes-type arrhythmia, a potentially fatal polymorphic ventricular tachycardia, and sudden death. In many cases this would lead to the conclusion that other drugs should be tried first. Whether ziprasidone will cause torsade de pointes or increase the rate of sudden death is not yet known [see Warnings and Precautions (5.3) ] . Schizophrenia • GEODON is indicated for the treatment of schizophrenia in adults [see Clinical Studies (14.1) ] . Bipolar I Disorder (Acute Mixed or Manic Episodes and Maintenance Treatment as an Adjunct to Lithium or Valproate) • GEODON is indicated as monotherapy for the acute treatment of adults with manic or mixed episodes associated with bipolar I disorder [see Clinical Studies (14.2) ] . • GEODON is indicated as an adjunct to lithium or valproate for the maintenance treatment of bipolar I disorder in adults [see Clinical Studies (14.2) ] . Acute Treatment of Agitation in Schizophrenia • GEODON intramuscular is indicated for the treatment of acute agitation in schizophrenic adult patients for whom treatment with ziprasidone is appropriate and who need intramuscular antipsychotic medication for rapid control of agitation [see Clinical Studies (14.1) ] . Since there is no experience regarding the safety of administering ziprasidone intramuscular to schizophrenic patients already taking oral ziprasidone, the practice of co-administration is not recommended. GEODON is an atypical antipsychotic. In choosing among treatments, prescribers should be aware of the capacity of GEODON to prolong the QT interval and may consider the use of other drugs first. ( 1 ) GEODON capsules are indicated for the: • treatment of schizophrenia in adults. ( 1 ) • acute treatment of adults as monotherapy of manic or mixed episodes associated with bipolar I disorder. ( 1 ) • maintenance treatment of bipolar I disorder as an adjunct to lithium or valproate in adults. ( 1 ) GEODON for injection is indicated for the: • acute treatment of agitation in schizophrenic patients in adults. ( 1 )",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING: INCREASED MORTALITY IN ELDERLY PATIENTS WITH DEMENTIA-RELATED PSYCHOSIS Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. GEODON is not approved for the treatment of patients with dementia-related psychosis [see Warnings and Precautions (5.1) ] . WARNING: INCREASED MORTALITY IN ELDERLY PATIENTS WITH DEMENTIA-RELATED PSYCHOSIS See full prescribing information for complete boxed warning. Elderly patients with dementia-related psychosis treated with antipsychotic drugs are at an increased risk of death. GEODON is not approved for the treatment of patients with dementia-related psychosis. ( 5.1 )",
+    "mentions_tourette": false,
+    "labels_matching_query": 2
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"ZIPRASIDONE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 15,
+     "sponsors": 14,
+     "by_application_type": {
+      "NDA": 3,
+      "ANDA": 12
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 15,
+     "sponsors": 14,
+     "by_application_type": {
+      "NDA": 3,
+      "ANDA": 12
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 12,
+     "sponsors": 11,
+     "by_application_type": {
+      "NDA": 2,
+      "ANDA": 10
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "APOTEX",
+     "AUROBINDO PHARMA",
+     "CHARTWELL RX",
+     "DR REDDYS LABS INC",
+     "GLAND",
+     "MACLEODS PHARMS",
+     "MSN",
+     "SANDOZ INC",
+     "STERISCIENCE",
+     "VIATRIS",
+     "ZYDUS LIFESCIENCES"
+    ]
+   }
+  },
+  "topiramate": {
+   "label": {
+    "selection": "reference brand 'Topamax' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "Topamax"
+    ],
+    "generic_name": [
+     "TOPIRAMATE"
+    ],
+    "manufacturer": [
+     "Janssen Pharmaceuticals, Inc."
+    ],
+    "application_number": [
+     "NDA020505",
+     "NDA020844"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "21628112-0c47-11df-95b3-498d55d89593",
+    "spl_version": "31",
+    "effective_time": "20260312",
+    "indications_and_usage": "1 INDICATIONS AND USAGE TOPAMAX is indicated for: Epilepsy: initial monotherapy for the treatment of partial-onset or primary generalized tonic-clonic seizures in patients 2 years of age and older ( 1.1 ); adjunctive therapy for the treatment of partial-onset seizures, primary generalized tonic-clonic seizures, or seizures associated with Lennox-Gastaut syndrome in patients 2 years of age and older ( 1.2 ) Preventive treatment of migraine in patients 12 years of age and older ( 1.3 ) 1.1 Monotherapy Epilepsy TOPAMAX is indicated as initial monotherapy for the treatment of partial-onset or primary generalized tonic-clonic seizures in patients 2 years of age and older. 1.2 Adjunctive Therapy Epilepsy TOPAMAX is indicated as adjunctive therapy for the treatment of partial-onset seizures, primary generalized tonic-clonic seizures, and seizures associated with Lennox-Gastaut syndrome in patients 2 years of age and older. 1.3 Migraine TOPAMAX is indicated for the preventive treatment of migraine in patients 12 years of age and older.",
+    "has_boxed_warning": false,
+    "boxed_warning": null,
+    "mentions_tourette": false,
+    "labels_matching_query": 1
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"TOPIRAMATE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 62,
+     "sponsors": 49,
+     "by_application_type": {
+      "NDA": 6,
+      "ANDA": 56
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 59,
+     "sponsors": 46,
+     "by_application_type": {
+      "NDA": 5,
+      "ANDA": 54
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 39,
+     "sponsors": 30,
+     "by_application_type": {
+      "NDA": 5,
+      "ANDA": 34
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "ACCORD HLTHCARE",
+     "ACTAVIS LABS FL",
+     "AIPING PHARM INC",
+     "AJANTA PHARMA LTD",
+     "ALKEM LABS LTD",
+     "AMTA",
+     "ASCENT PHARMS INC",
+     "AUROBINDO PHARMA",
+     "AUROBINDO PHARMA LTD",
+     "AZURITY",
+     "BIOCON PHARMA",
+     "CIPLA LTD",
+     "DR REDDYS",
+     "GLENMARK PHARMS LTD",
+     "INVAGEN PHARMS",
+     "JANSSEN PHARMS",
+     "LUPIN",
+     "MICRO LABS",
+     "PH HEALTH",
+     "PHARMAZONE",
+     "RUBICON RESEARCH",
+     "STRIDES PHARMA",
+     "SUPERNUS PHARMS",
+     "TWI PHARMS",
+     "UNICHEM LABS LTD",
+     "UPSHER SMITH LABS",
+     "XIAMEN LP PHARM CO",
+     "ZHEJIANG POLY PHARM CO LTD",
+     "ZYDUS",
+     "ZYDUS PHARMS USA INC"
+    ]
+   }
+  },
+  "tetrabenazine": {
+   "label": {
+    "selection": "reference brand 'Xenazine' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "Xenazine"
+    ],
+    "generic_name": [
+     "TETRABENAZINE"
+    ],
+    "manufacturer": [
+     "Lundbeck Pharmaceuticals LLC"
+    ],
+    "application_number": [
+     "NDA021894"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "ac768bab-8afa-4446-bc7f-caeeffec0cda",
+    "spl_version": "22",
+    "effective_time": "20261106",
+    "indications_and_usage": "1 INDICATIONS AND USAGE XENAZINE is indicated for the treatment of chorea associated with Huntington’s disease. XENAZINE is a vesicular monoamine transporter 2 (VMAT) inhibitor indicated for the treatment of chorea associated with Huntington’s disease. ( 1 )",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING: DEPRESSION AND SUICIDALITY XENAZINE can increase the risk of depression and suicidal thoughts and behavior (suicidality) in patients with Huntington’s disease. Anyone considering the use of XENAZINE must balance the risks of depression and suicidality with the clinical need for control of chorea. Close observation of patients for the emergence or worsening of depression, suicidality, or unusual changes in behavior should accompany therapy. Patients, their caregivers, and families should be informed of the risk of depression and suicidality and should be instructed to report behaviors of concern promptly to the treating physician. Particular caution should be exercised in treating patients with a history of depression or prior suicide attempts or ideation, which are increased in frequency in Huntington’s disease. XENAZINE is contraindicated in patients who are actively suicidal, and in patients with untreated or inadequately treated depression [see Contraindications (4) , Warnings and Precautions (5.1) ] . WARNING: DEPRESSION AND SUICIDALITY See full prescribing information for complete boxed warning . • Increases the risk of depression and suicidal thoughts and behavior (suicidality) in patients with Huntington’s disease ( 5.1 ) • Balance risks of depression and suicidality with the clinical need for control of chorea when considering the use of XENAZINE ( 5.2 ) • Monitor patients for the emergence or worsening of depression, suicidality, or unusual changes in behavior ( 5.1 ) • Inform patients, caregivers and families of the risk of depression and suicidality and instruct to report behaviors of concern promptly to the treating physician ( 5.1 ) • Exercise caution when treating patients with a history of depression or prior suicide attempts or ideation ( 5.1 ) • XENAZINE is contraindicated in patients who are actively suicidal, and in patients with untreated or inadequately treated depression ( 4 , 5.1 )",
+    "mentions_tourette": false,
+    "labels_matching_query": 1
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"TETRABENAZINE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 12,
+     "sponsors": 12,
+     "by_application_type": {
+      "ANDA": 11,
+      "NDA": 1
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 12,
+     "sponsors": 12,
+     "by_application_type": {
+      "ANDA": 11,
+      "NDA": 1
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 9,
+     "sponsors": 9,
+     "by_application_type": {
+      "ANDA": 8,
+      "NDA": 1
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "ACTAVIS LABS FL INC",
+     "APOTEX",
+     "BAUSCH",
+     "BIONPHARMA",
+     "CHARTWELL RX",
+     "DR REDDYS",
+     "HETERO LABS LTD V",
+     "MYLAN",
+     "PIRAMAL"
+    ]
+   }
+  },
+  "deutetrabenazine": {
+   "label": {
+    "selection": "reference brand 'Austedo' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "Austedo",
+     "AUSTEDO",
+     "AUSTEDO XR"
+    ],
+    "generic_name": [
+     "DEUTETRABENAZINE"
+    ],
+    "manufacturer": [
+     "Teva Neuroscience, Inc."
+    ],
+    "application_number": [
+     "NDA208082",
+     "NDA216354"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "7ea3c60a-45c7-44cc-afc2-d87fa53993c0",
+    "spl_version": "36",
+    "effective_time": "20250228",
+    "indications_and_usage": "1 INDICATIONS AND USAGE AUSTEDO XR ® and AUSTEDO ® are indicated in adults for the treatment of: chorea associated with Huntington’s disease [see Clinical Studies ( 14.1 )] tardive dyskinesia [see Clinical Studies ( 14.2 )] AUSTEDO XR and AUSTEDO are vesicular monoamine transporter 2 (VMAT2) inhibitors indicated in adults for the treatment of: Chorea associated with Huntington’s disease ( 1 ) Tardive dyskinesia ( 1 )",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING: DEPRESSION AND SUICIDALITY IN PATIENTS WITH HUNTINGTON’S DISEASE AUSTEDO XR and AUSTEDO can increase the risk of depression and suicidal thoughts and behavior (suicidality) in patients with Huntington’s disease. Anyone considering the use of AUSTEDO XR or AUSTEDO must balance the risks of depression and suicidality with the clinical need for treatment of chorea. Closely monitor patients for the emergence or worsening of depression, suicidality, or unusual changes in behavior. Patients, their caregivers, and families should be informed of the risk of depression and suicidality and should be instructed to report behaviors of concern promptly to the treating physician. Particular caution should be exercised in treating patients with a history of depression or prior suicide attempts or ideation, which are increased in frequency in Huntington’s disease. AUSTEDO XR and AUSTEDO are contraindicated in patients who are suicidal, and in patients with untreated or inadequately treated depression [see Contraindications ( 4 ) and Warnings and Precautions ( 5.1 )]. WARNING: DEPRESSION AND SUICIDALITY IN PATIENTS WITH HUNTINGTON’S DISEASE See full prescribing information for complete boxed warning. Increases the risk of depression and suicidal thoughts and behavior (suicidality) in patients with Huntington’s disease ( 5.1 ) Balance risks of depression and suicidality with the clinical need for treatment of chorea when considering the use of AUSTEDO XR or AUSTEDO ( 5.1 ) Monitor patients for the emergence or worsening of depression, suicidality, or unusual changes in behavior ( 5.1 ) Inform patients, caregivers, and families of the risk of depression and suicidality and instruct to report behaviors of concern promptly to the treating physician ( 5.1 ) Exercise caution when treating patients with a history of depression or prior suicide attempts or ideation ( 5.1 ) AUSTEDO XR and AUSTEDO are contraindicated in patients who are suicidal, and in patients with untreated or inadequately treated depression ( 4 , 5.1 )",
+    "mentions_tourette": false,
+    "labels_matching_query": 1
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"DEUTETRABENAZINE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 4,
+     "sponsors": 3,
+     "by_application_type": {
+      "NDA": 3,
+      "ANDA": 1
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 4,
+     "sponsors": 3,
+     "by_application_type": {
+      "NDA": 3,
+      "ANDA": 1
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 3,
+     "sponsors": 2,
+     "by_application_type": {
+      "NDA": 3
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "TEVA",
+     "TEVA BRANDED PHARM"
+    ]
+   }
+  },
+  "valbenazine": {
+   "label": {
+    "selection": "reference brand 'Ingrezza' (exact brand-name match), newest effective_time",
+    "brand_name": [
+     "INGREZZA",
+     "INGREZZA Sprinkle"
+    ],
+    "generic_name": [
+     "VALBENAZINE"
+    ],
+    "manufacturer": [
+     "Neurocrine Biosciences, Inc."
+    ],
+    "application_number": [
+     "NDA209241",
+     "NDA218390"
+    ],
+    "product_type": [
+     "HUMAN PRESCRIPTION DRUG"
+    ],
+    "route": [
+     "ORAL"
+    ],
+    "set_id": "4c970164-cafb-421f-9eb5-c226ef0a3417",
+    "spl_version": "34",
+    "effective_time": "20260417",
+    "indications_and_usage": "1 INDICATIONS AND USAGE INGREZZA and INGREZZA SPRINKLE are indicated for the treatment of adults with: - tardive dyskinesia [see Clinical Studies ( 14.1 )] . - chorea associated with Huntington’s disease [see Clinical Studies ( 14.2 )] . INGREZZA and INGREZZA SPRINKLE are vesicular monoamine transporter 2 (VMAT2) inhibitors indicated for the treatment of adults with: - tardive dyskinesia. ( 1 ) - chorea associated with Huntington’s disease. ( 1 )",
+    "has_boxed_warning": true,
+    "boxed_warning": "WARNING: DEPRESSION AND SUICIDAL IDEATION AND BEHAVIOR IN PATIENTS WITH HUNTINGTON’S DISEASE VMAT2 inhibitors, including INGREZZA and INGREZZA SPRINKLE, can increase the risk of depression and suicidal thoughts and behavior in patients with Huntington’s disease. Anyone considering the use of INGREZZA or INGREZZA SPRINKLE must balance the risks of depression and suicidal ideation and behavior with the clinical need for treatment of chorea. Closely monitor patients for the emergence or worsening of depression, suicidal ideation, or unusual changes in behavior. Inform patients, their caregivers, and families of the risk of depression and suicidal ideation and behavior and instruct them to report behaviors of concern promptly to the treating physician. Particular caution should be exercised in treating patients with a history of depression or prior suicide attempts or ideation, which are increased in frequency in patients with Huntington’s disease [see Warnings and Precautions ( 5.1 )]. WARNING: DEPRESSION AND SUICIDAL IDEATION AND BEHAVIOR IN PATIENTS WITH HUNTINGTON’S DISEASE See full prescribing information for complete boxed warning. • Increases the risk of depression and suicidal thoughts and behavior in patients with Huntington’s disease ( 5.1 ) • Balance risks of depression, and suicidal ideation and behavior with the clinical need for treatment of chorea when considering the use of INGREZZA or INGREZZA SPRINKLE ( 5.1 ) • Monitor patients for the emergence or worsening of depression, suicidal ideation, or unusual changes in behavior ( 5.1 ) • Inform patients, caregivers, and families of the risk of depression and suicidal ideation and behavior and instruct them to report behaviors of concern promptly to the treating physician ( 5.1 ) • Exercise caution when treating patients with a history of depression or prior suicide attempts or ideation ( 5.1 )",
+    "mentions_tourette": false,
+    "labels_matching_query": 1
+   },
+   "label_note": null,
+   "drugsfda": {
+    "search": "products.active_ingredients.name:\"VALBENAZINE\"",
+    "all_products_including_combinations_and_discontinued": {
+     "applications": 6,
+     "sponsors": 5,
+     "by_application_type": {
+      "ANDA": 4,
+      "NDA": 2
+     }
+    },
+    "single_ingredient_any_status": {
+     "applications": 6,
+     "sponsors": 5,
+     "by_application_type": {
+      "ANDA": 4,
+      "NDA": 2
+     }
+    },
+    "single_ingredient_not_discontinued": {
+     "applications": 5,
+     "sponsors": 4,
+     "by_application_type": {
+      "ANDA": 3,
+      "NDA": 2
+     }
+    },
+    "sponsor_names_single_ingredient_not_discontinued": [
+     "LUPIN",
+     "NEUROCRINE",
+     "SANDOZ INC",
+     "TEVA PHARMS INC"
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,72 @@
+{
+  "app_title": "TS Commercial Intelligence",
+  "subtitle": "Tourette syndrome market & launch scenario planning",
+  "anchor_molecule": "ecopipam",
+  "anchor_sponsor": "Teva",
+  "build_phase": "Data refreshed 2026-11-13",
+  "principles": [
+    "Credibility over feature count.",
+    "Every clinical/epi/market number is cited to a primary source.",
+    "Patients and channel/access — never pricing or claims-level revenue modeling.",
+    "Neutral, shareable framing of the whole field."
+  ],
+  "disclaimer": "Neutral commercial-intelligence tool. No patient-level or claims-based revenue modeling. Figures are cited to primary sources; verify the live source before external use. Not medical advice or promotional material.",
+  "views": [
+    {
+      "id": "executive",
+      "label": "Executive summary",
+      "status": "live"
+    },
+    {
+      "id": "landscape",
+      "label": "Market landscape",
+      "status": "live"
+    },
+    {
+      "id": "journey",
+      "label": "Patient journey",
+      "status": "live"
+    },
+    {
+      "id": "treatment",
+      "label": "Treatment algorithm",
+      "status": "live"
+    },
+    {
+      "id": "current",
+      "label": "Current treatment",
+      "status": "live"
+    },
+    {
+      "id": "pipeline",
+      "label": "Pipeline",
+      "status": "live"
+    },
+    {
+      "id": "channel",
+      "label": "Channel & sites",
+      "status": "live"
+    },
+    {
+      "id": "companies",
+      "label": "Companies",
+      "status": "live"
+    },
+    {
+      "id": "scenario",
+      "label": "Scenario planner",
+      "status": "live"
+    },
+    {
+      "id": "policy",
+      "label": "Policy & advocacy",
+      "status": "live"
+    },
+    {
+      "id": "briefings",
+      "label": "Briefings",
+      "status": "live"
+    }
+  ],
+  "data_as_of": "2026-11-13"
+}
