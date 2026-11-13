@@ -56,8 +56,6 @@ def main():
                              "(source block changed?)")
         html = html.replace(old, new)
 
-    html = html.replace("<title>TS Commercial Intelligence</title>",
-                        "<title>TS Commercial Intelligence — Local Preview</title>")
 
     import base64
     for rel, mime in (("assets/bios-logo-primary.svg", "image/svg+xml"),

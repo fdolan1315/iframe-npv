@@ -522,17 +522,17 @@ document.getElementById('logoutBtn').addEventListener('click', async ()=>{
 
 /* ---- theme ---- */
 function initTheme(){
-  const saved = localStorage.getItem('tsci_theme2') || 'light';
+  let saved='light'; try{ saved = localStorage.getItem('tsci_theme2') || 'light'; }catch(e){}
   document.documentElement.setAttribute('data-theme', saved);
 }
 document.getElementById('themeBtn').addEventListener('click', ()=>{
   const cur = document.documentElement.getAttribute('data-theme');
   const nxt = cur==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme', nxt);
-  localStorage.setItem('tsci_theme2', nxt);
+  try{ localStorage.setItem('tsci_theme2', nxt); }catch(e){}
 });
 (function(){ const n=document.getElementById('mobileNote'); if(!n) return;
-  if(localStorage.getItem('tsci_mobilenote')==='dismissed') n.classList.add('hide');
+  try{ if(localStorage.getItem('tsci_mobilenote')==='dismissed') n.classList.add('hide'); }catch(e){}
   const c=document.getElementById('mnClose'); if(c) c.addEventListener('click',()=>{ n.classList.add('hide'); try{localStorage.setItem('tsci_mobilenote','dismissed');}catch(e){} });
 })();
 
