@@ -166,12 +166,12 @@ function figDaily() {
 
 /* ---------- stepped funnel (proportional) ---------- */
 function stepFunnel(rows, o = {}) {
-  const W = 1100, mx = rows[0][1], bw = v => Math.max(3, v / mx * 720), cols = ["#C9D6F7", "#94ADEE", "#5D82E3", "#2457D6", "#173E9E"], rh = o.losses ? 84 : 62; let g = "";
+  const W = o.W || 1100, mx = rows[0][1], bw = v => Math.max(3, v / mx * W * .62), cols = ["#C9D6F7", "#94ADEE", "#5D82E3", "#2457D6", "#173E9E"], rh = o.losses ? 84 : 62; let g = "";
   rows.forEach(([l, v, n], i) => { const y = 8 + i * rh; g += `<rect x="0" y="${y}" width="${bw(v)}" height="46" rx="4" fill="${cols[Math.min(i + (rows.length < 4 ? 0 : 0), 4)]}"/><text x="${bw(v) + 14}" y="${y + 21}" font-size="25" font-weight="700" font-family="Instrument Sans,Inter,Arial">${v ? (v < 1e5 ? N(v) : K(v).replace(/\.0(?=[KMB])/, "")) : "0"}</text><text x="${bw(v) + 14}" y="${y + 41}" font-size="15">${esc(l)}</text>`;
     if (o.losses && o.losses[i]) g += `<path d="M22 ${y + 50} v18 M16 ${y + 62} l6 7 l6 -7" fill="none" stroke="#42526E" stroke-width="1.5"/><text x="40" y="${y + 68}" font-size="15" fill="#42526E">${esc(o.losses[i])}</text>`; });
   let H = 8 + rows.length * rh;
   if (o.gap) { const [a, b, t] = o.gap, y = H + 8; g += `<line x1="${bw(a)}" x2="${bw(b)}" y1="${y}" y2="${y}" stroke="#42526E"/><line x1="${bw(a)}" x2="${bw(a)}" y1="${y - 6}" y2="${y + 6}" stroke="#42526E"/><line x1="${bw(b)}" x2="${bw(b)}" y1="${y - 6}" y2="${y + 6}" stroke="#42526E"/><text x="${(bw(a) + bw(b)) / 2}" y="${y + 26}" font-size="16" text-anchor="middle">${esc(t)}</text>`; H += 44; }
-  return `<div class="scroll"><svg class="fig" style="min-width:700px" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.aria || "Patient funnel")}">${g}</svg></div>`;
+  return `<div class="scroll"><svg class="fig" style="min-width:${Math.min(700, W * .7)}px" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.aria || "Patient funnel")}">${g}</svg></div>`;
 }
 
 /* ---------- catalyst timeline ---------- */

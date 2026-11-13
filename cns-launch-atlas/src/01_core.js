@@ -35,7 +35,7 @@ const SER1 = ["var(--s0)"], SER = ["var(--s1)", "var(--s2)", "var(--s3)", "var(-
 function niceMax(v) { if (!(v > 0)) return 1; const p = Math.pow(10, Math.floor(Math.log10(v))); const m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; }
 /* horizontal bars: rows [{label, value, tip?, color?}] */
 function hbar(rows, o = {}) {
-  const fmt = o.fmt || K, lw = o.labelW || 150, rh = o.rowH || 22, W = 560, vw = 62, max = niceMax(Math.max(...rows.map(r => r.value), 0)), pw = W - lw - vw;
+  const fmt = o.fmt || K, lw = o.labelW || 150, rh = o.rowH || 22, W = o.W || 560, vw = 62, max = niceMax(Math.max(...rows.map(r => r.value), 0)), pw = W - lw - vw;
   const H = rows.length * rh + 4;
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.title || "bar chart")}">` + rows.map((r, i) => {
     const y = i * rh + 3, w = Math.max(1, r.value / max * pw);
