@@ -1,0 +1,106 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>CNS Launch Atlas overview</title>
+<style>
+/* Overview video for social. 1080x1350 (4:5), silent, captions on screen. BIOS kit: Clear White ground, Deep Slate type, Authority Cobalt accent, Instrument Sans + Inter. */
+@font-face{font-family:"Inter";font-weight:400;src:url(../films/fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;src:url(../films/fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;src:url(../films/fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-weight:600;src:url(../films/fonts/instrument-sans-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-weight:700;src:url(../films/fonts/instrument-sans-latin-700-normal.woff2) format("woff2")}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:#F8FAFC;color:#111827;font-family:"Inter",Arial,sans-serif}
+h1,h2{font-family:"Instrument Sans","Inter",Arial,sans-serif;font-weight:700;letter-spacing:-.015em;margin:0}
+.logo{position:absolute;left:44px;top:40px;width:230px;height:104px;overflow:hidden;transform:scale(.72);transform-origin:0 0}
+.logo img{width:361.5px;max-width:none;margin:-65.7px 0 0 -66px;display:block}
+#brand{position:absolute;right:48px;top:62px;font-size:24px;font-weight:600;color:#42526E}
+#eyebrow{position:absolute;left:48px;top:176px;font-size:23px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#2457D6}
+#cap{position:absolute;left:48px;top:216px;width:984px;font-family:"Instrument Sans","Inter",Arial,sans-serif;font-weight:700;font-size:64px;line-height:1.06;letter-spacing:-.015em}
+#win{position:absolute;left:40px;top:404px;width:1000px;height:830px;border-radius:20px;background:#F8FAFC;isolation:isolate;z-index:1;border:1px solid rgba(17,24,39,.14);box-shadow:0 22px 56px rgba(17,24,39,.10);overflow:hidden}
+#win img.s{position:absolute;left:0;top:0;opacity:0;transform-origin:0 0;max-width:none}
+#dots{position:absolute;left:48px;top:1262px;width:984px;display:flex;gap:10px}
+#dots i{flex:1;height:6px;border-radius:3px;background:#D5DBE5;overflow:hidden;position:relative}
+#dots i b{position:absolute;left:0;top:0;bottom:0;background:#2457D6;width:0}
+#fine{position:absolute;left:48px;top:1290px;width:984px;font-size:17px;color:#42526E}
+.layer{position:absolute;inset:0;opacity:0;background:#F8FAFC}
+#who{padding:34px 48px}
+#who .num{font-family:"Instrument Sans","Inter",Arial,sans-serif;font-weight:700;font-size:200px;line-height:.9;letter-spacing:-.03em;color:#2457D6}
+#who p{font-size:36px;line-height:1.2;font-weight:500;margin:10px 0 0;max-width:880px}
+#who img{position:absolute;left:40px;top:340px;width:800px}
+#who small{position:absolute;left:48px;bottom:22px;font-size:19px;color:#42526E}
+#sim .chart{position:absolute;left:30px;top:26px;width:940px;height:396px;overflow:hidden}
+#sim .chart img{position:absolute;left:0;top:0;width:940px;opacity:0}
+#sim .crop{position:absolute;top:468px;width:452px;height:316px;overflow:hidden}
+#sim .crop img{position:absolute;left:0;width:452px;opacity:0}
+#sim .lab{position:absolute;left:30px;top:432px;font-size:20px;color:#42526E}
+.card{position:absolute;inset:0;background:#F8FAFC;opacity:0;z-index:50}
+#hook .eb{position:absolute;left:64px;top:214px;font-size:26px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#2457D6}
+#hook h1{position:absolute;left:64px;top:262px;font-size:104px;line-height:1.0}
+#hook p{position:absolute;left:64px;top:496px;width:900px;font-size:36px;line-height:1.3;color:#42526E;margin:0}
+#hook img{position:absolute;left:64px;width:952px;border-radius:16px;box-shadow:0 22px 56px rgba(17,24,39,.16)}
+#end .rule{position:absolute;left:64px;top:300px;width:120px;height:8px;border-radius:4px;background:#2457D6}
+#end h1{position:absolute;left:64px;top:344px;font-size:100px;line-height:1.0}
+#end p{position:absolute;left:64px;top:588px;width:930px;font-size:42px;line-height:1.28;font-weight:500;margin:0}
+#end .ask{position:absolute;left:64px;top:800px;font-size:42px;font-weight:600;color:#2457D6}
+#end small{position:absolute;left:64px;bottom:64px;width:952px;font-size:19px;line-height:1.45;color:#42526E}
+</style></head>
+<body>
+<div class="logo"><img src="../../design/brand/bios-logo-primary.svg" alt="BIOS"></div><div id="brand">CNS Launch Atlas</div>
+<div id="eyebrow"></div><div id="cap"></div>
+<div id="win"><div class="layer" id="who"><div class="num" id="whoNum">0%</div><p>of the top 50 prescribers already speak or consult for an adjacent brand.</p><img id="whoImg" alt=""><small>Rare-epilepsy market · CMS Open Payments, 2023–25 · aggregate only, no individuals shown</small></div>
+  <div class="layer" id="sim"><div class="chart" id="simChart"></div><div class="lab">Move an assumption and the forecast redraws. Illustrative model; dollar figures hidden in this video.</div><div class="crop" id="simA" style="left:30px;height:270px"></div><div class="crop" id="simB" style="left:518px"></div></div></div>
+<div id="dots"></div><div id="fine">Real screens from the app. Investigational products are not approved. Not investment or medical advice.</div>
+<div class="card" id="hook"><div class="logo"><img src="../../design/brand/bios-logo-primary.svg" alt="BIOS"></div><div class="eb">CNS Launch Atlas</div><h1>Two CNS launches.<br>One working atlas.</h1><p>Rare epilepsy and essential tremor: the disease, the patients, the payers, the prescribers and the forecast.</p><img id="hookA" alt=""><img id="hookB" alt=""></div>
+<div class="card" id="end"><div class="logo"><img src="../../design/brand/bios-logo-primary.svg" alt="BIOS"></div><div class="rule"></div><h1>Not public.<br>Built for feedback.</h1><p>If you work on CNS launches, I would value your read. A few colleagues can try it and tell me what is wrong with it.</p><div class="ask">Message me for access.</div><small>For education and planning only. Not investment, medical, legal or regulatory advice. Investigational products are not approved, and nothing here is a claim about their safety or efficacy. Compiled from public sources and company disclosures. Not affiliated with or endorsed by any company named.</small></div>
+<script>
+"use strict";
+const $ = s => document.querySelector(s), clamp = (v, a, b) => Math.max(a, Math.min(b, v)), ease = x => { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }, lerp = (a, b, u) => a + (b - a) * u;
+const W = 1000, H = 830, FADE = 0.45, HOOK = 3.6, IM = {}, load = [];
+let M, BEATS, END, SIMN;
+const img = (name, parent, cls) => { const i = new Image(); i.src = "shots/" + name + ".jpg"; if (cls) i.className = cls; parent.appendChild(i); load.push(i.decode().catch(() => console.error("image", name))); return i; };
+const MX = 30, MY = 24;   // the screen keeps a margin inside the window unless it is zoomed past it
+function place(i, nw, nh, k, fx, fy, op, z) { const w = (W - 2 * MX) * k, h = w * nh / nw, l = w <= W - 2 * MX ? (W - w) / 2 : clamp(W / 2 - fx * w, W - MX - w, MX), t = h <= H - 2 * MY ? (H - h) / 2 : clamp(H / 2 - fy * h, H - MY - h, MY); i.style.width = w + "px"; i.style.height = h + "px"; i.style.transform = `translate(${l}px,${t}px)`; i.style.opacity = op; i.style.zIndex = z; }
+
+/* a beat = caption + a list of shots; a shot is one still or a frame sequence with a slow push from a to b: [zoom, focus x, focus y] */
+function stillBeat(o) {
+  o.draw = (local, op, z) => o.shots.forEach((s, si) => { if (local < s.s) return; const nx = o.shots[si + 1]; if (nx && local >= nx.s + FADE) return; /* fully covered by the next shot */ const u = ease((local - s.s) / (s.e - s.s)), k = lerp(s.a[0], s.b[0], u), fx = lerp(s.a[1], s.b[1], u), fy = lerp(s.a[2], s.b[2], u), o2 = (si ? ease((local - s.s) / FADE) : 1) * op;
+    const names = s.names, n = s.fps ? names[Math.min(names.length - 1, Math.floor((local - s.s) * s.fps))] : names[0]; place(IM[n], s.w, s.h, k, fx, fy, o2, z * 20 + si); });
+  return o;
+}
+window.init = async meta => {
+  M = meta; const S = M.shots, win = $("#win"), st = (n, s, e, a, b) => ({ names: [n], w: S[n].w, h: S[n].h, s, e, a, b });
+  Object.keys(S).filter(n => n !== "ties-dee" && !n.startsWith("hero")).forEach(n => IM[n] = img(n, win, "s"));
+  [...M.filmA, ...M.filmB].forEach(n => IM[n] = img(n, win, "s"));
+  $("#hookA").src = "shots/hero-dee.jpg"; $("#hookB").src = "shots/hero-et.jpg"; $("#whoImg").src = "shots/ties-dee.jpg"; load.push($("#hookA").decode(), $("#hookB").decode(), $("#whoImg").decode());
+  SIMN = M.sim.length; M.sim.forEach(n => { img(n + "-chart", $("#simChart")); img(n + "-ctl", $("#simA")); img(n + "-ctl", $("#simB")); });
+  const sc = 452 / M.simCtl.w; [...$("#simA").children].forEach(i => i.style.top = "0px"); [...$("#simB").children].forEach(i => i.style.top = -(196 * sc) + "px");
+  const geo = M.geo.map((n, i) => st(n, i * 1.35, i * 1.35 + 1.8, [1, .5, 0], [1, .5, 0]));
+  BEATS = [
+    stillBeat({ len: 6.2, eb: "01 · Learn", cap: "Learn the disease in a minute", shots: [{ names: M.filmA, w: 1280, h: 720, s: 0, e: 3.2, a: [1, .5, .5], b: [1, .5, .5], fps: 12 }, st("impact-et", 2.9, 6.2, [1, .5, .2], [1.14, .44, .6])] }),
+    stillBeat({ len: 5.6, eb: "02 · Follow", cap: "Follow the patient, stage by stage", shots: [st("journey-dee", 0, 5.6, [1, .5, .2], [1.2, .42, .36])] }),
+    stillBeat({ len: 5.2, eb: "03 · Size", cap: "See what the market already spends", shots: [st("spend-dee", 0, 5.2, [1, .5, .3], [1.2, .4, .6])] }),
+    stillBeat({ len: 5.8, eb: "04 · Access", cap: "Know the path to coverage", shots: [st("clock-dee", 0, 3.0, [1, .5, .5], [1.14, .43, .62]), st("pa-dee", 2.7, 5.8, [1, .5, .2], [1.16, .4, .52])] }),
+    stillBeat({ len: 5.7, eb: "05 · Locate", cap: "Find the patients and the specialists", shots: geo }),
+    { len: 6.0, eb: "06 · Engage", cap: "See who already works with industry", draw: (local, op, z) => { const e = $("#who"); e.style.opacity = op; e.style.zIndex = z * 20; $("#whoNum").textContent = Math.round(M.ties.pct * ease(local / .8)) + "%"; $("#whoImg").style.opacity = ease((local - .85) / .6); } },
+    { len: 5.6, eb: "07 · Test", cap: "Pressure-test your own assumptions", draw: (local, op, z) => { const e = $("#sim"); e.style.opacity = op; e.style.zIndex = z * 20; const f = clamp(Math.floor((local - .5) / 4.6 * SIMN), 0, SIMN - 1); ["#simChart", "#simA", "#simB"].forEach(q => [...$(q).children].forEach((i, j) => i.style.opacity = j === f ? 1 : 0)); } }];
+  let t = HOOK; BEATS.forEach(b => { b.t0 = t; t += b.len; }); END = t; window.DURATION = END + 5.4;
+  $("#dots").innerHTML = BEATS.map(() => "<i><b></b></i>").join("");
+  window.CAPTIONS = ["Two CNS launches. One working atlas.", ...BEATS.map(b => b.cap), "Not public. Built for feedback. Message me for access."];
+  await Promise.all(load); await document.fonts.ready;
+};
+window.renderFrame = t => {
+  Object.values(IM).forEach(i => { i.style.opacity = 0; }); $("#who").style.opacity = 0; $("#sim").style.opacity = 0;
+  // hook
+  const hk = $("#hook"); hk.style.opacity = t < HOOK - .4 ? 1 : clamp((HOOK - t) / .4, 0, 1); hk.style.display = t < HOOK ? "block" : "none";
+  if (t < HOOK) { const a = ease((t - .5) / .8), b = ease((t - .9) / .8); $("#hookA").style.top = lerp(760, 690, a) + "px"; $("#hookA").style.opacity = a; $("#hookB").style.top = lerp(1010, 930, b) + "px"; $("#hookB").style.opacity = b; $("#hookB").style.left = "104px"; $("#hookB").style.width = "872px"; $("#hookA").style.zIndex = 2; }
+  // beats
+  let i = BEATS.findIndex(b => t >= b.t0 && t < b.t0 + b.len); if (i < 0) i = t < HOOK ? 0 : BEATS.length - 1;
+  const b = BEATS[i], local = clamp(t - b.t0, 0, b.len);
+  if (i > 0 && local < FADE) BEATS[i - 1].draw(BEATS[i - 1].len, 1, 1);
+  b.draw(local, i === 0 ? 1 : ease(local / FADE), 2);
+  const capIn = ease(local / .35), capOut = t >= END - .01 ? 1 : ease((b.t0 + b.len - t) / .25), co = Math.min(capIn, capOut);
+  $("#eyebrow").textContent = b.eb; $("#cap").textContent = b.cap; $("#eyebrow").style.opacity = co; $("#cap").style.opacity = co; $("#cap").style.transform = `translateY(${(1 - capIn) * 14}px)`;
+  [...$("#dots").children].forEach((d, j) => { d.firstChild.style.width = (j < i ? 100 : j === i ? 100 * local / b.len : 0) + "%"; });
+  // end card
+  const en = $("#end"), eo = ease((t - END) / .5); en.style.display = t >= END ? "block" : "none"; en.style.opacity = eo;
+};
+</script></body></html>

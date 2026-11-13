@@ -1,0 +1,2066 @@
+{
+ "meta": {
+  "as_of": "2026-11-13",
+  "method": "WebSearch only (extended mode); direct fetch of source hosts was network-blocked and the shared search budget ran out after ~55 queries, so advocacy, KOL, TSC and some approved-product items rely on prior knowledge and are flagged.",
+  "verification_legend": {
+   "search_verified": "fact appeared in a search result retrieved this session (snippet-level, not full-text)",
+   "recalled_unverified_in_session": "from model background knowledge; URL is the expected primary source but was NOT retrieved this session - verify before use"
+  },
+  "blocked_hosts_need_allowlisting": [
+   "pmc.ncbi.nlm.nih.gov",
+   "www.scn2a.org",
+   "onlinelibrary.wiley.com",
+   "www.globenewswire.com"
+  ],
+  "not_searched_due_to_budget": [
+   "relutrigine EMERALD design details",
+   "zorevunersen NEJM efficacy numbers",
+   "Longboard deal/PACIFIC data",
+   "ganaxolone TrustTSC",
+   "TSC epidemiology",
+   "company DEE-wide prevalence (~200k)",
+   "advocacy org details",
+   "KOL verification"
+  ]
+ },
+ "disease_education": [
+  {
+   "topic": "What DEEs are",
+   "body": "Developmental and epileptic encephalopathies are severe, mostly early-onset epilepsies in which both the underlying aetiology (often a single-gene variant) and the frequent epileptic activity itself impair development. The term was formalised in the ILAE 2017 classification, and the 2022 ILAE syndrome papers organise named syndromes (Dravet, LGS, infantile epileptic spasms syndrome, early-infantile DEE, etc.) by age at onset. Seizures are typically drug-resistant and accompanied by intellectual disability, motor, behavioural, sleep and feeding problems. In a New Zealand cohort the cumulative incidence of DEE was 169 per 100,000 children (about 1 in 590).",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28276062/",
+    "https://www.ilae.org/guidelines/definition-and-classification/classification-and-definition-of-epilepsy-syndromes",
+    "https://doi.org/10.1177/15357597231203079"
+   ],
+   "confidence": "high",
+   "verification": "mixed: incidence search-verified; ILAE framing recalled"
+  },
+  {
+   "topic": "SCN2A biology (Nav1.2)",
+   "body": "SCN2A encodes Nav1.2, a voltage-gated sodium channel in excitatory neurons. Wolff et al. (Brain 2017; 71 new + 130 published patients) showed two broad groups: early-infantile onset (<3 months), associated with gain-of-function missense variants and good response to sodium channel blockers; and later onset (>=3 months), associated with loss-of-function (including all truncating variants), where sodium channel blockers were rarely effective and sometimes worsened seizures. The later-onset group includes West syndrome, myoclonic-atonic epilepsy, LGS-like and ESES-like phenotypes; loss-of-function variants also cause autism/intellectual disability without epilepsy. In one 72-patient cohort seizure onset ranged from day 1 of life to 2.5 years.",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9005871/",
+    "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf"
+   ],
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "SCN8A biology (Nav1.6)",
+   "body": "SCN8A encodes Nav1.6, concentrated at the axon initial segment and nodes of Ranvier. The 2024 global Delphi consensus defines five phenotypes ranging from severe DEE (onset ~0-6 months) and mild/moderate DEE (onset ~4-12 months) through self-limited (familial) infantile epilepsy to neurodevelopmental disorder with generalized epilepsy and NDD without epilepsy. Gain-of-function variants underlie the DEE and self-limited phenotypes; loss-of-function variants are associated with NDD with generalized epilepsy (absence) or without epilepsy.",
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+    "https://doi.org/10.1177/15357597241293310",
+    "https://www.ncbi.nlm.nih.gov/sites/books/NBK379665/"
+   ],
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "Why sodium channel blockers help GoF and hurt LoF",
+   "body": "In gain-of-function disease the mutant channel passes too much current (slowed fast inactivation, faster recovery, larger persistent current), so drugs that block sodium channels (phenytoin, carbamazepine, oxcarbazepine, lacosamide, often at high doses) reduce the excess. In loss-of-function disease the channel is already under-active, so further block can aggravate seizures; the SCN8A consensus calls sodium channel blockers relatively contraindicated in LoF and levetiracetam relatively contraindicated in GoF. Functional class is usually inferred from age at onset and phenotype because functional assays are rarely available at the time of prescribing.",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+    "https://scn8aalliance.org/scn8a-care/treatment/"
+   ],
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "Seizure types and course",
+   "body": "SCN8A-DEE caregivers report high seizure burden with multiple seizure types and multiple comorbidities; SCN2A early-onset DEE presents in the first days to weeks of life with tonic/focal seizures, sometimes evolving to epileptic spasms. Dravet typically starts with prolonged febrile hemiclonic or generalized seizures or status epilepticus in the first year, and LGS is defined by multiple seizure types including tonic and drop seizures. Seizure types counted in trials are 'countable motor seizures'.",
+   "sources": [
+    "https://www.sciencedirect.com/science/article/pii/S1059131122000565",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9005871/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9543220",
+    "https://www.lundbeck.com/us/newsroom/2026/lundbeck-announces-last-patient-randomized-in-deep-sea-phase-iii-trial"
+   ],
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "Comorbidities",
+   "body": "Beyond seizures, DEEs carry intellectual disability, motor impairment/hypotonia, movement disorders, autism features, sleep and gastrointestinal problems. Treatment of SCN2A disorders remains primarily seizure control plus supportive therapies for autism and developmental delay, and the best treatment of SCN2A movement disorders is unknown. Praxis frames relutrigine OLE data as including developmental/'disease-modifying' potential, a claim not yet established by controlled data.",
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9005871/",
+    "https://www.chop.edu/conditions-diseases/scn2a-related-disorders",
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-topline-results-0"
+   ],
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "SUDEP and mortality",
+   "body": "In a review of 190 published SCN8A patients overall mortality was 5.3% and 1.6% died of definite/probable SUDEP, while other reviews cite SUDEP in ~10% of SCN8A patients and note precise rates are unavailable. In a genetic-DEE cohort SCN2A accounted for 33% and SCN8A for 30% of deaths (shares of deaths, not rates). For Dravet, reported mortality ranges 3.7-20.8% across studies, with a Dravet-specific mortality rate of 15.84/1,000 person-years and SUDEP rate of 9.32/1,000 person-years in one cohort versus 4.4/1,000 person-years in a later population-based estimate.",
+   "sources": [
+    "https://www.sciencedirect.com/science/article/abs/pii/S0920121118301591",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10115508/",
+    "https://www.nature.com/articles/s41398-025-03304-8",
+    "https://onlinelibrary.wiley.com/doi/10.1002/epi.70348"
+   ],
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "Caregiver burden and cost",
+   "body": "A literature review of DEE caregiver impact found mean annual direct costs per patient of $24,048-$80,545 across studies, driven by home-based and inpatient care, with caregiver depression symptoms reported in up to 70.7%. A 2025 systematic review of indirect costs (Dravet, LGS, TSC) reports 35-45% of families had a caregiver leave employment, plus absenteeism and presenteeism. No US cost-of-illness study specific to SCN2A or SCN8A was found.",
+   "sources": [
+    "https://www.sciencedirect.com/science/article/pii/S1525505021005850",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12613530/"
+   ],
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "topic": "Natural history and adult care",
+   "body": "Most DEE patients survive into adulthood with persisting seizures and lifelong dependency; a 2025/26 Epilepsia Open review highlights gaps in evidence and care for adults with genetic DEEs. SCN8A stakeholders have published a research roadmap identifying natural-history data, biomarkers and trial-ready endpoints as priority gaps, supported by the International SCN8A Patient Registry.",
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12366098/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10414210/"
+   ],
+   "confidence": "medium",
+   "verification": "search_verified"
+  }
+ ],
+ "epidemiology": [
+  {
+   "syndrome": "SCN2A + SCN8A DEE (combined)",
+   "metric": "US prevalent patients (company estimate)",
+   "value": "~5,000",
+   "range": "not found (single company figure)",
+   "year": 2024,
+   "source_url": "https://investors.praxismedicines.com/static-files/91013dac-4234-4f1e-8128-88e376d27b3b",
+   "confidence": "medium",
+   "verification": "search_verified",
+   "note": "Superseded: at its November 2026 investor day the sponsor cited 10K+ prevalent and ~5K diagnosed. Praxis EMBOLD deck Sept 2024; same deck lists '>100k' addressable patients for broader DEE. Combined figure is not split by gene."
+  },
+  {
+   "syndrome": "SCN2A-DEE",
+   "metric": "Prevalence",
+   "value": "1-3 per 100,000 individuals",
+   "range": "1-3 per 100,000",
+   "year": 2025,
+   "source_url": "https://www.neurologylive.com/view/breakthrough-therapy-designation-granted-relutrigine-scn2a-scn8a-developmental-epileptic-encephalopathies",
+   "confidence": "low",
+   "verification": "search_verified",
+   "note": "Trade-press figure accompanying Praxis BTD; at ~335M US population implies ~3,300-10,000, which exceeds Praxis's own ~5,000 for SCN2A+SCN8A combined - conflict."
+  },
+  {
+   "syndrome": "SCN2A-related disorders (all phenotypes incl. autism/ID)",
+   "metric": "Projected US incident cases per year",
+   "value": ">400 per year",
+   "range": "not found",
+   "year": 2018,
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "medium",
+   "verification": "search_verified",
+   "note": "Covers epileptic encephalopathy + autism + ID, not DEE only; review compares with Dravet at 6.4/100,000 births."
+  },
+  {
+   "syndrome": "SCN8A-related disorders",
+   "metric": "Incidence per births",
+   "value": "~1 in 56,000 births (~65 US births/yr, inferred from 2021 CDC births)",
+   "range": "1 in 56,000; prevalence 2.96/100,000",
+   "year": 2025,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12366098/",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "SCN8A-DEE",
+   "metric": "Share of DEEs",
+   "value": "~1-2% of DEEs",
+   "range": "1-2%",
+   "year": 2025,
+   "source_url": "https://www.neurologylive.com/view/breakthrough-therapy-designation-granted-relutrigine-scn2a-scn8a-developmental-epileptic-encephalopathies",
+   "confidence": "low",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "SCN8A-related disorders",
+   "metric": "Prevalence",
+   "value": "not known (GeneReviews)",
+   "range": "not found",
+   "year": 2023,
+   "source_url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK379665/",
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "SCN2A / SCN8A",
+   "metric": "Per-gene de novo incidence (Lopez-Rivera 2020)",
+   "value": "not found (paper exists; per-gene table not retrieved)",
+   "range": "not found",
+   "year": 2020,
+   "source_url": "https://www.researchgate.net/publication/339934277_A_catalogue_of_new_incidence_estimates_of_monogenic_neurodevelopmental_disorders_caused_by_de_novo_variants",
+   "confidence": "low",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "All DEE",
+   "metric": "Cumulative incidence to age 16",
+   "value": "169 per 100,000 children (95% CI 144-199), ~1 in 590",
+   "range": "from >1 in 2,000 live births (older studies) to 1 in 590",
+   "year": 2023,
+   "source_url": "https://doi.org/10.1177/15357597231203079",
+   "confidence": "high",
+   "verification": "search_verified",
+   "note": "Poke et al., New Zealand; older range from Epilepsy & Behavior 2024 https://www.epilepsybehavior.com/article/S1525-5050(24)00051-9/fulltext"
+  },
+  {
+   "syndrome": "All DEE",
+   "metric": "US prevalent patients",
+   "value": "not found (the ~200k figure could not be confirmed)",
+   "range": "Praxis: >100k 'addressable patients'",
+   "year": 2024,
+   "source_url": "https://investors.praxismedicines.com/static-files/91013dac-4234-4f1e-8128-88e376d27b3b",
+   "confidence": "low",
+   "verification": "search_verified",
+   "note": "Do not cite 200,000 without a source."
+  },
+  {
+   "syndrome": "Genetic epilepsies (age <3)",
+   "metric": "Incidence",
+   "value": "1 per 952 live births with defined genetic aetiology; all epilepsy <3y 239/100,000 live births",
+   "range": "not found",
+   "year": 2021,
+   "source_url": "https://academic.oup.com/brain/article/144/9/2879/6408766",
+   "confidence": "medium",
+   "verification": "search_verified",
+   "note": "Scottish cohort (Symonds 2021); snippet-level, verify."
+  },
+  {
+   "syndrome": "Dravet syndrome",
+   "metric": "Incidence",
+   "value": "1 per 15,700 births (SCN1A-positive 1 per 20,900)",
+   "range": "1:15,700 to 1:40,000; systematic review 2.2-6.5 per 100,000",
+   "year": 2015,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4621800/",
+   "confidence": "high",
+   "verification": "search_verified",
+   "note": "Based on 8 cases, Kaiser N. California births 2007-2010. Range from https://onlinelibrary.wiley.com/doi/10.1111/epi.17866"
+  },
+  {
+   "syndrome": "Dravet syndrome",
+   "metric": "US prevalent patients",
+   "value": "not found in session (Stoke has cited ~16,000 US; recalled, unverified)",
+   "range": "not found",
+   "year": 2025,
+   "source_url": "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-announces-third-quarter-2026-financial",
+   "confidence": "low",
+   "verification": "recalled_unverified_in_session"
+  },
+  {
+   "syndrome": "SCN1A",
+   "metric": "Incidence (Symonds 2019)",
+   "value": "1 per 12,200 live births (8.26/100,000)",
+   "range": "not found",
+   "year": 2019,
+   "source_url": "https://academic.oup.com/brain/article/142/8/2303/5532195",
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "Lennox-Gastaut syndrome",
+   "metric": "US prevalent patients",
+   "value": "~48,000-50,000 (advocacy estimate)",
+   "range": "39,045-47,800 calculated; literature 2.9-28/100,000 (narrow) to 4.2-60.8/100,000 (probable)",
+   "year": 2024,
+   "source_url": "https://www.lgsfoundation.org/about-lgs-2/how-many-people-have-lgs/",
+   "confidence": "medium",
+   "verification": "search_verified",
+   "note": "1-2% of all epilepsy; 3-4% of childhood epilepsy (Orphanet: 1-10%). Range from https://onlinelibrary.wiley.com/doi/10.1111/epi.17866"
+  },
+  {
+   "syndrome": "CDKL5 deficiency disorder",
+   "metric": "Incidence",
+   "value": "~1 in 42,000 live births",
+   "range": "1:40,000-1:60,000; 2.36/100,000",
+   "year": 2022,
+   "source_url": "https://www.medlink.com/articles/cdlk5-related-developmental-and-epileptic-encephalopathy",
+   "confidence": "medium",
+   "verification": "search_verified",
+   "note": "~80% female. Range from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9251467/ and https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359"
+  },
+  {
+   "syndrome": "STXBP1",
+   "metric": "Incidence",
+   "value": "~1 in 30,000",
+   "range": "3.5/100,000 (~1:28,600)",
+   "year": 2025,
+   "source_url": "https://www.stxbp1disorders.org/news/six-patient-advocacy-groups-collaborate-to-co-fund-a-single-center-observational-study-of-seizure-types-in-rare-genetic-epilepsies",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "SYNGAP1",
+   "metric": "Incidence",
+   "value": "unknown; ~1% of DEE cohorts",
+   "range": "not found",
+   "year": 2025,
+   "source_url": "https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359",
+   "confidence": "low",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "KCNQ2",
+   "metric": "Incidence",
+   "value": "minimum 1 per 17,000 live births (5.89/100,000)",
+   "range": "1:17,000 to ~1:33,000 (3/100,000)",
+   "year": 2019,
+   "source_url": "https://academic.oup.com/brain/article/142/8/2303/5532195",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "syndrome": "Infantile epileptic spasms syndrome",
+   "metric": "Incidence",
+   "value": "~2-3 per 10,000 live births",
+   "range": "1.6-5 per 10,000",
+   "year": 2025,
+   "source_url": "https://www.frontiersin.org/articles/10.3389/fped.2025.1498425/full",
+   "confidence": "medium",
+   "verification": "search_verified",
+   "note": "US annual case count (2,000-2,500) not confirmed."
+  },
+  {
+   "syndrome": "Tuberous sclerosis complex",
+   "metric": "Incidence / US prevalence",
+   "value": "~1 in 6,000 births; ~50,000 US; epilepsy in ~80-90%",
+   "range": "not found",
+   "year": 2025,
+   "source_url": "https://www.tscalliance.org/",
+   "confidence": "low",
+   "verification": "recalled_unverified_in_session",
+   "note": "Widely quoted TSC Alliance figures; not retrieved this session."
+  },
+  {
+   "syndrome": "All syndromes",
+   "metric": "Diagnosed vs undiagnosed",
+   "value": "not found (no quantified diagnosed share for SCN2A/SCN8A)",
+   "range": "not found",
+   "year": 2026,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12366098/",
+   "confidence": "low",
+   "verification": "search_verified",
+   "note": "Indirect evidence: rapid genome yields 43% in infantile epilepsy; many older children/adults never sequenced."
+  },
+  {
+   "syndrome": "SCN2A / SCN8A",
+   "metric": "Age distribution of prevalent patients",
+   "value": "not found",
+   "range": "not found",
+   "year": 2026,
+   "source_url": "https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359",
+   "confidence": "low",
+   "verification": "search_verified",
+   "note": "Epilepsia Open 2025/26 review notes adult genetic-DEE population is poorly characterised."
+  }
+ ],
+ "patient_journey": [
+  {
+   "stage": "1. First seizures (neonate/infant)",
+   "description": "SCN2A GoF: onset in first days-3 months; SCN8A severe DEE: 0-6 months; Dravet: prolonged febrile seizure in first year. Presentation is to ED, NICU or general paediatrician.",
+   "typical_duration": "days to weeks",
+   "pain_points": [
+    "seizures initially treated empirically (often levetiracetam or phenobarbital) before aetiology is known",
+    "levetiracetam is relatively contraindicated in SCN8A GoF per consensus"
+   ],
+   "stakeholders": [
+    "parents",
+    "ED/NICU team",
+    "neonatologist",
+    "general paediatrician"
+   ],
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9543220"
+   ]
+  },
+  {
+   "stage": "2. Initial neurology work-up",
+   "description": "EEG, MRI, metabolic screen by child neurologist; drug resistance emerges quickly.",
+   "typical_duration": "not found (weeks to months)",
+   "pain_points": [
+    "normal MRI offers no answer",
+    "multiple ASM trials before genetic result"
+   ],
+   "stakeholders": [
+    "child neurologist",
+    "EEG techs",
+    "neuroradiology"
+   ],
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11860300/"
+   ]
+  },
+  {
+   "stage": "3. Genetic testing",
+   "description": "NSGC 2022 guideline (AES-endorsed per secondary sources) strongly recommends genetic testing for all unexplained epilepsy at any age, with exome/genome or >25-gene panel first-tier, exome/genome conditionally preferred, then microarray. Rapid genome sequencing in infantile epilepsy (Gene-STEPS, n=100) gave a diagnosis in 43% with median 37 days from seizure onset to result; yield 74% with neonatal onset. Diagnoses changed treatment in 56%. Sponsored no-cost panels: Invitae/Labcorp 'Behind the Seizure' (US: child <10 with first unprovoked seizure at age 2-5; launched by BioMarin with Invitae, later multi-sponsor) and Invitae 'Unlock' (US: any child <18 with unprovoked seizure).",
+   "typical_duration": "rapid genome ~5 weeks from onset in study setting; routine panels/exome weeks-months; historical odyssey length for SCN2A/SCN8A not found",
+   "pain_points": [
+    "payer coverage of exome/genome",
+    "variant of uncertain significance",
+    "GoF vs LoF not reported on the lab result",
+    "eligibility windows of sponsored programs exclude many ages",
+    "sponsor list of Behind the Seizure not confirmed this session"
+   ],
+   "stakeholders": [
+    "genetic counsellor",
+    "neurologist",
+    "testing labs (Invitae/Labcorp, GeneDx)",
+    "pharma sponsors"
+   ],
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/36281494/",
+    "https://genedx.com/education-hub/clinical-practice-guidelines",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11860300/",
+    "https://www.invitae.com/us/sponsored-testing/behind-the-seizure",
+    "https://www.biospace.com/article/releases/behind-the-seizure-program-expansion-helps-speed-the-diagnosis-of-genetic-epilepsy-in-younger-children-experiencing-unprovoked-seizures/",
+    "https://www.invitae.com/us/unlock-genetic-testing/behind-the-seizure"
+   ]
+  },
+  {
+   "stage": "4. Referral to comprehensive epilepsy center",
+   "description": "Drug-resistant infants are referred to NAEC-accredited centers: 329 accredited at end of 2025 cycle (235 Level 4, 94 Level 3). Level 4 centers concentrate epilepsy genetics clinics, dietary therapy, VNS/surgery and trials.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "geographic access",
+    "wait times",
+    "care remains split between local neurologist and tertiary center"
+   ],
+   "stakeholders": [
+    "community child neurologist",
+    "Level 3/4 epileptologist",
+    "epilepsy genetics clinic"
+   ],
+   "sources": [
+    "https://naec-epilepsy.org/wp-content/uploads/2025-Center-Annual-Report-Data-Webinar-Slides.pdf"
+   ]
+  },
+  {
+   "stage": "5. Precision treatment selection",
+   "description": "Once SCN2A/SCN8A GoF is inferred (early onset + phenotype), sodium channel blockers become first line, often at supratherapeutic doses if tolerated; LoF patients are steered away from them.",
+   "typical_duration": "ongoing titration over months",
+   "pain_points": [
+    "function inferred, not measured",
+    "dose-limiting toxicity of non-selective blockers",
+    "no FDA-approved therapy for SCN2A/SCN8A as of Nov 2026"
+   ],
+   "stakeholders": [
+    "epileptologist",
+    "pharmacist",
+    "caregiver"
+   ],
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+    "https://scn8aalliance.org/scn8a-care/treatment/",
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/"
+   ]
+  },
+  {
+   "stage": "6. Chronic polytherapy and supportive care",
+   "description": "Multiple ASMs, rescue medication, ketogenic diet, VNS; PT/OT/speech, feeding, sleep, orthopaedics, palliative care. Advocacy groups and registries become the main information source.",
+   "typical_duration": "lifelong",
+   "pain_points": [
+    "high residual seizure burden",
+    "SUDEP fear",
+    "caregiver job loss (35-45% of families)",
+    "direct costs $24k-$80k/yr"
+   ],
+   "stakeholders": [
+    "multidisciplinary team",
+    "advocacy organisations",
+    "payers",
+    "specialty pharmacy"
+   ],
+   "sources": [
+    "https://www.sciencedirect.com/science/article/pii/S1059131122000565",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12613530/",
+    "https://www.sciencedirect.com/science/article/pii/S1525505021005850"
+   ]
+  },
+  {
+   "stage": "7. Clinical trials / emerging therapy access",
+   "description": "Families seek trials (EMBOLD/EMERALD, EMBRAVE, n-of-1 ASOs) via foundations' pipeline pages.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "few sites",
+    "travel",
+    "eligibility by variant function"
+   ],
+   "stakeholders": [
+    "trial PIs",
+    "sponsors",
+    "FamilieSCN2A",
+    "SCN8A Alliance",
+    "Cute Syndrome Foundation"
+   ],
+   "sources": [
+    "https://www.scn2a.org/april-2026-updates-on-the-scn2a-drug-development-pipeline/",
+    "https://scn8aalliance.org/emerging-treatments/",
+    "https://www.thecutesyndrome.com/clinicaltrials.html"
+   ]
+  },
+  {
+   "stage": "8. Transition to adult care",
+   "description": "Adults with genetic DEEs face gaps in evidence and care; many adult neurologists lack DEE/genetics experience and adults may never have been sequenced.",
+   "typical_duration": "typically age 18-21; no standard",
+   "pain_points": [
+    "loss of paediatric multidisciplinary team",
+    "guardianship",
+    "undiagnosed adults labelled 'LGS' or 'refractory epilepsy'"
+   ],
+   "stakeholders": [
+    "adult epileptologist",
+    "primary care",
+    "caregivers"
+   ],
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359"
+   ]
+  }
+ ],
+ "treatment_flow": {
+  "SCN2A_DEE_GoF_early_onset": {
+   "first_line": [
+    "sodium channel blockers: phenytoin, carbamazepine, oxcarbazepine, lacosamide (often high dose)"
+   ],
+   "second_line": [
+    "other ASMs/adjuncts per phenotype",
+    "ketogenic diet"
+   ],
+   "later": [
+    "VNS",
+    "investigational: relutrigine (NDA, PDUFA 27 Dec 2026), elsunersen ASO (EMBRAVE3)",
+    "n-of-1 ASOs"
+   ],
+   "notes": "No trial-based or formal consensus guideline for SCN2A; evidence is observational (Wolff 2017). No ASM RCTs had been done before EMBOLD.",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9005871/",
+    "https://www.labcorp.com/content/dam/genetics/results-guides/Invitae%20-%20SCN2A.pdf",
+    "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december"
+   ],
+   "confidence": "medium"
+  },
+  "SCN2A_LoF_late_onset": {
+   "first_line": [
+    "non-sodium-channel ASMs chosen by seizure type (specific agents not established)"
+   ],
+   "avoid": [
+    "sodium channel blockers (rarely effective, may worsen)"
+   ],
+   "later": [
+    "no clinical-stage small molecule for LoF as of Aug 2026"
+   ],
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+    "https://www.scn2afoundation.org/post/scn2a-small-molecules"
+   ],
+   "confidence": "medium"
+  },
+  "SCN8A_DEE_GoF": {
+   "first_line": [
+    "sodium channel blockers (100% consensus for GoF); supratherapeutic doses if tolerated"
+   ],
+   "avoid": [
+    "levetiracetam (relatively contraindicated)"
+   ],
+   "second_line": [
+    "additional ASMs; cenobamate add-on reported in case series",
+    "ketogenic diet"
+   ],
+   "later": [
+    "VNS",
+    "investigational: relutrigine; NBI-921352 discontinued"
+   ],
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+    "https://aesnet.org/abstractslisting/the-first-international-consensus-on-the-diagnosis-care-and-treatment-of-those-with-scn8a-related-disorders",
+    "https://scn8aalliance.org/scn8a-care/treatment/",
+    "https://www.medrxiv.org/content/10.1101/2024.10.17.24312949.full.pdf"
+   ],
+   "confidence": "high"
+  },
+  "SCN8A_LoF_NDD_with_generalized_epilepsy": {
+   "first_line": [
+    "valproate",
+    "ethosuximide",
+    "lamotrigine"
+   ],
+   "avoid": [
+    "sodium channel blockers relatively contraindicated"
+   ],
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992"
+   ],
+   "confidence": "medium"
+  },
+  "Dravet": {
+   "first_line": [
+    "valproate (clobazam often added)"
+   ],
+   "second_line": [
+    "fenfluramine",
+    "stiripentol (with clobazam)",
+    "clobazam"
+   ],
+   "third_line": [
+    "cannabidiol"
+   ],
+   "later": [
+    "topiramate, ketogenic diet, VNS (recalled)"
+   ],
+   "avoid": [
+    "sodium channel blockers (recalled; standard teaching)"
+   ],
+   "notes": "Primary abstract groups valproate, clobazam, stiripentol and fenfluramine as first- or second-line; CBD third-line placement is from a secondary summary.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC9543220"
+   ],
+   "confidence": "medium"
+  },
+  "LGS": {
+   "first_line": [
+    "valproate (recalled)"
+   ],
+   "adjuncts_FDA_labelled": [
+    "clobazam (Onfi/Sympazan)",
+    "rufinamide (Banzel)",
+    "cannabidiol (Epidiolex)",
+    "fenfluramine (Fintepla)",
+    "felbamate (boxed warning: aplastic anaemia)",
+    "lamotrigine, topiramate (recalled)"
+   ],
+   "non_drug": [
+    "ketogenic diet",
+    "VNS",
+    "corpus callosotomy (recalled)"
+   ],
+   "notes": "Line order not verified in session; NICE NG217 has an LGS section.",
+   "sources": [
+    "https://www.drugs.com/condition/lennox-gastaut-syndrome.html",
+    "https://prescriberpoint.com/therapies/felbatol-2f52270",
+    "https://www.nice.org.uk/guidance/ng217"
+   ],
+   "confidence": "low"
+  },
+  "CDKL5": {
+   "first_line": [
+    "broad-spectrum ASMs per consensus"
+   ],
+   "labelled": [
+    "ganaxolone (Ztalmy), age >=2"
+   ],
+   "emerging": [
+    "fenfluramine sNDA filed FDA Mar 2026"
+   ],
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9251467/",
+    "https://www.sec.gov/Archives/edgar/data/1267813/000155837024015315/mrns-20240930x10q.htm",
+    "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase"
+   ],
+   "confidence": "medium"
+  },
+  "TSC_seizures": {
+   "options": [
+    "vigabatrin (preferred for TSC infantile spasms)",
+    "cannabidiol (Epidiolex)",
+    "everolimus (Afinitor Disperz; recalled)",
+    "surgery"
+   ],
+   "sources": [
+    "https://www.frontiersin.org/articles/10.3389/fped.2025.1498425/full",
+    "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000013/jazz-20251231.htm"
+   ],
+   "confidence": "low"
+  },
+  "Infantile_spasms": {
+   "first_line": [
+    "ACTH",
+    "oral corticosteroids (prednisolone)",
+    "vigabatrin (first choice in TSC)"
+   ],
+   "notes": "Cohort data: response 55% ACTH vs 39% oral steroids vs 36% vigabatrin.",
+   "sources": [
+    "https://www.frontiersin.org/articles/10.3389/fped.2025.1498425/full"
+   ],
+   "confidence": "medium"
+  },
+  "KCNQ2_DEE": {
+   "first_line": [
+    "sodium channel blockers (carbamazepine/phenytoin) - recalled standard practice"
+   ],
+   "emerging": [
+    "opakalim (BHV-7000) Kv7 activator - KCNQ2-DEE data shown May 2026"
+   ],
+   "sources": [
+    "https://www.prnewswire.com/news-releases/biohaven-reports-new-clinical-data-in-epilepsy-with-opakalim-a-selective-kv7-27-3-activator-highlighting-seizure-control-and-markedly-differentiated-tolerability-profile-302781743.html"
+   ],
+   "confidence": "low"
+  },
+  "SYNGAP1_STXBP1": {
+   "first_line": [
+    "no targeted therapy; ASMs by seizure type"
+   ],
+   "emerging": [
+    "CMP-002 ASO (SYNGAP1)",
+    "STXBP1 gene therapy setbacks (CAP-002 closed)"
+   ],
+   "sources": [
+    "https://www.biospace.com/press-releases/camp4-therapeutics-secures-australian-regulatory-clearance-to-initiate-first-in-human-clinical-trial-of-cmp-002-in-patients-with-syngap1-related-disorder",
+    "https://www.bioxconomy.com/modalities/capsida-confirms-closure-of-synrgy-trial-gene-therapy-safety-remains-unknown"
+   ],
+   "confidence": "medium"
+  }
+ },
+ "guidelines": [
+  {
+   "name": "ILAE classification of the epilepsies (Scheffer et al.)",
+   "body": "ILAE",
+   "year": 2017,
+   "key_recommendations": [
+    "introduced 'developmental and epileptic encephalopathy'",
+    "three-level classification: seizure type, epilepsy type, syndrome, with aetiology at each level"
+   ],
+   "url": "https://pubmed.ncbi.nlm.nih.gov/28276062/",
+   "verification": "recalled_unverified_in_session"
+  },
+  {
+   "name": "ILAE classification and definition of epilepsy syndromes (Zuberi et al. neonates/infants; Specchio et al. childhood)",
+   "body": "ILAE Nosology Task Force",
+   "year": 2022,
+   "key_recommendations": [
+    "defines early-infantile DEE, IESS, Dravet, LGS and aetiology-specific syndromes (e.g., KCNQ2-DEE, CDKL5-DEE)"
+   ],
+   "url": "https://www.ilae.org/guidelines/definition-and-classification/classification-and-definition-of-epilepsy-syndromes",
+   "verification": "recalled_unverified_in_session"
+  },
+  {
+   "name": "NG217 Epilepsies in children, young people and adults",
+   "body": "NICE (UK)",
+   "year": 2022,
+   "key_recommendations": [
+    "syndrome-specific pathways for Dravet, LGS, infantile spasms",
+    "tertiary referral for complex epilepsies (details not retrieved)"
+   ],
+   "url": "https://www.nice.org.uk/guidance/ng217",
+   "verification": "recalled_unverified_in_session"
+  },
+  {
+   "name": "International consensus on diagnosis and management of Dravet syndrome (Wirrell et al., Epilepsia 63(7):1761-1777)",
+   "body": "International Delphi panel incl. Dravet Syndrome Foundation",
+   "year": 2022,
+   "key_recommendations": [
+    "genetic testing for infants with first prolonged hemiclonic seizure or febrile/post-vaccination status",
+    "valproate first-line; clobazam, stiripentol, fenfluramine first/second line; cannabidiol later",
+    "disease-modifying therapies to be recommended if safe and effective"
+   ],
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9543220",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Global modified Delphi consensus on diagnosis, phenotypes and treatment of SCN8A-related epilepsy and/or NDD (Conecker et al., Epilepsia 65(8):2322-2338)",
+   "body": "International SCN8A Alliance-led panel",
+   "year": 2024,
+   "key_recommendations": [
+    "five phenotypes",
+    "sodium channel blockers first-line for GoF (100% consensus); levetiracetam relatively contraindicated",
+    "LoF/NDD with generalized epilepsy: valproate, ethosuximide or lamotrigine; avoid sodium channel blockers",
+    "consider supratherapeutic sodium channel blocker doses if tolerated"
+   ],
+   "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+   "verification": "search_verified"
+  },
+  {
+   "name": "SCN2A consensus guideline",
+   "body": "none",
+   "year": 2026,
+   "key_recommendations": [
+    "No formal Delphi/consensus guideline for SCN2A found; management follows Wolff 2017 genotype-phenotype rule and expert practice"
+   ],
+   "url": "https://www.labcorp.com/content/dam/genetics/results-guides/Invitae%20-%20SCN2A.pdf",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Genetic testing and counseling for the unexplained epilepsies (Smith et al., J Genet Couns)",
+   "body": "NSGC; endorsed by AES (per secondary sources)",
+   "year": 2022,
+   "key_recommendations": [
+    "test all unexplained epilepsy regardless of age",
+    "exome/genome or >25-gene panel first-tier; exome/genome conditionally preferred; then microarray"
+   ],
+   "url": "https://pubmed.ncbi.nlm.nih.gov/36281494/",
+   "verification": "search_verified"
+  },
+  {
+   "name": "International consensus recommendations for assessment and management of CDKL5 deficiency disorder",
+   "body": "International expert panel",
+   "year": 2022,
+   "key_recommendations": [
+    "multidisciplinary assessment and management (details not retrieved)"
+   ],
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9251467/",
+   "verification": "search_verified"
+  },
+  {
+   "name": "AES guideline specific to DEE",
+   "body": "AES",
+   "year": 2026,
+   "key_recommendations": [
+    "not found"
+   ],
+   "url": "not found",
+   "verification": "not found"
+  }
+ ],
+ "approved_products": [
+  {
+   "brand": "Fintepla",
+   "generic": "fenfluramine",
+   "company": "UCB (via Zogenix)",
+   "indication": "Seizures associated with Dravet syndrome and Lennox-Gastaut syndrome, age >=2",
+   "approval": "Dravet 25 Jun 2020; LGS Mar 2022 (LGS date recalled, not confirmed in session)",
+   "label_highlights": "Boxed warning valvular heart disease and PAH; available only via FINTEPLA REMS; echocardiogram before, every 6 months during, and 3-6 months after treatment",
+   "us_wac": "$1,693.30 per 30 mL bottle (2.2 mg/mL) = ~$56.44/mL (UCB pricing page, date unknown)",
+   "annual_cost": "Derived: at label max 26 mg/day (11.8 mL) ~ $243k/yr at WAC; lower with weight-based dosing or 17 mg/day cap with stiripentol (calculation, max doses recalled)",
+   "latest_sales": "EUR 427M global 2025 (+26%; +30% CER) vs EUR 340M 2024",
+   "trajectory": "2021 ~US$74.7M (third-party) -> EUR 340M 2024 -> EUR 427M 2025; growth from Dravet + LGS penetration; sNDA for CDKL5 filed FDA Mar 2026, EMA May 2026",
+   "sources": [
+    "https://ucb-usa.com/FINTEPLA-prescribing-information.pdf",
+    "https://professionals.OptumRx.com/content/dam/optum3/professional-optumrx/news/rxnews/drug-approvals/drugapproval_fintepla_2020-0626.pdf",
+    "https://www.ucb-usa.com/Sustainability/Affordability/Fintepla-Pricing-Info",
+    "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf",
+    "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+    "https://www.delveinsight.com/blog/epidiolex-vs-fintepla"
+   ],
+   "confidence": "high (sales, REMS); medium (price); low (annual cost)"
+  },
+  {
+   "brand": "Epidiolex",
+   "generic": "cannabidiol",
+   "company": "Jazz (via GW)",
+   "indication": "Seizures associated with LGS, Dravet, TSC; age >=1 (age/TSC July 2020 expansion recalled)",
+   "approval": "June 2018 (launched after DEA scheduling, late 2018)",
+   "label_highlights": "Transaminase elevations - liver monitoring, esp. with valproate (recalled); not a REMS product",
+   "us_wac": "$1,310 per bottle (Feb 2020, Axios); later figures not authoritative",
+   "annual_cost": "$32,500 per patient-year at launch (2018 list)",
+   "latest_sales": "$1,059.2M global 2025 (+9%); Q4 2025 $287M",
+   "trajectory": "2021 $463.6M (partial Jazz year) -> 2022 $736.4M -> 2023 $845.5M -> 2024 $972.4M -> 2025 $1,059.2M; ANDA settlements (Oct 2023-Jan 2025) allow generics from late 2030s",
+   "sources": [
+    "https://www.fiercepharma.com/marketing/epidiolex-launch-official-first-cbd-approved-by-fda-shelves-but-high-price-spurs-some",
+    "https://www.axios.com/2020/02/26/epidiolex-sales-cannabis-drug-gw-pharmaceuticals",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2025",
+    "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000013/jazz-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1232524/000123252423000015/jazz-20221231.htm",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2023",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2024"
+   ],
+   "confidence": "high (sales); medium (label details)"
+  },
+  {
+   "brand": "Diacomit",
+   "generic": "stiripentol",
+   "company": "Biocodex",
+   "indication": "Seizures associated with Dravet in patients taking clobazam, age >=6 months and >=7 kg",
+   "approval": "Aug 2018 (age >=2); expanded Jul 2022 to >=6 months",
+   "label_highlights": "Must be used with clobazam; 2026 label supplement added postmarketing pneumonia",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found (private company)",
+   "trajectory": "Only FDA-approved Dravet drug down to 6 months",
+   "sources": [
+    "https://practicalneurology.com/news/fda-approves-expanded-indication-for-use-of-stiripentol-for-dravet-syndrome-in-children-age-6-months-or-more",
+    "https://www.neurologylive.com/clinical-focus/stiripentol-approved-fda-seizures-associated-dravet-syndrome"
+   ],
+   "confidence": "high"
+  },
+  {
+   "brand": "Ztalmy",
+   "generic": "ganaxolone",
+   "company": "Immedica (acquired Marinus Feb 2025, ~$151M, $0.55/share)",
+   "indication": "Seizures associated with CDKL5 deficiency disorder, age >=2",
+   "approval": "Mar 2022; US launch Q3 2022",
+   "label_highlights": "First CDD-specific therapy; neuroactive steroid GABA-A modulator",
+   "us_wac": "not found",
+   "annual_cost": "not found in session (~$133k/yr at launch is recalled, unverified)",
+   "latest_sales": "$19.6M 2023; 9M 2024 $23.9M; FY2024 guidance $33-34M; Immedica 2025 not found",
+   "trajectory": "Slow ultra-orphan ramp; Marinus sold after TSC and status-epilepticus Phase 3 setbacks; EU MA transferred to Immedica Jun 2025 (not yet launched in EU)",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1267813/000155837024015315/mrns-20240930x10q.htm",
+    "https://www.biospace.com/press-releases/marinus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2024-financial-results",
+    "https://www.fiercepharma.com/pharma/troubled-marinus-tides-turn-151m-buyout-immedica-pharma",
+    "https://www.immedica.com/en/press/immedica-mah-ztalmyr-ganaxolone-eu-2338974"
+   ],
+   "confidence": "high (sales to 2024); low (price)"
+  },
+  {
+   "brand": "Banzel",
+   "generic": "rufinamide",
+   "company": "Eisai",
+   "indication": "Adjunctive for LGS seizures (age >=1 recalled)",
+   "approval": "17 Nov 2008",
+   "label_highlights": "QT shortening (recalled)",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found (generic)",
+   "trajectory": "Genericised",
+   "sources": [
+    "https://www.drugs.com/condition/lennox-gastaut-syndrome.html"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "brand": "Onfi / Sympazan",
+   "generic": "clobazam (tablet/suspension; oral film)",
+   "company": "Lundbeck (Onfi); Aquestive -> later divested (Sympazan)",
+   "indication": "Adjunctive for LGS seizures, age >=2",
+   "approval": "Onfi 24 Oct 2011; Sympazan 1 Nov 2018",
+   "label_highlights": "Benzodiazepine class warnings (recalled); Sympazan bioequivalent to tablets",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found",
+   "trajectory": "Onfi orphan exclusivity ended Oct 2018; multiple generics (Breckenridge, Amneal, Upsher-Smith) approved 2018",
+   "sources": [
+    "https://www.drugs.com/history/sympazan.html",
+    "https://neurologylive.com/view/oral-film-clobazam-fda-go-ahead-lennoxgastaut-syndrome",
+    "https://www.drugs.com/condition/lennox-gastaut-syndrome.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "brand": "Xcopri",
+   "generic": "cenobamate",
+   "company": "SK Biopharmaceuticals / SK Life Science",
+   "indication": "Partial-onset seizures in adults (not DEE-labelled; off-label add-on reports in SCN8A-DEE)",
+   "approval": "21 Nov 2019",
+   "label_highlights": "DRESS with rapid titration (slow titration required); QT shortening",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "US FY2025 ~$429-443M (sources differ); Q3 2026 $156.8M (+26.4%); 9M 2026 $441.3M; 2026 guidance up to $580M",
+   "trajectory": "Slow-titration launch that compounded to >$0.5B run-rate by year 7; management targets $1B by 2029",
+   "sources": [
+    "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-xcopri",
+    "https://practicalneurology.com/news/fda-approves-cenobamate-for-treatment-of-partial-onset-seizures-in-adults",
+    "https://en.sedaily.com/finance/2026/11/06/sk-biopharmaceuticals-q3-operating-profit-jumps-66-percent",
+    "https://www.asiae.co.kr/en/article/2026110510232958840",
+    "https://finance.biggo.com/news/X6nIMZwBUUDt0E6pT358",
+    "https://www.medrxiv.org/content/10.1101/2024.10.17.24312949.full.pdf"
+   ],
+   "confidence": "high"
+  },
+  {
+   "brand": "Briviact",
+   "generic": "brivaracetam",
+   "company": "UCB",
+   "indication": "Partial-onset seizures (age >=1 month recalled)",
+   "approval": "2016 (recalled)",
+   "label_highlights": "SV2A ligand; psychiatric AEs (recalled)",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "EUR 758M global 2025 (+11%)",
+   "trajectory": "US exclusivity expired Feb 2026; EU Aug 2026",
+   "sources": [
+    "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf"
+   ],
+   "confidence": "high (sales)"
+  },
+  {
+   "brand": "Felbatol",
+   "generic": "felbamate",
+   "company": "Meda/Viatris (recalled)",
+   "indication": "Severe refractory epilepsy; adjunct for LGS seizures in children",
+   "approval": "1993 (recalled)",
+   "label_highlights": "Boxed warning aplastic anaemia (and hepatic failure, recalled); restricted to cases where risk acceptable",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found (generic)",
+   "trajectory": "Use collapsed after 1994 safety signals; niche last-line",
+   "sources": [
+    "https://prescriberpoint.com/therapies/felbatol-2f52270"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "brand": "Sabril / Vigadrone / Vigafyde",
+   "generic": "vigabatrin",
+   "company": "Lundbeck (Sabril); Upsher-Smith (Vigadrone, recalled); Pyros (Vigafyde, recalled)",
+   "indication": "Infantile spasms 1 month-2 years; refractory complex partial seizures (age >=2 since Jan 2020)",
+   "approval": "Sabril Aug 2009; Vigafyde Jun 2024",
+   "label_highlights": "Vigabatrin REMS for permanent vision loss; visual-field defects reported in up to ~50% by some authors",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found",
+   "trajectory": "Genericised; first choice for TSC-related spasms",
+   "sources": [
+    "https://neurologylive.com/view/fda-expands-vigabatrin-indication-for-complex-partial-seizures-in-pediatric-patients-",
+    "https://www.mayoclinic.org/drugs-supplements/vigabatrin-oral-route/description/drg-20066675",
+    "https://www.frontiersin.org/articles/10.3389/fped.2025.1498425/full"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "brand": "Afinitor Disperz",
+   "generic": "everolimus",
+   "company": "Novartis",
+   "indication": "Adjunctive for TSC-associated partial-onset seizures, age >=2 (recalled)",
+   "approval": "Apr 2018 for seizures (recalled)",
+   "label_highlights": "mTOR inhibitor; immunosuppression, stomatitis (recalled)",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found",
+   "trajectory": "Only disease-mechanism (mTOR) therapy in the DEE analog set; generic entry (recalled)",
+   "sources": [
+    "not found in session"
+   ],
+   "confidence": "low"
+  },
+  {
+   "brand": "Zonisade",
+   "generic": "zonisamide oral suspension 100 mg/5 mL",
+   "company": "Azurity",
+   "indication": "Adjunctive for partial seizures, age >=16",
+   "approval": "15 Jul 2022",
+   "label_highlights": "First liquid zonisamide",
+   "us_wac": "not found",
+   "annual_cost": "not found",
+   "latest_sales": "not found",
+   "trajectory": "Formulation play",
+   "sources": [
+    "https://www.biospace.com/azurity-pharmaceuticals-inc-announces-fda-approval-of-zonisade-zonisamide-oral-suspension"
+   ],
+   "confidence": "high"
+  }
+ ],
+ "pipeline": [
+  {
+   "asset": "relutrigine (PRAX-562)",
+   "sponsor": "Praxis Precision Medicines",
+   "moa": "Preferential persistent sodium-current inhibitor ('sodium-channel functional state modulator'); vendor data: IC50 141 nM persistent INa, ~60-fold vs peak",
+   "indication": "SCN2A-DEE and SCN8A-DEE (NDA); broader DEEs (EMERALD)",
+   "phase": "NDA under priority review",
+   "key_data": "EMBOLD cohort 1: 46% placebo-adjusted motor-seizure reduction over 16 wk (p=0.0354), >30% (n=5) seizure-free periods; registrational cohort 2 stopped early for efficacy: 53% placebo-adjusted reduction (p<0.0002). OLE: 86% reduction from baseline through 18 months (uncontrolled). BTD, orphan, eligible for PRV. Mid-cycle: no major issues, no AdCom; BIMO inspection done.",
+   "next_catalyst": "PDUFA 27 Dec 2026 (extended from 27 Sep 2026 after sensitivity analyses deemed major amendment); EMERALD topline Q4 2026 -> possible sNDA 2027",
+   "status_note": "Field team fully hired; top accounts and Tier 1/2 HCPs profiled",
+   "sources": [
+    "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december",
+    "https://www.globenewswire.com/news-release/2026/11/09/3398230/0/en/praxis-precision-medicines-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://praxismedicines.com/wp-content/uploads/2025/12/Gil-Nagel_AES2025_EMBOLD-Topline.pdf",
+    "https://praxismedicines.com/wp-content/uploads/2026/04/Kamireddy_AAN2026_EMBOLD.pdf",
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-topline-results-0",
+    "https://www.researchgate.net/publication/357891140_The_novel_persistent_sodium_current_inhibitor_PRAX-562_has_potent_anticonvulsant_activity_with_improved_protective_index_relative_to_standard_of_care_sodium_channel_blockers"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "elsunersen (PRAX-222)",
+   "sponsor": "Praxis",
+   "moa": "Antisense oligonucleotide lowering SCN2A (intrathecal)",
+   "indication": "Early-onset SCN2A-DEE (GoF)",
+   "phase": "Registrational (EMBRAVE3)",
+   "key_data": "EMBRAVE Part A (n=9, 3:1 vs sham, age 2-12): 77% placebo/sham-adjusted seizure reduction (p=0.015); 57% had >=28-day seizure-free period; 71% >=50% responders; no drug-related SAEs up to 8 mg. BTD granted.",
+   "next_catalyst": "EMBRAVE3 topline 2027",
+   "sources": [
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-results-embrave",
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-receives-fda-breakthrough-therapy-0",
+    "https://www.scn2afoundation.org/post/elsunersen-aso-for-scn2a-clinical-trial-shows-77-seizure-reduction-in-children-with-gof-mutations"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "vormatrigine (PRAX-628)",
+   "sponsor": "Praxis",
+   "moa": "Functionally selective sodium channel blocker",
+   "indication": "Focal onset seizures (adults)",
+   "phase": "Phase 2/3",
+   "key_data": "RADIANT open-label Ph2: 56.3% median reduction over 8 wk (Aug 2025). POWER1 (1 Jun 2026) missed primary endpoint; 50% responder secondary met; AE discontinuations <10%.",
+   "next_catalyst": "POWER2 enrolment paused; program under reassessment",
+   "sources": [
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update",
+    "https://www.neurologylive.com/view/praxis-vormatrigine-significant-ability-reduce-seizure-incidence-phase-2-radiant-study"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "zorevunersen (STK-001)",
+   "sponsor": "Stoke Therapeutics (N. America) / Biogen (ex-N. America)",
+   "moa": "ASO up-regulating NaV1.1 from wild-type SCN1A allele",
+   "indication": "Dravet syndrome",
+   "phase": "Phase 3 (EMPEROR)",
+   "key_data": "Enrolment complete (162 patients, Jun 2026); Ph1/2a + OLE data in NEJM Mar 2026; long-term data at IEC/EEC 2026 (specific effect sizes not retrieved)",
+   "next_catalyst": "Phase 3 readout Q3 2027; potential US launch early 2028",
+   "sources": [
+    "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-announces-third-quarter-2026-financial",
+    "https://www.biospace.com/press-releases/stoke-therapeutics-announces-completion-of-enrollment-of-162-patients-into-the-phase-3-emperor-study-of-zorevunersen-an-investigational-medicine-for-the-treatment-of-dravet-syndrome",
+    "https://investor.stoketherapeutics.com/news-releases/news-release-details/new-england-journal-medicine-publishes-first-data-demonstrate",
+    "https://www.globenewswire.com/news-release/2026/09/03/3356336/0/en/stoke-therapeutics-and-biogen-present-long-term-clinical-data-that-support-the-disease-modifying-potential-of-zorevunersen-an-investigational-medicine-for-the-treatment-of-dravet-s.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "bexicaserin (LP352)",
+   "sponsor": "Lundbeck (acquired Longboard; ~$2.6B, 2024 - recalled)",
+   "moa": "Selective 5-HT2C superagonist",
+   "indication": "DEEs broadly (DEEp OCEAN) and Dravet (DEEp SEA), ages 2-65",
+   "phase": "Phase 3",
+   "key_data": "DEEp OCEAN last patient randomised Jul 2026; DEEp SEA (>100 pts; 15-wk treatment) last patient randomised 15 Sep 2026; PACIFIC Ph1b/2a numbers not retrieved (59.8% median reduction recalled, unverified)",
+   "next_catalyst": "DEEp OCEAN headline results end-2026/early-2027; DEEp SEA date not found",
+   "sources": [
+    "https://www.lundbeck.com/us/newsroom/2026/lundbeck-announces-last-patient-randomized-in-deep-ocean--a-larg",
+    "https://www.lundbeck.com/us/newsroom/2026/lundbeck-announces-last-patient-randomized-in-deep-sea-phase-iii-trial",
+    "https://www.neurologylive.com/view/long-term-expanded-access-program-data-support-phase-3-development-of-bexicaserin-developmental-epileptic-encephalopathies"
+   ],
+   "confidence": "high (status); low (PACIFIC figure)"
+  },
+  {
+   "asset": "ETX101",
+   "sponsor": "Encoded Therapeutics",
+   "moa": "AAV9 SCN1A up-regulating gene therapy (one-time ICV)",
+   "indication": "SCN1A+ Dravet, age 6 months to <4 years",
+   "phase": "Pivotal (ENDEAVOR Part 2: n=30, sham delayed-treatment control, 52-wk MCSF endpoint)",
+   "key_data": "POLARIS Ph1/2 (cutoff 3 Aug 2026): median seizure reduction at month 12 ~79% (DL3, n=3) and 89% (DL4, n=5); no treatment-related SAEs up to 117 weeks; VABS-3 gains (n=9). $275M Series F Sep 2026. BTD, RMAT, Fast Track, RPD, Orphan.",
+   "next_catalyst": "ENDEAVOR 1B data Q4 2026; pivotal enrolment complete end-2026; initial pivotal data late 2027",
+   "sources": [
+    "https://encoded.com/encoded-therapeutics-presents-updated-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-16th-european-epilepsy-congress/",
+    "https://encoded.com/encoded-therapeutics-announces-fda-alignment-initiation-of-pivotal-study-and-asgct-presidential-symposium-presentation-of-etx101-in-dravet-syndrome/",
+    "https://www.biopharminternational.com/view/encoded-therapeutics-raises-275m-to-advance-aav-gene-therapy-etx101-for-dravet-syndrome"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "NBI-921352 (XEN901)",
+   "sponsor": "Neurocrine (from Xenon)",
+   "moa": "Selective Nav1.6 inhibitor",
+   "indication": "SCN8A-DEE (KAYAK), focal seizures",
+   "phase": "Discontinued",
+   "key_data": "Ph2 in adult focal seizures failed (Nov 2023); KAYAK SCN8A-DEE study and extension terminated - efficacy insufficient per SCN8A Alliance; no published data",
+   "next_catalyst": "none; successor NBI-921355 (Nav1.2/1.6 inhibitor) listed Phase 1 epilepsy",
+   "sources": [
+    "https://scn8aalliance.org/emerging-treatments/",
+    "https://clinicaltrials.gov/study/NCT04873869",
+    "https://neurocrine.gcs-web.com/node/20241/pdf",
+    "https://www.neurocrine.com/clinical-studies/",
+    "https://www.thecutesyndrome.com/clinicaltrials.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "soticlestat (TAK-935)",
+   "sponsor": "Takeda (Ovid origin)",
+   "moa": "Cholesterol 24-hydroxylase inhibitor",
+   "indication": "Dravet (SKYLINE), LGS (SKYWAY)",
+   "phase": "Discontinued Jan 2025",
+   "key_data": "Both Ph3 trials missed primary endpoints (Jun 2024); Dravet narrowly missed; FDA said package could not support NDA; JPY 21.5B impairment",
+   "next_catalyst": "none",
+   "sources": [
+    "https://www.takeda.com/newsroom/statements/2025/takeda-provides-update-on-soticlestat/",
+    "https://dravetsyndromenews.com/news/discontinued-soticlestat-narrowly-missed-trial-goal-data-show/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "fenfluramine (Fintepla) - CDD",
+   "sponsor": "UCB",
+   "moa": "Serotonin releaser / sigma-1",
+   "indication": "CDKL5 deficiency disorder",
+   "phase": "Filed (FDA Mar 2026; EMA May 2026)",
+   "key_data": "Phase 3 (NCT05064878); post hoc analyses show more seizure-free days (EEC 2026); primary numbers not retrieved",
+   "next_catalyst": "FDA decision (date not found)",
+   "sources": [
+    "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+    "https://www.ucb.com/newsroom/press-releases/article/ucb-presents-data-at-eec-2026-highlighting-continued-leadership-in-epilepsy-and-developmental-and-epileptic-encephalopathies",
+    "https://clinicaltrials.gov/study/NCT05064878"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "carisbamate",
+   "sponsor": "SK Life Science",
+   "moa": "Not fully defined (sodium channel activity reported - recalled)",
+   "indication": "LGS, ages 4-55",
+   "phase": "Phase 3 (NCT05219617, >250 pts, recruiting)",
+   "key_data": "No topline yet; orphan designation",
+   "next_catalyst": "Primary completion est. Feb 2027",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT05219617",
+    "https://www.prnewswire.com/news-releases/sk-life-science-initiates-phase-3-clinical-trial-of-carisbamate-for-lennox-gastaut-syndrome-301455009.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "azetukalner (XEN1101)",
+   "sponsor": "Xenon",
+   "moa": "Kv7.2/7.3 opener",
+   "indication": "Focal onset seizures (also PGTCS, MDD)",
+   "phase": "Phase 3 complete; NDA planned",
+   "key_data": "X-TOLE2 (9 Mar 2026): 25 mg -53.2% median change vs -10.4% placebo",
+   "next_catalyst": "NDA submission guided Q3 2026 (filing confirmation not found)",
+   "sources": [
+    "https://investor.xenon-pharma.com/news-releases/news-release-details/xenon-announces-positive-topline-data-phase-3-x-tole2-study"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "opakalim (BHV-7000)",
+   "sponsor": "Biohaven",
+   "moa": "Selective Kv7.2/7.3 activator",
+   "indication": "Focal epilepsy (RISE2/RISE3); KCNQ2-DEE data presented",
+   "phase": "Phase 2/3",
+   "key_data": "OLE: 54% >=50% responders at 6 months on 75 mg (uncontrolled); dizziness 5%",
+   "next_catalyst": "RISE3 topline 2H 2026",
+   "sources": [
+    "https://ir.biohaven.com/news-releases/news-release-details/biohaven-completes-enrollment-rise-3-pivotal-focal-epilepsy",
+    "https://ir.biohaven.com/news-releases/news-release-details/biohaven-reports-recent-business-developments-and-second-quarter",
+    "https://www.prnewswire.com/news-releases/biohaven-reports-new-clinical-data-in-epilepsy-with-opakalim-a-selective-kv7-27-3-activator-highlighting-seizure-control-and-markedly-differentiated-tolerability-profile-302781743.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "EPX-100 (clemizole)",
+   "sponsor": "Harmony Biosciences (Epygenix)",
+   "moa": "Serotonergic (5-HT2) modulator",
+   "indication": "Dravet (ARGUS), LGS",
+   "phase": "Phase 3",
+   "key_data": "ARGUS OLE data at AAN 2026; LGS trial est. n=260",
+   "next_catalyst": "LGS primary completion est. Nov 2026; ARGUS topline not found",
+   "sources": [
+    "https://investingnews.com/harmony-biosciences-to-present-open-label-extension-data-from-phase-3-argus-trial-at-the-2026-american-academy-of-neurology-annual-meeting/",
+    "https://clinicaltrials.gov/study/NCT05066217"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "BMB-101",
+   "sponsor": "Bright Minds Biosciences",
+   "moa": "5-HT2C agonist (G-protein biased)",
+   "indication": "Absence seizures; DEE",
+   "phase": "Phase 2",
+   "key_data": "BREAKTHROUGH open-label (n=24): 73.1% median reduction in absence seizures; 63.3% median motor-seizure reduction in DEE completers (n=6)",
+   "next_catalyst": "FDA partial clinical hold (Nov 2026) on planned US Ph2 DEE study pending juvenile tox/PK",
+   "sources": [
+    "https://investors.brightmindsbio.com/news-releases/news-release-details/bright-minds-biosciences-announces-positive-topline-results",
+    "https://www.globenewswire.com/news-release/2026/11/02/3393046/0/en/bright-minds-biosciences-provides-update-about-planned-study-with-bmb-101-in-developmental-and-epileptic-encephalopathies.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "radiprodil",
+   "sponsor": "GRIN Therapeutics (Neurvati)",
+   "moa": "GluN2B NMDA negative allosteric modulator",
+   "indication": "GRIN-related NDD (GoF); also TSC/FCD II (Astroscape)",
+   "phase": "Phase 3 (Beeline, ~100 pts age 1-18)",
+   "key_data": "First patient dosed 9 Jan 2026; EU sites May 2026; based on Honeycomb Ph1b/2a",
+   "next_catalyst": "Est. completion Jul 2028",
+   "sources": [
+    "https://www.biospace.com/press-releases/grin-therapeutics-pivotal-phase-3-beeline-study-initiated-in-europe",
+    "https://clinicaltrials.gov/study/NCT07224581"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "CAP-002",
+   "sponsor": "Capsida Biotherapeutics",
+   "moa": "IV engineered-capsid AAV STXBP1 gene therapy",
+   "indication": "STXBP1-DEE",
+   "phase": "Terminated",
+   "key_data": "First patient died Sep 2025 (cerebral oedema); clinical hold; SYNRGY closed May 2026; capsid engages ADAM15",
+   "next_catalyst": "none",
+   "sources": [
+    "https://www.bioxconomy.com/modalities/capsida-confirms-closure-of-synrgy-trial-gene-therapy-safety-remains-unknown",
+    "https://clinicaltrials.gov/study/NCT06983158"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "CMP-002",
+   "sponsor": "CAMP4 Therapeutics",
+   "moa": "regRNA-targeting ASO up-regulating SYNGAP1",
+   "indication": "SYNGAP1-related disorder",
+   "phase": "Phase 1/2 (ASCEND) cleared Australia + EU",
+   "key_data": "No clinical data",
+   "next_catalyst": "First patient dosing 4Q 2026",
+   "sources": [
+    "https://www.biospace.com/press-releases/camp4-therapeutics-secures-australian-regulatory-clearance-to-initiate-first-in-human-clinical-trial-of-cmp-002-in-patients-with-syngap1-related-disorder",
+    "https://www.cnbc.com/2026/08/06/camp4-advances-rare-disease-treatment-for-syngap1-into-human-trials.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "STXBP1 AAV9 (China academic)",
+   "sponsor": "Minzu University-affiliated team (sponsor not confirmed)",
+   "moa": "AAV9 STXBP1 replacement, CSF delivery",
+   "indication": "STXBP1 disorder",
+   "phase": "Early clinical (China)",
+   "key_data": "First patient dosed Mar 2026 per STXBP1 Foundation roundtable",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://www.stxbp1disorders.org/blog/highlights-of-the-2026-stxbp1-research-roundtable-meeting"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "CDKL5 gene therapy (Elaaj Bio)",
+   "sponsor": "Elaaj Bio (Viralgen manufacturing)",
+   "moa": "AAV CDKL5 gene replacement",
+   "indication": "CDD",
+   "phase": "Preclinical; IND planned Nov 2026",
+   "key_data": "none",
+   "next_catalyst": "IND clearance",
+   "sources": [
+    "https://www.elaajbio.com/",
+    "http://www.draccon.com/dracaena-report/2026forum"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "UX055",
+   "sponsor": "Ultragenyx (sponsor not confirmed in session)",
+   "moa": "AAV CDKL5 gene therapy",
+   "indication": "CDD",
+   "phase": "Preclinical",
+   "key_data": "none",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://www.delveinsight.com/report-store/cyclin-dependent-kinase-like-5-deficiency-disorder-pipeline-insight"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "Individualised SCN2A ASOs (n-of-1)",
+   "sponsor": "Academic (UCSD NCT06314490; Nature Medicine 2026 report)",
+   "moa": "Allele/haplotype-specific ASO lowering mutant SCN2A",
+   "indication": "SCN2A-DEE (GoF)",
+   "phase": "N-of-1 / expanded",
+   "key_data": "Two boys: reduced seizure frequency, acceptable safety",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://www.nature.com/articles/s41591-026-04527-y",
+    "https://clinicaltrials.gov/study/NCT06314490"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "SCN2A loss-of-function therapies",
+   "sponsor": "none clinical",
+   "moa": "-",
+   "indication": "SCN2A LoF",
+   "phase": "None in clinic (Aug 2026)",
+   "key_data": "SCN2A Foundation could not identify any clinical-stage LoF small molecule",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://www.scn2afoundation.org/post/scn2a-small-molecules"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "SCN8A ASO",
+   "sponsor": "preclinical/patent stage only",
+   "moa": "Splice-modulating or knock-down ASO",
+   "indication": "SCN8A-DEE",
+   "phase": "Preclinical",
+   "key_data": "No clinical trial found",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12366098/"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "ganaxolone (Ztalmy) extensions",
+   "sponsor": "Immedica (ex-Marinus)",
+   "moa": "GABA-A positive allosteric modulator",
+   "indication": "TSC seizures; refractory status epilepticus",
+   "phase": "Phase 3 setbacks",
+   "key_data": "Fierce: Marinus sold 'after phase 3 setbacks'; TrustTSC/RAISE specifics not retrieved",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://www.fiercepharma.com/pharma/troubled-marinus-tides-turn-151m-buyout-immedica-pharma"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "vatiquinone",
+   "sponsor": "PTC Therapeutics",
+   "moa": "15-lipoxygenase inhibitor",
+   "indication": "Mitochondrial disease-associated seizures",
+   "phase": "not found in session (Ph3 MIT-E failure in 2023 recalled, unverified)",
+   "key_data": "not found",
+   "next_catalyst": "not found",
+   "sources": [
+    "not found in session"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "cenobamate (Xcopri) expansion",
+   "sponsor": "SK Biopharmaceuticals",
+   "moa": "Sodium-channel (persistent current) blocker + GABA-A PAM",
+   "indication": "Label/age expansion; add-on use reported in SCN8A-DEE",
+   "phase": "Marketed (adults, focal)",
+   "key_data": "SCN8A-DEE add-on case series (medRxiv 2024)",
+   "next_catalyst": "indication/age expansion (company target $1B by 2029)",
+   "sources": [
+    "https://www.medrxiv.org/content/10.1101/2024.10.17.24312949.full.pdf",
+    "https://en.sedaily.com/finance/2026/11/06/sk-biopharmaceuticals-q3-operating-profit-jumps-66-percent"
+   ],
+   "confidence": "medium"
+  }
+ ],
+ "advocacy": [
+  {
+   "name": "FamilieSCN2A Foundation",
+   "what_it_does": "SCN2A family foundation; publishes regular SCN2A drug-development pipeline updates (e.g., April 2026) and hosts the Sanders et al. SCN2A review; family/professional conference and research grants (recalled).",
+   "url": "https://www.scn2a.org/april-2026-updates-on-the-scn2a-drug-development-pipeline/",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "SCN2A Foundation (scn2afoundation.org)",
+   "what_it_does": "Separate SCN2A site publishing lay summaries of trials (elsunersen EMBRAVE result, small-molecule eligibility guide). Relationship to FamilieSCN2A not verified.",
+   "url": "https://www.scn2afoundation.org/post/scn2a-small-molecules",
+   "confidence": "low",
+   "verification": "search_verified"
+  },
+  {
+   "name": "International SCN8A Alliance",
+   "what_it_does": "Led the 2024 global Delphi consensus; maintains treatment guidance and an emerging-treatments/trial tracker; co-authored the SCN8A research roadmap; linked to the International SCN8A Patient Registry.",
+   "url": "https://scn8aalliance.org/emerging-treatments/",
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "name": "The Cute Syndrome Foundation",
+   "what_it_does": "SCN8A family foundation; maintains a clinical-trials page (reported KAYAK discontinuation); funds research and family support (recalled).",
+   "url": "https://www.thecutesyndrome.com/clinicaltrials.html",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "International SCN8A Patient Registry",
+   "what_it_does": "Online caregiver-entered registry and scientific resource for SCN8A natural history (University of Arizona-based, recalled).",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10414210/",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Dravet Syndrome Foundation",
+   "what_it_does": "Co-led the 2022 international Dravet consensus (M.A. Meskis co-author); research grants, family conference, patient assistance (recalled).",
+   "url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "LGS Foundation",
+   "what_it_does": "Publishes US prevalence estimates (~48-50k); family support, research meeting, grants (recalled).",
+   "url": "https://www.lgsfoundation.org/about-lgs-2/how-many-people-have-lgs/",
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Loulou Foundation",
+   "what_it_does": "CDKL5 research foundation; runs the annual CDKL5 Forum and tracks the CDD pipeline.",
+   "url": "https://www.louloufoundation.org/announcements.html",
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "name": "STXBP1 Foundation",
+   "what_it_does": "Runs STXBP1 Research Roundtable; one of six patient groups co-funding an observational seizure-type study in rare genetic epilepsies.",
+   "url": "https://www.stxbp1disorders.org/news/six-patient-advocacy-groups-collaborate-to-co-fund-a-single-center-observational-study-of-seizure-types-in-rare-genetic-epilepsies",
+   "confidence": "high",
+   "verification": "search_verified"
+  },
+  {
+   "name": "TSC Alliance",
+   "what_it_does": "Funded the chart review supporting vigabatrin's 2020 paediatric label expansion; TSC clinics network and natural history database (recalled).",
+   "url": "https://neurologylive.com/view/fda-expands-vigabatrin-indication-for-complex-partial-seizures-in-pediatric-patients-",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "CURE Epilepsy",
+   "what_it_does": "Research funder; disseminates news on sponsored testing (Behind the Seizure expansion).",
+   "url": "https://www.cureepilepsy.org/news/behind-the-seizure-program-further-expands-access-to-genetic-testing-for-children-to-speed-the-diagnosis-of-genetic-epilepsy/",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Child Neurology Foundation",
+   "what_it_does": "Distributes Behind the Seizure educational material to families and clinicians.",
+   "url": "https://www.childneurologyfoundation.org/wp-content/uploads/Behind-the-Seizure-Brochure-Leave-Behind-expansion-update-2020-2.pdf",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Behind the Seizure (sponsored testing program)",
+   "what_it_does": "No-cost epilepsy gene panel + counselling via Invitae (now Labcorp). Launched by BioMarin with Invitae; later multi-sponsor (specific current sponsors not confirmed). US eligibility: <10 years with first unprovoked seizure at age 2-5; other children <18 routed to Invitae Unlock.",
+   "url": "https://www.invitae.com/us/sponsored-testing/behind-the-seizure",
+   "confidence": "medium",
+   "verification": "search_verified"
+  },
+  {
+   "name": "Epilepsy Foundation",
+   "what_it_does": "National epilepsy organisation: helpline, SUDEP Institute, advocacy; hosts Rare Epilepsy Network coordination (recalled).",
+   "url": "https://www.epilepsy.com/",
+   "confidence": "low",
+   "verification": "recalled_unverified_in_session"
+  },
+  {
+   "name": "Rare Epilepsy Network (REN)",
+   "what_it_does": "Coalition of rare-epilepsy patient organisations with shared registry/research priorities (recalled).",
+   "url": "https://www.rareepilepsynetwork.org/",
+   "confidence": "low",
+   "verification": "recalled_unverified_in_session"
+  },
+  {
+   "name": "DEE-P Connections",
+   "what_it_does": "Cross-syndrome support and webinars for families of the most severely affected DEE patients (recalled).",
+   "url": "https://www.deepconnections.net/",
+   "confidence": "low",
+   "verification": "recalled_unverified_in_session"
+  }
+ ],
+ "kols": [
+  {
+   "name": "Elaine Wirrell, MD",
+   "institution": "Mayo Clinic",
+   "city": "Rochester",
+   "state": "MN",
+   "focus": "Dravet, DEE syndromes",
+   "why": "Lead author, 2022 international Dravet consensus; co-author SCN8A consensus (recalled)",
+   "source_url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Kelly Knupp, MD",
+   "institution": "Children's Hospital Colorado / University of Colorado Anschutz",
+   "city": "Aurora",
+   "state": "CO",
+   "focus": "Dravet, infantile spasms, LGS trials",
+   "why": "Co-author 2022 Dravet consensus",
+   "source_url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Joseph Sullivan, MD",
+   "institution": "UCSF Benioff Children's Hospital",
+   "city": "San Francisco",
+   "state": "CA",
+   "focus": "Dravet, DEE trials",
+   "why": "Senior author Dravet consensus; lead author 2024 DS/LGS epidemiology review",
+   "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/epi.17866",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Mary Anne Meskis",
+   "institution": "Dravet Syndrome Foundation",
+   "city": "Cherry Hill",
+   "state": "NJ",
+   "focus": "Patient advocacy",
+   "why": "Co-author Dravet consensus; DSF executive director",
+   "source_url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "Yvonne Wu, MD, MPH",
+   "institution": "University of California San Francisco",
+   "city": "San Francisco",
+   "state": "CA",
+   "focus": "Epidemiology",
+   "why": "Lead author of the US Dravet incidence study (1:15,700)",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4621800/",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Gabrielle Conecker, MPH",
+   "institution": "Decoding Developmental Epilepsies (International SCN8A Alliance; The Inchstone Project)",
+   "city": "Washington",
+   "state": "DC",
+   "focus": "SCN8A advocacy/research",
+   "why": "First author 2024 SCN8A Delphi consensus",
+   "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "Michael Hammer, PhD",
+   "institution": "University of Arizona",
+   "city": "Tucson",
+   "state": "AZ",
+   "focus": "SCN8A genetics, registry",
+   "why": "Founder of the International SCN8A Patient Registry; consensus co-author",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10414210/",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "Charuta Joshi, MBBS",
+   "institution": "UT Southwestern / Children's Medical Center Dallas",
+   "city": "Dallas",
+   "state": "TX",
+   "focus": "Pediatric epilepsy",
+   "why": "Author of Epilepsy Currents commentary on SCN8A consensus",
+   "source_url": "https://doi.org/10.1177/15357597241293310",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "JayEtta Hecker, MS",
+   "institution": "Decoding Developmental Epilepsies (International SCN8A Alliance)",
+   "city": "Washington",
+   "state": "DC",
+   "focus": "SCN8A advocacy",
+   "why": "Consensus co-author; Alliance co-founder",
+   "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "John M. Schreiber, MD",
+   "institution": "Children's National Hospital",
+   "city": "Washington",
+   "state": "DC",
+   "focus": "SCN8A, epilepsy genetics",
+   "why": "SCN8A consensus co-author and clinical lead for Alliance",
+   "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "M. Scott Perry, MD",
+   "institution": "Cook Children's Medical Center (Jane and John Justin Institute for Mind Health)",
+   "city": "Fort Worth",
+   "state": "TX",
+   "focus": "Genetic epilepsies, DEE trials",
+   "why": "SCN8A consensus senior co-author; frequent DEE trial investigator",
+   "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Mark P. Fitzgerald, MD, PhD",
+   "institution": "Children's Hospital of Philadelphia / University of Pennsylvania",
+   "city": "Philadelphia",
+   "state": "PA",
+   "focus": "Sodium channel epilepsies",
+   "why": "SCN8A consensus co-author; CHOP ENGIN",
+   "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+   "confidence": "low",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Annapurna Poduri, MD, MPH",
+   "institution": "Boston Children's Hospital (NINDS Deputy Director, 2024-25)",
+   "city": "Boston",
+   "state": "MA",
+   "focus": "Epilepsy genetics",
+   "why": "US lead of Gene-STEPS rapid genome study",
+   "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11860300/",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records. NINDS announced her appointment as Deputy Director in 2024; council minutes from autumn 2025 record her departure; 2026 publications list Boston Children's Hospital",
+   "source_url_2": "https://www.ninds.nih.gov/news-events/news/highlights-announcements/annapurna-poduri-md-mph-appointed-ninds-deputy-director"
+  },
+  {
+   "name": "Beth Rosen Sheidley, MS, CGC",
+   "institution": "Boston Children's Hospital",
+   "city": "Boston",
+   "state": "MA",
+   "focus": "Genetic counselling",
+   "why": "Co-author NSGC guideline and yield meta-analysis",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/36281494/",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "Lacey Smith, MS, CGC",
+   "institution": "Boston Children's Hospital (Epilepsy Genetics Program)",
+   "city": "Boston",
+   "state": "MA",
+   "focus": "Genetic counselling",
+   "why": "First author NSGC 2022 guideline",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/36281494/",
+   "confidence": "high",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records (one 2026 record; common name)"
+  },
+  {
+   "name": "Stephan Sanders, BMBS, PhD",
+   "institution": "University of Oxford (2026); University of California San Francisco (to 2024)",
+   "city": "San Francisco",
+   "state": "CA",
+   "focus": "SCN2A genetics, autism",
+   "why": "Lead author 'Progress in understanding and treating SCN2A-mediated disorders'",
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records. Most recent record lists Oxford, UK"
+  },
+  {
+   "name": "Kevin Bender, PhD",
+   "institution": "University of California San Francisco",
+   "city": "San Francisco",
+   "state": "CA",
+   "focus": "Nav1.2 neurophysiology",
+   "why": "Senior author SCN2A review; LoF mechanism work",
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "Alfred L. George Jr., MD",
+   "institution": "Northwestern University Feinberg School of Medicine",
+   "city": "Chicago",
+   "state": "IL",
+   "focus": "Channelopathy functional evaluation",
+   "why": "SCN2A review co-author; variant functional assays",
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "John J. Millichap, MD",
+   "institution": "Precision Epilepsy PLLC; Northwestern University Feinberg School of Medicine",
+   "city": "Chicago",
+   "state": "IL",
+   "focus": "Neonatal genetic epilepsies, KCNQ2",
+   "why": "SCN2A review co-author",
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "low",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Wendy Chung, MD, PhD",
+   "institution": "Boston Children's Hospital / Harvard Medical School",
+   "city": "Boston",
+   "state": "MA",
+   "focus": "Neurodevelopmental genetics, Simons Searchlight",
+   "why": "SCN2A review co-author",
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "low",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Leah Schust Myers",
+   "institution": "FamilieSCN2A Foundation",
+   "city": "East Longmeadow",
+   "state": "MA",
+   "focus": "Advocacy",
+   "why": "SCN2A review co-author; foundation founder",
+   "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+   "confidence": "low",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
+  },
+  {
+   "name": "David G. Vossler, MD",
+   "institution": "University of Washington; UW Medicine Valley Medical Center",
+   "city": "Seattle",
+   "state": "WA",
+   "focus": "Epilepsy",
+   "why": "Author of Epilepsy Currents commentary on DEE incidence/SUDEP",
+   "source_url": "https://doi.org/10.1177/15357597231203079",
+   "confidence": "medium",
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
+  },
+  {
+   "name": "Marcio Souza",
+   "institution": "Praxis Precision Medicines (CEO; industry, not clinical KOL)",
+   "city": "Boston",
+   "state": "MA",
+   "focus": "Relutrigine sponsor",
+   "why": "Quoted company lead on relutrigine/vormatrigine",
+   "source_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update",
+   "confidence": "high",
+   "verification": "search_verified"
+  }
+ ],
+ "kols_note": "Only 23 names could be tied to a source; target of 25-40 not met because the search budget ran out before trial-PI and investigator-day speaker lists could be retrieved. Non-US names seen in sources but excluded: A. Gil-Nagel (Madrid; EMBOLD presenter), I. Scheffer, R. Nabbout, J. Wilmshurst, M. Wolff, R. Moller, J. Symonds, A. McTague. City/state and titles are recalled and should be verified.",
+ "unmet_needs": [
+  {
+   "need": "No FDA-approved therapy for SCN2A- or SCN8A-DEE",
+   "detail": "Relutrigine would be first if approved 27 Dec 2026; current care is off-label generic sodium channel blockers.",
+   "sources": [
+    "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december",
+    "https://www.globenewswire.com/news-release/2026/11/09/3398230/0/en/praxis-precision-medicines-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "need": "Dose-limiting tolerability of non-selective sodium channel blockers",
+   "detail": "Consensus endorses supratherapeutic doses 'if tolerated'; preclinically PRAX-562 showed an improved protective index vs standard sodium channel blockers by preferentially inhibiting persistent current. Positioning: precision functional-state modulator that targets the hyperexcitable (disease-state) channel, enabling efficacy beyond what carbamazepine/phenytoin/lacosamide can deliver at tolerated doses, with RCT evidence (53% placebo-adjusted reduction on top of background therapy) and label. Risk: payers may require step-through generics.",
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+    "https://www.researchgate.net/publication/357891140_The_novel_persistent_sodium_current_inhibitor_PRAX-562_has_potent_anticonvulsant_activity_with_improved_protective_index_relative_to_standard_of_care_sodium_channel_blockers",
+    "https://praxismedicines.com/wp-content/uploads/2025/12/Gil-Nagel_AES2025_EMBOLD-Topline.pdf"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "need": "GoF vs LoF determination at point of care",
+   "detail": "Response to sodium channel blockade depends on variant function, but function is inferred from onset age; LoF patients may worsen. No clinical-stage option for SCN2A LoF.",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+    "https://www.scn2afoundation.org/post/scn2a-small-molecules"
+   ],
+   "confidence": "high"
+  },
+  {
+   "need": "Earlier genetic diagnosis",
+   "detail": "Rapid genome gives answers in ~5 weeks and changes treatment in 56% of diagnosed infants, but is not universal; sponsored panels have narrow age windows.",
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11860300/",
+    "https://www.invitae.com/us/sponsored-testing/behind-the-seizure"
+   ],
+   "confidence": "high"
+  },
+  {
+   "need": "Outcomes beyond seizures",
+   "detail": "Development, communication, sleep and movement disorder remain untreated; 'disease-modifying' claims (relutrigine, zorevunersen, ETX101) rest largely on open-label data.",
+   "sources": [
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-topline-results-0",
+    "https://www.globenewswire.com/news-release/2026/09/03/3356336/0/en/stoke-therapeutics-and-biogen-present-long-term-clinical-data-that-support-the-disease-modifying-potential-of-zorevunersen-an-investigational-medicine-for-the-treatment-of-dravet-s.html",
+    "https://encoded.com/encoded-therapeutics-presents-updated-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-16th-european-epilepsy-congress/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "need": "Mortality/SUDEP",
+   "detail": "SCN2A and SCN8A are over-represented among genetic-DEE deaths; rates are poorly quantified.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10115508/",
+    "https://www.sciencedirect.com/science/article/abs/pii/S0920121118301591"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "need": "Caregiver and economic burden",
+   "detail": "35-45% of families lose a caregiver's job; direct costs $24k-$80k/yr; no SCN2A/8A-specific US cost study.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12613530/",
+    "https://www.sciencedirect.com/science/article/pii/S1525505021005850"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "need": "Adult patients",
+   "detail": "Adults with genetic DEEs are under-diagnosed and under-served; transition pathways lacking.",
+   "sources": [
+    "https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "controversy": "Regulatory evidence base",
+   "detail": "EMBOLD is small with an unusual randomised-withdrawal-style placebo period; FDA extended review by 3 months after sensitivity analyses (major amendment). Mid-cycle found no major issues and no AdCom planned.",
+   "sources": [
+    "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december",
+    "https://praxismedicines.com/wp-content/uploads/2025/12/Gil-Nagel_AES2025_EMBOLD-Topline.pdf"
+   ],
+   "confidence": "high"
+  },
+  {
+   "controversy": "Patient-number conflict",
+   "detail": "The sponsor cited ~5,000 US patients (SCN2A+SCN8A) in 2024 and 10K+ prevalent / ~5K diagnosed in November 2026; compare 1-3/100,000 for SCN2A alone and ~65 SCN8A births a year. Broad DEE: '>100k addressable' in 2024, over 200,000 in the August 2026 deck.",
+   "sources": [
+    "https://investors.praxismedicines.com/static-files/91013dac-4234-4f1e-8128-88e376d27b3b",
+    "https://www.neurologylive.com/view/breakthrough-therapy-designation-granted-relutrigine-scn2a-scn8a-developmental-epileptic-encephalopathies",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12366098/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "controversy": "Nav-selective approaches have failed before",
+   "detail": "Neurocrine's Nav1.6-selective NBI-921352 was stopped for insufficient efficacy in SCN8A-DEE; Praxis's own vormatrigine missed POWER1 in focal epilepsy - mechanism selectivity alone does not guarantee efficacy.",
+   "sources": [
+    "https://scn8aalliance.org/emerging-treatments/",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update"
+   ],
+   "confidence": "high"
+  },
+  {
+   "controversy": "Genetic-medicine safety",
+   "detail": "CAP-002 patient death and trial closure; intrathecal ASO burden vs oral small molecule; elsunersen n=9.",
+   "sources": [
+    "https://www.bioxconomy.com/modalities/capsida-confirms-closure-of-synrgy-trial-gene-therapy-safety-remains-unknown",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-results-embrave"
+   ],
+   "confidence": "high"
+  },
+  {
+   "controversy": "Broad-DEE basket labels vs gene-specific labels",
+   "detail": "Bexicaserin (DEEp OCEAN) and relutrigine (EMERALD) both pursue broad DEE; soticlestat's Phase 3 failures show risk in heterogeneous populations.",
+   "sources": [
+    "https://www.lundbeck.com/us/newsroom/2026/lundbeck-announces-last-patient-randomized-in-deep-ocean--a-larg",
+    "https://www.globenewswire.com/news-release/2026/11/09/3398230/0/en/praxis-precision-medicines-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+    "https://www.takeda.com/newsroom/statements/2025/takeda-provides-update-on-soticlestat/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Analog launch lessons",
+   "detail": "Epidiolex reached $1.06B in year 7 with no REMS and broad syndromes; Fintepla EUR 427M in year 5 despite echo REMS; Ztalmy ~$33M in year 3 in an ultra-orphan gene-defined population - the closest size analog to SCN2A/8A.",
+   "sources": [
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2025",
+    "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf",
+    "https://www.biospace.com/press-releases/marinus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2024-financial-results"
+   ],
+   "confidence": "high"
+  }
+ ],
+ "sources": [
+  "http://www.draccon.com/dracaena-report/2026forum",
+  "https://academic.oup.com/brain/article/142/8/2303/5532195",
+  "https://academic.oup.com/brain/article/144/9/2879/6408766",
+  "https://aesnet.org/abstractslisting/the-first-international-consensus-on-the-diagnosis-care-and-treatment-of-those-with-scn8a-related-disorders",
+  "https://answers.childrenshospital.org/epilepsy-genetic-testing/",
+  "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
+  "https://clinicaltrials.gov/study/NCT04873869",
+  "https://clinicaltrials.gov/study/NCT05064878",
+  "https://clinicaltrials.gov/study/NCT05066217",
+  "https://clinicaltrials.gov/study/NCT05219617",
+  "https://clinicaltrials.gov/study/NCT06314490",
+  "https://clinicaltrials.gov/study/NCT06983158",
+  "https://clinicaltrials.gov/study/NCT07224581",
+  "https://doi.org/10.1177/15357597231203079",
+  "https://doi.org/10.1177/15357597241293310",
+  "https://dravetfoundation.org/",
+  "https://dravetsyndromenews.com/news/discontinued-soticlestat-narrowly-missed-trial-goal-data-show/",
+  "https://en.sedaily.com/finance/2026/11/06/sk-biopharmaceuticals-q3-operating-profit-jumps-66-percent",
+  "https://encoded.com/encoded-therapeutics-announces-fda-alignment-initiation-of-pivotal-study-and-asgct-presidential-symposium-presentation-of-etx101-in-dravet-syndrome/",
+  "https://encoded.com/encoded-therapeutics-presents-updated-data-from-polaris-phase-1-2-trials-of-etx101-gene-therapy-in-dravet-syndrome-at-the-16th-european-epilepsy-congress/",
+  "https://finance.biggo.com/news/X6nIMZwBUUDt0E6pT358",
+  "https://genedx.com/education-hub/clinical-practice-guidelines",
+  "https://investingnews.com/harmony-biosciences-to-present-open-label-extension-data-from-phase-3-argus-trial-at-the-2026-american-academy-of-neurology-annual-meeting/",
+  "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2023",
+  "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2024",
+  "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2025",
+  "https://investor.stoketherapeutics.com/news-releases/news-release-details/new-england-journal-medicine-publishes-first-data-demonstrate",
+  "https://investor.stoketherapeutics.com/news-releases/news-release-details/stoke-therapeutics-announces-third-quarter-2026-financial",
+  "https://investor.xenon-pharma.com/news-releases/news-release-details/xenon-announces-positive-topline-data-phase-3-x-tole2-study",
+  "https://investors.brightmindsbio.com/news-releases/news-release-details/bright-minds-biosciences-announces-positive-topline-results",
+  "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-topline-results-0",
+  "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-receives-fda-breakthrough-therapy-0",
+  "https://investors.praxismedicines.com/static-files/91013dac-4234-4f1e-8128-88e376d27b3b",
+  "https://ir.biohaven.com/news-releases/news-release-details/biohaven-completes-enrollment-rise-3-pivotal-focal-epilepsy",
+  "https://ir.biohaven.com/news-releases/news-release-details/biohaven-reports-recent-business-developments-and-second-quarter",
+  "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-results-embrave",
+  "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update",
+  "https://naec-epilepsy.org/wp-content/uploads/2025-Center-Annual-Report-Data-Webinar-Slides.pdf",
+  "https://neurocrine.gcs-web.com/node/20241/pdf",
+  "https://neurologylive.com/view/fda-expands-vigabatrin-indication-for-complex-partial-seizures-in-pediatric-patients-",
+  "https://neurologylive.com/view/oral-film-clobazam-fda-go-ahead-lennoxgastaut-syndrome",
+  "https://onlinelibrary.wiley.com/doi/10.1002/epi.70348",
+  "https://onlinelibrary.wiley.com/doi/10.1002/epi4.70359",
+  "https://onlinelibrary.wiley.com/doi/10.1111/epi.17866",
+  "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10115508/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10414210/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12366098/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12613530/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC4621800/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9543220",
+  "https://practicalneurology.com/news/fda-approves-cenobamate-for-treatment-of-partial-onset-seizures-in-adults",
+  "https://practicalneurology.com/news/fda-approves-expanded-indication-for-use-of-stiripentol-for-dravet-syndrome-in-children-age-6-months-or-more",
+  "https://praxismedicines.com/wp-content/uploads/2025/12/Gil-Nagel_AES2025_EMBOLD-Topline.pdf",
+  "https://praxismedicines.com/wp-content/uploads/2026/04/Kamireddy_AAN2026_EMBOLD.pdf",
+  "https://prescriberpoint.com/therapies/felbatol-2f52270",
+  "https://professionals.OptumRx.com/content/dam/optum3/professional-optumrx/news/rxnews/drug-approvals/drugapproval_fintepla_2020-0626.pdf",
+  "https://pubmed.ncbi.nlm.nih.gov/28276062/",
+  "https://pubmed.ncbi.nlm.nih.gov/28379373/",
+  "https://pubmed.ncbi.nlm.nih.gov/36281494/",
+  "https://scn8aalliance.org/",
+  "https://scn8aalliance.org/emerging-treatments/",
+  "https://scn8aalliance.org/scn8a-care/treatment/",
+  "https://ucb-usa.com/FINTEPLA-prescribing-information.pdf",
+  "https://www.asiae.co.kr/en/article/2026110510232958840",
+  "https://www.axios.com/2020/02/26/epidiolex-sales-cannabis-drug-gw-pharmaceuticals",
+  "https://www.biopharminternational.com/view/encoded-therapeutics-raises-275m-to-advance-aav-gene-therapy-etx101-for-dravet-syndrome",
+  "https://www.biospace.com/article/releases/behind-the-seizure-program-expansion-helps-speed-the-diagnosis-of-genetic-epilepsy-in-younger-children-experiencing-unprovoked-seizures/",
+  "https://www.biospace.com/azurity-pharmaceuticals-inc-announces-fda-approval-of-zonisade-zonisamide-oral-suspension",
+  "https://www.biospace.com/press-releases/camp4-therapeutics-secures-australian-regulatory-clearance-to-initiate-first-in-human-clinical-trial-of-cmp-002-in-patients-with-syngap1-related-disorder",
+  "https://www.biospace.com/press-releases/grin-therapeutics-pivotal-phase-3-beeline-study-initiated-in-europe",
+  "https://www.biospace.com/press-releases/marinus-pharmaceuticals-provides-business-update-and-reports-third-quarter-2024-financial-results",
+  "https://www.biospace.com/press-releases/stoke-therapeutics-announces-completion-of-enrollment-of-162-patients-into-the-phase-3-emperor-study-of-zorevunersen-an-investigational-medicine-for-the-treatment-of-dravet-syndrome",
+  "https://www.bioxconomy.com/modalities/capsida-confirms-closure-of-synrgy-trial-gene-therapy-safety-remains-unknown",
+  "https://www.childneurologyfoundation.org/wp-content/uploads/Behind-the-Seizure-Brochure-Leave-Behind-expansion-update-2020-2.pdf",
+  "https://www.chop.edu/conditions-diseases/scn2a-related-disorders",
+  "https://www.cnbc.com/2026/08/06/camp4-advances-rare-disease-treatment-for-syngap1-into-human-trials.html",
+  "https://www.cureepilepsy.org/",
+  "https://www.cureepilepsy.org/news/behind-the-seizure-program-further-expands-access-to-genetic-testing-for-children-to-speed-the-diagnosis-of-genetic-epilepsy/",
+  "https://www.deepconnections.net/",
+  "https://www.delveinsight.com/blog/epidiolex-vs-fintepla",
+  "https://www.drugs.com/condition/lennox-gastaut-syndrome.html",
+  "https://www.drugs.com/history/sympazan.html",
+  "https://www.elaajbio.com/",
+  "https://www.epilepsy.com/",
+  "https://www.epilepsybehavior.com/article/S1525-5050(24)00051-9/fulltext",
+  "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-xcopri",
+  "https://www.fiercepharma.com/marketing/epidiolex-launch-official-first-cbd-approved-by-fda-shelves-but-high-price-spurs-some",
+  "https://www.fiercepharma.com/pharma/troubled-marinus-tides-turn-151m-buyout-immedica-pharma",
+  "https://www.frontiersin.org/articles/10.3389/fped.2025.1498425/full",
+  "https://www.globenewswire.com/news-release/2026/09/03/3356336/0/en/stoke-therapeutics-and-biogen-present-long-term-clinical-data-that-support-the-disease-modifying-potential-of-zorevunersen-an-investigational-medicine-for-the-treatment-of-dravet-s.html",
+  "https://www.globenewswire.com/news-release/2026/11/02/3393046/0/en/bright-minds-biosciences-provides-update-about-planned-study-with-bmb-101-in-developmental-and-epileptic-encephalopathies.html",
+  "https://www.globenewswire.com/news-release/2026/11/09/3398230/0/en/praxis-precision-medicines-provides-corporate-update-and-reports-third-quarter-2026-financial-results.html",
+  "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+  "https://www.ilae.org/guidelines/definition-and-classification/classification-and-definition-of-epilepsy-syndromes",
+  "https://www.immedica.com/en/press/immedica-mah-ztalmyr-ganaxolone-eu-2338974",
+  "https://www.invitae.com/us/sponsored-testing/behind-the-seizure",
+  "https://www.invitae.com/us/unlock-genetic-testing/behind-the-seizure",
+  "https://www.labcorp.com/content/dam/genetics/results-guides/Invitae%20-%20SCN2A.pdf",
+  "https://www.lgsfoundation.org/about-lgs-2/how-many-people-have-lgs/",
+  "https://www.louloufoundation.org/announcements.html",
+  "https://www.lundbeck.com/us/newsroom/2026/lundbeck-announces-last-patient-randomized-in-deep-ocean--a-larg",
+  "https://www.lundbeck.com/us/newsroom/2026/lundbeck-announces-last-patient-randomized-in-deep-sea-phase-iii-trial",
+  "https://www.mayoclinic.org/drugs-supplements/vigabatrin-oral-route/description/drg-20066675",
+  "https://www.medlink.com/articles/cdlk5-related-developmental-and-epileptic-encephalopathy",
+  "https://www.medrxiv.org/content/10.1101/2024.10.17.24312949.full.pdf",
+  "https://www.nature.com/articles/s41398-025-03304-8",
+  "https://www.nature.com/articles/s41591-026-04527-y",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11860300/",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9005871/",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9251467/",
+  "https://www.ncbi.nlm.nih.gov/sites/books/NBK379665/",
+  "https://www.neurocrine.com/clinical-studies/",
+  "https://www.neurologylive.com/clinical-focus/stiripentol-approved-fda-seizures-associated-dravet-syndrome",
+  "https://www.neurologylive.com/view/breakthrough-therapy-designation-granted-relutrigine-scn2a-scn8a-developmental-epileptic-encephalopathies",
+  "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december",
+  "https://www.neurologylive.com/view/long-term-expanded-access-program-data-support-phase-3-development-of-bexicaserin-developmental-epileptic-encephalopathies",
+  "https://www.neurologylive.com/view/praxis-vormatrigine-significant-ability-reduce-seizure-incidence-phase-2-radiant-study",
+  "https://www.nice.org.uk/guidance/ng217",
+  "https://www.orpha.net/consor/cgi-bin/OC_Exp.php?Lng=GB&Expert=2382",
+  "https://www.prnewswire.com/news-releases/biohaven-reports-new-clinical-data-in-epilepsy-with-opakalim-a-selective-kv7-27-3-activator-highlighting-seizure-control-and-markedly-differentiated-tolerability-profile-302781743.html",
+  "https://www.prnewswire.com/news-releases/sk-life-science-initiates-phase-3-clinical-trial-of-carisbamate-for-lennox-gastaut-syndrome-301455009.html",
+  "https://www.rareepilepsynetwork.org/",
+  "https://www.researchgate.net/publication/339934277_A_catalogue_of_new_incidence_estimates_of_monogenic_neurodevelopmental_disorders_caused_by_de_novo_variants",
+  "https://www.researchgate.net/publication/357891140_The_novel_persistent_sodium_current_inhibitor_PRAX-562_has_potent_anticonvulsant_activity_with_improved_protective_index_relative_to_standard_of_care_sodium_channel_blockers",
+  "https://www.sciencedirect.com/science/article/abs/pii/S0920121118301591",
+  "https://www.sciencedirect.com/science/article/pii/S1059131122000565",
+  "https://www.sciencedirect.com/science/article/pii/S1525505021005850",
+  "https://www.scn2a.org/april-2026-updates-on-the-scn2a-drug-development-pipeline/",
+  "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
+  "https://www.scn2afoundation.org/post/elsunersen-aso-for-scn2a-clinical-trial-shows-77-seizure-reduction-in-children-with-gof-mutations",
+  "https://www.scn2afoundation.org/post/scn2a-small-molecules",
+  "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000089/prax-20260930.htm",
+  "https://www.sec.gov/Archives/edgar/data/1232524/000123252423000015/jazz-20221231.htm",
+  "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000013/jazz-20251231.htm",
+  "https://www.sec.gov/Archives/edgar/data/1267813/000155837024015315/mrns-20240930x10q.htm",
+  "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+  "https://www.stxbp1disorders.org/blog/highlights-of-the-2026-stxbp1-research-roundtable-meeting",
+  "https://www.stxbp1disorders.org/news/six-patient-advocacy-groups-collaborate-to-co-fund-a-single-center-observational-study-of-seizure-types-in-rare-genetic-epilepsies",
+  "https://www.takeda.com/newsroom/statements/2025/takeda-provides-update-on-soticlestat/",
+  "https://www.thecutesyndrome.com/clinicaltrials.html",
+  "https://www.tscalliance.org/",
+  "https://www.ucb-usa.com/Sustainability/Affordability/Fintepla-Pricing-Info",
+  "https://www.ucb.com/newsroom/press-releases/article/ucb-delivers-strong-results-raises-2026-guidance-and-positions-for-next-growth-phase",
+  "https://www.ucb.com/newsroom/press-releases/article/ucb-presents-data-at-eec-2026-highlighting-continued-leadership-in-epilepsy-and-developmental-and-epileptic-encephalopathies",
+  "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf"
+ ]
+}

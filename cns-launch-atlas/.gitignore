@@ -1,0 +1,8 @@
+.raw/
+__pycache__/
+data/bundle.json
+media/stills/*.png
+dist/_wrapped.html
+media/promo/shots/
+media/promo/out/
+deploy/out/
