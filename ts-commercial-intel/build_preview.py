@@ -20,6 +20,7 @@ APP_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_GETDATA = """async function getData(name){
   if(S.cache[name]) return S.cache[name];
   const r = await fetch('/data/'+name+'.json', {cache:'no-store'});
+  if(r.status===401){ sessionExpired(); throw new Error('session expired'); }
   if(!r.ok) throw new Error('load '+name);
   const j = await r.json(); S.cache[name]=j; return j;
 }"""

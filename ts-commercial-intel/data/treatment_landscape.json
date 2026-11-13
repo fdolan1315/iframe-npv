@@ -105,7 +105,7 @@
     {
       "name": "Neupulse",
       "class": "Median-nerve stimulation device",
-      "ts_status": "UK 'wellness' launch; no FDA clearance",
+      "ts_status": "UK 'wellness' device launched 2026; medical version in development; no FDA clearance",
       "liabilities": "Daily wear; regulatory status unsettled",
       "cost": "~£500 + £20/mo",
       "threat": "Emerging / watch",
@@ -115,12 +115,13 @@
   "ecopipam": {
     "name": "Ecopipam",
     "class": "First-in-class selective dopamine D1 antagonist (non-antipsychotic)",
-    "ts_status": "NDA submitted June 18, 2026; Orphan + Fast Track",
-    "efficacy": "Phase 3 D1AMOND (n=216, randomized-withdrawal): pediatric relapse HR ~0.5, P=.008",
+    "ts_status": "NDA accepted with Priority Review (Aug 19, 2026); FDA target action date late Q1 2027. Pediatric-only indication. Orphan + Fast Track.",
+    "efficacy": "Phase 3 D1AMOND (n=216 open-label; 104 randomized withdrawal): pediatric relapse HR 0.5, P=.008. Oct 2026 MDS: ~70% clinically meaningful tic reduction within 8 weeks (post hoc); 45.6% mean reduction at 18 months (open-label extension).",
     "tolerability": "Weight-neutral; no significant metabolic or EPS signals. AEs: somnolence ~11%, anxiety/headache ~10%, insomnia ~9%.",
     "sources": [
       "jamaneuro_ph3",
-      "teva_nda",
+      "teva_nda_accept",
+      "teva_mds_2026",
       "peds_ph2b",
       "mdcp_ext"
     ]

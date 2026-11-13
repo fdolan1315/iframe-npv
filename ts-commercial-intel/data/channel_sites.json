@@ -27,7 +27,7 @@
     "npi_pull_status": "Planned live pull from CMS NPI Registry filtered to these taxonomies (Phase 2)."
   },
   "coe_source": "taa_coe",
-  "coe_note": "~28 TAA Centers of Excellence nationally as of Feb 2025. Roster below is East-weighted for the ABD East territory and assembled from institutional/TAA sources; confirm the live roster on tourette.org before external use.",
+  "coe_note": "28 TAA Centers of Excellence nationally as of Feb 2025, with at least one designated since (University of Minnesota MnTiC Lab, Apr 2026). Roster below is East-weighted for the ABD East territory and assembled from institutional/TAA sources; confirm the live roster on tourette.org before external use.",
   "centers": [
     {
       "name": "Kennedy Krieger Institute / Johns Hopkins Medicine",
@@ -194,6 +194,14 @@
       "region": "Mid-Atlantic",
       "coe": false,
       "note": "Serves DC/MD/VA corridor."
+    },
+    {
+      "name": "University of Minnesota — MnTiC Lab",
+      "city": "Minneapolis",
+      "state": "MN",
+      "region": "Midwest",
+      "coe": true,
+      "note": "Designated Apr 2026."
     }
   ],
   "access_note": "Pediatric = heavy Medicaid/CHIP exposure (~49% of US children). Access is won state Medicaid program by state Medicaid program; high-Medicaid Eastern states include LA, KY, NY, NC.",

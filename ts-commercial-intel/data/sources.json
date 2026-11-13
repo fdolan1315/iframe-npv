@@ -46,8 +46,8 @@
     "jamaneuro_ph3": {
       "label": "Efficacy and Safety of Ecopipam for TS: Phase 3 (D1AMOND)",
       "publisher": "JAMA Neurology (2026)",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42189524/",
-      "note": "n=216, randomized-withdrawal; pediatric relapse HR ~0.5, P=.008; weight-neutral."
+      "url": "https://jamanetwork.com/journals/jamaneurology/fullarticle/2849573",
+      "note": "Gilbert DL et al., JAMA Neurol 2026;83(7):645-653 (online May 26, 2026). n=216 open-label; 104 randomized (90 pediatric, 14 adult). Pediatric relapse HR 0.5, P=.008; combined HR 0.5, P=.005. No clinically meaningful effect on weight, metabolic or psychiatric measures."
     },
     "peds_ph2b": {
       "label": "Ecopipam for Tourette Syndrome: A Randomized Trial (Phase 2b)",
@@ -77,7 +77,7 @@
       "label": "Tourette Association of America — Centers of Excellence",
       "publisher": "TAA",
       "url": "https://tourette.org/about-tourette/overview/centers-of-excellence/",
-      "note": "~28 designated Centers of Excellence as of Feb 2025. Confirm live roster."
+      "note": "28 designated Centers of Excellence as of Feb 2025; at least one added since (Univ. of Minnesota, Apr 2026). Confirm live roster."
     },
     "aap_medicaid": {
       "label": "AAP analysis: 49% of children insured by Medicaid or CHIP",
@@ -107,7 +107,7 @@
       "label": "Noema Pharma — First Patients Dosed in Phase 2b Study of Gemlapodect (NOE-105) for Tourette Syndrome",
       "publisher": "Noema Pharma / GlobeNewswire",
       "url": "https://www.globenewswire.com/news-release/2024/10/30/2971630/0/en/Noema-Pharma-Announces-First-Patients-Dosed-in-Phase-2b-Study-with-Gemlapodect-NOE-105-a-First-In-Class-Investigational-Therapy-for-Tourette-Syndrome.html",
-      "note": "Phase 2b NOE-TTS-201 (NCT06315751): 12-wk, randomized, double-blind, placebo-controlled, n=140, adults + adolescents; up to 15 mg QD; primary endpoint YGTSS-TTS; primary completion ~June 2026. Phase 2a (ALLEVIA-1) met primary and all key secondary endpoints."
+      "note": "Phase 2b NOE-TTS-201 (NCT06315751): 12-wk, randomized, double-blind, placebo-controlled, n=140, adults + adolescents; up to 15 mg QD; primary endpoint YGTSS-TTS; primary completion ~June 2026. Phase 2a (ALLEVIA-1) met primary and all key secondary endpoints. As of Nov 13, 2026 no Phase 2b topline has been located in press or registry searches; registry primary completion was estimated June 2026."
     },
     "scisparc_sci110_ph2b": {
       "label": "SciSparc Receives FDA Approval to Initiate Phase IIb Clinical Trial of SCI-110 for Tourette Syndrome",
@@ -258,6 +258,54 @@
       "publisher": "US Census Bureau (via public mirror)",
       "url": "https://www.census.gov/programs-surveys/popest.html",
       "note": "State under-18 age-share (2013) scaled to 2025 totals; used for directional per-state child population."
+    },
+    "teva_nda_accept": {
+      "label": "FDA Accepts Teva's NDA and Grants Priority Review for Ecopipam (pediatric TS)",
+      "publisher": "Teva / GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/19/3347619/0/en/u-s-fda-accepts-teva-s-new-drug-application-nda-and-grants-priority-review-for-ecopipam-a-first-in-class-investigational-therapy-for-pediatric-patients-with-tourette-syndrome.html",
+      "note": "Announced Aug 19, 2026. Priority Review; target action date late Q1 2027. Proposed indication is exclusively pediatric. Supported by Phase 2b + Phase 3 D1AMOND."
+    },
+    "teva_mds_2026": {
+      "label": "Teva Presents New Efficacy and Safety Data with Ecopipam (MDS 2026)",
+      "publisher": "Teva / GlobeNewswire",
+      "url": "https://www.manilatimes.net/2026/10/02/tmt-newswire/globenewswire/teva-presents-new-efficacy-and-safety-data-with-ecopipam-an-investigational-treatment-for-pediatric-patients-with-tourette-syndrome/2437974",
+      "note": "Oct 2026 (MDS Congress, Seoul). Post hoc: ~70% of participants had a clinically meaningful tic reduction within 8 weeks. Interim 18-month open-label extension: mean tic-severity reduction 45.6%, no new safety signals. Post hoc / open-label — directional, not controlled."
+    },
+    "teva_q3_2026": {
+      "label": "Teva Q3 2026 Form 10-Q",
+      "publisher": "SEC EDGAR",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000818686/000081868626000006/teva-20260930.htm",
+      "note": "Confirms Emalex acquisition completed (~$700M paid) and ecopipam FDA decision expected Q1 2027."
+    },
+    "tevaemalex_agree": {
+      "label": "Teva to Acquire Emalex Biosciences",
+      "publisher": "Teva (IR)",
+      "url": "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2026/Teva-to-AcquireEmalexBiosciences-Adding-NDA-Ready-First-in-Class-Therapy-to-Neuroscience-Pipeline-and-Accelerating-Tevas-Pivot-to-Growth-Strategy/default.aspx",
+      "note": "Definitive agreement announced Apr 29, 2026: $700M upfront, up to $200M commercial milestones, plus net-sales royalties."
+    },
+    "scisparc_ph2b_sites_2026": {
+      "label": "NeuroThera Labs (SciSparc) Launches Phase IIb at Yale Child Study Center",
+      "publisher": "TheNewswire",
+      "url": "https://www.thenewswire.com/press-releases/1AqRFJyvK-neurothera-labs-launches-phase-iib-clinical-trial-at-yale-child-study-center-for-first-of-its-kind-treatment-for-tourette-syndrome.html",
+      "note": "Hannover site live Jul 15, 2026; Yale site Aug 5, 2026; Oct 2026 European drug-batch release with all three sites initiated. Company-sourced."
+    },
+    "neupulse_wellness_2026": {
+      "label": "New wrist stimulation device brings relief for people with Tourette's",
+      "publisher": "MedicalXpress (Oct 2026)",
+      "url": "https://medicalxpress.com/news/2026-10-wrist-device-relief-people-tourette.html",
+      "note": "Neupulse launched a 'wellness' wrist device (Neupulse C) in the UK; a medical-device version remains under regulatory development. No FDA clearance or US launch found."
+    },
+    "taa_umn_coe_2026": {
+      "label": "University of Minnesota MnTiC Lab Designated a TAA Center of Excellence",
+      "publisher": "University of Minnesota (Apr 2026)",
+      "url": "https://med.umn.edu/node/87336",
+      "note": "Designated Apr 1, 2026 — evidence the CoE network has grown beyond the 28 counted in Feb 2025."
+    },
+    "taa_ecopipam_update": {
+      "label": "Update on the FDA Acceptance of the NDA for Ecopipam",
+      "publisher": "Tourette Association of America",
+      "url": "https://tourette.org/update-on-the-fda-acceptance-of-the-new-drug-application-for-ecopipam/",
+      "note": "Patient-advocacy statement on the Aug 2026 NDA acceptance."
     }
   }
 }

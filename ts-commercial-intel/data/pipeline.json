@@ -1,19 +1,20 @@
 {
-  "headline": "The TS pipeline has split into a near-term regulatory event (ecopipam's first-in-class D1 mechanism at the FDA) and a cluster of PDE10A dopamine-modulators plus non-invasive neuromodulation behind it — all set against a decade of repeated VMAT2 failures, the mechanism the field has now largely abandoned for tics.",
-  "as_of": "2026-07-07",
+  "headline": "The TS pipeline is now defined by one dated regulatory event — ecopipam's FDA decision, due late Q1 2027 under Priority Review — with a cluster of PDE10A dopamine-modulators and non-invasive neuromodulation behind it, all set against a decade of repeated VMAT2 failures.",
+  "as_of": "2026-11-13",
   "assets": [
     {
       "name": "Ecopipam",
       "sponsor": "Teva (via Emalex Biosciences)",
       "moa": "Selective dopamine D1 receptor antagonist (non-antipsychotic)",
-      "phase": "Phase 3 complete (D1AMOND); NDA under FDA review",
-      "ts_status": "Lead indication — pediatric TS; Orphan Drug + Fast Track",
-      "next_milestone": "FDA acceptance / PDUFA following NDA submission (June 18, 2026); D1AMOND randomized-withdrawal met primary endpoint (relapse HR ~0.5, P=.008)",
+      "phase": "NDA accepted — FDA Priority Review",
+      "ts_status": "Lead indication — pediatric TS only; Priority Review + Orphan Drug + Fast Track",
+      "next_milestone": "FDA target action date: late Q1 2027 (NDA accepted Aug 19, 2026). Not yet approved.",
       "nct": "NCT05615220",
-      "source": "teva_nda",
-      "note": "Emalex ran the pivotal program; Teva closed its Emalex acquisition June 10, 2026 and submitted the NDA June 18, 2026. Phase 3 published in JAMA Neurology (see jamaneuro_ph3).",
+      "source": "teva_nda_accept",
+      "note": "Teva agreed to acquire Emalex Apr 29, 2026, closed June 10, submitted the NDA June 18; FDA accepted it with Priority Review Aug 19, 2026. D1AMOND (JAMA Neurology): pediatric relapse HR 0.5, P=.008. New Oct 2026 MDS data: ~70% with clinically meaningful tic reduction within 8 weeks (post hoc); 45.6% mean tic-severity reduction at 18 months in the open-label extension, no new safety signals.",
       "phase_index": 4,
-      "fate": "filed"
+      "fate": "filed",
+      "updated": "2026-10"
     },
     {
       "name": "Gemlapodect (NOE-105)",
@@ -21,25 +22,27 @@
       "moa": "PDE10A inhibitor (striatal dopamine modulator)",
       "phase": "Phase 2b",
       "ts_status": "Active development — adults and adolescents",
-      "next_milestone": "Phase 2b NOE-TTS-201 topline (12-wk, randomized, placebo-controlled, n=140, up to 15 mg QD; primary endpoint YGTSS-TTS); primary completion targeted ~June 2026",
+      "next_milestone": "Phase 2b ALLEVIA-2 (NOE-TTS-201) topline — OVERDUE. 12-wk, randomized, placebo-controlled, n=140, up to 15 mg QD; registry primary completion was estimated June 2026.",
       "nct": "NCT06315751",
       "source": "noema_gemlapodect_ph2b",
-      "note": "Phase 2a (ALLEVIA-1) met its primary and all key secondary endpoints. Phase 2b topline not yet reported as of the as_of date.",
+      "note": "Phase 2a (ALLEVIA-1, open-label): 7.8-point YGTSS-TTS reduction in 14 evaluable patients; met primary and key secondary endpoints. No Phase 2b topline had been located as of Nov 13, 2026 — the readout is the next competitive catalyst and its silence is itself worth watching.",
       "phase_index": 2,
-      "fate": "active"
+      "fate": "active",
+      "updated": "2026-11"
     },
     {
       "name": "SCI-110 (THC + PEA/CannAmide)",
-      "sponsor": "SciSparc",
+      "sponsor": "SciSparc (NeuroThera Labs subsidiary)",
       "moa": "Cannabinoid combination — dronabinol (THC) plus palmitoylethanolamide (PEA)",
       "phase": "Phase 2b",
       "ts_status": "Active development — adults (18-65)",
-      "next_milestone": "Phase 2b enrollment/readout — double-blind, placebo-controlled crossover (endpoints at weeks 12 and 26); sites include Yale, Hannover Medical School, Tel Aviv Sourasky",
+      "next_milestone": "Phase 2b dosing/enrollment — crossover design with endpoints at weeks 12 and 26; target enrollment 164. Sites: Yale, Hannover Medical School, Tel Aviv Sourasky.",
       "nct": "NCT05126888",
-      "source": "scisparc_sci110_ph2b",
-      "note": "FDA cleared the Phase 2b IND (Sept 2024). Prior Phase 2a reported ~21% tic reduction in adults.",
+      "source": "scisparc_ph2b_sites_2026",
+      "note": "Sites activated in 2026: Hannover (Jul 15), Yale (Aug 5); European drug-batch release reported Oct 2026 with all three sites initiated. Adults 18-65 only. Prior Phase 2a ~21% tic reduction (uncontrolled). Updates are company-sourced.",
       "phase_index": 2,
-      "fate": "active"
+      "fate": "active",
+      "updated": "2026-10"
     },
     {
       "name": "Balipodect (TAK-063)",
@@ -69,13 +72,14 @@
       "name": "Neupulse",
       "sponsor": "Neurotherapeutics Ltd / Neupulse (University of Nottingham spin-out)",
       "moa": "Wrist-worn rhythmic 10-Hz median-nerve stimulation (non-invasive neuromodulation device)",
-      "phase": "Sham-controlled RCT complete; commercial launch stage",
+      "phase": "Sham-controlled RCT complete; UK wellness device launched",
       "ts_status": "Marketed-track (device) — not an FDA-cleared therapeutic",
-      "next_milestone": "UK direct-to-consumer launch (pre-orders live; delivery ~June 2026, subject to UK regulatory processes); no FDA clearance",
-      "source": "neupulse_uk_launch",
-      "note": "Sham-controlled RCT (n=135) showed reduced tic frequency; see neupulse_rct. Positioned as a UK consumer wearable rather than an FDA-cleared medical device.",
+      "next_milestone": "Medical-device version under regulatory development; no FDA clearance or US launch",
+      "source": "neupulse_wellness_2026",
+      "note": "Launched as a UK 'wellness' wrist device (Neupulse C) in 2026 rather than a regulated medical device. Sham-controlled RCT (n=135) showed reduced tic frequency; see neupulse_rct.",
       "phase_index": 3,
-      "fate": "device"
+      "fate": "device",
+      "updated": "2026-10"
     },
     {
       "name": "Deutetrabenazine (Austedo)",

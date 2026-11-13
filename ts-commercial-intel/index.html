@@ -257,6 +257,26 @@
   .exstat:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:var(--elev-2), var(--bevel)}
   .exstat .v{font-size:27px;font-weight:700;color:var(--text);line-height:1.05;letter-spacing:-.026em;font-variant-numeric:tabular-nums}
   .exstat .l{font-size:12px;color:var(--muted);margin-top:7px}
+  .tlhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px 16px;flex-wrap:wrap;margin-bottom:16px}
+  .tlcount{font-size:12.5px;color:var(--muted)} .tlcount b{color:var(--accent);font-size:17px;font-variant-numeric:tabular-nums;margin-right:3px}
+  .tl{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(118px,1fr);gap:0;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:thin}
+  .tlstep{position:relative;padding:22px 10px 0 0;font-size:12px;min-width:0}
+  .tlstep:before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--line-strong)}
+  .tlstep.fut:before{background:repeating-linear-gradient(90deg,var(--accent-line) 0 6px,transparent 6px 11px)}
+  .tldot{position:absolute;left:0;top:1px;width:14px;height:14px;border-radius:50%;background:var(--muted);border:3px solid var(--panel);box-shadow:0 0 0 1px var(--line-strong)}
+  .tlstep.regulatory .tldot,.tlkey.regulatory{background:var(--accent)} .tlstep.clinical .tldot,.tlkey.clinical{background:var(--good)} .tlstep.deal .tldot,.tlkey.deal{background:var(--accent-2)}
+  .tlstep.fut .tldot,.tlkey.fut{background:var(--panel);box-shadow:0 0 0 2px var(--accent)}
+  .tlkey{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .tldate{color:var(--faint);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .tllabel{font-weight:600;font-size:12.5px;margin:3px 0 2px;line-height:1.3} .tlstep.fut .tllabel{color:var(--accent)}
+  .wn{display:flex;gap:12px;align-items:flex-start;padding:11px 8px;border-top:1px solid var(--line);font-size:13.5px;cursor:pointer;border-radius:var(--radius-sm);transition:background .12s}
+  .wn:hover,.wn:focus-visible{background:var(--panel-2);outline:none} .wn:focus-visible{box-shadow:0 0 0 2px var(--accent-line)}
+  .wnbody{flex:1;min-width:0} .wngo{color:var(--faint);transform:rotate(-90deg);margin-top:2px}
+  .wntag{flex:none;width:92px;text-align:center;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 0;border-radius:6px;border:1px solid var(--line);color:var(--muted);background:var(--panel-2)}
+  .wntag.regulatory{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft)}
+  .wntag.clinical{color:var(--good);border-color:color-mix(in srgb,var(--good) 40%,transparent)}
+  .wntag.competitor,.wntag.device{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent)}
+  @media(max-width:560px){.wntag{width:74px}.wngo{display:none}}
   .twocol{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
   @media(max-width:680px){.twocol{grid-template-columns:1fr}}
   .excards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
@@ -392,6 +412,7 @@
     <nav id="nav"></nav>
     <div class="side-foot">
       <div class="userchip"><span class="dot"></span><span id="who">—</span></div>
+      <div class="cite" id="asof"></div>
       <div class="side-actions">
         <button class="toggle" id="themeBtn" title="Toggle theme">◑ Theme</button>
         <button class="btn ghost sm" id="logoutBtn">Log out</button>
@@ -408,11 +429,19 @@ const S = { me:null, config:null, cache:{} };
 async function api(path, opts){
   const r = await fetch(path, Object.assign({cache:'no-store', headers:{'Content-Type':'application/json'}}, opts||{}));
   let data = {}; try{ data = await r.json(); }catch(e){}
+  if(r.status===401 && S.me && path!=='/api/login' && path!=='/api/me') sessionExpired();
   return { ok:r.ok, status:r.status, data };
+}
+// A 401 mid-session means the session expired or was revoked: go back to sign-in.
+function sessionExpired(){
+  if(!S.me) return;
+  S.me=null; S.cache={}; showLogin();
+  const e=document.getElementById('loginErr'); if(e) e.textContent='Your session expired — please sign in again.';
 }
 async function getData(name){
   if(S.cache[name]) return S.cache[name];
   const r = await fetch('/data/'+name+'.json', {cache:'no-store'});
+  if(r.status===401){ sessionExpired(); throw new Error('session expired'); }
   if(!r.ok) throw new Error('load '+name);
   const j = await r.json(); S.cache[name]=j; return j;
 }
@@ -488,6 +517,7 @@ async function showApp(){
   await sources();
   document.getElementById('who').textContent = S.me.display_name + (S.me.role==='admin'?' · admin':'');
   if(S.config.subtitle) document.getElementById('brandSub').textContent = S.config.anchor_molecule+' / '+S.config.anchor_sponsor+' · launch scenario planning';
+  if(S.config.data_as_of){ const a=document.getElementById('asof'); if(a) a.textContent='Data verified '+fmtDate(S.config.data_as_of); }
   buildNav();
   if(!location.hash) location.hash = '#/executive';
   route();
@@ -501,6 +531,8 @@ function buildNav(){
   if(S.me.role==='admin') nav.appendChild(el('<a href="#/admin" data-view="admin">Admin<span class="tag">admin</span></a>'));
 }
 window.addEventListener('hashchange', route);
+(function(){ const m=document.getElementById('main');
+  if(m && window.MutationObserver) new MutationObserver(()=>wrapTables(m)).observe(m,{childList:true,subtree:true}); })();
 function route(){
   const id = (location.hash.replace('#/','')||'executive');
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('active', a.getAttribute('data-view')===id));
@@ -544,6 +576,8 @@ function hbars(items){
   });
   return out+'</div>';
 }
+function fmtDate(iso){ const p=String(iso).split('-'), M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return p.length<2?iso:(M[+p[1]-1]+(p[2]?' '+(+p[2])+',':'')+' '+p[0]); }
 function disc(){ return '<div class="disc">'+esc(S.config.disclaimer)+'</div>'; }
 
 /* ---- views ---- */
@@ -1086,6 +1120,7 @@ async function renderPipeline(main){
       +(a.nct?'<tr><td style="color:var(--muted)">Trial</td><td><a href="https://clinicaltrials.gov/study/'+esc(a.nct)+'" target="_blank" rel="noopener">'+esc(a.nct)+'</a></td></tr>':'')
       +'</tbody></table>'
       +(a.note?'<p class="note" style="margin:8px 0 0">'+esc(a.note)+'</p>':'')
+      +(a.updated?'<div class="cite" style="margin-top:6px">Last checked '+esc(fmtDate(a.updated))+'</div>':'')
       +'<div class="cite" style="margin-top:6px">'+cite(a.source)+'</div></div>';
   });
   h+=disc(); main.innerHTML=h;
@@ -1210,10 +1245,25 @@ async function renderExecutive(main){
   const d=await getData('executive_summary');
   let h='<div class="vhead"><h2>Executive Summary</h2><div class="lead">The one-screen read for a JPM-hallway conversation — the market, the gap, and the opportunity, in a few sentences and a few numbers.</div></div>';
   h+='<div class="exhero"><div class="lead2">'+esc(d.positioning)+'</div></div>';
+  if(d.timeline && d.timeline.length){
+    const fut=d.timeline.find(t=>t.future), days=fut?Math.ceil((new Date(2027,2,31)-new Date())/864e5):null;
+    h+='<div class="panel tlpanel" style="margin-top:0;margin-bottom:14px"><div class="tlhead"><h3 style="margin:0">Ecopipam catalyst path</h3>'
+      +(days!=null&&days>0?'<span class="tlcount"><b>'+days+'</b> days to the end of the FDA decision window</span>':'')+'</div>'
+      +'<div class="tl">'+d.timeline.map(t=>'<div class="tlstep '+esc(t.kind)+(t.future?' fut':'')+'"><span class="tldot"></span>'
+        +'<div class="tldate">'+esc(fmtDate(t.date))+'</div><div class="tllabel">'+esc(t.label)+'</div><div>'+cite(t.source)+'</div></div>').join('')+'</div>'
+      +'<div class="legend" style="margin-top:12px"><span class="lgd"><span class="tlkey regulatory"></span>Regulatory</span><span class="lgd"><span class="tlkey clinical"></span>Clinical</span><span class="lgd"><span class="tlkey deal"></span>Deal</span><span class="lgd"><span class="tlkey fut"></span>Upcoming — not yet decided</span></div></div>';
+  }
+  if(d.whats_new && d.whats_new.length){
+    h+='<div class="panel" style="margin-top:0;margin-bottom:14px"><h3>What changed since the last review</h3><p class="note">Re-verified '+esc(fmtDate(d.as_of||''))+'. Select a row to open the related view.</p>'
+      +d.whats_new.map(w=>'<div class="wn" data-goto="'+esc(w.goto||'')+'" tabindex="0" role="link"><span class="wntag '+esc(String(w.tag).toLowerCase())+'">'+esc(w.tag)+'</span>'
+        +'<div class="wnbody"><div>'+esc(w.text)+'</div><div class="cite" style="margin-top:3px">'+esc(w.date)+' '+cite(w.source)+'</div></div><span class="wngo" aria-hidden="true">'+ic('jump')+'</span></div>').join('')+'</div>';
+  }
   h+='<div class="exstats">'+d.big_stats.map(s=>'<div class="exstat"><div class="v">'+esc(s.value)+'</div><div class="l">'+esc(s.label)+' '+cite(s.source)+'</div></div>').join('')+'</div>';
   h+='<div class="excards">'+d.sections.map(s=>'<div class="excard'+(s.key==='unmet'?' exunmet':'')+'"><h4>'+esc(s.title)+'</h4><p>'+esc(s.body)+'</p><div class="cite" style="margin-top:8px">'+(s.sources||[]).map(cite).join(' · ')+'</div></div>').join('')+'</div>';
   h+='<div class="exone">'+esc(d.one_liner)+'</div>';
   h+=disc(); main.innerHTML=h;
+  main.querySelectorAll('.wn[data-goto]').forEach(n=>{ const go=e=>{ if(e.target.closest('a'))return; const v=n.getAttribute('data-goto'); if(v) location.hash='#/'+v; };
+    n.onclick=go; n.onkeydown=e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(e); } }; });
 }
 
 const VIEWS = { executive:renderExecutive, landscape:renderLandscape, journey:renderJourney, treatment:renderTreatment,

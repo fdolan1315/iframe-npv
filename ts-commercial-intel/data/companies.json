@@ -1,11 +1,11 @@
 {
   "_comment": "Neutral company dossiers for the TS competitive field. Every figure cites a source id in sources.json (Principle 2). Framing = each company's own investor-voice framing of its TS role, not an ecopipam-as-hero scorecard (Principle 3). No pricing/penetration/revenue modeling for ecopipam (Principle 1); company-level public facts (portfolio, strategy, publicly reported brand revenue) are cited factual datapoints, not models.",
-  "as_of": "2026-07-07",
+  "as_of": "2026-11-13",
   "companies": [
     {
       "name": "Teva Pharmaceutical Industries",
       "ticker": "NYSE: TEVA",
-      "role_in_ts": "Owner of ecopipam via the June 2026 Emalex acquisition; the only large-cap in the field with a filed, novel-mechanism pediatric TS asset (NDA submitted June 18, 2026).",
+      "role_in_ts": "Owner of ecopipam via the June 2026 Emalex acquisition; the only large-cap in the field with a novel-mechanism pediatric TS asset under FDA Priority Review (NDA accepted Aug 19, 2026; decision due late Q1 2027).",
       "framing": "Teva frames ecopipam as a capital-efficient bolt-on to its existing branded neuroscience franchise (Austedo, Uzedy, Ajovy) and as an embodiment of the innovation pillar of its 'Pivot to Growth' strategy: a first-in-class, non-antipsychotic movement-disorder asset that reuses the same specialty commercial infrastructure without cannibalizing Austedo, which has no TS indication. Investor narrative emphasizes durable growth from innovative brands and pipeline optionality rather than TS as a standalone franchise.",
       "neuroscience_portfolio": [
         {
@@ -39,10 +39,11 @@
         {
           "name": "Ecopipam (EBS-101)",
           "moa": "Selective dopamine D1 receptor antagonist (non-antipsychotic)",
-          "indication": "Pediatric Tourette syndrome (NDA under review)",
-          "ts_relevance": "Lead TS asset. NDA submitted June 18, 2026 (Orphan + Fast Track); acquired via Emalex ($700M upfront + up to $200M milestones, closed June 10, 2026).",
+          "indication": "Pediatric Tourette syndrome (NDA under Priority Review; decision late Q1 2027)",
+          "ts_relevance": "Lead TS asset. NDA submitted June 18, 2026 and accepted with Priority Review Aug 19, 2026 (Orphan + Fast Track); FDA target action date late Q1 2027; acquired via Emalex ($700M upfront + up to $200M milestones, closed June 10, 2026).",
           "sources": [
-            "teva_nda",
+            "teva_nda_accept",
+            "teva_q3_2026",
             "teva_emalex_close",
             "jamaneuro_ph3"
           ]

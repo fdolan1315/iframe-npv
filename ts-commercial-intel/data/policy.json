@@ -1,8 +1,16 @@
 {
   "headline": "The policy terrain for a pediatric TS launch is orphan/pediatric FDA incentives on the supply side and the IEP/504 school-accommodation lane on the demand side — not scheduling or access-reform fights. Reimbursement is a state-by-state Medicaid/CHIP problem layered over commercial prior authorization, and is treated here directionally only: patients and access, never claims-level dollars.",
-  "as_of": "2026-07-07",
+  "as_of": "2026-11-13",
   "note": "Directional policy/access map. Per Principle 1, nothing here models pricing, rebates, revenue, or claims-level dollars — reimbursement items describe payer mechanics and payer mix only. Regulatory items distinguish designations ecopipam is publicly confirmed to hold (Orphan Drug, Fast Track) from incentives that are structurally available but unconfirmed for this asset (Rare Pediatric Disease designation / Priority Review Voucher).",
   "regulatory": [
+    {
+      "label": "Priority Review — GRANTED (Aug 19, 2026); decision due late Q1 2027",
+      "detail": "FDA accepted Teva's NDA and granted Priority Review, which targets action within 6 months of filing rather than the standard 10. Teva states a target action date in late Q1 2027, and its Q3 2026 filing repeats a Q1 2027 decision. The proposed indication is exclusively pediatric. Acceptance and Priority Review are procedural milestones — they do not indicate approval.",
+      "sources": [
+        "teva_nda_accept",
+        "teva_q3_2026"
+      ]
+    },
     {
       "label": "Orphan Drug designation — CONFIRMED for ecopipam",
       "detail": "Teva/Emalex publicly state ecopipam holds FDA Orphan Drug and Fast Track designations for pediatric Tourette syndrome. Orphan status is the gateway to the incentive stack below (7-year exclusivity, tax credit, user-fee waiver, PREA exemption). TS is well within the <200,000 US-prevalence orphan threshold.",
@@ -30,7 +38,7 @@
     },
     {
       "label": "Rare Pediatric Disease designation / Priority Review Voucher — UNCONFIRMED; potential upside",
-      "detail": "The Rare Pediatric Disease (RPD) designation and Priority Review Voucher (PRV) program was reauthorized and is authorized through September 30, 2029 (Consolidated Appropriations Act, 2026, incorporating the Give Kids a Chance Act). An RPD approval yields a transferable voucher that can be used or sold. There is NO public confirmation that ecopipam holds RPD designation or would receive a PRV — Teva's disclosures cite only Orphan Drug and Fast Track. Treat this strictly as a structural, unverified upside for this asset, not a held designation.",
+      "detail": "The Rare Pediatric Disease (RPD) designation and Priority Review Voucher (PRV) program was reauthorized and is authorized through September 30, 2029 (Consolidated Appropriations Act, 2026, incorporating the Give Kids a Chance Act). An RPD approval yields a transferable voucher that can be used or sold. There is NO public confirmation that ecopipam holds RPD designation or would receive a PRV — Teva's disclosures cite only Orphan Drug and Fast Track. Treat this strictly as a structural, unverified upside for this asset, not a held designation. Re-checked Nov 2026: coverage of the Aug 2026 NDA acceptance names Priority Review, Orphan Drug and Fast Track only — no Rare Pediatric Disease designation or voucher is mentioned, so this remains unconfirmed.",
       "source": "fda_rpd_prv"
     }
   ],
@@ -59,7 +67,7 @@
   "advocacy": [
     {
       "label": "TAA Centers of Excellence — the channel anchor",
-      "detail": "The Tourette Association of America designates a national network of Centers of Excellence (~28 as of Feb 2025), concentrating interdisciplinary pediatric TS expertise and KOLs. For a specialist-access-limited orphan launch, this network — not raw population — maps where diagnosed, treatment-ready patients concentrate.",
+      "detail": "The Tourette Association of America designates a national network of Centers of Excellence (28 as of Feb 2025; at least one added in 2026), concentrating interdisciplinary pediatric TS expertise and KOLs. For a specialist-access-limited orphan launch, this network — not raw population — maps where diagnosed, treatment-ready patients concentrate.",
       "source": "taa_coe"
     },
     {

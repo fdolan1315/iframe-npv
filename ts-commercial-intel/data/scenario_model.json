@@ -53,8 +53,8 @@
     },
     {
       "key": "coe_count",
-      "label": "TAA Centers of Excellence (as of Feb 2025)",
-      "value": "~28",
+      "label": "TAA Centers of Excellence (Feb 2025 count; 1+ added 2026)",
+      "value": "28+",
       "source": "taa_coe",
       "note": "National count of designated Centers of Excellence; the channel anchor and the CoE-only reach floor. Confirm the live roster before external use."
     },
@@ -113,7 +113,7 @@
     {
       "id": "coe_vs_community_reach",
       "label": "CoE-first vs community reach",
-      "description": "Channel-breadth dial from CoE-concentrated (narrow, high-conviction — the ~28 TAA Centers of Excellence) to broad community pediatric-neurology and child-psychiatry reach. Higher = a wider specialist footprint beyond the CoE core, expanding the specialist-reachable share of the drug-warranting pool. At 0 only the CoE floor is reachable.",
+      "description": "Channel-breadth dial from CoE-concentrated (narrow, high-conviction — the 28+ TAA Centers of Excellence) to broad community pediatric-neurology and child-psychiatry reach. Higher = a wider specialist footprint beyond the CoE core, expanding the specialist-reachable share of the drug-warranting pool. At 0 only the CoE floor is reachable.",
       "unit": "reach breadth (0 = CoE-only, 100 = full community specialist footprint)",
       "min": 0,
       "max": 100,
@@ -137,13 +137,13 @@
     {
       "id": "pediatric_label_timing",
       "label": "Pediatric-label timing / launch phase-in",
-      "description": "Commercial-availability phase-in of the pediatric label. The NDA was submitted June 18, 2026 with Orphan + Fast Track designations; no PDUFA target action date is public yet, so timing is a scenario dial rather than a verified date. 0 = not yet available (addressable pool = 0); 100 = fully launched, so the diagnosed drug-warranting pool is addressable. Phases the funnel in over time without asserting a specific approval date.",
+      "description": "Commercial-availability phase-in of the pediatric label. FDA accepted the NDA with Priority Review on Aug 19, 2026, with a target action date in late Q1 2027 — so approval is not yet granted and launch cannot precede that decision. 0 = not yet available (today's state; addressable pool = 0); 100 = fully launched, so the diagnosed drug-warranting pool is addressable. Use it to phase the funnel in after a potential approval; it does not assert that approval will occur.",
       "unit": "launch phase-in (% of pool addressable)",
       "min": 0,
       "max": 100,
       "default": 100,
       "affects": "Phase-in fraction applied to all downstream addressable pools (diagnosed_dw_pool, branded_reachable_pool, specialist_reachable_share).",
-      "source": "teva_nda",
+      "source": "teva_nda_accept",
       "baseline": 0
     }
   ],
@@ -176,7 +176,7 @@
       "id": "coe_covered_share",
       "label": "CoE-covered share",
       "unit": "% (and implied children)",
-      "formula_note": "Portion of the specialist-reachable pool anchored at the ~28 TAA Centers of Excellence; equals the reach floor when coe_vs_community_reach = 0 and dilutes as community breadth widens. Coverage accounting in patients/percent, not dollars."
+      "formula_note": "Portion of the specialist-reachable pool anchored at the 28+ TAA Centers of Excellence; equals the reach floor when coe_vs_community_reach = 0 and dilutes as community breadth widens. Coverage accounting in patients/percent, not dollars."
     },
     {
       "id": "branded_reachable_pool",

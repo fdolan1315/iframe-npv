@@ -859,6 +859,16 @@
       "note": "Serves DC/MD/VA corridor.",
       "x": 811.7,
       "y": 262.6
+    },
+    {
+      "name": "University of Minnesota — MnTiC Lab",
+      "city": "Minneapolis",
+      "state": "MN",
+      "region": "Midwest",
+      "coe": true,
+      "note": "Designated Apr 2026.",
+      "x": 533.0,
+      "y": 157.4
     }
   ],
   "providers": [

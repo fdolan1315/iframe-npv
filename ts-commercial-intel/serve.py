@@ -28,6 +28,7 @@ Security posture
 
 import base64, binascii, hashlib, hmac, html, json, mimetypes, os, posixpath, re
 import secrets, sqlite3, sys, threading, time
+from http import HTTPStatus
 from http.cookies import SimpleCookie
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -45,12 +46,12 @@ MAX_BODY_BYTES     = 64 * 1024
 TRUST_PROXY        = os.environ.get("TRUST_PROXY", "0") == "1"
 
 # Only these extensions are ever served from disk.
-ALLOWED_EXT = {".html", ".json", ".css", ".js", ".svg", ".png", ".jpg", ".jpeg",
+ALLOWED_EXT = {".html", ".css", ".js", ".svg", ".png", ".jpg", ".jpeg",
                ".webp", ".ico", ".woff", ".woff2", ".txt"}
 # Belt-and-braces: never serve these regardless of extension.
 DENY_NAMES = {".env", ".env.example", "auth.db", "passenger_wsgi.py", "serve.py",
               "build_preview.py", "preview.html", ".gitignore"}
-DENY_PARTS = {".git", "__pycache__", "node_modules", "deploy"}
+DENY_PARTS = {".git", "__pycache__", "node_modules", "deploy", "data"}
 DENY_SUFFIX = (".py", ".pyc", ".db", ".sqlite", ".sqlite3", ".log", ".md",
                ".db-wal", ".db-shm")
 
@@ -328,7 +329,7 @@ def safe_static_path(rel):
     if not rel:
         rel = "index.html"
     parts = rel.split("/")
-    if any(p in DENY_PARTS for p in parts):
+    if any(p.lower() in DENY_PARTS for p in parts):
         return None
     name = parts[-1]
     if name in DENY_NAMES or name.startswith("."):
@@ -448,7 +449,9 @@ def dispatch(req):
         return jresp({"error": "Not found."}, 404, sec)
 
     # ---- gated content ----
-    if p.startswith("/data/"):
+    # Case-insensitive: the filesystem may be, so the gate must be too.
+    if p.lower().startswith("/data/"):
+        p = p.lower()
         if not user:
             return jresp({"error": "Not signed in."}, 401, sec)
         name = p[len("/data/"):]
@@ -486,7 +489,7 @@ def dispatch(req):
     looks_like_asset = (
         os.path.splitext(base)[1]                       # has a file extension
         or any(x.startswith(".") for x in segs)         # dotfile / dot-directory
-        or any(x in DENY_PARTS for x in segs)           # .git, deploy, __pycache__
+        or any(x.lower() in DENY_PARTS for x in segs)           # .git, deploy, __pycache__
     )
     if looks_like_asset:
         return Resp(404, b"Not found", sec)
@@ -498,6 +501,8 @@ def dispatch(req):
 # --- WSGI entry point ---------------------------------------------------------
 def application(environ, start_response):
     init_db()
+    if secrets.randbelow(200) == 0:      # sampled: the dev server's startup purge never runs under WSGI
+        purge_expired()
     try:
         length = int(environ.get("CONTENT_LENGTH") or 0)
     except ValueError:
@@ -518,7 +523,11 @@ def application(environ, start_response):
               environ.get("REMOTE_ADDR", ""),
               environ.get("wsgi.url_scheme", "http"))
     resp = dispatch(req)
-    start_response(f"{resp.status} ", resp.headers + [("Content-Length", str(len(resp.body)))])
+    try:
+        phrase = HTTPStatus(resp.status).phrase
+    except ValueError:
+        phrase = "Status"
+    start_response(f"{resp.status} {phrase}", resp.headers + [("Content-Length", str(len(resp.body)))])
     return [resp.body]
 
 

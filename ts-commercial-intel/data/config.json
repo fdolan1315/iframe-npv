@@ -3,7 +3,7 @@
   "subtitle": "Tourette syndrome market & launch scenario planning",
   "anchor_molecule": "ecopipam",
   "anchor_sponsor": "Teva",
-  "build_phase": "Phase 1 — foundation + landscape, journey, treatment",
+  "build_phase": "Data refreshed 2026-11-13",
   "principles": [
     "Credibility over feature count.",
     "Every clinical/epi/market number is cited to a primary source.",
@@ -62,5 +62,6 @@
       "label": "Briefings",
       "status": "live"
     }
-  ]
+  ],
+  "data_as_of": "2026-11-13"
 }
