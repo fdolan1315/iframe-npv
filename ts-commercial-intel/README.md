@@ -33,3 +33,13 @@ the application. See `RESTORE.md` for what is being restored and how.
 Executive Summary · Market Landscape · Patient Journey · Treatment Algorithm ·
 Pipeline · Channel & Sites · Companies · Scenario Planner · Policy & Advocacy ·
 Briefings
+
+## Brand
+
+The interface follows the BIOS brand system v1.3.0 (revision 6): Deep Slate,
+Clear White and Authority Cobalt; Instrument Sans for display and Inter for body
+(self-hosted in `assets/fonts`, SIL Open Font License); flat color with no
+gradients in data; the approved sequential-cobalt and categorical chart
+palettes. The logo files in `assets/` are the supplied artwork, unmodified — the
+primary mark on Clear White and the reverse mark on exact Deep Slate. BIOS
+Electric (`#0021FE`) appears only inside that artwork.

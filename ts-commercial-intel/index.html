@@ -1,61 +1,49 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TS Commercial Intelligence</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234b9fff'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
 <style>
   /* ============================================================
-     Design tokens — neutral monochrome surfaces, one sparing accent.
-     Dev-tools minimalist: hairline borders over drop shadows,
-     tight radii, high-contrast type. Light/dark share the same scale.
+     BIOS brand system v1.3.0 (revision 6) — tokens.
+     Core: Deep Slate #111827 · Clear White #F8FAFC · Authority Cobalt #2457D6.
+     Flat color by default; no gradients in data; no ornamental shadows.
+     BIOS Electric #0021FE is reserved for the supplied logo artwork only.
+     Dark surfaces are Deep Slate with Clear White at low opacity.
      ============================================================ */
+  @font-face{font-family:"Inter";src:url(assets/fonts/inter-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+  @font-face{font-family:"Instrument Sans";src:url(assets/fonts/instrument-sans-latin-wght-normal.woff2) format("woff2");font-weight:400 700;font-display:swap}
   :root{
-    /* neutral surface ramp (no blue tint) */
-    --bg:#09090b; --panel:#101012; --panel-2:#17171a; --panel-3:#1d1d21;
-    --line:#242427; --line-strong:#323236;
-    --text:#f4f4f5; --muted:#9a9aa4; --faint:#6c6c74;
-    /* one accent, used sparingly for interaction + emphasis */
-    --accent:#4f8cff; --accent-2:#8b7cff; --accent-ink:#ffffff;
-    --accent-soft:rgba(79,140,255,.13); --accent-line:rgba(79,140,255,.42);
-    --good:#3ecf8e; --warn:#e6a24b; --bad:#ff5c6c;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -18px rgba(0,0,0,.7);
-    --shadow-sm:0 1px 2px rgba(0,0,0,.35);
-    /* depth: metallic top-lit / bottom-shadowed edge + elevation + spring easing */
-    --bevel:inset 0 1px 0 rgba(255,255,255,.07), inset 0 -1px 0 rgba(0,0,0,.38);
-    --elev-1:0 1px 2px rgba(0,0,0,.3), 0 1px 1px rgba(0,0,0,.22);
-    --elev-2:0 8px 20px -8px rgba(0,0,0,.6), 0 2px 6px -2px rgba(0,0,0,.45);
-    --ease:cubic-bezier(.22,.68,.28,1);
-    /* liquid-metal surface sheen — brighter top edge fading to the base fill */
-    --panel-grad:linear-gradient(180deg,#191920 0%,#131317 34%,var(--panel) 100%);
-    --panel2-grad:linear-gradient(180deg,#202026,var(--panel-2) 60%);
-    --glass:color-mix(in srgb,var(--panel) 68%,transparent);
-    --radius:10px; --radius-sm:7px; --radius-lg:13px;
-    --font:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-    /* Sequential choropleth ramp (low->high). Dark surface: anchor flips, low recedes toward panel, high reads bright. */
-    --seq0:#22303e; --seq1:#255184; --seq2:#2f78c2; --seq3:#4b9fff; --seq4:#84c4ff; --seq5:#c2e2ff;
-    --seq-nodata:#232b34;
+    --bg:#111827; --panel:#111827; --panel-2:color-mix(in srgb,#f8fafc 7%,#111827); --panel-3:color-mix(in srgb,#f8fafc 12%,#111827);
+    --line:rgba(248,250,252,.16); --line-strong:rgba(248,250,252,.30);
+    --text:#f8fafc; --muted:#94a3b8; --faint:#94a3b8;
+    --accent:#5d82e3; --accent-2:#7a3e9d; --accent-ink:#111827;
+    --accent-soft:rgba(93,130,227,.18); --accent-line:rgba(93,130,227,.55);
+    --good:#4c9b75; --warn:#fff4d6; --bad:#d66b7d;
+    --shadow:0 0 0 0 transparent; --shadow-sm:0 0 0 0 transparent;
+    --bevel:0 0 0 0 transparent; --elev-1:0 0 0 0 transparent; --elev-2:0 0 0 0 transparent;
+    --ease:ease;
+    --panel-grad:var(--panel); --panel2-grad:var(--panel-2); --glass:var(--bg); --hero-wash:none;
+    --radius:12px; --radius-sm:8px; --radius-lg:12px;
+    --display:"Instrument Sans","Inter",Arial,sans-serif;
+    --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    /* Sequential cobalt (approved ramp); on the dark field the low end recedes toward Deep Slate. */
+    --seq0:color-mix(in srgb,#173e9e 40%,#111827); --seq1:#173e9e; --seq2:#2457d6; --seq3:#5d82e3; --seq4:#94adee; --seq5:#c9d6f7;
+    --seq-nodata:color-mix(in srgb,#f8fafc 7%,#111827);
   }
   :root[data-theme="light"]{
-    --bg:#fafafa; --panel:#ffffff; --panel-2:#f4f4f5; --panel-3:#ededf0;
-    --line:#e6e6e9; --line-strong:#d4d4d8;
-    --text:#18181b; --muted:#63636d; --faint:#9a9aa4;
-    --accent:#2563eb; --accent-2:#7c5cff; --accent-ink:#ffffff;
-    --accent-soft:rgba(37,99,235,.09); --accent-line:rgba(37,99,235,.30);
-    --good:#16a34a; --warn:#b9791f; --bad:#dc2626;
-    --shadow:0 1px 2px rgba(24,24,27,.05), 0 12px 28px -16px rgba(24,24,27,.18);
-    --shadow-sm:0 1px 2px rgba(24,24,27,.06);
-    --bevel:inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(24,24,27,.05);
-    --elev-1:0 1px 2px rgba(24,24,27,.07), 0 1px 3px rgba(24,24,27,.06);
-    --elev-2:0 10px 24px -8px rgba(24,24,27,.15), 0 3px 8px -3px rgba(24,24,27,.10);
-    --panel-grad:linear-gradient(180deg,#ffffff,#fbfbfc 100%);
-    --panel2-grad:linear-gradient(180deg,#f7f7f9,var(--panel-2));
-    --glass:color-mix(in srgb,#ffffff 72%,transparent);
-    /* Light surface: low recedes toward white, high deepens to saturated blue. */
-    --seq0:#e8f1fc; --seq1:#bcd6f7; --seq2:#88b8ef; --seq3:#5093e4; --seq4:#2a78d6; --seq5:#15559f;
-    --seq-nodata:#e7ebf0;
+    --bg:#f8fafc; --panel:#f8fafc; --panel-2:#eef1f5; --panel-3:#e5e7eb;
+    --line:rgba(17,24,39,.12); --line-strong:rgba(17,24,39,.26);
+    --text:#111827; --muted:#42526e; --faint:#667085;
+    --accent:#2457d6; --accent-2:#7a3e9d; --accent-ink:#f8fafc;
+    --accent-soft:#eaf0fd; --accent-line:rgba(36,87,214,.40);
+    --good:#0b6b50; --warn:#8a5a00; --bad:#b4233c;
+    --hero-wash:linear-gradient(180deg,rgba(36,87,214,.12) 0%,rgba(248,250,252,0) 100%);
+    --seq0:#e8eefc; --seq1:#c9d6f7; --seq2:#94adee; --seq3:#5d82e3; --seq4:#2457d6; --seq5:#173e9e;
+    --seq-nodata:#f1f3f6;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -379,6 +367,44 @@
     #mobileNote.hide{display:none}
     #mobileNote button{flex:none}
   }
+
+  /* ---------- BIOS brand layer: typography, flat surfaces, no ornament ---------- */
+  body{background:var(--bg);font:18px/1.6 var(--font);font-synthesis:none}
+  h1,h2,h3,h4,.exhero .lead2,.exone,.exstat .v,.stat .v,.otile .ov{font-family:var(--display)}
+  h1,h2,h3,h4{font-weight:700;line-height:1.15;letter-spacing:-.02em}
+  .vhead h2{font-size:clamp(26px,3vw,34px);font-weight:700}
+  .vhead .lead{font-size:clamp(16px,1.5vw,18px);line-height:1.6;max-width:68ch}
+  .panel h3{font-size:19px;font-weight:700}
+  .panel .note,.excard p,.brief .bc p,.wn{font-size:16px;line-height:1.55}
+  .excard h4{font-size:17px} table{font-size:15px} nav a{font-size:15px} .lever .ld{font-size:14px}
+  .exstat .v,.stat .v,.otile .ov{font-weight:700}
+  a{text-decoration-thickness:.08em;text-underline-offset:.16em}
+  main{max-width:1240px}
+  #side{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .brand{flex-direction:column;align-items:flex-start;gap:2px;font-family:var(--display);font-weight:600;font-size:15px}
+  .brand:before{display:none}
+  .pdot{stroke:var(--bg);stroke-width:.5}
+  .bioslogo{display:block;width:208px;min-width:120px;height:auto;object-fit:contain}
+  .bioslogo.lg-light{display:none} :root[data-theme="light"] .bioslogo.lg-light{display:block} :root[data-theme="light"] .bioslogo.lg-dark{display:none}
+  #login .bioslogo{width:200px;margin:0 auto 4px}
+  nav a.active{background:var(--accent-soft);color:var(--accent);box-shadow:none}
+  .btn{background:var(--accent);box-shadow:none;font-family:var(--font)}
+  .btn:hover{transform:none;filter:none;box-shadow:none;background:color-mix(in srgb,var(--accent) 86%,var(--text))}
+  .btn:active{transform:none;filter:none;box-shadow:none}
+  .btn.ghost,.iconbtn,.resetbtn,.toggle{background:var(--panel);box-shadow:none}
+  .btn.ghost:hover,.iconbtn:hover,.resetbtn:hover{background:var(--panel-2);transform:none;box-shadow:none}
+  .btn.ghost:active,.iconbtn:active{transform:none;box-shadow:none;background:var(--panel-3)}
+  .mapctl button{background:var(--panel);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .mapctl button:hover,.mapctl button:active{transform:none;box-shadow:none;background:var(--panel-2)}
+  .stat:hover,.otile:hover,.exstat:hover,.excard:hover,.mcard:hover,.lift:hover,.lchip:hover{transform:none;box-shadow:none}
+  .exhero{background:var(--hero-wash),var(--panel)} .exhero:before{display:none}
+  .maplegend,#mobileNote{background:var(--panel);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+  .maptip{background:var(--panel);box-shadow:0 2px 8px rgba(17,24,39,.14)}
+  .dot{box-shadow:none}
+  .tlstep.fut:before{background:none;height:0;border-top:2px dashed var(--accent-line)}
+  /* Direction is not sentiment: scenario deltas show a signed value and arrow, never a good/bad color. */
+  .od.up,.od.down,.od.flat{color:var(--text)} .od.up:before{content:"\25B2\00a0";font-size:.8em} .od.down:before{content:"\25BC\00a0";font-size:.8em}
+  @media(max-width:767px){body{font-size:17px;line-height:1.55}}
   /* Respect users who prefer less motion — keep the color/depth, drop the movement. */
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
@@ -395,7 +421,8 @@
 
 <div id="login" class="hidden">
   <form class="card" id="loginForm" autocomplete="on">
-    <h1>TS Commercial Intelligence</h1>
+    <img class="bioslogo lg-light" src="assets/bios-logo-primary.svg" alt="BIOS" width="176" height="114"><img class="bioslogo lg-dark" src="assets/bios-logo-reverse-transparent.svg" alt="BIOS" width="176" height="114">
+    <h1>TS commercial intelligence</h1>
     <p class="sub">Private access. Sign in to continue.</p>
     <label for="u">Username</label>
     <input id="u" name="username" autocomplete="username" autofocus>
@@ -408,7 +435,7 @@
 
 <div id="app" class="hidden">
   <aside id="side">
-    <div class="brand"><span>TS&nbsp;Commercial&nbsp;Intelligence<small id="brandSub">ecopipam / Teva · launch scenario planning</small></span></div>
+    <div class="brand"><img class="bioslogo lg-light" src="assets/bios-logo-primary.svg" alt="BIOS" width="176" height="114"><img class="bioslogo lg-dark" src="assets/bios-logo-reverse-transparent.svg" alt="BIOS" width="176" height="114"><span>TS&nbsp;commercial&nbsp;intelligence<small id="brandSub">ecopipam / Teva · launch scenario planning</small></span></div>
     <nav id="nav"></nav>
     <div class="side-foot">
       <div class="userchip"><span class="dot"></span><span id="who">—</span></div>
@@ -495,14 +522,14 @@ document.getElementById('logoutBtn').addEventListener('click', async ()=>{
 
 /* ---- theme ---- */
 function initTheme(){
-  const saved = localStorage.getItem('tsci_theme') || 'dark';
+  const saved = localStorage.getItem('tsci_theme2') || 'light';
   document.documentElement.setAttribute('data-theme', saved);
 }
 document.getElementById('themeBtn').addEventListener('click', ()=>{
   const cur = document.documentElement.getAttribute('data-theme');
   const nxt = cur==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme', nxt);
-  localStorage.setItem('tsci_theme', nxt);
+  localStorage.setItem('tsci_theme2', nxt);
 });
 (function(){ const n=document.getElementById('mobileNote'); if(!n) return;
   if(localStorage.getItem('tsci_mobilenote')==='dismissed') n.classList.add('hide');
@@ -583,7 +610,7 @@ function disc(){ return '<div class="disc">'+esc(S.config.disclaimer)+'</div>'; 
 /* ---- views ---- */
 async function renderLandscape(main){
   const d = await getData('epidemiology');
-  let h = '<div class="vhead"><h2>Market Landscape</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  let h = '<div class="vhead"><h2>Market landscape</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   h += '<div class="grid stats">'+d.stats.map(s=>'<div class="stat"><div class="v">'+esc(s.value)+'</div><div class="l">'+esc(s.label)+' '+cite(s.source)+'</div></div>').join('')+'</div>';
   h += '<div class="panel"><h3>'+esc(d.funnel.title)+'</h3><p class="note">'+esc(d.funnel.note)+'</p>'+funnelSVG(d.funnel.stages)
      + '<div class="cite" style="margin-top:10px">Stages: '+d.funnel.stages.map(s=>esc(s.label)+' '+cite(s.source)).join(' · ')+'</div></div>';
@@ -595,7 +622,7 @@ async function renderLandscape(main){
 }
 async function renderJourney(main){
   const d = await getData('patient_journey');
-  let h = '<div class="vhead"><h2>Patient Journey</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  let h = '<div class="vhead"><h2>Patient journey</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   h += '<div class="panel"><h3>Diagnosis → specialist → treatment</h3><div class="ladder">';
   d.stages.forEach(s=>{
     h += '<div class="rung"><div class="bar">Step '+s.step+'</div><div class="body"><b>'+esc(s.title)+'</b> <span class="for">· '+esc(s.who)+'</span><div class="rn">'+esc(s.detail)+' '+cite(s.source)+'</div></div></div>';
@@ -610,7 +637,7 @@ async function renderJourney(main){
 }
 async function renderTreatment(main){
   const d = await getData('treatment_landscape');
-  let h = '<div class="vhead"><h2>Treatment Algorithm</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  let h = '<div class="vhead"><h2>Treatment algorithm</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   h += '<div class="panel"><h3>'+esc(d.algorithm.title)+' '+cite(d.algorithm.source)+'</h3><div class="ladder">';
   d.algorithm.rungs.forEach(r=>{
     h += '<div class="rung"><div class="bar">Tier '+r.tier+'</div><div class="body"><b>'+esc(r.label)+'</b> <span class="for">· '+esc(r.for)+'</span><div class="rn">'+esc(r.note)+(r.source?' '+cite(r.source):'')+'</div></div></div>';
@@ -641,7 +668,7 @@ function cbars(items){
     +'<div style="background:var(--panel-2);border-radius:6px;overflow:hidden;height:14px"><div style="width:'+Math.round(i.value/max*100)+'%;height:100%;background:var(--accent)"></div></div>'
     +'<div style="font-size:13px;font-weight:600;text-align:right">'+i.value+'</div></div>').join('')+'</div>';
 }
-const TYPE_COLORS={'Physician':'#4b9fff','Psychologist':'#7c5cff','Clinic/Center':'#39c07a','Occupational therapist':'#26c6da','Social worker':'#e6a23c','Counselor':'#e35d6a','BCBA':'#ffca28','Other':'#9aa7b6'};
+const TYPE_COLORS={'Physician':'#2457D6','Clinic/Center':'#0B6B50','Psychologist':'#7A3E9D','Social worker':'#9A4D00','Occupational therapist':'#006B75','Counselor':'#B4233C','Other':'#42526E','BCBA':'#6B5E00'};
 const ST_REGION={CT:'Northeast',ME:'Northeast',MA:'Northeast',NH:'Northeast',RI:'Northeast',VT:'Northeast',NJ:'Northeast',NY:'Northeast',PA:'Northeast',IL:'Midwest',IN:'Midwest',MI:'Midwest',OH:'Midwest',WI:'Midwest',IA:'Midwest',KS:'Midwest',MN:'Midwest',MO:'Midwest',NE:'Midwest',ND:'Midwest',SD:'Midwest',DE:'South',FL:'South',GA:'South',MD:'South',NC:'South',SC:'South',VA:'South',DC:'South',WV:'South',AL:'South',KY:'South',MS:'South',TN:'South',AR:'South',LA:'South',OK:'South',TX:'South',AZ:'West',CO:'West',ID:'West',MT:'West',NV:'West',NM:'West',UT:'West',WY:'West',AK:'West',CA:'West',HI:'West',OR:'West',WA:'West'};
 async function renderChannel(main){
   const d = await getData('channel_sites');
@@ -657,7 +684,7 @@ async function renderChannel(main){
     {k:'ppp',label:'Est. patients per provider (access gap)',note:'higher = more underserved',fmt:v=>v!=null?v.toLocaleString():'—'}
   ];
   let metricIdx=0, filterState='', scaleMode='quantile', sortKey='name', sortDir=1;
-  let h = '<div class="vhead"><h2>Channel & Sites</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  let h = '<div class="vhead"><h2>Channel &amp; sites</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   h += '<div class="panel"><h3>Channel model</h3><p class="note">'+esc(d.channel_model.note)+'</p>'
      + '<table><thead><tr><th>Prescriber</th><th>NPI taxonomy</th><th>Role</th></tr></thead><tbody>'
      + d.channel_model.prescriber_taxonomies.map(t=>'<tr><td><b>'+esc(t.label)+'</b></td><td><code>'+esc(t.npi_taxonomy)+'</code></td><td>'+esc(t.role)+'</td></tr>').join('')
@@ -665,11 +692,11 @@ async function renderChannel(main){
   const VB=geo.viewBox.split(' ').map(Number);
   let svg='<svg id="usmap" viewBox="'+geo.viewBox+'">';
   svg+='<g id="gStates">'+geo.states.map(s=>'<path class="st" data-code="'+s.code+'" d="'+s.path+'" fill="var(--seq0)" fill-opacity="1"></path>').join('')+'</g>';
-  svg+='<g id="gProv">'+provs.map((p,i)=>'<circle class="pdot" data-pi="'+i+'" cx="'+p.x+'" cy="'+p.y+'" r="2.3" fill="'+(TYPE_COLORS[p.ptype]||'#9aa7b6')+'" fill-opacity=".78"/>').join('')+'</g>';
+  svg+='<g id="gProv">'+provs.map((p,i)=>'<circle class="pdot" data-pi="'+i+'" cx="'+p.x+'" cy="'+p.y+'" r="2.3" fill="'+(TYPE_COLORS[p.ptype]||'#42526E')+'" fill-opacity=".78"/>').join('')+'</g>';
   svg+='<g id="gCoe">'+geo.coes.map((c,i)=>'<g class="coeMk" data-ci="'+i+'"><circle cx="'+c.x+'" cy="'+c.y+'" r="4.6" fill="var(--warn)" stroke="#fff" stroke-width="1"/></g>').join('')+'</g>';
   svg+='<g id="gMetro" style="display:none">'+(geo.metros||[]).map((m,i)=>'<circle class="metroMk" data-mi="'+i+'" cx="'+m.x+'" cy="'+m.y+'" r="'+(3+Math.sqrt(m.providers)*1.3).toFixed(1)+'" fill="var(--accent)" fill-opacity=".1" stroke="var(--accent)" stroke-width="1.4"/>').join('')+'</g>';
   svg+='</svg>';
-  const typeLegend=geo.type_counts.map(t=>'<span class="lgd tgl" data-type="'+esc(t.type)+'" title="Filter to '+esc(t.type)+'"><span style="width:10px;height:10px;border-radius:50%;background:'+(TYPE_COLORS[t.type]||'#9aa7b6')+';display:inline-block"></span>'+esc(t.type)+'</span>').join('');
+  const typeLegend=geo.type_counts.map(t=>'<span class="lgd tgl" data-type="'+esc(t.type)+'" title="Filter to '+esc(t.type)+'"><span style="width:10px;height:10px;border-radius:50%;background:'+(TYPE_COLORS[t.type]||'#42526E')+';display:inline-block"></span>'+esc(t.type)+'</span>').join('');
   h += '<div class="panel"><h3>Provider &amp; market map '+cite(dir.source)+'</h3>'
      + '<p class="note">Shade the states by any metric, color providers by type, and click a state or point to dive into the detail. Scroll or drag to zoom.</p>'
      + '<div class="grid stats" style="margin-bottom:8px">'
@@ -869,7 +896,7 @@ async function renderChannel(main){
   function showPoint(type,rec){
     const el=document.getElementById('mapDetail');
     if(type==='provider'){
-      const rows='<tr><td style="width:110px;color:var(--muted)">Type</td><td><span class="fate" style="background:'+(TYPE_COLORS[rec.ptype]||'#9aa7b6')+'">'+esc(rec.ptype)+'</span></td></tr>'
+      const rows='<tr><td style="width:110px;color:var(--muted)">Type</td><td><span class="fate" style="background:'+(TYPE_COLORS[rec.ptype]||'#42526E')+'">'+esc(rec.ptype)+'</span></td></tr>'
         +(rec.org?'<tr><td style="color:var(--muted)">Organization</td><td>'+esc(rec.org)+'</td></tr>':'')
         +'<tr><td style="color:var(--muted)">Location</td><td>'+esc(rec.city)+', '+esc(rec.state)+' ('+esc(rec.region)+')</td></tr>'
         +(rec.email?'<tr><td style="color:var(--muted)">Email</td><td><a href="mailto:'+esc(rec.email)+'">'+esc(rec.email)+'</a></td></tr>':'')
@@ -1143,7 +1170,7 @@ async function renderCompanies(main){
 }
 async function renderPolicy(main){
   const d=await getData('policy');
-  let h='<div class="vhead"><h2>Policy &amp; Advocacy</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  let h='<div class="vhead"><h2>Policy &amp; advocacy</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   if(d.note) h+='<div class="banner">'+esc(d.note)+'</div>';
   [['regulatory','Regulatory &amp; exclusivity'],['school_lane','School-accommodation lane'],['advocacy','Advocacy &amp; channel'],['reimbursement','Reimbursement &amp; access']].forEach(([k,title])=>{
     if(!d[k]) return;
@@ -1191,7 +1218,7 @@ async function renderScenario(main){
     return {ddw,ldw,cbit,spec,coe,branded};
   }
   const BASE=calc(id=>L[id].baseline);
-  let h='<div class="vhead"><h2>Scenario Planner</h2><div class="lead">'+esc(d.headline)+'</div></div>';
+  let h='<div class="vhead"><h2>Scenario planner</h2><div class="lead">'+esc(d.headline)+'</div></div>';
   h+='<div class="scen-layout"><div class="scen-main">';
   h+='<div class="panel"><h3>Levers</h3><p class="note" style="margin-top:0">Defaults open at a launched base case; “Reset to today” returns every lever to its current-state baseline.</p>';
   d.levers.forEach(l=>{
@@ -1243,7 +1270,7 @@ async function renderScenario(main){
 
 async function renderExecutive(main){
   const d=await getData('executive_summary');
-  let h='<div class="vhead"><h2>Executive Summary</h2><div class="lead">The one-screen read for a JPM-hallway conversation — the market, the gap, and the opportunity, in a few sentences and a few numbers.</div></div>';
+  let h='<div class="vhead"><h2>Executive summary</h2><div class="lead">The one-screen read for a JPM-hallway conversation — the market, the gap, and the opportunity, in a few sentences and a few numbers.</div></div>';
   h+='<div class="exhero"><div class="lead2">'+esc(d.positioning)+'</div></div>';
   if(d.timeline && d.timeline.length){
     const fut=d.timeline.find(t=>t.future), days=fut?Math.ceil((new Date(2027,2,31)-new Date())/864e5):null;

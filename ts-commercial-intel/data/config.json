@@ -14,22 +14,22 @@
   "views": [
     {
       "id": "executive",
-      "label": "Executive Summary",
+      "label": "Executive summary",
       "status": "live"
     },
     {
       "id": "landscape",
-      "label": "Market Landscape",
+      "label": "Market landscape",
       "status": "live"
     },
     {
       "id": "journey",
-      "label": "Patient Journey",
+      "label": "Patient journey",
       "status": "live"
     },
     {
       "id": "treatment",
-      "label": "Treatment Algorithm",
+      "label": "Treatment algorithm",
       "status": "live"
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "id": "channel",
-      "label": "Channel & Sites",
+      "label": "Channel & sites",
       "status": "live"
     },
     {
@@ -49,12 +49,12 @@
     },
     {
       "id": "scenario",
-      "label": "Scenario Planner",
+      "label": "Scenario planner",
       "status": "live"
     },
     {
       "id": "policy",
-      "label": "Policy & Advocacy",
+      "label": "Policy & advocacy",
       "status": "live"
     },
     {

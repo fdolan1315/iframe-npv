@@ -59,6 +59,14 @@ def main():
     html = html.replace("<title>TS Commercial Intelligence</title>",
                         "<title>TS Commercial Intelligence — Local Preview</title>")
 
+    import base64
+    for rel, mime in (("assets/bios-logo-primary.svg", "image/svg+xml"),
+                      ("assets/bios-logo-reverse-transparent.svg", "image/svg+xml"),
+                      ("assets/fonts/inter-latin-wght-normal.woff2", "font/woff2"),
+                      ("assets/fonts/instrument-sans-latin-wght-normal.woff2", "font/woff2")):
+        with open(os.path.join(APP_DIR, rel), "rb") as f:
+            html = html.replace(rel, "data:%s;base64,%s" % (mime, base64.b64encode(f.read()).decode("ascii")))
+
     blob = "<script>window.EMBED=" + json.dumps(payload) + ";</script>"
     marker = '<script nonce="__CSP_NONCE__">'
     if marker in html:
