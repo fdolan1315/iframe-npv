@@ -33,6 +33,11 @@
       "status": "live"
     },
     {
+      "id": "current",
+      "label": "Current treatment",
+      "status": "live"
+    },
+    {
       "id": "pipeline",
       "label": "Pipeline",
       "status": "live"

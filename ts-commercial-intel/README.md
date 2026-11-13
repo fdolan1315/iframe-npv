@@ -43,3 +43,16 @@ gradients in data; the approved sequential-cobalt and categorical chart
 palettes. The logo files in `assets/` are the supplied artwork, unmodified — the
 primary mark on Clear White and the reverse mark on exact Deep Slate. BIOS
 Electric (`#0021FE`) appears only inside that artwork.
+
+## Public data sources
+
+The Current treatment view, the open-studies table in Pipeline, and four map layers are built
+from public APIs (openFDA, ClinicalTrials.gov, PubMed, Medicaid State Drug Utilization Data,
+NPI Registry, SEC EDGAR). To refresh:
+
+    python3 data_raw/fetch_public_data.py   # needs network access to those hosts, ~15 min
+    python3 build_public_data.py            # writes data/public_data.json, updates data/geo_map.json
+
+`data_raw/MANIFEST.md` documents coverage and limits for each source. No spending or
+reimbursement columns are fetched or stored. None of these sources is specific to Tourette
+syndrome; see the "How to read this" panel in the view.

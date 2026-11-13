@@ -406,6 +406,22 @@
   .od.up,.od.down,.od.flat{color:var(--text)} .od.up:before{content:"\25B2\00a0";font-size:.8em} .od.down:before{content:"\25BC\00a0";font-size:.8em}
   @media(max-width:767px){body{font-size:17px;line-height:1.55}}
   /* Respect users who prefer less motion — keep the color/depth, drop the movement. */
+  /* current-treatment view */
+  .hbars{display:grid;gap:6px}
+  .hb{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 62px;gap:10px;align-items:center;font-size:13px}
+  .hbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hbt{background:var(--panel-2);border-radius:4px;height:12px;overflow:hidden}
+  .hbf{height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+  .hbv{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+  #clsChips,#ageTgl,#trKinds{display:flex;flex-wrap:wrap;gap:6px}
+  #agDetail .twocol>div{min-width:0}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .yn{white-space:nowrap}.yn.n{color:var(--muted)}
+  tr.agrow{cursor:pointer}
+  tr.agrow:hover td{background:var(--panel-2)}
+  tr.agrow.sel td{background:var(--accent-soft)}
+  tr.agrow:focus-visible,th.srt:focus-visible,.lgd.tgl:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  @media(max-width:680px){.hb{grid-template-columns:minmax(0,120px) minmax(0,1fr) 54px}}
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
     .btn:hover,.btn:active,.btn.ghost:hover,.btn.ghost:active,.stat:hover,.otile:hover,.exstat:hover,.excard:hover,.mcard:hover,.lift:hover,.lchip:hover,.mapctl button:hover,.mapctl button:active{transform:none}
@@ -643,7 +659,7 @@ async function renderTreatment(main){
     h += '<div class="rung"><div class="bar">Tier '+r.tier+'</div><div class="body"><b>'+esc(r.label)+'</b> <span class="for">· '+esc(r.for)+'</span><div class="rn">'+esc(r.note)+(r.source?' '+cite(r.source):'')+'</div></div></div>';
   });
   h += '</div><p class="note" style="margin-top:12px"><b>Ecopipam slot:</b> '+esc(d.algorithm.ecopipam_slot)+'</p></div>';
-  h += '<div class="panel"><h3>Competitive field</h3><table><thead><tr><th>Agent</th><th>Class</th><th>TS status</th><th>Key liabilities</th><th>Cost</th><th>Threat</th></tr></thead><tbody>';
+  h += '<div class="panel"><h3>Competitive field</h3><table><thead><tr><th>Agent</th><th>Class</th><th>TS status</th><th>Key liabilities</th><th>Availability</th><th>Threat</th></tr></thead><tbody>';
   d.competitors.forEach(c=>{
     const th = /high/i.test(c.threat)?'high':(/mod/i.test(c.threat)?'med':'low');
     h += '<tr><td><b>'+esc(c.name)+'</b> '+cite(c.source)+'</td><td>'+esc(c.class)+'</td><td>'+esc(c.ts_status)+'</td><td>'+esc(c.liabilities)+'</td><td>'+esc(c.cost)+'</td><td><span class="pill '+th+'">'+esc(c.threat)+'</span></td></tr>';
@@ -660,6 +676,166 @@ async function renderTreatment(main){
   h += '<div class="panel"><h3>'+esc(d.austedo_dynamic.title)+'</h3><p class="note" style="margin:0">'+esc(d.austedo_dynamic.note)+' '+cite(d.austedo_dynamic.source)+'</p></div>';
   h += disc();
   main.innerHTML = h;
+}
+/* ---- Current treatment (public-record view of agents in use today) ---- */
+function hbars(items, unit){
+  const max=Math.max.apply(null, items.map(i=>i.n).concat([1]));
+  return '<div class="hbars">'+items.map(i=>'<div class="hb"><div class="hbl" title="'+esc(i.term)+'">'+esc(i.term)+'</div>'
+    +'<div class="hbt"><div class="hbf" style="width:'+Math.max(1,Math.round(i.n/max*100))+'%"></div></div>'
+    +'<div class="hbv">'+Number(i.n).toLocaleString()+'</div></div>').join('')+'</div>'
+    +(unit?'<div class="cite" style="margin-top:6px">'+esc(unit)+'</div>':'');
+}
+function yn(v, yes, no){ return v==null?'—':(v?'<span class="yn y">● '+esc(yes||'Yes')+'</span>':'<span class="yn n">○ '+esc(no||'No')+'</span>'); }
+async function renderCurrent(main){
+  const cur = await getData('current_treatment');
+  const pd = await getData('public_data');
+  const CONF_RANK={'Moderate':2,'Low':1,'Not rated':0};
+  const rows = cur.agents.map(a=>{
+    const p = pd.agents[a.generic]||{}, l=p.label||{};
+    return {a:a, p:p, generic:a.generic, cls:a.class, onlabel:l.tourette_indication?1:0, conf:CONF_RANK[a.aan_confidence]||0,
+      boxed:l.boxed_warning?1:0, makers:p.approved_sponsors, supply:(p.supply||{}).records||0,
+      papers:(p.pubmed||{}).total||0, reports:((p.faers||{}).under_18||{}).total||0,
+      rx:(p.medicaid&&p.medicaid.latest_full_year)?p.medicaid.by_year.filter(y=>y.year===p.medicaid.latest_full_year)[0].rx:null};
+  });
+  const hasRx = !!pd.has_medicaid && rows.some(r=>r.rx!=null);
+  const CLASSES=['All'].concat(Array.from(new Set(rows.map(r=>r.cls))));
+  let cls='All', sortKey='conf', sortDir=-1, sel=rows[0].generic, ageKey='under_18';
+  const nLabel=rows.filter(r=>r.onlabel).length, nBoxed=rows.filter(r=>r.boxed).length, nSupply=rows.filter(r=>r.supply>0).length;
+  const f=pd.fetched||{};
+  let h='<div class="vhead"><h2>Current treatment</h2><div class="lead">Tourette syndrome is treated today, mostly with older generic medicines used off-label. This view shows what the public record says about each agent in use.</div></div>';
+  h+='<div class="grid stats">'
+    +'<div class="stat"><div class="v">'+nLabel+' of '+rows.length+'</div><div class="l">agents carry a Tourette indication on the FDA label '+cite('openfda')+'</div></div>'
+    +'<div class="stat"><div class="v">'+nBoxed+' of '+rows.length+'</div><div class="l">carry a boxed warning on the label reviewed '+cite('openfda')+'</div></div>'
+    +'<div class="stat"><div class="v">'+nSupply+'</div><div class="l">agents with FDA supply or discontinuation notices '+cite('openfda')+'</div></div>'
+    +'<div class="stat"><div class="v">'+(pd.trials?pd.trials.open_count:'—')+'</div><div class="l">registered studies open now <a href="#/pipeline">see pipeline</a> '+cite('ctgov')+'</div></div>'
+    +'</div>';
+  h+='<div class="panel"><h3>Agents in use</h3>'
+    +'<p class="note">Select a row for detail. Evidence is the 2019 AAN systematic review\'s confidence that the agent reduces tics more than placebo '+cite(cur.evidence_source)+'. '+esc(cur.confidence_note)+'</p>'
+    +'<div class="legend" id="clsChips" style="margin-bottom:12px"></div>'
+    +'<table id="agTable"><thead><tr>'
+    +[['generic','Agent'],['cls','Class'],['onlabel','On label'],['conf','Evidence'],['boxed','Boxed warning'],['makers','Makers'],['supply','Supply'],['papers','Papers']]
+      .concat(hasRx?[['rx','Medicaid Rx']]:[])
+      .map(c=>'<th class="srt" data-k="'+c[0]+'" tabindex="0" role="button">'+c[1]+'<span class="car"></span></th>').join('')
+    +'</tr></thead><tbody></tbody></table></div>';
+  h+='<div class="panel" id="agDetail"></div>';
+  h+='<div class="panel"><h3>Research output on Tourette syndrome '+cite('pubmed')+'</h3><p class="note">PubMed records indexed to Tourette syndrome, by publication year. '+(new Date().getFullYear())+' is a partial year and recent years are undercounted while indexing catches up.</p><div id="pubChart"></div></div>';
+  h+='<div class="panel"><h3>How to read this</h3><ul class="note" style="margin:0;padding-left:18px">'
+    +'<li>None of these sources is specific to Tourette syndrome. Most of these medicines are used far more for other conditions, so volumes describe the medicine, not the treated Tourette population.</li>'
+    +'<li>"On label" checks whether Tourette syndrome is named in the indications of one representative current label per agent; other formulations can differ.</li>'
+    +'<li>"Makers" counts sponsors with a non-discontinued FDA application. It is a proxy for generic availability, not products on the shelf.</li>'
+    +'<li>"Supply" counts records in FDA\'s shortage and discontinuation database; "Papers" counts PubMed records on Tourette syndrome that mention the agent.</li><li>"Medicaid Rx" is prescriptions paid by state Medicaid programs in the latest full year '+cite('medicaid_sdud')+'. It covers Medicaid only and every use of the medicine, and it is a count of prescriptions, not patients.</li><li>Adverse event counts are spontaneous reports to FDA. They are not rates, do not show the medicine caused the event, and cannot be used to compare safety between medicines.</li>'
+    +'</ul><div class="cite" style="margin-top:10px">Pulled '+esc(fmtDate((f.labels||'').slice(0,10)))+' · adverse event data through '+esc(fmtDate(f.faers_data_through||''))+'</div></div>';
+  h+=disc();
+  main.innerHTML=h;
+
+  function drawChips(){
+    document.getElementById('clsChips').innerHTML=CLASSES.map(c=>'<span class="lgd tgl'+(c===cls?' on':'')+'" data-c="'+esc(c)+'" tabindex="0" role="button">'+esc(c)+'</span>').join('');
+    document.querySelectorAll('#clsChips .tgl').forEach(el=>{ const go=()=>{cls=el.getAttribute('data-c'); drawChips(); drawTable();};
+      el.onclick=go; el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  function drawTable(){
+    const list=rows.filter(r=>cls==='All'||r.cls===cls).sort((x,y)=>{
+      const a=x[sortKey], b=y[sortKey];
+      if(a==null&&b==null) return 0; if(a==null) return 1; if(b==null) return -1;
+      return (typeof a==='string'? a.localeCompare(b) : a-b)*sortDir || x.generic.localeCompare(y.generic);
+    });
+    if(!list.some(r=>r.generic===sel) && list.length) sel=list[0].generic;
+    document.querySelector('#agTable tbody').innerHTML=list.map(r=>{
+      const l=r.p.label||{};
+      return '<tr class="agrow'+(r.generic===sel?' sel':'')+'" data-g="'+esc(r.generic)+'" tabindex="0">'
+        +'<td><b>'+esc(r.generic.charAt(0).toUpperCase()+r.generic.slice(1))+'</b>'+(r.a.brands.length?' <span class="cite">'+esc(r.a.brands.join(', '))+'</span>':'')+'</td>'
+        +'<td>'+esc(r.cls)+'</td>'
+        +'<td>'+yn(l.tourette_indication,'Yes','No')+'</td>'
+        +'<td>'+esc(r.a.aan_confidence)+'</td>'
+        +'<td>'+yn(l.boxed_warning,'Yes','No')+'</td>'
+        +'<td class="num">'+(r.makers!=null?r.makers:'—')+'</td>'
+        +'<td class="num">'+(r.supply||'None')+'</td>'
+        +'<td class="num">'+r.papers.toLocaleString()+'</td>'
+        +(hasRx?'<td class="num">'+(r.rx!=null?r.rx.toLocaleString():'—')+'</td>':'')
+        +'</tr>';
+    }).join('');
+    document.querySelectorAll('#agTable th.srt').forEach(th=>{ const k=th.getAttribute('data-k'); const on=k===sortKey;
+      th.classList.toggle('act',on); th.setAttribute('aria-sort', on?(sortDir>0?'ascending':'descending'):'none');
+      th.querySelector('.car').textContent=on?(sortDir>0?'▲':'▼'):'↕'; });
+    document.querySelectorAll('#agTable .agrow').forEach(tr=>{ const go=()=>{sel=tr.getAttribute('data-g'); drawTable();};
+      tr.onclick=go; tr.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+    drawDetail();
+  }
+  function drawDetail(){
+    const r=rows.filter(x=>x.generic===sel)[0], el=document.getElementById('agDetail');
+    if(!r){ el.innerHTML=''; return; }
+    const p=r.p, l=p.label||{}, fa=p.faers||{}, pm=p.pubmed||{}, sup=p.supply||{items:[]};
+    const name=r.generic.charAt(0).toUpperCase()+r.generic.slice(1);
+    const kv=(k,v)=>'<tr><td style="width:150px;color:var(--muted)">'+k+'</td><td>'+v+'</td></tr>';
+    let left='<table><tbody>'
+      +kv('Class',esc(r.cls))+kv('Mechanism',esc(r.a.mechanism))+kv('Role today',esc(r.a.role))
+      +kv('Evidence',esc(r.a.aan_confidence)+' confidence '+cite(cur.evidence_source))
+      +kv('Label reviewed', l.product? esc(l.product)+(l.is_reference_brand?'':' (generic label; brand label not in openFDA)')+(l.effective?', effective '+esc(fmtDate(l.effective)):'')
+          +(l.set_id&&/^[0-9a-f-]{36}$/.test(l.set_id)?' · <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid='+l.set_id+'" target="_blank" rel="noopener">full label</a>':'') : '—')
+      +kv('Tourette indication', l.tourette_indication?'Named in the label\'s indications':'Not named in the label\'s indications (use is off-label)')
+      +kv('Boxed warning', l.boxed_warning? esc(l.boxed_warning_text||'Yes') : 'None on the label reviewed')
+      +kv('Approved makers', p.approved_sponsors!=null? p.approved_sponsors+' sponsors across '+p.approved_applications+' applications':'—')
+      +'</tbody></table>';
+    left+='<h4 style="margin:16px 0 6px">Supply notices</h4>'+(sup.items&&sup.items.length?
+      '<table><thead><tr><th>Presentation</th><th>Status</th><th>Company</th><th>Updated</th></tr></thead><tbody>'+sup.items.map(s=>'<tr><td>'+esc(s.presentation)+'</td><td>'+esc(s.status)+'</td><td>'+esc(s.company)+'</td><td>'+esc(s.updated)+'</td></tr>').join('')+'</tbody></table>'
+      :'<p class="note" style="margin:0">No records in FDA\'s shortage database on the pull date. That is not a statement that supply is unconstrained.</p>');
+    const blk=fa[ageKey];
+    let right='<h4 style="margin:0 0 6px">Most-reported reactions</h4>'
+      +'<div class="legend" id="ageTgl" style="margin-bottom:10px">'
+      +[['under_18','Under 18'],['all_ages','All ages']].map(o=>'<span class="lgd tgl'+(o[0]===ageKey?' on':'')+'" data-a="'+o[0]+'" tabindex="0" role="button">'+o[1]+(fa[o[0]]?' · '+fa[o[0]].total.toLocaleString()+' reports':'')+'</span>').join('')+'</div>'
+      +(blk&&blk.top.length? hbars(blk.top,'Reports listing the agent in any role. A report can list several reactions. Not a rate.') : '<p class="note">No reports returned for this group.</p>');
+    right+='<h4 style="margin:18px 0 6px">Evidence base</h4><p class="note" style="margin:0 0 8px">'+(pm.total||0).toLocaleString()+' Tourette papers mention this agent, including '+(pm.rct||0)+' tagged as randomized trials and '+(pm.reviews||0)+' as meta-analyses or systematic reviews.</p>'
+      +((pm.recent||[]).length?'<ul class="note" style="margin:0;padding-left:18px">'+pm.recent.filter(x=>/^\d+$/.test(String(x.pmid))).map(x=>'<li><a href="https://pubmed.ncbi.nlm.nih.gov/'+x.pmid+'/" target="_blank" rel="noopener">'+esc(x.title)+'</a> <span class="cite">'+esc(x.journal)+', '+esc(x.year)+'</span></li>').join('')+'</ul>':'');
+    if(p.medicaid && p.medicaid.by_year.length){
+      right+='<h4 style="margin:18px 0 6px">Medicaid prescriptions, all uses</h4>'+hbars(p.medicaid.by_year.map(y=>({term:y.year+(y.complete?'':' (partial)'),n:y.rx})),'State Medicaid programs, every use of the medicine, all formulations pooled.'+(p.medicaid.suppressed_share!=null?' CMS hides product-level rows under 11 prescriptions; '+Math.round(p.medicaid.suppressed_share*100)+'% of rows were hidden in '+p.medicaid.latest_full_year+', so true volume is higher.':''))
+        +(function(){const st=Object.entries(p.medicaid.by_state).sort((x,y)=>y[1]-x[1]).slice(0,5); return st.length?'<div class="cite" style="margin-top:6px">Largest states in '+p.medicaid.latest_full_year+': '+st.map(x=>esc(x[0])+' '+x[1].toLocaleString()).join(' · ')+'</div>':'';})();
+    }
+    el.innerHTML='<h3>'+esc(name)+(r.a.brands.length?' <span class="cite">'+esc(r.a.brands.join(', '))+'</span>':'')+'</h3><div class="twocol"><div>'+left+'</div><div>'+right+'</div></div>';
+    el.querySelectorAll('#ageTgl .tgl').forEach(t=>{ const go=()=>{ageKey=t.getAttribute('data-a'); drawDetail();};
+      t.onclick=go; t.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  document.querySelectorAll('#agTable th.srt').forEach(th=>{ const go=()=>{const k=th.getAttribute('data-k'); if(sortKey===k) sortDir*=-1; else {sortKey=k; sortDir=(k==='generic'||k==='cls')?1:-1;} drawTable();};
+    th.onclick=go; th.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  // publications by year: single series, value on hover and at the ends
+  (function(){
+    const ys=pd.pubmed_by_year||[]; if(!ys.length) return;
+    const W=720,H=180,L=34,B=24,T=14, max=Math.max.apply(null,ys.map(y=>y.n)), bw=(W-L-6)/ys.length;
+    const thisYear=new Date().getFullYear();
+    let s='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;max-width:'+W+'px;height:auto" role="img" aria-label="PubMed records on Tourette syndrome by year">';
+    [0,.5,1].forEach(t=>{const y=T+(H-T-B)*(1-t); s+='<line x1="'+L+'" x2="'+W+'" y1="'+y+'" y2="'+y+'" stroke="var(--line)" stroke-width="1"/><text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="var(--muted)">'+Math.round(max*t)+'</text>';});
+    ys.forEach((y,i)=>{ const bh=(H-T-B)*y.n/max, x=L+i*bw+2, partial=y.year>=thisYear;
+      s+='<rect x="'+x.toFixed(1)+'" y="'+(H-B-bh).toFixed(1)+'" width="'+(bw-4).toFixed(1)+'" height="'+bh.toFixed(1)+'" rx="3" fill="var(--accent)"'+(partial?' fill-opacity=".45"':'')+'><title>'+y.year+(partial?' (partial)':'')+': '+y.n+' records</title></rect>';
+      if(i%2===0||i===ys.length-1) s+='<text x="'+(x+(bw-4)/2).toFixed(1)+'" y="'+(H-7)+'" text-anchor="middle" font-size="11" fill="var(--muted)">'+y.year+'</text>'; });
+    s+='</svg>';
+    document.getElementById('pubChart').innerHTML=s;
+  })();
+  drawChips(); drawTable();
+}
+/* registered open studies, appended to the Pipeline view */
+function openTrialsPanel(pd){
+  const t=pd.trials; if(!t) return '';
+  return '<div class="panel" id="trialsPanel"><h3>Registered studies open now '+cite('ctgov')+'</h3>'
+    +'<p class="note">'+t.open_count+' studies listing Tourette syndrome or a tic disorder are recruiting, about to recruit, or active, out of '+t.total_registered+' ever registered. Sponsor-reported; registry records can lag announcements.</p>'
+    +'<div class="legend" id="trKinds" style="margin-bottom:12px"></div><div id="trTable"></div></div>';
+}
+function wireOpenTrials(pd){
+  const t=pd.trials; if(!t||!document.getElementById('trKinds')) return;
+  const KINDS=[['ALL','All'],['DRUG','Drug'],['BEHAVIORAL','Behavioral'],['DEVICE','Device'],['US','US sites']];
+  const STAT={RECRUITING:'Recruiting',NOT_YET_RECRUITING:'Not yet recruiting',ACTIVE_NOT_RECRUITING:'Active, not recruiting',ENROLLING_BY_INVITATION:'By invitation'};
+  let kind='DRUG';
+  function draw(){
+    const list=t.open.filter(s=>kind==='ALL'||(kind==='US'?s.us_states.length>0:s.kinds.indexOf(kind)>=0));
+    document.getElementById('trKinds').innerHTML=KINDS.map(k=>{const n=t.open.filter(s=>k[0]==='ALL'||(k[0]==='US'?s.us_states.length>0:s.kinds.indexOf(k[0])>=0)).length;
+      return '<span class="lgd tgl'+(k[0]===kind?' on':'')+'" data-k="'+k[0]+'" tabindex="0" role="button">'+k[1]+' · '+n+'</span>';}).join('');
+    document.getElementById('trTable').innerHTML='<table><thead><tr><th>Study</th><th>Sponsor</th><th>Intervention</th><th>Phase</th><th>Status</th><th>US states</th><th>Primary completion</th></tr></thead><tbody>'
+      +list.map(s=>'<tr><td>'+(/^NCT\d{8}$/.test(s.nct)?'<a href="https://clinicaltrials.gov/study/'+s.nct+'" target="_blank" rel="noopener">'+esc(s.title)+'</a>':esc(s.title))+' <span class="cite">'+esc(s.nct)+'</span></td>'
+        +'<td>'+esc(s.sponsor)+'</td><td>'+esc(s.interventions.join(', '))+'</td><td>'+esc(s.phase)+'</td><td>'+esc(STAT[s.status]||s.status)+'</td>'
+        +'<td class="num" title="'+esc(s.us_states.join(', '))+'">'+(s.us_states.length||'—')+'</td><td>'+esc(s.primary_completion||'—')+'</td></tr>').join('')
+      +'</tbody></table>';
+    document.querySelectorAll('#trKinds .tgl').forEach(el=>{ const go=()=>{kind=el.getAttribute('data-k'); draw();};
+      el.onclick=go; el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}}; });
+  }
+  draw();
 }
 function cbars(items){
   const max=Math.max.apply(null, items.map(i=>i.value))||1;
@@ -681,7 +857,11 @@ async function renderChannel(main){
     {k:'child_u18',label:'Children under 18',note:'Census-based child population',fmt:v=>v!=null?v.toLocaleString():'—'},
     {k:'est_pool',label:'Est. diagnosed TS pool',note:'CDC ~174k allocated by child population',fmt:v=>v!=null?v.toLocaleString():'—'},
     {k:'per_100k',label:'Providers per 100k children',note:'higher = better served',fmt:v=>v!=null?v:'—'},
-    {k:'ppp',label:'Est. patients per provider (access gap)',note:'higher = more underserved',fmt:v=>v!=null?v.toLocaleString():'—'}
+    {k:'ppp',label:'Est. patients per provider (access gap)',note:'higher = more underserved',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'open_trials',label:'Open Tourette studies with a site',note:'ClinicalTrials.gov, open studies with a site in the state',fmt:v=>v!=null?v:'—'},
+    {k:'child_neuro',label:'Child neurologists (count)',note:'NPI Registry, self-reported taxonomy',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'neuro_per_100k',label:'Child neurologists per 100k children',note:'higher = better served',fmt:v=>v!=null?v:'—'},
+    {k:'child_psych',label:'Child & adolescent psychiatrists (count)',note:'NPI Registry; CA and NY exceed the registry query cap and show no data',fmt:v=>v!=null?v.toLocaleString():'—'}
   ];
   let metricIdx=0, filterState='', scaleMode='quantile', sortKey='name', sortDir=1;
   let h = '<div class="vhead"><h2>Channel &amp; sites</h2><div class="lead">'+esc(d.headline)+'</div></div>';
@@ -884,7 +1064,10 @@ async function renderChannel(main){
       +'<tr><td style="color:var(--muted)">Children under 18</td><td>'+(s.child_u18!=null?s.child_u18.toLocaleString():'—')+' '+cite('census_pep')+'</td></tr>'
       +'<tr><td style="color:var(--muted)">Est. diagnosed pediatric TS</td><td>'+(s.est_pool!=null?s.est_pool.toLocaleString():'—')+' <span class="cite">(model est. — national count allocated by child pop.)</span> '+cite('cdc_ts_data')+'</td></tr>'
       +'<tr><td style="color:var(--muted)">Providers per 100k children</td><td>'+(s.per_100k!=null?s.per_100k:'—')+'</td></tr>'
-      +'<tr><td style="color:var(--muted)">Est. patients per provider</td><td>'+(s.ppp!=null?s.ppp.toLocaleString():'—')+'</td></tr>';
+      +'<tr><td style="color:var(--muted)">Est. patients per provider</td><td>'+(s.ppp!=null?s.ppp.toLocaleString():'—')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Child neurologists</td><td>'+(s.child_neuro!=null?s.child_neuro.toLocaleString()+(s.neuro_per_100k!=null?' ('+s.neuro_per_100k+' per 100k children)':''):'—')+' '+cite('nppes')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Child &amp; adolescent psychiatrists</td><td>'+(s.child_psych!=null?s.child_psych.toLocaleString():'Not available (exceeds registry query cap)')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Open Tourette studies with a site</td><td>'+(s.open_trials!=null?s.open_trials:'—')+' '+cite('ctgov')+'</td></tr>';
     const brk = items.length ? '<div style="margin-top:12px"><div style="font-size:11px;color:var(--muted);margin-bottom:6px">Provider mix in '+esc(s.name)+'</div>'+barlist(items,'','')+'</div>' : '';
     const actions = '<div style="display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap">'
       +'<button class="btn ghost sm" id="jumpList" title="Jump to the provider list, filtered to '+esc(s.name)+'">'+ic('jump')+' '+inState.length+' providers</button>'
@@ -1150,7 +1333,10 @@ async function renderPipeline(main){
       +(a.updated?'<div class="cite" style="margin-top:6px">Last checked '+esc(fmtDate(a.updated))+'</div>':'')
       +'<div class="cite" style="margin-top:6px">'+cite(a.source)+'</div></div>';
   });
+  const pubd = await getData('public_data');
+  h+=openTrialsPanel(pubd);
   h+=disc(); main.innerHTML=h;
+  wireOpenTrials(pubd);
 }
 async function renderCompanies(main){
   const d=await getData('companies');
@@ -1293,7 +1479,7 @@ async function renderExecutive(main){
     n.onclick=go; n.onkeydown=e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(e); } }; });
 }
 
-const VIEWS = { executive:renderExecutive, landscape:renderLandscape, journey:renderJourney, treatment:renderTreatment,
+const VIEWS = { executive:renderExecutive, landscape:renderLandscape, journey:renderJourney, treatment:renderTreatment, current:renderCurrent,
   pipeline:renderPipeline, channel:renderChannel, companies:renderCompanies,
   scenario:renderScenario, policy:renderPolicy, briefings:renderBriefings, admin:renderAdmin };
 

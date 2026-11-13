@@ -312,6 +312,36 @@
       "publisher": "Neurology 2019;92:907-915 (AAN)",
       "url": "https://pubmed.ncbi.nlm.nih.gov/31061209/",
       "note": "Evidence confidence by intervention. High: CBIT vs psychoeducation/supportive therapy. Moderate: haloperidol, risperidone, aripiprazole, tiapride, clonidine, onabotulinumtoxinA (among others). Low: pimozide, ziprasidone, metoclopramide, guanfacine, topiramate, THC. Verified from the abstract; full text not read."
+    },
+    "openfda": {
+      "label": "openFDA — drug labels, Drugs@FDA, drug shortages, adverse event reports",
+      "publisher": "FDA (openFDA)",
+      "url": "https://open.fda.gov/apis/drug/",
+      "note": "Public FDA datasets queried via API. Adverse event counts are spontaneous reports, not incidence."
+    },
+    "ctgov": {
+      "label": "ClinicalTrials.gov registry",
+      "publisher": "ClinicalTrials.gov",
+      "url": "https://clinicaltrials.gov/search?cond=Tourette%20Syndrome",
+      "note": "Sponsor-reported registry records for Tourette syndrome and tic disorders."
+    },
+    "pubmed": {
+      "label": "PubMed",
+      "publisher": "PubMed (NLM)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tourette+Syndrome%22%5BMeSH%5D",
+      "note": "Record counts for agent AND Tourette Syndrome[MeSH]; counts papers, not quality."
+    },
+    "nppes": {
+      "label": "NPI Registry (NPPES)",
+      "publisher": "CMS NPI Registry",
+      "url": "https://npiregistry.cms.hhs.gov/",
+      "note": "Individual providers by self-reported taxonomy and practice-location state; overstates the active workforce."
+    },
+    "medicaid_sdud": {
+      "label": "State Drug Utilization Data",
+      "publisher": "Medicaid.gov (CMS)",
+      "url": "https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html",
+      "note": "Prescription counts by state, quarter and product, 2022 to Q1 2026. Medicaid only; all indications; rows under 11 prescriptions suppressed. Spending columns not used."
     }
   }
 }

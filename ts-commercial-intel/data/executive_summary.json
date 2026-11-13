@@ -136,6 +136,13 @@
   ],
   "whats_new": [
     {
+      "date": "Nov 13, 2026",
+      "tag": "Data",
+      "text": "New Current treatment view: FDA label status, boxed warnings, supply notices, adverse event reports, Medicaid prescription volume and evidence depth for 12 agents in use today, plus open registered studies and specialist counts by state.",
+      "source": "openfda",
+      "goto": "current"
+    },
+    {
       "date": "Aug 19, 2026",
       "tag": "Regulatory",
       "text": "FDA accepted the ecopipam NDA and granted Priority Review; target action date is late Q1 2027. The proposed indication is pediatric-only.",

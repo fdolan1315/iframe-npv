@@ -4,8 +4,8 @@
     "note": "There is NO REMS / infusion-slot capacity constraint in TS. Prioritize academic Centers of Excellence + high-volume children's hospitals, then community pediatric neurology. Diagnosed prevalence concentrates around specialist access, so the referral geography — not raw population — is the real map.",
     "prescriber_taxonomies": [
       {
-        "label": "Pediatric neurology",
-        "npi_taxonomy": "2084P0800X",
+        "label": "Child neurology",
+        "npi_taxonomy": "2084N0402X",
         "role": "Primary tic-treating specialist"
       },
       {
@@ -14,9 +14,9 @@
         "role": "Comorbidity-driven entry (ADHD/OCD/anxiety)"
       },
       {
-        "label": "Neurology w/ movement disorders",
-        "npi_taxonomy": "2084N0402X",
-        "role": "Movement-disorder expertise"
+        "label": "Neurology (incl. movement disorders)",
+        "npi_taxonomy": "2084N0400X",
+        "role": "Movement-disorder expertise; no separate movement-disorder code exists"
       },
       {
         "label": "Developmental-behavioral pediatrics",
@@ -24,7 +24,7 @@
         "role": "Diagnosis & co-management"
       }
     ],
-    "npi_pull_status": "Planned live pull from CMS NPI Registry filtered to these taxonomies (Phase 2)."
+    "npi_pull_status": "Child neurology and child & adolescent psychiatry counts by state are pulled from the CMS NPI Registry and available as map layers. Taxonomy is self-reported, not board certification."
   },
   "coe_source": "taa_coe",
   "coe_note": "28 TAA Centers of Excellence nationally as of Feb 2025, with at least one designated since (University of Minnesota MnTiC Lab, Apr 2026). Roster below is East-weighted for the ABD East territory and assembled from institutional/TAA sources; confirm the live roster on tourette.org before external use.",
