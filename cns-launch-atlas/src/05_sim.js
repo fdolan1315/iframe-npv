@@ -37,7 +37,7 @@ function viewSimulator() {
       <div id="simCtl"></div></section>
     <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
       <div class="kpis" id="simKpi"></div>
-      <section class="panel"><header><h3>Net revenue by year</h3><span class="sub" id="simRef"></span></header><div id="simChart"></div></section>
+      <section class="panel"><header><h3 id="simHead">Net revenue by year</h3><span class="sub" id="simRef"></span></header><div id="simChart"></div></section>
       <section class="panel"><header><h3>Patients on therapy and new starts</h3></header><div id="simChart2"></div></section>
       <section class="panel"><header><h3>Year-by-year</h3><div class="tbar"><input type="text" id="simName" placeholder="Scenario name" aria-label="Scenario name" style="width:150px"><button class="btn pri" id="simSave">Save scenario</button></div></header><div id="simTable"></div><div id="simSaved"></div></section>
       <div class="grid"><section class="panel c6"><header><h3>Where the revenue sits at peak</h3><span class="sub">Modeled state allocation</span></header><div id="simStates"></div></section>
@@ -56,7 +56,7 @@ function simInit() {
   const draw = () => {
     const r = runSim(ta, p), peak = r.reduce((a, b) => b.rev > a.rev ? b : a, r[0]), cum = r.reduce((a, b) => a + b.rev, 0), y1b = r.find(x => x.rev >= 1e9);
     $("#simKpi").innerHTML = kpi(USD(peak.rev), `Peak-year net revenue (${peak.yr})`, `within ${YEARS}-year window`) + kpi(USD(cum), `${YEARS}-year cumulative net`, `${r[0].yr}–${r[YEARS - 1].yr}`) + kpi(K(peak.pts), "Patients on therapy at peak", `${PCT(peak.pts / peak.popN, 1)} of addressable pool`) + kpi(USD(r[0].netPer), "Net revenue per patient-year", `list ${USD(p.wac)}`) + kpi(y1b ? String(y1b.yr) : "—", "First $1B year", y1b ? `year ${y1b.yr - S.launch + 1} on market` : "not reached");
-    $("#simRef").textContent = S.guidance.label;
+    $("#simRef").textContent = S.guidance.label; $("#simHead").textContent = `Net revenue peaks at ${USD(peak.rev)} in ${peak.yr} on these assumptions`;
     $("#simChart").innerHTML = xyChart(r.map(x => String(x.yr)), p.x_on ? [{ name: "Core indication", values: r.map(x => x.revCore) }, { name: S.xLabel, values: r.map(x => x.revExp) }, { name: "Total", values: r.map(x => x.rev), color: "var(--ink-2)", dash: true }] : [{ name: "Net revenue", values: r.map(x => x.rev) }], { fmt: USD, h: 250, refs: [{ value: S.guidance.value, label: S.guidance.label }], max: Math.min(S.guidance.value, peak.rev * 1.5) });
     $("#simChart2").innerHTML = xyChart(r.map(x => String(x.yr)), [{ name: "Avg patients on therapy", values: r.map(x => x.pts) }, { name: "New starts", values: r.map(x => x.starts) }], { bars: true, fmt: K, h: 210 });
     $("#simTable").innerHTML = `<div class="tblwrap"><table><thead><tr><th>Year</th><th class="n">Eligible diagnosed</th><th class="n">Access</th><th class="n">New starts</th><th class="n">On therapy</th><th class="n">List price</th><th class="n">Net / pt-yr</th><th class="n">Net revenue</th></tr></thead><tbody>${r.map(x => `<tr><td class="num">${x.yr}</td><td class="n">${K(x.dxElig)}</td><td class="n">${PCT(x.access)}</td><td class="n">${K(x.starts)}</td><td class="n">${K(x.pts)}</td><td class="n">${USD(x.price)}</td><td class="n">${USD(x.netPer)}</td><td class="n"><b>${USD(x.rev)}</b></td></tr>`).join("")}</tbody></table></div>`;

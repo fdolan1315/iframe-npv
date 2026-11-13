@@ -10,7 +10,10 @@ const store = { get(k, d) { try { const v = localStorage.getItem("atlas." + k); 
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return "source"; } };
 const srcLink = u => u && /^https?:/.test(u) ? `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(host(u))}</a>` : "";
 const srcLinks = a => (a || []).slice(0, 4).map(srcLink).join(" ");
-const conf = c => { if (!c) return ""; const k = String(c).toLowerCase().split(/[^a-z]/)[0]; return ["high", "medium", "low"].includes(k) ? `<span class="pill ${k}" title="Research confidence">${k}</span>` : ""; };
+const conf = c => { if (!c) return ""; const k = String(c).toLowerCase().split(/[^a-z]/)[0]; return ["high", "medium", "low"].includes(k) ? `<span class="pill conf ${k}" title="Research confidence: ${k}"><i></i>${k}</span>` : ""; };
+/* figure = finding headline + deck + drawing + visible provenance line */
+const prov = (srcs, o = {}) => `<div class="prov">${o.note ? `<span>${esc(o.note)}</span>` : ""}${o.conf ? conf(o.conf) : ""}${o.quality ? `<span class="pill">${esc(o.quality)}</span>` : ""}${(srcs || []).slice(0, 5).map(srcLink).join(" ")}${o.asOf ? `<span>As of ${esc(o.asOf)}</span>` : ""}</div>`;
+const figure = (meta, title, deck, body, pv) => `<section class="figure"><span class="eyebrow">${esc(meta)}</span><h2>${esc(title)}</h2>${deck ? `<p class="deck">${esc(deck)}</p>` : ""}<div class="body">${body}</div>${pv || ""}</section>`;
 const listify = v => Array.isArray(v) ? v : v == null || v === "" ? [] : [v];
 const ul = a => { a = listify(a); return a.length ? `<ul class="tight">${a.map(x => `<li>${esc(typeof x === "string" ? x : (x.fact ? x.fact + (x.value ? ": " + x.value : "") : JSON.stringify(x)))}</li>`).join("")}</ul>` : ""; };
 
@@ -28,7 +31,7 @@ $("#drawerX").onclick = drawerClose; $("#drawer").addEventListener("click", e =>
 document.addEventListener("keydown", e => { if (e.key === "Escape") drawerClose(); });
 
 /* ---------- charts (inline SVG, one scale per chart, tooltips on every mark) ---------- */
-const SER = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)", "var(--s5)", "var(--s6)", "var(--s7)", "var(--s8)"];
+const SER1 = ["var(--s0)"], SER = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)", "var(--s5)", "var(--s6)", "var(--s7)", "var(--s8)"];
 function niceMax(v) { if (!(v > 0)) return 1; const p = Math.pow(10, Math.floor(Math.log10(v))); const m = v / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; }
 /* horizontal bars: rows [{label, value, tip?, color?}] */
 function hbar(rows, o = {}) {
@@ -36,7 +39,7 @@ function hbar(rows, o = {}) {
   const H = rows.length * rh + 4;
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.title || "bar chart")}">` + rows.map((r, i) => {
     const y = i * rh + 3, w = Math.max(1, r.value / max * pw);
-    return `<g data-tip="${esc(r.tip || `<b>${esc(r.label)}</b><br>${fmt(r.value)}`)}"><rect x="0" y="${y - 2}" width="${W}" height="${rh}" fill="transparent"/><text class="lbl" x="${lw - 8}" y="${y + rh / 2 + 1}" text-anchor="end">${esc(String(r.label).length > lw / 6 ? String(r.label).slice(0, Math.floor(lw / 6) - 1) + "…" : r.label)}</text><path d="M${lw} ${y}h${w - 3}a3 3 0 0 1 3 3v${rh - 12}a3 3 0 0 1 -3 3h${-(w - 3)}z" fill="${r.color || o.color || SER[0]}"/><text class="val" x="${lw + w + 6}" y="${y + rh / 2 + 1}">${fmt(r.value)}</text></g>`;
+    return `<g data-tip="${esc(r.tip || `<b>${esc(r.label)}</b><br>${fmt(r.value)}`)}"><rect x="0" y="${y - 2}" width="${W}" height="${rh}" fill="transparent"/><text class="lbl" x="${lw - 8}" y="${y + rh / 2 + 1}" text-anchor="end">${esc(String(r.label).length > lw / 6 ? String(r.label).slice(0, Math.floor(lw / 6) - 1) + "…" : r.label)}</text><path d="M${lw} ${y}h${w - 3}a3 3 0 0 1 3 3v${rh - 12}a3 3 0 0 1 -3 3h${-(w - 3)}z" fill="${r.color || o.color || "var(--s0)"}"/><text class="val" x="${lw + w + 6}" y="${y + rh / 2 + 1}">${fmt(r.value)}</text></g>`;
   }).join("") + `</svg>`;
 }
 /* line / column chart over ordered x categories: series [{name, values:[...], color?}] */
@@ -48,7 +51,8 @@ function xyChart(xs, series, o = {}) {
   for (let t = 0; t <= 4; t++) { const v = max * t / 4, y = Y(v); g += `<line class="${t ? "grid" : "axis"}" x1="${m.l}" x2="${W - m.r}" y1="${y}" y2="${y}"/><text x="${m.l - 6}" y="${y + 3.5}" text-anchor="end">${fmt(v)}</text>`; }
   const step = Math.ceil(xs.length / 11);
   xs.forEach((x, i) => { if (i % step === 0) g += `<text x="${X(i)}" y="${H - 8}" text-anchor="middle">${esc(x)}</text>`; });
-  (o.refs || []).forEach(r => { const y = Y(r.value); if (r.value <= max) g += `<line x1="${m.l}" x2="${W - m.r}" y1="${y}" y2="${y}" stroke="var(--muted)" stroke-dasharray="4 3"/><text x="${W - m.r}" y="${y - 4}" text-anchor="end">${esc(r.label)}</text>`; });
+  (o.refs || []).forEach(r => { const y = Y(r.value); if (r.value <= max) g += `<line x1="${m.l}" x2="${W - m.r}" y1="${y}" y2="${y}" stroke="var(--ref)" stroke-dasharray="4 3"/><text x="${W - m.r}" y="${y - 4}" text-anchor="end">${esc(r.label)}</text>`; });
+  if (series.length === 1 && !series[0].color) series = [Object.assign({}, series[0], { color: "var(--s0)" })];
   if (o.bars) {
     const bw = pw / xs.length, n = series.length, w = Math.min(34, (bw - 6) / n);
     series.forEach((s, si) => s.values.forEach((v, i) => { if (v == null) return; const x = X(i) - n * w / 2 + si * w, y = Y(v), hh = m.t + ph - y; g += `<path data-tip="${esc(`<b>${esc(xs[i])}</b> · ${esc(s.name)}<br>${fmt(v)}`)}" d="M${x + 1} ${m.t + ph}v${-Math.max(0, hh - 3)}a3 3 0 0 1 3 -3h${Math.max(0, w - 8)}a3 3 0 0 1 3 3v${Math.max(0, hh - 3)}z" fill="${s.color || SER[si]}"/>`; }));
@@ -70,7 +74,7 @@ function usMap(values, o = {}) {
   let g = "";
   for (const [st, s] of Object.entries(D.geo)) g += `<path class="st${o.sel === st ? " sel" : ""}" data-st="${st}" d="${s.d}" fill="var(--q${bin(values[st])})" data-tip="${esc(`<b>${esc(D.states[st].name)}</b><br>${esc(o.label || "")}: ${fmt(values[st])}${o.extra ? "<br>" + o.extra(st) : ""}`)}"/>`;
   (o.dots || []).forEach(d => { if (d.x != null) g += `<circle class="dot" cx="${d.x}" cy="${d.y}" r="${d.r || 3}"/>`; });
-  const scale = `<div class="scale"><span>lower</span>${[1, 2, 3, 4, 5, 6].map(i => `<i style="background:var(--q${i})"></i>`).join("")}<span>higher</span><span style="margin-left:10px"><i style="background:var(--q0);border:1px solid var(--line-2)"></i> none</span>${o.dots ? `<span style="margin-left:10px"><svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="var(--s2)"/></svg> ${esc(o.dotLabel || "sites")}</span>` : ""}</div>`;
+  const scale = `<div class="scale"><span>lower</span>${[1, 2, 3, 4, 5, 6].map(i => `<i style="background:var(--q${i})"></i>`).join("")}<span>higher</span><span style="margin-left:10px"><i style="background:var(--q0);border:1px solid var(--line-2)"></i> zero or not available</span>${o.dots ? `<span style="margin-left:10px"><svg width="10" height="10"><circle cx="5" cy="5" r="4" fill="var(--ink)"/></svg> ${esc(o.dotLabel || "sites")}</span>` : ""}</div>`;
   return `<svg class="chart map" viewBox="0 0 975 610" role="img" aria-label="US map: ${esc(o.label || "")}">${g}</svg>${scale}`;
 }
 /* Albers USA projection matching us-atlas "states-albers-10m" (scale 1300, translate 487.5,305) for lat/lon dots */

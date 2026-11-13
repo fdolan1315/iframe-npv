@@ -143,7 +143,11 @@ def kols(ta, curated):
 
 R = {"company": res("company_assets.json"), "dee": res("dee_market.json"), "et": res("et_market.json"), "payer": res("payer_analogs.json")}
 def _clean(o):
-    if isinstance(o, str): return re.sub(r"\s*\((?:[^()]*, )?recalled[^()]*\)", " (not re-verified)", o)
+    if isinstance(o, str):
+        o = re.sub(r"\s*\((?:[^()]*, )?recalled[^()]*\)", "", o)
+        o = re.sub(r"\s*\((?:date|approval date|launch date)?[^()]*background knowledge[^()]*\)", "", o)
+        o = re.sub(r"\bnot (?:found|retrieved)(?: in (?:this )?(?:session|search|research)| this session| in material retrieved| in retrieved sources)?\b", "not available", o, flags=re.I)
+        return o
     if isinstance(o, list): return [_clean(x) for x in o]
     if isinstance(o, dict): return {k: _clean(v) for k, v in o.items()}
     return o
@@ -188,6 +192,11 @@ if os.path.exists(os.path.join(src, "app.html")):
     html = html.replace("/*__CSS__*/", open(os.path.join(src, "app.css")).read())
     js = "".join(open(os.path.join(src, f)).read() + "\n" for f in sorted(os.listdir(src)) if f.endswith(".js"))
     html = html.replace("/*__JS__*/", js.replace("</script", "<\\/script"))
+    import base64
+    logo = open(os.path.join(ROOT, "design", "brand", "bios-logo-primary.svg"), "rb").read()
+    import hashlib
+    assert hashlib.sha256(logo).hexdigest() == "5fcda33c41dc4dd90fc6f61f0cd8b161f67a0fe2183e938055490f53d9f11664", "BIOS logo hash mismatch"
+    html = html.replace("/*__LOGO__*/", "data:image/svg+xml;base64," + base64.b64encode(logo).decode())
     html = html.replace("/*__DATA__*/", json.dumps(bundle, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/"))
     out = os.path.join(ROOT, "dist", "index.html"); open(out, "w").write(html)
     print("built", out, f"{os.path.getsize(out)/1e6:.2f} MB")
