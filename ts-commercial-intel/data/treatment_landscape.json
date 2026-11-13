@@ -44,7 +44,7 @@
       "class": "Atypical antipsychotic (D2/5-HT1A partial agonist)",
       "ts_status": "FDA-approved TS 2014 (6-18)",
       "liabilities": "+1.5 kg weight gain vs placebo; akathisia; EPS/TD class risk",
-      "cost": "Generic (~$10/mo)",
+      "cost": "Generic",
       "threat": "Moderate-High",
       "source": "treatment_review_pmc"
     },
@@ -53,7 +53,7 @@
       "class": "Alpha-2 agonist",
       "ts_status": "Off-label; ADHD-approved",
       "liabilities": "Sedation, hypotension, rebound HTN",
-      "cost": "Generic (~$16/mo)",
+      "cost": "Generic",
       "threat": "High",
       "source": "aan_2019"
     },
@@ -62,7 +62,7 @@
       "class": "Alpha-2 agonist",
       "ts_status": "Off-label; ADHD-approved",
       "liabilities": "Sedation, hypotension",
-      "cost": "Generic (~$25/mo)",
+      "cost": "Generic",
       "threat": "High",
       "source": "aan_2019"
     },
@@ -107,7 +107,7 @@
       "class": "Median-nerve stimulation device",
       "ts_status": "UK 'wellness' device launched 2026; medical version in development; no FDA clearance",
       "liabilities": "Daily wear; regulatory status unsettled",
-      "cost": "~£500 + £20/mo",
+      "cost": "Consumer device (UK)",
       "threat": "Emerging / watch",
       "source": "neupulse_rct"
     }

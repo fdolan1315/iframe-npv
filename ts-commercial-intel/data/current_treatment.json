@@ -1,0 +1,126 @@
+{
+  "_comment": "Curated backbone for the Current treatment view. Label status, shortages, adverse-event reports, Medicaid volume and publication counts are joined at build time from data_raw/ (public APIs), not hand-entered here.",
+  "evidence_source": "aan_2019_sr",
+  "confidence_note": "Confidence that the agent is more likely than placebo to reduce tics, per the 2019 AAN systematic review. 'Not rated' means the agent is not among those listed at moderate or low confidence in the review summary; it is not a finding of no effect.",
+  "agents": [
+    {
+      "generic": "guanfacine",
+      "brands": [
+        "Intuniv"
+      ],
+      "class": "Alpha-2 agonist",
+      "mechanism": "Alpha-2A adrenergic agonist",
+      "aan_confidence": "Low",
+      "role": "Common first medication, especially with co-occurring ADHD"
+    },
+    {
+      "generic": "clonidine",
+      "brands": [
+        "Kapvay",
+        "Catapres"
+      ],
+      "class": "Alpha-2 agonist",
+      "mechanism": "Alpha-2 adrenergic agonist",
+      "aan_confidence": "Moderate",
+      "role": "Common first medication, especially with co-occurring ADHD"
+    },
+    {
+      "generic": "aripiprazole",
+      "brands": [
+        "Abilify"
+      ],
+      "class": "Atypical antipsychotic",
+      "mechanism": "Dopamine D2 / serotonin 5-HT1A partial agonist",
+      "aan_confidence": "Moderate",
+      "role": "Used when alpha-2 agonists are inadequate or tics are more severe"
+    },
+    {
+      "generic": "risperidone",
+      "brands": [
+        "Risperdal"
+      ],
+      "class": "Atypical antipsychotic",
+      "mechanism": "Dopamine D2 / serotonin 5-HT2A antagonist",
+      "aan_confidence": "Moderate",
+      "role": "Off-label alternative antipsychotic"
+    },
+    {
+      "generic": "haloperidol",
+      "brands": [
+        "Haldol"
+      ],
+      "class": "Typical antipsychotic",
+      "mechanism": "Dopamine D2 antagonist",
+      "aan_confidence": "Moderate",
+      "role": "Older option, limited by movement side effects"
+    },
+    {
+      "generic": "pimozide",
+      "brands": [
+        "Orap"
+      ],
+      "class": "Typical antipsychotic",
+      "mechanism": "Dopamine D2 antagonist",
+      "aan_confidence": "Low",
+      "role": "Older option, limited by cardiac (QT) monitoring"
+    },
+    {
+      "generic": "fluphenazine",
+      "brands": [],
+      "class": "Typical antipsychotic",
+      "mechanism": "Dopamine D1/D2 antagonist",
+      "aan_confidence": "Not rated",
+      "role": "Specialist off-label use"
+    },
+    {
+      "generic": "ziprasidone",
+      "brands": [
+        "Geodon"
+      ],
+      "class": "Atypical antipsychotic",
+      "mechanism": "Dopamine D2 / serotonin 5-HT2A antagonist",
+      "aan_confidence": "Low",
+      "role": "Occasional off-label alternative"
+    },
+    {
+      "generic": "topiramate",
+      "brands": [
+        "Topamax"
+      ],
+      "class": "Anticonvulsant",
+      "mechanism": "Multiple (GABA-A, AMPA/kainate, sodium channels)",
+      "aan_confidence": "Low",
+      "role": "Off-label non-antipsychotic alternative"
+    },
+    {
+      "generic": "tetrabenazine",
+      "brands": [
+        "Xenazine"
+      ],
+      "class": "VMAT2 inhibitor",
+      "mechanism": "Vesicular monoamine transporter 2 inhibitor",
+      "aan_confidence": "Not rated",
+      "role": "Specialist off-label use"
+    },
+    {
+      "generic": "deutetrabenazine",
+      "brands": [
+        "Austedo"
+      ],
+      "class": "VMAT2 inhibitor",
+      "mechanism": "Vesicular monoamine transporter 2 inhibitor",
+      "aan_confidence": "Not rated",
+      "role": "Did not meet primary endpoints in pediatric Tourette trials (ARTISTS 1 and 2)"
+    },
+    {
+      "generic": "valbenazine",
+      "brands": [
+        "Ingrezza"
+      ],
+      "class": "VMAT2 inhibitor",
+      "mechanism": "Vesicular monoamine transporter 2 inhibitor",
+      "aan_confidence": "Not rated",
+      "role": "No Tourette indication"
+    }
+  ]
+}

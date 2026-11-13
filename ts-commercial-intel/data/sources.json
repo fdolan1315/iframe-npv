@@ -306,6 +306,12 @@
       "publisher": "Tourette Association of America",
       "url": "https://tourette.org/update-on-the-fda-acceptance-of-the-new-drug-application-for-ecopipam/",
       "note": "Patient-advocacy statement on the Aug 2026 NDA acceptance."
+    },
+    "aan_2019_sr": {
+      "label": "Comprehensive systematic review summary: Treatment of tics in people with Tourette syndrome and chronic tic disorders",
+      "publisher": "Neurology 2019;92:907-915 (AAN)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31061209/",
+      "note": "Evidence confidence by intervention. High: CBIT vs psychoeducation/supportive therapy. Moderate: haloperidol, risperidone, aripiprazole, tiapride, clonidine, onabotulinumtoxinA (among others). Low: pimozide, ziprasidone, metoclopramide, guanfacine, topiramate, THC. Verified from the abstract; full text not read."
     }
   }
 }
