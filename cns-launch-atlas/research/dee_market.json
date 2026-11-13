@@ -135,7 +135,7 @@
    "source_url": "https://investors.praxismedicines.com/static-files/91013dac-4234-4f1e-8128-88e376d27b3b",
    "confidence": "medium",
    "verification": "search_verified",
-   "note": "Praxis EMBOLD deck Sept 2024; same deck lists '>100k' addressable patients for broader DEE. Combined figure is not split by gene."
+   "note": "Superseded: at its November 2026 investor day the sponsor cited 10K+ prevalent and ~5K diagnosed. Praxis EMBOLD deck Sept 2024; same deck lists '>100k' addressable patients for broader DEE. Combined figure is not split by gene."
   },
   {
    "syndrome": "SCN2A-DEE",
@@ -1867,7 +1867,7 @@
   },
   {
    "controversy": "Patient-number conflict",
-   "detail": "Praxis ~5,000 US (SCN2A+SCN8A) vs 1-3/100,000 for SCN2A alone vs ~65 SCN8A births/yr; broad-DEE '>100k addressable' vs unverified ~200k.",
+   "detail": "The sponsor cited ~5,000 US patients (SCN2A+SCN8A) in 2024 and 10K+ prevalent / ~5K diagnosed in November 2026; compare 1-3/100,000 for SCN2A alone and ~65 SCN8A births a year. Broad DEE: '>100k addressable' in 2024, over 200,000 in the August 2026 deck.",
    "sources": [
     "https://investors.praxismedicines.com/static-files/91013dac-4234-4f1e-8128-88e376d27b3b",
     "https://www.neurologylive.com/view/breakthrough-therapy-designation-granted-relutrigine-scn2a-scn8a-developmental-epileptic-encephalopathies",

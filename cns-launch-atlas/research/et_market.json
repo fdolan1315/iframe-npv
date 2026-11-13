@@ -688,9 +688,11 @@
    "sources": [
     "https://www.medscape.com/viewarticle/751786",
     "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
-    "https://tremorjournal.org/articles/10.5334/tohm.682"
+    "https://tremorjournal.org/articles/10.5334/tohm.682",
+    "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=016418"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "first_us_approval": "Inderal (propranolol) was first approved by the FDA on 13 Nov 1967 (NDA 016418); the essential-tremor indication was added later. openFDA lists the long-acting product (Inderal LA, 1983)."
   },
   {
    "name": "Primidone",

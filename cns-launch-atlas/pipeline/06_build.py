@@ -144,12 +144,23 @@ def kols(ta, curated):
 R = {"company": res("company_assets.json"), "dee": res("dee_market.json"), "et": res("et_market.json"), "payer": res("payer_analogs.json")}
 def _clean(o):
     if isinstance(o, str):
-        o = re.sub(r"\s*\((?:[^()]*, )?recalled[^()]*\)", "", o)
-        o = re.sub(r"\s*\((?:date|approval date|launch date)?[^()]*background knowledge[^()]*\)", "", o)
+        # keep every research caveat visible as a short "unverified" marker instead of deleting it
+        o = re.sub(r"\b(is|are) NOT RETRIEVED IN THIS SESSION \(web-search budget exhausted\): stated from model background knowledge; verify against the cited primary source before use\.?", r"\1 unverified (not checked against the primary source).", o)
+        o = re.sub(r"NOT RETRIEVED IN THIS SESSION \(web-search budget exhausted\): stated from model background knowledge; verify against the cited primary source before use\.?", "Unverified: not checked against the primary source.", o)
+        o = re.sub(r"\(date from background knowledge, not retrieved this session\)", "(date unverified)", o)
+        o = re.sub(r"recalled_unverified_in_session", "unverified", o)
+        o = re.sub(r"\brecalled(?:,| and)? (?:unverified|not confirmed in session)", "unverified", o)
+        o = re.sub(r"\brecalled\b", "unverified", o)
+        o = re.sub(r"background knowledge,? not (?:retrieved|confirmed) (?:in )?this session(?:'s sources?)?", "background knowledge, not checked against a source", o)
         o = re.sub(r"\bnot (?:found|retrieved)(?: in (?:this )?(?:session|search|research)| this session| in material retrieved| in retrieved sources)?\b", "not available", o, flags=re.I)
         return o
     if isinstance(o, list): return [_clean(x) for x in o]
-    if isinstance(o, dict): return {k: _clean(v) for k, v in o.items()}
+    if isinstance(o, dict):
+        o = {k: _clean(v) for k, v in o.items()}
+        # facts the researcher could not check against a source carry the flag on their confidence chip
+        if o.get("verification") == "unverified" and isinstance(o.get("confidence"), str) and "unverified" not in o["confidence"]:
+            o["confidence"] = o["confidence"] + " · unverified"
+        return o
     return o
 R = _clean(R)
 K = {"dee": kols("dee", R["dee"].get("kols", [])), "et": kols("et", R["et"].get("kols", []))}

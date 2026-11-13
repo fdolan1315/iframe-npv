@@ -33,7 +33,7 @@ function viewSimulator() {
   const c = cur(), s = c.sim;
   return head("Launch simulator", s.label, "An illustrative cohort model, not a forecast. Move an assumption and every figure updates.") + `
   <div class="sim"><section class="panel"><header><h3>Assumptions</h3><button class="btn" id="simReset">Reset</button></header>
-      <div class="chips" id="simPresets">${Object.keys(s.presets).map(k => `<button class="chip" data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div>
+      <div class="chips" id="simPresets">${Object.keys(s.presets).map(k => `<button class="chip" data-k="${esc(k)}">${esc(k)}</button>`).join("")}</div><p class="sub" style="margin:6px 0 0">Presets are analyst assumptions, not sponsor forecasts.</p>
       <div id="simCtl"></div></section>
     <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
       <section class="figure">${exh("Forecast")}<h2 id="simHead"></h2><div class="kpis" id="simKpi"></div><div id="simChart"></div><div class="prov"><span id="simRef"></span><span class="pill">modeled</span><span>Analog revenue from company reports.</span></div></section>
@@ -52,7 +52,7 @@ function simInit() {
   const ctl = (k, l, u, lo, hi, st) => { const [a, b, s] = rng(k, u, lo, hi, st); return `<div class="ctl"><label for="s_${k}">${esc(l)}</label><output id="o_${k}">${fmtV(k, u, p[k])}</output><input type="range" id="s_${k}" data-k="${k}" data-u="${u}" min="${a}" max="${b}" step="${s}" value="${p[k]}"></div>`; };
   const open = store.get("simOpen", { Population: 1, Price: 1 });
   $("#simCtl").innerHTML = CTL.map(([g, items]) => `<details class="acc" data-g="${esc(g)}" ${open[g] ? "open" : ""}><summary><span>${esc(g)}</span></summary><div style="padding-bottom:8px">${items.map(x => ctl(...x)).join("")}</div></details>`).join("") +
-    `<details class="acc" data-g="x" ${open.x ? "open" : ""}><summary><span>${esc(S.xLabel)}</span></summary><div style="padding-bottom:8px"><div class="ctl"><label for="s_x_on">Include this second population</label><output><input type="checkbox" id="s_x_on" ${p.x_on ? "checked" : ""}></output></div>${ctl("x_pop", ta === "dee" ? "Additional addressable patients (sponsor: over 200,000 US)" : "Additional addressable patients", "n")}${ctl("x_year", "First year", "y", 2027, 2034, 1)}${ctl("x_adopt", "Starting per year, at peak", "%")}</div></details>`;
+    `<details class="acc" data-g="x" ${open.x ? "open" : ""}><summary><span>${esc(S.xLabel)}</span></summary><div style="padding-bottom:8px"><div class="ctl"><label for="s_x_on">Include this second population</label><output><input type="checkbox" id="s_x_on" ${p.x_on ? "checked" : ""}></output></div>${ctl("x_pop", ta === "dee" ? "Additional addressable patients (sponsor: over 200,000 US in Aug 2026; reportedly over 300,000 in Nov)" : "Additional addressable patients", "n")}${ctl("x_year", "First year", "y", 2027, 2034, 1)}${ctl("x_adopt", "Starting per year, at peak", "%")}</div></details>`;
   $$("#simCtl details").forEach(d => d.ontoggle = () => { open[d.dataset.g] = d.open ? 1 : 0; store.set("simOpen", open); });
   const save = () => { simStore[ta] = p; simStore[ta + "_field"] = fp; store.set("sim", simStore); };
   const lo = runSim(ta, Object.assign({}, S.p, S.presets.Downside)), hi = runSim(ta, Object.assign({}, S.p, S.presets.Upside));

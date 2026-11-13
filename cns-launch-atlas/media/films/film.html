@@ -76,9 +76,9 @@ const LP = { titleEnd: 2.8, endStart: 33.4, dur: 36.8, eyebrow: "Essential tremo
   title: ["Disease 101 · 35 seconds", "A rhythm stuck in a loop", "Where each treatment for essential tremor acts"],
   end: ["Every treatment targets a point on the loop.", "Medicines work for about half of patients. Procedures are reserved for tremor that medicines do not control.", "Schematic, not to scale. Which structure starts the rhythm is still debated. Investigational products are not approved."],
   S: [[2.8, { amp: 1, tt: 0, dbs: 0, fus: 0 }, "The tremor loop", "", "A 4–12 Hz rhythm circulates between brainstem, cerebellum, thalamus and motor cortex, and drives the arm."],
-      [9.6, { amp: 1, tt: 0, dbs: 0, fus: 0 }, "First-line medicines", "", "Propranolol and primidone help about half of patients. Where they act on this loop is not established."],
+      [9.6, { amp: 1, tt: 0, dbs: 0, fus: 0 }, "First-line medicines", "", "Propranolol and primidone help about half of patients. They are not placed on this drawing."],
       [15.2, { amp: 1, tt: 1, dbs: 0, fus: 0 }, "Investigational · T-type blocker", "info", "T-type calcium channels pace the rhythm at these sites. A blocker aims to damp it at the source."],
-      [21.6, { amp: .42, tt: 0, dbs: 1, fus: 0 }, "Deep brain stimulation", "", "Deep brain stimulation: an electrode in the thalamus interrupts the relay. Adjustable and reversible."],
+      [21.6, { amp: .42, tt: 0, dbs: 1, fus: 0 }, "Deep brain stimulation", "", "Deep brain stimulation: an electrode in the thalamus interrupts the relay. Adjustable."],
       [27.6, { amp: .42, tt: 0, dbs: 0, fus: 1 }, "Focused ultrasound", "", "Focused ultrasound: sound beams make a small permanent lesion at the same spot. No incision."]] };
 const ND = { cortex: [330, 100, "Motor cortex", -1], thal: [408, 208, "Thalamus (Vim)", 1], cer: [566, 316, "Cerebellum", 0], olive: [458, 360, "Inferior olive", -1] };
 const SEG = [[ND.olive, [512, 372], ND.cer], [ND.cer, [512, 232], ND.thal], [ND.thal, [366, 158], ND.cortex], [ND.cortex, [300, 262], ND.olive]];
@@ -97,7 +97,7 @@ function drawLoop(t) {
   g += `<path d="M462 430 Q560 470 742 300" fill="none" stroke="#111827" stroke-width="2.5"/><path d="M728 300 l16 -3 l-3 16" fill="none" stroke="#111827" stroke-width="2.5"/>`;
   const x0 = 780, x1 = 1216, y0 = 250; let d = ""; for (let x = x0; x <= x1; x += 3) { const env = clamp((x - x0) / 40, 0, 1) * clamp((x1 - x) / 40, 0, 1); d += (x === x0 ? "M" : "L") + x + " " + (y0 + env * p.amp * 62 * Math.sin(t * 30 - x / 9) * (1 + .18 * Math.sin(x / 47 + t * 3))).toFixed(1); }
   g += `<text x="${x0}" y="128" font-size="21" font-weight="600">Hand tremor</text><text x="${x0}" y="156" font-size="18" style="fill:#42526E">illustrative trace</text><line x1="${x0}" x2="${x1}" y1="${y0}" y2="${y0}" stroke="rgba(17,24,39,.12)" stroke-width="2"/><path d="${d}" fill="none" stroke="#111827" stroke-width="3.5" stroke-linejoin="round"/>`;
-  if (sc.i === 1) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">Site of action: not established</text>`;
+  if (sc.i === 1) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">Not placed on this drawing</text>`;
   if (sc.i === 2) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">Mechanism shown, not a clinical result</text>`;
   if (sc.i >= 3) g += `<text x="${x0}" y="372" font-size="20" style="fill:#42526E" opacity="${clamp(sc.local / .6, 0, 1)}">For tremor that medicines do not control</text>`;
   $("#stage").innerHTML = g; chrome(sc, t, LP);

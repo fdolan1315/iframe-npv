@@ -12,7 +12,7 @@ const store = { get(k, d) { try { const v = localStorage.getItem("atlas." + k); 
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return "source"; } };
 const srcLink = u => u && /^https?:/.test(u) ? `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(host(u))}</a>` : "";
 const srcLinks = a => (a || []).slice(0, 4).map(srcLink).join(" ");
-const conf = c => { if (!c) return ""; const k = String(c).toLowerCase().split(/[^a-z]/)[0]; return ["high", "medium", "low"].includes(k) ? `<span class="pill conf ${k}" title="Research confidence: ${k}"><i></i>${k}</span>` : ""; };
+const conf = c => { if (!c) return ""; const k = String(c).toLowerCase().split(/[^a-z]/)[0]; const u = /unverified/i.test(String(c)) ? " · unverified" : ""; return ["high", "medium", "low"].includes(k) ? `<span class="pill conf ${k}" title="Research confidence: ${k}${u}"><i></i>${k}${u}</span>` : ""; };
 /* figure = finding headline + deck + drawing + visible provenance line */
 const prov = (srcs, o = {}) => `<div class="prov">${o.note ? `<span>${esc(o.note)}</span>` : ""}${o.conf ? conf(o.conf) : ""}${o.quality ? `<span class="pill">${esc(o.quality)}</span>` : ""}${(srcs || []).slice(0, 5).map(srcLink).join(" ")}${o.asOf ? `<span>As of ${esc(o.asOf)}</span>` : ""}</div>`;
 let _exN = 0;
