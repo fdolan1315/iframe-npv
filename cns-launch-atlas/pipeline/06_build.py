@@ -121,7 +121,7 @@ def kols(ta, curated):
     rx = {nkey(r["ln"], r["fn"]) + (r["st"],): r for r in hcp[ta]["rows"]}
     cur = {}
     for c in curated:
-        nm = re.sub(r",.*$", "", c.get("name", "")).strip(); parts = nm.split()
+        nm = re.sub(r"\s+(Jr\.?|Sr\.?|II|III)$", "", re.sub(r",.*$", "", c.get("name", "")).strip()); parts = nm.split()
         if len(parts) >= 2: cur[nkey(parts[-1], parts[0])] = c
     out, used = [], set()
     for a in pm[ta]["authors"]:
@@ -139,7 +139,8 @@ def kols(ta, curated):
         out.append({"name": re.sub(r",.*$", "", c["name"]), "inst": c.get("institution"), "st": c.get("state"), "us": True, "pubs": 0, "core": 0, "lead": 0, "recent": 0, "trialpubs": 0, "guid": 0,
                     "pi": p["n"] if p else 0, "pi_ncts": (p["trials"][:6] if p else []), "rx": None, "npi": None, "curated": True, "focus": c.get("focus"), "why": c.get("why"), "src": c.get("source_url"), "top": [], "score": 15 + (6 * p["n"] if p else 0)})
     out.sort(key=lambda d: -d["score"])
-    return out[:450]
+    # hand-picked names always stay in the list, even when their publication score falls below the cut-off
+    return out[:450] + [d for d in out[450:] if d["curated"]]
 
 R = {"company": res("company_assets.json"), "dee": res("dee_market.json"), "et": res("et_market.json"), "payer": res("payer_analogs.json")}
 def _clean(o):

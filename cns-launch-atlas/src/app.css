@@ -38,7 +38,7 @@ p{margin:0}
 
 main{overflow-wrap:break-word;padding-block:32px 64px;display:flex;flex-direction:column;gap:24px;min-height:60vh}
 main.flush{padding-top:0}
-.foot{border-top:1px solid var(--line)} .foot-in{padding-block:16px 28px;font-size:14px;color:var(--ink-2)}
+.foot{border-top:1px solid var(--line)} .foot-in{padding-block:16px 28px;font-size:14px;color:var(--ink-2)} .foot-in.fine{padding-block:0 28px;font-size:12px;line-height:1.5;max-width:1280px} .foot-in:not(.fine){padding-bottom:10px}
 .pagehead{display:flex;flex-direction:column;gap:8px} .pagehead p{color:var(--ink-2);max-width:68ch;font-size:18px;line-height:1.5}
 .eyebrow{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}

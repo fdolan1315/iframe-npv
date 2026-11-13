@@ -1360,7 +1360,7 @@
    "why": "President of the IETF Board of Directors; long-time ET clinical trialist",
    "source_url": "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Holly A. Shill, MD",
@@ -1371,7 +1371,7 @@
    "why": "Chair of the IETF Medical Advisory Board; co-author of the suvecaltamide Phase 2b paper",
    "source_url": "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Rodger J. Elble, MD, PhD",
@@ -1402,7 +1402,7 @@
    "why": "IETF Medical Advisory Board member; influential voice in the ET/ET-plus/dystonic tremor debate",
    "source_url": "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Theresa A. Zesiewicz, MD",
@@ -1423,18 +1423,18 @@
    "why": "Co-author of the suvecaltamide Phase 2b publication; high-volume trial investigator",
    "source_url": "https://pubmed.ncbi.nlm.nih.gov/42167194/",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Peter A. LeWitt, MD",
-   "institution": "Wayne State University / Henry Ford Health",
-   "city": "Detroit area",
+   "institution": "Wayne State University School of Medicine",
+   "city": "Detroit",
    "state": "MI",
    "focus": "Movement disorder pharmacology",
    "why": "Co-author of the suvecaltamide Phase 2b publication",
    "source_url": "https://pubmed.ncbi.nlm.nih.gov/42167194/",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Alexander Shtilbans, MD, PhD",
@@ -1445,51 +1445,40 @@
    "why": "Lead author of the Essential3 AAN 2026 presentations; disclosed Praxis consultant/investigator",
    "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES) and the AAN 2026 poster"
   },
   {
    "name": "Jill Farmer, DO",
-   "institution": "not confirmed",
-   "city": "not confirmed",
-   "state": "not confirmed",
+   "institution": "BoroNeuro (also Global Neuroscience Institute; Drexel)",
+   "city": "Hopewell",
+   "state": "NJ",
    "focus": "Essential3 investigator",
    "why": "Presented Essential3 Study 2 at the AAN 2026 plenary; called it the first positive Phase 3 program for a drug in ET",
    "source_url": "https://neurologytoday.aan.com/doi/10.1212/netod-blogs.10000027",
    "confidence": "medium",
-   "note": "Institution not found"
+   "verification": "Affiliation as printed on the AAN 2026 poster; 2026 PubMed record lists Global Neuroscience Institute, Pennington NJ, and Drexel College of Medicine"
   },
   {
    "name": "Salima Brillman, MD",
-   "institution": "Parkinson's Disease and Movement Disorders Center of Silicon Valley",
+   "institution": "Parkinson's Research Centers of America, Palo Alto (formerly Parkinson's Disease and Movement Disorders Center of Silicon Valley)",
    "city": "Palo Alto",
    "state": "CA",
    "focus": "Essential3 investigator",
    "why": "Co-author of Essential3 Study 1 and Study 2 abstracts; disclosed Praxis consultant/investigator",
    "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the AAN 2026 poster"
   },
   {
    "name": "Monique Giroux, MD",
-   "institution": "not confirmed",
-   "city": "not confirmed",
-   "state": "not confirmed",
+   "institution": "Praxis Precision Medicines (sponsor employee; formerly Movement and Neuroperformance Center of Colorado)",
+   "city": "Boston",
+   "state": "MA",
    "focus": "Essential3 investigator",
    "why": "Co-author of the Essential3 Study 2 abstract",
    "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
    "confidence": "medium",
-   "note": "Institution not found"
-  },
-  {
-   "name": "Ryan Walsh, MD, PhD",
-   "institution": "not confirmed",
-   "city": "not confirmed",
-   "state": "not confirmed",
-   "focus": "Essential3 combined analysis",
-   "why": "Co-author of the combined Essential3 efficacy and safety abstract (AAN 2026)",
-   "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217776",
-   "confidence": "low",
-   "note": "Institution not found"
+   "verification": "Listed as a Praxis employee on the AAN 2026 poster; a 2025 PubMed record lists the Colorado center"
   },
   {
    "name": "Stuart H. Isaacson, MD",
@@ -1503,14 +1492,14 @@
   },
   {
    "name": "Elizabeth Peckham, DO",
-   "institution": "not confirmed",
-   "city": "not confirmed",
+   "institution": "Central Texas Neurology Consultants",
+   "city": "Round Rock",
    "state": "TX",
    "focus": "Device trials",
    "why": "Co-author of the PROSPECT Cala Trio publication",
    "source_url": "https://www.neurologylive.com/view/cala-trio-device-provides-advantages-in-essential-tremor-treatment",
    "confidence": "low",
-   "note": "Institution not found"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "W. Jeffrey Elias, MD",
@@ -1521,18 +1510,18 @@
    "why": "Led the pivotal randomised MRgFUS thalamotomy trial and senior author of 4-5 year follow-up",
    "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "G. Rees Cosgrove, MD",
-   "institution": "Brigham and Women's Hospital / Harvard",
+   "institution": "Brigham and Women's Hospital / Harvard Medical School",
    "city": "Boston",
    "state": "MA",
    "focus": "Functional neurosurgery",
    "why": "First author of the 4- and 5-year MRgFUS follow-up",
    "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Pejman Ghanouni, MD, PhD",
@@ -1543,7 +1532,7 @@
    "why": "First author of the 2025 five-year continued-access MRgFUS study",
    "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Michael G. Kaplitt, MD, PhD",
@@ -1554,7 +1543,7 @@
    "why": "Co-author of the continued-access study; lead of staged bilateral focused ultrasound work published in JAMA Neurology",
    "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Howard M. Eisenberg, MD",
@@ -1608,36 +1597,36 @@
   },
   {
    "name": "Mark Hallett, MD",
-   "institution": "NINDS, National Institutes of Health (emeritus)",
+   "institution": "NINDS, National Institutes of Health",
    "city": "Bethesda",
    "state": "MD",
    "focus": "Tremor physiology",
    "why": "Co-author of the octanoic acid/1-octanol program and TETRAS alcohol-challenge work",
    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Dietrich Haubenberger, MD",
-   "institution": "formerly NINDS Clinical Trials Unit",
-   "city": "Bethesda",
-   "state": "MD",
+   "institution": "Neurocrine Biosciences (industry); University of California San Diego",
+   "city": "San Diego",
+   "state": "CA",
    "focus": "Early-phase ET trials",
    "why": "Co-investigator of octanoic acid studies; trial-design thought leader",
    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
    "confidence": "low",
-   "note": "Current affiliation not found"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records. Formerly NINDS"
   },
   {
    "name": "Fatta B. Nahab, MD",
-   "institution": "University of California San Diego",
-   "city": "San Diego",
+   "institution": "Neuron23 (industry, 2026); University of California San Diego (to 2025)",
+   "city": "La Jolla",
    "state": "CA",
    "focus": "Long-chain alcohols, imaging, focused ultrasound",
    "why": "First author of the octanoic acid tremor work",
    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES). Most recent record lists Neuron23, South San Francisco"
   },
   {
    "name": "Adrian Handforth, MD",
@@ -1648,7 +1637,7 @@
    "why": "Co-author of the harmaline-model octanoic acid work; T-type channel and GABA animal-model expertise",
    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Daniel A. Roque, MD",
@@ -1662,14 +1651,14 @@
   },
   {
    "name": "Aasef G. Shaikh, MD, PhD",
-   "institution": "Case Western Reserve University / University Hospitals",
+   "institution": "Case Western Reserve University / University Hospitals; Cleveland VA Medical Center",
    "city": "Cleveland",
    "state": "OH",
    "focus": "Tremor and oculomotor physiology",
    "why": "Chair of the MDS Tremor Study Group",
    "source_url": "https://www.movementdisorders.org/MDS/About/Study-Groups/Tremor-Study-Group.htm",
    "confidence": "medium",
-   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   }
  ],
  "outcome_measures": [
@@ -2009,5 +1998,11 @@
   "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html",
   "https://www.webull.com/news/15752173318185984",
   "https://zendy.io/title/10.1002/mds.27121"
+ ],
+ "kols_removed": [
+  {
+   "name": "Ryan Walsh, MD, PhD",
+   "reason": "Listed as a co-author of the combined Essential3 abstract, but he is not among the authors on the poster as presented, and no current affiliation could be confirmed (last records: Barrow Neurological Institute 2022; an industry role 2023). Removed 13 Nov 2026."
+  }
  ]
 }

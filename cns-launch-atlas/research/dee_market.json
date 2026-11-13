@@ -1536,18 +1536,18 @@
    "why": "Lead author, 2022 international Dravet consensus; co-author SCN8A consensus (recalled)",
    "source_url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Kelly Knupp, MD",
-   "institution": "Children's Hospital Colorado / Univ. of Colorado",
+   "institution": "Children's Hospital Colorado / University of Colorado Anschutz",
    "city": "Aurora",
    "state": "CO",
    "focus": "Dravet, infantile spasms, LGS trials",
    "why": "Co-author 2022 Dravet consensus",
    "source_url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Joseph Sullivan, MD",
@@ -1558,7 +1558,7 @@
    "why": "Senior author Dravet consensus; lead author 2024 DS/LGS epidemiology review",
    "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/epi.17866",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Mary Anne Meskis",
@@ -1569,29 +1569,29 @@
    "why": "Co-author Dravet consensus; DSF executive director",
    "source_url": "https://bibbase.org/network/publication/wirrell-hood-knupp-meskis-nabbout-scheffer-wilmshurst-sullivan-internationalconsensusondiagnosisandmanagementofdravetsyndrome-2022",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Yvonne Wu, MD, MPH",
-   "institution": "UCSF",
+   "institution": "University of California San Francisco",
    "city": "San Francisco",
    "state": "CA",
    "focus": "Epidemiology",
    "why": "Lead author of the US Dravet incidence study (1:15,700)",
    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4621800/",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Gabrielle Conecker, MPH",
-   "institution": "International SCN8A Alliance (a project of Decoding Developmental Epilepsies)",
+   "institution": "Decoding Developmental Epilepsies (International SCN8A Alliance; The Inchstone Project)",
    "city": "Washington",
    "state": "DC",
    "focus": "SCN8A advocacy/research",
    "why": "First author 2024 SCN8A Delphi consensus",
    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Michael Hammer, PhD",
@@ -1602,29 +1602,29 @@
    "why": "Founder of the International SCN8A Patient Registry; consensus co-author",
    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10414210/",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Charuta Joshi, MBBS",
-   "institution": "UT Southwestern / Children's Health",
+   "institution": "UT Southwestern / Children's Medical Center Dallas",
    "city": "Dallas",
    "state": "TX",
    "focus": "Pediatric epilepsy",
    "why": "Author of Epilepsy Currents commentary on SCN8A consensus",
    "source_url": "https://doi.org/10.1177/15357597241293310",
    "confidence": "medium",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "JayEtta Hecker, MS",
-   "institution": "International SCN8A Alliance",
+   "institution": "Decoding Developmental Epilepsies (International SCN8A Alliance)",
    "city": "Washington",
    "state": "DC",
    "focus": "SCN8A advocacy",
    "why": "Consensus co-author; Alliance co-founder",
    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "John M. Schreiber, MD",
@@ -1635,40 +1635,41 @@
    "why": "SCN8A consensus co-author and clinical lead for Alliance",
    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "M. Scott Perry, MD",
-   "institution": "Cook Children's (Jane and John Justin Institute)",
+   "institution": "Cook Children's Medical Center (Jane and John Justin Institute for Mind Health)",
    "city": "Fort Worth",
    "state": "TX",
    "focus": "Genetic epilepsies, DEE trials",
    "why": "SCN8A consensus senior co-author; frequent DEE trial investigator",
    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Mark P. Fitzgerald, MD, PhD",
-   "institution": "Children's Hospital of Philadelphia",
+   "institution": "Children's Hospital of Philadelphia / University of Pennsylvania",
    "city": "Philadelphia",
    "state": "PA",
    "focus": "Sodium channel epilepsies",
    "why": "SCN8A consensus co-author; CHOP ENGIN",
    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17992",
    "confidence": "low",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Annapurna Poduri, MD, MPH",
-   "institution": "Boston Children's Hospital (now NINDS deputy director, recalled)",
+   "institution": "Boston Children's Hospital (NINDS Deputy Director, 2024-25)",
    "city": "Boston",
    "state": "MA",
    "focus": "Epilepsy genetics",
    "why": "US lead of Gene-STEPS rapid genome study",
    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11860300/",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records. NINDS announced her appointment as Deputy Director in 2024; council minutes from autumn 2025 record her departure; 2026 publications list Boston Children's Hospital",
+   "source_url_2": "https://www.ninds.nih.gov/news-events/news/highlights-announcements/annapurna-poduri-md-mph-appointed-ninds-deputy-director"
   },
   {
    "name": "Beth Rosen Sheidley, MS, CGC",
@@ -1679,73 +1680,73 @@
    "why": "Co-author NSGC guideline and yield meta-analysis",
    "source_url": "https://pubmed.ncbi.nlm.nih.gov/36281494/",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Lacey Smith, MS, CGC",
-   "institution": "Boston Children's Hospital",
+   "institution": "Boston Children's Hospital (Epilepsy Genetics Program)",
    "city": "Boston",
    "state": "MA",
    "focus": "Genetic counselling",
    "why": "First author NSGC 2022 guideline",
    "source_url": "https://pubmed.ncbi.nlm.nih.gov/36281494/",
    "confidence": "high",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records (one 2026 record; common name)"
   },
   {
    "name": "Stephan Sanders, BMBS, PhD",
-   "institution": "UCSF (now also Oxford, recalled)",
+   "institution": "University of Oxford (2026); University of California San Francisco (to 2024)",
    "city": "San Francisco",
    "state": "CA",
    "focus": "SCN2A genetics, autism",
    "why": "Lead author 'Progress in understanding and treating SCN2A-mediated disorders'",
    "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records. Most recent record lists Oxford, UK"
   },
   {
    "name": "Kevin Bender, PhD",
-   "institution": "UCSF",
+   "institution": "University of California San Francisco",
    "city": "San Francisco",
    "state": "CA",
    "focus": "Nav1.2 neurophysiology",
    "why": "Senior author SCN2A review; LoF mechanism work",
    "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "Alfred L. George Jr., MD",
-   "institution": "Northwestern University Feinberg",
+   "institution": "Northwestern University Feinberg School of Medicine",
    "city": "Chicago",
    "state": "IL",
    "focus": "Channelopathy functional evaluation",
    "why": "SCN2A review co-author; variant functional assays",
    "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
    "confidence": "medium",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "John J. Millichap, MD",
-   "institution": "Northwestern / (formerly Lurie Children's)",
+   "institution": "Precision Epilepsy PLLC; Northwestern University Feinberg School of Medicine",
    "city": "Chicago",
    "state": "IL",
    "focus": "Neonatal genetic epilepsies, KCNQ2",
    "why": "SCN2A review co-author",
    "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
    "confidence": "low",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Wendy Chung, MD, PhD",
-   "institution": "Boston Children's Hospital (formerly Columbia)",
+   "institution": "Boston Children's Hospital / Harvard Medical School",
    "city": "Boston",
    "state": "MA",
    "focus": "Neurodevelopmental genetics, Simons Searchlight",
    "why": "SCN2A review co-author",
    "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
    "confidence": "low",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Leah Schust Myers",
@@ -1756,18 +1757,18 @@
    "why": "SCN2A review co-author; foundation founder",
    "source_url": "https://www.scn2a.org/pdf/Progress_in_Understanding_and_Treating_SCN2A_Mediated_Diseases.pdf",
    "confidence": "low",
-   "verification": "authorship and institution recalled from the cited paper; not re-verified in session"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records"
   },
   {
    "name": "David G. Vossler, MD",
-   "institution": "University of Washington",
+   "institution": "University of Washington; UW Medicine Valley Medical Center",
    "city": "Seattle",
    "state": "WA",
    "focus": "Epilepsy",
    "why": "Author of Epilepsy Currents commentary on DEE incidence/SUDEP",
    "source_url": "https://doi.org/10.1177/15357597231203079",
    "confidence": "medium",
-   "verification": "author name visible in session search result; institution recalled"
+   "verification": "Affiliation checked 13 Nov 2026 against 2025-2026 PubMed author records and the federal provider registry (NPPES)"
   },
   {
    "name": "Marcio Souza",
