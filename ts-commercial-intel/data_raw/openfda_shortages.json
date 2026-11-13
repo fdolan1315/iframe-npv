@@ -1,0 +1,212 @@
+{
+ "fetched_at": "2026-11-13T01:19:30Z",
+ "source_urls": [
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"guanfacine\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"clonidine\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"haloperidol\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"pimozide\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"aripiprazole\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"risperidone\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"fluphenazine\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"ziprasidone\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"topiramate\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"tetrabenazine\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"deutetrabenazine\"&limit=100&skip=0",
+  "https://api.fda.gov/drug/shortages.json?search=generic_name:\"valbenazine\"&limit=100&skip=0"
+ ],
+ "openfda_last_updated": "2026-11-12",
+ "caveats": [
+  "openFDA mirrors FDA's drug shortage database. A record is one presentation (package) from one company, so one shortage can be many records.",
+  "record_count 0 means the search returned no matches (HTTP 404 'No matches found') on the fetch date; it is not a statement that supply is unconstrained.",
+  "Records include resolved and discontinued entries as well as current shortages; use 'status'.",
+  "Search is a phrase match of the agent name inside generic_name, so combination products would be included if listed."
+ ],
+ "agents": {
+  "guanfacine": {
+   "record_count": 4,
+   "status_counts": {
+    "To Be Discontinued": 4
+   },
+   "records": [
+    {
+     "generic_name": "Guanfacine Hydrochloride Tablet, Extended Release",
+     "proprietary_name": null,
+     "presentation": "Guanfacine Hydrochloride, Tablet, Extended Release, 4 mg (NDC 0228-2855-11)",
+     "package_ndc": "0228-2855-11",
+     "status": "To Be Discontinued",
+     "availability": null,
+     "shortage_reason": null,
+     "company_name": "Actavis Pharma, Inc.",
+     "dosage_form": "Tablet",
+     "therapeutic_category": [
+      "Psychiatry"
+     ],
+     "initial_posting_date": "11/13/2025",
+     "update_date": "11/13/2025",
+     "update_type": "New",
+     "change_date": null,
+     "discontinued_date": "11/13/2025",
+     "related_info": "A business decision was made to discontinue manufacture of the drug."
+    },
+    {
+     "generic_name": "Guanfacine Hydrochloride Tablet, Extended Release",
+     "proprietary_name": null,
+     "presentation": "Guanfacine Hydrochloride, Tablet, Extended Release, 2 mg (NDC 0228-2851-11)",
+     "package_ndc": "0228-2851-11",
+     "status": "To Be Discontinued",
+     "availability": null,
+     "shortage_reason": null,
+     "company_name": "Actavis Pharma, Inc.",
+     "dosage_form": "Tablet",
+     "therapeutic_category": [
+      "Psychiatry"
+     ],
+     "initial_posting_date": "11/13/2025",
+     "update_date": "11/13/2025",
+     "update_type": "New",
+     "change_date": null,
+     "discontinued_date": "11/13/2025",
+     "related_info": "A business decision was made to discontinue manufacture of the drug."
+    },
+    {
+     "generic_name": "Guanfacine Hydrochloride Tablet, Extended Release",
+     "proprietary_name": null,
+     "presentation": "Guanfacine Hydrochloride, Tablet, Extended Release, 3 mg (NDC 0228-2853-11)",
+     "package_ndc": "0228-2853-11",
+     "status": "To Be Discontinued",
+     "availability": null,
+     "shortage_reason": null,
+     "company_name": "Actavis Pharma, Inc.",
+     "dosage_form": "Tablet",
+     "therapeutic_category": [
+      "Psychiatry"
+     ],
+     "initial_posting_date": "11/13/2025",
+     "update_date": "11/13/2025",
+     "update_type": "New",
+     "change_date": null,
+     "discontinued_date": "11/13/2025",
+     "related_info": "A business decision was made to discontinue manufacture of the drug."
+    },
+    {
+     "generic_name": "Guanfacine Hydrochloride Tablet, Extended Release",
+     "proprietary_name": null,
+     "presentation": "Guanfacine Hydrochloride, Tablet, Extended Release, 1 mg (NDC 0228-2850-11)",
+     "package_ndc": "0228-2850-11",
+     "status": "To Be Discontinued",
+     "availability": null,
+     "shortage_reason": null,
+     "company_name": "Actavis Pharma, Inc.",
+     "dosage_form": "Tablet",
+     "therapeutic_category": [
+      "Psychiatry"
+     ],
+     "initial_posting_date": "11/13/2025",
+     "update_date": "11/13/2025",
+     "update_type": "New",
+     "change_date": null,
+     "discontinued_date": "11/13/2025",
+     "related_info": "A business decision was made to discontinue manufacture of the drug."
+    }
+   ]
+  },
+  "clonidine": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "haloperidol": {
+   "record_count": 2,
+   "status_counts": {
+    "To Be Discontinued": 2
+   },
+   "records": [
+    {
+     "generic_name": "Haloperidol Decanoate Injection",
+     "proprietary_name": null,
+     "presentation": "Haloperidol Decanoate, Injection, 50 mg/1 mL (NDC 63323-469-01)",
+     "package_ndc": "63323-469-01",
+     "status": "To Be Discontinued",
+     "availability": null,
+     "shortage_reason": null,
+     "company_name": "Fresenius Kabi USA, LLC",
+     "dosage_form": "Injection",
+     "therapeutic_category": [
+      "Psychiatry"
+     ],
+     "initial_posting_date": "01/09/2026",
+     "update_date": "01/09/2026",
+     "update_type": "New",
+     "change_date": null,
+     "discontinued_date": "01/09/2026",
+     "related_info": "Discontinuation of the manufacture of the drug"
+    },
+    {
+     "generic_name": "Haloperidol Decanoate Injection",
+     "proprietary_name": null,
+     "presentation": "Haloperidol Decanoate, Injection, 50 mg/1 mL (NDC 63323-469-05)",
+     "package_ndc": "63323-469-05",
+     "status": "To Be Discontinued",
+     "availability": null,
+     "shortage_reason": null,
+     "company_name": "Fresenius Kabi USA, LLC",
+     "dosage_form": "Injection",
+     "therapeutic_category": [
+      "Psychiatry"
+     ],
+     "initial_posting_date": "01/09/2026",
+     "update_date": "01/09/2026",
+     "update_type": "New",
+     "change_date": null,
+     "discontinued_date": "01/09/2026",
+     "related_info": "Discontinuation of the manufacture of the drug"
+    }
+   ]
+  },
+  "pimozide": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "aripiprazole": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "risperidone": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "fluphenazine": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "ziprasidone": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "topiramate": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "tetrabenazine": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "deutetrabenazine": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  },
+  "valbenazine": {
+   "record_count": 0,
+   "status_counts": {},
+   "records": []
+  }
+ }
+}

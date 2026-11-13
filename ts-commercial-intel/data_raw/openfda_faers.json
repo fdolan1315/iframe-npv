@@ -1,0 +1,2178 @@
+{
+ "fetched_at": "2026-11-13T01:23:30Z",
+ "source_urls": [
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"guanfacine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"guanfacine\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"guanfacine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"guanfacine\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"guanfacine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"guanfacine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"guanfacine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"guanfacine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"clonidine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"clonidine\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"clonidine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"clonidine\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"clonidine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"clonidine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"clonidine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"clonidine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"haloperidol\"%20OR%20patient.drug.activesubstance.activesubstancename:\"haloperidol\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"haloperidol\"%20OR%20patient.drug.activesubstance.activesubstancename:\"haloperidol\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"haloperidol\"%20OR%20patient.drug.activesubstance.activesubstancename:\"haloperidol\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"haloperidol\"%20OR%20patient.drug.activesubstance.activesubstancename:\"haloperidol\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"pimozide\"%20OR%20patient.drug.activesubstance.activesubstancename:\"pimozide\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"pimozide\"%20OR%20patient.drug.activesubstance.activesubstancename:\"pimozide\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"pimozide\"%20OR%20patient.drug.activesubstance.activesubstancename:\"pimozide\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"pimozide\"%20OR%20patient.drug.activesubstance.activesubstancename:\"pimozide\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"aripiprazole\"%20OR%20patient.drug.activesubstance.activesubstancename:\"aripiprazole\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"aripiprazole\"%20OR%20patient.drug.activesubstance.activesubstancename:\"aripiprazole\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"aripiprazole\"%20OR%20patient.drug.activesubstance.activesubstancename:\"aripiprazole\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"aripiprazole\"%20OR%20patient.drug.activesubstance.activesubstancename:\"aripiprazole\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"risperidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"risperidone\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"risperidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"risperidone\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"risperidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"risperidone\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"risperidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"risperidone\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"fluphenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"fluphenazine\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"fluphenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"fluphenazine\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"fluphenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"fluphenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"fluphenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"fluphenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"ziprasidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"ziprasidone\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"ziprasidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"ziprasidone\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"ziprasidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"ziprasidone\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"ziprasidone\"%20OR%20patient.drug.activesubstance.activesubstancename:\"ziprasidone\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"topiramate\"%20OR%20patient.drug.activesubstance.activesubstancename:\"topiramate\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"topiramate\"%20OR%20patient.drug.activesubstance.activesubstancename:\"topiramate\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"topiramate\"%20OR%20patient.drug.activesubstance.activesubstancename:\"topiramate\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"topiramate\"%20OR%20patient.drug.activesubstance.activesubstancename:\"topiramate\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"tetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"tetrabenazine\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"tetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"tetrabenazine\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"tetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"tetrabenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"tetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"tetrabenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"deutetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"deutetrabenazine\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"deutetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"deutetrabenazine\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"deutetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"deutetrabenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"deutetrabenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"deutetrabenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"valbenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"valbenazine\")&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"valbenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"valbenazine\")&count=patient.reaction.reactionmeddrapt.exact&limit=20",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"valbenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"valbenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&limit=1",
+  "https://api.fda.gov/drug/event.json?search=(patient.drug.openfda.generic_name:\"valbenazine\"%20OR%20patient.drug.activesubstance.activesubstancename:\"valbenazine\")%20AND%20patient.patientonsetage:[0%20TO%2017]%20AND%20patient.patientonsetageunit:801&count=patient.reaction.reactionmeddrapt.exact&limit=20"
+ ],
+ "openfda_last_updated": "2026-10-28",
+ "pediatric_filter": "patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801  (onset age 0-17 where the age unit code is 801 = years; reports with age missing or given in months/days/decades are NOT counted)",
+ "caveats": [
+  "These are spontaneous adverse event reports submitted to FDA (FAERS). They are not incidence or rates, do not establish that the drug caused the event, and cannot be used to compare safety between drugs. Reporting volume tracks how widely and how long a drug has been used, publicity, and litigation.",
+  "A report is counted if the agent appears ANYWHERE in its drug list (suspect, concomitant or interacting). openFDA cannot restrict a count to reports where the agent was the suspect drug in one query without mixing roles across drugs.",
+  "The drug match is the union of two fields: the openFDA-harmonized generic name and the reported active substance name. Neither is complete alone (active substance is mostly populated on reports from about 2014 onward; the harmonized name is missing for some products - deutetrabenazine returns zero on it). Salts and combination products containing the agent are included; reports that only give an unrecognized product name are missed.",
+  "A report can list several reactions, so reaction counts add up to more than total reports. Many top terms describe the underlying condition or reporting artefacts (e.g. 'Drug ineffective', 'Off label use').",
+  "Duplicate reports exist in FAERS and are not removed.",
+  "Reports are for all uses of the drug, not Tourette syndrome specifically.",
+  "The under-18 block undercounts paediatric reports because age is often missing."
+ ],
+ "agents": {
+  "guanfacine": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"guanfacine\" OR patient.drug.activesubstance.activesubstancename:\"guanfacine\")",
+    "total_reports": 9190,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 996
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 723
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 569
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 513
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 429
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 353
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 349
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 336
+     },
+     {
+      "term": "HYPOTENSION",
+      "reports": 329
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 326
+     },
+     {
+      "term": "PRODUCT SUBSTITUTION ISSUE",
+      "reports": 323
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 314
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 302
+     },
+     {
+      "term": "ABNORMAL BEHAVIOUR",
+      "reports": 289
+     },
+     {
+      "term": "INTENTIONAL OVERDOSE",
+      "reports": 287
+     },
+     {
+      "term": "BRADYCARDIA",
+      "reports": 282
+     },
+     {
+      "term": "VOMITING",
+      "reports": 279
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 258
+     },
+     {
+      "term": "AGITATION",
+      "reports": 246
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 246
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"guanfacine\" OR patient.drug.activesubstance.activesubstancename:\"guanfacine\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 3655,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 385
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 315
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 313
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 264
+     },
+     {
+      "term": "PRODUCT SUBSTITUTION ISSUE",
+      "reports": 201
+     },
+     {
+      "term": "INTENTIONAL OVERDOSE",
+      "reports": 162
+     },
+     {
+      "term": "ABNORMAL BEHAVIOUR",
+      "reports": 160
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 154
+     },
+     {
+      "term": "BRADYCARDIA",
+      "reports": 153
+     },
+     {
+      "term": "HYPOTENSION",
+      "reports": 147
+     },
+     {
+      "term": "AGITATION",
+      "reports": 139
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 138
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 136
+     },
+     {
+      "term": "VOMITING",
+      "reports": 130
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 126
+     },
+     {
+      "term": "IRRITABILITY",
+      "reports": 125
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 123
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 121
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 117
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 110
+     }
+    ]
+   }
+  },
+  "clonidine": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"clonidine\" OR patient.drug.activesubstance.activesubstancename:\"clonidine\")",
+    "total_reports": 66176,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 5043
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 4102
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 3962
+     },
+     {
+      "term": "PAIN",
+      "reports": 3903
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 3884
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 3875
+     },
+     {
+      "term": "HYPERTENSION",
+      "reports": 3757
+     },
+     {
+      "term": "DIARRHOEA",
+      "reports": 3086
+     },
+     {
+      "term": "DYSPNOEA",
+      "reports": 3073
+     },
+     {
+      "term": "VOMITING",
+      "reports": 2836
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 2638
+     },
+     {
+      "term": "CHRONIC KIDNEY DISEASE",
+      "reports": 2446
+     },
+     {
+      "term": "BLOOD PRESSURE INCREASED",
+      "reports": 2380
+     },
+     {
+      "term": "RENAL FAILURE",
+      "reports": 2259
+     },
+     {
+      "term": "ACUTE KIDNEY INJURY",
+      "reports": 2225
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 2145
+     },
+     {
+      "term": "HYPOTENSION",
+      "reports": 1998
+     },
+     {
+      "term": "DEATH",
+      "reports": 1980
+     },
+     {
+      "term": "ASTHENIA",
+      "reports": 1946
+     },
+     {
+      "term": "RASH",
+      "reports": 1889
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"clonidine\" OR patient.drug.activesubstance.activesubstancename:\"clonidine\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 4953,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 628
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 532
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 301
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 263
+     },
+     {
+      "term": "SEIZURE",
+      "reports": 245
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 238
+     },
+     {
+      "term": "VOMITING",
+      "reports": 237
+     },
+     {
+      "term": "HYPOTENSION",
+      "reports": 220
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 192
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 176
+     },
+     {
+      "term": "BRADYCARDIA",
+      "reports": 173
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 171
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 164
+     },
+     {
+      "term": "AGITATION",
+      "reports": 160
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 153
+     },
+     {
+      "term": "OVERDOSE",
+      "reports": 150
+     },
+     {
+      "term": "PYREXIA",
+      "reports": 142
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 141
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 137
+     },
+     {
+      "term": "HYPERTENSION",
+      "reports": 135
+     }
+    ]
+   }
+  },
+  "haloperidol": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"haloperidol\" OR patient.drug.activesubstance.activesubstancename:\"haloperidol\")",
+    "total_reports": 37838,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 2846
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 2284
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 2178
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 2020
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 1770
+     },
+     {
+      "term": "EXTRAPYRAMIDAL DISORDER",
+      "reports": 1707
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 1393
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 1380
+     },
+     {
+      "term": "AGITATION",
+      "reports": 1260
+     },
+     {
+      "term": "CONFUSIONAL STATE",
+      "reports": 1175
+     },
+     {
+      "term": "TREMOR",
+      "reports": 1162
+     },
+     {
+      "term": "PYREXIA",
+      "reports": 1123
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 1101
+     },
+     {
+      "term": "VOMITING",
+      "reports": 1088
+     },
+     {
+      "term": "DEATH",
+      "reports": 1057
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 1042
+     },
+     {
+      "term": "DELIRIUM",
+      "reports": 983
+     },
+     {
+      "term": "PSYCHOTIC DISORDER",
+      "reports": 929
+     },
+     {
+      "term": "FALL",
+      "reports": 925
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 897
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"haloperidol\" OR patient.drug.activesubstance.activesubstancename:\"haloperidol\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 1402,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 190
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 177
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 150
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 129
+     },
+     {
+      "term": "EXTRAPYRAMIDAL DISORDER",
+      "reports": 98
+     },
+     {
+      "term": "CATATONIA",
+      "reports": 92
+     },
+     {
+      "term": "AGITATION",
+      "reports": 83
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 75
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 74
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 69
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 68
+     },
+     {
+      "term": "TREMOR",
+      "reports": 65
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 64
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 63
+     },
+     {
+      "term": "SUICIDE ATTEMPT",
+      "reports": 51
+     },
+     {
+      "term": "SEDATION",
+      "reports": 48
+     },
+     {
+      "term": "INTENTIONAL OVERDOSE",
+      "reports": 47
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 46
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 45
+     },
+     {
+      "term": "PSYCHOTIC DISORDER",
+      "reports": 43
+     }
+    ]
+   }
+  },
+  "pimozide": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"pimozide\" OR patient.drug.activesubstance.activesubstancename:\"pimozide\")",
+    "total_reports": 608,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 83
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 57
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 53
+     },
+     {
+      "term": "PARKINSONISM",
+      "reports": 44
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 42
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 35
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 35
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 29
+     },
+     {
+      "term": "HYPOTENSION",
+      "reports": 29
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 28
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 27
+     },
+     {
+      "term": "ELECTROCARDIOGRAM QT PROLONGED",
+      "reports": 27
+     },
+     {
+      "term": "HALLUCINATION",
+      "reports": 26
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 26
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 24
+     },
+     {
+      "term": "ATRIOVENTRICULAR SEPTAL DEFECT",
+      "reports": 23
+     },
+     {
+      "term": "DYSMORPHISM",
+      "reports": 22
+     },
+     {
+      "term": "SEIZURE",
+      "reports": 22
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 22
+     },
+     {
+      "term": "VOMITING",
+      "reports": 22
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"pimozide\" OR patient.drug.activesubstance.activesubstancename:\"pimozide\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 70,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 21
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 13
+     },
+     {
+      "term": "ELECTROCARDIOGRAM QT PROLONGED",
+      "reports": 11
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 10
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 10
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 10
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 9
+     },
+     {
+      "term": "GALACTORRHOEA",
+      "reports": 9
+     },
+     {
+      "term": "BLOOD PROLACTIN INCREASED",
+      "reports": 8
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 8
+     },
+     {
+      "term": "LETHARGY",
+      "reports": 8
+     },
+     {
+      "term": "PARKINSONISM",
+      "reports": 8
+     },
+     {
+      "term": "TIC",
+      "reports": 8
+     },
+     {
+      "term": "MUSCULOSKELETAL STIFFNESS",
+      "reports": 7
+     },
+     {
+      "term": "CATATONIA",
+      "reports": 6
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 6
+     },
+     {
+      "term": "FEBRILE NEUTROPENIA",
+      "reports": 6
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 5
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 5
+     },
+     {
+      "term": "ARRHYTHMIA",
+      "reports": 4
+     }
+    ]
+   }
+  },
+  "aripiprazole": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"aripiprazole\" OR patient.drug.activesubstance.activesubstancename:\"aripiprazole\")",
+    "total_reports": 128934,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 8802
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 8771
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 8157
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 5446
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 5374
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 4571
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 4238
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 4237
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 4227
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 4089
+     },
+     {
+      "term": "TREMOR",
+      "reports": 3912
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 3906
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 3786
+     },
+     {
+      "term": "SUICIDE ATTEMPT",
+      "reports": 3696
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 3399
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 3390
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 3373
+     },
+     {
+      "term": "AKATHISIA",
+      "reports": 3160
+     },
+     {
+      "term": "PSYCHOTIC DISORDER",
+      "reports": 3055
+     },
+     {
+      "term": "VOMITING",
+      "reports": 2950
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"aripiprazole\" OR patient.drug.activesubstance.activesubstancename:\"aripiprazole\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 8799,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 1104
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 798
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 702
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 563
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 449
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 427
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 381
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 346
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 326
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 322
+     },
+     {
+      "term": "TREMOR",
+      "reports": 307
+     },
+     {
+      "term": "VOMITING",
+      "reports": 306
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 305
+     },
+     {
+      "term": "SUICIDE ATTEMPT",
+      "reports": 289
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 285
+     },
+     {
+      "term": "INTENTIONAL OVERDOSE",
+      "reports": 267
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 262
+     },
+     {
+      "term": "AGITATION",
+      "reports": 261
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 249
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 246
+     }
+    ]
+   }
+  },
+  "risperidone": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"risperidone\" OR patient.drug.activesubstance.activesubstancename:\"risperidone\")",
+    "total_reports": 118135,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "GYNAECOMASTIA",
+      "reports": 24634
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 12422
+     },
+     {
+      "term": "ABNORMAL WEIGHT GAIN",
+      "reports": 9478
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 8441
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 7405
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 6090
+     },
+     {
+      "term": "EMOTIONAL DISORDER",
+      "reports": 5913
+     },
+     {
+      "term": "INJURY",
+      "reports": 4574
+     },
+     {
+      "term": "HYPERPROLACTINAEMIA",
+      "reports": 4433
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 4136
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 3843
+     },
+     {
+      "term": "GALACTORRHOEA",
+      "reports": 3679
+     },
+     {
+      "term": "EMOTIONAL DISTRESS",
+      "reports": 3468
+     },
+     {
+      "term": "OBESITY",
+      "reports": 3276
+     },
+     {
+      "term": "EXTRAPYRAMIDAL DISORDER",
+      "reports": 3242
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 3014
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 2840
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 2830
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 2694
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 2675
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"risperidone\" OR patient.drug.activesubstance.activesubstancename:\"risperidone\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 12486,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "GYNAECOMASTIA",
+      "reports": 4606
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 3610
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 2107
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 1449
+     },
+     {
+      "term": "EMOTIONAL DISORDER",
+      "reports": 1271
+     },
+     {
+      "term": "EMOTIONAL DISTRESS",
+      "reports": 1178
+     },
+     {
+      "term": "ABNORMAL WEIGHT GAIN",
+      "reports": 1014
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 974
+     },
+     {
+      "term": "OBESITY",
+      "reports": 878
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 656
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 618
+     },
+     {
+      "term": "HYPERPROLACTINAEMIA",
+      "reports": 587
+     },
+     {
+      "term": "EXTRAPYRAMIDAL DISORDER",
+      "reports": 530
+     },
+     {
+      "term": "GALACTORRHOEA",
+      "reports": 467
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 419
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 376
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 352
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 346
+     },
+     {
+      "term": "AGITATION",
+      "reports": 341
+     },
+     {
+      "term": "SEDATION",
+      "reports": 317
+     }
+    ]
+   }
+  },
+  "fluphenazine": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"fluphenazine\" OR patient.drug.activesubstance.activesubstancename:\"fluphenazine\")",
+    "total_reports": 2109,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 207
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 140
+     },
+     {
+      "term": "SEDATION",
+      "reports": 127
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 103
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 91
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 87
+     },
+     {
+      "term": "TREMOR",
+      "reports": 80
+     },
+     {
+      "term": "AKATHISIA",
+      "reports": 71
+     },
+     {
+      "term": "EXTRAPYRAMIDAL DISORDER",
+      "reports": 69
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 67
+     },
+     {
+      "term": "SUICIDE ATTEMPT",
+      "reports": 67
+     },
+     {
+      "term": "PARKINSONISM",
+      "reports": 65
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 61
+     },
+     {
+      "term": "PSYCHOTIC DISORDER",
+      "reports": 60
+     },
+     {
+      "term": "SCHIZOPHRENIA",
+      "reports": 60
+     },
+     {
+      "term": "FALL",
+      "reports": 59
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 58
+     },
+     {
+      "term": "VOMITING",
+      "reports": 58
+     },
+     {
+      "term": "AGITATION",
+      "reports": 57
+     },
+     {
+      "term": "CONSTIPATION",
+      "reports": 57
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"fluphenazine\" OR patient.drug.activesubstance.activesubstancename:\"fluphenazine\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 46,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "MULTIPLE ORGAN DYSFUNCTION SYNDROME",
+      "reports": 9
+     },
+     {
+      "term": "OVERDOSE",
+      "reports": 9
+     },
+     {
+      "term": "SHOCK",
+      "reports": 9
+     },
+     {
+      "term": "ISCHAEMIC HEPATITIS",
+      "reports": 8
+     },
+     {
+      "term": "SUPRAVENTRICULAR TACHYCARDIA",
+      "reports": 7
+     },
+     {
+      "term": "ACUTE KIDNEY INJURY",
+      "reports": 6
+     },
+     {
+      "term": "COAGULOPATHY",
+      "reports": 6
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 6
+     },
+     {
+      "term": "PNEUMOTHORAX",
+      "reports": 6
+     },
+     {
+      "term": "VENTRICULAR FIBRILLATION",
+      "reports": 6
+     },
+     {
+      "term": "ENCEPHALOPATHY",
+      "reports": 5
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 4
+     },
+     {
+      "term": "EXTRAPYRAMIDAL DISORDER",
+      "reports": 4
+     },
+     {
+      "term": "INTENTIONAL OVERDOSE",
+      "reports": 4
+     },
+     {
+      "term": "SUICIDE ATTEMPT",
+      "reports": 4
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 4
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 3
+     },
+     {
+      "term": "CARDIAC ARREST",
+      "reports": 3
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 3
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 3
+     }
+    ]
+   }
+  },
+  "ziprasidone": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"ziprasidone\" OR patient.drug.activesubstance.activesubstancename:\"ziprasidone\")",
+    "total_reports": 10579,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 1516
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 844
+     },
+     {
+      "term": "SUICIDE ATTEMPT",
+      "reports": 804
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 665
+     },
+     {
+      "term": "SEDATION",
+      "reports": 644
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 608
+     },
+     {
+      "term": "COMPLETED SUICIDE",
+      "reports": 581
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 557
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 541
+     },
+     {
+      "term": "SEXUAL DYSFUNCTION",
+      "reports": 532
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 505
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 499
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 494
+     },
+     {
+      "term": "BLOOD PROLACTIN ABNORMAL",
+      "reports": 490
+     },
+     {
+      "term": "BLOOD GLUCOSE INCREASED",
+      "reports": 481
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 480
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 475
+     },
+     {
+      "term": "METABOLIC DISORDER",
+      "reports": 458
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 438
+     },
+     {
+      "term": "ANOSOGNOSIA",
+      "reports": 436
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"ziprasidone\" OR patient.drug.activesubstance.activesubstancename:\"ziprasidone\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 498,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "AGGRESSION",
+      "reports": 102
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 86
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 78
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 67
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 57
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 53
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 47
+     },
+     {
+      "term": "OBESITY",
+      "reports": 47
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 45
+     },
+     {
+      "term": "AGITATION",
+      "reports": 43
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 43
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 43
+     },
+     {
+      "term": "BLOOD PROLACTIN INCREASED",
+      "reports": 42
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 42
+     },
+     {
+      "term": "SLEEP DISORDER",
+      "reports": 40
+     },
+     {
+      "term": "IRRITABILITY",
+      "reports": 35
+     },
+     {
+      "term": "DECREASED EYE CONTACT",
+      "reports": 34
+     },
+     {
+      "term": "PRODUCT PRESCRIBING ISSUE",
+      "reports": 33
+     },
+     {
+      "term": "HOMICIDAL IDEATION",
+      "reports": 31
+     },
+     {
+      "term": "CATATONIA",
+      "reports": 30
+     }
+    ]
+   }
+  },
+  "topiramate": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"topiramate\" OR patient.drug.activesubstance.activesubstancename:\"topiramate\")",
+    "total_reports": 87518,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 10048
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 7825
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 6363
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 5553
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 5247
+     },
+     {
+      "term": "MIGRAINE",
+      "reports": 4239
+     },
+     {
+      "term": "SEIZURE",
+      "reports": 4154
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 4094
+     },
+     {
+      "term": "PAIN",
+      "reports": 4048
+     },
+     {
+      "term": "DIARRHOEA",
+      "reports": 3540
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 3464
+     },
+     {
+      "term": "VOMITING",
+      "reports": 3376
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 3239
+     },
+     {
+      "term": "PARAESTHESIA",
+      "reports": 3070
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 2945
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 2873
+     },
+     {
+      "term": "FALL",
+      "reports": 2681
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 2679
+     },
+     {
+      "term": "DYSPNOEA",
+      "reports": 2624
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 2619
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"topiramate\" OR patient.drug.activesubstance.activesubstancename:\"topiramate\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 4788,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 771
+     },
+     {
+      "term": "SEIZURE",
+      "reports": 633
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 545
+     },
+     {
+      "term": "EPILEPSY",
+      "reports": 246
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 230
+     },
+     {
+      "term": "VOMITING",
+      "reports": 184
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 169
+     },
+     {
+      "term": "STATUS EPILEPTICUS",
+      "reports": 165
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 161
+     },
+     {
+      "term": "DECREASED APPETITE",
+      "reports": 151
+     },
+     {
+      "term": "PYREXIA",
+      "reports": 140
+     },
+     {
+      "term": "TOXICITY TO VARIOUS AGENTS",
+      "reports": 126
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 124
+     },
+     {
+      "term": "TREATMENT FAILURE",
+      "reports": 120
+     },
+     {
+      "term": "MULTIPLE-DRUG RESISTANCE",
+      "reports": 119
+     },
+     {
+      "term": "HEADACHE",
+      "reports": 117
+     },
+     {
+      "term": "DRUG RESISTANCE",
+      "reports": 113
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 110
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 108
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 107
+     }
+    ]
+   }
+  },
+  "tetrabenazine": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"tetrabenazine\" OR patient.drug.activesubstance.activesubstancename:\"tetrabenazine\")",
+    "total_reports": 5997,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 1156
+     },
+     {
+      "term": "DEATH",
+      "reports": 788
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 675
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 381
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 325
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 313
+     },
+     {
+      "term": "HOSPITALISATION",
+      "reports": 279
+     },
+     {
+      "term": "INTENTIONAL PRODUCT USE ISSUE",
+      "reports": 274
+     },
+     {
+      "term": "FALL",
+      "reports": 253
+     },
+     {
+      "term": "DRUG ADMINISTRATION ERROR",
+      "reports": 224
+     },
+     {
+      "term": "DRUG DOSE OMISSION",
+      "reports": 213
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 207
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 203
+     },
+     {
+      "term": "PRESCRIBED OVERDOSE",
+      "reports": 194
+     },
+     {
+      "term": "TREATMENT NONCOMPLIANCE",
+      "reports": 188
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 186
+     },
+     {
+      "term": "TREMOR",
+      "reports": 185
+     },
+     {
+      "term": "CONDITION AGGRAVATED",
+      "reports": 170
+     },
+     {
+      "term": "MOVEMENT DISORDER",
+      "reports": 160
+     },
+     {
+      "term": "TARDIVE DYSKINESIA",
+      "reports": 143
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"tetrabenazine\" OR patient.drug.activesubstance.activesubstancename:\"tetrabenazine\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 339,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 107
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 57
+     },
+     {
+      "term": "DRUG ADMINISTRATION ERROR",
+      "reports": 29
+     },
+     {
+      "term": "DEATH",
+      "reports": 21
+     },
+     {
+      "term": "INTENTIONAL PRODUCT USE ISSUE",
+      "reports": 21
+     },
+     {
+      "term": "NEUROLEPTIC MALIGNANT SYNDROME",
+      "reports": 19
+     },
+     {
+      "term": "WEIGHT INCREASED",
+      "reports": 19
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 18
+     },
+     {
+      "term": "RHABDOMYOLYSIS",
+      "reports": 17
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 16
+     },
+     {
+      "term": "HOSPITALISATION",
+      "reports": 16
+     },
+     {
+      "term": "HYPOTENSION",
+      "reports": 16
+     },
+     {
+      "term": "PRESCRIBED OVERDOSE",
+      "reports": 16
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 16
+     },
+     {
+      "term": "TIC",
+      "reports": 16
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 15
+     },
+     {
+      "term": "RESPIRATORY FAILURE",
+      "reports": 15
+     },
+     {
+      "term": "CATATONIA",
+      "reports": 14
+     },
+     {
+      "term": "HYPOVENTILATION",
+      "reports": 14
+     },
+     {
+      "term": "SEDATION COMPLICATION",
+      "reports": 14
+     }
+    ]
+   }
+  },
+  "deutetrabenazine": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"deutetrabenazine\" OR patient.drug.activesubstance.activesubstancename:\"deutetrabenazine\")",
+    "total_reports": 7695,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 1053
+     },
+     {
+      "term": "DEATH",
+      "reports": 559
+     },
+     {
+      "term": "DEPRESSION",
+      "reports": 550
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 525
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 435
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 396
+     },
+     {
+      "term": "TREMOR",
+      "reports": 390
+     },
+     {
+      "term": "SUICIDAL IDEATION",
+      "reports": 372
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 367
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 366
+     },
+     {
+      "term": "FALL",
+      "reports": 360
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 348
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 307
+     },
+     {
+      "term": "TARDIVE DYSKINESIA",
+      "reports": 273
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 265
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 231
+     },
+     {
+      "term": "FEELING ABNORMAL",
+      "reports": 194
+     },
+     {
+      "term": "DIARRHOEA",
+      "reports": 181
+     },
+     {
+      "term": "PRODUCT DOSE OMISSION ISSUE",
+      "reports": 181
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 175
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"deutetrabenazine\" OR patient.drug.activesubstance.activesubstancename:\"deutetrabenazine\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 26,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 7
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 5
+     },
+     {
+      "term": "PRODUCT USE IN UNAPPROVED INDICATION",
+      "reports": 5
+     },
+     {
+      "term": "PRODUCT ADMINISTERED TO PATIENT OF INAPPROPRIATE AGE",
+      "reports": 4
+     },
+     {
+      "term": "PRODUCT USE ISSUE",
+      "reports": 3
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 2
+     },
+     {
+      "term": "DISCOMFORT",
+      "reports": 2
+     },
+     {
+      "term": "DRUG ADMINISTERED TO PATIENT OF INAPPROPRIATE AGE",
+      "reports": 2
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 2
+     },
+     {
+      "term": "DRUG INTERACTION",
+      "reports": 2
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 2
+     },
+     {
+      "term": "INCORRECT DOSE ADMINISTERED",
+      "reports": 2
+     },
+     {
+      "term": "AGITATION",
+      "reports": 1
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 1
+     },
+     {
+      "term": "ATTENTION DEFICIT/HYPERACTIVITY DISORDER",
+      "reports": 1
+     },
+     {
+      "term": "BALANCE DISORDER",
+      "reports": 1
+     },
+     {
+      "term": "CATATONIA",
+      "reports": 1
+     },
+     {
+      "term": "CONFUSIONAL STATE",
+      "reports": 1
+     },
+     {
+      "term": "DERMATOPHAGIA",
+      "reports": 1
+     },
+     {
+      "term": "DIARRHOEA",
+      "reports": 1
+     }
+    ]
+   }
+  },
+  "valbenazine": {
+   "all_ages": {
+    "filter": "(patient.drug.openfda.generic_name:\"valbenazine\" OR patient.drug.activesubstance.activesubstancename:\"valbenazine\")",
+    "total_reports": 25434,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 2783
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 2508
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 1701
+     },
+     {
+      "term": "TREMOR",
+      "reports": 1614
+     },
+     {
+      "term": "TARDIVE DYSKINESIA",
+      "reports": 1543
+     },
+     {
+      "term": "FALL",
+      "reports": 1154
+     },
+     {
+      "term": "DIZZINESS",
+      "reports": 969
+     },
+     {
+      "term": "DEATH",
+      "reports": 946
+     },
+     {
+      "term": "DROOLING",
+      "reports": 927
+     },
+     {
+      "term": "DYSKINESIA",
+      "reports": 905
+     },
+     {
+      "term": "THERAPEUTIC PRODUCT EFFECT DECREASED",
+      "reports": 894
+     },
+     {
+      "term": "OFF LABEL USE",
+      "reports": 700
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 690
+     },
+     {
+      "term": "HOSPITALISATION",
+      "reports": 673
+     },
+     {
+      "term": "NAUSEA",
+      "reports": 642
+     },
+     {
+      "term": "PARKINSONISM",
+      "reports": 639
+     },
+     {
+      "term": "INSOMNIA",
+      "reports": 586
+     },
+     {
+      "term": "ADVERSE DRUG REACTION",
+      "reports": 577
+     },
+     {
+      "term": "BALANCE DISORDER",
+      "reports": 557
+     },
+     {
+      "term": "THERAPEUTIC PRODUCT EFFECT INCOMPLETE",
+      "reports": 557
+     }
+    ]
+   },
+   "under_18": {
+    "filter": "(patient.drug.openfda.generic_name:\"valbenazine\" OR patient.drug.activesubstance.activesubstancename:\"valbenazine\") AND patient.patientonsetage:[0 TO 17] AND patient.patientonsetageunit:801",
+    "total_reports": 22,
+    "openfda_last_updated": "2026-10-28",
+    "top_reactions": [
+     {
+      "term": "OFF LABEL USE",
+      "reports": 13
+     },
+     {
+      "term": "SOMNOLENCE",
+      "reports": 5
+     },
+     {
+      "term": "ANXIETY",
+      "reports": 3
+     },
+     {
+      "term": "TIC",
+      "reports": 3
+     },
+     {
+      "term": "AGGRESSION",
+      "reports": 2
+     },
+     {
+      "term": "DROOLING",
+      "reports": 2
+     },
+     {
+      "term": "DRUG INEFFECTIVE",
+      "reports": 2
+     },
+     {
+      "term": "IRRITABILITY",
+      "reports": 2
+     },
+     {
+      "term": "RASH",
+      "reports": 2
+     },
+     {
+      "term": "SEDATION",
+      "reports": 2
+     },
+     {
+      "term": "TOURETTE^S DISORDER",
+      "reports": 2
+     },
+     {
+      "term": "ARTHRALGIA",
+      "reports": 1
+     },
+     {
+      "term": "BABESIOSIS",
+      "reports": 1
+     },
+     {
+      "term": "COGNITIVE DISORDER",
+      "reports": 1
+     },
+     {
+      "term": "COUGH",
+      "reports": 1
+     },
+     {
+      "term": "DYSARTHRIA",
+      "reports": 1
+     },
+     {
+      "term": "DYSTONIA",
+      "reports": 1
+     },
+     {
+      "term": "FACIAL PARALYSIS",
+      "reports": 1
+     },
+     {
+      "term": "FATIGUE",
+      "reports": 1
+     },
+     {
+      "term": "GAIT DISTURBANCE",
+      "reports": 1
+     }
+    ]
+   }
+  }
+ }
+}
