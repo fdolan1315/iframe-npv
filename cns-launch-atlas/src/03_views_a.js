@@ -1,7 +1,7 @@
 /* ---------- shared bits ---------- */
 const head = (eyebrow, title, lede) => `<div class="pagehead"><span class="eyebrow">${esc(eyebrow)}</span><h1>${esc(title)}</h1>${lede ? `<p>${lede}</p>` : ""}</div>`;
 const assetOf = k => (RC.assets || {})[k] || {};
-const isFuture = d => { const m = String(d || "").match(/(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/); if (!m) return false; const dt = new Date(+m[1], m[2] ? +m[2] - 1 : 11, m[3] ? +m[3] : 28); return dt >= new Date(D.built) || /expected/i.test(d); };
+const isFuture = d => { const p = parseWhen(d); return !!p && p[2] > NOW; };
 function timelineFor(ta) {
   const keys = TA[ta].assets;
   return (RC.timeline || []).filter(e => keys.some(k => String(e.asset || "").toLowerCase().includes(k)) || (ta === "dee" && /pipeline/.test(e.asset || "") && /KCNT1|PRAX-206/.test(e.event)));
@@ -15,7 +15,7 @@ function funnelChart(rows) {
 function stagePill(s) { s = String(s || ""); const k = /discontinu|terminat|fail|missed/i.test(s) ? "crit" : /approved|marketed|nda|filed/i.test(s) ? "good" : /3|pivotal|registrational/i.test(s) ? "acc" : ""; return `<span class="pill ${k}">${k === "crit" ? "⚠ " : k === "good" ? "✓ " : ""}${esc(s.length > 34 ? s.slice(0, 33) + "…" : s)}</span>`; }
 const ACTIVE_RX = /^(RECRUITING|ACTIVE_NOT_RECRUITING|NOT_YET_RECRUITING|ENROLLING_BY_INVITATION)$/;
 function viewOverview() {
-  const c = cur(), ta = c.key, pipe = RM().pipeline || [], tl = timelineFor(ta), now = Date.parse(D.built);
+  const c = cur(), ta = c.key, pipe = RM().pipeline || [], tl = timelineFor(ta), now = NOW;
   const pdufa = ta === "dee" ? "2026-12-27" : "2027-01-29", days = Math.round((Date.parse(pdufa) - now) / 864e5);
   const big = ta === "dee" ? [["27 Dec 2026", "FDA action date", "First therapy for SCN2A and SCN8A DEE"], ["~10,000", "US patients", "About 5,000 diagnosed"], ["$400–600K", "Guided list price per year", "Sponsor corridor, Nov 2026"]] : [["29 Jan 2027", "FDA action date", "First purpose-built oral therapy"], ["7–9M", "US patients", "About 2M seeking treatment"], ["$50–100K", "Guided list price per year", "Sponsor corridor, Nov 2026"]];
   const idSrc = rx => (RC.investor_day || []).filter(f => rx.test(f.fact)).map(f => f.source_url);
@@ -26,8 +26,8 @@ function viewOverview() {
   return `<div class="jhero"><img src="media/${ta === "dee" ? "dee-hand" : "et-cup"}.jpg" alt="${ta === "dee" ? "An adult's hand holding a child's hand on a knitted blanket" : "An older adult steadying a cup with both hands"}"><div class="jhero-in"><span class="eyebrow">${esc(c.tag)}</span><h1>${esc(c.name)}</h1><p>${esc(c.intro.split(". ").slice(0, 2).join(". ").replace(/\.?$/, "."))}</p>
     <div class="bigs">${big.map(b => `<div><b>${b[0]}</b><span>${esc(b[1])}</span><small>${esc(b[2])}</small></div>`).join("")}</div></div><span class="jcap">Illustrative image</span></div>
   ${fun}
-  ${figure("Catalysts", `${tl.filter(e => isFuture(e.date)).length} dated catalysts ahead, and the FDA decision gates the rest`, "Recent milestones in grey, upcoming in blue. Spaced by sequence, not by time.", catalystFig(tl, pdufa, days), prov([...new Set(tl.map(e => e.source_url))].slice(0, 4), { conf: "high", quality: "company disclosure" }))}
-  ${figure("Pipeline", (n => `${n} program${n === 1 ? " is" : "s are"} in Phase 3 or filed; ${by.Stopped || 0} have been stopped`)((by["Phase 3"] || 0) + (by.Filed || 0)), "Select a program for mechanism, data and next catalyst.", phaseStrip(pipe, c.assets), `<div class="prov"><span>Stage as stated by sponsors.</span><a class="src" href="#landscape">Full landscape →</a></div>`)}
+  ${figure("Catalysts", `${tl.filter(e => isFuture(e.date)).length} dated catalysts ahead, and the FDA decision gates the rest`, `Recent milestones in grey, upcoming in blue. Spaced by sequence, not by time. Data as of ${BUILT}.`, catalystFig(tl, pdufa, days), prov([...new Set(tl.map(e => e.source_url))].slice(0, 4), { conf: "high", quality: "company disclosure" }))}
+  ${figure("Pipeline", (n => `${n} program${n === 1 ? " is" : "s are"} late-stage or filed; ${by.Stopped || 0} have been stopped`)((by["Phase 3"] || 0) + (by.Filed || 0)), "Select a program for mechanism, data and next catalyst.", phaseStrip(pipe, c.assets), `<div class="prov"><span>Stage as stated by sponsors.</span><a class="src" href="#landscape">Full landscape →</a></div>`)}
   ${figure("Briefing", "Six things to know before the meeting", "", `<div class="tiles" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">${c.matters.map((m, i) => `<button class="tile" onclick="_matter(${i})"><span class="n">${i + 1}</span><span style="font-family:var(--f-head);font-weight:600;font-size:17px">${esc(m[0])}</span><small>Read the reasoning →</small></button>`).join("")}</div>`)}`;
 }
 

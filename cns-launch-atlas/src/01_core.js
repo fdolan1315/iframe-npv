@@ -1,5 +1,7 @@
 "use strict";
 const D = JSON.parse(document.getElementById("bundle").textContent);
+/* "Today" is the viewer's date; the data itself is dated D.built */
+const NOW = Date.now(), fmtDay = t => { const d = new Date(t); return `${d.getUTCDate()} ${"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ")[d.getUTCMonth()]} ${d.getUTCFullYear()}`; }, BUILT = fmtDay(Date.parse(D.built));
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const N = (v, d = 0) => (v == null || isNaN(v)) ? "—" : Number(v).toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
@@ -41,7 +43,7 @@ function hbar(rows, o = {}) {
   const H = rows.length * rh + 4;
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(o.title || "bar chart")}">` + rows.map((r, i) => {
     const y = i * rh + 3, w = Math.max(1, r.value / max * pw);
-    return `<g data-tip="${esc(r.tip || `<b>${esc(r.label)}</b><br>${fmt(r.value)}`)}"><rect x="0" y="${y - 2}" width="${W}" height="${rh}" fill="transparent"/><text class="lbl" x="${lw - 8}" y="${y + rh / 2 + 1}" text-anchor="end">${esc(String(r.label).length > lw / 6 ? String(r.label).slice(0, Math.floor(lw / 6) - 1) + "…" : r.label)}</text><path d="M${lw} ${y}h${w - 3}a3 3 0 0 1 3 3v${rh - 12}a3 3 0 0 1 -3 3h${-(w - 3)}z" fill="${r.color || o.color || "var(--s0)"}"/><text class="val" x="${lw + w + 6}" y="${y + rh / 2 + 1}">${fmt(r.value)}</text></g>`;
+    return `<g data-tip="${esc(r.tip || `<b>${esc(r.label)}</b><br>${fmt(r.value)}`)}"><rect x="0" y="${y - 2}" width="${W}" height="${rh}" fill="transparent"/><text class="lbl" x="${lw - 8}" y="${y + rh / 2 + 1}" text-anchor="end">${esc(String(r.label).length > lw / 7.4 ? String(r.label).slice(0, Math.floor(lw / 7.4) - 1) + "…" : r.label)}</text><path d="M${lw} ${y}h${w - 3}a3 3 0 0 1 3 3v${rh - 12}a3 3 0 0 1 -3 3h${-(w - 3)}z" fill="${r.color || o.color || "var(--s0)"}"/><text class="val" x="${lw + w + 6}" y="${y + rh / 2 + 1}">${fmt(r.value)}</text></g>`;
   }).join("") + `</svg>`;
 }
 /* line / column chart over ordered x categories: series [{name, values:[...], color?}] */
