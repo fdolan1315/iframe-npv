@@ -180,6 +180,26 @@ def hslim(rows, n):
 H = {"dee": {"n_total": hcp["dee"]["n_total"], "rows": hslim(hcp["dee"]["rows"], 3500), "by_specialty": hcp["dee"]["by_specialty"]},
      "et": {"n_total": hcp["et"]["n_total"], "rows": hslim(hcp["et"]["rows"], 3500), "by_specialty": hcp["et"]["by_specialty"]}}
 
+# ---------------- Open Payments: industry ties ----------------
+OP = load("open_payments.json") if os.path.exists(os.path.join(ROOT, "data", "open_payments.json")) else None
+if OP:
+    for ta in ("dee", "et"):
+        rec = OP["rec"][ta]
+        byname = collections.defaultdict(list)
+        for npi, d in rec.items():
+            p = d["n"].split()
+            byname[(re.sub(r"[^a-z]", "", p[-1].lower()), p[0].lower()[:3], d["s"])].append(npi)
+        for k in K[ta]:
+            k["op"] = None
+            if k.get("npi") and k["npi"] in rec:
+                k["op"] = k["npi"]; continue
+            if not (k.get("us") and k.get("st")): continue
+            p = re.sub(r"\b[A-Za-z]\b\.?", "", k["name"]).split()   # drop middle initials
+            if len(p) < 2: continue
+            c = byname.get((re.sub(r"[^a-z]", "", p[-1].lower()), p[0].lower()[:3], k["st"]), [])
+            if len(c) == 1: k["op"] = c[0]   # unique surname + first name + state only
+        print(ta, "open payments:", len(rec), "clinicians;", sum(1 for r in H[ta]["rows"] if r[0] in rec), "in prescriber list;", sum(1 for k in K[ta] if k.get("op")), "in expert list")
+
 # procedures -> center-level (city) aggregates + surgeon list
 pc = collections.defaultdict(lambda: {"fus": 0, "dbs": 0, "names": set()})
 for r in proc["providers"]:
@@ -193,7 +213,7 @@ bundle = {
   "trials": T, "inst": inst, "kols": K, "hcp": H, "proc": {"national": {k: v.get("US") for k, v in proc["geo"].items()}, "codes": proc["codes"], "centers": PC},
   "pubmed": {ta: {k: pm[ta][k] for k in ("n_articles", "n_core", "n_authors", "by_year", "journals", "recent_core")} for ta in pm},
   "spend": load("spend_by_drug.json"), "fda": load("openfda.json"), "npi_cities": load("npi_supply.json")["top_cities"],
-  "partd_spec": {ta: hcp[ta]["by_specialty"] for ta in hcp}, "research": R,
+  "partd_spec": {ta: hcp[ta]["by_specialty"] for ta in hcp}, "research": R, "op": OP,
   "sdud_years": {p: {y: {"rx": sum(v["rx"] for v in ys.values()), "amt": sum(v["amt"] for v in ys.values()), "q": max([v.get("q", 0) for v in ys.values()] or [0])} for y, ys in yy.items()} for p, yy in sdud.items()},
 }
 os.makedirs(os.path.join(ROOT, "dist"), exist_ok=True)

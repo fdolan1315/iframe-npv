@@ -160,3 +160,21 @@ function influenceScatter(ta, kols) {
   g += `<text x="${(m.l + W - m.r) / 2}" y="${H - 6}" font-size="14" fill="#42526E" text-anchor="middle">Papers in the field, 2016–2026</text><text transform="translate(14 ${(H - m.b + m.t) / 2}) rotate(-90)" font-size="14" fill="#42526E" text-anchor="middle">${ta === "dee" ? "Papers on SCN2A or SCN8A" : "Papers with tremor in the title"}</text>`;
   return `<svg class="fig" viewBox="0 0 ${W} ${H}" role="img" aria-label="Opinion leaders by publication volume and topic focus">${g}</svg><div class="legend"><span><i style="background:#2457D6;border-radius:50%"></i>named in desk research</span><span><i style="background:#111827;border-radius:50%;opacity:.5"></i>ranked from publications only</span><span>size = registered studies led</span></div>`;
 }
+
+/* ---------- industry ties: CMS Open Payments ---------- */
+const opRec = ta => (D.op && D.op.rec[ta]) || {};
+const OP_YEARS = () => D.op ? `${D.op.meta.years[0]}–${String(D.op.meta.years[D.op.meta.years.length - 1]).slice(2)}` : "";
+function opDetail(ta, npi, byName) {
+  const o = opRec(ta)[npi]; if (!o) return "";
+  return `<h4>Paid by adjacent brands, ${OP_YEARS()}: ${USD(o.amt)}</h4>${hbar(Object.entries(o.b).map(([l, v]) => ({ label: l, value: v })), { fmt: USD, labelW: 170 })}<p class="sub">Speaking and faculty ${USD(o.k.speak || 0)} · consulting ${USD(o.k.consult || 0)} · ${Object.entries(o.y).map(([y, v]) => `${y} ${USD(v)}`).join(" · ")}. Source: CMS Open Payments. This shows paid work for other companies, not a view of any product.${byName ? " Matched by name and state; check before use." : ""}</p>`;
+}
+function opFig(ta, rows) {
+  const rec = opRec(ta), T = [[0, 50, "Top 50"], [50, 100, "51–100"], [100, 250, "101–250"], [250, 500, "251–500"], [500, 1000, "501–1,000"], [1000, rows.length, "The rest"]];
+  const tiers = T.map(([a, b, l]) => { const sl = rows.slice(a, b), p = sl.filter(r => rec[r[0]]).length; return { l, n: sl.length, p, pct: sl.length ? 100 * p / sl.length : 0 }; });
+  const W = 560, lw = 104, rh = 40, mx = Math.max(20, Math.ceil(Math.max(...tiers.map(t => t.pct)) / 10) * 10), X = v => lw + v / mx * (W - lw - 150); let g = "";
+  tiers.forEach((t, i) => { const y = 6 + i * rh; g += `<text x="${lw - 10}" y="${y + 21}" font-size="14" text-anchor="end">${t.l}</text><rect x="${lw}" y="${y + 5}" width="${Math.max(2, X(t.pct) - lw)}" height="22" rx="3" fill="${i === 0 ? "#2457D6" : "#111827"}"/><text x="${Math.max(X(t.pct), lw + 2) + 8}" y="${y + 21}" font-size="14"><tspan font-weight="700">${Math.round(t.pct)}%</tspan><tspan fill="#42526E"> · ${t.p} of ${N(t.n)}</tspan></text>`; });
+  const B = D.op.brands.filter(b => b.ta === ta && b.n > 0).sort((a, b) => b.amt - a.amt), bm = Math.max(...B.map(b => b.amt)), W2 = 420, l2 = 0, bh = 46, X2 = v => v / bm * (W2 - 150); let h = "";
+  B.forEach((b, i) => { const y = i * bh; h += `<text x="0" y="${y + 15}" font-size="14" font-weight="600">${esc(b.label)}</text><rect x="0" y="${y + 21}" width="${Math.max(2, X2(b.amt))}" height="14" rx="3" fill="#94A3B8"/><rect x="0" y="${y + 21}" width="${Math.max(b.neuro ? 2 : 0, X2(b.neuro))}" height="14" rx="3" fill="#111827"/><text x="${Math.max(2, X2(b.amt)) + 8}" y="${y + 33}" font-size="14"><tspan font-weight="700">${USD(b.amt)}</tspan><tspan fill="#42526E"> · ${N(b.n)} paid</tspan></text>`; });
+  return { tiers, n: Object.keys(rec).length, neuro: Object.values(rec).filter(o => o.g === "neuro").length, total: Object.values(rec).reduce((a, o) => a + o.amt, 0),
+    html: `<div class="fig2" style="grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)"><div><h3 style="margin:0 0 8px;font-size:16px">Share of prescribers paid, by prescribing rank</h3><svg class="fig" viewBox="0 0 ${W} ${12 + tiers.length * rh}" role="img" aria-label="Share of prescribers with payments from adjacent brands, by prescribing rank">${g}</svg></div><div><h3 style="margin:0 0 8px;font-size:16px">What each adjacent brand paid, ${OP_YEARS()}</h3><svg class="fig" viewBox="0 0 ${W2} ${B.length * bh}" role="img" aria-label="Speaking and consulting payments by brand">${h}</svg><div class="legend"><span><i style="background:#111827"></i>neurology and neurosurgery</span><span><i style="background:#94A3B8"></i>other specialties</span></div></div></div>` };
+}
