@@ -309,7 +309,7 @@
      "design": "Randomized, placebo-controlled with placebo period; 16 weeks",
      "n": "53 randomized; 51 in relutrigine analysis, 25 in placebo-period analysis (23 in both)",
      "primary_endpoint": "Motor seizure frequency over 16 weeks",
-     "results": "53% placebo-adjusted reduction in motor seizure frequency; 66% increase in motor seizure-free days (p=0.034). Whether the cohort was stopped early for efficacy: not confirmed in retrieved sources. Cohort-2 seizure-freedom rate: not retrieved.",
+     "results": "53% placebo-adjusted reduction in motor seizure frequency; 66% increase in motor seizure-free days (p=0.034). Study stopped early at interim analysis (corporate deck, Aug 2026, slide 18); more than 80% of patients were on stable sodium-channel blockers at baseline. Cohort-2 seizure-freedom rate: not retrieved.",
      "readout_date": "2025-12 (approx.; presented AES 2025 / AAN 2026)",
      "source_url": "https://www.neurologylive.com/view/relutrigine-shows-promise-phase-2-embold-study-scn2a-dee-scn8a-dee",
      "confidence": "medium"
@@ -330,17 +330,17 @@
      "name": "EMERALD",
      "nct": "NCT07010471",
      "phase": "3",
-     "design": "Randomized, multicenter, double-blind, placebo-controlled, 16 weeks; ages 2-65 with DEE diagnosis (broad, etiology-agnostic)",
-     "n": "~200 enrolled (exceeded ~160 planned); >50 distinct genetic etiologies",
-     "primary_endpoint": "Seizure reduction over 16 weeks",
-     "results": "Pending",
+     "design": "Double-blind, placebo-controlled, 1:1, 16 weeks, then open-label extension; ages 2-65 with a childhood DEE diagnosis, at least 4 countable motor seizures per 28 days, no more than 2 sodium-channel blockers; more than 50 distinct genetic etiologies",
+     "n": "about 200",
+     "primary_endpoint": "Change from baseline in monthly motor seizure frequency",
+     "results": "Pending; topline expected Q4 2026",
      "readout_date": "Topline expected Q4 2026; sNDA 2027 if positive and initial NDA approved",
      "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
      "confidence": "high"
     }
    ],
-   "safety": "Cohort 2: one discontinuation for an AE on relutrigine; one family withdrew consent in placebo period; one death during placebo period; all SAEs judged unrelated to drug and consistent with underlying disease; no drug-related SAEs. OLE: no new safety signals, no dose reductions needed (earlier cuts).",
-   "dosing": "Weight-based oral dosing: 0.5 mg/kg/day, optional increase to 1 mg/kg/day in EMBOLD cohort 1. Commercial formulation (e.g., oral suspension) and labelled dose: not confirmed in retrieved sources.",
+   "safety": "Cohort 2: one discontinuation for an AE on relutrigine; one family withdrew consent in placebo period; one death during placebo period; all SAEs judged unrelated to drug and consistent with underlying disease; no drug-related SAEs. OLE: no new safety signals, no dose reductions needed (earlier cuts). Corporate deck (Aug 2026): adverse events mostly mild to moderate, no drug-related serious adverse events, no dose reductions required.",
+   "dosing": "Once daily, liquid formulation for oral or G/J-tube administration, no titration required (corporate deck, Aug 2026, slide 17). EMBOLD cohort 1 used 0.5 mg/kg/day with optional increase to 1 mg/kg/day; EMERALD uses 1 mg/kg/day, which may be escalated to 1.5 mg/kg/day at day 35 (slide 20).",
    "launch_plan": [
     {
      "fact": "Relutrigine pricing",
@@ -488,9 +488,9 @@
      "nct": "not retrieved",
      "phase": "3",
      "design": "Double-blind, parallel-group, placebo-controlled, 12 weeks, 1:1 randomization; decentralized",
-     "n": "473 randomized; mITT 199 ulixacaltamide / 233 placebo",
+     "n": "473 randomised; 432 analysed (199 ulixacaltamide, 233 placebo)",
      "primary_endpoint": "Change in mADL11 at Week 8",
-     "results": "-4.3 points ulixacaltamide vs -1.7 placebo; p<0.0001. Company headline: '4.3 point mean improvement'.",
+     "results": "mADL11 change from baseline to day 56: -4.3 ulixacaltamide vs -1.7 placebo; p<0.0001 (corporate deck, Aug 2026, slide 10). Effect seen as early as week 2 and maintained for 12 weeks.",
      "readout_date": "2025-10-16",
      "source_url": "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
      "confidence": "high",
@@ -503,7 +503,7 @@
      "design": "Stable-responder randomized withdrawal: 8-week open-label lead-in, responders randomized to continue drug or switch to placebo for 4 weeks",
      "n": "238 enrolled; 80 responders randomized",
      "primary_endpoint": "Maintenance of response during randomized withdrawal",
-     "results": "55% maintained response on ulixacaltamide vs 33% on placebo; p=0.0369",
+     "results": "55% maintained response on ulixacaltamide vs 33% on placebo; p=0.037; odds ratio 2.7 (95% CI 1.06-6.92); 40 per arm (corporate deck, Aug 2026, slide 10)",
      "readout_date": "2025-10-16",
      "source_url": "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
      "confidence": "high"
@@ -798,9 +798,9 @@
    "trials": [
     {
      "name": "EMBRAVE Part A",
-     "nct": "not retrieved",
+     "nct": "NCT05737784",
      "phase": "1/2",
-     "design": "Randomized, placebo/sham-controlled ascending dose; starting 1 mg with optional escalation",
+     "design": "3:1 randomisation to elsunersen 1 mg intrathecal every 4 weeks or sham procedure, 24 weeks, ages 2-12; optional escalation up to 8 mg",
      "n": "9 pediatric patients aged 2-12",
      "primary_endpoint": "Safety; seizure reduction",
      "results": "77% placebo(sham)-adjusted reduction in monthly seizures (p=0.015; 95% CI 33-92); 71% of treated achieved >50% reduction by period 6; 57% had >=28-day seizure-free period",
@@ -811,19 +811,19 @@
     },
     {
      "name": "EMBRAVE3",
-     "nct": "not retrieved",
+     "nct": "NCT07019922",
      "phase": "3 registrational",
-     "design": "Early-seizure-onset SCN2A DEE; 1 mg every 4 weeks per 2025 deck (may have changed)",
-     "n": "not disclosed",
-     "primary_endpoint": "not retrieved",
+     "design": "Observation period, then elsunersen 1 mg every 4 weeks for 24 weeks, then open-label extension; early-onset SCN2A variant with seizures before 3 months of age; ages 0-18",
+     "n": "30",
+     "primary_endpoint": "Median percent change in monthly motor seizure frequency from baseline",
      "results": "Enrolling 'strongly'",
      "readout_date": "Topline 2027 (previously 2H 2026)",
      "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
      "confidence": "high"
     }
    ],
-   "safety": "Detailed Part A safety not retrieved",
-   "dosing": "1 mg starting dose, monthly (q4w) dosing in pivotal design per older deck",
+   "safety": "EMBRAVE Part A: no drug-related serious adverse events, no discontinuations, no neuroinflammation signals at doses up to 8 mg; most adverse events mild to moderate (corporate deck, Aug 2026, slide 22).",
+   "dosing": "Intrathecal, once every 4 weeks; 1 mg starting dose (corporate deck, Aug 2026, slides 21-23)",
    "launch_plan": [],
    "analyst_estimates": [
     {
@@ -1110,6 +1110,7 @@
   }
  ],
  "open_questions": [
+  "The August 2026 corporate deck has been read directly. The 12 November 2026 investor-day deck and press release have not: the patient funnel (10K / 5K / 1.9K), price corridors, field-force size, target-prescriber counts, payer mix and the 9 million ET figure still rest on search-result extractions.",
   "Full verbatim text of the 2026-11-12 press release and the slide deck could not be fetched (globenewswire.com, sec.gov, stocktitan.net blocked); all Investor Day facts come from search-engine extractions. Verify against https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
   "Relutrigine field team headcount, number of regions, and Tier 1/Tier 2 HCP counts - not found.",
   "Relutrigine hub/patient-support brand, specialty pharmacy partners, sponsored genetic testing program - not found.",
@@ -1119,11 +1120,51 @@
   "Ulixacaltamide telehealth plans, copay program, ET patient segmentation beyond 9M / 2M - not found.",
   "Peak-sales slide deltas (+$2.3B etc.) - confirm baseline is consensus-assuming-approval.",
   "POWER1 quantitative results (effect size, p-values, n) and the redesigned POWER2 dose/design/timing - not retrieved.",
-  "EMBOLD cohort 2: seizure-freedom rate, exact p-value for primary, AE table; 18-month OLE n - not retrieved.",
   "Essential3 specific AE rates (dizziness, brain fog, constipation etc.) and confirmed commercial dose - not retrieved.",
   "Identity of the six Solidus ASO programs and PRAX-110 indication; status of PRAX-020/050.",
   "Chief Commercial Officer name; exact current market cap/share count.",
-  "Post-Investor-Day analyst reactions and individual peak-sales models - search budget exhausted before retrieval.",
-  "NCT numbers for EMBOLD, Essential3, POWER1/2, EMBRAVE/EMBRAVE3 - not retrieved (only EMERALD NCT07010471)."
+  "Post-Investor-Day analyst reactions and individual peak-sales models - search budget exhausted before retrieval."
+ ],
+ "deck_aug_2026": [
+  {
+   "fact": "US essential tremor prevalence",
+   "value": "An estimated 7 million people in the US live with ET (slide 8). The November 2026 investor day raised this to about 9 million.",
+   "confidence": "high"
+  },
+  {
+   "fact": "Pivotal-trial population",
+   "value": "Safety population n=698; average baseline TETRAS-ADL about 31; participants averaged 30 years since diagnosis and 94% reported worsening over the past three years (slide 9)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Physician study",
+   "value": "March 2026 observational study of more than 2,300 US physicians representing more than 43,000 ET patients (slide 14)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Patient survey: activities most affected",
+   "value": "1,294 responses: writing 86%, eating with a spoon 76%, drinking from a cup 73%, technology 61%, household or hobbies 46%, grooming 37%, using keys 32%, dressing 22%, speaking 16%; 65% had seen a physician in the last 12 months (slide 15, data on file)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Broad DEE population",
+   "value": "Current US DEE market is over 200,000 patients (slide 19)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Peak-sales potential",
+   "value": "Ulixacaltamide more than $10B; relutrigine more than $5B; vormatrigine more than $4B; elsunersen about $1B; portfolio more than $20B (slide 5)",
+   "confidence": "high"
+  },
+  {
+   "fact": "FDA action dates",
+   "value": "Relutrigine 27 December 2026; ulixacaltamide January 2027 (slides 5, 10, 17)",
+   "confidence": "high"
+  },
+  {
+   "fact": "Vormatrigine programme",
+   "value": "RADIANT: 11% seizure-free within the treatment period, more than 30% seizure-free for any 28-day period; POWER2 re-initiating and POWER3 (monotherapy) initiating in Q4 2026 (slides 26-27)",
+   "confidence": "high"
+  }
  ]
 }

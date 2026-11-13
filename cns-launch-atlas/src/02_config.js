@@ -47,7 +47,7 @@ const TA = {
     payerMix: [["Commercial", 50], ["Medicaid / CHIP", 45], ["Other", 5]], payerMixSrc: "Sponsor disclosure, Nov 2026",
     sim: {
       label: "First targeted SCN2A/SCN8A therapy", launch: 2027, guidance: { value: 1.0e9, label: "Sponsor illustration: 2,500 pts ≈ $1B" },
-      p: { pop: 10000, dx0: 50, dxGrow: 5, dxCap: 85, elig: 80, acc1: 60, accSS: 90, adopt: 30, ramp: 3, ret1: 80, ret2: 92, wac: 500000, priceUp: 3, gtn: 25, comp: 85, growth: 1, x_on: 0, x_pop: 100000, x_year: 2028, x_adopt: 3, comp_year: 2031, comp_hit: 10 },
+      p: { pop: 10000, dx0: 50, dxGrow: 5, dxCap: 85, elig: 80, acc1: 60, accSS: 90, adopt: 30, ramp: 3, ret1: 80, ret2: 92, wac: 500000, priceUp: 3, gtn: 25, comp: 85, growth: 1, x_on: 0, x_pop: 200000, x_year: 2028, x_adopt: 3, comp_year: 2031, comp_hit: 10 },
       ranges: { pop: [3000, 20000, 500], wac: [100000, 800000, 10000], x_pop: [20000, 300000, 10000], adopt: [5, 60, 1], x_adopt: [0.5, 10, 0.5] },
       presets: { Base: {}, Upside: { pop: 12000, dxGrow: 7, adopt: 40, accSS: 95, wac: 600000, x_on: 1, x_adopt: 4 }, Downside: { pop: 7000, dxGrow: 3, adopt: 20, acc1: 40, accSS: 80, wac: 400000, gtn: 35, ret1: 70 }, "Broad label": { x_on: 1, x_adopt: 3 } },
       xLabel: "Broad-DEE label expansion", field: { targets: 1500, calls: 14, perDay: 3.5, days: 200, cost: 330000 }

@@ -176,17 +176,17 @@ function figDaily() {
   const X = v => 8 + v / 60 * 284, durSvg = `<svg class="fig" viewBox="0 0 300 70" role="img" aria-label="Years living with tremor: average 14.5, range 1 to 55"><line x1="8" x2="292" y1="40" y2="40" stroke="#94A3B8" stroke-width="2"/>${[0, 20, 40, 60].map(t => `<line x1="${X(t)}" x2="${X(t)}" y1="34" y2="46" stroke="#94A3B8" stroke-width="2"/><text x="${X(t)}" y="64" font-size="14" text-anchor="${t === 0 ? "start" : t === 60 ? "end" : "middle"}" style="fill:#42526E">${t}${t === 60 ? " yr" : ""}</text>`).join("")}<line x1="${X(1)}" x2="${X(55)}" y1="40" y2="40" stroke="#111827" stroke-width="3"/><circle cx="${X(14.5)}" cy="40" r="8" fill="#2457D6"/><text x="${X(14.5)}" y="20" font-size="15" font-weight="700" text-anchor="middle" style="fill:#2457D6">14.5</text></svg>`;
   return figure("Impact", "The endpoint counts everyday tasks, and first-line medicines fail about half of patients", "Regulators accepted a function-based measure as the primary endpoint. This is what it measures, who lives with it, and what treatment delivers today.",
     `<div class="info">
-      <div><h3>The tasks</h3>
-        <div class="picto">${T.map(([k, l]) => `<div><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><path d="${I[k]}" fill="none" stroke="#2457D6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${l}</div>`).join("")}</div>
-        <div class="stat"><b>11 items</b><p>on the daily-function scale used as the primary endpoint.</p><small>These six kinds of task drive the score</small></div></div>
+      <div><h3>What patients say is hardest</h3>
+        <div class="stat">${(() => { const S = [["Writing", 86], ["Eating with a spoon", 76], ["Drinking from a cup", 73], ["Using technology", 61], ["Household and hobbies", 46], ["Grooming", 37], ["Using keys", 32], ["Dressing", 22], ["Speaking", 16]]; return `<svg class="fig" viewBox="0 0 320 ${S.length * 26}" role="img" aria-label="Share of 1,294 surveyed patients naming each activity among the most affected">${S.map(([l, v], i) => `<text x="0" y="${i * 26 + 17}" font-size="14">${l}</text><rect x="158" y="${i * 26 + 5}" width="${v * 1.3}" height="15" rx="3" fill="${i < 3 ? "#2457D6" : "#111827"}"/><text x="${164 + v * 1.3}" y="${i * 26 + 17}" font-size="14" font-weight="700">${v}%</text>`).join("")}</svg>`; })()}<small>Sponsor survey of 1,294 patients, March–April 2026; share naming each activity among the most affected</small></div>
+        <div class="stat"><b>11 items</b><p>on the daily-function scale used as the primary endpoint. The top three complaints are all on it.</p></div></div>
       <div><h3>Who lives with it</h3>
         <div class="stat">${ageSvg}<b>27×</b><p>higher diagnosed prevalence at 75 and over than at 18 to 40.</p><small>US claims; most patients are of Medicare age</small></div>
-        <div class="stat">${durSvg}<b>14.5 years</b><p>average time living with tremor in one clinic cohort.</p><small>Range 1 to 55 years</small></div></div>
+        <div class="stat">${durSvg}<b>14.5 years</b><p>average time living with tremor in one clinic cohort.</p><small>Range 1 to 55 years. Pivotal-trial participants averaged 30 years since diagnosis, and 94% said symptoms had worsened over three years.</small></div></div>
       <div><h3>What treatment delivers</h3>
         <div class="stat">${peopleRow(4, 2, "#2457D6", "#94ADEE", "4 to 6 of 10 figures highlighted")}<b>4 to 6 in 10</b><p>respond to propranolol or primidone.</p><small>37–56% across real-world series; lighter figures show the range</small></div>
         <div class="stat">${peopleRow(4, 1, "#111827", "#94A3B8", "4 to 5 of 10 figures highlighted")}<b style="color:var(--ink)">4 to 5 in 10</b><p>stop first-line treatment within two years.</p><small>40% on propranolol, 47% on primidone, US claims</small></div></div>
     </div>`,
-    prov([...edSrc("et", 7).slice(1, 2), age.source_url, ...edSrc("et", 6).slice(0, 1), ...tf0.slice(0, 2)].filter(Boolean), { note: "Tasks from the TETRAS activities-of-daily-living subscale.", conf: "high", quality: "observed" }));
+    prov([...edSrc("et", 7).slice(1, 2), age.source_url, ...edSrc("et", 6).slice(0, 1), ...tf0.slice(0, 2)].filter(Boolean), { note: "Survey and trial-population figures: sponsor corporate deck, August 2026 (slides 9 and 15, data on file).", conf: "high", quality: "observed; survey is sponsor-run" }));
 }
 
 /* ---------- stepped funnel (proportional) ---------- */

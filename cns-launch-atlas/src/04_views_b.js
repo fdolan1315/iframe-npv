@@ -127,6 +127,7 @@ function viewSources() {
     ["openFDA (labels, Drugs@FDA, FAERS)", `${Object.keys(D.fda).length} marketed comparators`, "FAERS counts are spontaneous reports, not incidence", "https://open.fda.gov/apis/"],
     ["US Census Bureau population estimates", "State population by 5-year age band", "2018 vintage; used only for relative allocation weights", "https://www.census.gov/programs-surveys/popest.html"],
     ["Films and images", "Two explainer films rendered in code from the same drawings as the figures; five illustrative photographs generated with an image model (hands and settings only)", "Images are illustrative, not documentary. Films show mechanism, not clinical results", ""],
+    ["Sponsor corporate deck, August 2026", "Read directly from the PDF: trial designs and results, the patient and physician surveys, the broad-DEE population, peak-sales potential, FDA dates, dosing and formulation", "Does not contain the November investor-day figures (patient funnel, price corridors, field force, payer mix)", ""],
     ["Desk research (web search, Nov 2026)", `${cnt("company")} + ${cnt("dee")} + ${cnt("et")} + ${cnt("payer")} cited URLs across four fact bases`, "Search-result level verification; company filings and press-release hosts could not be opened directly. Each fact carries a confidence flag", ""]];
   const lists = [["Company and asset disclosures", "company"], ["Rare epilepsy market", "dee"], ["Essential tremor market", "et"], ["Payer, policy and launch analogs", "payer"]];
   const gaps = [...((RC.open_questions) || [])];
