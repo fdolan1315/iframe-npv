@@ -541,7 +541,7 @@
      "confidence": "medium"
     }
    ],
-   "safety": "Study 1: any TEAE 94.9% drug vs 75.6% placebo; drug-related TEAEs leading to discontinuation 27.0% (63/233) vs 1.7% (4/234). Study 2: 28.1% in ulixacaltamide arm. AAN 2026 report: overall discontinuation 35.6-38.1%, mainly dizziness and brain fog during titration. No drug-related SAEs. Specific AE rates (dizziness, constipation etc.): not retrieved.",
+   "safety": "Read directly from the AAN 2026 combined-analysis poster (Shtilbans et al., 18-22 April 2026). Study 1: any adverse event 94.9% on drug (221/233) vs 75.6% on placebo (177/234); severe events 6.0% vs 4.3%; serious events 0.9% vs 3.4%, none drug-related. Drug-related adverse events leading to discontinuation: 27.0% (63/233) vs 1.7% (4/234) in Study 1, and 28.1% (65/231) on drug in Study 2. Discontinuations were primarily due to adverse events, most often dizziness and brain fog. Most events occurred during titration, were mild to moderate and resolved. Events in 10% or more of patients: constipation, dizziness, euphoric mood, brain fog, headache, paraesthesia and insomnia; per-event rates are not given. No significant drug-drug interactions. An all-cause discontinuation figure of 35.6-38.1% appears in secondary coverage of the meeting and is not in the poster (unverified).",
    "dosing": "Oral, once daily, titrated; pivotal dose understood to be 60 mg/day (dose not re-verified in this session - medium confidence)",
    "launch_plan": [
     {
@@ -1119,14 +1119,13 @@
  ],
  "open_questions": [
   "Both sponsor decks (August 2026 corporate deck; 12 November 2026 investor-day deck as posted, ET, DEE and platform sections) have been read directly. The patient funnel, price corridors, field force, target prescribers, payer mixes and the 9 million ET figure are confirmed at source.",
-  "Still not confirmed against a primary document: the ulixacaltamide discontinuation rates (27% drug-related, 36-38% overall; the investor-day deck gives no safety rates), the EMBOLD cohort 1 result (46%), and the vormatrigine POWER1 result. These need the Essential3 topline release or the AAN 2026 poster.",
+  "Read directly: the AAN 2026 combined-analysis poster confirms the drug-related discontinuation rates (27.0% and 28.1%) and the common adverse events. Still not confirmed against a primary document: the all-cause discontinuation figure (36-38%), per-event adverse-event rates, the EMBOLD cohort 1 result (46%) and the vormatrigine POWER1 result.",
   "Relutrigine field team headcount, number of regions, and Tier 1/Tier 2 HCP counts - not found.",
   "Relutrigine hub/patient-support brand, specialty pharmacy partners, sponsored genetic testing program - not found.",
   "Ulixacaltamide: is the ~300 figure sales reps only or total field (sales + MSL + access)? Structure by region not found.",
   "Ulixacaltamide telehealth plans, copay program, ET patient segmentation beyond 9M / 2M - not found.",
   "Peak-sales slide deltas (+$2.3B etc.) - confirm baseline is consensus-assuming-approval.",
   "POWER1 quantitative results (effect size, p-values, n) and the redesigned POWER2 dose/design/timing - not retrieved.",
-  "Essential3 specific AE rates (dizziness, brain fog, constipation etc.) and confirmed commercial dose - not retrieved.",
   "Identity of the six Solidus ASO programs and PRAX-110 indication; status of PRAX-020/050.",
   "Chief Commercial Officer name; exact current market cap/share count.",
   "Post-Investor-Day analyst reactions and individual peak-sales models - search budget exhausted before retrieval."
@@ -1237,6 +1236,23 @@
   {
    "fact": "Line extensions",
    "value": "Ulixacaltamide studies planned in Parkinson's disease (about 1M US), restless legs syndrome (5-8M) and autism spectrum disorder (about 8M); readouts 2028-2030. Two next-generation T-type molecules and a transdermal patch are in development (slides 93, 102, 110)",
+   "confidence": "high"
+  }
+ ],
+ "poster_aan_2026": [
+  {
+   "fact": "Essential3 population",
+   "value": "Adults 18-85 with ET symptoms for 3 years or more; stable dose for 28 days if on ET medicines; diagnosis adjudicated by movement-disorder specialists; decentralized design with a single screening process and blinded assignment to Study 1 or Study 2",
+   "confidence": "high"
+  },
+  {
+   "fact": "Propranolol",
+   "value": "The poster states there have been no new treatments for ET since propranolol's approval about 40 years ago",
+   "confidence": "high"
+  },
+  {
+   "fact": "Tolerability",
+   "value": "Read directly from the AAN 2026 combined-analysis poster (Shtilbans et al., 18-22 April 2026). Study 1: any adverse event 94.9% on drug (221/233) vs 75.6% on placebo (177/234); severe events 6.0% vs 4.3%; serious events 0.9% vs 3.4%, none drug-related. Drug-related adverse events leading to discontinuation: 27.0% (63/233) vs 1.7% (4/234) in Study 1, and 28.1% (65/231) on drug in Study 2. Discontinuations were primarily due to adverse events, most often dizziness and brain fog. Most events occurred during titration, were mild to moderate and resolved. Events in 10% or more of patients: constipation, dizziness, euphoric mood, brain fog, headache, paraesthesia and insomnia; per-event rates are not given. No significant drug-drug interactions. An all-cause discontinuation figure of 35.6-38.1% appears in secondary coverage of the meeting and is not in the poster (unverified).",
    "confidence": "high"
   }
  ]
