@@ -192,5 +192,33 @@
       "text": "The AACAP practice parameter (2013) recommends a stepped, multimodal approach for children and adolescents. Its agent-by-agent positions are not shown because only secondary summaries of it could be checked.",
       "source": "aacap_2013"
     }
+  },
+  "oversight": {
+    "title": "Medicaid oversight of antipsychotics in children",
+    "intro": "Most current Tourette medicines with the strongest evidence are antipsychotics, and state Medicaid programs apply extra controls when these are prescribed to children.",
+    "facts": [
+      {
+        "when": "2013 to 2014",
+        "text": "A 50-state review found 31 state Medicaid programs required prior authorization for atypical antipsychotics in children. Only 7 applied it through age 18; most stopped at ages 5 to 7. Fifteen included peer review by a physician.",
+        "source": "zito_2015"
+      },
+      {
+        "when": "2018",
+        "text": "The SUPPORT Act (section 1004) required every state to run a program to monitor and manage antipsychotic use in children enrolled in Medicaid, including children in foster care, and to report on it each year.",
+        "source": "macpac_dur"
+      },
+      {
+        "when": "Fiscal 2018",
+        "text": "48 states reported managing or monitoring antipsychotic use in children.",
+        "source": "macpac_dur"
+      },
+      {
+        "when": "Fiscal 2023",
+        "text": "CMS's national summary reports that all states have such a program in place.",
+        "source": "cms_dur_2023"
+      }
+    ],
+    "why": "Oversight is now universal, so the question for any state is how its program works: which ages, which checks, and whether a prescriber review is required. Whether a new non-antipsychotic medicine falls inside or outside these programs is decided state by state.",
+    "gap": "A current state-by-state record of these rules could not be obtained. CMS publishes the state answers as report documents, not as data, and the last published 50-state comparison describes 2013 to 2014. No state is shown as having or lacking a specific rule."
   }
 }

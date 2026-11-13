@@ -16,7 +16,9 @@
       "open_trials": 1,
       "child_neuro": 32,
       "child_psych": 73,
-      "neuro_per_100k": 2.9
+      "neuro_per_100k": 2.9,
+      "medicaid_child": 677383,
+      "alpha2_rx_per_1k": 144.9
     },
     {
       "name": "Arizona",
@@ -33,7 +35,9 @@
       "open_trials": 1,
       "child_neuro": 65,
       "child_psych": 161,
-      "neuro_per_100k": 3.8
+      "neuro_per_100k": 3.8,
+      "medicaid_child": 774347,
+      "alpha2_rx_per_1k": 118.6
     },
     {
       "name": "Arkansas",
@@ -50,7 +54,9 @@
       "open_trials": 1,
       "child_neuro": 19,
       "child_psych": 60,
-      "neuro_per_100k": 2.8
+      "neuro_per_100k": 2.8,
+      "medicaid_child": 413268,
+      "alpha2_rx_per_1k": 187.8
     },
     {
       "name": "California",
@@ -67,7 +73,9 @@
       "open_trials": 5,
       "child_neuro": 332,
       "child_psych": null,
-      "neuro_per_100k": 3.9
+      "neuro_per_100k": 3.9,
+      "medicaid_child": 4902406,
+      "alpha2_rx_per_1k": 43.5
     },
     {
       "name": "Colorado",
@@ -84,7 +92,9 @@
       "open_trials": 0,
       "child_neuro": 83,
       "child_psych": 269,
-      "neuro_per_100k": 6.4
+      "neuro_per_100k": 6.4,
+      "medicaid_child": 528052,
+      "alpha2_rx_per_1k": 121.5
     },
     {
       "name": "Connecticut",
@@ -101,7 +111,9 @@
       "open_trials": 3,
       "child_neuro": 40,
       "child_psych": 281,
-      "neuro_per_100k": 5.4
+      "neuro_per_100k": 5.4,
+      "medicaid_child": 366872,
+      "alpha2_rx_per_1k": 101.5
     },
     {
       "name": "Delaware",
@@ -118,7 +130,9 @@
       "open_trials": 0,
       "child_neuro": 13,
       "child_psych": 27,
-      "neuro_per_100k": 6.1
+      "neuro_per_100k": 6.1,
+      "medicaid_child": 108416,
+      "alpha2_rx_per_1k": 140.9
     },
     {
       "name": "District of Columbia",
@@ -135,7 +149,9 @@
       "open_trials": 1,
       "child_neuro": 49,
       "child_psych": 94,
-      "neuro_per_100k": 44.9
+      "neuro_per_100k": 44.9,
+      "medicaid_child": 96183,
+      "alpha2_rx_per_1k": 32.4
     },
     {
       "name": "Florida",
@@ -152,7 +168,9 @@
       "open_trials": 4,
       "child_neuro": 174,
       "child_psych": 515,
-      "neuro_per_100k": 3.9
+      "neuro_per_100k": 3.9,
+      "medicaid_child": 2380273,
+      "alpha2_rx_per_1k": 139.9
     },
     {
       "name": "Georgia",
@@ -169,7 +187,9 @@
       "open_trials": 2,
       "child_neuro": 59,
       "child_psych": 242,
-      "neuro_per_100k": 2.3
+      "neuro_per_100k": 2.3,
+      "medicaid_child": 1358520,
+      "alpha2_rx_per_1k": 180.6
     },
     {
       "name": "Idaho",
@@ -186,7 +206,9 @@
       "open_trials": 0,
       "child_neuro": 3,
       "child_psych": 26,
-      "neuro_per_100k": 0.6
+      "neuro_per_100k": 0.6,
+      "medicaid_child": 155668,
+      "alpha2_rx_per_1k": 227.9
     },
     {
       "name": "Illinois",
@@ -203,7 +225,9 @@
       "open_trials": 1,
       "child_neuro": 94,
       "child_psych": 361,
-      "neuro_per_100k": 3.4
+      "neuro_per_100k": 3.4,
+      "medicaid_child": 1396113,
+      "alpha2_rx_per_1k": 77.4
     },
     {
       "name": "Indiana",
@@ -220,7 +244,9 @@
       "open_trials": 1,
       "child_neuro": 43,
       "child_psych": 130,
-      "neuro_per_100k": 2.8
+      "neuro_per_100k": 2.8,
+      "medicaid_child": 779963,
+      "alpha2_rx_per_1k": 161.6
     },
     {
       "name": "Iowa",
@@ -237,7 +263,9 @@
       "open_trials": 0,
       "child_neuro": 32,
       "child_psych": 73,
-      "neuro_per_100k": 4.6
+      "neuro_per_100k": 4.6,
+      "medicaid_child": 335882,
+      "alpha2_rx_per_1k": 218.2
     },
     {
       "name": "Kansas",
@@ -254,7 +282,9 @@
       "open_trials": 0,
       "child_neuro": 12,
       "child_psych": 49,
-      "neuro_per_100k": 1.8
+      "neuro_per_100k": 1.8,
+      "medicaid_child": 284884,
+      "alpha2_rx_per_1k": 281.0
     },
     {
       "name": "Kentucky",
@@ -271,7 +301,9 @@
       "open_trials": 1,
       "child_neuro": 44,
       "child_psych": 117,
-      "neuro_per_100k": 4.5
+      "neuro_per_100k": 4.5,
+      "medicaid_child": 623629,
+      "alpha2_rx_per_1k": 249.7
     },
     {
       "name": "Louisiana",
@@ -288,7 +320,9 @@
       "open_trials": 0,
       "child_neuro": 36,
       "child_psych": 127,
-      "neuro_per_100k": 3.5
+      "neuro_per_100k": 3.5,
+      "medicaid_child": 701355,
+      "alpha2_rx_per_1k": 161.2
     },
     {
       "name": "Maine",
@@ -305,7 +339,9 @@
       "open_trials": 0,
       "child_neuro": 9,
       "child_psych": 75,
-      "neuro_per_100k": 3.5
+      "neuro_per_100k": 3.5,
+      "medicaid_child": 140836,
+      "alpha2_rx_per_1k": 135.9
     },
     {
       "name": "Maryland",
@@ -322,7 +358,9 @@
       "open_trials": 3,
       "child_neuro": 61,
       "child_psych": 345,
-      "neuro_per_100k": 4.7
+      "neuro_per_100k": 4.7,
+      "medicaid_child": 679434,
+      "alpha2_rx_per_1k": 133.0
     },
     {
       "name": "Massachusetts",
@@ -339,7 +377,9 @@
       "open_trials": 6,
       "child_neuro": 185,
       "child_psych": 462,
-      "neuro_per_100k": 13.6
+      "neuro_per_100k": 13.6,
+      "medicaid_child": 692517,
+      "alpha2_rx_per_1k": 175.7
     },
     {
       "name": "Michigan",
@@ -356,7 +396,9 @@
       "open_trials": 2,
       "child_neuro": 106,
       "child_psych": 256,
-      "neuro_per_100k": 5.1
+      "neuro_per_100k": 5.1,
+      "medicaid_child": 916928,
+      "alpha2_rx_per_1k": 125.5
     },
     {
       "name": "Minnesota",
@@ -373,7 +415,9 @@
       "open_trials": 4,
       "child_neuro": 71,
       "child_psych": 147,
-      "neuro_per_100k": 5.7
+      "neuro_per_100k": 5.7,
+      "medicaid_child": 602923,
+      "alpha2_rx_per_1k": 168.0
     },
     {
       "name": "Mississippi",
@@ -390,7 +434,9 @@
       "open_trials": 0,
       "child_neuro": 12,
       "child_psych": 36,
-      "neuro_per_100k": 1.8
+      "neuro_per_100k": 1.8,
+      "medicaid_child": 398342,
+      "alpha2_rx_per_1k": 207.5
     },
     {
       "name": "Missouri",
@@ -407,7 +453,9 @@
       "open_trials": 2,
       "child_neuro": 104,
       "child_psych": 195,
-      "neuro_per_100k": 7.9
+      "neuro_per_100k": 7.9,
+      "medicaid_child": 588061,
+      "alpha2_rx_per_1k": 226.9
     },
     {
       "name": "Montana",
@@ -424,7 +472,9 @@
       "open_trials": 0,
       "child_neuro": 5,
       "child_psych": 32,
-      "neuro_per_100k": 2.2
+      "neuro_per_100k": 2.2,
+      "medicaid_child": 93218,
+      "alpha2_rx_per_1k": 226.2
     },
     {
       "name": "Nebraska",
@@ -441,7 +491,9 @@
       "open_trials": 2,
       "child_neuro": 19,
       "child_psych": 40,
-      "neuro_per_100k": 4.1
+      "neuro_per_100k": 4.1,
+      "medicaid_child": 175973,
+      "alpha2_rx_per_1k": 203.6
     },
     {
       "name": "Nevada",
@@ -458,7 +510,9 @@
       "open_trials": 0,
       "child_neuro": 13,
       "child_psych": 47,
-      "neuro_per_100k": 1.8
+      "neuro_per_100k": 1.8,
+      "medicaid_child": 325294,
+      "alpha2_rx_per_1k": 71.3
     },
     {
       "name": "New Hampshire",
@@ -475,7 +529,9 @@
       "open_trials": 0,
       "child_neuro": 18,
       "child_psych": 45,
-      "neuro_per_100k": 6.8
+      "neuro_per_100k": 6.8,
+      "medicaid_child": 89812,
+      "alpha2_rx_per_1k": 286.6
     },
     {
       "name": "New Jersey",
@@ -492,7 +548,9 @@
       "open_trials": 0,
       "child_neuro": 94,
       "child_psych": 318,
-      "neuro_per_100k": 4.7
+      "neuro_per_100k": 4.7,
+      "medicaid_child": 823794,
+      "alpha2_rx_per_1k": 93.9
     },
     {
       "name": "New Mexico",
@@ -509,7 +567,9 @@
       "open_trials": 0,
       "child_neuro": 15,
       "child_psych": 64,
-      "neuro_per_100k": 3.2
+      "neuro_per_100k": 3.2,
+      "medicaid_child": 315013,
+      "alpha2_rx_per_1k": 83.4
     },
     {
       "name": "New York",
@@ -526,7 +586,9 @@
       "open_trials": 2,
       "child_neuro": 238,
       "child_psych": null,
-      "neuro_per_100k": 6.0
+      "neuro_per_100k": 6.0,
+      "medicaid_child": 2469772,
+      "alpha2_rx_per_1k": 80.2
     },
     {
       "name": "North Carolina",
@@ -543,7 +605,9 @@
       "open_trials": 3,
       "child_neuro": 72,
       "child_psych": 308,
-      "neuro_per_100k": 3.0
+      "neuro_per_100k": 3.0,
+      "medicaid_child": 1434131,
+      "alpha2_rx_per_1k": 130.6
     },
     {
       "name": "North Dakota",
@@ -560,7 +624,9 @@
       "open_trials": 0,
       "child_neuro": 2,
       "child_psych": 22,
-      "neuro_per_100k": 1.2
+      "neuro_per_100k": 1.2,
+      "medicaid_child": 52325,
+      "alpha2_rx_per_1k": 204.3
     },
     {
       "name": "Ohio",
@@ -577,7 +643,9 @@
       "open_trials": 2,
       "child_neuro": 175,
       "child_psych": 378,
-      "neuro_per_100k": 7.0
+      "neuro_per_100k": 7.0,
+      "medicaid_child": 1198235,
+      "alpha2_rx_per_1k": 208.2
     },
     {
       "name": "Oklahoma",
@@ -594,7 +662,9 @@
       "open_trials": 0,
       "child_neuro": 18,
       "child_psych": 75,
-      "neuro_per_100k": 1.9
+      "neuro_per_100k": 1.9,
+      "medicaid_child": 517807,
+      "alpha2_rx_per_1k": 164.7
     },
     {
       "name": "Oregon",
@@ -611,7 +681,9 @@
       "open_trials": 1,
       "child_neuro": 32,
       "child_psych": 158,
-      "neuro_per_100k": 3.8
+      "neuro_per_100k": 3.8,
+      "medicaid_child": 477886,
+      "alpha2_rx_per_1k": 142.2
     },
     {
       "name": "Pennsylvania",
@@ -628,7 +700,9 @@
       "open_trials": 0,
       "child_neuro": 147,
       "child_psych": 519,
-      "neuro_per_100k": 5.8
+      "neuro_per_100k": 5.8,
+      "medicaid_child": 1438670,
+      "alpha2_rx_per_1k": 187.2
     },
     {
       "name": "Rhode Island",
@@ -645,7 +719,9 @@
       "open_trials": 0,
       "child_neuro": 13,
       "child_psych": 116,
-      "neuro_per_100k": 6.3
+      "neuro_per_100k": 6.3,
+      "medicaid_child": 122016,
+      "alpha2_rx_per_1k": 108.9
     },
     {
       "name": "South Carolina",
@@ -662,7 +738,9 @@
       "open_trials": 2,
       "child_neuro": 32,
       "child_psych": 120,
-      "neuro_per_100k": 2.8
+      "neuro_per_100k": 2.8,
+      "medicaid_child": 636345,
+      "alpha2_rx_per_1k": 172.3
     },
     {
       "name": "South Dakota",
@@ -679,7 +757,9 @@
       "open_trials": 0,
       "child_neuro": 7,
       "child_psych": 21,
-      "neuro_per_100k": 3.3
+      "neuro_per_100k": 3.3,
+      "medicaid_child": 79013,
+      "alpha2_rx_per_1k": 229.5
     },
     {
       "name": "Tennessee",
@@ -696,7 +776,9 @@
       "open_trials": 6,
       "child_neuro": 68,
       "child_psych": 125,
-      "neuro_per_100k": 4.4
+      "neuro_per_100k": 4.4,
+      "medicaid_child": 847382,
+      "alpha2_rx_per_1k": 180.6
     },
     {
       "name": "Texas",
@@ -713,7 +795,9 @@
       "open_trials": 2,
       "child_neuro": 306,
       "child_psych": 777,
-      "neuro_per_100k": 4.0
+      "neuro_per_100k": 4.0,
+      "medicaid_child": 3197604,
+      "alpha2_rx_per_1k": 135.8
     },
     {
       "name": "Utah",
@@ -730,7 +814,9 @@
       "open_trials": 4,
       "child_neuro": 33,
       "child_psych": 125,
-      "neuro_per_100k": 3.3
+      "neuro_per_100k": 3.3,
+      "medicaid_child": 172701,
+      "alpha2_rx_per_1k": 197.1
     },
     {
       "name": "Vermont",
@@ -747,7 +833,9 @@
       "open_trials": 0,
       "child_neuro": 8,
       "child_psych": 38,
-      "neuro_per_100k": 6.9
+      "neuro_per_100k": 6.9,
+      "medicaid_child": 58534,
+      "alpha2_rx_per_1k": 221.4
     },
     {
       "name": "Virginia",
@@ -764,7 +852,9 @@
       "open_trials": 1,
       "child_neuro": 38,
       "child_psych": 290,
-      "neuro_per_100k": 2.1
+      "neuro_per_100k": 2.1,
+      "medicaid_child": 831915,
+      "alpha2_rx_per_1k": 158.4
     },
     {
       "name": "Washington",
@@ -781,7 +871,9 @@
       "open_trials": 2,
       "child_neuro": 75,
       "child_psych": 185,
-      "neuro_per_100k": 4.5
+      "neuro_per_100k": 4.5,
+      "medicaid_child": 829708,
+      "alpha2_rx_per_1k": 107.0
     },
     {
       "name": "West Virginia",
@@ -798,7 +890,9 @@
       "open_trials": 1,
       "child_neuro": 10,
       "child_psych": 28,
-      "neuro_per_100k": 3.0
+      "neuro_per_100k": 3.0,
+      "medicaid_child": 200324,
+      "alpha2_rx_per_1k": 237.1
     },
     {
       "name": "Wisconsin",
@@ -815,7 +909,9 @@
       "open_trials": 1,
       "child_neuro": 79,
       "child_psych": 188,
-      "neuro_per_100k": 6.4
+      "neuro_per_100k": 6.4,
+      "medicaid_child": 545448,
+      "alpha2_rx_per_1k": 185.3
     },
     {
       "name": "Wyoming",
@@ -832,7 +928,9 @@
       "open_trials": 0,
       "child_neuro": 0,
       "child_psych": 4,
-      "neuro_per_100k": 0.0
+      "neuro_per_100k": 0.0,
+      "medicaid_child": 42300,
+      "alpha2_rx_per_1k": 220.6
     }
   ],
   "coes": [

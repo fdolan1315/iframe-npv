@@ -164,7 +164,35 @@ def build_medicaid():
                 tot += r.get("ndc_rows") or 0
                 sup += r.get("suppressed_rows_excluded") or 0
         o["suppressed_share"] = round(sup / tot, 2) if tot else None
-    return {"agents": out, "fetched_at": raw.get("fetched_at")}
+    # prescriptions per 1,000 enrollees, only where the enrollment year matches
+    enr = build_enrollment()
+    if enr:
+        for name, o in out.items():
+            if o["latest_full_year"] != enr["year"]:
+                continue
+            rates, rx_sum, en_sum = {}, 0, 0
+            for st, rx in o["by_state"].items():
+                e = enr["total"].get(st)
+                if e:
+                    rates[st] = round(rx / e * 1000, 1 if rx / e * 1000 >= 1 else 2)
+                    rx_sum += rx
+                    en_sum += e
+            o["rate_by_state"] = rates
+            o["rate_national"] = round(rx_sum / en_sum * 1000, 1 if rx_sum / en_sum * 1000 >= 1 else 2) if en_sum else None
+    return {"agents": out, "fetched_at": raw.get("fetched_at"), "enrollment": enr}
+
+
+def build_enrollment():
+    """Average monthly Medicaid + CHIP enrollment by state (CMS), calendar year."""
+    raw = load("medicaid_enrollment")
+    if not raw or raw.get("error") or not raw.get("states"):
+        return None
+    total, child = {}, {}
+    for s in raw["states"]:
+        total[s["state"]] = s.get("avg_monthly_total_medicaid_and_chip_enrollment")
+        child[s["state"]] = s.get("avg_monthly_medicaid_and_chip_child_enrollment")
+    return {"year": int(raw["calendar_year"]), "total": total, "child": child,
+            "fetched_at": raw.get("fetched_at")}
 
 
 def build_trials():
@@ -275,6 +303,7 @@ def main():
                         for f in (sec.get("recent_periodic_and_current_reports") or [])[:16]],
         },
         "has_medicaid": bool(medicaid),
+        "enrollment_year": ((medicaid or {}).get("enrollment") or {}).get("year"),
     }
     with open(os.path.join(DATA, "public_data.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
@@ -292,6 +321,14 @@ def main():
         st["child_neuro"] = cn.get(code)
         st["child_psych"] = cap.get(code)
         kids = st.get("child_u18")
+        enr = (medicaid or {}).get("enrollment") or {}
+        ag = (medicaid or {}).get("agents") or {}
+        tot = (enr.get("total") or {}).get(code)
+        kid = (enr.get("child") or {}).get(code)
+        st["medicaid_child"] = round(kid) if kid else None
+        a2 = sum(((ag.get(n) or {}).get("by_state") or {}).get(code, 0) for n in ("guanfacine", "clonidine"))
+        ok = tot and all((ag.get(n) or {}).get("latest_full_year") == enr.get("year") for n in ("guanfacine", "clonidine"))
+        st["alpha2_rx_per_1k"] = round(a2 / tot * 1000, 1) if ok and a2 else None
         st["neuro_per_100k"] = (round(cn[code] / kids * 100000, 1)
                                 if kids and cn.get(code) is not None else None)
     with open(gpath, "w", encoding="utf-8") as fh:

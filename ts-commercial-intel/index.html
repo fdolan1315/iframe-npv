@@ -415,6 +415,9 @@
   .hbv{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
   #clsChips,#ageTgl,#trKinds{display:flex;flex-wrap:wrap;gap:6px}
   #agDetail .twocol>div{min-width:0}
+  .tgset{max-width:100%;min-width:0}
+  .tgset label{max-width:100%;min-width:0}
+  .tgset select{max-width:100%;min-width:0!important;flex:1 1 auto}
   td.num{text-align:right;font-variant-numeric:tabular-nums}
   .yn{white-space:nowrap}.yn.n{color:var(--muted)}
   tr.agrow{cursor:pointer}
@@ -726,6 +729,11 @@ async function renderCurrent(main){
       +'</tbody></table><div class="cite" style="margin-top:8px">'+esc(g.essts.note)+'</div>'
       +'<h4 style="margin:16px 0 6px">Reading across the two</h4><ul class="note" style="margin:0;padding-left:18px">'+g.takeaways.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>'
       +'<p class="note" style="margin:12px 0 0">'+esc(g.also.text)+' '+cite(g.also.source)+'</p></div>'; }
+  if(cur.oversight){ const o=cur.oversight;
+    h+='<div class="panel"><h3>'+esc(o.title)+'</h3><p class="note">'+esc(o.intro)+'</p>'
+      +'<table><tbody>'+o.facts.map(f=>'<tr><td style="width:150px;color:var(--muted);white-space:nowrap">'+esc(f.when)+'</td><td>'+esc(f.text)+' '+cite(f.source)+'</td></tr>').join('')+'</tbody></table>'
+      +'<p class="note" style="margin:12px 0 0"><b style="color:var(--text)">Why it matters:</b> '+esc(o.why)+'</p>'
+      +'<p class="note" style="margin:8px 0 0"><b style="color:var(--text)">What is missing:</b> '+esc(o.gap)+'</p></div>'; }
   h+='<div class="panel"><h3>Research output on Tourette syndrome '+cite('pubmed')+'</h3><p class="note">PubMed records indexed to Tourette syndrome, by publication year. '+(new Date().getFullYear())+' is a partial year and recent years are undercounted while indexing catches up.</p><div id="pubChart"></div></div>';
   h+='<div class="panel"><h3>How to read this</h3><ul class="note" style="margin:0;padding-left:18px">'
     +'<li>None of these sources is specific to Tourette syndrome. Most of these medicines are used far more for other conditions, so volumes describe the medicine, not the treated Tourette population.</li>'
@@ -797,7 +805,13 @@ async function renderCurrent(main){
       +((pm.recent||[]).length?'<ul class="note" style="margin:0;padding-left:18px">'+pm.recent.filter(x=>/^\d+$/.test(String(x.pmid))).map(x=>'<li><a href="https://pubmed.ncbi.nlm.nih.gov/'+x.pmid+'/" target="_blank" rel="noopener">'+esc(x.title)+'</a> <span class="cite">'+esc(x.journal)+', '+esc(x.year)+'</span></li>').join('')+'</ul>':'');
     if(p.medicaid && p.medicaid.by_year.length){
       right+='<h4 style="margin:18px 0 6px">Medicaid prescriptions, all uses</h4>'+hbars(p.medicaid.by_year.map(y=>({term:y.year+(y.complete?'':' (partial)'),n:y.rx})),'State Medicaid programs, every use of the medicine, all formulations pooled.'+(p.medicaid.suppressed_share!=null?' CMS hides product-level rows under 11 prescriptions; '+Math.round(p.medicaid.suppressed_share*100)+'% of rows were hidden in '+p.medicaid.latest_full_year+', so true volume is higher.':''))
-        +(function(){const st=Object.entries(p.medicaid.by_state).sort((x,y)=>y[1]-x[1]).slice(0,5); return st.length?'<div class="cite" style="margin-top:6px">Largest states in '+p.medicaid.latest_full_year+': '+st.map(x=>esc(x[0])+' '+x[1].toLocaleString()).join(' · ')+'</div>':'';})();
+        +(function(){ const rt=p.medicaid.rate_by_state; if(!rt||!Object.keys(rt).length) return '';
+            const st=Object.entries(rt).sort((x,y)=>y[1]-x[1]), f=x=>esc(x[0])+' '+x[1].toLocaleString();
+            return '<h4 style="margin:18px 0 6px">Medicaid prescriptions per 1,000 enrollees, '+p.medicaid.latest_full_year+'</h4>'
+              +'<table><tbody><tr><td style="width:150px;color:var(--muted)">National</td><td>'+p.medicaid.rate_national.toLocaleString()+'</td></tr>'
+              +'<tr><td style="color:var(--muted)">Highest states</td><td>'+st.slice(0,5).map(f).join(' · ')+'</td></tr>'
+              +'<tr><td style="color:var(--muted)">Lowest states</td><td>'+st.slice(-5).reverse().map(f).join(' · ')+'</td></tr></tbody></table>'
+              +'<div class="cite" style="margin-top:6px">Prescriptions for every use and every age, divided by average monthly Medicaid and CHIP enrollment '+cite('medicaid_enroll')+'. States count enrollment differently and hidden rows lower the count more in small states, so treat gaps between states as directional.</div>'; })();
     }
     el.innerHTML='<h3>'+esc(name)+(r.a.brands.length?' <span class="cite">'+esc(r.a.brands.join(', '))+'</span>':'')+'</h3><div class="twocol"><div>'+left+'</div><div>'+right+'</div></div>';
     el.querySelectorAll('#ageTgl .tgl').forEach(t=>{ const go=()=>{ageKey=t.getAttribute('data-a'); drawDetail();};
@@ -870,6 +884,8 @@ async function renderChannel(main){
     {k:'open_trials',label:'Open Tourette studies with a site',note:'ClinicalTrials.gov, open studies with a site in the state',fmt:v=>v!=null?v:'—'},
     {k:'child_neuro',label:'Child neurologists (count)',note:'NPI Registry, self-reported taxonomy',fmt:v=>v!=null?v.toLocaleString():'—'},
     {k:'neuro_per_100k',label:'Child neurologists per 100k children',note:'higher = better served',fmt:v=>v!=null?v:'—'},
+    {k:'alpha2_rx_per_1k',label:'Alpha-2 agonist Medicaid Rx per 1,000 enrollees',note:'Guanfacine + clonidine, 2025, every use and age; directional',fmt:v=>v!=null?v.toLocaleString():'—'},
+    {k:'medicaid_child',label:'Children in Medicaid and CHIP',note:'2025 average monthly; includes all CHIP enrollees',fmt:v=>v!=null?v.toLocaleString():'—'},
     {k:'child_psych',label:'Child & adolescent psychiatrists (count)',note:'NPI Registry; CA and NY exceed the registry query cap and show no data',fmt:v=>v!=null?v.toLocaleString():'—'}
   ];
   let metricIdx=0, filterState='', scaleMode='quantile', sortKey='name', sortDir=1;
@@ -1076,6 +1092,8 @@ async function renderChannel(main){
       +'<tr><td style="color:var(--muted)">Est. patients per provider</td><td>'+(s.ppp!=null?s.ppp.toLocaleString():'—')+'</td></tr>'
       +'<tr><td style="color:var(--muted)">Child neurologists</td><td>'+(s.child_neuro!=null?s.child_neuro.toLocaleString()+(s.neuro_per_100k!=null?' ('+s.neuro_per_100k+' per 100k children)':''):'—')+' '+cite('nppes')+'</td></tr>'
       +'<tr><td style="color:var(--muted)">Child &amp; adolescent psychiatrists</td><td>'+(s.child_psych!=null?s.child_psych.toLocaleString():'Not available (exceeds registry query cap)')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Children in Medicaid and CHIP</td><td>'+(s.medicaid_child!=null?s.medicaid_child.toLocaleString():'—')+' '+cite('medicaid_enroll')+'</td></tr>'
+      +'<tr><td style="color:var(--muted)">Guanfacine + clonidine Medicaid Rx per 1,000 enrollees</td><td>'+(s.alpha2_rx_per_1k!=null?s.alpha2_rx_per_1k.toLocaleString():'—')+'</td></tr>'
       +'<tr><td style="color:var(--muted)">Open Tourette studies with a site</td><td>'+(s.open_trials!=null?s.open_trials:'—')+' '+cite('ctgov')+'</td></tr>';
     const brk = items.length ? '<div style="margin-top:12px"><div style="font-size:11px;color:var(--muted);margin-bottom:6px">Provider mix in '+esc(s.name)+'</div>'+barlist(items,'','')+'</div>' : '';
     const actions = '<div style="display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap">'
@@ -1490,6 +1508,23 @@ async function renderExecutive(main){
       +d.whats_new.map(w=>'<div class="wn" data-goto="'+esc(w.goto||'')+'" tabindex="0" role="link"><span class="wntag '+esc(String(w.tag).toLowerCase())+'">'+esc(w.tag)+'</span>'
         +'<div class="wnbody"><div>'+esc(w.text)+'</div><div class="cite" style="margin-top:3px">'+esc(w.date)+' '+cite(w.source)+'</div></div><span class="wngo" aria-hidden="true">'+ic('jump')+'</span></div>').join('')+'</div>';
   }
+  try{ const cur=await getData('current_treatment'), pd=await getData('public_data');
+    const A=cur.agents.map(a=>pd.agents[a.generic]||{}), n=A.length;
+    const onl=A.filter(a=>a.label&&a.label.tourette_indication).length, bw=A.filter(a=>a.label&&a.label.boxed_warning).length;
+    const tr=g=>{const m=(pd.agents[g]||{}).medicaid; if(!m) return null; const f=m.by_year.filter(y=>y.complete); if(f.length<2) return null;
+      const a=f[0], b=f[f.length-1]; return {from:a.year,to:b.year,rx:b.rx,pct:Math.round((b.rx-a.rx)/a.rx*100)}; };
+    const g=tr('guanfacine'), pz=tr('pimozide'), sup=cur.agents.filter(a=>((pd.agents[a.generic]||{}).supply||{}).records>0).map(a=>a.generic);
+    const drug=pd.trials?pd.trials.open.filter(t=>t.kinds.indexOf('DRUG')>=0).length:null;
+    const li=[];
+    li.push('<b>'+onl+' of '+n+'</b> medicines in use name Tourette syndrome on the FDA label; the rest are off-label. <b>'+bw+' of '+n+'</b> carry a boxed warning. '+cite('openfda'));
+    if(g) li.push('Guanfacine, the common first medicine, reached <b>'+(g.rx/1e6).toFixed(1)+' million</b> Medicaid prescriptions in '+g.to+' ('+(g.pct>=0?'up ':'down ')+Math.abs(g.pct)+'% since '+g.from+', all uses) while resting on low-confidence evidence for tics. '+cite('medicaid_sdud'));
+    if(pz) li.push('Pimozide, the one medicine used almost only for Tourette syndrome, was '+(pz.pct>=0?'up ':'down ')+'<b>'+Math.abs(pz.pct)+'%</b> over the same period, to about '+(Math.round(pz.rx/100)*100).toLocaleString()+' reported Medicaid prescriptions. Small counts are hidden in this data, so the true fall is likely smaller. '+cite('medicaid_sdud'));
+    if(sup.length) li.push('FDA lists supply or discontinuation notices for <b>'+esc(sup.join(' and '))+'</b>. '+cite('openfda'));
+    if(drug!=null) li.push('<b>'+drug+'</b> drug studies are open among '+pd.trials.open_count+' registered Tourette studies. '+cite('ctgov'));
+    h+='<div class="panel" style="margin-top:0;margin-bottom:14px"><h3>How it is treated today</h3><p class="note">From public FDA, Medicaid and trial-registry records. Volumes cover every use of each medicine, not Tourette syndrome alone.</p>'
+      +'<ul style="margin:0;padding-left:18px;line-height:1.6">'+li.map(x=>'<li style="margin-bottom:6px">'+x+'</li>').join('')+'</ul>'
+      +'<div style="margin-top:12px"><a class="btn ghost sm" href="#/current">Open current treatment</a></div></div>';
+  }catch(e){ if(String(e&&e.message)==='session expired') throw e; }
   h+='<div class="exstats">'+d.big_stats.map(s=>'<div class="exstat"><div class="v">'+esc(s.value)+'</div><div class="l">'+esc(s.label)+' '+cite(s.source)+'</div></div>').join('')+'</div>';
   h+='<div class="excards">'+d.sections.map(s=>'<div class="excard'+(s.key==='unmet'?' exunmet':'')+'"><h4>'+esc(s.title)+'</h4><p>'+esc(s.body)+'</p><div class="cite" style="margin-top:8px">'+(s.sources||[]).map(cite).join(' · ')+'</div></div>').join('')+'</div>';
   h+='<div class="exone">'+esc(d.one_liner)+'</div>';

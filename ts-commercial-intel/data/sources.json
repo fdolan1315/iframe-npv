@@ -360,6 +360,30 @@
       "publisher": "J Am Acad Child Adolesc Psychiatry 2013;52(12):1341-1359 (AACAP)",
       "url": "https://pubmed.ncbi.nlm.nih.gov/24290467/",
       "note": "Recommends comprehensive evaluation including comorbid disorders and a hierarchical approach to multimodal interventions. Agent-level positions not verified against the primary text."
+    },
+    "medicaid_enroll": {
+      "label": "State Medicaid and CHIP Applications, Eligibility Determinations, and Enrollment Data",
+      "publisher": "Medicaid.gov (CMS)",
+      "url": "https://data.medicaid.gov/dataset/6165f45b-ca93-5bb5-9d06-db29c692a360",
+      "note": "Average monthly enrollment, calendar 2025, final or updated reports. States measure enrollment differently; the child measure includes all CHIP enrollees."
+    },
+    "zito_2015": {
+      "label": "Medicaid prior authorization policies for pediatric use of antipsychotic medications",
+      "publisher": "JAMA 2015 (Schmid, Burcu, Zito)",
+      "url": "https://news.pharmacy.umaryland.edu/jama-study-examines-medicaid-oversight-of-antipsychotic-use-in-children/",
+      "note": "Policies reviewed June 2013 to August 2014. Figures verified from the authors' university release and news coverage; the JAMA text was not read."
+    },
+    "macpac_dur": {
+      "label": "Medicaid Drug Utilization Review Requirements",
+      "publisher": "MACPAC (July 2020)",
+      "url": "https://www.macpac.gov/wp-content/uploads/2020/07/Medicaid-Drug-Utilization-Review-Requirements.pdf",
+      "note": "SUPPORT Act section 1004 requirements; 48 states managed or monitored antipsychotics in children as of FY 2018. Verified from search summary of the document."
+    },
+    "cms_dur_2023": {
+      "label": "National Medicaid Fee-For-Service DUR Annual Report, FFY 2023",
+      "publisher": "CMS",
+      "url": "https://www.medicaid.gov/medicaid/prescription-drugs/downloads/2023-dur-ffs-summary-report.pdf",
+      "note": "States that all states have a program to manage or monitor antipsychotic use in children. Verified from a search summary; the report itself was not opened."
     }
   }
 }
