@@ -1,0 +1,2011 @@
+{
+ "_meta": {
+  "as_of": "2026-11-13",
+  "method": "WebSearch only (direct fetch blocked). ~55 searches completed before the session's web-search budget was exhausted; the last batch (Merz toxin, pipeline review, Jazz status, Cala price, generic prices, IRA phase-in detail, Nuplazid/Xcopri, comorbidity/cost) returned no results. Facts come from search-result summaries, not full-text reading - treat 'high' as 'primary/company source located and summary unambiguous'.",
+  "confidence_scale": {
+   "high": "primary or company source located; unambiguous",
+   "medium": "secondary source, single source, or summary-level only",
+   "low": "background knowledge not retrieved this session, or conflicting/weak source"
+  },
+  "background_knowledge_flag": "NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use."
+ },
+ "disease_education": [
+  {
+   "topic": "Definition and classification (MDS 2018 consensus)",
+   "body": "The 2018 International Parkinson and Movement Disorder Society (MDS) Task Force on Tremor consensus (Bhatia et al., Mov Disord 2018;33:75-87) classifies tremor on two axes: clinical features (Axis 1) and etiology (Axis 2). Essential tremor is treated as a clinical syndrome with multiple possible etiologies, not a single disease. Operationally ET is an isolated action tremor of both upper limbs of at least 3 years' duration, with or without tremor elsewhere (head, voice, legs) and without other neurological signs such as dystonia, ataxia or parkinsonism. A new category, 'ET plus', covers patients who meet ET criteria but have additional soft signs of uncertain significance (e.g. impaired tandem gait, questionable dystonic posturing, mild memory impairment, rest tremor).",
+   "confidence": "medium",
+   "note": "Two-axis framework, syndrome concept and ET-plus category confirmed via search; the 3-year duration rule confirmed via AMA; exact soft-sign wording is NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use.",
+   "sources": [
+    "https://zendy.io/title/10.1002/mds.27121",
+    "https://www.ean.org/research/resources/neurology-updates/detail/new-classification-of-tremor-released-by-the-international-parkinson-and-movement-disorder-society",
+    "https://www.ama-assn.org/public-health/prevention-wellness/what-doctors-want-patients-know-about-essential-tremor"
+   ]
+  },
+  {
+   "topic": "ET vs ET-plus controversy",
+   "body": "The ET-plus label is contested. A 2022 critique (J Neurol Sci, 'Problems and controversies in tremor classification') argues ET should be redefined and that the terms 'essential tremor plus' and 'orthostatic tremor plus' should be abandoned. Critics note that soft signs accumulate with disease duration, so ET-plus may be a stage rather than a separate entity, and that the split fragments trial populations. For commercial purposes the label matters because trial inclusion criteria and future label language may or may not include ET-plus patients.",
+   "confidence": "medium",
+   "sources": [
+    "https://aminer.org/pub/623004125aee126c0f9ad448/problems-and-controversies-in-tremor-classification",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11276397/"
+   ]
+  },
+  {
+   "topic": "Pathophysiology: cerebello-thalamo-cortical network",
+   "body": "ET is believed to arise from pathological synchronized 4-12 Hz oscillation in the olivo-cerebellar and cerebello-thalamo-cortical circuits. The inferior olive was long proposed as the single central oscillator, but that hypothesis is disputed and a multi-oscillator network (brainstem, cerebellum, thalamus, motor cortex) is now favored. Cerebellar EEG work from Columbia (Kuo lab, 2024) found strong 4-12 Hz cerebellar oscillations in most of 20 ET patients and none of 20 controls. The ventral intermediate (Vim) nucleus of the thalamus, the relay of this circuit, is the target for DBS and focused ultrasound.",
+   "confidence": "high",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10109288",
+    "https://www.cuimc.columbia.edu/news/overactive-brain-waves-trigger-essential-tremor",
+    "https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2013.00172/pdf"
+   ]
+  },
+  {
+   "topic": "Pathophysiology: T-type calcium channels (rationale for ulixacaltamide)",
+   "body": "T-type calcium channels (CaV3 family) drive burst firing and subthreshold oscillations in inferior olive, cerebellar and thalamic neurons; CaV3.1 has been described as a molecular pacemaker for inferior-olive oscillations. Mice lacking CaV3.1 are markedly resistant to harmaline-induced tremor and T-type antagonists reduce tremor in animal models. Matthews et al. (2023) argue that aberrant burst firing in the cerebello-thalamo-cortical circuit mediated by T-type channels underlies ET symptoms, the mechanistic basis for ulixacaltamide, suvecaltamide/CX-8998 and NBI-827104. The clinical record of the class is mixed: three T-type programs failed Phase 2 before ulixacaltamide succeeded in Phase 3.",
+   "confidence": "high",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10109288",
+    "https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2013.00172/pdf",
+    "https://www.fiercebiotech.com/biotech/it-was-not-failed-trial-it-was-negative-trial-neurocrine-axes-licensed-essential-tremor",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-provides-update-phase-2b-trial"
+   ]
+  },
+  {
+   "topic": "Pathophysiology: GABA and neurodegeneration hypotheses",
+   "body": "The GABA hypothesis holds that reduced GABAergic tone in the cerebellar output pathway disinhibits the tremor network; GABA-A alpha-1 knockout mice develop an ET-like tremor, and alcohol, primidone, benzodiazepines and gabapentin all act on GABA signalling. The GABA-A positive allosteric modulator SAGE-324 nevertheless failed in Phase 2b, weakening the therapeutic case. A competing neurodegenerative view (Louis, Faust, Kuo) rests on post-mortem findings of Purkinje cell loss, dendritic swellings and abnormal climbing-fibre synapses; the UT Southwestern/Columbia group has defined 37 metrics, 11 of them Purkinje-related, that distinguish ET brains from controls. Others report cerebellar hyperactivity rather than cell loss, so the field is not settled.",
+   "confidence": "medium",
+   "sources": [
+    "https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2013.00172/pdf",
+    "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html",
+    "https://bibliography.cumc.columbia.edu/node/47668",
+    "https://www.cuimc.columbia.edu/news/overactive-brain-waves-trigger-essential-tremor",
+    "https://www.biospace.com/drug-development/biogen-sage-scrap-essential-tremor-study-after-phase-ii-failure"
+   ]
+  },
+  {
+   "topic": "Symptoms",
+   "body": "The core symptom is a bilateral action tremor (postural and kinetic) of the hands and arms that is most evident when writing, eating, drinking, pouring or using tools. Tremor can also involve the head, voice, and less often legs or trunk; TETRAS scores tremor of head, face, voice, limbs and trunk. Tremor is typically absent or minimal at rest and worsens with stress, fatigue and caffeine.",
+   "confidence": "medium",
+   "note": "Body distribution confirmed via TETRAS structure; trigger list is NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use.",
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7546108/",
+    "https://zendy.io/title/10.1002/mds.27121"
+   ]
+  },
+  {
+   "topic": "Onset and progression",
+   "body": "Age at onset is bimodal, with one peak in childhood/adolescence and a second in middle-to-late life; early-onset cases more often have a family history and alcohol responsiveness and progress more slowly. ET is slowly progressive, with tremor amplitude increasing and spreading over years to decades (mean disease duration in one cohort 14.5 years, range 1-55). A reliable annual progression rate was not found in this search. Diagnosed prevalence rises steeply with age: 0.06% at 18-40 versus 1.61% at 75+ in US claims.",
+   "confidence": "medium",
+   "sources": [
+    "https://bmcneurol.biomedcentral.com/track/pdf/10.1186/s12883-016-0748-3",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/"
+   ]
+  },
+  {
+   "topic": "Impact on activities of daily living",
+   "body": "Disability is driven by upper-limb function: handwriting, drinking from a glass, using utensils, dressing, hygiene and working with small objects, the items captured by the TETRAS ADL subscale and the mADL11 endpoint used in the ulixacaltamide Phase 3 program. Patient surveys (IETF membership) describe a large gap between what patients want from treatment and what they get, including embarrassment and social withdrawal. Praxis's mADL11 deliberately excludes the social-impact item and scores 11 functional items. Quantified work-loss figures were not found in this search.",
+   "confidence": "medium",
+   "sources": [
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-plans-begin-ulixacaltamide",
+    "https://tremorjournal.org/articles/10.5334/tohm.239",
+    "https://www.researchgate.net/publication/352754513_Exploring_Essential_Tremor_Results_from_a_Large_Online_Survey"
+   ]
+  },
+  {
+   "topic": "Differential diagnosis: Parkinson's disease and dystonic tremor",
+   "body": "Estimates suggest 30-50% of ET diagnoses are incorrect (Schrag 2000; Jain, Lo & Louis 2006, in which 71 consecutive patients referred with an ET diagnosis were re-evaluated). The most common true diagnoses are Parkinson's disease and dystonia; in a large IETF online survey dystonia was the most commonly missed diagnosis. Classic distinguishing features are action (ET) versus rest (PD) tremor, symmetry, absence of bradykinesia and rigidity, and absence of dystonic posturing; DaT-SPECT can support the PD distinction. There is no diagnostic biomarker for ET, which remains a clinical diagnosis.",
+   "confidence": "medium",
+   "note": "30-50% figure and Jain study design confirmed; the exact Jain percentage (commonly quoted as 37%) was not confirmed; bedside distinguishing features are NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use.",
+   "sources": [
+    "https://utsouthwestern.elsevierpure.com/en/publications/common-misdiagnosis-of-a-common-neurological-disorder-how-are-we-",
+    "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html",
+    "https://www.researchgate.net/publication/352754513_Exploring_Essential_Tremor_Results_from_a_Large_Online_Survey",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11276397/"
+   ]
+  },
+  {
+   "topic": "Genetics and family history",
+   "body": "A positive family history is reported in 20-90% of patients depending on the series, and commonly summarised as at least 50%, consistent with autosomal dominant inheritance in many families. Despite this, no causal gene is firmly established: a LINGO1 variant reached genome-wide significance (OR 1.55), and SLC1A2, STK32B, PPARGC1A and CTNNA3 have been implicated, but replication has been inconsistent; TENM4 variants were found only in single families.",
+   "confidence": "high",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8226734",
+    "https://bmcneurol.biomedcentral.com/track/pdf/10.1186/s12883-016-0748-3"
+   ]
+  },
+  {
+   "topic": "Alcohol responsiveness",
+   "body": "About half of ET patients report that alcohol temporarily improves their tremor. In a familial ET cohort an objective in-hospital alcohol test showed a response in 67%, with no correlation between objective and self-reported responsiveness. Alcohol response is more frequent in early-onset familial ET, and the effect inspired the long-chain alcohol/octanoic acid programs at NIH.",
+   "confidence": "high",
+   "sources": [
+    "https://bmcneurol.biomedcentral.com/track/pdf/10.1186/s12883-016-0748-3",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC8226734",
+    "https://www.jci.org/articles/view/83621"
+   ]
+  },
+  {
+   "topic": "Comorbidities",
+   "body": "A US claims study of commercially insured and Medicare Advantage adults (Dai et al., JHEOR 2022) is titled around multiple comorbidities, psychiatric disorders, healthcare resource use and costs in ET, indicating a high burden of depression/anxiety and general medical comorbidity. Specific prevalence percentages were not retrieved in this session. Cognitive changes, gait/balance impairment and hearing loss are described in the ET literature and underlie the ET-plus concept.",
+   "confidence": "low",
+   "note": "Percentages not found; last sentence is NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use.",
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/"
+   ]
+  }
+ ],
+ "epidemiology": [
+  {
+   "metric": "US prevalence, all ET (population-based)",
+   "value": "7.01 million (2012)",
+   "range": "6.38-7.63 million; ~2.2% of US population",
+   "year": 2014,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137360",
+   "confidence": "high",
+   "note": "Louis & Ottman, Tremor Other Hyperkinet Mov 2014; derived from three rigorous prevalence studies. Authors questioned higher figures of 10 million (IETF) and 13.5 million as lacking transparent methods."
+  },
+  {
+   "metric": "US prevalence, Praxis updated estimate",
+   "value": "~9 million",
+   "range": "7-10 million across sources",
+   "year": 2026,
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "confidence": "medium",
+   "note": "Company 'updated population-based prevalence estimate' at 12 Nov 2026 Investor Day; earlier Praxis materials used ~7 million. Method not retrieved."
+  },
+  {
+   "metric": "ET patients seeking treatment (Praxis initial commercial focus)",
+   "value": "~2 million",
+   "range": "not found",
+   "year": 2026,
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "confidence": "medium",
+   "note": "Company figure; a Goldman Sachs conference summary describes the same 2 million as 'sub-optimally treated or untreated' (https://quartr.com/events/praxis-precision-medicines-prax-goldman-sachs-47th-annual-global-healthcare-conference-2026_oS61ioRv)."
+  },
+  {
+   "metric": "Diagnosed ET prevalence, US adults (MarketScan claims, >=2 ET claims within 12 months)",
+   "value": "0.42% age-standardised = ~1.1 million adults (2024)",
+   "range": "0.28% crude; 0.45% (~1.21 million) with 2-year claim window; 0.55% with single-claim definition",
+   "year": 2025,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+   "confidence": "high",
+   "note": "Tremor Other Hyperkinet Mov 2025;15:51."
+  },
+  {
+   "metric": "Diagnosed ET, US adults (Compile claims, single claim over 5 years)",
+   "value": "~2.2 million (as of 2019)",
+   "range": "1.1-2.2 million across claims definitions",
+   "year": 2022,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+   "confidence": "medium",
+   "note": "Cited within the 2025 MarketScan paper; original is the Compile 'Hidden Burden' analysis. Gap between ~7M prevalent and 1-2M diagnosed implies most people with ET are undiagnosed or not coded."
+  },
+  {
+   "metric": "Diagnosed ET prevalence in a neurology-restricted EHR population (NE-central Pennsylvania)",
+   "value": "0.40%",
+   "range": "not found",
+   "year": 2026,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13378417",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Diagnosed prevalence by age (US claims)",
+   "value": "0.06% at ages 18-40 rising to 1.61% at 75+",
+   "range": "not found",
+   "year": 2025,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+   "confidence": "high"
+  },
+  {
+   "metric": "Share of diagnosed patients receiving any possible ET treatment",
+   "value": "~74%",
+   "range": "74% treated (MarketScan) vs 26.0% with no ET pharmacotherapy or invasive therapy claim in 12 months after index (Optum/Dai)",
+   "year": 2025,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+   "confidence": "high",
+   "note": "Second figure: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/"
+  },
+  {
+   "metric": "Share of diagnosed patients with a propranolol claim",
+   "value": "42.0%",
+   "range": "up to 81% ever-use in literature review",
+   "year": 2023,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.973",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Share of diagnosed patients with a primidone claim",
+   "value": "26.6%",
+   "range": "up to 55% ever-use in literature review",
+   "year": 2023,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.973",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Propranolol discontinuation within 2 years (US claims 2015-2019)",
+   "value": "40%",
+   "range": "10-70% across literature",
+   "year": 2022,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.682",
+   "confidence": "medium",
+   "note": "Database attribution inconsistent across secondary sources (Compile vs MarketScan)."
+  },
+  {
+   "metric": "Primidone discontinuation within 2 years (US claims 2015-2019)",
+   "value": "47%",
+   "range": "10-70% across literature",
+   "year": 2022,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.682",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Discontinuation of propranolol or primidone among specialist-treated patients (survey, n=223)",
+   "value": "56.3% of the 70.9% who had used either drug",
+   "range": "not found",
+   "year": 2010,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.682",
+   "confidence": "medium",
+   "note": "Primidone more often stopped for side effects; propranolol for lack of efficacy."
+  },
+  {
+   "metric": "First-line prescriptions stopped for lack of efficacy or side effects (veteran cohort)",
+   "value": "30.9% (318/1030)",
+   "range": "not found",
+   "year": "not confirmed",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11661014",
+   "confidence": "low",
+   "note": "Source URL inferred from search result list; verify."
+  },
+  {
+   "metric": "Responder rate, propranolol (real-world literature, studies with >=50 patients)",
+   "value": "37-56% of patients respond",
+   "range": "37-56%",
+   "year": 2024,
+   "source_url": "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Responder rate, primidone",
+   "value": "43-55% of patients respond",
+   "range": "43-55%",
+   "year": 2024,
+   "source_url": "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Responder rate, gabapentin or topiramate (real-world)",
+   "value": "about one quarter",
+   "range": "discontinuation 26-86% (gabapentin), 26-58% (topiramate)",
+   "year": 2024,
+   "source_url": "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+   "confidence": "medium"
+  },
+  {
+   "metric": "Veterans diagnosed with ET (VA system)",
+   "value": ">30,000",
+   "range": "not found",
+   "year": 2026,
+   "source_url": "https://www.webull.com/news/15752173318185984",
+   "confidence": "low",
+   "note": "Headline of an Encora Therapeutics release; not independently verified."
+  },
+  {
+   "metric": "Annual growth of diagnosed ET population in claims",
+   "value": "7.29% (Medicare) vs 2.05% (commercial)",
+   "range": "not found",
+   "year": "not confirmed",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11489621/",
+   "confidence": "low",
+   "note": "Reported in search summary without clear attribution; verify."
+  },
+  {
+   "metric": "Number of drug-treated ET patients (absolute)",
+   "value": "not found",
+   "range": "derivable only by assumption: 74% of 1.1-2.2 million diagnosed = ~0.8-1.6 million with any treatment claim",
+   "year": 2025,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+   "confidence": "low",
+   "note": "Arithmetic by this compiler, not a published figure."
+  }
+ ],
+ "patient_journey": [
+  {
+   "stage": "1. Symptom onset and self-management",
+   "description": "Mild bilateral hand tremor appears, often in adolescence/early adulthood or after age 40-50. Patients adapt (two-handed drinking, avoiding soup, changing handwriting), self-medicate with alcohol, or attribute tremor to ageing or nerves.",
+   "typical_duration": "years to decades; published median onset-to-diagnosis interval not found (MDS criteria themselves require >=3 years of tremor)",
+   "pain_points": [
+    "Low awareness that ET is a treatable neurological condition",
+    "Fear of Parkinson's disease",
+    "Embarrassment and social withdrawal",
+    "Most prevalent cases never reach diagnosis (about 7-9 million prevalent vs 1.1-2.2 million diagnosed)"
+   ],
+   "stakeholders": [
+    "Patient",
+    "Family",
+    "IETF and other advocacy groups"
+   ],
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137360",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+    "https://www.ama-assn.org/public-health/prevention-wellness/what-doctors-want-patients-know-about-essential-tremor",
+    "https://tremorjournal.org/articles/10.5334/tohm.239"
+   ]
+  },
+  {
+   "stage": "2. Trigger to seek care",
+   "description": "Care-seeking is triggered by functional loss (writing, eating, drinking, work tasks), social embarrassment, or worry about Parkinson's. Praxis estimates about 2 million of ~9 million people with ET are seeking treatment today.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "Symptoms dismissed as benign",
+    "'Benign essential tremor' legacy terminology minimises disability"
+   ],
+   "stakeholders": [
+    "Patient",
+    "Caregiver",
+    "Primary care"
+   ],
+   "sources": [
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://tremorjournal.org/articles/10.5334/tohm.239"
+   ]
+  },
+  {
+   "stage": "3. Primary care evaluation",
+   "description": "The PCP is usually the first contact: history, medication and caffeine review, thyroid testing, and often a first prescription of propranolol. Many uncomplicated cases are managed entirely in primary care, with referral if tremor is severe, disabling, atypical or unresponsive to first-line therapy.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "Published PCP vs neurology share of diagnosis/prescribing not found",
+    "Beta-blocker contraindications in older patients (asthma, bradycardia, hypotension)",
+    "Limited familiarity with primidone titration"
+   ],
+   "stakeholders": [
+    "PCP/internist/geriatrician",
+    "NP/PA"
+   ],
+   "sources": [
+    "https://www.ama-assn.org/public-health/prevention-wellness/what-doctors-want-patients-know-about-essential-tremor",
+    "https://www.pennmedicine.org/news/comprehensive-clinics-simplify-care-for-neurological-diseases"
+   ]
+  },
+  {
+   "stage": "4. General neurologist: diagnosis and drug optimisation",
+   "description": "The neurologist confirms a clinical diagnosis (no biomarker), excludes Parkinson's disease, dystonic tremor, drug-induced and enhanced physiologic tremor, and cycles through propranolol, primidone, the combination, then topiramate/gabapentin/benzodiazepines.",
+   "typical_duration": "average wait of 49.7 days for a new neurology visit after PCP/ED referral among commercially insured patients",
+   "pain_points": [
+    "30-50% of ET diagnoses are estimated to be wrong, most often missed PD or dystonia",
+    "Roughly half of patients do not respond adequately to first-line drugs",
+    "40-47% discontinue propranolol/primidone within 2 years"
+   ],
+   "stakeholders": [
+    "General neurologist",
+    "Neurology APP"
+   ],
+   "sources": [
+    "https://neurologytoday.aan.com/doi/10.1097/01.wnt.0001205184.00375.4e",
+    "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html",
+    "https://utsouthwestern.elsevierpure.com/en/publications/common-misdiagnosis-of-a-common-neurological-disorder-how-are-we-",
+    "https://tremorjournal.org/articles/10.5334/tohm.682",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html"
+   ]
+  },
+  {
+   "stage": "5. Drop-out / therapy abandonment",
+   "description": "A large share of patients stop drug therapy for side effects or lack of efficacy and disengage from care; about a quarter of diagnosed patients have no ET treatment claim in a 12-month window. These lapsed patients are the pool a new oral agent would need to reactivate.",
+   "typical_duration": "ongoing",
+   "pain_points": [
+    "No approved alternatives after propranolol",
+    "Perception that nothing else can be done short of surgery"
+   ],
+   "stakeholders": [
+    "Patient",
+    "PCP"
+   ],
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+    "https://tremorjournal.org/articles/10.5334/tohm.682"
+   ]
+  },
+  {
+   "stage": "6. Movement disorder specialist",
+   "description": "Refractory, atypical or surgically eligible patients are referred to a movement disorder specialist (MDS) for diagnostic refinement (ET vs ET-plus vs dystonic tremor), botulinum toxin, wearable neurostimulation, and surgical candidacy assessment.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "Limited number and geographic concentration of movement disorder specialists",
+    "Long waits"
+   ],
+   "stakeholders": [
+    "Movement disorder neurologist",
+    "Functional neurosurgeon"
+   ],
+   "sources": [
+    "https://www.researchgate.net/publication/352754513_Exploring_Essential_Tremor_Results_from_a_Large_Online_Survey",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/"
+   ]
+  },
+  {
+   "stage": "7. Device therapy",
+   "description": "Prescription wrist-worn peripheral nerve stimulators (Cala kIQ; Felix NeuroAI, cleared 2025; Encora X1, cleared Feb 2026) offer a non-invasive, on-demand option. Cala TAPS is covered by Medicare for ET under LCD L39591 after a trial period with adherence requirement, and is available through the VA.",
+   "typical_duration": "Medicare trial period: use on >=70% of days in a consecutive 30-day period",
+   "pain_points": [
+    "Effect is transient and limited to the treated hand",
+    "Commercial coverage variable",
+    "Skin irritation (34.9% with Felix)"
+   ],
+   "stakeholders": [
+    "Neurologist",
+    "DME supplier",
+    "Medicare DME MACs",
+    "VA"
+   ],
+   "sources": [
+    "https://calahealth.com/wp-content/uploads/2026/01/MM-20054-Rev-C-Medicare-Beneficiaries-Access-to-Cala-TAPS.pdf",
+    "https://calahealth.com/help-center/insurance/do-you-accept-insurance/",
+    "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/",
+    "https://www.fiercebiotech.com/medtech/fda-clears-encora-therapeutics-wearable-wrist-device-essential-tremor"
+   ]
+  },
+  {
+   "stage": "8. Surgical / procedural referral",
+   "description": "Medication-refractory, disabling tremor is treated with MR-guided focused ultrasound thalamotomy (incisionless; unilateral since 2016, staged second side since Dec 2022, at least 9 months apart), Vim deep brain stimulation (adjustable, bilateral), or less commonly radiosurgical (Gamma Knife) or radiofrequency thalamotomy.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "Only a small fraction of eligible patients proceed to surgery (exact US penetration not found)",
+    "Fear of brain surgery",
+    "FUS requires head shave and suitable skull density; DBS requires implanted hardware and programming visits",
+    "Access limited to ~104 US Exablate centres (all movement-disorder indications)"
+   ],
+   "stakeholders": [
+    "Functional neurosurgeon",
+    "Neuroradiologist",
+    "Movement disorder neurologist",
+    "Medicare MACs",
+    "Commercial medical policy"
+   ],
+   "sources": [
+    "https://www.fusfoundation.org/diseases-and-conditions/essential-tremor/",
+    "https://www.neurologylive.com/view/fda-approves-insightec-exablate-neuro-to-treat-second-side-essential-tremor",
+    "https://finance.yahoo.com/healthcare/articles/lancet-neurology-study-confirms-staged-123000476.html",
+    "https://insightec.com/wp-content/uploads/Reimbursement-Guide-2026.pdf"
+   ]
+  },
+  {
+   "stage": "Cross-cutting: telehealth and decentralised care",
+   "description": "ET is well suited to video assessment because tremor is visible and TETRAS items can be rated remotely; Essential3 was run as a fully decentralised US trial. One Neurology study reported no difference in testing for ET between telehealth and in-person visits. Evidence on telehealth diagnostic accuracy and share of ET visits by telehealth was not found.",
+   "typical_duration": "not found",
+   "pain_points": [
+    "Evidence base thin",
+    "State licensure and controlled-substance prescribing rules if ulixacaltamide is scheduled"
+   ],
+   "stakeholders": [
+    "Tele-neurology providers",
+    "Decentralised trial sites"
+   ],
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT06087276",
+    "https://neurologytoday.aan.com/doi/10.1097/01.wnt.0001205184.00375.4e",
+    "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012"
+   ]
+  }
+ ],
+ "treatment_flow": [
+  {
+   "line": "1L",
+   "options": [
+    "Propranolol (IR or LA) - only FDA-approved drug for ET",
+    "Primidone (off-label)"
+   ],
+   "evidence_level": "AAN 2011 Level A (established effective); MDS 2019 'clinically useful'",
+   "efficacy": "Mean tremor amplitude reduction about 50% (study ranges 32-75% propranolol, 42-76% primidone); responder rates 37-56% and 43-55% in real-world series",
+   "limitations": "Propranolol: bradycardia, hypotension, fatigue, contraindicated in asthma/heart block. Primidone: acute sedation, nausea, ataxia at initiation. 40% and 47% discontinue within 2 years; 10-70% across studies.",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+    "https://tremorjournal.org/articles/10.5334/tohm.682"
+   ]
+  },
+  {
+   "line": "1L combination",
+   "options": [
+    "Propranolol + primidone"
+   ],
+   "evidence_level": "Guideline-supported when monotherapy inadequate",
+   "efficacy": "not found",
+   "limitations": "Additive adverse effects",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492"
+   ]
+  },
+  {
+   "line": "2L",
+   "options": [
+    "Topiramate (>200 mg/day)",
+    "Gabapentin monotherapy",
+    "Atenolol / sotalol",
+    "Alprazolam / clonazepam"
+   ],
+   "evidence_level": "AAN 2011 Level B (probably effective) for topiramate, gabapentin monotherapy, atenolol, sotalol, alprazolam; MDS 2019: topiramate 'clinically useful' only above 200 mg/day, alprazolam 'possibly useful'",
+   "efficacy": "Topiramate 30-41% amplitude improvement at 100-333 mg/day in controlled trials; about one quarter of patients report response to gabapentin or topiramate in real-world data",
+   "limitations": "Topiramate: cognitive slowing, paraesthesia, weight loss; discontinuation 26-58%. Gabapentin discontinuation 26-86%. Benzodiazepines: sedation, falls, dependence in the elderly.",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://www.medscape.com/viewarticle/751786",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html"
+   ]
+  },
+  {
+   "line": "Adjunct / focal",
+   "options": [
+    "Botulinum toxin type A (limb, head, voice) - off-label"
+   ],
+   "evidence_level": "MDS 2019 'possibly useful'; Phase 2 ELATE (onabotulinumtoxinA, n=182) positive Oct 2025",
+   "efficacy": "ELATE: unilateral TREDS-R change -2.61 vs -1.61 placebo at week 18 (p=0.029); all six secondary endpoints met",
+   "limitations": "Hand/finger weakness (muscle weakness 24.5% vs 2.3% in ELATE); injector skill; repeat injections about every 3 months; not FDA-approved for ET",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/",
+    "https://news.abbvie.com/2025-10-06-AbbVie-Announces-Positive-Topline-Results-from-Phase-2-ELATE-Trial-Evaluating-OnabotulinumtoxinA-BOTOX-R-for-the-Treatment-of-Upper-Limb-Essential-Tremor",
+    "https://practicalneurology.com/news/study-evaluates-botox-as-essential-tremor-treatment/2483937/"
+   ]
+  },
+  {
+   "line": "Non-invasive device",
+   "options": [
+    "Cala kIQ / Cala Trio (TAPS)",
+    "Felix NeuroAI Wristband (Fasikl)",
+    "Encora X1 (Encora Therapeutics)"
+   ],
+   "evidence_level": "FDA 510(k)/De Novo cleared devices; not in AAN 2011 or MDS 2019",
+   "efficacy": "Felix TRANQUIL: TETRAS mADL improved 6.9 vs 2.7 points with sham at 90 days (p<0.0001); CGI-I improved 69.4% vs 44.4%. Cala PROSPECT: 263 patients at 26 sites, open-label home use (quantified result not found).",
+   "limitations": "Symptomatic, temporary, unilateral; skin irritation; coverage outside Medicare/VA inconsistent",
+   "sources": [
+    "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/",
+    "https://www.neurologylive.com/view/cala-trio-device-provides-advantages-in-essential-tremor-treatment",
+    "https://www.fiercebiotech.com/medtech/fda-clears-encora-therapeutics-wearable-wrist-device-essential-tremor",
+    "https://calahealth.com/wp-content/uploads/2026/01/MM-20054-Rev-C-Medicare-Beneficiaries-Access-to-Cala-TAPS.pdf"
+   ]
+  },
+  {
+   "line": "3L procedural (medication-refractory)",
+   "options": [
+    "MR-guided focused ultrasound Vim thalamotomy (Insightec Exablate Neuro)",
+    "Vim deep brain stimulation",
+    "Gamma Knife radiosurgical thalamotomy",
+    "Radiofrequency thalamotomy"
+   ],
+   "evidence_level": "AAN 2011: DBS and thalamotomy may help drug-refractory limb tremor; MDS 2019: DBS, RF thalamotomy and MRgFUS thalamotomy 'possibly useful' (limb tremor)",
+   "efficacy": "MRgFUS unilateral: hand tremor/motor score improved 49.5% at 4 years and 40.4% at 5 years (pivotal cohort); continued-access cohort 62.2% at 1 year and 51.9% at 5 years. Staged bilateral MRgFUS (n=51, 7 centres): tremor severity improved 81%. Short-term total CRST improvement FUS 53% vs DBS 56% (not significantly different). Gamma Knife: 74-90% tremor reduction reported in a 2018 review table.",
+   "limitations": "MRgFUS: irreversible lesion, paraesthesia 14-25%, gait disturbance, waning benefit over years, skull-density eligibility. DBS: surgical/hardware risks, programming burden, possible loss of benefit over time (rate not found). Radiosurgery: delayed onset, radiation effects.",
+   "sources": [
+    "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+    "https://news.unchealthcare.org/2024/07/bilateral-focused-ultrasound-shown-to-be-safe-effective-for-patients-with-lingering-or-severe-essential-tremor/",
+    "https://www.mdedge.com/neurologyreviews/article/193963/movement-disorders/researchers-compare-focused-ultrasound-and-dbs/page/0/1",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6581115",
+    "https://www.movementdisorders.org/MDS-Files1/PDFs/EBM-Papers/Ferreira_et_al-2019-Movement_Disorders.pdf",
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492"
+   ]
+  },
+  {
+   "line": "Emerging (pre-approval)",
+   "options": [
+    "Ulixacaltamide HCl (Praxis) - T-type calcium channel blocker, NDA under review, PDUFA 29 Jan 2027"
+   ],
+   "evidence_level": "Two positive Phase 3 studies (Essential3); FDA Breakthrough Therapy Designation",
+   "efficacy": "Study 1: mADL11 change -4.3 vs -1.7 placebo at week 8 (p<0.0001). Study 2 (randomised withdrawal): 55% vs 33% maintained response (p=0.0369).",
+   "limitations": "27-28% discontinued for drug-related adverse events; dizziness, constipation, euphoric mood, brain fog, headache, paraesthesia, insomnia each >=10%; DEA scheduling anticipated (IV or V per analyst note)",
+   "sources": [
+    "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
+    "https://trial.medpath.com/news/praxis-precision-medicines-reports-positive-phase-3-results-for-ulixacaltamide-in-essential-tremor",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug",
+    "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012"
+   ]
+  }
+ ],
+ "guidelines": [
+  {
+   "name": "Consensus Statement on the Classification of Tremors",
+   "body": "International Parkinson and Movement Disorder Society (MDS) Task Force on Tremor",
+   "year": 2018,
+   "key_recommendations": [
+    "Two-axis classification: Axis 1 clinical features, Axis 2 etiology",
+    "ET defined as a syndrome, not a single disease/etiology",
+    "Introduced 'ET plus' for ET with additional soft neurological signs",
+    "ET requires bilateral upper-limb action tremor of at least 3 years (duration and soft-sign wording to be verified in full text)"
+   ],
+   "url": "https://zendy.io/title/10.1002/mds.27121",
+   "confidence": "medium"
+  },
+  {
+   "name": "Evidence-based guideline update: Treatment of essential tremor",
+   "body": "American Academy of Neurology (lead author Theresa Zesiewicz, USF)",
+   "year": 2011,
+   "key_recommendations": [
+    "Level A: propranolol and primidone",
+    "Level B: alprazolam, atenolol, gabapentin (monotherapy), sotalol, topiramate",
+    "Not recommended for limb tremor: levetiracetam, flunarizine, 3,4-diaminopyridine",
+    "DBS and thalamotomy may be used for drug-refractory limb tremor",
+    "Literature reviewed 2004 through April 2010; guideline reaffirmed by the AAN Guidelines Subcommittee on 19 July 2025 - no full update located, so it predates MRgFUS, wearables and all T-type agents"
+   ],
+   "url": "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+   "confidence": "high"
+  },
+  {
+   "name": "MDS evidence-based review of treatments for essential tremor",
+   "body": "MDS Evidence-Based Medicine Committee (Ferreira et al., Mov Disord 2019)",
+   "year": 2019,
+   "key_recommendations": [
+    "Clinically useful: propranolol, primidone, topiramate (>200 mg/day)",
+    "Possibly useful: alprazolam, botulinum toxin type A",
+    "Possibly useful (surgical): Vim DBS, radiofrequency thalamotomy, MRI-guided focused ultrasound thalamotomy (first time assessed)",
+    "All recommendations apply to limb tremor; safety profile and patient preference should guide prioritisation"
+   ],
+   "url": "https://pubmed.ncbi.nlm.nih.gov/31046186/",
+   "confidence": "high"
+  },
+  {
+   "name": "MDS 2026 review of randomised trials of medical interventions in ET",
+   "body": "International Parkinson and Movement Disorder Society (as described by a secondary source)",
+   "year": 2026,
+   "key_recommendations": [
+    "Reported to cover 31 randomised trials of 16 medical interventions and to find most studies small, short or at risk of bias",
+    "Primary citation not found - verify before use"
+   ],
+   "url": "https://steadiwear.com/blogs/tremor-devices/emerging-tremor-treatments-clinical-trials",
+   "confidence": "low"
+  },
+  {
+   "name": "IETF patient and provider guidance",
+   "body": "International Essential Tremor Foundation",
+   "year": "ongoing",
+   "key_recommendations": [
+    "Publishes patient education (e.g. 'Essential Tremor: What the Experts Say'), provider resources and a treatment overview; not a formal evidence-graded guideline",
+    "A formal IETF treatment algorithm document was not found in this search"
+   ],
+   "url": "https://www.essentialtremor.org/wp-content/uploads/2014/04/Essential-Tremor-What-the-Experts-Say-2014.pdf",
+   "confidence": "medium"
+  },
+  {
+   "name": "AAN ET guideline full update (2023-2026)",
+   "body": "American Academy of Neurology",
+   "year": "not found",
+   "key_recommendations": [
+    "No new AAN ET treatment guideline or guideline-in-development notice was found; only the July 2025 reaffirmation of the 2011 document"
+   ],
+   "url": "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+   "confidence": "medium"
+  }
+ ],
+ "approved_and_used_therapies": [
+  {
+   "name": "Propranolol",
+   "type": "drug",
+   "class": "non-selective beta blocker",
+   "regulatory_status": "Only FDA-approved drug for ET",
+   "line": "1L",
+   "efficacy": "~50% mean tremor reduction; 37-56% responders",
+   "limitations": "CV/respiratory contraindications; 40% discontinue within 2 years",
+   "cost": "Generic; specific monthly price not found this session (generic, typically low single- to double-digit dollars per month - unverified)",
+   "sources": [
+    "https://www.medscape.com/viewarticle/751786",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+    "https://tremorjournal.org/articles/10.5334/tohm.682"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Primidone",
+   "type": "drug",
+   "class": "barbiturate-type anticonvulsant",
+   "regulatory_status": "Off-label for ET",
+   "line": "1L",
+   "efficacy": "~50% mean tremor reduction; 43-55% responders",
+   "limitations": "Acute intolerance, sedation; 47% discontinue within 2 years",
+   "cost": "Generic; specific monthly price not found",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+    "https://tremorjournal.org/articles/10.5334/tohm.682"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Topiramate",
+   "type": "drug",
+   "class": "anticonvulsant",
+   "regulatory_status": "Off-label",
+   "line": "2L",
+   "efficacy": "30-41% amplitude improvement; effective mainly >200 mg/day",
+   "limitations": "Cognitive adverse effects; discontinuation 26-58%",
+   "cost": "Generic; price not found",
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Gabapentin",
+   "type": "drug",
+   "class": "alpha-2-delta ligand",
+   "regulatory_status": "Off-label",
+   "line": "2L",
+   "efficacy": "AAN Level B as monotherapy; about one quarter respond in real-world data",
+   "limitations": "Sedation, dizziness; discontinuation 26-86%",
+   "cost": "Generic; price not found",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Benzodiazepines (alprazolam, clonazepam)",
+   "type": "drug",
+   "class": "GABA-A positive modulators",
+   "regulatory_status": "Off-label",
+   "line": "2L/PRN",
+   "efficacy": "Alprazolam AAN Level B; MDS 'possibly useful'",
+   "limitations": "Sedation, falls, dependence",
+   "cost": "Generic; price not found",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Botulinum toxin type A (onabotulinumtoxinA / incobotulinumtoxinA)",
+   "type": "injectable biologic",
+   "class": "neuromuscular blocker",
+   "regulatory_status": "Off-label for ET; AbbVie Phase 2 ELATE positive (Oct 2025); Merz NT 201 upper-limb ET trial NCT04766723 (result not found)",
+   "line": "adjunct",
+   "efficacy": "ELATE TREDS-R -2.61 vs -1.61 (p=0.029)",
+   "limitations": "Weakness 24.5%",
+   "cost": "not found",
+   "sources": [
+    "https://news.abbvie.com/2025-10-06-AbbVie-Announces-Positive-Topline-Results-from-Phase-2-ELATE-Trial-Evaluating-OnabotulinumtoxinA-BOTOX-R-for-the-Treatment-of-Upper-Limb-Essential-Tremor",
+    "https://cdn.clinicaltrials.gov/large-docs/23/NCT04766723/Prot_000.pdf",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7766785/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Cala kIQ / Cala Trio (transcutaneous afferent patterned stimulation)",
+   "type": "device",
+   "class": "wrist-worn median/radial nerve stimulator",
+   "regulatory_status": "FDA-cleared prescription device for ET hand tremor",
+   "line": "non-invasive device",
+   "efficacy": "PROSPECT open-label study, 263 patients, 26 sites",
+   "limitations": "Temporary relief, one hand",
+   "cost": "List price not found. Medicare Part B DME coverage under LCD L39591 (80/20 coinsurance in fee-for-service; Medicare Advantage varies); no cost to eligible VA beneficiaries; commercial coverage varies; HSA/FSA eligible",
+   "sources": [
+    "https://calahealth.com/wp-content/uploads/2026/01/MM-20054-Rev-C-Medicare-Beneficiaries-Access-to-Cala-TAPS.pdf",
+    "https://calahealth.com/help-center/insurance/do-you-accept-insurance/",
+    "https://www.neurologylive.com/view/cala-trio-device-provides-advantages-in-essential-tremor-treatment"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Felix NeuroAI Wristband (Fasikl)",
+   "type": "device",
+   "class": "AI-driven wrist neurostimulator",
+   "regulatory_status": "FDA 510(k) clearance announced 1 July 2025; limited rollout late 2025, broader launch planned 2026",
+   "line": "non-invasive device",
+   "efficacy": "TRANQUIL (sham-controlled, 2:1, ~121-125 patients, US and China): mADL -6.9 vs -2.7 (p<0.0001)",
+   "limitations": "Skin irritation 34.9% vs 7%",
+   "cost": "not found; coverage status not found",
+   "sources": [
+    "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/",
+    "https://www.businesswire.com/news/home/20250701753633/en",
+    "https://cm.healio.com/news/neurology/20250409/felix-neuroai-wristband-improves-essential-tremor-outcomes"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Encora X1 (Encora Therapeutics)",
+   "type": "device",
+   "class": "wrist-worn closed-loop neurostimulator (MIT spin-out)",
+   "regulatory_status": "FDA 510(k) clearance 12 Feb 2026; Breakthrough Device designation 2021; available to order through the VA",
+   "line": "non-invasive device",
+   "efficacy": "Sham-controlled trial NCT06343285 and 90-day home-use study NCT07078422; numeric results not found",
+   "limitations": "Reimbursement framework still being finalised",
+   "cost": "not found",
+   "sources": [
+    "https://www.fiercebiotech.com/medtech/fda-clears-encora-therapeutics-wearable-wrist-device-essential-tremor",
+    "https://www.businesswire.com/news/home/20260212105349/en/",
+    "https://www.webull.com/news/15752173318185984"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "MR-guided focused ultrasound thalamotomy (Insightec Exablate Neuro)",
+   "type": "procedure",
+   "class": "incisionless Vim ablation",
+   "regulatory_status": "FDA approved for unilateral medication-refractory ET in July 2016; staged second-side (bilateral) treatment approved 20 Dec 2022, at least 9 months after first side",
+   "line": "3L",
+   "efficacy": "40-50% hand tremor/motor improvement sustained at 4-5 years; staged bilateral 81% tremor severity improvement",
+   "limitations": "Irreversible; sensory and gait adverse events; skull-density eligibility",
+   "cost": "Medicare: covered for medication-refractory ET in all 50 states (all MAC jurisdictions) per Insightec; CPT 61715 (replaced 0398T on 1 Jan 2025), CY2026 OPPS APC 5463 (Level 3 neurostimulator and related procedures); 2026 APC payment amount not found; a Sept 2025 stakeholder letter to CMS cites a cost figure (labelled GMC) of $13,009.80 for CPT 61715 - not a payment rate. BCBS coverage in 49 states per Insightec. Centres: 214 worldwide incl. 104 in the US; >30,000 patients treated (all movement-disorder indications).",
+   "sources": [
+    "https://www.fusfoundation.org/diseases-and-conditions/essential-tremor/",
+    "https://www.neurologylive.com/view/fda-approves-insightec-exablate-neuro-to-treat-second-side-essential-tremor",
+    "https://insightec.com/wp-content/uploads/Reimbursement-Guide-2026.pdf",
+    "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=57884",
+    "https://downloads.regulations.gov/CMS-2025-0304-9068/attachment_1.pdf",
+    "https://finance.yahoo.com/healthcare/articles/lancet-neurology-study-confirms-staged-123000476.html",
+    "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+    "https://news.unchealthcare.org/2024/07/bilateral-focused-ultrasound-shown-to-be-safe-effective-for-patients-with-lingering-or-severe-essential-tremor/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Deep brain stimulation, Vim thalamus",
+   "type": "procedure/device",
+   "class": "implanted neurostimulator",
+   "regulatory_status": "FDA approved for ET (approval year not retrieved)",
+   "line": "3L",
+   "efficacy": "Short-term total CRST improvement ~56%; tremor control maintained ~5 years with periodic reprogramming",
+   "limitations": "Hardware/infection risk, battery, programming; some loss of benefit over time",
+   "cost": "US Medicare payment and total episode cost not found",
+   "sources": [
+    "https://www.mdedge.com/neurologyreviews/article/193963/movement-disorders/researchers-compare-focused-ultrasound-and-dbs/page/0/1",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6581115",
+    "https://neurology.ufl.edu/2022/07/07/suppression-of-axial-tremor-by-deep-brain-stimulation-in-patients-with-essential-tremor-effects-on-gait-and-balance-measures/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Gamma Knife radiosurgical thalamotomy",
+   "type": "procedure",
+   "class": "radiosurgical Vim ablation",
+   "regulatory_status": "Used off-label/within device labelling at selected centres",
+   "line": "3L (non-surgical candidates)",
+   "efficacy": "74-90% tremor reduction in a 2018 review table (approximate)",
+   "limitations": "Delayed effect, radiation necrosis risk; lower evidence level",
+   "cost": "not found",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6581115"
+   ],
+   "confidence": "low"
+  }
+ ],
+ "pipeline": [
+  {
+   "asset": "Ulixacaltamide HCl (PRAX-944)",
+   "sponsor": "Praxis Precision Medicines",
+   "moa": "Selective T-type calcium channel (CaV3) blocker; oral",
+   "phase": "NDA under FDA review",
+   "data": "Essential3: two simultaneously enrolled, decentralised US pivotal studies. Study 1 (12-week parallel, n=473 randomised 1:1): mADL11 change at week 8 -4.3 vs -1.7 placebo, p<0.0001 (one summary reports LS mean difference -2.57, 95% CI -3.62 to -1.53). Study 2 (randomised withdrawal, n=238; 8-week open-label then 4-week withdrawal in responders): 55% vs 33% maintained response, p=0.0369, OR 2.7 (95% CI 1.06-6.92); key secondary p=0.0042. Safety: drug-related AE discontinuations 27.0% vs 1.7% placebo (Study 1) and 28.1% (Study 2); AEs >=10%: constipation, dizziness, euphoric mood, brain fog, headache, paraesthesia, insomnia; no drug-related SAEs, no deaths. Long-term extension: durable and improving ADL response at ~95 weeks (Investor Day). Earlier Phase 2b Essential1 (n=132): primary mADL11 analysis p=0.126; company highlights nominal p=0.042.",
+   "status": "NDA submitted Feb 2026 (secondary source), accepted with PDUFA date 29 Jan 2027; no advisory committee planned; mid-cycle meeting found no major safety or efficacy concerns; FDA-requested sensitivity analyses consistent with primary result; Breakthrough Therapy Designation. ~300 field representatives hired, ~19,000 target HCPs; 'ESSENTIAL to me' HCP disease-education campaign launched April 2026. DEA scheduling anticipated IV or V (analyst account). Dose (60 mg/day) not confirmed this session.",
+   "next_catalyst": "FDA action 29 Jan 2027; DEA scheduling; launch; 2027 study starts in Parkinson's disease, restless legs syndrome and autism spectrum disorder",
+   "sources": [
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000082/praxisq22026pr.htm",
+    "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
+    "https://trial.medpath.com/news/praxis-precision-medicines-reports-positive-phase-3-results-for-ulixacaltamide-in-essential-tremor",
+    "https://www.evicenter.com/drugs/ulixacaltamide--essential-tremor/executive-summary/efficacy-and-safety",
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day",
+    "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+    "https://www.hcplive.com/view/fda-grants-breakthrough-therapy-designation-ulizacaltamine-essential-tremor",
+    "https://braintrials.substack.com/p/deep-dive-ulixacaltamide-and-the",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-corporate-update-and-19"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "Suvecaltamide (JZP385, formerly CX-8998)",
+   "sponsor": "Jazz Pharmaceuticals (via Cavion acquisition)",
+   "moa": "T-type calcium channel modulator",
+   "phase": "Phase 2b (failed in ET)",
+   "data": "12-week, 420-participant, 4-country Phase 2b: 30 mg did not reach significance vs placebo on modified TETRAS composite at week 12 or on CGI-S; numerical improvement; high placebo response cited. Published Parkinsonism Relat Disord 2026;148:108342 (Pahwa, Elble, Hauser, LeWitt, Shill, ... Ondo). Earlier T-CALM Phase 2 of CX-8998 (n=95, 28 days) missed its primary (video-rated TETRAS performance, p=0.696) but improved investigator-rated TETRAS-PS (p=0.017), TETRAS-ADL (p=0.049) and CGI-I (p=0.001); dizziness 21%.",
+   "status": "ET result announced June 2024. Phase 2 in Parkinson's disease tremor (NCT05642442, n=169) completed Jan 2025; results and formal program status not found (no confirmation of discontinuation located).",
+   "next_catalyst": "not found",
+   "failure_reason": "High placebo response; change of dose/formulation from earlier study; rater-dependent endpoint",
+   "sources": [
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-provides-update-phase-2b-trial",
+    "https://www.neurologylive.com/view/jazz-suvecaltamide-fails-meet-primary-end-point-phase-2b-trial-essential-tremor",
+    "https://pubmed.ncbi.nlm.nih.gov/42167194/",
+    "https://clinicaltrials.gov/study/NCT05642442",
+    "https://clinicaltrials.gov/study/NCT03101241",
+    "https://www.neurologylive.com/conferences/aan-2019/cx8998-exhibits-promise-essential-tremor-despite-failing-meet-primary-end-point"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "SAGE-324 / BIIB124",
+   "sponsor": "Sage Therapeutics / Biogen",
+   "moa": "Oral GABA-A receptor positive allosteric modulator (neuroactive steroid)",
+   "phase": "Phase 2b (discontinued in ET)",
+   "data": "KINETIC 2 (n=147; 15, 30, 60 mg; 91 days): no significant dose-response or difference vs placebo on TETRAS Performance Subscale Item 4 (upper-limb tremor); dose-related somnolence and dizziness. Earlier KINETIC Phase 2 had shown upper-limb tremor reduction at day 29.",
+   "status": "Discontinued in ET on 24 July 2024; open-label extension terminated; Biogen rights terminated effective 17 Feb 2025",
+   "next_catalyst": "none",
+   "failure_reason": "Lack of efficacy with CNS-depressant tolerability burden",
+   "sources": [
+    "https://www.biospace.com/drug-development/biogen-sage-scrap-essential-tremor-study-after-phase-ii-failure",
+    "https://www.neurologylive.com/view/sage-therapeutics-biogen-officially-announce-ending-sage-324-program-essential-tremor",
+    "https://www.nasdaq.com/articles/sage-biib-end-collaboration-neurology-candidate-sage-324"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "NBI-827104 (ACT-709478)",
+   "sponsor": "Neurocrine Biosciences (licensed from Idorsia, $45M upfront)",
+   "moa": "T-type calcium channel blocker",
+   "phase": "Phase 2 (discontinued in ET)",
+   "data": "Randomised, placebo-controlled, dose-escalation crossover study (NCT04880616; full analysis set n=31): missed primary and secondary endpoints (postural tremor amplitude p=0.7805; TETRAS and CGI-C not significant); generally well tolerated.",
+   "status": "ET development stopped ('a negative trial, not a failed trial'); announcement date not confirmed",
+   "next_catalyst": "none",
+   "failure_reason": "No efficacy signal",
+   "sources": [
+    "https://www.fiercebiotech.com/biotech/it-was-not-failed-trial-it-was-negative-trial-neurocrine-axes-licensed-essential-tremor",
+    "https://www.mdsabstracts.org/abstract/an-evaluation-of-nbi-827104-for-essential-tremor-results-from-a-randomized-double-blind-placebo-controlled-dose-escalation-crossover-study/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "PRAX-114",
+   "sponsor": "Praxis Precision Medicines",
+   "moa": "GABA-A positive allosteric modulator",
+   "phase": "Phase 2 in ET (NCT05387642)",
+   "data": "not found",
+   "status": "Outcome not retrieved this session; believed discontinued (unverified)",
+   "next_catalyst": "none",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT05387642"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "OnabotulinumtoxinA (BOTOX) for upper-limb ET",
+   "sponsor": "AbbVie",
+   "moa": "Neuromuscular blockade (focal)",
+   "phase": "Phase 2 complete (ELATE, NCT05216250)",
+   "data": "n=182 (95 vs 87); primary TREDS-R unilateral total score at week 18: -2.61 vs -1.61, p=0.029; all six secondary endpoints met; muscle weakness 24.5% vs 2.3%.",
+   "status": "Positive topline 6 Oct 2025; presented at MDS Congress 2025; Phase 3 plan not found",
+   "next_catalyst": "Phase 3 initiation (not announced in sources found)",
+   "sources": [
+    "https://news.abbvie.com/2025-10-06-AbbVie-Announces-Positive-Topline-Results-from-Phase-2-ELATE-Trial-Evaluating-OnabotulinumtoxinA-BOTOX-R-for-the-Treatment-of-Upper-Limb-Essential-Tremor",
+    "https://practicalneurology.com/news/study-evaluates-botox-as-essential-tremor-treatment/2483937/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "IncobotulinumtoxinA (NT 201, Xeomin) for upper-limb ET",
+   "sponsor": "Merz Therapeutics",
+   "moa": "Neuromuscular blockade (focal)",
+   "phase": "Registered placebo-controlled trial NCT04766723",
+   "data": "An earlier investigator-initiated RCT of customised incobotulinumtoxinA injections in ET was published (PMC7766785); Merz trial results not found",
+   "status": "not found",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://cdn.clinicaltrials.gov/large-docs/23/NCT04766723/Prot_000.pdf",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7766785/"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "Octanoic acid / 1-octanol",
+   "sponsor": "NIH/NINDS investigators (Hallett, Haubenberger, Nahab)",
+   "moa": "Long-chain alcohol/fatty acid; mechanism unclear, mimics ethanol responsiveness",
+   "phase": "Early clinical (dose-escalation)",
+   "data": "Dose-escalation study of octanoic acid in ET published in JCI Insight; preclinical suppression of harmaline tremor",
+   "status": "No industry-sponsored late-stage program located",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://www.jci.org/articles/view/83621",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "asset": "Staged bilateral MR-guided focused ultrasound (Exablate Neuro)",
+   "sponsor": "Insightec",
+   "moa": "Incisionless Vim thalamotomy, second side",
+   "phase": "Approved (FDA 20 Dec 2022 for ET); CE mark for second side",
+   "data": "Pivotal single-arm trial NCT04112381, 51 subjects, 7 centres: tremor severity improved 81%; 188 related AEs, 85% mild, 13% moderate, 1 severe; published JAMA Neurology 2024",
+   "status": "Commercial; a separate staged bilateral pallidothalamic tractotomy indication for advanced Parkinson's disease was approved July 2025",
+   "next_catalyst": "Label/coverage expansion; adoption growth",
+   "sources": [
+    "https://news.unchealthcare.org/2024/07/bilateral-focused-ultrasound-shown-to-be-safe-effective-for-patients-with-lingering-or-severe-essential-tremor/",
+    "https://www.fusfoundation.org/diseases-and-conditions/essential-tremor/",
+    "https://www.neurologylive.com/view/fda-approves-insightec-exablate-neuro-to-treat-second-side-essential-tremor",
+    "https://finance.yahoo.com/news/insightec-announces-fda-approval-staged-124500591.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "Wearable neurostimulators (Felix NeuroAI; Encora X1; Cala kIQ)",
+   "sponsor": "Fasikl; Encora Therapeutics; Cala Health",
+   "moa": "Peripheral nerve stimulation at the wrist",
+   "phase": "Marketed (Felix cleared July 2025; Encora X1 cleared Feb 2026)",
+   "data": "See approved_and_used_therapies",
+   "status": "Early commercial; reimbursement building",
+   "next_catalyst": "Medicare/commercial coverage decisions for the newer devices",
+   "sources": [
+    "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/",
+    "https://www.fiercebiotech.com/medtech/fda-clears-encora-therapeutics-wearable-wrist-device-essential-tremor",
+    "https://calahealth.com/wp-content/uploads/2026/01/MM-20054-Rev-C-Medicare-Beneficiaries-Access-to-Cala-TAPS.pdf"
+   ],
+   "confidence": "high"
+  },
+  {
+   "asset": "Adaptive (closed-loop) DBS for ET",
+   "sponsor": "not found",
+   "moa": "Sensing-enabled thalamic stimulation",
+   "phase": "Clinical trials (per secondary source)",
+   "data": "not found",
+   "status": "In trials per a device-vendor blog; primary source not found",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://steadiwear.com/blogs/tremor-devices/emerging-tremor-treatments-clinical-trials"
+   ],
+   "confidence": "low"
+  },
+  {
+   "asset": "Other clinical-stage ET drug candidates (e.g. SK-channel modulator CAD-1883, perampanel, other GABAergic agents)",
+   "sponsor": "not found",
+   "moa": "various",
+   "phase": "not found",
+   "data": "A 2025 critical appraisal of current and emerging ET targets (PMC12625098) exists but could not be read; registry aggregators list roughly 26-29 Phase 2 and 8 Phase 3 ET studies (all intervention types), which should be treated as approximate",
+   "status": "not found",
+   "next_catalyst": "not found",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12625098/",
+    "https://pharmaobservatory.com/conditions/D020329"
+   ],
+   "confidence": "low"
+  }
+ ],
+ "economics": [
+  {
+   "fact": "Praxis guides to an annual WAC 'pricing corridor' of $50,000-$100,000 for ulixacaltamide, based on payer feedback and movement-disorder analogs.",
+   "year": 2026,
+   "source_url": "https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40",
+   "confidence": "medium",
+   "note": "Reported in Investor Day coverage and a Goldman Sachs conference summary (https://quartr.com/events/praxis-precision-medicines-prax-goldman-sachs-47th-annual-global-healthcare-conference-2026_oS61ioRv); a third-party blog's $5k-$8k net estimate is an outlier (https://braintrials.substack.com/p/deep-dive-ulixacaltamide-and-the)."
+  },
+  {
+   "fact": "Praxis's Investor Day deck summarises analog gross annual prices as roughly $50K-$100K WAC: about $110K per year for tardive dyskinesia/HD chorea agents and about $62K for PD psychosis; cites Ingrezza WAC $9,072 per 30 x 80 mg capsules and Nuplazid WAC $5,120 per 30 x 34 mg capsules.",
+   "year": 2026,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Peak sales estimates for ulixacaltamide diverge widely: Praxis company view ~$10 billion; Guggenheim $5-10 billion; Truist '$2.5B+' and later '>$3B' US peak sales by ~2040.",
+   "year": "2025-2026",
+   "source_url": "https://m.investing.com/news/analyst-ratings/guggenheim-raises-praxis-precision-medicines-stock-price-target-on-essential-tremor-opportunity-93CH-4496388?ampMode=1",
+   "confidence": "medium",
+   "range": "$2.5B to $10B",
+   "note": "Company $10B: https://rallies.ai/news/praxis-precision-medicines-forecasts-10-billion-in-peak-sales-for-ulixacaltamide-4f50ceea7cf0a2d6; Truist: https://benzinga.com/z/39465427; context: https://www.biopharmadive.com/news/praxis-essential-tremor-drug-trial-positive-success-stock/803000/"
+  },
+  {
+   "fact": "Planned ulixacaltamide field force of ~300 representatives. Target universe reported as ~19,000 health care professionals (Investor Day, Nov 2026) versus 13,000-15,000 accounts (Goldman Sachs conference summary, mid-2026).",
+   "year": 2026,
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "confidence": "medium",
+   "note": "https://quartr.com/events/praxis-precision-medicines-prax-goldman-sachs-47th-annual-global-healthcare-conference-2026_oS61ioRv"
+  },
+  {
+   "fact": "Generic propranolol and primidone prices: specific figures not found this session. Both are long-genericised oral drugs; the incumbent standard of care therefore costs payers a tiny fraction of a $50K-$100K branded agent, the central payer-value tension.",
+   "year": 2026,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.682",
+   "confidence": "low"
+  },
+  {
+   "fact": "MRgFUS Medicare facility payment: CPT 61715 assigned to OPPS APC 5463 for CY2026; national payment amount not found. A Sept 2025 comment letter to CMS cites a cost figure (labelled GMC) of $13,009.80 for CPT 61715 - not a payment rate. Only one provider may bill 61715 and imaging is bundled.",
+   "year": 2026,
+   "source_url": "https://insightec.com/wp-content/uploads/Reimbursement-Guide-2026.pdf",
+   "confidence": "medium",
+   "note": "https://downloads.regulations.gov/CMS-2025-0304-9068/attachment_1.pdf ; https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=57884"
+  },
+  {
+   "fact": "DBS US procedure cost and Medicare payment: not found. Non-US analyses: in England MRgFUS cost about GBP 16,000 more per patient than medication alone (ICER ~GBP 20,851/QALY); a Japanese model found MRgFUS cost-saving vs unilateral DBS.",
+   "year": 2022,
+   "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9733625/",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Cala kIQ list price: not found. Medicare fee-for-service covers at 80/20; free to eligible VA beneficiaries.",
+   "year": 2026,
+   "source_url": "https://calahealth.com/help-center/insurance/do-you-accept-insurance/",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Analog - Ingrezza (valbenazine, tardive dyskinesia; Neurocrine): launched 1 May 2017 at $5,275 per 30 x 40 mg capsules (~$63,300 per year). 2017 net sales ~$116 million with ~14,900 prescriptions; $278 million over the first four full quarters; $2.3 billion in 2024; $1.4 billion in H1 2026 (+17%). Expanded formulary access later reached about two thirds of TD/HD Medicare beneficiaries.",
+   "year": "2017-2026",
+   "source_url": "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+   "confidence": "high",
+   "note": "https://www.sec.gov/Archives/edgar/data/0000914475/000119312518005148/d522238dex991.htm ; https://www.sec.gov/Archives/edgar/data/0000914475/000119312518238227/d601139dex991.htm ; https://www.fiercepharma.com/pharma/teva-competition-ramping-neurocrines-tame-ingrezza-forecast-spooks-investors ; https://finance.yahoo.com/healthcare/articles/neurocrines-ingrezza-sales-keep-growing-152400976.html"
+  },
+  {
+   "fact": "Analog - Austedo (deutetrabenazine; Teva): launched 2017 at about $60,000 per year for HD chorea, with a TD price expected around $70,000; $1.6 billion in 2024 sales; Q2 2026 sales $696 million (+40%).",
+   "year": "2017-2026",
+   "source_url": "https://www.fiercepharma.com/marketing/neurocrine-nabs-ingrezza-ok-to-kick-start-tardive-dyskinesia-market-teva-waiting-wings",
+   "confidence": "medium",
+   "note": "https://www.fiercepharma.com/pharma/teva-competition-ramping-neurocrines-tame-ingrezza-forecast-spooks-investors ; https://finance.yahoo.com/healthcare/articles/neurocrines-ingrezza-sales-keep-growing-152400976.html"
+  },
+  {
+   "fact": "Analog - Nuplazid (pimavanserin, PD psychosis; Acadia): net sales $549.2 million in 2023, seven years after its 2016 launch; launch price and first-year sales not found.",
+   "year": 2023,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1070494/000095017024021169/acad-ex99_1.htm",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Analog - Nurtec ODT (rimegepant; Biohaven): FDA approved 27 Feb 2020; 2020 net product revenue $63.6 million ($9.7M Q2, $17.7M Q3, $35.1M Q4). Launch WAC not found (a January 2021 WAC of $892.50 per 75 mg blister pack is listed by Patients for Affordable Drugs).",
+   "year": 2020,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689813/000168981321000024/bhvn-20201231.htm",
+   "confidence": "medium",
+   "note": "Jan 2021 WAC was $892.50 for a 75 mg blister pack as listed by Patients for Affordable Drugs (https://www.patientsforaffordabledrugs.org/wp-content/uploads/2021/01/UPDATED-January-2021-Price-Hikes-Data-and-Methods.pdf); pack size in the source summary was ambiguous. Commercial-heavy population, so a weaker analog for a Medicare-heavy ET launch."
+  },
+  {
+   "fact": "Analog - Xcopri (cenobamate; SK Life Science): Jan 2021 WAC $1,029.33 per 30 x 200 mg; launch-year sales not found.",
+   "year": 2021,
+   "source_url": "https://www.patientsforaffordabledrugs.org/wp-content/uploads/2021/01/UPDATED-January-2021-Price-Hikes-Data-and-Methods.pdf",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Independent third-party sizing of the total US ET therapeutics market (current revenue): not found. The current drug market is almost entirely generic, so branded revenue today is essentially device and procedure revenue.",
+   "year": 2026,
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+   "confidence": "low"
+  },
+  {
+   "fact": "Annual per-patient healthcare cost of ET in US claims: study located (Dai et al., JHEOR 2022) but dollar figures not found.",
+   "year": 2022,
+   "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/",
+   "confidence": "low"
+  }
+ ],
+ "payer": [
+  {
+   "fact": "ET is a Medicare-dominated population. In a 36,839-patient commercial + Medicare Advantage claims study about 94% had Medicare coverage and about 14% commercial (overlapping categories); another Optum-based cohort was 82.9% Medicare Advantage and 17.1% commercial; a TAPS device cohort was 69% Medicare Advantage and 31% commercial. These databases over-represent Medicare Advantage, so a national payer mix (including fee-for-service Medicare, Medicaid, VA) was not found.",
+   "year": "2022-2024",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11489621/",
+   "range": "69-94% Medicare in available claims cohorts",
+   "confidence": "medium",
+   "note": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/ ; https://jheor.org/article/170793-clinical-and-economic-outcomes-of-transcutaneous-afferent-patterned-stimulation-for-essential-tremor"
+  },
+  {
+   "fact": "Medicare Part D redesign (IRA): annual out-of-pocket cap of $2,000 in 2025, indexed to $2,100 in 2026 and reported as $2,400 for 2027 (single trade source - verify against CMS).",
+   "year": "2025-2027",
+   "source_url": "https://www.bioxconomy.com/pricing-and-contracting/medicare-part-d-premiums-caps-climb-in-2027-plans",
+   "confidence": "medium",
+   "note": "CY2027 rule codifying redesign: https://www.federalregister.gov/documents/2026/04/06/2026-06600/medicare-program-contract-year-2027-and-certain-contract-year-2026-policy-and-technical-changes-to"
+  },
+  {
+   "fact": "Manufacturer Discount Program replaced the coverage gap discount program in 2025: manufacturers pay 10% in the initial coverage phase and 20% in the catastrophic phase on applicable branded drugs. For a $50K-$100K drug, nearly all spend falls in the catastrophic phase, where plans bear 60%, Medicare 20% and the manufacturer 20%.",
+   "year": 2025,
+   "source_url": "https://www.cms.gov/files/document/part-d-manufacturer-discount-program-draft-guidance-may-2023.pdf",
+   "confidence": "medium",
+   "note": "10% confirmed via CMS guidance summary; the 20% catastrophic share and the 60/20/20 split are NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use."
+  },
+  {
+   "fact": "Specified manufacturer / specified small manufacturer phase-ins reduce the discount owed during 2025-2031 for qualifying companies; eligibility is based on a manufacturer's Part D footprint in 2021. Praxis had no marketed products in 2021, so whether ulixacaltamide would qualify is doubtful and should be checked against the CMS phase-in eligible NDC file.",
+   "year": 2026,
+   "source_url": "https://cms.gov/Medicare/Prescription-Drug-Coverage/PrescriptionDrugCovGenIn/Pharma.html",
+   "confidence": "low",
+   "note": "Eligibility logic and inference are NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use. Phase-in percentages not found."
+  },
+  {
+   "fact": "IRA Medicare price negotiation: small-molecule drugs become eligible for selection 7 years after approval (negotiated price effective at year 9); a temporary small-biotech exception applied to initial price-applicability years 2026-2028 only. For a 2027 approval this implies negotiation exposure in the mid-2030s, relevant to peak-sales timing (Truist's peak ~2040).",
+   "year": 2026,
+   "source_url": "https://advisory.avalerehealth.com/?p=35057",
+   "confidence": "low",
+   "note": "NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use."
+  },
+  {
+   "fact": "Because plans now carry most catastrophic-phase liability, Part D sponsors have stronger incentives for tight utilisation management of high-cost orals. Expected management for a first branded ET agent: prior authorisation with documented ET diagnosis, step through propranolol and primidone (and possibly topiramate), specialist prescriber or consult requirements, quantity limits, specialty tier with coinsurance. No published payer policy for ulixacaltamide exists pre-approval; this is an expectation, not a finding.",
+   "year": 2026,
+   "source_url": "https://advisory.avalerehealth.com/?p=35057",
+   "confidence": "low"
+  },
+  {
+   "fact": "Precedent for step logic in ET: Medicare and commercial MRgFUS policies require medication-refractory, moderate-to-severe tremor, and some commercial policies require DBS ineligibility or failure; Medicare TAPS coverage (LCD L39591) requires a monitored trial with use on at least 70% of days in 30 days.",
+   "year": 2026,
+   "source_url": "https://insightec.com/wp-content/uploads/Reimbursement-Guide-2026.pdf",
+   "confidence": "high",
+   "note": "https://calahealth.com/wp-content/uploads/2026/01/MM-20054-Rev-C-Medicare-Beneficiaries-Access-to-Cala-TAPS.pdf"
+  },
+  {
+   "fact": "Formulary analog: Ingrezza's Medicare formulary access took years to broaden, later improving to cover about two thirds of TD and HD Medicare beneficiaries.",
+   "year": 2026,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Affordability: with the cap, a Medicare patient's annual out-of-pocket cost on a specialty-tier drug is limited to the cap ($2,100 in 2026) and can be smoothed monthly under the Medicare Prescription Payment Plan; pre-IRA analog launches (Ingrezza, Nuplazid, Austedo) faced uncapped 5% catastrophic coinsurance and leaned on charitable foundations. Manufacturer copay cards remain barred in Medicare.",
+   "year": 2026,
+   "source_url": "https://www.federalregister.gov/documents/2026/04/06/2026-06600/medicare-program-contract-year-2027-and-certain-contract-year-2026-policy-and-technical-changes-to",
+   "confidence": "low",
+   "note": "Payment Plan and pre-IRA comparison are NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use."
+  },
+  {
+   "fact": "If DEA-scheduled (company anticipates Schedule IV or V per Guggenheim), ulixacaltamide would face controlled-substance dispensing and e-prescribing requirements and a post-approval scheduling delay before launch.",
+   "year": 2026,
+   "source_url": "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+   "confidence": "medium"
+  }
+ ],
+ "advocacy": [
+  {
+   "name": "International Essential Tremor Foundation (IETF)",
+   "type": "patient advocacy / research funder",
+   "location": "Lenexa (Overland Park area), Kansas",
+   "founded": 1988,
+   "description": "Largest ET-specific nonprofit: patient and provider education, support groups, Tremor Talk magazine, scholarships, annual research grants (RFA), and National Essential Tremor Awareness Month each March. President of the board: Kelly E. Lyons, PhD. Medical Advisory Board chaired by Holly Shill, MD, with Rodger Elble, Joseph Jankovic, William Ondo and Rajesh Pahwa among members; Daniel Roque (UNC) joined in 2025. Has historically cited 10 million Americans with ET.",
+   "url": "https://essentialtremor.org",
+   "sources": [
+    "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
+    "https://essentialtremor.org/wp-content/uploads/2025/10/TTOct2025-Preview-for-website.pdf",
+    "https://AskJAN.org/organizations/International-Essential-Tremor-Foundation.cfm",
+    "https://essentialtremor.org/wp-content/uploads/2021/02/Press-release-for-NETA-2021.pdf",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137360"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "HopeNET",
+   "type": "patient advocacy (ET)",
+   "description": "US ET patient support and awareness nonprofit. Details (location, size, programs) not found this session.",
+   "url": "not found",
+   "sources": [],
+   "confidence": "low"
+  },
+  {
+   "name": "Tremor Action Network (TAN)",
+   "type": "patient advocacy (tremor disorders)",
+   "description": "US volunteer-run tremor advocacy nonprofit. Details not found this session.",
+   "url": "not found",
+   "sources": [],
+   "confidence": "low"
+  },
+  {
+   "name": "International Parkinson and Movement Disorder Society (MDS)",
+   "type": "professional society",
+   "description": "Publishes the 2018 tremor classification consensus and the 2019 evidence-based review; hosts the Task Force on Tremor and the Tremor Study Group (leadership includes Rodger Elble and Aasef Shaikh; William Ondo on the steering committee). Its annual congress is the main venue for ET data (e.g. ELATE 2025).",
+   "url": "https://www.movementdisorders.org",
+   "sources": [
+    "https://www.movementdisorders.org/MDS/About/Study-Groups/Tremor-Study-Group.htm",
+    "https://www.movementdisorders.org/MDS/About/Study-Groups/MDS-Task-Forces/Task-Force-on-Tremor.htm",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "American Academy of Neurology (AAN)",
+   "type": "professional society",
+   "description": "Owner of the 2011 ET treatment guideline (reaffirmed July 2025); the AAN Annual Meeting hosted the Essential3 presentations in April 2026 including a plenary for Study 2.",
+   "url": "https://www.aan.com",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://www.neurology.org/doi/10.1212/WNL.0000000000217755"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Tremor Research Group (TRG)",
+   "type": "investigator consortium",
+   "description": "Group of tremor specialists that developed TETRAS over roughly nine years; Rodger Elble was president May 2004 to Feb 2013. Current leadership not found.",
+   "url": "not found",
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7546108/",
+    "https://www.siumed.edu/sites/default/files/printable-cv/elble_cv_1.pdf"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "name": "Focused Ultrasound Foundation",
+   "type": "technology advocacy / research funder",
+   "location": "Charlottesville, Virginia",
+   "description": "Tracks regulatory and reimbursement milestones for focused ultrasound in ET and funds research; states that all US treatment sites are approved for Medicare payment.",
+   "url": "https://www.fusfoundation.org",
+   "sources": [
+    "https://www.fusfoundation.org/diseases-and-conditions/essential-tremor/"
+   ],
+   "confidence": "high",
+   "note": "Location is NOT RETRIEVED IN THIS SESSION (web-search budget exhausted): stated from model background knowledge; verify against the cited primary source before use."
+  }
+ ],
+ "kols": [
+  {
+   "name": "Elan D. Louis, MD, MS",
+   "institution": "UT Southwestern Medical Center (Chair of Neurology)",
+   "city": "Dallas",
+   "state": "TX",
+   "focus": "Epidemiology, neuropathology, misdiagnosis",
+   "why": "Most-published ET researcher; author of the ~7 million US prevalence estimate, the misdiagnosis studies and the Purkinje-cell post-mortem program",
+   "source_url": "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html",
+   "confidence": "high"
+  },
+  {
+   "name": "Sheng-Han Kuo, MD",
+   "institution": "Columbia University Irving Medical Center",
+   "city": "New York",
+   "state": "NY",
+   "focus": "Cerebellar physiology, climbing fibre/GluRdelta2 biology",
+   "why": "Led the cerebellar EEG study showing 4-12 Hz oscillations in ET; developing mechanism-based therapies",
+   "source_url": "https://www.cuimc.columbia.edu/news/overactive-brain-waves-trigger-essential-tremor",
+   "confidence": "high"
+  },
+  {
+   "name": "Phyllis L. Faust, MD, PhD",
+   "institution": "Columbia University Irving Medical Center",
+   "city": "New York",
+   "state": "NY",
+   "focus": "Neuropathology",
+   "why": "Co-leads the ET brain bank work on Purkinje cell pathology underpinning the neurodegeneration hypothesis",
+   "source_url": "https://bibliography.cumc.columbia.edu/node/47668",
+   "confidence": "high"
+  },
+  {
+   "name": "Rajesh Pahwa, MD",
+   "institution": "University of Kansas Medical Center / University of Kansas Health System",
+   "city": "Kansas City",
+   "state": "KS",
+   "focus": "Clinical trials, devices",
+   "why": "First author of the suvecaltamide Phase 2b publication, PI of the Felix NeuroAI TRANQUIL trial, IETF Medical Advisory Board member",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/42167194/",
+   "confidence": "high",
+   "note": "https://cm.healio.com/news/neurology/20250409/felix-neuroai-wristband-improves-essential-tremor-outcomes"
+  },
+  {
+   "name": "Kelly E. Lyons, PhD",
+   "institution": "University of Kansas Medical Center",
+   "city": "Kansas City",
+   "state": "KS",
+   "focus": "Clinical research, advocacy",
+   "why": "President of the IETF Board of Directors; long-time ET clinical trialist",
+   "source_url": "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Holly A. Shill, MD",
+   "institution": "Barrow Neurological Institute",
+   "city": "Phoenix",
+   "state": "AZ",
+   "focus": "Movement disorders, ET trials",
+   "why": "Chair of the IETF Medical Advisory Board; co-author of the suvecaltamide Phase 2b paper",
+   "source_url": "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Rodger J. Elble, MD, PhD",
+   "institution": "Southern Illinois University School of Medicine",
+   "city": "Springfield",
+   "state": "IL",
+   "focus": "Tremor physiology and measurement",
+   "why": "Principal developer of TETRAS; Tremor Research Group president 2004-2013; MDS Tremor Study Group leader; suvecaltamide co-author",
+   "source_url": "https://www.siumed.edu/sites/default/files/printable-cv/elble_cv_1.pdf",
+   "confidence": "high"
+  },
+  {
+   "name": "William G. Ondo, MD",
+   "institution": "Houston Methodist Neurological Institute",
+   "city": "Houston",
+   "state": "TX",
+   "focus": "Clinical trials, rating scales",
+   "why": "TETRAS validation author, MDS Tremor Study Group steering committee, IETF Medical Advisory Board, senior author of the suvecaltamide paper",
+   "source_url": "https://scholars.houstonmethodist.org/en/publications/tremor-research-group-essential-tremor-rating-scale-tetras-assess/",
+   "confidence": "medium"
+  },
+  {
+   "name": "Joseph Jankovic, MD",
+   "institution": "Baylor College of Medicine",
+   "city": "Houston",
+   "state": "TX",
+   "focus": "Movement disorders, botulinum toxin",
+   "why": "IETF Medical Advisory Board member; influential voice in the ET/ET-plus/dystonic tremor debate",
+   "source_url": "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Theresa A. Zesiewicz, MD",
+   "institution": "University of South Florida",
+   "city": "Tampa",
+   "state": "FL",
+   "focus": "Guidelines",
+   "why": "Lead author of the AAN 2005 practice parameter and 2011 guideline update for ET",
+   "source_url": "https://www.medscape.com/viewarticle/751786",
+   "confidence": "high"
+  },
+  {
+   "name": "Robert A. Hauser, MD, MBA",
+   "institution": "University of South Florida",
+   "city": "Tampa",
+   "state": "FL",
+   "focus": "Movement disorder clinical trials",
+   "why": "Co-author of the suvecaltamide Phase 2b publication; high-volume trial investigator",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/42167194/",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Peter A. LeWitt, MD",
+   "institution": "Wayne State University / Henry Ford Health",
+   "city": "Detroit area",
+   "state": "MI",
+   "focus": "Movement disorder pharmacology",
+   "why": "Co-author of the suvecaltamide Phase 2b publication",
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/42167194/",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Alexander Shtilbans, MD, PhD",
+   "institution": "Hospital for Special Surgery / Weill Cornell Medicine",
+   "city": "New York",
+   "state": "NY",
+   "focus": "Essential3 investigator",
+   "why": "Lead author of the Essential3 AAN 2026 presentations; disclosed Praxis consultant/investigator",
+   "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Jill Farmer, DO",
+   "institution": "not confirmed",
+   "city": "not confirmed",
+   "state": "not confirmed",
+   "focus": "Essential3 investigator",
+   "why": "Presented Essential3 Study 2 at the AAN 2026 plenary; called it the first positive Phase 3 program for a drug in ET",
+   "source_url": "https://neurologytoday.aan.com/doi/10.1212/netod-blogs.10000027",
+   "confidence": "medium",
+   "note": "Institution not found"
+  },
+  {
+   "name": "Salima Brillman, MD",
+   "institution": "Parkinson's Disease and Movement Disorders Center of Silicon Valley",
+   "city": "Palo Alto",
+   "state": "CA",
+   "focus": "Essential3 investigator",
+   "why": "Co-author of Essential3 Study 1 and Study 2 abstracts; disclosed Praxis consultant/investigator",
+   "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Monique Giroux, MD",
+   "institution": "not confirmed",
+   "city": "not confirmed",
+   "state": "not confirmed",
+   "focus": "Essential3 investigator",
+   "why": "Co-author of the Essential3 Study 2 abstract",
+   "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
+   "confidence": "medium",
+   "note": "Institution not found"
+  },
+  {
+   "name": "Ryan Walsh, MD, PhD",
+   "institution": "not confirmed",
+   "city": "not confirmed",
+   "state": "not confirmed",
+   "focus": "Essential3 combined analysis",
+   "why": "Co-author of the combined Essential3 efficacy and safety abstract (AAN 2026)",
+   "source_url": "https://www.neurology.org/doi/10.1212/WNL.0000000000217776",
+   "confidence": "low",
+   "note": "Institution not found"
+  },
+  {
+   "name": "Stuart H. Isaacson, MD",
+   "institution": "Parkinson's Disease and Movement Disorders Center of Boca Raton",
+   "city": "Boca Raton",
+   "state": "FL",
+   "focus": "Device and drug trials",
+   "why": "Principal investigator of PROSPECT, the 263-patient Cala Trio study",
+   "source_url": "https://www.neurologylive.com/view/cala-trio-device-provides-advantages-in-essential-tremor-treatment",
+   "confidence": "high"
+  },
+  {
+   "name": "Elizabeth Peckham, DO",
+   "institution": "not confirmed",
+   "city": "not confirmed",
+   "state": "TX",
+   "focus": "Device trials",
+   "why": "Co-author of the PROSPECT Cala Trio publication",
+   "source_url": "https://www.neurologylive.com/view/cala-trio-device-provides-advantages-in-essential-tremor-treatment",
+   "confidence": "low",
+   "note": "Institution not found"
+  },
+  {
+   "name": "W. Jeffrey Elias, MD",
+   "institution": "University of Virginia",
+   "city": "Charlottesville",
+   "state": "VA",
+   "focus": "Focused ultrasound neurosurgery",
+   "why": "Led the pivotal randomised MRgFUS thalamotomy trial and senior author of 4-5 year follow-up",
+   "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "G. Rees Cosgrove, MD",
+   "institution": "Brigham and Women's Hospital / Harvard",
+   "city": "Boston",
+   "state": "MA",
+   "focus": "Functional neurosurgery",
+   "why": "First author of the 4- and 5-year MRgFUS follow-up",
+   "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Pejman Ghanouni, MD, PhD",
+   "institution": "Stanford University",
+   "city": "Stanford",
+   "state": "CA",
+   "focus": "Interventional MRI / focused ultrasound",
+   "why": "First author of the 2025 five-year continued-access MRgFUS study",
+   "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Michael G. Kaplitt, MD, PhD",
+   "institution": "Weill Cornell Medicine",
+   "city": "New York",
+   "state": "NY",
+   "focus": "Functional neurosurgery",
+   "why": "Co-author of the continued-access study; lead of staged bilateral focused ultrasound work published in JAMA Neurology",
+   "source_url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Howard M. Eisenberg, MD",
+   "institution": "University of Maryland School of Medicine",
+   "city": "Baltimore",
+   "state": "MD",
+   "focus": "Neurosurgery, focused ultrasound",
+   "why": "Investigator quoted on the FDA-allowed staged bilateral MRgFUS pivotal trial",
+   "source_url": "https://practicalneurology.com/news/fda-allows-study-of-bilateral-ultrasound-treatment-of-essential-tremor/2469492/",
+   "confidence": "medium"
+  },
+  {
+   "name": "Vibhor Krishna, MD",
+   "institution": "University of North Carolina School of Medicine",
+   "city": "Chapel Hill",
+   "state": "NC",
+   "focus": "Functional neurosurgery",
+   "why": "Co-author of the staged bilateral MRgFUS trial in JAMA Neurology",
+   "source_url": "https://news.unchealthcare.org/2024/07/bilateral-focused-ultrasound-shown-to-be-safe-effective-for-patients-with-lingering-or-severe-essential-tremor/",
+   "confidence": "high"
+  },
+  {
+   "name": "Michael S. Okun, MD",
+   "institution": "University of Florida, Fixel Institute",
+   "city": "Gainesville",
+   "state": "FL",
+   "focus": "Deep brain stimulation",
+   "why": "Co-author of leading reviews and outcome studies of Vim DBS in ET",
+   "source_url": "https://neurology.ufl.edu/2022/07/07/suppression-of-axial-tremor-by-deep-brain-stimulation-in-patients-with-essential-tremor-effects-on-gait-and-balance-measures/",
+   "confidence": "medium"
+  },
+  {
+   "name": "Kelly D. Foote, MD",
+   "institution": "University of Florida, Fixel Institute",
+   "city": "Gainesville",
+   "state": "FL",
+   "focus": "DBS neurosurgery",
+   "why": "Co-author of UF DBS-in-ET outcome studies including Vim vs zona incerta comparisons",
+   "source_url": "https://neurology.ufl.edu/2022/07/07/suppression-of-axial-tremor-by-deep-brain-stimulation-in-patients-with-essential-tremor-effects-on-gait-and-balance-measures/",
+   "confidence": "medium"
+  },
+  {
+   "name": "Aparna Wagle Shukla, MD",
+   "institution": "University of Florida, Fixel Institute",
+   "city": "Gainesville",
+   "state": "FL",
+   "focus": "Tremor physiology, DBS",
+   "why": "Author of ET DBS reviews and the dystonic tremor vs ET DBS comparison",
+   "source_url": "https://neurology.ufl.edu/2022/07/07/suppression-of-axial-tremor-by-deep-brain-stimulation-in-patients-with-essential-tremor-effects-on-gait-and-balance-measures/",
+   "confidence": "medium"
+  },
+  {
+   "name": "Mark Hallett, MD",
+   "institution": "NINDS, National Institutes of Health (emeritus)",
+   "city": "Bethesda",
+   "state": "MD",
+   "focus": "Tremor physiology",
+   "why": "Co-author of the octanoic acid/1-octanol program and TETRAS alcohol-challenge work",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Dietrich Haubenberger, MD",
+   "institution": "formerly NINDS Clinical Trials Unit",
+   "city": "Bethesda",
+   "state": "MD",
+   "focus": "Early-phase ET trials",
+   "why": "Co-investigator of octanoic acid studies; trial-design thought leader",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
+   "confidence": "low",
+   "note": "Current affiliation not found"
+  },
+  {
+   "name": "Fatta B. Nahab, MD",
+   "institution": "University of California San Diego",
+   "city": "San Diego",
+   "state": "CA",
+   "focus": "Long-chain alcohols, imaging, focused ultrasound",
+   "why": "First author of the octanoic acid tremor work",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Adrian Handforth, MD",
+   "institution": "VA Greater Los Angeles Healthcare System",
+   "city": "Los Angeles",
+   "state": "CA",
+   "focus": "Preclinical tremor models",
+   "why": "Co-author of the harmaline-model octanoic acid work; T-type channel and GABA animal-model expertise",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  },
+  {
+   "name": "Daniel A. Roque, MD",
+   "institution": "University of North Carolina at Chapel Hill",
+   "city": "Chapel Hill",
+   "state": "NC",
+   "focus": "Movement disorders",
+   "why": "Joined the IETF Medical Advisory Board in 2025",
+   "source_url": "https://essentialtremor.org/wp-content/uploads/2025/10/TTOct2025-Preview-for-website.pdf",
+   "confidence": "high"
+  },
+  {
+   "name": "Aasef G. Shaikh, MD, PhD",
+   "institution": "Case Western Reserve University / University Hospitals",
+   "city": "Cleveland",
+   "state": "OH",
+   "focus": "Tremor and oculomotor physiology",
+   "why": "Chair of the MDS Tremor Study Group",
+   "source_url": "https://www.movementdisorders.org/MDS/About/Study-Groups/Tremor-Study-Group.htm",
+   "confidence": "medium",
+   "note": "Institution/city from model background knowledge, not confirmed in this session's sources; the role described in 'why' is source-backed."
+  }
+ ],
+ "outcome_measures": [
+  {
+   "name": "TETRAS (TRG Essential Tremor Rating Assessment Scale)",
+   "description": "Developed by the Tremor Research Group over about nine years for rapid, equipment-free rating with objective anchors. Two parts: a Performance Subscale (clinician-rated tremor of head, face, voice, limbs, trunk; items 0-4, upper-limb items in 0.5 increments) and an ADL subscale. Rated 'recommended' by the MDS. Minor differences in administration can materially change scores, a rater-variability issue implicated in failed trials.",
+   "regulatory_use": "Performance items used as primary endpoints in CX-8998 (video-rated TETRAS-PS, failed), SAGE-324 (TETRAS-PS item 4, failed) and suvecaltamide (modified TETRAS composite, failed)",
+   "sources": [
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7546108/",
+    "https://clinicaltrials.gov/study/NCT03101241",
+    "https://www.biospace.com/drug-development/biogen-sage-scrap-essential-tremor-study-after-phase-ii-failure",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-provides-update-phase-2b-trial"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "mADL11 (modified Activities of Daily Living, 11 items)",
+   "description": "Eleven TETRAS-ADL items, excluding the social-impact item, each rescored 0-3. Patient-centred functional measure of what the patient can do.",
+   "regulatory_use": "After the June 2023 End-of-Phase-2 meeting Praxis reported that FDA found mADL11 acceptable as the primary endpoint; it was primary in Essential3 Study 1 (change at week 8) and defined response in Study 2 (>=3-point improvement maintained at day 84). Praxis derived the 3-point meaningful-change threshold from Essential1 with PGI-C anchoring; explicit FDA endorsement of the threshold was not found.",
+   "sources": [
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-plans-begin-ulixacaltamide",
+    "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
+    "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "TETRAS-ADL (full) / TETRAS mADL in device trials",
+   "description": "The Felix NeuroAI TRANQUIL trial used change in TETRAS modified ADL score as primary (6.9 vs 2.7 points).",
+   "regulatory_use": "Supported FDA 510(k) clearance",
+   "sources": [
+    "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "CGI-S / CGI-I / CGI-C and PGI-C",
+   "description": "Clinician and patient global impression scales used as key secondary endpoints and as anchors for meaningful change.",
+   "regulatory_use": "CGI-S was key secondary in suvecaltamide Phase 2b (missed); CGI-I favoured CX-8998 (p=0.001) despite a missed primary; CGI-I 69.4% vs 44.4% in TRANQUIL",
+   "sources": [
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-provides-update-phase-2b-trial",
+    "https://www.neurologylive.com/conferences/aan-2019/cx8998-exhibits-promise-essential-tremor-despite-failing-meet-primary-end-point",
+    "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "TREDS-R (Tremor Disability Scale-Revised)",
+   "description": "Disability scale used as primary endpoint in AbbVie's ELATE Phase 2 (unilateral total score).",
+   "regulatory_use": "Phase 2 primary; registrational acceptability not found",
+   "sources": [
+    "https://news.abbvie.com/2025-10-06-AbbVie-Announces-Positive-Topline-Results-from-Phase-2-ELATE-Trial-Evaluating-OnabotulinumtoxinA-BOTOX-R-for-the-Treatment-of-Upper-Limb-Essential-Tremor"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "CRST (Fahn-Tolosa-Marin Clinical Rating Scale for Tremor)",
+   "description": "Legacy scale (Parts A, B, C) used in surgical and focused ultrasound trials.",
+   "regulatory_use": "Basis of the Exablate pivotal trial and long-term follow-up",
+   "sources": [
+    "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+    "https://www.mdedge.com/neurologyreviews/article/193963/movement-disorders/researchers-compare-focused-ultrasound-and-dbs/page/0/1"
+   ],
+   "confidence": "high"
+  },
+  {
+   "name": "Accelerometry / digital measures",
+   "description": "Wearable sensor measures (e.g. Kinesia ONE) have generally failed to separate drug from placebo (CX-8998 p=0.421; NBI-827104 postural amplitude p=0.7805).",
+   "regulatory_use": "Exploratory only",
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT03101241",
+    "https://www.mdsabstracts.org/abstract/an-evaluation-of-nbi-827104-for-essential-tremor-results-from-a-randomized-double-blind-placebo-controlled-dose-escalation-crossover-study/"
+   ],
+   "confidence": "high"
+  }
+ ],
+ "unmet_needs": [
+  {
+   "insight": "No new drug in decades and only one approved drug: propranolol remains the only FDA-approved therapy; everything else is off-label or procedural.",
+   "type": "unmet need",
+   "sources": [
+    "https://www.medscape.com/viewarticle/751786",
+    "https://neurologytoday.aan.com/doi/10.1212/netod-blogs.10000027"
+   ],
+   "confidence": "high"
+  },
+  {
+   "insight": "Efficacy ceiling: first-line drugs give about 50% average tremor reduction and only about 37-56% of patients respond; second-line agents work in about one quarter.",
+   "type": "unmet need",
+   "sources": [
+    "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Persistence: 40-47% stop propranolol/primidone within two years (10-70% across studies) and about a quarter of diagnosed patients are on no therapy.",
+   "type": "unmet need",
+   "sources": [
+    "https://tremorjournal.org/articles/10.5334/tohm.682",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Diagnosis gap: about 7-9 million prevalent vs 1.1-2.2 million diagnosed in claims; 30-50% of ET diagnoses may be wrong; no biomarker.",
+   "type": "unmet need",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137360",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+    "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Elderly tolerability: beta blockers, barbiturates, benzodiazepines and topiramate are all problematic in the oldest patients, who have the highest prevalence (1.61% diagnosed at 75+).",
+   "type": "unmet need",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Procedures are effective but reach few patients: MRgFUS and DBS deliver roughly 50-80% tremor improvement but are limited to refractory, disabling cases, and to ~104 US focused ultrasound centres.",
+   "type": "unmet need",
+   "sources": [
+    "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+    "https://news.unchealthcare.org/2024/07/bilateral-focused-ultrasound-shown-to-be-safe-effective-for-patients-with-lingering-or-severe-essential-tremor/",
+    "https://finance.yahoo.com/healthcare/articles/lancet-neurology-study-confirms-staged-123000476.html"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Controversy - prevalence inflation: figures of 7, 9 and 10 million circulate; Louis & Ottman criticised 10 and 13.5 million as opaque; Praxis raised its figure from ~7 to ~9 million in 2026. The addressable number depends on the definition of 'seeking treatment' (~2 million), not on prevalence.",
+   "type": "controversy",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137360",
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://quartr.com/events/praxis-precision-medicines-prax-goldman-sachs-47th-annual-global-healthcare-conference-2026_oS61ioRv"
+   ],
+   "confidence": "high"
+  },
+  {
+   "insight": "Controversy - ulixacaltamide effect size and tolerability: placebo-adjusted mADL11 benefit is about 2.6 points on a 33-point scale, 27-28% discontinued for adverse events, the Study 1 mITT population and responder-enriched Study 2 design limit interpretation, and CNS effects include euphoric mood (hence anticipated DEA scheduling). Phase 2b Essential1 missed its prespecified primary (p=0.126), and the Phase 3 win was described in trade press as a 'longshot' paying off.",
+   "type": "controversy",
+   "sources": [
+    "https://www.evicenter.com/drugs/ulixacaltamide--essential-tremor/executive-summary/efficacy-and-safety",
+    "https://trial.medpath.com/news/praxis-precision-medicines-reports-positive-phase-3-results-for-ulixacaltamide-in-essential-tremor",
+    "https://braintrials.substack.com/p/deep-dive-ulixacaltamide-and-the",
+    "https://www.biopharmadive.com/news/praxis-essential-tremor-drug-trial-positive-success-stock/803000/",
+    "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Controversy - class reliability: three other T-type programs (CX-8998, suvecaltamide, NBI-827104) and a GABA-A PAM (SAGE-324) failed in Phase 2, often attributed to placebo response and rater-dependent TETRAS performance endpoints; Praxis's use of the patient-reported mADL11 in a decentralised design is both its innovation and a point of scrutiny.",
+   "type": "controversy",
+   "sources": [
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-provides-update-phase-2b-trial",
+    "https://www.fiercebiotech.com/biotech/it-was-not-failed-trial-it-was-negative-trial-neurocrine-axes-licensed-essential-tremor",
+    "https://www.biospace.com/drug-development/biogen-sage-scrap-essential-tremor-study-after-phase-ii-failure",
+    "https://www.neurologylive.com/conferences/aan-2019/cx8998-exhibits-promise-essential-tremor-despite-failing-meet-primary-end-point",
+    "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-plans-begin-ulixacaltamide"
+   ],
+   "confidence": "high"
+  },
+  {
+   "insight": "Controversy - price vs generic standard of care: a $50K-$100K WAC against pennies-per-day generics in a Medicare-heavy population, under a Part D design that shifts catastrophic liability to plans, points to stringent step edits and a slow access build, as seen with early Ingrezza coverage.",
+   "type": "controversy",
+   "sources": [
+    "https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11489621/",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Controversy - classification: ET vs ET-plus vs dystonic tremor remains disputed, complicating label population, trial enrolment and real-world diagnosis.",
+   "type": "controversy",
+   "sources": [
+    "https://aminer.org/pub/623004125aee126c0f9ad448/problems-and-controversies-in-tremor-classification",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11276397/"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Guideline lag: the AAN guideline dates from 2011 (reaffirmed 2025) and the MDS review from 2019; neither covers wearables, staged bilateral focused ultrasound or T-type agents, leaving prescribers without an updated algorithm at launch.",
+   "type": "unmet need",
+   "sources": [
+    "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+    "https://pubmed.ncbi.nlm.nih.gov/31046186/"
+   ],
+   "confidence": "high"
+  },
+  {
+   "insight": "Patient-reported gap: IETF-member surveys show patients want more tremor reduction and function than existing therapy provides; head and voice tremor are especially poorly served by oral drugs.",
+   "type": "unmet need",
+   "sources": [
+    "https://tremorjournal.org/articles/10.5334/tohm.239",
+    "https://www.researchgate.net/publication/352754513_Exploring_Essential_Tremor_Results_from_a_Large_Online_Survey"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "insight": "Evidence gaps for planners (not found in this research): onset-to-diagnosis interval, PCP vs neurology prescribing share, share of eligible patients receiving surgery, DBS and wearable pricing, national payer mix including fee-for-service Medicare.",
+   "type": "data gap",
+   "sources": [],
+   "confidence": "high"
+  }
+ ],
+ "sources": [
+  "https://AskJAN.org/organizations/International-Essential-Tremor-Foundation.cfm",
+  "https://advisory.avalerehealth.com/?p=35057",
+  "https://aminer.org/pub/623004125aee126c0f9ad448/problems-and-controversies-in-tremor-classification",
+  "https://benzinga.com/z/39465427",
+  "https://bibliography.cumc.columbia.edu/node/47668",
+  "https://bmcneurol.biomedcentral.com/track/pdf/10.1186/s12883-016-0748-3",
+  "https://braintrials.substack.com/p/deep-dive-ulixacaltamide-and-the",
+  "https://calahealth.com/help-center/insurance/do-you-accept-insurance/",
+  "https://calahealth.com/wp-content/uploads/2026/01/MM-20054-Rev-C-Medicare-Beneficiaries-Access-to-Cala-TAPS.pdf",
+  "https://cdn.clinicaltrials.gov/large-docs/23/NCT04766723/Prot_000.pdf",
+  "https://clinicaltrials.gov/study/NCT03101241",
+  "https://clinicaltrials.gov/study/NCT05387642",
+  "https://clinicaltrials.gov/study/NCT05642442",
+  "https://clinicaltrials.gov/study/NCT06087276",
+  "https://cm.healio.com/news/neurology/20250409/felix-neuroai-wristband-improves-essential-tremor-outcomes",
+  "https://cms.gov/Medicare/Prescription-Drug-Coverage/PrescriptionDrugCovGenIn/Pharma.html",
+  "https://downloads.regulations.gov/CMS-2025-0304-9068/attachment_1.pdf",
+  "https://essentialtremor.org",
+  "https://essentialtremor.org/wp-content/uploads/2021/02/Press-release-for-NETA-2021.pdf",
+  "https://essentialtremor.org/wp-content/uploads/2025/08/RFA-IETF-2026.pdf",
+  "https://essentialtremor.org/wp-content/uploads/2025/10/TTOct2025-Preview-for-website.pdf",
+  "https://finance.yahoo.com/healthcare/articles/lancet-neurology-study-confirms-staged-123000476.html",
+  "https://finance.yahoo.com/healthcare/articles/neurocrines-ingrezza-sales-keep-growing-152400976.html",
+  "https://finance.yahoo.com/news/insightec-announces-fda-approval-staged-124500591.html",
+  "https://index.mirasmart.com/AAN2024/PDFfiles/AAN2024-003341.html",
+  "https://insightec.com/wp-content/uploads/Reimbursement-Guide-2026.pdf",
+  "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+  "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-provides-update-phase-2b-trial",
+  "https://investors.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-plans-begin-ulixacaltamide",
+  "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug",
+  "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-corporate-update-and-19",
+  "https://jheor.org/article/170793-clinical-and-economic-outcomes-of-transcutaneous-afferent-patterned-stimulation-for-essential-tremor",
+  "https://m.investing.com/news/analyst-ratings/guggenheim-raises-praxis-precision-medicines-stock-price-target-on-essential-tremor-opportunity-93CH-4496388?ampMode=1",
+  "https://neurology.ufl.edu/2022/07/07/suppression-of-axial-tremor-by-deep-brain-stimulation-in-patients-with-essential-tremor-effects-on-gait-and-balance-measures/",
+  "https://neurologytoday.aan.com/doi/10.1097/01.wnt.0001205184.00375.4e",
+  "https://neurologytoday.aan.com/doi/10.1212/netod-blogs.10000027",
+  "https://news.abbvie.com/2025-10-06-AbbVie-Announces-Positive-Topline-Results-from-Phase-2-ELATE-Trial-Evaluating-OnabotulinumtoxinA-BOTOX-R-for-the-Treatment-of-Upper-Limb-Essential-Tremor",
+  "https://news.unchealthcare.org/2024/07/bilateral-focused-ultrasound-shown-to-be-safe-effective-for-patients-with-lingering-or-severe-essential-tremor/",
+  "https://pharmaobservatory.com/conditions/D020329",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10109288",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11489621/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11661014",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12551629/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12625098/",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13378417",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC3787716",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC4137360",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC6581115",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC8226734",
+  "https://practicalneurology.com/news/fda-allows-study-of-bilateral-ultrasound-treatment-of-essential-tremor/2469492/",
+  "https://practicalneurology.com/news/fda-clears-felix-neuroai-wristband-as-first-ai-wearable-for-essential-tremor/2475519/",
+  "https://practicalneurology.com/news/study-evaluates-botox-as-essential-tremor-treatment/2483937/",
+  "https://pubmed.ncbi.nlm.nih.gov/31046186/",
+  "https://pubmed.ncbi.nlm.nih.gov/42167194/",
+  "https://quartr.com/events/praxis-precision-medicines-prax-goldman-sachs-47th-annual-global-healthcare-conference-2026_oS61ioRv",
+  "https://rallies.ai/news/praxis-precision-medicines-forecasts-10-billion-in-peak-sales-for-ulixacaltamide-4f50ceea7cf0a2d6",
+  "https://scholars.houstonmethodist.org/en/publications/tremor-research-group-essential-tremor-rating-scale-tetras-assess/",
+  "https://steadiwear.com/blogs/tremor-devices/emerging-tremor-treatments-clinical-trials",
+  "https://tremorjournal.org/articles/10.5334/tohm.239",
+  "https://tremorjournal.org/articles/10.5334/tohm.682",
+  "https://tremorjournal.org/articles/10.5334/tohm.973",
+  "https://trial.medpath.com/news/praxis-precision-medicines-reports-positive-phase-3-results-for-ulixacaltamide-in-essential-tremor",
+  "https://utsouthwestern.elsevierpure.com/en/publications/common-misdiagnosis-of-a-common-neurological-disorder-how-are-we-",
+  "https://www.aan.com",
+  "https://www.aan.com/Guidelines/home/GuidelineDetail/492",
+  "https://www.ama-assn.org/public-health/prevention-wellness/what-doctors-want-patients-know-about-essential-tremor",
+  "https://www.biopharmadive.com/news/praxis-essential-tremor-drug-trial-positive-success-stock/803000/",
+  "https://www.biospace.com/drug-development/biogen-sage-scrap-essential-tremor-study-after-phase-ii-failure",
+  "https://www.bioxconomy.com/pricing-and-contracting/medicare-part-d-premiums-caps-climb-in-2027-plans",
+  "https://www.businesswire.com/news/home/20250701753633/en",
+  "https://www.businesswire.com/news/home/20260212105349/en/",
+  "https://www.cms.gov/files/document/part-d-manufacturer-discount-program-draft-guidance-may-2023.pdf",
+  "https://www.cms.gov/medicare-coverage-database/view/article.aspx?articleId=57884",
+  "https://www.cuimc.columbia.edu/news/overactive-brain-waves-trigger-essential-tremor",
+  "https://www.ean.org/research/resources/neurology-updates/detail/new-classification-of-tremor-released-by-the-international-parkinson-and-movement-disorder-society",
+  "https://www.essentialtremor.org/wp-content/uploads/2014/04/Essential-Tremor-What-the-Experts-Say-2014.pdf",
+  "https://www.evicenter.com/drugs/ulixacaltamide--essential-tremor/executive-summary/efficacy-and-safety",
+  "https://www.federalregister.gov/documents/2026/04/06/2026-06600/medicare-program-contract-year-2027-and-certain-contract-year-2026-policy-and-technical-changes-to",
+  "https://www.fiercebiotech.com/biotech/it-was-not-failed-trial-it-was-negative-trial-neurocrine-axes-licensed-essential-tremor",
+  "https://www.fiercebiotech.com/medtech/fda-clears-encora-therapeutics-wearable-wrist-device-essential-tremor",
+  "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+  "https://www.fiercepharma.com/marketing/neurocrine-nabs-ingrezza-ok-to-kick-start-tardive-dyskinesia-market-teva-waiting-wings",
+  "https://www.fiercepharma.com/pharma/teva-competition-ramping-neurocrines-tame-ingrezza-forecast-spooks-investors",
+  "https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2013.00172/pdf",
+  "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2025.1659203/full",
+  "https://www.fusfoundation.org",
+  "https://www.fusfoundation.org/diseases-and-conditions/essential-tremor/",
+  "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
+  "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+  "https://www.hcplive.com/view/fda-grants-breakthrough-therapy-designation-ulizacaltamine-essential-tremor",
+  "https://www.jci.org/articles/view/83621",
+  "https://www.mdedge.com/neurologyreviews/article/193963/movement-disorders/researchers-compare-focused-ultrasound-and-dbs/page/0/1",
+  "https://www.mdsabstracts.org/abstract/an-evaluation-of-nbi-827104-for-essential-tremor-results-from-a-randomized-double-blind-placebo-controlled-dose-escalation-crossover-study/",
+  "https://www.medscape.com/viewarticle/751786",
+  "https://www.movementdisorders.org",
+  "https://www.movementdisorders.org/MDS-Files1/PDFs/EBM-Papers/Ferreira_et_al-2019-Movement_Disorders.pdf",
+  "https://www.movementdisorders.org/MDS/About/Study-Groups/MDS-Task-Forces/Task-Force-on-Tremor.htm",
+  "https://www.movementdisorders.org/MDS/About/Study-Groups/Tremor-Study-Group.htm",
+  "https://www.nasdaq.com/articles/sage-biib-end-collaboration-neurology-candidate-sage-324",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11276397/",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7546108/",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7766785/",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9378814/",
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9733625/",
+  "https://www.neurology.org/doi/10.1212/WNL.0000000000217755",
+  "https://www.neurology.org/doi/10.1212/WNL.0000000000217776",
+  "https://www.neurologylive.com/conferences/aan-2019/cx8998-exhibits-promise-essential-tremor-despite-failing-meet-primary-end-point",
+  "https://www.neurologylive.com/view/cala-trio-device-provides-advantages-in-essential-tremor-treatment",
+  "https://www.neurologylive.com/view/fda-approves-insightec-exablate-neuro-to-treat-second-side-essential-tremor",
+  "https://www.neurologylive.com/view/jazz-suvecaltamide-fails-meet-primary-end-point-phase-2b-trial-essential-tremor",
+  "https://www.neurologylive.com/view/sage-therapeutics-biogen-officially-announce-ending-sage-324-program-essential-tremor",
+  "https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40",
+  "https://www.patientsforaffordabledrugs.org/wp-content/uploads/2021/01/UPDATED-January-2021-Price-Hikes-Data-and-Methods.pdf",
+  "https://www.pennmedicine.org/news/comprehensive-clinics-simplify-care-for-neurological-diseases",
+  "https://www.researchgate.net/publication/352754513_Exploring_Essential_Tremor_Results_from_a_Large_Online_Survey",
+  "https://www.sec.gov/Archives/edgar/data/0000914475/000119312518005148/d522238dex991.htm",
+  "https://www.sec.gov/Archives/edgar/data/0000914475/000119312518238227/d601139dex991.htm",
+  "https://www.sec.gov/Archives/edgar/data/1070494/000095017024021169/acad-ex99_1.htm",
+  "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000082/praxisq22026pr.htm",
+  "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+  "https://www.sec.gov/Archives/edgar/data/1689813/000168981321000024/bhvn-20201231.htm",
+  "https://www.siumed.edu/sites/default/files/printable-cv/elble_cv_1.pdf",
+  "https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day",
+  "https://www.utsouthwestern.edu/newsroom/articles/year-2024/june-postmortem-essential-tremor-diagnosis.html",
+  "https://www.webull.com/news/15752173318185984",
+  "https://zendy.io/title/10.1002/mds.27121"
+ ]
+}

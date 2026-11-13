@@ -1,0 +1,1129 @@
+{
+ "meta": {
+  "compiled": "2026-11-13",
+  "method": "Web search extractions only; direct fetch of globenewswire.com, sec.gov, stocktitan.net blocked in sandbox. Web search budget exhausted after ~35 queries.",
+  "primary_sources": [
+   "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "https://www.manilatimes.net/2026/11/13/tmt-newswire/globenewswire/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-day/2469134",
+   "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000091/prax-20261112.htm",
+   "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  ]
+ },
+ "investor_day": [
+  {
+   "fact": "Event",
+   "value": "Praxis Investor Day held in New York on 2026-11-12; press release (GlobeNewswire) plus slide deck furnished as Exhibit 99.1 to Form 8-K (accession 0001689548-26-000091). Covered commercial strategy/launch plans for relutrigine (SCN2A/SCN8A DEE) and ulixacaltamide (ET) and an expanded pipeline across movement disorders, pain, epilepsy and ASOs.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000091/prax-20261112.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "PDUFA dates reaffirmed",
+   "value": "Relutrigine: December 27, 2026. Ulixacaltamide: January 29, 2027. Both launches subject to FDA approval.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Company peak sales guidance (total)",
+   "value": "$20B+ 'Praxis peak sales guidance' across four lead assets",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Peak sales guidance by asset",
+   "value": "Ulixacaltamide $10.0B (+$2.3B); Relutrigine $5.0B (+$1.7B); Vormatrigine $4.0B (+$2.2B); Elsunersen $1.0B (+$0.3B). Parenthetical deltas appear to be vs. a 'consensus assuming approvals' figure (consensus divided by consensus PoS: ulixacaltamide 80%, relutrigine 70%, vormatrigine 60%, elsunersen 60%).",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium",
+   "note": "Read via search-engine extraction of the SEC deck, not direct fetch; what the deltas are measured against is inferred from the slide footnote."
+  },
+  {
+   "fact": "Implied consensus-assuming-approval peak sales (derived)",
+   "value": "Ulixacaltamide ~$7.7B; relutrigine ~$3.3B; vormatrigine ~$1.8B; elsunersen ~$0.7B (guidance minus stated delta)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "low",
+   "note": "Arithmetic derivation by researcher; not a number stated by the company."
+  },
+  {
+   "fact": "Ulixacaltamide pricing",
+   "value": "Annual WAC corridor $50,000-$100,000; peak-sales math uses ~2M ET patients seeking treatment x penetration x $50K annual NET price",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium",
+   "note": "WAC corridor reported by Panabee summary (https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40) and consistent with Q2-2026 call commentary; $50K net price from deck extraction. Final price not disclosed."
+  },
+  {
+   "fact": "Relutrigine pricing",
+   "value": "Annual WAC corridor $400,000-$600,000 per year, benchmarked to rare-disease therapies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium",
+   "note": "CONFLICT: Goldman Sachs conference summary (mid-2026, https://quartr.com/events/praxis-precision-medicines-inc-prax-goldman-sachs-47th-annual-global-healthcare-conference-_oS61ioRv) cited $450K-$650K per patient per year. Investor Day figure is the more recent company statement. Final price not disclosed."
+  },
+  {
+   "fact": "Ulixacaltamide field force",
+   "value": "~300 field staff hired/in place before year-end 2026; 'field team at scale deployed from day 1'; capacity for dynamic targeting",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+   "date": "2026-11-12",
+   "confidence": "high",
+   "note": "Also in deck extraction (https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm) and TipRanks (https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day)."
+  },
+  {
+   "fact": "Ulixacaltamide HCP targets",
+   "value": "~19,000 HCPs: 13,000-15,000 neurologists (incl. movement disorder specialists) + 4,500-5,500 high-volume primary care physicians",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "ET prevalence / addressable population",
+   "value": "Updated U.S. ET prevalence ~9M (deck also phrases '~7-9M living with ET'); ~2M actively managed/seeking treatment = initial commercial focus",
+   "source_url": "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+   "date": "2026-11-12",
+   "confidence": "high",
+   "note": "Earlier company materials cited ~7M U.S. ET patients (https://finance.yahoo.com/healthcare/articles/praxis-precision-medicines-inc-q2-123000187.html); Investor Day raised estimate to ~9M."
+  },
+  {
+   "fact": "ET physician market research",
+   "value": "March 2026 observational study of 2,303 U.S. physicians treating ET (~44% neurology, ~44% primary care); dissatisfaction drivers include contraindications and inconsistent efficacy of current therapies",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Ulixacaltamide payer access expectations",
+   "value": "Goal: broad coverage aligned to anticipated label. Payer mix ~65% Medicare Part D (formulary exception requests available at launch) and ~30% commercial (some plans apply new-to-market exclusions until P&T review). Expected utilization management: prior authorization (diagnosis confirmation, specialist consultation) and possible step therapy with propranolol first.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium",
+   "note": "Percentages interpreted as payer mix of ET patients; exact slide wording not directly verified."
+  },
+  {
+   "fact": "Ulixacaltamide distribution",
+   "value": "Specialty Pharmacy Network distribution; inventory build to meet anticipated demand",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Ulixacaltamide DTC / patient activation",
+   "value": "Launch DTC campaign aimed at undertreated and discontinued patients, reframing ET as treatable; company's direct-to-patient clinical-trial recruitment capability to be repurposed commercially. HCP disease-education campaign launched April 2026.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Ulixacaltamide telehealth plans",
+   "value": "not disclosed in material retrieved",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "low"
+  },
+  {
+   "fact": "Ulixacaltamide DEA scheduling",
+   "value": "Management expects launch to follow DEA scheduling, anticipated Schedule IV or V (per Guggenheim note after management meeting; late-cycle FDA meeting complete, discussion focused on labeling)",
+   "source_url": "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+   "date": "2026-11",
+   "confidence": "medium",
+   "note": "Analyst-relayed, not in company release."
+  },
+  {
+   "fact": "Ulixacaltamide FDA-requested sensitivity analyses",
+   "value": "Sensitivity analyses of Essential3 primary endpoint consistent with primary result; 4 of 4 model-based sensitivity analyses remained significant; tipping-point analyses (delta added to MAR-imputed values) also shown",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Ulixacaltamide long-term data",
+   "value": "Essential3 long-term safety study early analysis: n=68 assessed to date, average ~95 weeks on study; durable and improving ADL response; ~5 points gained in ADL at first assessment; ~1 in 5 patients improved >=12 TETRAS-ADL points; benefit held through Day 84 and 95 weeks and lost on switch to placebo",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Ulixacaltamide label expansion",
+   "value": "Studies to initiate in 2027 in Parkinson's disease, Restless Legs Syndrome and Autism Spectrum Disorder",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Relutrigine field team",
+   "value": "Dedicated field team (sales, medical affairs, patient services) fully hired; sized for full coverage at launch and can flex as more patients are identified; has profiled 100% of top-10 accounts per region and 100% of Tier 1 and Tier 2 target HCPs ahead of PDUFA. Headcount and number of regions: not disclosed in material retrieved.",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Relutrigine patient funnel (SCN2A/SCN8A DEE, U.S.)",
+   "value": "10K+ prevalent; ~5K diagnosed; ~1.9K visible in genetic and claims data; field profiling has found more patients than genetic/claims data show",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Relutrigine account concentration",
+   "value": "Top 200 accounts hold ~65% of known & diagnosed patients (claims data); 60-70% of patients managed at academic centers",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Relutrigine peak-sales illustration",
+   "value": "2,500 SCN2A/8A patients (25% penetration of ~10K prevalent) = ~$1B; broad DEE (>300K patients) is the further opportunity underpinning $5B guidance",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Relutrigine payer mix / access",
+   "value": "~45% Medicaid, ~50% commercial; patients arrive 'pre-qualified' for prior authorization (expected PA criteria: prescriber specialty involvement, prior ASM trials)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Relutrigine patient support / hub, specialty pharmacy, genetic testing program",
+   "value": "Patient services team is part of field team; comprehensive patient support program being established (Q2-2026 update). Hub brand name, specialty pharmacy partners and any sponsored genetic-testing program: not disclosed in material retrieved.",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+   "date": "2026-11-12",
+   "confidence": "low"
+  },
+  {
+   "fact": "Relutrigine first-in-indication / PRV",
+   "value": "If approved, first therapy for SCN2A and SCN8A DEEs; eligible for a Rare Pediatric Disease priority review voucher",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Relutrigine EMBOLD OLE update",
+   "value": "86% reduction in seizures from baseline through 18 months in EMBOLD open-label extension (n not disclosed in material retrieved)",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "New pipeline: PRAX-215",
+   "value": "Pan-sodium-channel small molecule for pain (chronic and acute); Phase 1 SAD/MAD ongoing, readout expected 2027. Pain model selection uses proprietary 'Praxis Analysis of Concordance (PAC)' framework.",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "New pipeline: PRAX-110",
+   "value": "Isoform-biased sodium channel molecule; expected to enter clinic in 2028; indication not disclosed in material retrieved",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "New pipeline: PRAX-206",
+   "value": "KCNT1 developmental epilepsies; strong preclinical data; planned clinic entry early 2027",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Solidus ASO platform",
+   "value": "Six preclinical ASO programs in addition to elsunersen (pivotal, early-seizure-onset SCN2A DEE). Identity of the six not confirmed; earlier filings named PRAX-080 (PCDH19), PRAX-090 (SYNGAP1), PRAX-100 (SCN2A loss-of-function).",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+   "date": "2026-11-12",
+   "confidence": "medium"
+  },
+  {
+   "fact": "PRAX-020 / PRAX-050 / PRAX-080 / PRAX-090 / PRAX-100 at Investor Day",
+   "value": "Not confirmed as named in Investor Day materials retrieved",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "low"
+  },
+  {
+   "fact": "Cash runway",
+   "value": "Cash, cash equivalents and marketable securities (~$1.3B at 2026-09-30) expected to fund operations into 2028",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000091/prax-20261112.htm",
+   "date": "2026-11-12",
+   "confidence": "high"
+  },
+  {
+   "fact": "Revenue guidance for 2027",
+   "value": "not disclosed (only peak-sales guidance given)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "date": "2026-11-12",
+   "confidence": "low"
+  }
+ ],
+ "assets": {
+  "relutrigine": {
+   "aliases": [
+    "PRAX-562"
+   ],
+   "mechanism": "Oral small-molecule sodium channel functional state modulator with preferential inhibition of persistent sodium current (company description; mechanism wording not re-verified in this session - medium confidence)",
+   "indications": [
+    "SCN2A-DEE and SCN8A-DEE (NDA under review)",
+    "Broad DEEs (EMERALD Phase 3; sNDA planned 2027)"
+   ],
+   "stage": "NDA under FDA priority review",
+   "regulatory": {
+    "nda_submission": "February 2026 (per secondary summary; rolling status not disclosed)",
+    "nda_acceptance": "Announced 2026-03-30; Priority Review; original PDUFA 2026-09-27",
+    "pdufa_current": "2026-12-27",
+    "pdufa_extension_reason": "Disclosed 2026-06-29 (8-K): Praxis submitted additional sensitivity analyses of existing clinical data, deemed a 'major amendment' -> 3-month extension. No new studies requested; no safety or manufacturing concerns cited.",
+    "midcycle": "No major safety or efficacy concerns identified to date; FDA does not plan an advisory committee (Q2-2026 release). Company will not give regulatory updates until PDUFA dates.",
+    "designations": [
+     "Breakthrough Therapy",
+     "Orphan Drug",
+     "Rare Pediatric Disease (PRV-eligible on approval)"
+    ],
+    "expected_label": "Seizures associated with SCN2A and SCN8A DEE; age range/label specifics not disclosed",
+    "sources": [
+     "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-and-priority",
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000069/prax-20260629.htm",
+     "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december",
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+    ]
+   },
+   "trials": [
+    {
+     "name": "EMBOLD Cohort 1",
+     "nct": "not retrieved",
+     "phase": "2",
+     "design": "Randomized, double-blind, placebo-controlled, 16 weeks; SCN2A/SCN8A DEE; start 0.5 mg/kg/day with optional increase to 1 mg/kg/day",
+     "n": "~15-16 (5 patients = >30% seizure-free)",
+     "primary_endpoint": "Change in monthly motor seizure frequency",
+     "results": "46% placebo-adjusted reduction in monthly motor seizures over 16 weeks; >30% (n=5) seizure-free (one source says 33% at 16 weeks)",
+     "readout_date": "2024-09 (approx.)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954825000021/a8-kexhibit991.htm",
+     "confidence": "medium"
+    },
+    {
+     "name": "EMBOLD Cohort 2 (registrational)",
+     "nct": "not retrieved",
+     "phase": "2/3 registrational",
+     "design": "Randomized, placebo-controlled with placebo period; 16 weeks",
+     "n": "53 randomized; 51 in relutrigine analysis, 25 in placebo-period analysis (23 in both)",
+     "primary_endpoint": "Motor seizure frequency over 16 weeks",
+     "results": "53% placebo-adjusted reduction in motor seizure frequency; 66% increase in motor seizure-free days (p=0.034). Whether the cohort was stopped early for efficacy: not confirmed in retrieved sources. Cohort-2 seizure-freedom rate: not retrieved.",
+     "readout_date": "2025-12 (approx.; presented AES 2025 / AAN 2026)",
+     "source_url": "https://www.neurologylive.com/view/relutrigine-shows-promise-phase-2-embold-study-scn2a-dee-scn8a-dee",
+     "confidence": "medium"
+    },
+    {
+     "name": "EMBOLD open-label extension",
+     "nct": "not retrieved",
+     "phase": "2 OLE",
+     "design": "Open-label, on top of standard of care",
+     "n": "n=13 at ~9-11 months; 18-month n not disclosed",
+     "primary_endpoint": "Long-term safety; seizure reduction",
+     "results": "77% reduction in motor seizures through 9 months (n=13); ~90% at month 11 with mean 67 seizure-free days vs 3 at baseline; 86% reduction from baseline through 18 months (Investor Day 2026-11-12)",
+     "readout_date": "2026-11-12 (latest update)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+     "confidence": "medium"
+    },
+    {
+     "name": "EMERALD",
+     "nct": "NCT07010471",
+     "phase": "3",
+     "design": "Randomized, multicenter, double-blind, placebo-controlled, 16 weeks; ages 2-65 with DEE diagnosis (broad, etiology-agnostic)",
+     "n": "~200 enrolled (exceeded ~160 planned); >50 distinct genetic etiologies",
+     "primary_endpoint": "Seizure reduction over 16 weeks",
+     "results": "Pending",
+     "readout_date": "Topline expected Q4 2026; sNDA 2027 if positive and initial NDA approved",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "confidence": "high"
+    }
+   ],
+   "safety": "Cohort 2: one discontinuation for an AE on relutrigine; one family withdrew consent in placebo period; one death during placebo period; all SAEs judged unrelated to drug and consistent with underlying disease; no drug-related SAEs. OLE: no new safety signals, no dose reductions needed (earlier cuts).",
+   "dosing": "Weight-based oral dosing: 0.5 mg/kg/day, optional increase to 1 mg/kg/day in EMBOLD cohort 1. Commercial formulation (e.g., oral suspension) and labelled dose: not confirmed in retrieved sources.",
+   "launch_plan": [
+    {
+     "fact": "Relutrigine pricing",
+     "value": "Annual WAC corridor $400,000-$600,000 per year, benchmarked to rare-disease therapies",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium",
+     "note": "CONFLICT: Goldman Sachs conference summary (mid-2026, https://quartr.com/events/praxis-precision-medicines-inc-prax-goldman-sachs-47th-annual-global-healthcare-conference-_oS61ioRv) cited $450K-$650K per patient per year. Investor Day figure is the more recent company statement. Final price not disclosed."
+    },
+    {
+     "fact": "Relutrigine field team",
+     "value": "Dedicated field team (sales, medical affairs, patient services) fully hired; sized for full coverage at launch and can flex as more patients are identified; has profiled 100% of top-10 accounts per region and 100% of Tier 1 and Tier 2 target HCPs ahead of PDUFA. Headcount and number of regions: not disclosed in material retrieved.",
+     "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Relutrigine patient funnel (SCN2A/SCN8A DEE, U.S.)",
+     "value": "10K+ prevalent; ~5K diagnosed; ~1.9K visible in genetic and claims data; field profiling has found more patients than genetic/claims data show",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Relutrigine account concentration",
+     "value": "Top 200 accounts hold ~65% of known & diagnosed patients (claims data); 60-70% of patients managed at academic centers",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Relutrigine peak-sales illustration",
+     "value": "2,500 SCN2A/8A patients (25% penetration of ~10K prevalent) = ~$1B; broad DEE (>300K patients) is the further opportunity underpinning $5B guidance",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Relutrigine payer mix / access",
+     "value": "~45% Medicaid, ~50% commercial; patients arrive 'pre-qualified' for prior authorization (expected PA criteria: prescriber specialty involvement, prior ASM trials)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Relutrigine patient support / hub, specialty pharmacy, genetic testing program",
+     "value": "Patient services team is part of field team; comprehensive patient support program being established (Q2-2026 update). Hub brand name, specialty pharmacy partners and any sponsored genetic-testing program: not disclosed in material retrieved.",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+     "date": "2026-11-12",
+     "confidence": "low"
+    },
+    {
+     "fact": "Relutrigine first-in-indication / PRV",
+     "value": "If approved, first therapy for SCN2A and SCN8A DEEs; eligible for a Rare Pediatric Disease priority review voucher",
+     "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Relutrigine EMBOLD OLE update",
+     "value": "86% reduction in seizures from baseline through 18 months in EMBOLD open-label extension (n not disclosed in material retrieved)",
+     "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+     "date": "2026-11-12",
+     "confidence": "high"
+    }
+   ],
+   "analyst_estimates": [
+    {
+     "fact": "Company peak sales guidance",
+     "value": "$5.0B (incl. broad DEE); SCN2A/8A alone illustrated at ~$1B (2,500 pts)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Implied consensus assuming approval",
+     "value": "~$3.3B at 70% consensus PoS (derived from deck delta)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "low"
+    },
+    {
+     "fact": "Pricing assumption",
+     "value": "$400K-$600K WAC/yr (Investor Day) vs $450K-$650K (Goldman conference, mid-2026)",
+     "source_url": "https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Individual sell-side peak sales estimates",
+     "value": "not disclosed / not retrieved",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "low"
+    }
+   ],
+   "sources": [
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-and-priority",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000069/prax-20260629.htm",
+    "https://www.neurologylive.com/view/fda-extends-relutrigine-review-delays-pdufa-to-december",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-positive-results-embold",
+    "https://www.neurologylive.com/view/relutrigine-shows-promise-phase-2-embold-study-scn2a-dee-scn8a-dee",
+    "https://praxismedicines.com/wp-content/uploads/2026/04/Kamireddy_AAN2026_EMBOLD.pdf",
+    "https://aesnet.org/abstractslisting/relutrigine-demonstrates-sustained-seizure-reduction-with-continued-exposure-on-top-of-standard-of-care-results-from-the-embold-open-label-extension",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954825000021/a8-kexhibit991.htm",
+    "https://www.neurologylive.com/view/breakthrough-therapy-designation-granted-relutrigine-scn2a-scn8a-developmental-epileptic-encephalopathies",
+    "https://praxismedicines.com/wp-content/uploads/2026/04/Kamireddy_AAN2026_EMERALD.pdf"
+   ]
+  },
+  "ulixacaltamide": {
+   "aliases": [
+    "PRAX-944",
+    "ulixacaltamide HCl"
+   ],
+   "mechanism": "Highly selective small-molecule inhibitor of T-type calcium channels",
+   "indications": [
+    "Essential tremor in adults (NDA under review)",
+    "Planned 2027 studies: Parkinson's disease, Restless Legs Syndrome, Autism Spectrum Disorder"
+   ],
+   "stage": "NDA under FDA review (standard review)",
+   "regulatory": {
+    "nda_submission": "Mid-February 2026",
+    "nda_acceptance": "Announced 2026-04-14",
+    "pdufa": "2027-01-29",
+    "designations": [
+     "Breakthrough Therapy (December 2025)"
+    ],
+    "adcom": "FDA does not currently plan an advisory committee",
+    "midcycle": "Completed; no major safety or efficacy concerns identified to date (Q2-2026). Late-cycle meeting reported complete with labeling focus (Guggenheim, Nov 2026).",
+    "dea_scheduling": "Expected Schedule IV or V (analyst-relayed); launch follows scheduling",
+    "sources": [
+     "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug",
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012"
+    ]
+   },
+   "trials": [
+    {
+     "name": "Essential3 Study 1",
+     "nct": "not retrieved",
+     "phase": "3",
+     "design": "Double-blind, parallel-group, placebo-controlled, 12 weeks, 1:1 randomization; decentralized",
+     "n": "473 randomized; mITT 199 ulixacaltamide / 233 placebo",
+     "primary_endpoint": "Change in mADL11 at Week 8",
+     "results": "-4.3 points ulixacaltamide vs -1.7 placebo; p<0.0001. Company headline: '4.3 point mean improvement'.",
+     "readout_date": "2025-10-16",
+     "source_url": "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
+     "confidence": "high",
+     "note": "Placebo n reported as 233 (mITT) vs 234 (safety) across sources."
+    },
+    {
+     "name": "Essential3 Study 2",
+     "nct": "not retrieved",
+     "phase": "3",
+     "design": "Stable-responder randomized withdrawal: 8-week open-label lead-in, responders randomized to continue drug or switch to placebo for 4 weeks",
+     "n": "238 enrolled; 80 responders randomized",
+     "primary_endpoint": "Maintenance of response during randomized withdrawal",
+     "results": "55% maintained response on ulixacaltamide vs 33% on placebo; p=0.0369",
+     "readout_date": "2025-10-16",
+     "source_url": "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
+     "confidence": "high"
+    },
+    {
+     "name": "Essential3 Long-Term Safety Study",
+     "nct": "not retrieved",
+     "phase": "3 LTS",
+     "design": "Open-label long-term",
+     "n": "68 assessed to date",
+     "primary_endpoint": "Long-term safety; TETRAS-ADL",
+     "results": "Average ~95 weeks; durable and improving ADL response; ~1 in 5 improved >=12 TETRAS-ADL points",
+     "readout_date": "2026-11-12 (early analysis)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "confidence": "medium"
+    },
+    {
+     "name": "FDA-requested sensitivity analyses (Essential3 primary)",
+     "nct": "n/a",
+     "phase": "n/a",
+     "design": "Model-based sensitivity + tipping-point analyses for missing data",
+     "n": "n/a",
+     "primary_endpoint": "mADL11",
+     "results": "4 of 4 model-based analyses significant; consistent with primary",
+     "readout_date": "2026-11-12",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "confidence": "medium"
+    }
+   ],
+   "safety": "Study 1: any TEAE 94.9% drug vs 75.6% placebo; drug-related TEAEs leading to discontinuation 27.0% (63/233) vs 1.7% (4/234). Study 2: 28.1% in ulixacaltamide arm. AAN 2026 report: overall discontinuation 35.6-38.1%, mainly dizziness and brain fog during titration. No drug-related SAEs. Specific AE rates (dizziness, constipation etc.): not retrieved.",
+   "dosing": "Oral, once daily, titrated; pivotal dose understood to be 60 mg/day (dose not re-verified in this session - medium confidence)",
+   "launch_plan": [
+    {
+     "fact": "Ulixacaltamide pricing",
+     "value": "Annual WAC corridor $50,000-$100,000; peak-sales math uses ~2M ET patients seeking treatment x penetration x $50K annual NET price",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium",
+     "note": "WAC corridor reported by Panabee summary (https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40) and consistent with Q2-2026 call commentary; $50K net price from deck extraction. Final price not disclosed."
+    },
+    {
+     "fact": "Ulixacaltamide field force",
+     "value": "~300 field staff hired/in place before year-end 2026; 'field team at scale deployed from day 1'; capacity for dynamic targeting",
+     "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+     "date": "2026-11-12",
+     "confidence": "high",
+     "note": "Also in deck extraction (https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm) and TipRanks (https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day)."
+    },
+    {
+     "fact": "Ulixacaltamide HCP targets",
+     "value": "~19,000 HCPs: 13,000-15,000 neurologists (incl. movement disorder specialists) + 4,500-5,500 high-volume primary care physicians",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "ET prevalence / addressable population",
+     "value": "Updated U.S. ET prevalence ~9M (deck also phrases '~7-9M living with ET'); ~2M actively managed/seeking treatment = initial commercial focus",
+     "source_url": "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+     "date": "2026-11-12",
+     "confidence": "high",
+     "note": "Earlier company materials cited ~7M U.S. ET patients (https://finance.yahoo.com/healthcare/articles/praxis-precision-medicines-inc-q2-123000187.html); Investor Day raised estimate to ~9M."
+    },
+    {
+     "fact": "ET physician market research",
+     "value": "March 2026 observational study of 2,303 U.S. physicians treating ET (~44% neurology, ~44% primary care); dissatisfaction drivers include contraindications and inconsistent efficacy of current therapies",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Ulixacaltamide payer access expectations",
+     "value": "Goal: broad coverage aligned to anticipated label. Payer mix ~65% Medicare Part D (formulary exception requests available at launch) and ~30% commercial (some plans apply new-to-market exclusions until P&T review). Expected utilization management: prior authorization (diagnosis confirmation, specialist consultation) and possible step therapy with propranolol first.",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium",
+     "note": "Percentages interpreted as payer mix of ET patients; exact slide wording not directly verified."
+    },
+    {
+     "fact": "Ulixacaltamide distribution",
+     "value": "Specialty Pharmacy Network distribution; inventory build to meet anticipated demand",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Ulixacaltamide DTC / patient activation",
+     "value": "Launch DTC campaign aimed at undertreated and discontinued patients, reframing ET as treatable; company's direct-to-patient clinical-trial recruitment capability to be repurposed commercially. HCP disease-education campaign launched April 2026.",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Ulixacaltamide telehealth plans",
+     "value": "not disclosed in material retrieved",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "low"
+    },
+    {
+     "fact": "Ulixacaltamide DEA scheduling",
+     "value": "Management expects launch to follow DEA scheduling, anticipated Schedule IV or V (per Guggenheim note after management meeting; late-cycle FDA meeting complete, discussion focused on labeling)",
+     "source_url": "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+     "date": "2026-11",
+     "confidence": "medium",
+     "note": "Analyst-relayed, not in company release."
+    },
+    {
+     "fact": "Ulixacaltamide FDA-requested sensitivity analyses",
+     "value": "Sensitivity analyses of Essential3 primary endpoint consistent with primary result; 4 of 4 model-based sensitivity analyses remained significant; tipping-point analyses (delta added to MAR-imputed values) also shown",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Ulixacaltamide long-term data",
+     "value": "Essential3 long-term safety study early analysis: n=68 assessed to date, average ~95 weeks on study; durable and improving ADL response; ~5 points gained in ADL at first assessment; ~1 in 5 patients improved >=12 TETRAS-ADL points; benefit held through Day 84 and 95 weeks and lost on switch to placebo",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Ulixacaltamide label expansion",
+     "value": "Studies to initiate in 2027 in Parkinson's disease, Restless Legs Syndrome and Autism Spectrum Disorder",
+     "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+     "date": "2026-11-12",
+     "confidence": "high"
+    }
+   ],
+   "analyst_estimates": [
+    {
+     "fact": "Company peak sales guidance",
+     "value": "$10.0B (U.S.); earlier company decks cited '>$10B' based on physician survey",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Implied consensus assuming approval",
+     "value": "~$7.7B at 80% consensus PoS (derived from deck delta)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "low"
+    },
+    {
+     "fact": "Price assumption",
+     "value": "WAC $50K-$100K/yr; $50K net used in company peak-sales math",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "medium"
+    },
+    {
+     "fact": "Guggenheim",
+     "value": "Top biotech pick; Buy, $800 PT (raised from $760 on 2026-02-10); expects January approval",
+     "source_url": "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+     "date": "2026-11",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+    "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+    "https://www.tipranks.com/news/company-announcements/praxis-precision-medicines-outlines-commercial-strategy-at-investor-day",
+    "https://www.panabee.com/news/praxis-outlines-commercial-launch-pricing-of-50-000-to-100-000-for-ulixacaltamide-and-40",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug",
+    "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html",
+    "https://www.medscape.com/viewarticle/novel-drug-improves-daily-activities-essential-tremor-phase-2026a1001609",
+    "https://www.springermedicine.com/essential-tremor/aan-annual-meeting/essential3-uixacaltamide-improves-daily-function/52326980",
+    "https://www.panabee.com/news/ulixacaltamide-hits-primary-endpoints-in-essential-tremor-reporting-27-discontinuation-r",
+    "https://investing.com/news/stock-market-news/guggenheim-highlights-top-biotechnology-stock-5023012",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+   ]
+  },
+  "vormatrigine": {
+   "aliases": [
+    "PRAX-628"
+   ],
+   "mechanism": "Next-generation functionally selective sodium channel blocker (hyperexcitable-state preferring); once-daily oral (mechanism wording not re-verified this session)",
+   "indications": [
+    "Focal onset seizures (FOS)",
+    "Generalized epilepsy (exploratory; POWER3 planned)"
+   ],
+   "stage": "Phase 2/3 - POWER1 missed primary (June 2026); POWER2 restarted with updated design",
+   "regulatory": {
+    "nda_plan": "Previously guided 2027 if POWER1 and POWER2 positive; post-POWER1 NDA timing not reconfirmed in retrieved sources",
+    "sources": [
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000029/prax-20251231.htm"
+    ]
+   },
+   "trials": [
+    {
+     "name": "RADIANT",
+     "nct": "not retrieved",
+     "phase": "2 open-label",
+     "design": "30 mg once daily for 8 weeks in adults with treatment-resistant focal (and a few generalized) epilepsy",
+     "n": "37 FOS in first cohort (Aug 2025); N=62 FOS at AES 2025; 3 generalized",
+     "primary_endpoint": "Change in seizure frequency",
+     "results": "56.3% median reduction in focal seizure frequency at Week 8; ~60% responder rate; >20% seizure-free in last month. AES update: 54% at 8 weeks; 100% median weekly seizure reduction after 8 weeks maintained to 16 weeks (company-reported).",
+     "readout_date": "2025-08-04; update 2025-12",
+     "source_url": "https://www.globenewswire.com/news-release/2025/08/04/3126507/0/en/Praxis-Precision-Medicines-Announces-Positive-Best-in-Disease-Topline-Results-in-Patients-with-Focal-Onset-Seizures-from-the-RADIANT-Study-of-Vormatrigine.html",
+     "confidence": "high"
+    },
+    {
+     "name": "POWER1",
+     "nct": "not retrieved",
+     "phase": "2/3",
+     "design": "Randomized, placebo-controlled, 12 weeks, highly refractory FOS; vormatrigine 20 mg QD x6 wk then 30 mg QD x6 wk vs placebo",
+     "n": "not retrieved",
+     "primary_endpoint": "Percent change in monthly seizure frequency from baseline",
+     "results": "MISSED primary endpoint. 50% responder-rate secondary met; greater seizure reduction in second half on 30 mg. AE discontinuations <10%; ~90% of vormatrigine arm entered OLE. Exact effect sizes/p-values: not retrieved.",
+     "readout_date": "2026-06-01",
+     "source_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update",
+     "confidence": "high"
+    },
+    {
+     "name": "POWER2",
+     "nct": "not retrieved",
+     "phase": "3",
+     "design": "Enrollment paused June 2026; restarted (per Q3-2026 release) with updated design incorporating POWER1 learnings; redesigned dose not confirmed",
+     "n": "not disclosed",
+     "primary_endpoint": "not retrieved",
+     "results": "Pending",
+     "readout_date": "Topline 2027 (earlier guidance; reconfirmation post-redesign not verified)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "confidence": "medium"
+    },
+    {
+     "name": "POWER3",
+     "nct": "not retrieved",
+     "phase": "3",
+     "design": "Planned",
+     "n": "not disclosed",
+     "primary_endpoint": "not disclosed",
+     "results": "Not started",
+     "readout_date": "Initiation expected 2027 (slipped from 2026)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "confidence": "medium"
+    }
+   ],
+   "safety": "Generally well tolerated; POWER1 AE-related discontinuations <10%; RADIANT no new safety signals (one diplopia case resolved after lamotrigine dose reduction).",
+   "dosing": "Once-daily oral; 20-30 mg/day studied",
+   "launch_plan": [],
+   "analyst_estimates": [
+    {
+     "fact": "Company peak sales guidance",
+     "value": "$4.0B (+$2.2B vs consensus-assuming-approval, 60% PoS)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    },
+    {
+     "fact": "Stock reaction to POWER1",
+     "value": "Shares fell ~12% after hours on 2026-06-01",
+     "source_url": "https://www.rttnews.com/3657244/praxis-reports-phase-2-3-power1-data-on-vormatrigine-in-focal-onset-seizures-stock-down.aspx",
+     "date": "2026-06-01",
+     "confidence": "medium"
+    }
+   ],
+   "sources": [
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update",
+    "https://www.fiercebiotech.com/biotech/praxis-pauses-one-its-seizure-programs-after-phase-2-fail",
+    "https://www.rttnews.com/3657244/praxis-reports-phase-2-3-power1-data-on-vormatrigine-in-focal-onset-seizures-stock-down.aspx",
+    "https://www.globenewswire.com/news-release/2025/08/04/3126507/0/en/Praxis-Precision-Medicines-Announces-Positive-Best-in-Disease-Topline-Results-in-Patients-with-Focal-Onset-Seizures-from-the-RADIANT-Study-of-Vormatrigine.html",
+    "https://praxismedicines.com/wp-content/uploads/2025/12/Hansen_AES2025_RADIANT-Update_FINAL.pdf",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm"
+   ]
+  },
+  "elsunersen": {
+   "aliases": [
+    "PRAX-222"
+   ],
+   "mechanism": "Antisense oligonucleotide (Solidus platform) that lowers SCN2A expression for gain-of-function SCN2A DEE; intrathecal (route not re-verified this session)",
+   "indications": [
+    "Early-seizure-onset SCN2A DEE (gain-of-function)"
+   ],
+   "stage": "Pivotal / registrational (EMBRAVE3 enrolling)",
+   "regulatory": {
+    "designations": [
+     "Breakthrough Therapy (SCN2A-DEE GoF)"
+    ],
+    "nda_plan": "NDA 2027 if EMBRAVE3 positive (January 2026 guidance; EMBRAVE3 topline since moved from 2H26 to 2027, so NDA timing at risk)",
+    "sources": [
+     "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "https://www.globenewswire.com/news-release/2026/04/06/3268372/0/en/Praxis-Precision-Medicines-Announces-Positive-Results-from-the-EMBRAVE-Part-A-Trial-of-Elsunersen-in-Patients-with-SCN2A-Early-Onset-Developmental-and-Epileptic-Encephalopathy.html"
+    ]
+   },
+   "trials": [
+    {
+     "name": "EMBRAVE Part A",
+     "nct": "not retrieved",
+     "phase": "1/2",
+     "design": "Randomized, placebo/sham-controlled ascending dose; starting 1 mg with optional escalation",
+     "n": "9 pediatric patients aged 2-12",
+     "primary_endpoint": "Safety; seizure reduction",
+     "results": "77% placebo(sham)-adjusted reduction in monthly seizures (p=0.015; 95% CI 33-92); 71% of treated achieved >50% reduction by period 6; 57% had >=28-day seizure-free period",
+     "readout_date": "2026-04-06",
+     "source_url": "https://www.globenewswire.com/news-release/2026/04/06/3268372/0/en/Praxis-Precision-Medicines-Announces-Positive-Results-from-the-EMBRAVE-Part-A-Trial-of-Elsunersen-in-Patients-with-SCN2A-Early-Onset-Developmental-and-Epileptic-Encephalopathy.html",
+     "confidence": "high",
+     "note": "Sources alternately describe comparator as placebo or sham."
+    },
+    {
+     "name": "EMBRAVE3",
+     "nct": "not retrieved",
+     "phase": "3 registrational",
+     "design": "Early-seizure-onset SCN2A DEE; 1 mg every 4 weeks per 2025 deck (may have changed)",
+     "n": "not disclosed",
+     "primary_endpoint": "not retrieved",
+     "results": "Enrolling 'strongly'",
+     "readout_date": "Topline 2027 (previously 2H 2026)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+     "confidence": "high"
+    }
+   ],
+   "safety": "Detailed Part A safety not retrieved",
+   "dosing": "1 mg starting dose, monthly (q4w) dosing in pivotal design per older deck",
+   "launch_plan": [],
+   "analyst_estimates": [
+    {
+     "fact": "Company peak sales guidance",
+     "value": "$1.0B (+$0.3B vs consensus-assuming-approval, 60% PoS)",
+     "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+     "date": "2026-11-12",
+     "confidence": "high"
+    }
+   ],
+   "sources": [
+    "https://www.globenewswire.com/news-release/2026/04/06/3268372/0/en/Praxis-Precision-Medicines-Announces-Positive-Results-from-the-EMBRAVE-Part-A-Trial-of-Elsunersen-in-Patients-with-SCN2A-Early-Onset-Developmental-and-Epileptic-Encephalopathy.html",
+    "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-announces-positive-results-from-the-5klyd5w66id4.html",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000049/praxisq12026pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm"
+   ]
+  },
+  "other_pipeline": {
+   "PRAX-215": {
+    "description": "Pan-sodium-channel small molecule; pain (chronic and acute)",
+    "stage": "Phase 1 SAD/MAD; readout 2027",
+    "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+    "confidence": "medium"
+   },
+   "PRAX-110": {
+    "description": "Isoform-biased sodium channel molecule; indication not disclosed in retrieved material",
+    "stage": "Preclinical; clinic 2028",
+    "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+    "confidence": "medium"
+   },
+   "PRAX-206": {
+    "description": "KCNT1 DEE",
+    "stage": "Preclinical; clinic early 2027",
+    "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+    "confidence": "medium"
+   },
+   "Solidus_ASOs": {
+    "description": "Six preclinical ASO programs (identities not confirmed). Earlier-named: PRAX-080 (PCDH19), PRAX-090 (SYNGAP1), PRAX-100 (SCN2A LoF)",
+    "stage": "Preclinical",
+    "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351",
+    "confidence": "medium"
+   },
+   "PRAX-020": {
+    "description": "Not found in Investor Day material retrieved",
+    "stage": "unknown",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+    "confidence": "low"
+   }
+  }
+ },
+ "company": [
+  {
+   "fact": "Cash and investments",
+   "value": "~$1.3B at 2026-09-30 (vs ~$1.4B at 2026-06-30; $926.1M at 2025-12-31); runway into 2028",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+   "date": "2026-11-09",
+   "confidence": "high"
+  },
+  {
+   "fact": "Q3 2026 P&L",
+   "value": "Net loss $94.2M (vs $73.9M Q3 2025); EPS -$3.23 (consensus -$3.66); R&D $64.2M (vs $65.8M); G&A $42.7M (vs $12.6M) on commercial build",
+   "source_url": "https://www.gurufocus.com/news/9184831/praxis-precision-medicines-reports-q3-2026-loss-of-942-million-and-eps-of-323-beating-analyst-estimates-of-366",
+   "date": "2026-11-09",
+   "confidence": "high"
+  },
+  {
+   "fact": "January 2026 equity offering",
+   "value": "Priced 2,212,000 shares at $260.00 (~$575M gross); closed 2026-01-07 with 2,543,800 shares incl. option; net ~$621.2M",
+   "source_url": "https://www.globenewswire.com/news-release/2026/01/07/3214250/0/en/praxis-precision-medicines-inc-announces-pricing-of-575-million-public-offering.html",
+   "date": "2026-01-07",
+   "confidence": "high",
+   "note": "Final figures per 10-K subsequent events: https://www.sec.gov/Archives/edgar/data/1689548/000168954826000029/prax-20251231.htm"
+  },
+  {
+   "fact": "October 2025 equity offering",
+   "value": "~$567M raised; pro forma cash ~$1.5B as of January 2026 update",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000029/prax-20251231.htm",
+   "date": "2026-01",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Royalty/debt financing deals",
+   "value": "None found in retrieved sources (funding has been equity)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000029/prax-20251231.htm",
+   "date": "2026-11",
+   "confidence": "low"
+  },
+  {
+   "fact": "Market cap / share price",
+   "value": "~$9.4B market cap; share price ~$337.59 (Yahoo snapshot, capture date uncertain, approx. Nov 2026)",
+   "source_url": "https://uk.finance.yahoo.com/quote/PRAX/",
+   "date": "2026-11",
+   "confidence": "medium"
+  },
+  {
+   "fact": "Sell-side consensus",
+   "value": "21 analysts, 'Strong Buy'; average 12-month PT ~$653-$676; high $1,201; BTIG $826; Wells Fargo $343; Guggenheim $800",
+   "source_url": "https://stockanalysis.com/stocks/prax/",
+   "date": "2026-11",
+   "confidence": "medium",
+   "note": "Yahoo and StockAnalysis snapshots differ slightly ($676.20 vs $653)."
+  },
+  {
+   "fact": "CEO",
+   "value": "Marcio Souza, President & CEO (not re-verified in this session)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+   "date": "2026-11-09",
+   "confidence": "medium"
+  },
+  {
+   "fact": "COO",
+   "value": "Megan Sniecinski appointed Chief Operating Officer effective 2026-01-01 (previously Chief Business Officer Dec 2021-Dec 2025); speaks to account profiling and patient-support build on earnings calls",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000005/prax-20260108.htm",
+   "date": "2026-01-08",
+   "confidence": "high"
+  },
+  {
+   "fact": "Chief Commercial Officer",
+   "value": "Name not disclosed in retrieved sources; company states 'commercial leadership is in place' (Q2 2026)",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+   "date": "2026-08",
+   "confidence": "low"
+  },
+  {
+   "fact": "Regulatory communication policy",
+   "value": "Company will not communicate regulatory updates until PDUFA dates",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm",
+   "date": "2026-08",
+   "confidence": "high"
+  },
+  {
+   "fact": "Launch readiness (Q3 release)",
+   "value": "Relutrigine team fully hired; ulixacaltamide sales force expected in place in Q4 2026; management said it could be ready for an earlier (Q4 2026) approval",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm",
+   "date": "2026-11-09",
+   "confidence": "high"
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2025-08-04",
+   "event": "RADIANT positive topline (56.3% median FOS reduction)",
+   "asset": "vormatrigine",
+   "source_url": "https://www.globenewswire.com/news-release/2025/08/04/3126507/0/en/Praxis-Precision-Medicines-Announces-Positive-Best-in-Disease-Topline-Results-in-Patients-with-Focal-Onset-Seizures-from-the-RADIANT-Study-of-Vormatrigine.html"
+  },
+  {
+   "date": "2025-10-16",
+   "event": "Essential3 Study 1 and Study 2 positive topline",
+   "asset": "ulixacaltamide",
+   "source_url": "https://www.globenewswire.com/news-release/2025/10/16/3167786/0/en/Praxis-Precision-Medicines-Announces-Positive-Topline-Results-from-Two-Pivotal-Phase-3-Studies-of-Ulixacaltamide-HCl-in-the-Essential3-Program-for-Essential-Tremor.html"
+  },
+  {
+   "date": "2025-10",
+   "event": "~$567M equity offering",
+   "asset": "company",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000029/prax-20251231.htm"
+  },
+  {
+   "date": "2025-12",
+   "event": "FDA Breakthrough Therapy Designation for ulixacaltamide in ET",
+   "asset": "ulixacaltamide",
+   "source_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug"
+  },
+  {
+   "date": "2025-12",
+   "event": "EMBOLD registrational cohort results presented (53% placebo-adjusted reduction) at AES",
+   "asset": "relutrigine",
+   "source_url": "https://www.neurologylive.com/view/relutrigine-shows-promise-phase-2-embold-study-scn2a-dee-scn8a-dee"
+  },
+  {
+   "date": "2026-01-07",
+   "event": "$575M public offering priced/closed (net ~$621M)",
+   "asset": "company",
+   "source_url": "https://www.globenewswire.com/news-release/2026/01/07/3214250/0/en/praxis-precision-medicines-inc-announces-pricing-of-575-million-public-offering.html"
+  },
+  {
+   "date": "2026-02",
+   "event": "NDAs submitted for relutrigine and ulixacaltamide",
+   "asset": "relutrigine; ulixacaltamide",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000028/praxisye2025pr.htm"
+  },
+  {
+   "date": "2026-03-30",
+   "event": "Relutrigine NDA accepted, Priority Review, PDUFA 2026-09-27",
+   "asset": "relutrigine",
+   "source_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-and-priority"
+  },
+  {
+   "date": "2026-04-06",
+   "event": "EMBRAVE Part A positive (77% placebo-adjusted reduction)",
+   "asset": "elsunersen",
+   "source_url": "https://www.globenewswire.com/news-release/2026/04/06/3268372/0/en/Praxis-Precision-Medicines-Announces-Positive-Results-from-the-EMBRAVE-Part-A-Trial-of-Elsunersen-in-Patients-with-SCN2A-Early-Onset-Developmental-and-Epileptic-Encephalopathy.html"
+  },
+  {
+   "date": "2026-04-14",
+   "event": "Ulixacaltamide NDA accepted, PDUFA 2027-01-29",
+   "asset": "ulixacaltamide",
+   "source_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-announces-fda-acceptance-new-drug"
+  },
+  {
+   "date": "2026-06-01",
+   "event": "POWER1 missed primary endpoint; POWER2 enrollment paused",
+   "asset": "vormatrigine",
+   "source_url": "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-vormatrigine-program-update"
+  },
+  {
+   "date": "2026-06-29",
+   "event": "Relutrigine PDUFA extended 3 months to 2026-12-27 (major amendment: sensitivity analyses)",
+   "asset": "relutrigine",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000069/prax-20260629.htm"
+  },
+  {
+   "date": "2026-08",
+   "event": "Q2 results: mid-cycle meetings done, no major concerns, no AdCom planned",
+   "asset": "relutrigine; ulixacaltamide",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000082/praxisq22026pr.htm"
+  },
+  {
+   "date": "2026-11-09",
+   "event": "Q3 results: $1.3B cash; POWER2 restarted; EMERALD topline Q4 2026",
+   "asset": "company",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2026-11-12",
+   "event": "Investor Day: launch readiness, pricing corridors, $20B+ peak guidance, new pipeline",
+   "asset": "company",
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html"
+  },
+  {
+   "date": "2026-Q4 (expected)",
+   "event": "EMERALD topline (broad DEE)",
+   "asset": "relutrigine",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2026-12-27 (expected)",
+   "event": "Relutrigine PDUFA target action date",
+   "asset": "relutrigine",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2027-01-29 (expected)",
+   "event": "Ulixacaltamide PDUFA target action date; launch after DEA scheduling",
+   "asset": "ulixacaltamide",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2027 (expected)",
+   "event": "Relutrigine sNDA for broad DEE if EMERALD positive",
+   "asset": "relutrigine",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2027 (expected)",
+   "event": "Ulixacaltamide studies start in Parkinson's disease, RLS, ASD",
+   "asset": "ulixacaltamide",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351"
+  },
+  {
+   "date": "2027 (expected)",
+   "event": "POWER2 topline; POWER3 initiation",
+   "asset": "vormatrigine",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2027 (expected)",
+   "event": "EMBRAVE3 topline",
+   "asset": "elsunersen",
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001689548/000168954826000086/praxisq32026pr.htm"
+  },
+  {
+   "date": "2027 (expected)",
+   "event": "PRAX-215 Phase 1 readout; PRAX-206 enters clinic (early 2027)",
+   "asset": "pipeline",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351"
+  },
+  {
+   "date": "2028 (expected)",
+   "event": "PRAX-110 enters clinic",
+   "asset": "pipeline",
+   "source_url": "https://www.investing.com/news/company-news/praxis-outlines-launch-plans-for-two-drug-candidates-93CH-5023351"
+  }
+ ],
+ "open_questions": [
+  "Full verbatim text of the 2026-11-12 press release and the slide deck could not be fetched (globenewswire.com, sec.gov, stocktitan.net blocked); all Investor Day facts come from search-engine extractions. Verify against https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+  "Relutrigine field team headcount, number of regions, and Tier 1/Tier 2 HCP counts - not found.",
+  "Relutrigine hub/patient-support brand, specialty pharmacy partners, sponsored genetic testing program - not found.",
+  "Relutrigine price: $400-600K WAC (Investor Day) vs $450-650K (Goldman conference) - which is current, and net price?",
+  "Ulixacaltamide: is the ~300 figure sales reps only or total field (sales + MSL + access)? Structure by region not found.",
+  "Ulixacaltamide payer percentages (65% Part D / 30% commercial) - confirm these are patient payer mix; gross-to-net not disclosed.",
+  "Ulixacaltamide telehealth plans, copay program, ET patient segmentation beyond 9M / 2M - not found.",
+  "Peak-sales slide deltas (+$2.3B etc.) - confirm baseline is consensus-assuming-approval.",
+  "POWER1 quantitative results (effect size, p-values, n) and the redesigned POWER2 dose/design/timing - not retrieved.",
+  "EMBOLD cohort 2: seizure-freedom rate, exact p-value for primary, AE table; 18-month OLE n - not retrieved.",
+  "Essential3 specific AE rates (dizziness, brain fog, constipation etc.) and confirmed commercial dose - not retrieved.",
+  "Identity of the six Solidus ASO programs and PRAX-110 indication; status of PRAX-020/050.",
+  "Chief Commercial Officer name; exact current market cap/share count.",
+  "Post-Investor-Day analyst reactions and individual peak-sales models - search budget exhausted before retrieval.",
+  "NCT numbers for EMBOLD, Essential3, POWER1/2, EMBRAVE/EMBRAVE3 - not retrieved (only EMERALD NCT07010471)."
+ ]
+}

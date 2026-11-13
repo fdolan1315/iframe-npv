@@ -1,0 +1,1613 @@
+{
+ "meta": {
+  "compiled": "2026-11-13",
+  "method": "WebSearch snippets only (direct fetch blocked; search budget exhausted before all gaps were closed). 'not found' = not retrieved this session. Items marked 'background knowledge' or 'derived' are not directly sourced.",
+  "blocked_hosts": [
+   "www.sec.gov",
+   "www.globenewswire.com"
+  ]
+ },
+ "payer_structure": [
+  {
+   "topic": "Coverage by channel",
+   "fact": "Share of US population by coverage type (types overlap; people can hold more than one)",
+   "value": "Employer 53.8%; Medicare 19.1%; Medicaid 17.8% (down from 18.9% in 2023); direct-purchase 10.7%; uninsured 8.0%; ~310M insured",
+   "year": 2024,
+   "source_url": "https://www.fiercehealthcare.com/regulatory/census-bureau-8-americans-were-uninsured-2024",
+   "confidence": "high"
+  },
+  {
+   "topic": "Uninsured",
+   "fact": "Uninsured ages 0-64 (ACS)",
+   "value": "26.7M; rate 9.8% (up from 9.5%)",
+   "year": 2024,
+   "source_url": "https://www.kff.org/uninsured/issue-brief/key-facts-about-the-uninsured-population",
+   "confidence": "high"
+  },
+  {
+   "topic": "Medicaid/CHIP",
+   "fact": "Total Medicaid+CHIP enrollment, Dec 2025",
+   "value": "75.7M (Medicaid 68.5M + CHIP 7.2M); down ~3.7M (4.7%) vs Dec 2024; child Medicaid+CHIP enrollees 36.0M",
+   "year": 2025,
+   "source_url": "https://acasignups.net/node/9822",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Medicaid/CHIP",
+   "fact": "Total Medicaid+CHIP enrollment, Mar 2026",
+   "value": "74.3M; children 35.6M",
+   "year": 2026,
+   "source_url": "https://acasignups.net/node/9934",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Medicaid managed care",
+   "fact": "National share of Medicaid enrollees in comprehensive managed care",
+   "value": "not found (MACPAC: more than half of Medicaid spending is MCO capitation; 42 states contract with MCOs)",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicaid/issue-brief/management-and-delivery-of-the-medicaid-pharmacy-benefit/",
+   "confidence": "low"
+  },
+  {
+   "topic": "Medicare",
+   "fact": "Total Medicare beneficiaries",
+   "value": "68.8M",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicare/issue-brief/key-facts-about-medicare-part-d-enrollment-premiums-and-cost-sharing-in-2025/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Medicare Part D",
+   "fact": "Part D enrollment and split",
+   "value": "54.8M in Part D; 58% MA-PD (~32M), 42% stand-alone PDP (~23M); avg premium PDP $39/mo vs MA-PD $7/mo",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicare/issue-brief/key-facts-about-medicare-part-d-enrollment-premiums-and-cost-sharing-in-2025/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Medicare Advantage",
+   "fact": "Total MA enrollment / share of beneficiaries",
+   "value": "not found (only insurer-level counts retrieved; MA-PD ~32M is a floor)",
+   "year": 2025,
+   "source_url": "https://www.beckerspayer.com/payer/which-medicare-advantage-insurers-gained-lost-members-for-2025/",
+   "confidence": "low"
+  },
+  {
+   "topic": "Medicare Advantage",
+   "fact": "MA enrollment by insurer, Feb 2025 (CMS)",
+   "value": "UnitedHealthcare 9.92M; Humana 5.84M; Aetna 4.15M; Elevance 2.29M; Centene 1.05M; Cigna 0.70M",
+   "year": 2025,
+   "source_url": "https://www.beckerspayer.com/payer/which-medicare-advantage-insurers-gained-lost-members-for-2025/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Commercial lives",
+   "fact": "Absolute commercial covered lives (fully insured + self-funded)",
+   "value": "not found (use Census 53.8% employer + 10.7% direct purchase as proxy)",
+   "year": 2024,
+   "source_url": "https://www.fiercehealthcare.com/regulatory/census-bureau-8-americans-were-uninsured-2024",
+   "confidence": "low"
+  },
+  {
+   "topic": "CHIP",
+   "fact": "Separate CHIP enrollment",
+   "value": "7.2M",
+   "year": 2025,
+   "source_url": "https://acasignups.net/node/9822",
+   "confidence": "medium"
+  },
+  {
+   "topic": "PBM concentration",
+   "fact": "Share of equivalent prescription claims managed, 2024 (Drug Channels Institute)",
+   "value": "Express Scripts 30% (23% in 2023); CVS Caremark 27% (34% in 2023); Optum Rx 23%; top three = 80%. Shift driven by ~20M Centene lives moving from Caremark to Express Scripts",
+   "year": 2024,
+   "source_url": "https://www.drugchannels.net/2025/03/the-top-pharmacy-benefit-managers-of.html",
+   "confidence": "high"
+  },
+  {
+   "topic": "GPO/rebate aggregators",
+   "fact": "Zinc Health Services",
+   "value": "CVS Caremark's GPO, formed 2020 (US-based); Elevance/CarelonRx reported as external member (Elevance stake unconfirmed by CVS)",
+   "year": 2023,
+   "source_url": "https://www.biopharmadive.com/news/ftc-pbm-investigation-zinc-ascent/650619/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "GPO/rebate aggregators",
+   "fact": "Ascent Health Services",
+   "value": "Express Scripts/Cigna GPO founded 2019 (Switzerland); also contracts for Prime Therapeutics (and downstream e.g. Navitus), Envolve (Centene) and Humana Pharmacy Solutions (Humana commercial since Apr 2021)",
+   "year": 2023,
+   "source_url": "https://www.drugchannels.net/2023/10/five-or-maybe-six-reasons-that-largest.html?m=1",
+   "confidence": "medium"
+  },
+  {
+   "topic": "GPO/rebate aggregators",
+   "fact": "Emisar Pharma Services",
+   "value": "Optum Rx/UnitedHealth GPO (Ireland-based per trade sources); covered lives per GPO: not found",
+   "year": 2023,
+   "source_url": "https://www.eversana.com/insights/peeking-behind-the-pbm-led-gpo-curtain/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "GPO scrutiny",
+   "fact": "FTC 6(b) orders to Zinc and Ascent",
+   "value": "FTC ordered both GPOs to provide business-practice information (2023)",
+   "year": 2023,
+   "source_url": "https://www.ftc.gov/node/81025",
+   "confidence": "high"
+  }
+ ],
+ "top_payers": [
+  {
+   "name": "UnitedHealth Group / UnitedHealthcare",
+   "type": "national insurer + PBM owner",
+   "lives_millions": "44.8 (Mark Farrah 2025 ranking); 48.3 medical members in a later quarterly roundup; MA 9.92",
+   "pbm": "Optum Rx (23% of claims 2024); GPO Emisar",
+   "notes": "Largest MA insurer; sources use different member definitions",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "Elevance Health (Anthem)",
+   "type": "national insurer (BCBS licensee in 14 states)",
+   "lives_millions": "36.1 (2025 ranking); 44.9-45.2 total medical members incl. BCBS-affiliated; MA 2.29",
+   "pbm": "CarelonRx (claims processed on CVS Caremark platform; rebates via Zinc)",
+   "notes": "Large Medicaid MCO footprint",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "CVS Health / Aetna",
+   "type": "national insurer + PBM owner",
+   "lives_millions": "24.9 (2025 ranking); 26.1 medical members quarterly; MA 4.15",
+   "pbm": "CVS Caremark (27% of claims 2024); GPO Zinc",
+   "notes": "Caremark lost ~20M Centene lives in 2024",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "Cigna Healthcare / Evernorth",
+   "type": "national insurer + PBM owner",
+   "lives_millions": "16.2 (2025 ranking); 18.5 quarterly; MA 0.70 (MA business divested to HCSC)",
+   "pbm": "Express Scripts (30% of claims 2024, #1); GPO Ascent",
+   "notes": "Express Scripts PBM lives count: not found",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "Centene",
+   "type": "Medicaid/Marketplace-focused insurer",
+   "lives_millions": "19.0 (2025 ranking); 25.7-28.6 total members in company/quarterly figures; MA 1.05",
+   "pbm": "Express Scripts (since 2024, ~20M lives); Envolve via Ascent",
+   "notes": "Largest Medicaid MCO; critical for pediatric DEE",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "Health Care Service Corp (HCSC)",
+   "type": "BCBS licensee (IL, TX, MT, NM, OK)",
+   "lives_millions": "18.7 (2025 ranking)",
+   "pbm": "Prime Therapeutics (co-owner); rebates via Ascent",
+   "notes": "Single-source figure",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "Kaiser Permanente",
+   "type": "integrated delivery network/insurer",
+   "lives_millions": "12.3 (2025 ranking)",
+   "pbm": "In-house closed formulary",
+   "notes": "Own P&T; closed system",
+   "source_url": "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/"
+  },
+  {
+   "name": "Humana",
+   "type": "Medicare-focused insurer",
+   "lives_millions": "7.5 (2025 ranking; conflicts with 18.0 in quarterly roundup that likely counts PDP/specialty); MA 5.84",
+   "pbm": "Humana Pharmacy Solutions/CenterWell; commercial rebates via Ascent",
+   "notes": "#2 MA insurer - key for ET",
+   "source_url": "https://www.beckerspayer.com/payer/which-medicare-advantage-insurers-gained-lost-members-for-2025/"
+  },
+  {
+   "name": "Molina Healthcare",
+   "type": "Medicaid MCO",
+   "lives_millions": "4.9 (quarterly roundup, down from 5.6; year not stated in snippet)",
+   "pbm": "not found (historically CVS Caremark)",
+   "notes": "Not in top-10 ranking; low confidence",
+   "source_url": "https://www.beckerspayer.com/?p=30374"
+  },
+  {
+   "name": "Prime Therapeutics",
+   "type": "PBM owned by BCBS plans",
+   "lives_millions": "not found",
+   "pbm": "Prime; rebates aggregated via Ascent; claims on Express Scripts platform",
+   "notes": "Serves many non-Elevance Blues incl. HCSC",
+   "source_url": "https://www.drugchannels.net/2023/10/five-or-maybe-six-reasons-that-largest.html?m=1"
+  },
+  {
+   "name": "CVS Caremark",
+   "type": "PBM",
+   "lives_millions": "not found (27% of 2024 claims)",
+   "pbm": "self; GPO Zinc",
+   "notes": "Share fell from 34% (2023)",
+   "source_url": "https://www.beckershospitalreview.com/pharmacy/top-pbms-by-2024-market-share/"
+  },
+  {
+   "name": "Express Scripts",
+   "type": "PBM",
+   "lives_millions": "not found (30% of 2024 claims)",
+   "pbm": "self; GPO Ascent",
+   "notes": "#1 by claims 2024",
+   "source_url": "https://www.beckershospitalreview.com/pharmacy/top-pbms-by-2024-market-share/"
+  },
+  {
+   "name": "Optum Rx",
+   "type": "PBM",
+   "lives_millions": "not found (23% of 2024 claims)",
+   "pbm": "self; GPO Emisar",
+   "notes": "",
+   "source_url": "https://www.beckershospitalreview.com/pharmacy/top-pbms-by-2024-market-share/"
+  }
+ ],
+ "medicaid_rare_epilepsy": [
+  {
+   "topic": "DEE payer mix",
+   "fact": "Possible-LGS cohort split, MarketScan 2010-2015 (not population-weighted)",
+   "value": "3,749 Medicaid vs 2,270 commercial = ~62% Medicaid of 6,019 patients (derived); mean age 13",
+   "year": 2018,
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/30241056/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "DEE payer mix",
+   "fact": "LGS prevalence by payer type (per 100,000 members)",
+   "value": "60.8 in a Medicaid plan vs 13 in a commercial plan (~4.7x)",
+   "year": 2024,
+   "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/epi.17866",
+   "confidence": "medium"
+  },
+  {
+   "topic": "DEE payer mix",
+   "fact": "Dravet / SCN2A / SCN8A / CDKL5-specific Medicaid share",
+   "value": "not found - planning range 45-65% Medicaid/CHIP (primary or secondary) is an inference from LGS data and CSHCN data, not a sourced figure",
+   "year": 2026,
+   "source_url": "https://pubmed.ncbi.nlm.nih.gov/30241056/",
+   "confidence": "low"
+  },
+  {
+   "topic": "CSHCN coverage",
+   "fact": "Medicaid role for children with special health care needs",
+   "value": "Medicaid/CHIP covers >4 in 10 CSHCN; sole coverage for ~1 in 3; a further ~9% have Medicaid supplementing private insurance; state range <30% (UT, HI, IL) to >=60% (MS, LA, AR)",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicaid/issue-brief/5-key-facts-about-children-with-special-health-care-needs-and-medicaid/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Katie Beckett/TEFRA",
+   "fact": "Disability pathway for children regardless of parental income",
+   "value": "43 states (state plan option) to 50 states (incl. waiver variants) depending on source/year; Family Opportunity Act buy-in in 9 states; national enrollment count not found",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicaid/issue-brief/medicaids-role-for-children-with-special-health-care-needs-a-look-at-eligibility-services-and-spending/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Katie Beckett/TEFRA",
+   "fact": "Per-child spending on Katie Beckett pathway",
+   "value": "$17,500 vs $3,023 per Medicaid child overall (~6x)",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicaid/issue-brief/medicaids-role-for-children-with-special-health-care-needs-a-look-at-eligibility-services-and-spending/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "MDRP",
+   "fact": "Basic rebate for innovator drugs",
+   "value": "Greater of 23.1% of AMP or AMP minus best price, plus inflation (CPI-U) additional rebate. 23.1% figure is statutory (SSA 1927) but was not directly retrieved this session",
+   "year": 2024,
+   "source_url": "https://www.kff.org/medicaid/what-are-the-implications-of-the-recent-elimination-of-the-medicaid-prescription-drug-rebate-cap/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "MDRP",
+   "fact": "AMP cap removal",
+   "value": "100%-of-AMP cap on total rebates (in place since 2010) eliminated 1 Jan 2024 by ARPA; rebates can now exceed AMP for drugs with large cumulative price increases; CBO savings >$17B/10 yrs; IQVIA est. 15-20% of brands were at the cap",
+   "year": 2024,
+   "source_url": "https://www.kff.org/medicaid/what-are-the-implications-of-the-recent-elimination-of-the-medicaid-prescription-drug-rebate-cap/",
+   "confidence": "high"
+  },
+  {
+   "topic": "MDRP",
+   "fact": "Implication for launch pricing",
+   "value": "Launch price sets baseline AMP for inflation penalty; high launch price + low annual increases is favored. Best price exposure: any commercial rebate >23.1% resets Medicaid rebate nationally",
+   "year": 2024,
+   "source_url": "https://www.iqvia.com/locations/united-states/blogs/2023/04/the-impact-of-amp-cap-removal-on-medicaid-drug-prices",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Medicaid coverage mandate",
+   "fact": "Open formulary",
+   "value": "States must cover essentially all FDA-approved drugs of manufacturers with a rebate agreement, but may impose PA; new drugs are commonly put on PA until P&T/DUR review",
+   "year": 2024,
+   "source_url": "https://www.kff.org/report-section/how-state-medicaid-programs-are-managing-prescription-drug-costs-pharmacy-benefit-administration/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Medicaid time to policy",
+   "fact": "P&T/DUR review lag for new drugs",
+   "value": "Industry brief: 6 months to a year in many states; MACPAC recommended letting states restrict new drugs for 180 days (not enacted); fastest states show first claims ~2-2.5 months after national first claim",
+   "year": 2023,
+   "source_url": "https://alliancerm.org/wp-content/uploads/2025/09/20231106-ARM_Medicaid-Access-Barriers-Issue_WEB.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Commercial time to coverage",
+   "fact": "New-to-market blocks",
+   "value": "Blocks of up to 180 days common; P&T typically meets within ~90 days, formulary placement 4-8 weeks after decision; UHC 'Review at Launch' excludes new drugs until reviewed",
+   "year": 2025,
+   "source_url": "https://www.mmitnetwork.com/glossary/new-to-market-blocks/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Commercial time to coverage",
+   "fact": "Coverage policy lag (ICER/Tufts SPEC)",
+   "value": "Majority of drugs launched in 2024 lacked a published coverage policy up to 1 year post approval; ~50% had policies ~7 months post approval",
+   "year": 2025,
+   "source_url": "https://pharmadossier.com/blog/new-to-market-payer-blocks-first-180-days",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Part D time to coverage",
+   "fact": "CMS expectation",
+   "value": "P&T review within 90 days and decision within 180 days of market release (anticonvulsants are a protected class in Part D - protected-class status not retrieved this session)",
+   "year": 2016,
+   "source_url": "https://www.cms.gov/Medicare/Prescription-Drug-Coverage/PrescriptionDrugCovContra/Downloads/Part-D-Benefits-Manual-Chapter-6.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Distribution",
+   "fact": "Fintepla",
+   "value": "Restricted distribution via FINTEPLA REMS (valvular heart disease/PAH; echo monitoring); at launch a single specialty distributor reselling through its related specialty pharmacy",
+   "year": 2020,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1375151/000137515120000153/zgnx-20200930.htm",
+   "confidence": "high"
+  },
+  {
+   "topic": "Distribution",
+   "fact": "Ztalmy",
+   "value": "ZTALMY One hub manages prescribing/fulfilment; Orsini as exclusive specialty pharmacy; ASD specialty distributor for inpatient pharmacies",
+   "year": 2023,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1267813/000155837023014408/mrns-20230630x10q.htm",
+   "confidence": "high"
+  },
+  {
+   "topic": "Distribution",
+   "fact": "Epidiolex",
+   "value": "Sold to specialty pharmacies and specialty distributors (no REMS); named network not found",
+   "year": 2025,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000013/jazz-20251231.htm",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Distribution",
+   "fact": "Diacomit / Daybue",
+   "value": "Listed as specialty/limited-distribution on payer lists; manufacturer hub/SP names not found",
+   "year": 2026,
+   "source_url": "https://www.bcbsfl.com/DocumentLibrary/Providers/Content/Rx_LimitedDistributionDrugs.pdf",
+   "confidence": "low"
+  },
+  {
+   "topic": "REMS",
+   "fact": "Implication",
+   "value": "Fintepla is the only one of the four with a REMS: prescriber, pharmacy and patient enrolment plus baseline and periodic echocardiograms, written into Medicaid PA criteria (e.g. WV)",
+   "year": 2024,
+   "source_url": "https://bms.wv.gov/media/40583/download",
+   "confidence": "high"
+  }
+ ],
+ "pa_criteria_examples": [
+  {
+   "payer_or_state": "West Virginia Medicaid (BMS)",
+   "drug": "Fintepla",
+   "criteria": [
+    "Diagnosis Dravet or LGS, age >=2",
+    "Prescribed by or in consultation with neurologist",
+    "Prescriber, pharmacy and patient enrolled in Fintepla REMS; echocardiogram monitoring",
+    "LGS: prior trial of other antiseizure medications",
+    "Continuation approvals 12 months"
+   ],
+   "source_url": "https://bms.wv.gov/media/40583/download"
+  },
+  {
+   "payer_or_state": "Georgia Medicaid (DCH) / CareSource GA",
+   "drug": "Fintepla",
+   "criteria": [
+    "Dravet or LGS, age >=2",
+    "Neurologist prescriber requirement added in 2024 version",
+    "Initial authorization 6 months; renewals 12 months",
+    "Earlier step requirements for Dravet (e.g. Diacomit/topiramate) removed in later versions"
+   ],
+   "source_url": "https://dch.georgia.gov/document/document/anticonvulsants-pa/download"
+  },
+  {
+   "payer_or_state": "Centene (CP.PMN.246; Superior, Sunshine Health)",
+   "drug": "Fintepla",
+   "criteria": [
+    "Dravet or LGS diagnosis, age >=2",
+    "Neurologist prescribed/consulted",
+    "Continuation requires documentation of current therapy/positive response",
+    "Specific % seizure-reduction threshold: not found"
+   ],
+   "source_url": "https://www.superiorhealthplan.com/content/dam/centene/Superior/policies/pharmacy-policies/CP.PMN.246-09012022.pdf"
+  },
+  {
+   "payer_or_state": "North Carolina Medicaid",
+   "drug": "Epidiolex",
+   "criteria": [
+    "Age >=1",
+    "Seizures associated with LGS, Dravet or TSC",
+    "Prescriber attests use as add-on to >=1 antiepileptic drug",
+    "Renewal: continues to meet initial criteria"
+   ],
+   "source_url": "https://medicaid.ncdhhs.gov/epidiolexpdf/open"
+  },
+  {
+   "payer_or_state": "Iowa Medicaid",
+   "drug": "Epidiolex",
+   "criteria": [
+    "Initial approval 3 months",
+    "Form asks whether prescriber is a neurologist",
+    "LGS/Dravet/TSC diagnosis"
+   ],
+   "source_url": "https://hhs.iowa.gov/media/6153/download"
+  },
+  {
+   "payer_or_state": "Neighborhood Health Plan of RI (Medicaid)",
+   "drug": "Epidiolex",
+   "criteria": [
+    "LGS or Dravet (TSC in later versions)",
+    "History of prior and current antiepileptic therapy required for new starts",
+    "Documented inadequate response to >=1 AED (older version)",
+    "6-month authorizations"
+   ],
+   "source_url": "https://www.nhpri.org/wp-content/uploads/2024/03/Medicaid_Epidiolex_20240124.pdf"
+  },
+  {
+   "payer_or_state": "Louisiana Medicaid",
+   "drug": "Epidiolex",
+   "criteria": [
+    "Indicated diagnosis and age",
+    "Renewal requires continued satisfaction of initial criteria"
+   ],
+   "source_url": "https://www.ldh.la.gov/assets/medicaid/MCPP/12.12.19/Epidiolex.Criteria.FINAL.120219.pdf"
+  },
+  {
+   "payer_or_state": "Neighborhood Health Plan of RI (Medicaid)",
+   "drug": "Diacomit",
+   "criteria": [
+    "Dravet diagnosis confirmed by two unaffiliated neurologists/epileptologists",
+    "Baseline neutrophil and platelet counts",
+    "Initial authorization 12 weeks; continuation up to 12 months"
+   ],
+   "source_url": "https://nhpri.org/wp-content/uploads/2025/01/Medicaid_diacomit_20250108.pdf"
+  },
+  {
+   "payer_or_state": "Minnesota Medicaid (MHCP) (2019 page)",
+   "drug": "Diacomit",
+   "criteria": [
+    "Age >=2",
+    "Neurologist prescriber",
+    "Used with at least one other AED (label: with clobazam)",
+    "Renewal: hematologic test results every 6 months plus prescriber attestation of effectiveness",
+    "Powder excluded for PKU"
+   ],
+   "source_url": "https://mn.gov/dhs/partners-and-providers/policies-procedures/minnesota-health-care-programs/provider/types/rx/pa-criteria/diacomit.jsp"
+  },
+  {
+   "payer_or_state": "Sunshine Health (Centene, FL)",
+   "drug": "Diacomit",
+   "criteria": [
+    "Dravet syndrome, age >=6 months",
+    "Neurologist/epileptologist prescribed or consulted",
+    "Adjunct to clobazam",
+    "Baseline hematologic testing"
+   ],
+   "source_url": "https://www.sunshinehealth.com/content/dam/centene/prior-auth-forms/fl/Diacomit_Criteria.pdf"
+  },
+  {
+   "payer_or_state": "AvMed (commercial, 2024)",
+   "drug": "Diacomit",
+   "criteria": [
+    "Adjunctive with clobazam, verified by paid pharmacy claims",
+    "Samples do not satisfy step/PA criteria"
+   ],
+   "source_url": "https://www.avmed.org/media/4hvltceu/padiacomit_avmed_2024.pdf"
+  },
+  {
+   "payer_or_state": "Western Health Advantage",
+   "drug": "Diacomit",
+   "criteria": [
+    "Age >=2, chart-confirmed Dravet",
+    "Tried and failed valproate"
+   ],
+   "source_url": "https://www.westernhealth.com/provider/prior-authorization-archive/stiripentol-diacomit/"
+  },
+  {
+   "payer_or_state": "Alaska Medicaid (2023)",
+   "drug": "Ztalmy",
+   "criteria": [
+    "CDKL5 deficiency disorder with genetically confirmed pathogenic/likely pathogenic CDKL5 variant",
+    "Age >=2",
+    "Tried and failed, or currently taking, >=2 prior antiseizure drugs"
+   ],
+   "source_url": "https://health.alaska.gov/media/4vlf31zn/5biv-ztalmy_criteria_2023.pdf"
+  },
+  {
+   "payer_or_state": "Cigna / Express Scripts",
+   "drug": "Ztalmy",
+   "criteria": [
+    "CDD with molecular confirmation of CDKL5 variant",
+    "Prescribed by or in consultation with neurologist",
+    "Tried or concurrently receiving >=2 other antiseizure medications",
+    "Age >=2"
+   ],
+   "source_url": "https://static.cigna.com/assets/chcp/pdf/coveragePolicies/cnf/cnf_761_coveragepositioncriteria_antiepileptics_ztalmy_pa.pdf"
+  },
+  {
+   "payer_or_state": "ConnectiCare (commercial)",
+   "drug": "Ztalmy",
+   "criteria": [
+    "Confirmed pathogenic/likely pathogenic CDKL5 variant",
+    "Neurologist involvement",
+    "Reauthorization: documented sustained reduction in monthly seizure frequency vs baseline"
+   ],
+   "source_url": "https://espanol.connecticare.com/content/dam/connecticare/pdfs/providers/pharmacy/commercial/ztalmy.pdf"
+  },
+  {
+   "payer_or_state": "Sunshine Health (Centene, FL Medicaid)",
+   "drug": "Ztalmy",
+   "criteria": [
+    "CDKL5 gene test result submitted",
+    "Neurologist prescribed/consulted",
+    "Documentation of response to prior therapies",
+    "Initial 6 months; continuation 12 months"
+   ],
+   "source_url": "https://www.SunShineHealth.com/content/dam/centene/prior-auth-forms/fl/Ztalmy-Criteria.pdf"
+  }
+ ],
+ "launch_analogs": [
+  {
+   "drug": "Epidiolex (cannabidiol)",
+   "company": "GW Pharmaceuticals -> Jazz (2021)",
+   "indication": "LGS, Dravet (2018); TSC (2020)",
+   "approval_date": "2018-06-25 (date from background knowledge, not retrieved this session); US launch 2018-11-01",
+   "launch_wac_annual_usd": 32500,
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2018": 4.7,
+    "2019": "not found (Q1 2019 = 33.5)",
+    "2020": "not found",
+    "2021": "463.6 Jazz-reported partial year; 658.3 pro forma",
+    "2022": "not found",
+    "2023": 845.5,
+    "2024": 972.4,
+    "2025": "~1,100 (Q4 = 287)"
+   },
+   "patients_by_year": {
+    "2019": ">7,600 patients had received a prescription by Q1 2019 report; ~2,000 prescribing physicians"
+   },
+   "field_force": "Plan: 60-70 US sales professionals targeting 4,000-5,000 physicians incl. all NAEC level 3/4 centers (GW 2017 20-F); by Q1 2019 had reached ~70% of 5,000 targets",
+   "notes": "Launch price was a weight-based average ($1,235 per 100 mL bottle), set deliberately at parity with branded AEDs after payer feedback. Reached ~$1B/yr in year 7; still growing 9% in 2025. Revenue figures are worldwide (US majority). 2019, 2020, 2022 actuals not retrieved.",
+   "sources": [
+    "https://www.fiercepharma.com/marketing/epidiolex-launch-official-first-cbd-approved-by-fda-shelves-but-high-price-spurs-some",
+    "https://www.sec.gov/Archives/edgar/data/1351288/000156459019005037/gwph-10kt_20181231.htm",
+    "https://www.biopharmadive.com/news/gw-pharma-epidiolex-sales-beat-tsc-trial-success/554196/",
+    "https://www.sec.gov/Archives/edgar/data/0001351288/000114420417062057/tv480101-20f.htm",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2024",
+    "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2025",
+    "https://www.biospace.com/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2023-financial-results-and-provides-2024-financial-guidance"
+   ]
+  },
+  {
+   "drug": "Fintepla (fenfluramine)",
+   "company": "Zogenix -> UCB (2022)",
+   "indication": "Dravet (2020); LGS (2022); CDD (later)",
+   "approval_date": "2020-06-25; US launch July 2020",
+   "launch_wac_annual_usd": 96000,
+   "current_wac_annual_usd": "not found (ISPOR 2024 poster, Biocodex-funded: $186,996-$231,519 per patient-year at Jan-2024 WAC, dose/weight dependent)",
+   "revenue_by_year": {
+    "2020": 9.6,
+    "2021": 74.7,
+    "2022": "not found",
+    "2023": "EUR 226M (UCB, restated)",
+    "2024": "EUR 340M (+50%)",
+    "2025": "EUR 427M (+26%)"
+   },
+   "patients_by_year": {
+    "2020": "416 patients on reimbursed therapy at year-end (~60% new to Fintepla, rest from EAP/trials)",
+    "2021": "1,129 patients prescribed and referred to REMS (US) at year-end"
+   },
+   "field_force": "not found",
+   "notes": "Average list price assumed 35 kg patient; $1,278 per 30 mL bottle; ~3x Epidiolex. REMS with echo monitoring slowed onboarding. 2020-21 are Zogenix USD net product sales (2021 total revenue $81.7M incl. collaboration); 2023-25 are UCB global EUR.",
+   "sources": [
+    "https://www.biopharmadive.com/news/zogenix-fintepla-fda-approval-dravet-syndrome/580608/",
+    "https://endpts.com/?p=265714",
+    "https://www.sec.gov/Archives/edgar/data/1375151/000137515121000008/zgnx-20201231erexx991.htm",
+    "https://www.sec.gov/Archives/edgar/data/1375151/000137515122000015/zgnx-20211231.htm",
+    "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf",
+    "https://www.ucb.com/sites/default/files/2025-02/management_report_fy24_en_0.pdf",
+    "https://www.ispor.org/docs/default-source/intl2024/ispor24fourcroy-138552poster138552-pdf.pdf?sfvrsn=d09ec900_0"
+   ]
+  },
+  {
+   "drug": "Diacomit (stiripentol)",
+   "company": "Biocodex",
+   "indication": "Dravet, adjunct to clobazam",
+   "approval_date": "2018-08 (FDA); US launch date not found",
+   "launch_wac_annual_usd": "~45,000 for a 25 kg child at 50 mg/kg/day (derived: $3,750/month WAC x 12; $25 per 250 mg capsule, 2019-20)",
+   "current_wac_annual_usd": "$68,486-$136,971 per patient-year (ISPOR 2024 poster, Biocodex-funded; two dosing scenarios)",
+   "revenue_by_year": {
+    "all": "not found (private company)"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "not found",
+   "notes": "Private company; no revenue disclosure. Useful as low-price comparator in Dravet.",
+   "sources": [
+    "https://dss.mo.gov/mhd/cs/pharmacy/pdf/diacomit-clinical.pdf",
+    "https://www.ispor.org/docs/default-source/intl2024/ispor24fourcroy-138552poster138552-pdf.pdf?sfvrsn=d09ec900_0",
+    "https://www.ispor.org/docs/default-source/intl2024/ispor24weston-138749poster138749-pdf.pdf?sfvrsn=fa8938b7_0"
+   ]
+  },
+  {
+   "drug": "Ztalmy (ganaxolone)",
+   "company": "Marinus -> Immedica (acquisition not verified this session)",
+   "indication": "CDKL5 deficiency disorder, age >=2",
+   "approval_date": "2022-03 (date from background knowledge, not retrieved this session); US launch July 2022",
+   "launch_wac_annual_usd": "not found (ICER 2025 launch-price table lists $289,678 and $231,742, likely list and net)",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2022": 2.9,
+    "2023": "19.5-19.7 (preliminary)",
+    "2024": "33-35 guidance (Q1 7.5; Q2 8.0)"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "not found",
+   "notes": "Ultra-rare (CDD): slow, steady build; ~$35M in year 3. Hub ZTALMY One + exclusive SP Orsini. Orion partnered ex-US.",
+   "sources": [
+    "https://www.businesswire.com/news/home/20230105005955/en/Marinus-Pharmaceuticals-Reports-Preliminary-Fourth-Quarter-and-Full-Year-2022-ZTALMY-Net-Product-Revenue-and-Provides-Business-Update",
+    "https://ir.marinuspharma.com/news/news-details/2024/Marinus-Pharmaceuticals-Reports-Preliminary-Fourth-Quarter-and-Full-Year-2023-ZTALMY-Net-Product-Revenue-and-Provides-Business-Update/default.aspx",
+    "https://ir.marinuspharma.com/news/news-details/2024/Marinus-Pharmaceuticals-Provides-Business-Update-and-Reports-Second-Quarter-2024-Financial-Results/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/1267813/000155837023014408/mrns-20230630x10q.htm",
+    "https://icer.org/wp-content/uploads/2025/10/ICER_2025_Launch-Price-and-Access-Final-Report_For-Publication.pdf"
+   ]
+  },
+  {
+   "drug": "Daybue (trofinetide)",
+   "company": "Acadia",
+   "indication": "Rett syndrome, age >=2",
+   "approval_date": "2023-03-10 (date from background knowledge, not retrieved this session); US launch 2023-04-17",
+   "launch_wac_annual_usd": "575,000-595,000 (company-stated average annual list at approval)",
+   "current_wac_annual_usd": "616,120 list / 502,446 net (ICER 2025 report table; column labels not confirmed)",
+   "revenue_by_year": {
+    "2023": "~177 (derived from 2024 = 348.4, +97%); Q2 2023 = 23.2",
+    "2024": 348.4,
+    "2025": "385-400 guidance (actual not retrieved)",
+    "2026": "Q1 = 101; Q3 = 140 (+39% y/y)"
+   },
+   "patients_by_year": {
+    "2025": "954 unique patients shipped in Q1; >1,000 in Q3 (incl. ex-US named patient)"
+   },
+   "field_force": "Launch size not found; expanded ~30% (completed May 2025)",
+   "notes": "Fast start then plateau in 2024 driven by GI-tolerability discontinuations (persistency % not retrieved). Gross-to-net 23.2% in Q3 2026. Growth volume-driven.",
+   "sources": [
+    "https://firstwordpharma.com/story/5715553",
+    "https://www.sec.gov/Archives/edgar/data/1070494/000119312523188839/d533087dex991.htm",
+    "https://biotechdispatch.com.au/news/neuren-says-us-sales-of-rett-syndrome-therapy-towards-the-top-end-of-guidance",
+    "https://www.businesswire.com/news/home/20251105491823/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2025-Financial-Results-and-Operating-Overview",
+    "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-first-quarter-2025-financial",
+    "https://www.fool.com/earnings/call-transcripts/2026/11/05/acadia-pharma-acad-q3-2026-earnings-call-transcript/",
+    "https://icer.org/wp-content/uploads/2025/10/ICER_2025_Launch-Price-and-Access-Final-Report_For-Publication.pdf"
+   ]
+  },
+  {
+   "drug": "Skyclarys (omaveloxolone)",
+   "company": "Reata -> Biogen (2023)",
+   "indication": "Friedreich ataxia, age >=16",
+   "approval_date": "2023-02-28 (date from background knowledge, not retrieved this session)",
+   "launch_wac_annual_usd": 370000,
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2023": "not found",
+    "2024": "not found full year (Q4 global ~102, US ~71)",
+    "2025": "not found full year (Q1 global ~124/US ~69; Q2 global ~130/US ~78)"
+   },
+   "patients_by_year": {
+    "2024": "Patients on therapy globally nearly doubled vs YE2023 (absolute not found)"
+   },
+   "field_force": "not found",
+   "notes": "US revenue flat-to-down in early 2025 on Medicare discount dynamics (IRA Part D redesign) despite demand growth - direct read-across for Medicare-exposed orphan brands.",
+   "sources": [
+    "https://www.drugdiscoverytrends.com/reata-sets-370000-annual-cost-for-new-nerve-disorder-drug/",
+    "https://dss.mo.gov/mhd/cs/advisory/rdac/pdf/skyclarys-ndfb.pdf",
+    "https://www.sec.gov/Archives/edgar/data/875045/000087504525000004/exhibit991-q42024pressrele.htm",
+    "https://www.sec.gov/Archives/edgar/data/875045/000087504525000014/exhibit991-q12025pressrele.htm",
+    "https://www.sec.gov/Archives/edgar/data/875045/000087504525000035/exhibit991-q22025pressrele.htm"
+   ]
+  },
+  {
+   "drug": "Xcopri (cenobamate)",
+   "company": "SK Biopharmaceuticals / SK Life Science",
+   "indication": "Focal seizures in adults",
+   "approval_date": "2019-11 (date from background knowledge, not retrieved this session); US launch May 2020 (date from background knowledge, not retrieved this session)",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2020": "not found",
+    "2021": "not found",
+    "2022": "~127 (derived: 2023 was +60.1%; KRW basis ~169B)",
+    "2023": "202.8 (KRW 270.8B)",
+    "2024": "~KRW 438B (derived from 2025 +44%); company target was $311M",
+    "2025": "KRW 630.3B",
+    "2026": "Q2 $168M; Q3 $156.8M (+29.9%); guidance up to $580M"
+   },
+   "patients_by_year": {
+    "2025": "~47,000 monthly prescriptions (Dec; year attribution uncertain)"
+   },
+   "field_force": "not found",
+   "notes": "Self-commercialised broad-epilepsy launch during COVID: slow first 2 years, then compounding ~40-60%/yr; year 6-7 ~$0.5B+; stated ambition $1B. Good analog for a slow-build neurologist-driven branded oral.",
+   "sources": [
+    "https://www.asiae.co.kr/en/article/2024012914030453129",
+    "https://www.kedglobal.com/bio-pharma/newsView/ked202402160013",
+    "https://www.ajupress.com/view/20260206141000616",
+    "https://www.koreatimes.co.kr/business/companies/20261105/sk-biopharms-q3-operating-profit-up-66-on-us-sales-of-seizure-drug"
+   ]
+  },
+  {
+   "drug": "Briviact (brivaracetam)",
+   "company": "UCB",
+   "indication": "Focal seizures",
+   "approval_date": "2016-02 (date from background knowledge, not retrieved this session)",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2016-2019": "not found",
+    "2024": "EUR 686M (global)",
+    "2025": "EUR 758M (+11%)",
+    "2026": "H1 EUR 327M (-13%) after US LOE Feb 2026"
+   },
+   "patients_by_year": {
+    "2024": ">232,000 patients (global)"
+   },
+   "field_force": "not found",
+   "notes": "Took ~8-9 years to reach company peak target (>= EUR 600M); US generics Feb 2026 = ~10 years of exclusivity.",
+   "sources": [
+    "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf",
+    "https://www.ucb.com/sites/default/files/2025-02/ucb_fy_2024_results_capital_market_earnings_call_27_february_2025_0.pdf",
+    "https://finance.yahoo.com/healthcare/articles/ucb-sa-ucbjf-h1-2026-010411818.html"
+   ]
+  },
+  {
+   "drug": "Nuplazid (pimavanserin)",
+   "company": "Acadia",
+   "indication": "Parkinson's disease psychosis",
+   "approval_date": "2016-04-29 (date from background knowledge, not retrieved this session); available May 2016",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "~61,400-62,300 (derived: WAC $5,120 per 30 x 34 mg, x12-12.17; cited in Praxis 2026 investor day)",
+   "revenue_by_year": {
+    "2016": 17.3,
+    "2017": 124.9,
+    "2018": "255-270 guidance (actual not found)",
+    "2019": "275-300 initial guidance (actual not found)",
+    "2021": 484.1,
+    "2022": 517.2,
+    "2023": 549.2,
+    "2024": 609.4,
+    "2025": "680 GAAP / 692 adjusted",
+    "2026": "760-790 guidance"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "not found",
+   "notes": "Medicare-heavy CNS first-in-indication analog for ET: ~$125M in first full year, ~$480M by year 5-6, still growing 11% in year 9-10. 2025 included a gross-to-net true-up.",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001070494/000141588918000332/ex99-02272018_010236.htm",
+    "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-fourth-quarter-and-full-year-2023",
+    "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-fourth-quarter-and-full-year-2024",
+    "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-fourth-quarter-and-full-year-2025-financial-results-and-operating-overview",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm"
+   ]
+  },
+  {
+   "drug": "Ingrezza (valbenazine)",
+   "company": "Neurocrine",
+   "indication": "Tardive dyskinesia (2017); HD chorea (2023)",
+   "approval_date": "2017-04-11 (date from background knowledge, not retrieved this session); available 2017-05-01",
+   "launch_wac_annual_usd": 63300,
+   "current_wac_annual_usd": "~108,900-110,400 (derived: WAC $9,072 per 30 x 80 mg; cited in Praxis 2026 investor day)",
+   "revenue_by_year": {
+    "2017": 116.6,
+    "2018": 409.6,
+    "2019": "not found",
+    "2020": "not found",
+    "2024": 2313.5,
+    "2025": "~2,510 (+9%)",
+    "2026": "2,700-2,800 guidance"
+   },
+   "patients_by_year": {
+    "2018": "~71,500 TRx in the year"
+   },
+   "field_force": "Launch size not found; expansions in 2025",
+   "notes": "Best-case Medicare-heavy movement-disorder analog: $117M in 8 months, $410M first full year; $2.5B by year 9. 2025 net price fell due to new formulary access investments (rebating to defend vs Austedo). Launch WAC $5,275/month.",
+   "sources": [
+    "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+    "https://www.sec.gov/Archives/edgar/data/914475/000156459019001996/nbix-ex991_6.htm",
+    "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+    "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm"
+   ]
+  },
+  {
+   "drug": "Austedo / Austedo XR (deutetrabenazine)",
+   "company": "Teva",
+   "indication": "HD chorea (Apr 2017); tardive dyskinesia (Aug 2017)",
+   "approval_date": "2017-04 (date from background knowledge, not retrieved this session) (HD); 2017-08 (TD)",
+   "launch_wac_annual_usd": "~60,000 (HD launch, press); TD price reported ~$70,000 expected by competitor",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2017": "not found",
+    "2018": "not found",
+    "2019": 412,
+    "2020": 637,
+    "2021": 802,
+    "2022": 963,
+    "2023": 1225,
+    "2024": ">1,600",
+    "2025": "1,900-2,050 outlook (actual not found)"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "not found",
+   "notes": "Slower than Ingrezza early (BID dosing, titration) but compounding 20-55%/yr for 8 years; XR once-daily launched May 2023. Selected for Medicare negotiation (IPAY 2027) - not verified this session.",
+   "sources": [
+    "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+    "https://www.sec.gov/Archives/edgar/data/818686/000119312521036239/d102112d10k.htm",
+    "https://www.sec.gov/Archives/edgar/data/818686/000119312523031250/d443725d10k.htm",
+    "https://s24.q4cdn.com/720828402/files/doc_financials/2023/q4/Q4-2023-PR-final-ADA-tagged.pdf",
+    "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2025/Teva-Delivers-Second-Consecutive-Year-of-Growth-Announces-Strong-Financial-Results-in-Fourth-Quarter-and-Full-Year-2024-Led-by-Generics-Performance-and-Innovative-Portfolio-Growth/default.aspx"
+   ]
+  },
+  {
+   "drug": "Nurtec ODT (rimegepant)",
+   "company": "Biohaven -> Pfizer (2022)",
+   "indication": "Acute migraine (2020); prevention (2021)",
+   "approval_date": "2020-02-27 (date from background knowledge, not retrieved this session); launch March 2020",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2020": "not found (retrieved snippet figures for 2020 were inconsistent)",
+    "2021": "462-471.7 (sources differ)",
+    "2022": "~807.7 (secondary)",
+    "2023": "~965 (secondary)",
+    "2024": "1,263 (Pfizer, Nurtec/Vydura global)",
+    "2025": "1,424 (Pfizer annual review; conflicts with another Pfizer table)"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "not found",
+   "notes": "DTC/telehealth-heavy launch (celebrity DTC, telemedicine partners) - details not retrieved this session. High gross-to-net typical of commercial-heavy primary-care/neurology brands. 2020 figure unreliable in retrieved snippets.",
+   "sources": [
+    "https://www.biopharmadive.com/news/biohaven-nurtec-migraine-sales-wall-street-forecast/607770/",
+    "https://www.prnewswire.com/news-releases/biohaven-reports-second-quarter-2022-financial-results-and-reports-recent-business-developments-301600624.html",
+    "https://s206.q4cdn.com/795948973/files/doc_financials/2024/q4/Q4-2024-PFE-Earnings-Release-Final.pdf",
+    "https://annualreview.pfizer.com/"
+   ]
+  },
+  {
+   "drug": "Qulipta (atogepant)",
+   "company": "AbbVie",
+   "indication": "Migraine prevention",
+   "approval_date": "2021-09-28 (date from background knowledge, not retrieved this session)",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "all": "not found"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "not found",
+   "notes": "Revenue and pricing not retrieved (search budget exhausted).",
+   "sources": []
+  },
+  {
+   "drug": "Vyvgart / Vyvgart Hytrulo (efgartigimod)",
+   "company": "argenx",
+   "indication": "gMG (2021); CIDP (2024)",
+   "approval_date": "2021-12-17 (date from background knowledge, not retrieved this session)",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "2022": "not found",
+    "2023": "not found",
+    "2024": "~2,190",
+    "2025": "4,151 (+90%)"
+   },
+   "patients_by_year": {
+    "2025": ">15,000 patients globally mid-year; ~19,000 at year-end; >2,500 CIDP patients"
+   },
+   "field_force": "not found",
+   "notes": "Best-in-class orphan neuro launch; label/indication expansion doubled sales in year 4. Global figures.",
+   "sources": [
+    "https://argenx.com/news/2026/press-release-3245199",
+    "https://www.sec.gov/Archives/edgar/data/1697862/000169786226000010/a09earningspressreleaseq4.htm",
+    "https://www.sec.gov/Archives/edgar/data/1697862/000169786225000042/a04earningspressreleasehy.htm"
+   ]
+  },
+  {
+   "drug": "Relutrigine (PRAX-562) - pending",
+   "company": "Praxis Precision Medicines",
+   "indication": "SCN2A / SCN8A DEE",
+   "approval_date": "PDUFA 2026-12-27 (not yet approved as of 2026-11-13)",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "all": "pre-launch"
+   },
+   "patients_by_year": {
+    "all": "not found"
+   },
+   "field_force": "Field team fully hired (size not found)",
+   "notes": "Direct competitor/analog for market A. 86% seizure reduction through 18 months reported at Nov 12 2026 investor day.",
+   "sources": [
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html"
+   ]
+  },
+  {
+   "drug": "Ulixacaltamide - pending",
+   "company": "Praxis Precision Medicines",
+   "indication": "Essential tremor",
+   "approval_date": "PDUFA 2027-01-29; NDA accepted; BTD Dec 2025",
+   "launch_wac_annual_usd": "not found",
+   "current_wac_annual_usd": "not found",
+   "revenue_by_year": {
+    "all": "pre-launch"
+   },
+   "patients_by_year": {
+    "all": "Company sizing: ~7M US ET patients (May 2026) revised to ~9M (Nov 2026), of whom ~2M seeking treatment = initial focus"
+   },
+   "field_force": "~300 field staff expected by end-2026 (secondary summary of investor day)",
+   "notes": "First branded ET drug candidate; 'ESSENTIAL to me' HCP disease-education campaign since Apr 2026; distribution network established. Price not disclosed.",
+   "sources": [
+    "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+    "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+    "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-corporate-update-and-19",
+    "https://www.neurologyadvisor.com/news/ulixacaltamide-nda-accepted-for-essential-tremor-pdufa-date-set/"
+   ]
+  }
+ ],
+ "pricing_benchmarks": [
+  {
+   "topic": "Rare-epilepsy WAC",
+   "fact": "Epidiolex launch list price (avg, weight-based)",
+   "value": "$32,500/yr",
+   "year": 2018,
+   "source_url": "https://www.fiercepharma.com/marketing/epidiolex-launch-official-first-cbd-approved-by-fda-shelves-but-high-price-spurs-some",
+   "confidence": "high"
+  },
+  {
+   "topic": "Rare-epilepsy WAC",
+   "fact": "Fintepla launch list price (avg, 35 kg)",
+   "value": "$96,000/yr",
+   "year": 2020,
+   "source_url": "https://www.biopharmadive.com/news/zogenix-fintepla-fda-approval-dravet-syndrome/580608/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Rare-epilepsy WAC",
+   "fact": "Annual per-patient cost at Jan-2024 WAC (Biocodex-funded ISPOR poster)",
+   "value": "Cannabidiol $35,807 (alt. scenario $71,613); stiripentol $68,486 ($136,971); fenfluramine $186,996 ($231,519)",
+   "year": 2024,
+   "source_url": "https://www.ispor.org/docs/default-source/intl2024/ispor24fourcroy-138552poster138552-pdf.pdf?sfvrsn=d09ec900_0",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Rare-epilepsy WAC",
+   "fact": "Ztalmy (CDD, ultra-rare)",
+   "value": "$289,678 / $231,742 in ICER 2025 report table (probably list / net); launch WAC not found",
+   "year": 2025,
+   "source_url": "https://icer.org/wp-content/uploads/2025/10/ICER_2025_Launch-Price-and-Access-Final-Report_For-Publication.pdf",
+   "confidence": "low"
+  },
+  {
+   "topic": "Rare-neuro WAC",
+   "fact": "Daybue (Rett)",
+   "value": "$575,000-$595,000 avg annual list at launch (2023); $616,120 list / $502,446 net in ICER 2025 table",
+   "year": 2023,
+   "source_url": "https://firstwordpharma.com/story/5715553",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Rare-neuro WAC",
+   "fact": "Skyclarys (Friedreich ataxia)",
+   "value": "$370,000/yr launch WAC (MO Medicaid sheet: ~$375,000)",
+   "year": 2023,
+   "source_url": "https://www.drugdiscoverytrends.com/reata-sets-370000-annual-cost-for-new-nerve-disorder-drug/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Movement-disorder WAC",
+   "fact": "Ingrezza",
+   "value": "Launch $5,275/month (~$63,300/yr) in 2017; 2026 WAC $9,072 per 30 x 80 mg (~$109K/yr derived) => ~70% cumulative list increase over 9 yrs (derived)",
+   "year": 2026,
+   "source_url": "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Movement-disorder WAC",
+   "fact": "Austedo",
+   "value": "~$60,000/yr at HD launch 2017",
+   "year": 2017,
+   "source_url": "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Movement-disorder WAC",
+   "fact": "Nuplazid",
+   "value": "2026 WAC $5,120 per 30 x 34 mg (~$62K/yr derived); 2016 launch price not found",
+   "year": 2026,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Price vs prevalence",
+   "fact": "Observed gradient across analogs (synthesis of sourced prices; prevalence figures not sourced here)",
+   "value": "Broad DEE (LGS/Dravet, Epidiolex) ~$32K; Dravet-specific (Fintepla) ~$96K -> ~$190-230K today; ultra-rare CDD (Ztalmy) ~$230-290K; Rett (Daybue) ~$575-616K; FA (Skyclarys) ~$370K; large-population Medicare movement disorders $60-110K",
+   "year": 2026,
+   "source_url": "https://icer.org/wp-content/uploads/2025/10/ICER_2025_Launch-Price-and-Access-Final-Report_For-Publication.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Orphan launch-price benchmarks",
+   "fact": "ICER 2025 Launch Price & Access report (2024 launches)",
+   "value": "Median annual list price all new drugs $308,749 (2024) vs $249,257 (2022); orphan median $515,000 (2024) vs $357,520 (2022)",
+   "year": 2025,
+   "source_url": "https://icer.org/wp-content/uploads/2025/10/ICER_2025_Launch-Price-and-Access-Final-Report_For-Publication.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Orphan launch-price benchmarks",
+   "fact": "ICER 2026 Launch Price & Access report (2025 launches)",
+   "value": "Median annual NET launch price $257,369 (2025) vs $190,553 (2022), +35% real; orphan net $480,000 vs $374,354 (+28%); non-orphan $52,000 vs $30,653 (+70%); ~1 in 4 drugs >$500K net",
+   "year": 2026,
+   "source_url": "https://icer.org/wp-content/uploads/2026/10/ICER_2026_Launch-Price-and-Access-Final-Report_ForPublication-1.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "ICER DEE reviews",
+   "fact": "ICER (US) value-based price benchmark for cannabidiol (2018) or fenfluramine",
+   "value": "not found (ICER report not retrievable; searches returned only ex-US HTAs)",
+   "year": 2018,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Ex-US HTA",
+   "fact": "CADTH on Epidiolex",
+   "value": "ICER C$128,062/QALY vs usual care; 44% price reduction needed for C$50,000/QALY (earlier base case C$186,373; 71%)",
+   "year": 2023,
+   "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK604815/table/t04/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Ex-US HTA",
+   "fact": "Ireland NCPE on fenfluramine",
+   "value": "EUR 95,284/QALY (Dravet) and EUR 198,407/QALY (LGS) vs cannabidiol+clobazam; >=40% price cut needed",
+   "year": 2024,
+   "source_url": "https://www.ncpe.ie/wp-content/uploads/2024/07/Technical-Summary-Report-Fenfluramine-23048-update.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Ex-US HTA",
+   "fact": "NICE TA808 fenfluramine (Dravet)",
+   "value": "Recommended; plausible ICER within acceptable range with confidential discount; list GBP 901.44 per 60 mL",
+   "year": 2022,
+   "source_url": "https://www.nice.org.uk/guidance/ta808/documents/final-appraisal-determination-document",
+   "confidence": "medium"
+  },
+  {
+   "topic": "US cost-utility",
+   "fact": "Stiripentol vs cannabidiol in Dravet (Biocodex-funded)",
+   "value": "$116,448/QALY; fenfluramine not economically supported first-line at Jan-2024 WAC",
+   "year": 2024,
+   "source_url": "https://www.ispor.org/docs/default-source/intl2024/ispor24weston-138749poster138749-pdf.pdf?sfvrsn=fa8938b7_0",
+   "confidence": "low"
+  },
+  {
+   "topic": "Gross-to-net",
+   "fact": "Disclosed GTN datapoints",
+   "value": "Daybue 23.2% (Q3 2026); Ingrezza 2025 net price down on formulary access investment; Nuplazid 2025 GTN true-up; Skyclarys US hit by Medicare discount dynamics in 2025",
+   "year": 2026,
+   "source_url": "https://www.fool.com/earnings/call-transcripts/2026/11/05/acadia-pharma-acad-q3-2026-earnings-call-transcript/",
+   "confidence": "medium"
+  }
+ ],
+ "policy": [
+  {
+   "topic": "IRA Part D redesign - OOP cap",
+   "summary": "Annual out-of-pocket cap $2,000 in 2025, indexed to $2,100 for 2026 (one secondary source cites $2,400 for 2027 - unverified). Max deductible $615 in 2026.",
+   "effective": "2025-01-01; 2026 update",
+   "implication_dee": "Minor: few DEE patients in Part D (adults with LGS/Dravet on SSDI are the exception).",
+   "implication_et": "Major positive for patient affordability/persistency: caps beneficiary cost for a branded ET drug; Medicare Prescription Payment Plan smooths costs.",
+   "source_url": "https://www.cms.gov/newsroom/fact-sheets/final-cy-2026-part-d-redesign-program-instructions"
+  },
+  {
+   "topic": "IRA Manufacturer Discount Program",
+   "summary": "Replaced Coverage Gap Discount Program in 2025: manufacturer pays 10% in initial coverage phase and 20% in catastrophic phase on applicable brands (one agent guide says 20% initial - outlier). Specified small manufacturer phase-in: schedule not retrieved (background knowledge, unverified: 1% 2025, 2% 2026, 5% 2027, 8% 2028, 10% 2029 for initial phase; catastrophic reaching 20% by 2031) - and applies to drugs marketed as of Aug 2022, so a new launch likely would not qualify.",
+   "effective": "2025-01-01",
+   "implication_dee": "Low exposure.",
+   "implication_et": "Structural GTN hit: for a ~$60-110K/yr drug nearly all spend is catastrophic => ~20% mandatory discount on Part D volume, plus plan rebates. Skyclarys/Nuplazid 2025 results show the effect.",
+   "source_url": "https://www.cms.gov/newsroom/fact-sheets/final-cy-2026-part-d-redesign-program-instructions"
+  },
+  {
+   "topic": "Medicare negotiation timing / 'pill penalty'",
+   "summary": "Small molecules eligible for selection 7 years after approval, MFP effective at year 9; biologics 11/13. EPIC Act (H.R. 1492, reintroduced Mar 2025) would equalise; April 2025 executive order directs HHS to work with Congress - no statutory change found as of late 2026.",
+   "effective": "Ongoing",
+   "implication_dee": "Orphan exclusion likely shields (see below).",
+   "implication_et": "A small-molecule ET blockbuster (>$200M Medicare spend) faces MFP at ~year 9-10 post launch; model a price step-down then.",
+   "source_url": "https://www.ebglaw.com/health-law-advisor/medicare-drug-price-negotiation-program-the-inflation-reduction-act-pill-penalty-and-other-ira-reforms-on-the-horizon-for-2026"
+  },
+  {
+   "topic": "ORPHAN Cures Act (in 2025 reconciliation law, 'One Big Beautiful Bill')",
+   "summary": "Orphan exclusion from negotiation extended to drugs with one OR MORE orphan designations (all indications orphan); 7/11-year clock starts only when a non-orphan indication is approved. Applies from third negotiation round (selection by Feb 1 2026; prices effective 2028 - effective year not confirmed in snippet). KFF: costs several billion over a decade. Democrats have proposed repeal / $400M spend threshold.",
+   "effective": "Selection cycle 2026 (IPAY 2028)",
+   "implication_dee": "Positive: DEE asset can add further rare indications (e.g., SCN2A + SCN8A + other DEEs) without losing exclusion.",
+   "implication_et": "None unless ET drug is orphan (ET is not rare). If same molecule has DEE (orphan) and ET (non-orphan) indications, exclusion is lost and clock starts at the non-orphan approval.",
+   "source_url": "https://www.kff.org/medicare/people-with-medicare-will-face-higher-costs-for-some-orphan-drugs-due-to-changes-in-the-new-tax-and-budget-law/"
+  },
+  {
+   "topic": "Medicaid changes in 2025 reconciliation law",
+   "summary": "$911B in Medicaid cuts over 10 yrs (CBO): work requirements (80 hrs/month, expansion adults, from 2027-01-01; -$326B; -5.2M adults by 2034), provider-tax freeze/phasedown (-$226B), more frequent redeterminations for expansion adults. Total uninsured +14.2M with ACA changes (KFF, check). Enrollment already falling: 79.4M (Dec 2024) -> 74.3M (Mar 2026).",
+   "effective": "2026-2028 phased",
+   "implication_dee": "Children/disabled pathways not directly targeted, but state budget pressure => tighter PDL/PA, supplemental-rebate demands, churn risk; pediatric Medicaid+CHIP down to 35.6M.",
+   "implication_et": "Limited (duals); state budget pressure affects Medicaid secondary coverage.",
+   "source_url": "https://www.kff.org/medicaid/issue-brief/a-closer-look-at-the-work-requirement-provisions-in-the-2025-federal-budget-reconciliation-law/"
+  },
+  {
+   "topic": "Rare Pediatric Disease PRV programme",
+   "summary": "Lapsed Dec 2024; reauthorised through Sept 2029 by Consolidated Appropriations Act 2026 (Mikaela Naylon Give Kids a Chance Act), signed 2026-02-03. Recent sales: Abeona $155M (Jun 2025); Jazz $200M (Jan 2026).",
+   "effective": "2026-02-03 to 2029-09-30",
+   "implication_dee": "DEE approvals with RPD designation can earn a PRV worth ~$150-200M (non-dilutive).",
+   "implication_et": "None.",
+   "source_url": "https://www.fiercepharma.com/pharma/fdas-rare-pediatric-disease-voucher-program-revived-2026-government-funding-bill"
+  },
+  {
+   "topic": "Most-favoured-nation pricing",
+   "summary": "2025 EO led to manufacturer agreements: all 17 targeted manufacturers signed by ~Apr 2026 (16 by Feb 2026 incl. commitments to launch new drugs at MFN parity); TrumpRx DTC site live ~Feb 5 2026; GENEROUS Medicaid model (voluntary, 2026-2030, MFN from 8 countries); GLOBE (Part B) reported final, effective 2026-11-30, PhRMA suit filed 2026-10-07; GUARD (Part D) final rule not published as of Oct 2026. Reported Sec. 232 pharma tariffs up to 100% from 2026-07-31 with relief for MFN signatories (single source). Sources conflict on dates - verify at CMS/Federal Register.",
+   "effective": "2026 onward",
+   "implication_dee": "Launch-sequencing: ex-US launch price now constrains US Medicaid net price for signatories; small biotechs not among the 17 but GENEROUS/launch-parity norms may spread.",
+   "implication_et": "GUARD (Part D) would be the relevant model if finalised; uncertain.",
+   "source_url": "https://www.medico.cx/resources/mfn-drug-pricing"
+  },
+  {
+   "topic": "State PDABs",
+   "summary": "No UPL has taken effect yet. Colorado set first UPL (Enbrel, Oct 2025, eff. Jan 2027) - preliminarily enjoined 2026-07-01 on patent pre-emption. Maryland set UPLs for Jardiance (Apr 2026) and Ozempic (May 2026) at Medicare MFP, eff. Jan 2027. Washington and Minnesota have boards but no completed reviews; MN statute ties UPL to MFP. Orphan carve-outs: sources conflict (Health Affairs: none; RAAP: Washington exempts single-indication orphan drugs).",
+   "effective": "2027 earliest",
+   "implication_dee": "Low near-term risk; high-cost orphan drugs are review-eligible in most PDAB states.",
+   "implication_et": "Moderate long-term risk for a high-volume ET brand in PDAB states once MFP exists.",
+   "source_url": "https://www.multistate.us/insider/2026/6/8/pdab-implementation-challenges-slow-state-drug-cost-efforts"
+  },
+  {
+   "topic": "Medicaid AMP cap removal (ARPA)",
+   "summary": "From 2024-01-01 Medicaid rebates can exceed 100% of AMP.",
+   "effective": "2024-01-01",
+   "implication_dee": "Penalises steep post-launch price increases in a Medicaid-heavy book: set launch price right, keep increases <= CPI-U.",
+   "implication_et": "Minor.",
+   "source_url": "https://www.kff.org/medicaid/what-are-the-implications-of-the-recent-elimination-of-the-medicaid-prescription-drug-rebate-cap/"
+  }
+ ],
+ "et_access": [
+  {
+   "topic": "Market size",
+   "fact": "US ET prevalence used by first entrant (Praxis)",
+   "value": "~7M (May 2026) revised to ~9M (Nov 2026); ~2M actively seeking treatment = initial focus",
+   "year": 2026,
+   "source_url": "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Competitive timing",
+   "fact": "First branded ET drug",
+   "value": "Ulixacaltamide PDUFA 2027-01-29 (BTD Dec 2025; no AdCom planned per secondary source)",
+   "year": 2026,
+   "source_url": "https://www.neurologyadvisor.com/news/ulixacaltamide-nda-accepted-for-essential-tremor-pdufa-date-set/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Current standard of care",
+   "fact": "Most common ET prescriptions (2019 claims)",
+   "value": "Propranolol 24%, primidone 20% of ET prescriptions; both generic => payers have cheap step options",
+   "year": 2022,
+   "source_url": "https://link.springer.com/article/10.1007/s12325-022-02318-8",
+   "confidence": "high"
+  },
+  {
+   "topic": "Persistence on SoC",
+   "fact": "2-year discontinuation",
+   "value": "~40% overall; propranolol 40%, primidone 47% (2015-2019 claims)",
+   "year": 2023,
+   "source_url": "https://tremorjournal.org/articles/10.5334/tohm.973",
+   "confidence": "high"
+  },
+  {
+   "topic": "Step therapy norm",
+   "fact": "Expected payer management of first branded ET drug",
+   "value": "No published policy yet. Inference from analogs/PA norms: PA to ET diagnosis + trial/failure/contraindication of propranolol and/or primidone (often both), possibly neurologist prescriber/consult; Part D non-protected class so formulary exclusion possible. Inference - not sourced",
+   "year": 2026,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Device coverage",
+   "fact": "MRgFUS (Exablate) unilateral thalamotomy for medication-refractory ET",
+   "value": "Covered by Medicare via MAC LCDs (e.g., L37761, L37729) in all 50 states (per manufacturer); staged bilateral coverage not found",
+   "year": 2025,
+   "source_url": "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdId=37761&ver=22",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Device coverage",
+   "fact": "Cala kIQ (TAPS wearable)",
+   "value": "Reported covered under Medicare Part B DME LCD L39591 for ET, one device for dominant hand (secondary vendor source; not verified on CMS)",
+   "year": 2026,
+   "source_url": "https://steadiwear.com/pages/medicare-coverage-for-tremor-devices-what-s-covered-in-2026",
+   "confidence": "low"
+  },
+  {
+   "topic": "Analog: Medicare-heavy CNS first-year outcomes",
+   "fact": "Nuplazid (PDP, 2016)",
+   "value": "$17.3M in first ~8 months; $124.9M first full year",
+   "year": 2017,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001070494/000141588918000332/ex99-02272018_010236.htm",
+   "confidence": "high"
+  },
+  {
+   "topic": "Analog: Medicare-heavy CNS first-year outcomes",
+   "fact": "Ingrezza (TD, 2017)",
+   "value": "$116.6M in first 8 months; $409.6M first full year; ~71,500 TRx in 2018",
+   "year": 2018,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/914475/000156459019001996/nbix-ex991_6.htm",
+   "confidence": "high"
+  },
+  {
+   "topic": "Analog: formulary outcomes at 12 months",
+   "fact": "Share of Part D/MA lives covered at 12 months for Nuplazid/Ingrezza/Austedo",
+   "value": "not found",
+   "year": 2026,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "IRA exposure",
+   "fact": "Medicare discount drag on a Medicare-heavy neuro brand",
+   "value": "Biogen: US Skyclarys Q1 2025 revenue reduced by 'expected Medicare discount dynamics'; Neurocrine 2025 Ingrezza growth offset by lower net price from formulary access investments",
+   "year": 2025,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/875045/000087504525000014/exhibit991-q12025pressrele.htm",
+   "confidence": "high"
+  },
+  {
+   "topic": "DTC / telehealth models",
+   "fact": "Neurology precedent",
+   "value": "Ingrezza runs national TV DTC for TD; Nurtec ODT used heavy DTC and telehealth channels (specific spend/telehealth share not found); Praxis running HCP disease-education campaign pre-approval",
+   "year": 2026,
+   "source_url": "https://xtalks.com/ingrezza-tv-commercial-flowing-stories-highlights-real-lives-with-tardive-dyskinesia-4767/",
+   "confidence": "low"
+  },
+  {
+   "topic": "Field force",
+   "fact": "Planned ET launch field team (Praxis)",
+   "value": "~300 field staff by end-2026",
+   "year": 2026,
+   "source_url": "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+   "confidence": "medium"
+  }
+ ],
+ "field_benchmarks": [
+  {
+   "topic": "Rare-epilepsy field team",
+   "fact": "GW/Greenwich Epidiolex launch plan",
+   "value": "60-70 sales professionals; 4,000-5,000 target physicians; all NAEC level 3/4 centers",
+   "year": 2017,
+   "source_url": "https://www.sec.gov/Archives/edgar/data/0001351288/000114420417062057/tv480101-20f.htm",
+   "confidence": "high"
+  },
+  {
+   "topic": "Rare-epilepsy field team",
+   "fact": "Zogenix Fintepla launch headcount",
+   "value": "not found",
+   "year": 2020,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Rare-epilepsy field team",
+   "fact": "Marinus Ztalmy launch headcount",
+   "value": "not found",
+   "year": 2022,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Rare-epilepsy field team",
+   "fact": "Praxis relutrigine (SCN2A/SCN8A)",
+   "value": "Field team 'fully hired' Nov 2026; size not found",
+   "year": 2026,
+   "source_url": "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Rare neuro field team",
+   "fact": "Acadia Daybue",
+   "value": "~30% field-force expansion completed May 2025; base size not found",
+   "year": 2025,
+   "source_url": "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-first-quarter-2025-financial",
+   "confidence": "medium"
+  },
+  {
+   "topic": "ET field team",
+   "fact": "Praxis ulixacaltamide",
+   "value": "~300",
+   "year": 2026,
+   "source_url": "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Prescriber universe",
+   "fact": "Epidiolex early prescribers",
+   "value": "~2,000 physicians had a dispensed Rx within ~5 months of launch",
+   "year": 2019,
+   "source_url": "https://www.biopharmadive.com/news/gw-pharma-epidiolex-sales-beat-tsc-trial-success/554196/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Workforce",
+   "fact": "US child neurologists",
+   "value": "Current count not found; dated: 904 full-time patient-care child neurologists (2002 analysis), 1,080 active (1998 AAN). 90% of pediatricians judged supply insufficient",
+   "year": 2005,
+   "source_url": "https://www.researchgate.net/publication/7952923_Specialty_care_by_child_neurologists_A_workforce_analysis",
+   "confidence": "low"
+  },
+  {
+   "topic": "Workforce",
+   "fact": "US pediatric epileptologists",
+   "value": "not found",
+   "year": 2026,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Workforce",
+   "fact": "NAEC accredited centers (level 3/4 counts)",
+   "value": "not found",
+   "year": 2026,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Workforce",
+   "fact": "US neurologists",
+   "value": "~9,350 employed neurologists per BLS May 2023 (employee-only count; understates practising neurologists)",
+   "year": 2023,
+   "source_url": "https://careercenter.childneurologysociety.org/career-resources/finding-talent-4/how-to-hire-neurodevelopmental-disabilities-physician-2026-32",
+   "confidence": "low"
+  },
+  {
+   "topic": "Workforce",
+   "fact": "US movement-disorder specialists",
+   "value": "not found",
+   "year": 2026,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "ET prescriber mix",
+   "fact": "Share of ET prescriptions by specialty (2019 claims)",
+   "value": "Primary care 25%; neurology 24%; internal medicine 19% (PCP+IM = 44%); non-neurologists favor beta-blockers, neurologists primidone; movement-disorder specialists ~2x as likely as general neurologists to prescribe either",
+   "year": 2022,
+   "source_url": "https://link.springer.com/article/10.1007/s12325-022-02318-8",
+   "confidence": "high"
+  }
+ ],
+ "geography": [
+  {
+   "topic": "Pharmacy carve-outs",
+   "fact": "Full carve-out of Rx from Medicaid MCOs",
+   "value": "8 of 42 MCO states as of July 2025 (KFF). California Medi-Cal Rx since 2022-01-01; New York NYRx since 2023-04-01; Ohio uses a single state-contracted PBM (date/vendor not confirmed in retrieved text). 21 of 42 MCO states carve out one or more drug classes (July 2024); NH, TX, WA reversing some class carve-outs",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicaid/issue-brief/management-and-delivery-of-the-medicaid-pharmacy-benefit/",
+   "confidence": "high"
+  },
+  {
+   "topic": "Carve-out implication",
+   "fact": "Contracting",
+   "value": "In carve-out/single-PDL states one state P&T decision governs all Medicaid lives (CA and NY alone are the two largest Medicaid programmes - enrollment by state not retrieved)",
+   "year": 2025,
+   "source_url": "https://www.kff.org/report-section/how-state-medicaid-programs-are-managing-prescription-drug-costs-pharmacy-benefit-administration/",
+   "confidence": "medium"
+  },
+  {
+   "topic": "State Medicaid share of CSHCN",
+   "fact": "Variation",
+   "value": "<30% in UT, HI, IL; >=60% in MS, LA, AR; national 35-40%+",
+   "year": 2025,
+   "source_url": "https://www.kff.org/medicaid/issue-brief/5-key-facts-about-children-with-special-health-care-needs-and-medicaid/",
+   "confidence": "high"
+  },
+  {
+   "topic": "States with largest Medicaid pediatric populations",
+   "fact": "Ranked list",
+   "value": "not found (state tracker exists at Georgetown CCF)",
+   "year": 2026,
+   "source_url": "https://ccf.georgetown.edu/2026/02/26/new-state-by-state-medicaid-and-chip-tracker-shows-declining-enrollment-as-h-r-1-cuts-loom/",
+   "confidence": "low"
+  },
+  {
+   "topic": "Restrictive Medicaid PDLs",
+   "fact": "Examples from retrieved PA policies",
+   "value": "RI (NHPRI) requires Dravet diagnosis confirmed by two unaffiliated neurologists for Diacomit and 12-week initial auth; Iowa 3-month initial Epidiolex auth; WV requires REMS enrolment + prior ASM trials for Fintepla in LGS",
+   "year": 2025,
+   "source_url": "https://nhpri.org/wp-content/uploads/2025/01/Medicaid_diacomit_20250108.pdf",
+   "confidence": "medium"
+  },
+  {
+   "topic": "PDAB states",
+   "fact": "UPL activity",
+   "value": "Colorado (Enbrel UPL enjoined Jul 2026), Maryland (Jardiance, Ozempic UPLs eff. Jan 2027), Washington, Minnesota",
+   "year": 2026,
+   "source_url": "https://www.multistate.us/insider/2026/6/8/pdab-implementation-challenges-slow-state-drug-cost-efforts",
+   "confidence": "medium"
+  },
+  {
+   "topic": "Children's hospitals / IDNs with dominant epilepsy programmes",
+   "fact": "Named list with volumes",
+   "value": "not found",
+   "year": 2026,
+   "source_url": "not found",
+   "confidence": "low"
+  },
+  {
+   "topic": "Patient geography",
+   "fact": "Urban/rural split of DEE patients (Komodo claims)",
+   "value": "LGS: 88% urban / 12% rural (n=9,644); Dravet: 85% / 15% (n=848)",
+   "year": 2024,
+   "source_url": "https://aesnet.org/abstractslisting/claims-analysis-of-healthcare-disparities-among-patients-with-lennox-gastaut-syndrome-or-dravet-syndrome-in-urban-versus-rural-areas-of-the-united-states",
+   "confidence": "medium"
+  }
+ ],
+ "sources": [
+  "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-first-quarter-2025-financial",
+  "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-fourth-quarter-and-full-year-2023",
+  "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-fourth-quarter-and-full-year-2024",
+  "https://acadia.com/en-us/media/news-releases/acadia-pharmaceuticals-reports-fourth-quarter-and-full-year-2025-financial-results-and-operating-overview",
+  "https://acasignups.net/node/9822",
+  "https://acasignups.net/node/9934",
+  "https://aesnet.org/abstractslisting/claims-analysis-of-healthcare-disparities-among-patients-with-lennox-gastaut-syndrome-or-dravet-syndrome-in-urban-versus-rural-areas-of-the-united-states",
+  "https://alliancerm.org/wp-content/uploads/2025/09/20231106-ARM_Medicaid-Access-Barriers-Issue_WEB.pdf",
+  "https://annualreview.pfizer.com/",
+  "https://argenx.com/news/2026/press-release-3245199",
+  "https://biotechdispatch.com.au/news/neuren-says-us-sales-of-rett-syndrome-therapy-towards-the-top-end-of-guidance",
+  "https://bms.wv.gov/media/40583/download",
+  "https://careercenter.childneurologysociety.org/career-resources/finding-talent-4/how-to-hire-neurodevelopmental-disabilities-physician-2026-32",
+  "https://ccf.georgetown.edu/2026/02/26/new-state-by-state-medicaid-and-chip-tracker-shows-declining-enrollment-as-h-r-1-cuts-loom/",
+  "https://dch.georgia.gov/document/document/anticonvulsants-pa/download",
+  "https://dss.mo.gov/mhd/cs/advisory/rdac/pdf/skyclarys-ndfb.pdf",
+  "https://dss.mo.gov/mhd/cs/pharmacy/pdf/diacomit-clinical.pdf",
+  "https://endpts.com/?p=265714",
+  "https://espanol.connecticare.com/content/dam/connecticare/pdfs/providers/pharmacy/commercial/ztalmy.pdf",
+  "https://finance.yahoo.com/healthcare/articles/ucb-sa-ucbjf-h1-2026-010411818.html",
+  "https://firstwordpharma.com/story/5715553",
+  "https://health.alaska.gov/media/4vlf31zn/5biv-ztalmy_criteria_2023.pdf",
+  "https://hhs.iowa.gov/media/6153/download",
+  "https://icer.org/wp-content/uploads/2025/10/ICER_2025_Launch-Price-and-Access-Final-Report_For-Publication.pdf",
+  "https://icer.org/wp-content/uploads/2026/10/ICER_2026_Launch-Price-and-Access-Final-Report_ForPublication-1.pdf",
+  "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2024",
+  "https://investor.jazzpharma.com/news-releases/news-release-details/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2025",
+  "https://ir.marinuspharma.com/news/news-details/2024/Marinus-Pharmaceuticals-Provides-Business-Update-and-Reports-Second-Quarter-2024-Financial-Results/default.aspx",
+  "https://ir.marinuspharma.com/news/news-details/2024/Marinus-Pharmaceuticals-Reports-Preliminary-Fourth-Quarter-and-Full-Year-2023-ZTALMY-Net-Product-Revenue-and-Provides-Business-Update/default.aspx",
+  "https://ir.praxismedicines.com/news-releases/news-release-details/praxis-precision-medicines-provides-corporate-update-and-19",
+  "https://ir.tevapharm.com/news-and-events/press-releases/press-release-details/2025/Teva-Delivers-Second-Consecutive-Year-of-Growth-Announces-Strong-Financial-Results-in-Fourth-Quarter-and-Full-Year-2024-Led-by-Generics-Performance-and-Innovative-Portfolio-Growth/default.aspx",
+  "https://link.springer.com/article/10.1007/s12325-022-02318-8",
+  "https://medicaid.ncdhhs.gov/epidiolexpdf/open",
+  "https://mn.gov/dhs/partners-and-providers/policies-procedures/minnesota-health-care-programs/provider/types/rx/pa-criteria/diacomit.jsp",
+  "https://nhpri.org/wp-content/uploads/2025/01/Medicaid_diacomit_20250108.pdf",
+  "https://onlinelibrary.wiley.com/doi/10.1111/epi.17866",
+  "https://pharmadossier.com/blog/new-to-market-payer-blocks-first-180-days",
+  "https://pubmed.ncbi.nlm.nih.gov/30241056/",
+  "https://s206.q4cdn.com/795948973/files/doc_financials/2024/q4/Q4-2024-PFE-Earnings-Release-Final.pdf",
+  "https://s24.q4cdn.com/720828402/files/doc_financials/2023/q4/Q4-2023-PR-final-ADA-tagged.pdf",
+  "https://static.cigna.com/assets/chcp/pdf/coveragePolicies/cnf/cnf_761_coveragepositioncriteria_antiepileptics_ztalmy_pa.pdf",
+  "https://steadiwear.com/pages/medicare-coverage-for-tremor-devices-what-s-covered-in-2026",
+  "https://tremorjournal.org/articles/10.5334/tohm.973",
+  "https://www.SunShineHealth.com/content/dam/centene/prior-auth-forms/fl/Ztalmy-Criteria.pdf",
+  "https://www.ajupress.com/view/20260206141000616",
+  "https://www.asiae.co.kr/en/article/2024012914030453129",
+  "https://www.avmed.org/media/4hvltceu/padiacomit_avmed_2024.pdf",
+  "https://www.bcbsfl.com/DocumentLibrary/Providers/Content/Rx_LimitedDistributionDrugs.pdf",
+  "https://www.beckershospitalreview.com/pharmacy/top-pbms-by-2024-market-share/",
+  "https://www.beckerspayer.com/?p=30374",
+  "https://www.beckerspayer.com/payer/which-medicare-advantage-insurers-gained-lost-members-for-2025/",
+  "https://www.beckerspayer.com/rankings-ratings/top-10-largest-insurers-by-enrollment-in-2025/",
+  "https://www.biopharmadive.com/news/biohaven-nurtec-migraine-sales-wall-street-forecast/607770/",
+  "https://www.biopharmadive.com/news/ftc-pbm-investigation-zinc-ascent/650619/",
+  "https://www.biopharmadive.com/news/gw-pharma-epidiolex-sales-beat-tsc-trial-success/554196/",
+  "https://www.biopharmadive.com/news/zogenix-fintepla-fda-approval-dravet-syndrome/580608/",
+  "https://www.biospace.com/jazz-pharmaceuticals-announces-full-year-and-fourth-quarter-2023-financial-results-and-provides-2024-financial-guidance",
+  "https://www.businesswire.com/news/home/20230105005955/en/Marinus-Pharmaceuticals-Reports-Preliminary-Fourth-Quarter-and-Full-Year-2022-ZTALMY-Net-Product-Revenue-and-Provides-Business-Update",
+  "https://www.businesswire.com/news/home/20251105491823/en/Acadia-Pharmaceuticals-Reports-Third-Quarter-2025-Financial-Results-and-Operating-Overview",
+  "https://www.cms.gov/Medicare/Prescription-Drug-Coverage/PrescriptionDrugCovContra/Downloads/Part-D-Benefits-Manual-Chapter-6.pdf",
+  "https://www.cms.gov/medicare-coverage-database/view/lcd.aspx?lcdId=37761&ver=22",
+  "https://www.cms.gov/newsroom/fact-sheets/final-cy-2026-part-d-redesign-program-instructions",
+  "https://www.drugchannels.net/2023/10/five-or-maybe-six-reasons-that-largest.html?m=1",
+  "https://www.drugchannels.net/2025/03/the-top-pharmacy-benefit-managers-of.html",
+  "https://www.drugdiscoverytrends.com/reata-sets-370000-annual-cost-for-new-nerve-disorder-drug/",
+  "https://www.ebglaw.com/health-law-advisor/medicare-drug-price-negotiation-program-the-inflation-reduction-act-pill-penalty-and-other-ira-reforms-on-the-horizon-for-2026",
+  "https://www.eversana.com/insights/peeking-behind-the-pbm-led-gpo-curtain/",
+  "https://www.fiercehealthcare.com/regulatory/census-bureau-8-americans-were-uninsured-2024",
+  "https://www.fiercepharma.com/marketing/epidiolex-launch-official-first-cbd-approved-by-fda-shelves-but-high-price-spurs-some",
+  "https://www.fiercepharma.com/marketing/neurocrine-goes-high-60k-plus-high-price-for-new-movement-drug-ingrezza",
+  "https://www.fiercepharma.com/pharma/fdas-rare-pediatric-disease-voucher-program-revived-2026-government-funding-bill",
+  "https://www.fool.com/earnings/call-transcripts/2026/11/05/acadia-pharma-acad-q3-2026-earnings-call-transcript/",
+  "https://www.ftc.gov/node/81025",
+  "https://www.globenewswire.com/news-release/2026/11/12/3402276/0/en/praxis-precision-medicines-details-launch-readiness-for-relutrigine-and-ulixacaltamide-and-outlines-expanded-pipeline-in-preparation-to-be-the-preeminent-cns-biotech-at-investor-da.html",
+  "https://www.iqvia.com/locations/united-states/blogs/2023/04/the-impact-of-amp-cap-removal-on-medicaid-drug-prices",
+  "https://www.ispor.org/docs/default-source/intl2024/ispor24fourcroy-138552poster138552-pdf.pdf?sfvrsn=d09ec900_0",
+  "https://www.ispor.org/docs/default-source/intl2024/ispor24weston-138749poster138749-pdf.pdf?sfvrsn=fa8938b7_0",
+  "https://www.kedglobal.com/bio-pharma/newsView/ked202402160013",
+  "https://www.kff.org/medicaid/issue-brief/5-key-facts-about-children-with-special-health-care-needs-and-medicaid/",
+  "https://www.kff.org/medicaid/issue-brief/a-closer-look-at-the-work-requirement-provisions-in-the-2025-federal-budget-reconciliation-law/",
+  "https://www.kff.org/medicaid/issue-brief/management-and-delivery-of-the-medicaid-pharmacy-benefit/",
+  "https://www.kff.org/medicaid/issue-brief/medicaids-role-for-children-with-special-health-care-needs-a-look-at-eligibility-services-and-spending/",
+  "https://www.kff.org/medicaid/what-are-the-implications-of-the-recent-elimination-of-the-medicaid-prescription-drug-rebate-cap/",
+  "https://www.kff.org/medicare/issue-brief/key-facts-about-medicare-part-d-enrollment-premiums-and-cost-sharing-in-2025/",
+  "https://www.kff.org/medicare/people-with-medicare-will-face-higher-costs-for-some-orphan-drugs-due-to-changes-in-the-new-tax-and-budget-law/",
+  "https://www.kff.org/report-section/how-state-medicaid-programs-are-managing-prescription-drug-costs-pharmacy-benefit-administration/",
+  "https://www.kff.org/uninsured/issue-brief/key-facts-about-the-uninsured-population",
+  "https://www.koreatimes.co.kr/business/companies/20261105/sk-biopharms-q3-operating-profit-up-66-on-us-sales-of-seizure-drug",
+  "https://www.ldh.la.gov/assets/medicaid/MCPP/12.12.19/Epidiolex.Criteria.FINAL.120219.pdf",
+  "https://www.medico.cx/resources/mfn-drug-pricing",
+  "https://www.mmitnetwork.com/glossary/new-to-market-blocks/",
+  "https://www.multistate.us/insider/2026/6/8/pdab-implementation-challenges-slow-state-drug-cost-efforts",
+  "https://www.ncbi.nlm.nih.gov/books/NBK604815/table/t04/",
+  "https://www.ncpe.ie/wp-content/uploads/2024/07/Technical-Summary-Report-Fenfluramine-23048-update.pdf",
+  "https://www.neurologyadvisor.com/news/ulixacaltamide-nda-accepted-for-essential-tremor-pdufa-date-set/",
+  "https://www.nhpri.org/wp-content/uploads/2024/03/Medicaid_Epidiolex_20240124.pdf",
+  "https://www.nice.org.uk/guidance/ta808/documents/final-appraisal-determination-document",
+  "https://www.prnewswire.com/news-releases/biohaven-reports-second-quarter-2022-financial-results-and-reports-recent-business-developments-301600624.html",
+  "https://www.researchgate.net/publication/7952923_Specialty_care_by_child_neurologists_A_workforce_analysis",
+  "https://www.sec.gov/Archives/edgar/data/0001070494/000141588918000332/ex99-02272018_010236.htm",
+  "https://www.sec.gov/Archives/edgar/data/0001351288/000114420417062057/tv480101-20f.htm",
+  "https://www.sec.gov/Archives/edgar/data/1070494/000119312523188839/d533087dex991.htm",
+  "https://www.sec.gov/Archives/edgar/data/1232524/000123252426000013/jazz-20251231.htm",
+  "https://www.sec.gov/Archives/edgar/data/1267813/000155837023014408/mrns-20230630x10q.htm",
+  "https://www.sec.gov/Archives/edgar/data/1351288/000156459019005037/gwph-10kt_20181231.htm",
+  "https://www.sec.gov/Archives/edgar/data/1375151/000137515120000153/zgnx-20200930.htm",
+  "https://www.sec.gov/Archives/edgar/data/1375151/000137515121000008/zgnx-20201231erexx991.htm",
+  "https://www.sec.gov/Archives/edgar/data/1375151/000137515122000015/zgnx-20211231.htm",
+  "https://www.sec.gov/Archives/edgar/data/1689548/000168954826000091/praxis_investorxdayx2026.htm",
+  "https://www.sec.gov/Archives/edgar/data/1697862/000169786225000042/a04earningspressreleasehy.htm",
+  "https://www.sec.gov/Archives/edgar/data/1697862/000169786226000010/a09earningspressreleaseq4.htm",
+  "https://www.sec.gov/Archives/edgar/data/818686/000119312521036239/d102112d10k.htm",
+  "https://www.sec.gov/Archives/edgar/data/818686/000119312523031250/d443725d10k.htm",
+  "https://www.sec.gov/Archives/edgar/data/875045/000087504525000004/exhibit991-q42024pressrele.htm",
+  "https://www.sec.gov/Archives/edgar/data/875045/000087504525000014/exhibit991-q12025pressrele.htm",
+  "https://www.sec.gov/Archives/edgar/data/875045/000087504525000035/exhibit991-q22025pressrele.htm",
+  "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+  "https://www.sec.gov/Archives/edgar/data/914475/000156459019001996/nbix-ex991_6.htm",
+  "https://www.stocktitan.net/news/PRAX/praxis-precision-medicines-details-launch-readiness-for-relutrigine-5qbe1edx2bvf.html",
+  "https://www.sunshinehealth.com/content/dam/centene/prior-auth-forms/fl/Diacomit_Criteria.pdf",
+  "https://www.superiorhealthplan.com/content/dam/centene/Superior/policies/pharmacy-policies/CP.PMN.246-09012022.pdf",
+  "https://www.ucb.com/sites/default/files/2025-02/management_report_fy24_en_0.pdf",
+  "https://www.ucb.com/sites/default/files/2025-02/ucb_fy_2024_results_capital_market_earnings_call_27_february_2025_0.pdf",
+  "https://www.ucb.com/sites/default/files/2026-02/UCB-PR-2025-FY-Results-ENG.pdf",
+  "https://www.westernhealth.com/provider/prior-authorization-archive/stiripentol-diacomit/",
+  "https://xtalks.com/ingrezza-tv-commercial-flowing-stories-highlights-real-lives-with-tardive-dyskinesia-4767/"
+ ]
+}
